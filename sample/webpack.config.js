@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const config = {
   entry: {
    app: './app.jsx',
+   vendor: ['preact']
   },
   output: {
     path: __dirname + '/public/js',
@@ -29,6 +30,10 @@ const config = {
   },
   plugins: [
       new CleanWebpackPlugin('./public'),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: 2,
+      }),
   ]
 };
 

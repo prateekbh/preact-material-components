@@ -1,10 +1,6 @@
 import {h, render} from 'preact';
-import Button from '../src/Button/Button';
-import Checkbox from '../src/Checkbox/Checkbox';
+import Home from './home.jsx';
 
 render(
-	<div>
-		<Button raised={true} Ripple={true} >hi</Button>
-		<Checkbox>hello</Checkbox>
-	</div>
+	<Home/>
 	,document.querySelector('.app'));

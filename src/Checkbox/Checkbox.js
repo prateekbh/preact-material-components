@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import {checkbox} from 'material-components-web';
+import * as checkbox from '@material/checkbox';
 
 export default class Checkbox extends Component {
 	constructor(){
@@ -7,13 +7,12 @@ export default class Checkbox extends Component {
 		this.componentName='checkbox';
 	}
 	render() {
-
 		return(
 			<div class="mdc-form-field">
 				<div class="mdc-checkbox">
 					<input type="checkbox"
 						id="my-checkbox"
-						class="mdc-checkbox__native-control"/>
+						class="mdc-checkbox__native-control" {...this.props}/>
 					<div class="mdc-checkbox__background">
 					<svg version="1.1"
 						class="mdc-checkbox__checkmark"
@@ -29,7 +28,7 @@ export default class Checkbox extends Component {
 					</div>
 				</div>
 
-				<label for="my-checkbox" {...this.props}>My Checkbox Label</label>
+				<label for="my-checkbox" >My Checkbox Label</label>
 			</div>
 		);
 	}
