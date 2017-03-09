@@ -6,11 +6,12 @@ import Button from '../src/Button/Button';
 export default class Home extends Component {
 	render(){
 		return(<div>
-			<Button raised={true} accent={true} Ripple={true} onClick={()=>{
+			<Button raised={true} accent={true} ripple={true} onClick={()=>{
 				this.setState({
-					showSelect: !this.state.showSelect,
+					showAnotherButton: !this.state.showAnotherButton,
 				});
 			}}>hi</Button>
+			{this.state.showAnotherButton && <Button accent={true} ripple={true}>bye</Button>}
 		</div>);
 	}
 }

@@ -1,5 +1,6 @@
 import {h} from 'preact';
 import MaterialComponent from '../MaterialComponent';
+import {MDCRipple} from '../../node_modules/@material/ripple/index';
 
 /** @prop dense = false
  *	@prop raised = false
@@ -17,17 +18,13 @@ export default class Button extends MaterialComponent {
 			'dense', 'raised', 'compact', 'primary', 'accent'
 		];
 	}
-	mdlRender() {
-		return(<button
-			{...this.props}>{this.props.children}</button>);
+	componentDidMount() {
+		if (this.props.ripple) {
+			MDCRipple.attachTo(this.btn);
+		}
 	}
-	/*render() {
-		this.build();
-		const className = this.getClassName();
-		const autoInits = this.getAutoInitNames();
-		return(<button
-			className={className}
-			data-mdc-auto-init={autoInits}
-			{...this.props}>{this.props.children}</button>);
-	}*/
+	mdlRender(props) {
+		return(<button ref={btn=>this.btn = btn}
+			{...props}>{this.props.children}</button>);
+	}
 }
