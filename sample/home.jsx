@@ -1,7 +1,7 @@
 import {h, Component} from 'preact';
 import Button from '../src/Button/Button';
-// import Checkbox from '../src/Checkbox/Checkbox';
-// import Select from '../src/Select/Select';
+import CheckBox from '../src/CheckBox/CheckBox';
+import Fab from '../src/Fab/Fab';
 
 export default class Home extends Component {
 	render(){
@@ -11,7 +11,14 @@ export default class Home extends Component {
 					showAnotherButton: !this.state.showAnotherButton,
 				});
 			}}>hi</Button>
-			{this.state.showAnotherButton && <Button accent={true} ripple={true}>bye</Button>}
+			<Fab mini={true} ripple={true} icon='share'/>
+			{this.state.showAnotherButton &&
+				<div>
+					<Button accent={true} ripple={true}>bye</Button>
+					<div>
+						<CheckBox label='hello'/>
+					</div>
+				</div>}
 		</div>);
 	}
 }

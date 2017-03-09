@@ -12,7 +12,6 @@ import {MDCRipple} from '../../node_modules/@material/ripple/index';
 export default class Button extends MaterialComponent {
 	constructor(){
 		super();
-		this.autoInitConstants = ['ripple'];
 		this.componentName = 'button';
 		this.mdlProps = [
 			'dense', 'raised', 'compact', 'primary', 'accent'
