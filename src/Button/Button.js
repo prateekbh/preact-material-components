@@ -1,6 +1,6 @@
-import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
-import {MDCRipple} from '../../node_modules/@material/ripple/index';
+import {h} from "preact";
+import MaterialComponent from "../MaterialComponent";
+import { MDCRipple } from "../../node_modules/@material/ripple/index";
 
 /** @prop dense = false
  *	@prop raised = false
@@ -10,20 +10,21 @@ import {MDCRipple} from '../../node_modules/@material/ripple/index';
  *	@prop disabled = false
  */
 export default class Button extends MaterialComponent {
-	constructor(){
-		super();
-		this.componentName = 'button';
-		this.mdcProps = [
-			'dense', 'raised', 'compact', 'primary', 'accent'
-		];
-	}
-	componentDidMount() {
-		if (this.props.ripple) {
-			MDCRipple.attachTo(this.btn);
-		}
-	}
-	materialDom(props) {
-		return(<button ref={btn=>this.btn = btn}
-			{...props}>{this.props.children}</button>);
-	}
+  constructor() {
+    super();
+    this.componentName = "button";
+    this.mdcProps = ["dense", "raised", "compact", "primary", "accent"];
+  }
+  componentDidMount() {
+    if (this.props.ripple) {
+      MDCRipple.attachTo(this.btn);
+    }
+  }
+  materialDom(props) {
+    return (
+      <button ref={btn => this.btn = btn} {...props}>
+        {this.props.children}
+      </button>
+    );
+  }
 }
