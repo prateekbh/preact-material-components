@@ -112,7 +112,7 @@ var Button = function (_MaterialComponent) {
 		var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
 
 		_this.componentName = 'button';
-		_this.mdlProps = ['dense', 'raised', 'compact', 'primary', 'accent'];
+		_this.mdcProps = ['dense', 'raised', 'compact', 'primary', 'accent'];
 		return _this;
 	}
 
@@ -124,8 +124,8 @@ var Button = function (_MaterialComponent) {
 			}
 		}
 	}, {
-		key: 'mdlRender',
-		value: function mdlRender(props) {
+		key: 'materialDom',
+		value: function materialDom(props) {
 			var _this2 = this;
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -167,9 +167,11 @@ var MaterialComponent = function (_Component) {
 	function MaterialComponent() {
 		_classCallCheck(this, MaterialComponent);
 
+		// Attributes inside this array will be check for boolean value true
+		// and will be converted to mdc classes
 		var _this = _possibleConstructorReturn(this, (MaterialComponent.__proto__ || Object.getPrototypeOf(MaterialComponent)).call(this));
 
-		_this.mdlProps = [];
+		_this.mdcProps = [];
 		_this.componentName = '';
 		_this.classText = '';
 		return _this;
@@ -183,7 +185,7 @@ var MaterialComponent = function (_Component) {
 			for (var propKey in this.props) {
 				var prop = this.props[propKey];
 				if (typeof prop === 'boolean' && prop) {
-					if (this.mdlProps.indexOf(propKey) !== -1) {
+					if (this.mdcProps.indexOf(propKey) !== -1) {
 						this.classText += ' mdc-' + this.componentName + '--' + propKey;
 					}
 				}
@@ -199,9 +201,11 @@ var MaterialComponent = function (_Component) {
 		value: function getAutoInitNames() {
 			return this.autoInitText;
 		}
+		// Components must implement this method for their DOM structure
+
 	}, {
-		key: 'mdlRender',
-		value: function mdlRender(props) {
+		key: 'materialDom',
+		value: function materialDom(props) {
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				'div',
 				props,
@@ -213,10 +217,10 @@ var MaterialComponent = function (_Component) {
 		value: function render() {
 			this.build();
 			// Fetch a VNode
-			var element = this.mdlRender(this.props);
+			var element = this.materialDom(this.props);
 			// Clean this shit of proxy attributes
 
-			this.mdlProps.forEach(function (prop) {
+			this.mdcProps.forEach(function (prop) {
 				delete element.attributes[prop];
 			});
 
@@ -1461,13 +1465,13 @@ var CheckBox = function (_MaterialComponent) {
 		var _this = _possibleConstructorReturn(this, (CheckBox.__proto__ || Object.getPrototypeOf(CheckBox)).call(this));
 
 		_this.componentName = 'checkbox';
-		_this.mdlProps = [];
+		_this.mdcProps = [];
 		return _this;
 	}
 
 	_createClass(CheckBox, [{
-		key: 'mdlRender',
-		value: function mdlRender(props) {
+		key: 'materialDom',
+		value: function materialDom(props) {
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				'div',
 				{ 'class': 'mdc-form-field' },
@@ -1543,7 +1547,7 @@ var Fab = function (_MaterialComponent) {
 		var _this = _possibleConstructorReturn(this, (Fab.__proto__ || Object.getPrototypeOf(Fab)).call(this));
 
 		_this.componentName = 'fab';
-		_this.mdlProps = ['mini', 'plain'];
+		_this.mdcProps = ['mini', 'plain'];
 		return _this;
 	}
 
@@ -1555,8 +1559,8 @@ var Fab = function (_MaterialComponent) {
 			}
 		}
 	}, {
-		key: 'mdlRender',
-		value: function mdlRender(props) {
+		key: 'materialDom',
+		value: function materialDom(props) {
 			var _this2 = this;
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(

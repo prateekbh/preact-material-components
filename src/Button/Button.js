@@ -13,7 +13,7 @@ export default class Button extends MaterialComponent {
 	constructor(){
 		super();
 		this.componentName = 'button';
-		this.mdlProps = [
+		this.mdcProps = [
 			'dense', 'raised', 'compact', 'primary', 'accent'
 		];
 	}
@@ -22,7 +22,7 @@ export default class Button extends MaterialComponent {
 			MDCRipple.attachTo(this.btn);
 		}
 	}
-	mdlRender(props) {
+	materialDom(props) {
 		return(<button ref={btn=>this.btn = btn}
 			{...props}>{this.props.children}</button>);
 	}

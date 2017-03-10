@@ -3,7 +3,9 @@ import {h, Component} from 'preact';
 export default class MaterialComponent extends Component {
 	constructor(){
 		super();
-		this.mdlProps = [];
+		// Attributes inside this array will be check for boolean value true
+		// and will be converted to mdc classes
+		this.mdcProps = [];
 		this.componentName = '';
 		this.classText = '';
 	}
@@ -13,7 +15,7 @@ export default class MaterialComponent extends Component {
 		for (let propKey in this.props) {
 			const prop = this.props[propKey];
 			if(typeof prop === 'boolean' && prop) {
-				if (this.mdlProps.indexOf(propKey) !== -1) {
+				if (this.mdcProps.indexOf(propKey) !== -1) {
 					this.classText += ' mdc-' + this.componentName + '--' + propKey;
 				}
 			}
@@ -25,16 +27,17 @@ export default class MaterialComponent extends Component {
 	getAutoInitNames() {
 		return this.autoInitText;
 	}
-	mdlRender(props) {
+	// Components must implement this method for their DOM structure
+	materialDom(props) {
 		return <div {...props}>{props.children}</div>
 	}
 	render() {
 		this.build();
 		// Fetch a VNode
-		const element = this.mdlRender(this.props);
+		const element = this.materialDom(this.props);
 		// Clean this shit of proxy attributes
 
-		this.mdlProps.forEach(prop => {
+		this.mdcProps.forEach(prop => {
 			delete element.attributes[prop];
 		});
 

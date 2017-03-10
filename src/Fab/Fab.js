@@ -10,7 +10,7 @@ export default class Fab extends MaterialComponent {
 	constructor(){
 		super();
 		this.componentName = 'fab';
-		this.mdlProps = [
+		this.mdcProps = [
 			'mini', 'plain',
 		];
 	}
@@ -19,7 +19,7 @@ export default class Fab extends MaterialComponent {
 			MDCRipple.attachTo(this.btn);
 		}
 	}
-	mdlRender(props) {
+	materialDom(props) {
 		return(<button {...props} ref={btn=>this.btn = btn}>
 			<span class="mdc-fab__icon">
 				{props.icon}
