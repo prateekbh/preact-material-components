@@ -20,9 +20,7 @@ export default class Fab extends MaterialComponent {
   materialDom(props) {
     return (
       <button {...props} ref={btn => this.btn = btn}>
-        <span class="mdc-fab__icon">
-          {props.icon}
-        </span>
+          {props.children}
       </button>
     );
   }

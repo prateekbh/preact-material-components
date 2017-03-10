@@ -19,6 +19,12 @@ export default class Home extends Component {
 						<CheckBox label='hello'/>
 					</div>
 				</div>}
+			<i class="mdc-icon-toggle material-icons" role="button" aria-pressed="false"
+				aria-label="Add to favorites" tabindex="0"
+				data-toggle-on='{"label": "Remove from favorites", "content": "favorite"}'
+				data-toggle-off='{"label": "Add to favorites", "content": "favorite_border"}'>
+				favorite_border
+			</i>
 		</div>);
 	}
 }

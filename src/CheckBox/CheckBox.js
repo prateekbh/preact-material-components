@@ -7,7 +7,6 @@ export default class CheckBox extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "checkbox";
-    this.mdcProps = [];
   }
   materialDom(props) {
     return (
