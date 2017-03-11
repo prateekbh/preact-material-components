@@ -9,7 +9,7 @@ export default class MaterialComponent extends Component {
     this.componentName = "";
     this.classText = "";
   }
-  build() {
+  build(props) {
     this.classText = "mdc-" + this.componentName;
     this.autoInitText = "";
     for (let propKey in this.props) {
@@ -21,7 +21,10 @@ export default class MaterialComponent extends Component {
       }
     }
   }
-  getClassName() {
+  getClassName(element) {
+    if (element && element.attributes.className) {
+      return this.classText + ' ' + element.attributes.className;
+    }
     return this.classText;
   }
   getAutoInitNames() {
@@ -35,14 +38,14 @@ export default class MaterialComponent extends Component {
     this.build();
     // Fetch a VNode
     const element = this.materialDom(this.props);
+    const autoInits = this.getAutoInitNames();
+    // Fix for className
+    element.attributes.class = this.getClassName(element);
     // Clean this shit of proxy attributes
-
     this.mdcProps.forEach(prop => {
       delete element.attributes[prop];
     });
 
-    const autoInits = this.getAutoInitNames();
-    element.attributes.class = this.getClassName();
     return element;
   }
 }

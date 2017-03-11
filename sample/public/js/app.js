@@ -34,7 +34,7 @@ var MaterialComponent = function (_Component) {
 
   _createClass(MaterialComponent, [{
     key: "build",
-    value: function build() {
+    value: function build(props) {
       this.classText = "mdc-" + this.componentName;
       this.autoInitText = "";
       for (var propKey in this.props) {
@@ -48,7 +48,10 @@ var MaterialComponent = function (_Component) {
     }
   }, {
     key: "getClassName",
-    value: function getClassName() {
+    value: function getClassName(element) {
+      if (element && element.attributes.className) {
+        return this.classText + ' ' + element.attributes.className;
+      }
       return this.classText;
     }
   }, {
@@ -73,14 +76,14 @@ var MaterialComponent = function (_Component) {
       this.build();
       // Fetch a VNode
       var element = this.materialDom(this.props);
+      var autoInits = this.getAutoInitNames();
+      // Fix for className
+      element.attributes.class = this.getClassName(element);
       // Clean this shit of proxy attributes
-
       this.mdcProps.forEach(function (prop) {
         delete element.attributes[prop];
       });
 
-      var autoInits = this.getAutoInitNames();
-      element.attributes.class = this.getClassName();
       return element;
     }
   }]);
@@ -437,6 +440,7 @@ function getNormalizedEventCoords(ev, pageOffset, clientRect) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_Button_Button__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_CheckBox_CheckBox__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_Fab_Fab__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_Icon_Icon__ = __webpack_require__(16);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -444,6 +448,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -476,7 +481,11 @@ var Home = function (_Component) {
 						} },
 					'hi'
 				),
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__src_Fab_Fab__["a" /* default */], { mini: true, ripple: true, icon: 'share' }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_3__src_Fab_Fab__["a" /* default */],
+					{ mini: true, ripple: true },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_4__src_Icon_Icon__["a" /* default */], { icon: 'share' })
+				),
 				this.state.showAnotherButton && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					null,
@@ -1589,6 +1598,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__home_jsx__["a" /* default */], null), document.querySelector('.app'));
+
+/***/ }),
+/* 15 */,
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MaterialComponent__ = __webpack_require__(1);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+/**
+ * @prop disabled = false
+ */
+
+var IconToggle = function (_MaterialComponent) {
+  _inherits(IconToggle, _MaterialComponent);
+
+  function IconToggle() {
+    _classCallCheck(this, IconToggle);
+
+    var _this = _possibleConstructorReturn(this, (IconToggle.__proto__ || Object.getPrototypeOf(IconToggle)).call(this));
+
+    _this.componentName = "icon";
+    return _this;
+  }
+
+  _createClass(IconToggle, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        "i",
+        _extends({}, props, { className: "material-icons" }),
+        props.icon
+      );
+    }
+  }]);
+
+  return IconToggle;
+}(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = IconToggle;
 
 /***/ })
 ],[14]);
