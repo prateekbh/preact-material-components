@@ -4,7 +4,7 @@ import MaterialComponent from "../MaterialComponent";
 /**
  * @prop disabled = false
  */
-export default class IconToggle extends MaterialComponent {
+export default class Icon extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "icon";

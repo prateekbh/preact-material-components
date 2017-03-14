@@ -437,10 +437,7 @@ function getNormalizedEventCoords(ev, pageOffset, clientRect) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_Button_Button__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_CheckBox_CheckBox__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_Fab_Fab__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_Icon_Icon__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src___ = __webpack_require__(16);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -448,9 +445,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
 
 
 
@@ -473,7 +467,7 @@ var Home = function (_Component) {
 				'div',
 				null,
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					__WEBPACK_IMPORTED_MODULE_1__src_Button_Button__["a" /* default */],
+					__WEBPACK_IMPORTED_MODULE_1__src___["a" /* Button */],
 					{ raised: true, accent: true, ripple: true, onClick: function onClick() {
 							_this2.setState({
 								showAnotherButton: !_this2.state.showAnotherButton
@@ -481,32 +475,15 @@ var Home = function (_Component) {
 						} },
 					'hi'
 				),
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					__WEBPACK_IMPORTED_MODULE_3__src_Fab_Fab__["a" /* default */],
-					{ mini: true, ripple: true },
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_4__src_Icon_Icon__["a" /* default */], { icon: 'share' })
-				),
 				this.state.showAnotherButton && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					null,
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1__src_Button_Button__["a" /* default */],
-						{ accent: true, ripple: true },
-						'bye'
+						__WEBPACK_IMPORTED_MODULE_1__src___["b" /* Fab */],
+						{ mini: true, ripple: true },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__src___["c" /* Icon */], { icon: 'share' })
 					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						'div',
-						null,
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__src_CheckBox_CheckBox__["a" /* default */], { label: 'hello' })
-					)
-				),
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					'i',
-					{ 'class': 'mdc-icon-toggle material-icons', role: 'button', 'aria-pressed': 'false',
-						'aria-label': 'Add to favorites', tabindex: '0',
-						'data-toggle-on': '{"label": "Remove from favorites", "content": "favorite"}',
-						'data-toggle-off': '{"label": "Add to favorites", "content": "favorite_border"}' },
-					'favorite_border'
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__src___["d" /* Switch */], null)
 				)
 			);
 		}
@@ -1515,7 +1492,7 @@ var CheckBox = function (_MaterialComponent) {
   return CheckBox;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
-/* harmony default export */ __webpack_exports__["a"] = CheckBox;
+/* unused harmony default export */ var _unused_webpack_default_export = CheckBox;
 
 /***/ }),
 /* 13 */
@@ -1590,18 +1567,56 @@ var Fab = function (_MaterialComponent) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_jsx__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MaterialComponent__ = __webpack_require__(1);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__home_jsx__["a" /* default */], null), document.querySelector('.app'));
+
+/**
+ * @prop disabled = false
+ */
+
+var Icon = function (_MaterialComponent) {
+  _inherits(Icon, _MaterialComponent);
+
+  function Icon() {
+    _classCallCheck(this, Icon);
+
+    var _this = _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).call(this));
+
+    _this.componentName = "icon";
+    return _this;
+  }
+
+  _createClass(Icon, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        "i",
+        _extends({}, props, { className: "material-icons" }),
+        props.icon
+      );
+    }
+  }]);
+
+  return Icon;
+}(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = Icon;
 
 /***/ }),
-/* 15 */,
-/* 16 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1625,33 +1640,74 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @prop disabled = false
  */
 
-var IconToggle = function (_MaterialComponent) {
-  _inherits(IconToggle, _MaterialComponent);
+var Switch = function (_MaterialComponent) {
+  _inherits(Switch, _MaterialComponent);
 
-  function IconToggle() {
-    _classCallCheck(this, IconToggle);
+  function Switch() {
+    _classCallCheck(this, Switch);
 
-    var _this = _possibleConstructorReturn(this, (IconToggle.__proto__ || Object.getPrototypeOf(IconToggle)).call(this));
+    var _this = _possibleConstructorReturn(this, (Switch.__proto__ || Object.getPrototypeOf(Switch)).call(this));
 
-    _this.componentName = "icon";
+    _this.componentName = "switch";
     return _this;
   }
 
-  _createClass(IconToggle, [{
+  _createClass(Switch, [{
     key: "materialDom",
     value: function materialDom(props) {
       return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "i",
-        _extends({}, props, { className: "material-icons" }),
-        props.icon
+        "div",
+        _extends({ "class": "mdc-switch" }, props),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", { type: "checkbox", id: "basic-switch", "class": "mdc-switch__native-control" }),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          "div",
+          { "class": "mdc-switch__background" },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-switch__knob" })
+        )
       );
     }
   }]);
 
-  return IconToggle;
+  return Switch;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
-/* harmony default export */ __webpack_exports__["a"] = IconToggle;
+/* harmony default export */ __webpack_exports__["a"] = Switch;
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Button_Button__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CheckBox_CheckBox__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Fab_Fab__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Icon_Icon__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Switch_Switch__ = __webpack_require__(15);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Button_Button__["a"]; });
+/* unused harmony reexport CheckBox */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__Fab_Fab__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_4__Switch_Switch__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__Icon_Icon__["a"]; });
+
+
+
+
+
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_jsx__ = __webpack_require__(6);
+
+
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__home_jsx__["a" /* default */], null), document.querySelector('.app'));
 
 /***/ })
-],[14]);
+],[17]);
