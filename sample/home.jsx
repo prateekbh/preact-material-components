@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import {Button, Fab, Icon, Switch}  from '../src/';
+import {Button, Fab, Icon, Switch, Snackbar}  from '../src/';
 
 export default class Home extends Component {
 	render(){
@@ -7,6 +7,9 @@ export default class Home extends Component {
 			<Button raised={true} accent={true} ripple={true} onClick={()=>{
 				this.setState({
 					showAnotherButton: !this.state.showAnotherButton,
+				},()=>{
+					console.log(this.bar);
+					debugger;
 				});
 			}}>hi</Button>
 			{this.state.showAnotherButton && <div>
@@ -15,6 +18,7 @@ export default class Home extends Component {
 					</Fab>
 					<Switch/>
 				</div>}
+			<Snackbar ref={bar=>{this.bar = bar;}}/>
 		</div>);
 	}
 }

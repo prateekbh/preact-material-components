@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCRipple } from "../../node_modules/@material/ripple/index";
+import { MDCRipple } from "../../node_modules/@material/ripple/";
 
 /**
  * @prop mini = false
