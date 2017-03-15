@@ -10,20 +10,27 @@ export default class Snackbar extends MaterialComponent {
     super();
     this.componentName = "snackbar";
   }
-	componentDidMount() {
-		this.comp = MDCSnackbar.attachTo(this.bar);
-	}
+  componentDidMount() {
+    this.foundation = MDCSnackbar.attachTo(this.bar).foundation_;
+  }
+
   materialDom(props) {
     return (
-		<div class="mdc-snackbar"
-			aria-live="assertive"
-			aria-atomic="true"
-			aria-hidden="true" ref={bar=>this.bar = bar}>
-		<div class="mdc-snackbar__text"></div>
-		<div class="mdc-snackbar__action-wrapper">
-			<button type="button" class="mdc-button mdc-snackbar__action-button"></button>
-		</div>
-		</div>
+      <div
+        class="mdc-snackbar"
+        aria-live="assertive"
+        aria-atomic="true"
+        aria-hidden="true"
+        ref={bar => this.bar = bar}
+      >
+        <div class="mdc-snackbar__text" />
+        <div class="mdc-snackbar__action-wrapper">
+          <button
+            type="button"
+            class="mdc-button mdc-snackbar__action-button"
+          />
+        </div>
+      </div>
     );
   }
 }

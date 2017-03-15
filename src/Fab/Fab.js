@@ -10,7 +10,7 @@ export default class Fab extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "fab";
-    this.mdcProps = ["mini", "plain"];
+    this._mdcProps = ["mini", "plain"];
   }
   componentDidMount() {
     if (this.props.ripple) {

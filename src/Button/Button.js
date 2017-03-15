@@ -13,7 +13,7 @@ export default class Button extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "button";
-    this.mdcProps = ["dense", "raised", "compact", "primary", "accent"];
+    this._mdcProps = ["dense", "raised", "compact", "primary", "accent"];
   }
   componentDidMount() {
     if (this.props.ripple) {

@@ -1,16 +1,20 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
+import { MDCCheckbox } from "../../node_modules/@material/checkbox/";
 
 /** @prop label = ''
  */
-export default class CheckBox extends MaterialComponent {
+export default class Checkbox extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "checkbox";
   }
+  componentDidMount() {
+    this.foundation = new MDCCheckbox(this.cbox);
+  }
   materialDom(props) {
     return (
-      <div class="mdc-form-field">
+      <div class="mdc-form-field" ref={cbox=>{this.cbox = cbox;}}>
         <div class="mdc-checkbox">
           <input
             type="checkbox"

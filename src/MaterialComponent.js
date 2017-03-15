@@ -5,7 +5,7 @@ export default class MaterialComponent extends Component {
     super();
     // Attributes inside this array will be check for boolean value true
     // and will be converted to mdc classes
-    this.mdcProps = [];
+    this._mdcProps = [];
     this.componentName = "";
     this.classText = "";
   }
@@ -15,7 +15,7 @@ export default class MaterialComponent extends Component {
     for (let propKey in this.props) {
       const prop = this.props[propKey];
       if (typeof prop === "boolean" && prop) {
-        if (this.mdcProps.indexOf(propKey) !== -1) {
+        if (this._mdcProps.indexOf(propKey) !== -1) {
           this.classText += " mdc-" + this.componentName + "--" + propKey;
         }
       }
@@ -23,7 +23,7 @@ export default class MaterialComponent extends Component {
   }
   getClassName(element) {
     if (element && element.attributes.className) {
-      return this.classText + ' ' + element.attributes.className;
+      return this.classText + " " + element.attributes.className;
     }
     return this.classText;
   }
@@ -42,7 +42,7 @@ export default class MaterialComponent extends Component {
     // Fix for className
     element.attributes.class = this.getClassName(element);
     // Clean this shit of proxy attributes
-    this.mdcProps.forEach(prop => {
+    this._mdcProps.forEach(prop => {
       delete element.attributes[prop];
     });
 
