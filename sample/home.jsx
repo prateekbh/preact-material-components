@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import {Button, Fab, Icon, Switch, Snackbar, Checkbox, Radio}  from '../src/';
+import {Button, Fab, Icon, Switch, Snackbar, Checkbox, Radio, Textfield}  from '../src/';
 
 export default class Home extends Component {
 	render(){
@@ -22,7 +22,7 @@ export default class Home extends Component {
 			<div className="mdc-form-field">
 				<Radio id="rd" ref={radio=>this.radio=radio}/> <label for="rd">Radio Box</label>
 			</div>
-
+			<Textfield placeholder="asldkahjkldk"/>
 		</div>);
 	}
 }
