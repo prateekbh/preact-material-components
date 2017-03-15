@@ -1,6 +1,5 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCRipple } from "../../node_modules/@material/ripple/";
 
 /**
  * @prop mini = false
@@ -13,13 +12,11 @@ export default class Fab extends MaterialComponent {
     this._mdcProps = ["mini", "plain"];
   }
   componentDidMount() {
-    if (this.props.ripple) {
-      MDCRipple.attachTo(this.btn);
-    }
+    super.attachRipple();
   }
   materialDom(props) {
     return (
-      <button {...props} ref={btn => this.btn = btn}>
+      <button {...props} ref={control => this.control = control}>
           {props.children}
       </button>
     );

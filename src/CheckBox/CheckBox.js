@@ -10,11 +10,11 @@ export default class Checkbox extends MaterialComponent {
     this.componentName = "checkbox";
   }
   componentDidMount() {
-    this.foundation = new MDCCheckbox(this.cbox);
+    this.MDComponent = new MDCCheckbox(this.control);
   }
   materialDom(props) {
     return (
-      <div class="mdc-form-field" ref={cbox=>{this.cbox = cbox;}}>
+      <div class="mdc-form-field" ref={control=>{this.control = control;}}>
         <div class="mdc-checkbox">
           <input
             type="checkbox"

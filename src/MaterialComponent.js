@@ -1,4 +1,5 @@
 import { h, Component } from "preact";
+import { MDCRipple } from "../node_modules/@material/ripple/index";
 
 export default class MaterialComponent extends Component {
   constructor() {
@@ -8,6 +9,11 @@ export default class MaterialComponent extends Component {
     this._mdcProps = [];
     this.componentName = "";
     this.classText = "";
+  }
+  attachRipple(){
+    if (this.props.ripple) {
+      MDCRipple.attachTo(this.control);
+    }
   }
   build(props) {
     this.classText = "mdc-" + this.componentName;

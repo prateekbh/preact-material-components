@@ -11,7 +11,7 @@ export default class Snackbar extends MaterialComponent {
     this.componentName = "snackbar";
   }
   componentDidMount() {
-    this.foundation = MDCSnackbar.attachTo(this.bar).foundation_;
+    this.MDComponent = MDCSnackbar.attachTo(this.control);
   }
 
   materialDom(props) {
@@ -21,7 +21,7 @@ export default class Snackbar extends MaterialComponent {
         aria-live="assertive"
         aria-atomic="true"
         aria-hidden="true"
-        ref={bar => this.bar = bar}
+        ref={control => this.control = control}
       >
         <div class="mdc-snackbar__text" />
         <div class="mdc-snackbar__action-wrapper">

@@ -11,14 +11,14 @@ export default class IconToggle extends MaterialComponent {
     this.componentName = "icon-toggle";
   }
   componentDidMount() {
-    MDCIconToggle.attachTo(this.btn);
+    this.MDComponent = MDCIconToggle.attachTo(this.control);
   }
   materialDom(props) {
     return (
       <i
         {...props}
-        ref={btn => {
-          this.btn = btn;
+        ref={control => {
+          this.control = control;
         }}
         class="mdc-icon-toggle material-icons"
         role="button"

@@ -1,15 +1,12 @@
 import {h, Component} from 'preact';
-import {Button, Fab, Icon, Switch, Snackbar, Checkbox}  from '../src/';
+import {Button, Fab, Icon, Switch, Snackbar, Checkbox, Radio}  from '../src/';
 
 export default class Home extends Component {
 	render(){
 		return(<div>
-			<Button raised={true} accent={true} ripple={true}  onClick={()=>{
-				console.log(this.bar);
-				console.log(this.inp.foundation.checked);
-				console.log("==========");
-
-			}}>hi</Button>
+			<Button raised={true} accent={true} ripple={true} onClick={()=>{
+					console.log(this.radio);
+				}}>hi</Button>
 			<div>
 				<Fab mini={true} ripple={true}>
 					<Icon icon='share'/>
@@ -17,7 +14,15 @@ export default class Home extends Component {
 				<Switch/>
 			</div>
 			<Snackbar ref={bar=>{this.bar = bar;}}/>
-			<Checkbox ref={inp=>{this.inp = inp;}} />
+			<div>
+				<div className="mdc-form-field">
+					<Checkbox ref={inp=>{this.inp = inp;}} />
+				</div>
+			</div>
+			<div className="mdc-form-field">
+				<Radio id="rd" ref={radio=>this.radio=radio}/> <label for="rd">Radio Box</label>
+			</div>
+
 		</div>);
 	}
 }
