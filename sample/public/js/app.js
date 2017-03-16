@@ -2672,70 +2672,70 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var Checkbox = function (_MaterialComponent) {
-  _inherits(Checkbox, _MaterialComponent);
+	_inherits(Checkbox, _MaterialComponent);
 
-  function Checkbox() {
-    _classCallCheck(this, Checkbox);
+	function Checkbox() {
+		_classCallCheck(this, Checkbox);
 
-    var _this = _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this));
+		var _this = _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this));
 
-    _this.componentName = "checkbox";
-    return _this;
-  }
+		_this.componentName = "checkbox";
+		return _this;
+	}
 
-  _createClass(Checkbox, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.MDComponent = new __WEBPACK_IMPORTED_MODULE_2__node_modules_material_checkbox___["a" /* MDCCheckbox */](this.control);
-    }
-  }, {
-    key: "materialDom",
-    value: function materialDom(props) {
-      var _this2 = this;
+	_createClass(Checkbox, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.MDComponent = new __WEBPACK_IMPORTED_MODULE_2__node_modules_material_checkbox___["a" /* MDCCheckbox */](this.control);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			var _this2 = this;
 
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "div",
-        { "class": "mdc-form-field", ref: function ref(control) {
-            _this2.control = control;
-          } },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          "div",
-          { "class": "mdc-checkbox" },
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({
-            type: "checkbox",
-            "class": "mdc-checkbox__native-control"
-          }, props)),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            "div",
-            { "class": "mdc-checkbox__background" },
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-              "svg",
-              {
-                version: "1.1",
-                "class": "mdc-checkbox__checkmark",
-                xmlns: "http://www.w3.org/2000/svg",
-                viewBox: "0 0 24 24"
-              },
-              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("path", {
-                "class": "mdc-checkbox__checkmark__path",
-                fill: "none",
-                stroke: "white",
-                d: "M1.73,12.91 8.1,19.28 22.79,4.59"
-              })
-            ),
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-checkbox__mixedmark" })
-          )
-        ),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          "label",
-          { "for": "my-checkbox" },
-          props.label
-        )
-      );
-    }
-  }]);
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				{ "class": "mdc-form-field", ref: function ref(control) {
+						_this2.control = control;
+					} },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"div",
+					{ "class": "mdc-checkbox" },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({
+						type: "checkbox",
+						"class": "mdc-checkbox__native-control"
+					}, props)),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						"div",
+						{ "class": "mdc-checkbox__background" },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							"svg",
+							{
+								version: "1.1",
+								"class": "mdc-checkbox__checkmark",
+								xmlns: "http://www.w3.org/2000/svg",
+								viewBox: "0 0 24 24"
+							},
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("path", {
+								"class": "mdc-checkbox__checkmark__path",
+								fill: "none",
+								stroke: "white",
+								d: "M1.73,12.91 8.1,19.28 22.79,4.59"
+							})
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-checkbox__mixedmark" })
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"label",
+					{ "for": "my-checkbox" },
+					props.label
+				)
+			);
+		}
+	}]);
 
-  return Checkbox;
+	return Checkbox;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = Checkbox;
