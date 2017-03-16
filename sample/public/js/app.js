@@ -18,6 +18,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+/**
+ * Base class for every Material component in this package
+ * NOTE: every component should add a ref by the name of `control` to its root dom for autoInit Properties
+ *
+ * @export
+ * @class MaterialComponent
+ * @extends {Component}
+ */
+
 var MaterialComponent = function (_Component) {
   _inherits(MaterialComponent, _Component);
 
@@ -29,7 +38,9 @@ var MaterialComponent = function (_Component) {
     var _this = _possibleConstructorReturn(this, (MaterialComponent.__proto__ || Object.getPrototypeOf(MaterialComponent)).call(this));
 
     _this._mdcProps = [];
+    // This will again be used to add apt classname to the component
     _this.componentName = "";
+    // The final class name given to the dom
     _this.classText = "";
     return _this;
   }
@@ -37,15 +48,16 @@ var MaterialComponent = function (_Component) {
   _createClass(MaterialComponent, [{
     key: "attachRipple",
     value: function attachRipple() {
-      if (this.props.ripple) {
+      if (this.props.ripple && this.control) {
         __WEBPACK_IMPORTED_MODULE_1__node_modules_material_ripple_index__["a" /* MDCRipple */].attachTo(this.control);
       }
     }
+    // Build the className
+
   }, {
-    key: "build",
-    value: function build(props) {
+    key: "buildClassName",
+    value: function buildClassName(props) {
       this.classText = "mdc-" + this.componentName;
-      this.autoInitText = "";
       for (var propKey in this.props) {
         var prop = this.props[propKey];
         if (typeof prop === "boolean" && prop) {
@@ -68,7 +80,7 @@ var MaterialComponent = function (_Component) {
     value: function getAutoInitNames() {
       return this.autoInitText;
     }
-    // Components must implement this method for their DOM structure
+    // Components must implement this method for their specific DOM structure
 
   }, {
     key: "materialDom",
@@ -82,7 +94,7 @@ var MaterialComponent = function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      this.build();
+      this.buildClassName();
       // Fetch a VNode
       var element = this.materialDom(this.props);
       var autoInits = this.getAutoInitNames();
@@ -519,7 +531,7 @@ var Home = function (_Component) {
 						'Radio Box'
 					)
 				),
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__src___["h" /* Textfield */], { placeholder: 'asldkahjkldk' })
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__src___["h" /* Textfield */], null)
 			);
 		}
 	}]);

@@ -22,7 +22,7 @@ export default class Home extends Component {
 			<div className="mdc-form-field">
 				<Radio id="rd" ref={radio=>this.radio=radio}/> <label for="rd">Radio Box</label>
 			</div>
-			<Textfield placeholder="asldkahjkldk"/>
+			<Textfield/>
 		</div>);
 	}
 }

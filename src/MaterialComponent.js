@@ -1,23 +1,33 @@
 import { h, Component } from "preact";
 import { MDCRipple } from "../node_modules/@material/ripple/index";
 
+/**
+ * Base class for every Material component in this package
+ * NOTE: every component should add a ref by the name of `control` to its root dom for autoInit Properties
+ *
+ * @export
+ * @class MaterialComponent
+ * @extends {Component}
+ */
 export default class MaterialComponent extends Component {
-  constructor() {
+  constructor(){
     super();
     // Attributes inside this array will be check for boolean value true
     // and will be converted to mdc classes
     this._mdcProps = [];
+    // This will again be used to add apt classname to the component
     this.componentName = "";
+    // The final class name given to the dom
     this.classText = "";
   }
   attachRipple(){
-    if (this.props.ripple) {
+    if (this.props.ripple && this.control) {
       MDCRipple.attachTo(this.control);
     }
   }
-  build(props) {
+  // Build the className
+  buildClassName(props){
     this.classText = "mdc-" + this.componentName;
-    this.autoInitText = "";
     for (let propKey in this.props) {
       const prop = this.props[propKey];
       if (typeof prop === "boolean" && prop) {
@@ -36,12 +46,12 @@ export default class MaterialComponent extends Component {
   getAutoInitNames() {
     return this.autoInitText;
   }
-  // Components must implement this method for their DOM structure
+  // Components must implement this method for their specific DOM structure
   materialDom(props) {
     return <div {...props}>{props.children}</div>;
   }
   render() {
-    this.build();
+    this.buildClassName();
     // Fetch a VNode
     const element = this.materialDom(this.props);
     const autoInits = this.getAutoInitNames();
