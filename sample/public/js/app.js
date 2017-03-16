@@ -28,88 +28,88 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var MaterialComponent = function (_Component) {
-  _inherits(MaterialComponent, _Component);
+	_inherits(MaterialComponent, _Component);
 
-  function MaterialComponent() {
-    _classCallCheck(this, MaterialComponent);
+	function MaterialComponent() {
+		_classCallCheck(this, MaterialComponent);
 
-    // Attributes inside this array will be check for boolean value true
-    // and will be converted to mdc classes
-    var _this = _possibleConstructorReturn(this, (MaterialComponent.__proto__ || Object.getPrototypeOf(MaterialComponent)).call(this));
+		// Attributes inside this array will be check for boolean value true
+		// and will be converted to mdc classes
+		var _this = _possibleConstructorReturn(this, (MaterialComponent.__proto__ || Object.getPrototypeOf(MaterialComponent)).call(this));
 
-    _this._mdcProps = [];
-    // This will again be used to add apt classname to the component
-    _this.componentName = "";
-    // The final class name given to the dom
-    _this.classText = "";
-    return _this;
-  }
+		_this._mdcProps = [];
+		// This will again be used to add apt classname to the component
+		_this.componentName = "";
+		// The final class name given to the dom
+		_this.classText = "";
+		return _this;
+	}
 
-  _createClass(MaterialComponent, [{
-    key: "attachRipple",
-    value: function attachRipple() {
-      if (this.props.ripple && this.control) {
-        __WEBPACK_IMPORTED_MODULE_1__node_modules_material_ripple_index__["a" /* MDCRipple */].attachTo(this.control);
-      }
-    }
-    // Build the className
+	_createClass(MaterialComponent, [{
+		key: "attachRipple",
+		value: function attachRipple() {
+			if (this.props.ripple && this.control) {
+				__WEBPACK_IMPORTED_MODULE_1__node_modules_material_ripple_index__["a" /* MDCRipple */].attachTo(this.control);
+			}
+		}
+		// Build the className
 
-  }, {
-    key: "buildClassName",
-    value: function buildClassName(props) {
-      this.classText = "mdc-" + this.componentName;
-      for (var propKey in this.props) {
-        var prop = this.props[propKey];
-        if (typeof prop === "boolean" && prop) {
-          if (this._mdcProps.indexOf(propKey) !== -1) {
-            this.classText += " mdc-" + this.componentName + "--" + propKey;
-          }
-        }
-      }
-    }
-  }, {
-    key: "getClassName",
-    value: function getClassName(element) {
-      if (element && element.attributes.className) {
-        return this.classText + " " + element.attributes.className;
-      }
-      return this.classText;
-    }
-  }, {
-    key: "getAutoInitNames",
-    value: function getAutoInitNames() {
-      return this.autoInitText;
-    }
-    // Components must implement this method for their specific DOM structure
+	}, {
+		key: "buildClassName",
+		value: function buildClassName(props) {
+			this.classText = "mdc-" + this.componentName;
+			for (var propKey in this.props) {
+				var prop = this.props[propKey];
+				if (typeof prop === "boolean" && prop) {
+					if (this._mdcProps.indexOf(propKey) !== -1) {
+						this.classText += " mdc-" + this.componentName + "--" + propKey;
+					}
+				}
+			}
+		}
+	}, {
+		key: "getClassName",
+		value: function getClassName(element) {
+			if (element && element.attributes.className) {
+				return this.classText + " " + element.attributes.className;
+			}
+			return this.classText;
+		}
+	}, {
+		key: "getAutoInitNames",
+		value: function getAutoInitNames() {
+			return this.autoInitText;
+		}
+		// Components must implement this method for their specific DOM structure
 
-  }, {
-    key: "materialDom",
-    value: function materialDom(props) {
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "div",
-        props,
-        props.children
-      );
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      this.buildClassName();
-      // Fetch a VNode
-      var element = this.materialDom(this.props);
-      var autoInits = this.getAutoInitNames();
-      // Fix for className
-      element.attributes.class = this.getClassName(element);
-      // Clean this shit of proxy attributes
-      this._mdcProps.forEach(function (prop) {
-        delete element.attributes[prop];
-      });
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				props,
+				props.children
+			);
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			this.buildClassName();
+			// Fetch a VNode
+			var element = this.materialDom(this.props);
+			var autoInits = this.getAutoInitNames();
+			// Fix for className
+			element.attributes.class = this.getClassName(element);
+			// Clean this shit of proxy attributes
+			this._mdcProps.forEach(function (prop) {
+				delete element.attributes[prop];
+			});
 
-      return element;
-    }
-  }]);
+			return element;
+		}
+	}]);
 
-  return MaterialComponent;
+	return MaterialComponent;
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = MaterialComponent;
@@ -1488,39 +1488,39 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var Fab = function (_MaterialComponent) {
-  _inherits(Fab, _MaterialComponent);
+	_inherits(Fab, _MaterialComponent);
 
-  function Fab() {
-    _classCallCheck(this, Fab);
+	function Fab() {
+		_classCallCheck(this, Fab);
 
-    var _this = _possibleConstructorReturn(this, (Fab.__proto__ || Object.getPrototypeOf(Fab)).call(this));
+		var _this = _possibleConstructorReturn(this, (Fab.__proto__ || Object.getPrototypeOf(Fab)).call(this));
 
-    _this.componentName = "fab";
-    _this._mdcProps = ["mini", "plain"];
-    return _this;
-  }
+		_this.componentName = "fab";
+		_this._mdcProps = ["mini", "plain"];
+		return _this;
+	}
 
-  _createClass(Fab, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      _get(Fab.prototype.__proto__ || Object.getPrototypeOf(Fab.prototype), "attachRipple", this).call(this);
-    }
-  }, {
-    key: "materialDom",
-    value: function materialDom(props) {
-      var _this2 = this;
+	_createClass(Fab, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			_get(Fab.prototype.__proto__ || Object.getPrototypeOf(Fab.prototype), "attachRipple", this).call(this);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			var _this2 = this;
 
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "button",
-        _extends({}, props, { ref: function ref(control) {
-            return _this2.control = control;
-          } }),
-        props.children
-      );
-    }
-  }]);
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"button",
+				_extends({}, props, { ref: function ref(control) {
+						return _this2.control = control;
+					} }),
+				props.children
+			);
+		}
+	}]);
 
-  return Fab;
+	return Fab;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = Fab;
@@ -1551,29 +1551,29 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var Icon = function (_MaterialComponent) {
-  _inherits(Icon, _MaterialComponent);
+	_inherits(Icon, _MaterialComponent);
 
-  function Icon() {
-    _classCallCheck(this, Icon);
+	function Icon() {
+		_classCallCheck(this, Icon);
 
-    var _this = _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).call(this));
+		var _this = _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).call(this));
 
-    _this.componentName = "icon";
-    return _this;
-  }
+		_this.componentName = "icon";
+		return _this;
+	}
 
-  _createClass(Icon, [{
-    key: "materialDom",
-    value: function materialDom(props) {
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "i",
-        _extends({}, props, { className: "material-icons" }),
-        props.icon
-      );
-    }
-  }]);
+	_createClass(Icon, [{
+		key: "materialDom",
+		value: function materialDom(props) {
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"i",
+				_extends({}, props, { className: "material-icons" }),
+				props.icon
+			);
+		}
+	}]);
 
-  return Icon;
+	return Icon;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = Icon;
@@ -1604,34 +1604,34 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var Switch = function (_MaterialComponent) {
-  _inherits(Switch, _MaterialComponent);
+	_inherits(Switch, _MaterialComponent);
 
-  function Switch() {
-    _classCallCheck(this, Switch);
+	function Switch() {
+		_classCallCheck(this, Switch);
 
-    var _this = _possibleConstructorReturn(this, (Switch.__proto__ || Object.getPrototypeOf(Switch)).call(this));
+		var _this = _possibleConstructorReturn(this, (Switch.__proto__ || Object.getPrototypeOf(Switch)).call(this));
 
-    _this.componentName = "switch";
-    return _this;
-  }
+		_this.componentName = "switch";
+		return _this;
+	}
 
-  _createClass(Switch, [{
-    key: "materialDom",
-    value: function materialDom(props) {
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "div",
-        _extends({ "class": "mdc-switch" }, props),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", { type: "checkbox", id: "basic-switch", "class": "mdc-switch__native-control" }),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          "div",
-          { "class": "mdc-switch__background" },
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-switch__knob" })
-        )
-      );
-    }
-  }]);
+	_createClass(Switch, [{
+		key: "materialDom",
+		value: function materialDom(props) {
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				_extends({ "class": "mdc-switch" }, props),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", { type: "checkbox", id: "basic-switch", "class": "mdc-switch__native-control" }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"div",
+					{ "class": "mdc-switch__background" },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-switch__knob" })
+				)
+			);
+		}
+	}]);
 
-  return Switch;
+	return Switch;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = Switch;
@@ -1657,6 +1657,7 @@ var Switch = function (_MaterialComponent) {
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__Icon_Icon__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_6__Radio_Radio__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_7__Textfield_Textfield__["a"]; });
+
 
 
 
@@ -1708,52 +1709,52 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var Snackbar = function (_MaterialComponent) {
-  _inherits(Snackbar, _MaterialComponent);
+	_inherits(Snackbar, _MaterialComponent);
 
-  function Snackbar() {
-    _classCallCheck(this, Snackbar);
+	function Snackbar() {
+		_classCallCheck(this, Snackbar);
 
-    var _this = _possibleConstructorReturn(this, (Snackbar.__proto__ || Object.getPrototypeOf(Snackbar)).call(this));
+		var _this = _possibleConstructorReturn(this, (Snackbar.__proto__ || Object.getPrototypeOf(Snackbar)).call(this));
 
-    _this.componentName = "snackbar";
-    return _this;
-  }
+		_this.componentName = "snackbar";
+		return _this;
+	}
 
-  _createClass(Snackbar, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.MDComponent = __WEBPACK_IMPORTED_MODULE_2__node_modules_material_snackbar___["a" /* MDCSnackbar */].attachTo(this.control);
-    }
-  }, {
-    key: "materialDom",
-    value: function materialDom(props) {
-      var _this2 = this;
+	_createClass(Snackbar, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.MDComponent = __WEBPACK_IMPORTED_MODULE_2__node_modules_material_snackbar___["a" /* MDCSnackbar */].attachTo(this.control);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			var _this2 = this;
 
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "div",
-        {
-          "class": "mdc-snackbar",
-          "aria-live": "assertive",
-          "aria-atomic": "true",
-          "aria-hidden": "true",
-          ref: function ref(control) {
-            return _this2.control = control;
-          }
-        },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-snackbar__text" }),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          "div",
-          { "class": "mdc-snackbar__action-wrapper" },
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("button", {
-            type: "button",
-            "class": "mdc-button mdc-snackbar__action-button"
-          })
-        )
-      );
-    }
-  }]);
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				{
+					"class": "mdc-snackbar",
+					"aria-live": "assertive",
+					"aria-atomic": "true",
+					"aria-hidden": "true",
+					ref: function ref(control) {
+						return _this2.control = control;
+					}
+				},
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-snackbar__text" }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"div",
+					{ "class": "mdc-snackbar__action-wrapper" },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("button", {
+						type: "button",
+						"class": "mdc-button mdc-snackbar__action-button"
+					})
+				)
+			);
+		}
+	}]);
 
-  return Snackbar;
+	return Snackbar;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = Snackbar;
@@ -2769,44 +2770,44 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var Radio = function (_MaterialComponent) {
-  _inherits(Radio, _MaterialComponent);
+	_inherits(Radio, _MaterialComponent);
 
-  function Radio() {
-    _classCallCheck(this, Radio);
+	function Radio() {
+		_classCallCheck(this, Radio);
 
-    var _this = _possibleConstructorReturn(this, (Radio.__proto__ || Object.getPrototypeOf(Radio)).call(this));
+		var _this = _possibleConstructorReturn(this, (Radio.__proto__ || Object.getPrototypeOf(Radio)).call(this));
 
-    _this.componentName = "radio";
-    return _this;
-  }
+		_this.componentName = "radio";
+		return _this;
+	}
 
-  _createClass(Radio, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.MDComponent = __WEBPACK_IMPORTED_MODULE_2__node_modules_material_radio___["a" /* MDCRadio */].attachTo(this.control);
-    }
-  }, {
-    key: "materialDom",
-    value: function materialDom(props) {
-      var _this2 = this;
+	_createClass(Radio, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.MDComponent = __WEBPACK_IMPORTED_MODULE_2__node_modules_material_radio___["a" /* MDCRadio */].attachTo(this.control);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			var _this2 = this;
 
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "div",
-        { "class": "mdc-radio", ref: function ref(control) {
-            _this2.control = control;
-          } },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ "class": "mdc-radio__native-control", type: "radio" }, props, { name: "radios" })),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          "div",
-          { "class": "mdc-radio__background" },
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-radio__outer-circle" }),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-radio__inner-circle" })
-        )
-      );
-    }
-  }]);
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				{ "class": "mdc-radio", ref: function ref(control) {
+						_this2.control = control;
+					} },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ "class": "mdc-radio__native-control", type: "radio" }, props, { name: "radios" })),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"div",
+					{ "class": "mdc-radio__background" },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-radio__outer-circle" }),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-radio__inner-circle" })
+				)
+			);
+		}
+	}]);
 
-  return Radio;
+	return Radio;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = Radio;
@@ -3105,42 +3106,42 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Fab = function (_MaterialComponent) {
-  _inherits(Fab, _MaterialComponent);
+	_inherits(Fab, _MaterialComponent);
 
-  function Fab() {
-    _classCallCheck(this, Fab);
+	function Fab() {
+		_classCallCheck(this, Fab);
 
-    var _this = _possibleConstructorReturn(this, (Fab.__proto__ || Object.getPrototypeOf(Fab)).call(this));
+		var _this = _possibleConstructorReturn(this, (Fab.__proto__ || Object.getPrototypeOf(Fab)).call(this));
 
-    _this.componentName = "textfield";
-    return _this;
-  }
+		_this.componentName = "textfield";
+		return _this;
+	}
 
-  _createClass(Fab, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.MDComponent = new __WEBPACK_IMPORTED_MODULE_2__node_modules_material_textfield___["a" /* MDCTextfield */](this.control);
-    }
-  }, {
-    key: "materialDom",
-    value: function materialDom(props) {
-      var _this2 = this;
+	_createClass(Fab, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.MDComponent = new __WEBPACK_IMPORTED_MODULE_2__node_modules_material_textfield___["a" /* MDCTextfield */](this.control);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			var _this2 = this;
 
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "div",
-        { "class": "mdc-textfield", ref: function ref(control) {
-            return _this2.control = control;
-          } },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({
-          type: "text",
-          id: "textfield-no-js",
-          "class": "mdc-textfield__input"
-        }, props))
-      );
-    }
-  }]);
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				{ "class": "mdc-textfield", ref: function ref(control) {
+						return _this2.control = control;
+					} },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({
+					type: "text",
+					id: "textfield-no-js",
+					"class": "mdc-textfield__input"
+				}, props))
+			);
+		}
+	}]);
 
-  return Fab;
+	return Fab;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = Fab;
