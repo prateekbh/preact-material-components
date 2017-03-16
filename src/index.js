@@ -6,6 +6,7 @@ import Switch from './Switch/Switch';
 import Snackbar from './Snackbar/Snackbar';
 import Radio from './Radio/Radio';
 import Textfield from './Textfield/Textfield';
+
 export {
 	Button,
 	Checkbox,
@@ -15,4 +16,4 @@ export {
 	Icon,
 	Radio,
 	Textfield
-}
+};
