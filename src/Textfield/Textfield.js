@@ -15,7 +15,6 @@ export default class Fab extends MaterialComponent {
 			<div class="mdc-textfield" ref={control => this.control = control}>
 				<input
 					type="text"
-					id="textfield-no-js"
 					class="mdc-textfield__input"
 					{...props}
 				/>

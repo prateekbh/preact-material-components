@@ -29,10 +29,12 @@ export default class MaterialComponent extends Component {
 	buildClassName(props){
 		this.classText = "mdc-" + this.componentName;
 		for (let propKey in this.props) {
-			const prop = this.props[propKey];
-			if (typeof prop === "boolean" && prop) {
-				if (this._mdcProps.indexOf(propKey) !== -1) {
-					this.classText += " mdc-" + this.componentName + "--" + propKey;
+			if (this.props.hasOwnProperty(propKey)) {
+				const prop = this.props[propKey];
+				if (typeof prop === "boolean" && prop) {
+					if (this._mdcProps.indexOf(propKey) !== -1) {
+						this.classText += " mdc-" + this.componentName + "--" + propKey;
+					}
 				}
 			}
 		}
@@ -61,7 +63,6 @@ export default class MaterialComponent extends Component {
 		this._mdcProps.forEach(prop => {
 			delete element.attributes[prop];
 		});
-
 		return element;
 	}
 }
