@@ -1419,41 +1419,41 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var Button = function (_MaterialComponent) {
-  _inherits(Button, _MaterialComponent);
+	_inherits(Button, _MaterialComponent);
 
-  function Button() {
-    _classCallCheck(this, Button);
+	function Button() {
+		_classCallCheck(this, Button);
 
-    var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
+		var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
 
-    _this.componentName = 'button';
-    _this._mdcProps = ['dense', 'raised', 'compact', 'primary', 'accent'];
-    return _this;
-  }
+		_this.componentName = "button";
+		_this._mdcProps = ["dense", "raised", "compact", "primary", "accent"];
+		return _this;
+	}
 
-  _createClass(Button, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      _get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), 'attachRipple', this).call(this);
-    }
-  }, {
-    key: 'materialDom',
-    value: function materialDom(props) {
-      var _this2 = this;
+	_createClass(Button, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			_get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), "attachRipple", this).call(this);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			var _this2 = this;
 
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        'button',
-        _extends({
-          ref: function ref(control) {
-            _this2.control = control;
-          }
-        }, props),
-        this.props.children
-      );
-    }
-  }]);
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"button",
+				_extends({
+					ref: function ref(control) {
+						_this2.control = control;
+					}
+				}, props),
+				this.props.children
+			);
+		}
+	}]);
 
-  return Button;
+	return Button;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = Button;
