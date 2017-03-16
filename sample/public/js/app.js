@@ -1409,12 +1409,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-/** @prop dense = false
- *	@prop raised = false
- *	@prop compact = false
- *	@prop primary = false
- *	@prop accent = false
- *	@prop disabled = false
+/**
+ *  @prop dense = false
+ *  @prop raised = false
+ *  @prop compact = false
+ *  @prop primary = false
+ *  @prop accent = false
+ *  @prop disabled = false
  */
 
 var Button = function (_MaterialComponent) {
@@ -1425,26 +1426,28 @@ var Button = function (_MaterialComponent) {
 
     var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
 
-    _this.componentName = "button";
-    _this._mdcProps = ["dense", "raised", "compact", "primary", "accent"];
+    _this.componentName = 'button';
+    _this._mdcProps = ['dense', 'raised', 'compact', 'primary', 'accent'];
     return _this;
   }
 
   _createClass(Button, [{
-    key: "componentDidMount",
+    key: 'componentDidMount',
     value: function componentDidMount() {
-      _get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), "attachRipple", this).call(this);
+      _get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), 'attachRipple', this).call(this);
     }
   }, {
-    key: "materialDom",
+    key: 'materialDom',
     value: function materialDom(props) {
       var _this2 = this;
 
       return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "button",
-        _extends({ ref: function ref(control) {
-            return _this2.control = control;
-          } }, props),
+        'button',
+        _extends({
+          ref: function ref(control) {
+            _this2.control = control;
+          }
+        }, props),
         this.props.children
       );
     }
