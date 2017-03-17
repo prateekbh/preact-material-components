@@ -8,6 +8,7 @@ import Radio from './Radio/Radio';
 import Textfield from './Textfield/Textfield';
 import Select from './Select/Select';
 import Card from './Card/Card';
+import Elevation from './Elevation/Elevation';
 export {
 	Button,
 	Checkbox,
@@ -18,5 +19,6 @@ export {
 	Radio,
 	Textfield,
 	Select,
-	Card
+	Card,
+	Elevation
 };
