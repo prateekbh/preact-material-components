@@ -17,7 +17,6 @@ export default class Snackbar extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<div
-				class="mdc-snackbar"
 				aria-live="assertive"
 				aria-atomic="true"
 				aria-hidden="true"

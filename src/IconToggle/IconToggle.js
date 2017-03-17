@@ -20,7 +20,7 @@ export default class IconToggle extends MaterialComponent {
 				ref={control => {
 					this.control = control;
 				}}
-				class="mdc-icon-toggle material-icons"
+				class="material-icons"
 				role="button"
 			>
 				favorite_border

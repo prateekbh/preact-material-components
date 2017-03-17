@@ -1,5 +1,17 @@
 import {h, Component} from 'preact';
-import {Button, Fab, Icon, Switch, Snackbar, Checkbox, Radio, Textfield, Select}  from '../src/';
+import {
+  Button,
+  Fab,
+  Icon,
+  Switch,
+  Snackbar,
+  Checkbox,
+  Radio,
+  Textfield,
+  Select,
+	Card
+} from "../src/";
+
 
 export default class Home extends Component {
 	render(){
@@ -27,7 +39,14 @@ export default class Home extends Component {
 					<Select.Option>Option1</Select.Option>
 				</Select>
 			</div>
-
+			<Card>
+				<Card.CardSupportingText>
+					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+				</Card.CardSupportingText>
+				<Card.Actions>
+						<Card.Action>Hello</Card.Action>
+				</Card.Actions>
+			</Card>
 		</div>);
 	}
 }

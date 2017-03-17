@@ -7,7 +7,7 @@ import Snackbar from './Snackbar/Snackbar';
 import Radio from './Radio/Radio';
 import Textfield from './Textfield/Textfield';
 import Select from './Select/Select';
-
+import Card from './Card/Card';
 export {
 	Button,
 	Checkbox,
@@ -17,5 +17,6 @@ export {
 	Icon,
 	Radio,
 	Textfield,
-	Select
+	Select,
+	Card
 };
