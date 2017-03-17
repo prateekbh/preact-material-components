@@ -2,6 +2,10 @@ import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCTextfield } from "../../node_modules/@material/textfield/";
 
+/**
+ * @prop fullwidth = false
+ * @prop multiline = false
+ */
 export default class Fab extends MaterialComponent {
 	constructor() {
 		super();
@@ -9,6 +13,7 @@ export default class Fab extends MaterialComponent {
 		this.state = {
 			showFloatingLabel: false
 		};
+		this._mdcProps = ["fullwidth", "multiline"];
 	}
 	componentDidMount() {
 		this.setState({
