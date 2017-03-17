@@ -9,7 +9,8 @@ import {
   Radio,
   Textfield,
   Select,
-	Card
+	Card,
+	Elevation
 } from "../src/";
 
 
@@ -47,6 +48,9 @@ export default class Home extends Component {
 						<Card.Action>Hello</Card.Action>
 				</Card.Actions>
 			</Card>
+			<Elevation z3={true}>
+				hi
+			</Elevation>
 		</div>);
 	}
 }
