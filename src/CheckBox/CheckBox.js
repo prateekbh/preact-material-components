@@ -2,7 +2,7 @@ import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCCheckbox } from "../../node_modules/@material/checkbox/";
 
-/** @prop label = ''
+/**
  */
 export default class Checkbox extends MaterialComponent {
 	constructor() {
@@ -14,8 +14,7 @@ export default class Checkbox extends MaterialComponent {
 	}
 	materialDom(props) {
 		return (
-			<div class="mdc-form-field" ref={control=>{this.control = control;}}>
-				<div class="mdc-checkbox">
+				<div class="mdc-checkbox" ref={control=>{this.control = control;}}>
 					<input
 						type="checkbox"
 						class="mdc-checkbox__native-control"
@@ -38,9 +37,6 @@ export default class Checkbox extends MaterialComponent {
 						<div class="mdc-checkbox__mixedmark" />
 					</div>
 				</div>
-
-				<label for="my-checkbox">{props.label}</label>
-			</div>
 		);
 	}
 }
