@@ -17,7 +17,7 @@ Smaller bundles FTW!!!
 * [ ] drawer
 * [x] elevation
 * [x] fab
-* [ ] form-field
+* [x] form-field
 * [ ] icon-toggle
 * [ ] list
 * [ ] menu
