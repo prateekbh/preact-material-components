@@ -10,25 +10,41 @@ You can use `n` number of components without taking the weight of any extra code
 Smaller bundles FTW!!!
 
 ## Components
-* [x] button
-* [x] card
-* [x] checkbox
-* [ ] dialog
-* [ ] drawer
-* [x] elevation
-* [x] fab
-* [x] form-field
-* [ ] icon-toggle
-* [ ] list
-* [ ] menu
-* [x] radio
-* [ ] select
-* [x] snackbar
-* [x] switch
-* [x] textfield
-* [ ] theme
-* [x] toolbar
+- 👍 button
 
+- 👍 card
+
+- 👍 checkbox
+
+- 👍 dialog
+
+- 👎🏽 drawer
+
+- 👍 elevation
+
+- 👍 fab
+
+- 👍 form-field
+
+- 👎🏽 icon-toggle
+
+- 👎🏽 list
+
+- 👎🏽 menu
+
+- 👍 radio
+
+- 👎🏽 select
+
+- 👍 snackbar
+
+- 👍 switch
+
+- 👍 textfield
+
+- 👎🏽 theme
+
+- 👍 toolbar
 
 ## Warning
 THIS REPO IS IN VERY EARLY STAGE AND HIGHLY LIKELY TO BREAK.

@@ -10,15 +10,18 @@ import {
   Textfield,
   Select,
 	Card,
-	Elevation
+	Elevation,
+	Dialog
 } from "../src/";
 
 
 export default class Home extends Component {
 	render(){
-		console.log(Select);
 		return (<div>
-			<Button raised={true} accent={true} ripple={true}>hi</Button>
+			<Button raised={true} accent={true} ripple={true}
+				onClick={e=>{
+					this.dlg.MDComponent.show();
+				}}>hi</Button>
 			<div>
 				<Fab mini={true} ripple={true}>
 					<Icon icon='share'/>
@@ -51,6 +54,14 @@ export default class Home extends Component {
 			<Elevation z3={true}>
 				hi
 			</Elevation>
+			<Dialog ref={dlg=>{this.dlg=dlg;}}>
+				<Dialog.DialogHeader>Hello Dialog</Dialog.DialogHeader>
+				<Dialog.DialogBody>What is this Dialog stuff??</Dialog.DialogBody>
+				<Dialog.DialogFooter>
+					<Dialog.DialogFooterButton>No</Dialog.DialogFooterButton>
+					<Dialog.DialogFooterButton accept={true}>Yes</Dialog.DialogFooterButton>
+				</Dialog.DialogFooter>
+			</Dialog>
 		</div>);
 	}
 }
