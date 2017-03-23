@@ -9,6 +9,8 @@ import Textfield from './Textfield/Textfield';
 import Select from './Select/Select';
 import Card from './Card/Card';
 import Elevation from './Elevation/Elevation';
+import FormField from './FormField/FormField';
+import Dialog from './Dialog/Dialog';
 export {
 	Button,
 	Checkbox,
@@ -20,5 +22,7 @@ export {
 	Textfield,
 	Select,
 	Card,
-	Elevation
+	Elevation,
+	FormField,
+	Dialog
 };
