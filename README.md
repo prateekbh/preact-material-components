@@ -1,4 +1,6 @@
 # preact-material-components [Work In Progress]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/prateekbh/preact-material-components.svg)](https://greenkeeper.io/)
 preact components for [material-components-web](https://github.com/material-components/material-components-web)
 
 ---
