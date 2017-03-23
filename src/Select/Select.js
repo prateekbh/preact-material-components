@@ -15,7 +15,7 @@ class Select extends MaterialComponent {
 			<div role="listbox" tabindex="0" {...props} ref={control=>{this.control = control;}}>
 				<span class="mdc-select__selected-text">{props.hintText}</span>
 				<div class="mdc-simple-menu mdc-select__menu">
-					<ul class="mdc-list mdc-simple-menu__items">
+					<ul class="mdc-list mdc-simple-menu__items ">
 						{props.children}
 					</ul>
 				</div>
@@ -24,20 +24,20 @@ class Select extends MaterialComponent {
 	}
 }
 
-class Option extends MaterialComponent {
+class ListItem extends MaterialComponent {
 	constructor() {
 		super();
-		this.componentName = "option";
+		this.componentName = "list-item";
 	}
 	materialDom(props) {
 		return (
-			<li class="mdc-list-item" role="option" {...props} tabindex="0">
+			<li role="option" {...props} tabindex="0">
 				{props.children}
 			</li>
 		);
 	}
 }
 
-Select.Option = Option;
+Select.ListItem = ListItem;
 
 export default Select;
