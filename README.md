@@ -34,7 +34,7 @@ Smaller bundles FTW!!!
 
 - 👍 radio
 
-- 👎🏽 select
+- 👍 select
 
 - 👍 snackbar
 

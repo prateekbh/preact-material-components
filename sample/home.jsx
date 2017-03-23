@@ -8,11 +8,12 @@ import {
   Checkbox,
   Radio,
   Textfield,
-  Select,
 	Card,
 	Elevation,
 	Dialog
 } from "../src/";
+
+import Select from "../src/Select/Select";
 
 
 export default class Home extends Component {
@@ -38,11 +39,6 @@ export default class Home extends Component {
 				<Radio id="rd" ref={radio=>this.radio=radio}/> <label for="rd">Radio Box</label>
 			</div>
 			<Textfield label="hello" fullwidth={true} required/>
-			<div>
-				<Select hintText="Choose your side buddy">
-					<Select.Option>Option1</Select.Option>
-				</Select>
-			</div>
 			<Card>
 				<Card.CardSupportingText>
 					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -62,6 +58,12 @@ export default class Home extends Component {
 					<Dialog.DialogFooterButton accept={true}>Yes</Dialog.DialogFooterButton>
 				</Dialog.DialogFooter>
 			</Dialog>
+			<Select hintText="Select an option">
+				<Select.ListItem>opt1</Select.ListItem>
+				<Select.ListItem>opt2</Select.ListItem>
+				<Select.ListItem>opt3</Select.ListItem>
+				<Select.ListItem>opt4</Select.ListItem>
+			</Select>
 		</div>);
 	}
 }
