@@ -1,7 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCSelect } from "../../node_modules/@material/select/";
-
+import List from "../List/List";
 class Select extends MaterialComponent {
 	constructor() {
 		super();
@@ -24,20 +24,6 @@ class Select extends MaterialComponent {
 	}
 }
 
-class ListItem extends MaterialComponent {
-	constructor() {
-		super();
-		this.componentName = "list-item";
-	}
-	materialDom(props) {
-		return (
-			<li role="option" {...props} tabindex="0">
-				{props.children}
-			</li>
-		);
-	}
-}
-
-Select.ListItem = ListItem;
+Select.ListItem = List.ListItem;
 
 export default Select;
