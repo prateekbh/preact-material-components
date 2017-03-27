@@ -11,6 +11,7 @@ import Card from './Card/Card';
 import Elevation from './Elevation/Elevation';
 import FormField from './FormField/FormField';
 import Dialog from './Dialog/Dialog';
+import List from './List/List';
 export {
 	Button,
 	Checkbox,
@@ -24,5 +25,6 @@ export {
 	Card,
 	Elevation,
 	FormField,
-	Dialog
+	Dialog,
+	List
 };
