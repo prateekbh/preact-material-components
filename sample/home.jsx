@@ -10,7 +10,8 @@ import {
   Textfield,
 	Card,
 	Elevation,
-	Dialog
+	Dialog,
+	List
 } from "../src/";
 
 import Select from "../src/Select/Select";
@@ -64,6 +65,11 @@ export default class Home extends Component {
 				<Select.ListItem>opt3</Select.ListItem>
 				<Select.ListItem>opt4</Select.ListItem>
 			</Select>
+			<List>
+				<List.ListItem>Item1</List.ListItem>
+				<List.ListItem>Item2</List.ListItem>
+				<List.ListItem>Item3</List.ListItem>
+			</List>
 		</div>);
 	}
 }
