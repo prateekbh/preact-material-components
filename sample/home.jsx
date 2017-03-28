@@ -70,6 +70,14 @@ export default class Home extends Component {
 				<List.ListItem>Item2</List.ListItem>
 				<List.ListItem>Item3</List.ListItem>
 			</List>
+
+			<hr/>
+
+			<List interactive={true}>
+				<List.LinkItem ripple={true} href="#">Item1</List.LinkItem>
+				<List.LinkItem ripple={true} href="#">Item2</List.LinkItem>
+				<List.LinkItem ripple={true} href="#">Item3</List.LinkItem>
+			</List>
 		</div>);
 	}
 }
