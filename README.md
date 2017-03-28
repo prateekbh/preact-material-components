@@ -28,7 +28,7 @@ Smaller bundles FTW!!!
 
 - 👎🏽 icon-toggle
 
-- 👍 list(currently nly supports single line text list)
+- 👍 list(currently only supports single line text list, with no start/end details)
 
 - 👎🏽 menu
 

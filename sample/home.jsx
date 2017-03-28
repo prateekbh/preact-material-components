@@ -11,7 +11,8 @@ import {
 	Card,
 	Elevation,
 	Dialog,
-	List
+	List,
+	Drawer
 } from "../src/";
 
 import Select from "../src/Select/Select";
@@ -20,9 +21,13 @@ import Select from "../src/Select/Select";
 export default class Home extends Component {
 	render(){
 		return (<div>
+			<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}}>
+				<Drawer.DrawerItem>Item1</Drawer.DrawerItem>
+				<Drawer.DrawerItem selected={true}>Item2</Drawer.DrawerItem>
+			</Drawer.TemporaryDrawer>
 			<Button raised={true} accent={true} ripple={true}
 				onClick={e=>{
-					this.dlg.MDComponent.show();
+					this.drawer.MDComponent.open = true;
 				}}>hi</Button>
 			<div>
 				<Fab mini={true} ripple={true}>
