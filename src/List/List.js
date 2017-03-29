@@ -4,6 +4,7 @@ import MaterialComponent from "../MaterialComponent";
 /**
  * @prop dense = false
  * @prop two-line = false
+ * @prop interactive = false
  */
 class List extends MaterialComponent {
 	constructor() {
@@ -11,15 +12,16 @@ class List extends MaterialComponent {
 		this.componentName = "list";
 		this._mdcProps = ["dense", "two-line"];
 	}
-	componentDidMount() {
-		super.attachRipple();
-	}
 	materialDom(props) {
-		return (
-			<ul class="mdc-list" {...props} ref={control => this.control = control}>
+		if (props.interactive) {
+			return (<nav ref={control => this.control = control}>
 				{props.children}
-			</ul>
-		);
+			</nav>);
+		}
+
+		return (<ul {...props} ref={control => this.control = control}>
+			{props.children}
+		</ul>);
 	}
 }
 
@@ -29,14 +31,28 @@ class ListItem extends MaterialComponent {
 		this.componentName = "list-item";
 	}
 	materialDom(props) {
-		return (
-			<li role="option" {...props} tabindex="0">
+		return (<li role="option" {...props} ref={control => this.control = control}>
 				{props.children}
-			</li>
-		);
+			</li>);
+	}
+}
+
+class LinkItem extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "list-item";
+	}
+	componentDidMount(){
+		super.attachRipple();
+	}
+	materialDom(props) {
+		return (<a role="option" {...props} ref={control => this.control = control}>
+				{props.children}
+			</a>);
 	}
 }
 
 List.ListItem = ListItem;
+List.LinkItem = LinkItem;
 
 export default List;
