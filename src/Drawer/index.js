@@ -13,18 +13,41 @@ class TemporaryDrawer extends MaterialComponent {
 	}
 	materialDom(props) {
 		return (
-			<aside className="mdc-typography" ref={control=>{this.control = control;}}>
+			<aside className="mdc-typography" ref={control=>{this.control = control;}} {...props}>
 				<nav class="mdc-temporary-drawer__drawer">
-					<header class="mdc-temporary-drawer__header">
-						<div class="mdc-temporary-drawer__header-content">
-							Header here
-						</div>
-					</header>
-					<nav id="icon-with-text-demo" class="mdc-temporary-drawer__content mdc-list">
-						{props.children}
-					</nav>
+					{props.children}
 				</nav>
 			</aside>
+		);
+	}
+}
+
+class TemporarytDrawerHeader extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "temporary-drawer__header";
+	}
+	materialDom(props) {
+		return (
+			<header class="mdc-temporary-drawer__header" ref={control=>{this.control = control;}} {...props}>
+				<div class="mdc-temporary-drawer__header-content">
+					{props.children}
+				</div>
+			</header>
+		);
+	}
+}
+
+class TemporarytDrawerContent extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "mdc-temporary-drawer__content";
+	}
+	materialDom(props) {
+		return (
+			<nav id="icon-with-text-demo" className="mdc-list" ref={control=>{this.control = control;}} {...props}>
+				{props.children}
+			</nav>
 		);
 	}
 }
@@ -60,7 +83,6 @@ class DrawerItem extends List.LinkItem {
 	}
 	materialDom(props){
 		const returnedNode = super.materialDom(props);
-		console.log(returnedNode);
 		/* Logic to add selected class */
 		if (props.selected) {
 			returnedNode.attributes['className'] = 'mdc-temporary-drawer--selected mdc-permanent-drawer--selected';
@@ -72,6 +94,8 @@ class DrawerItem extends List.LinkItem {
 let Drawer = {};
 
 Drawer.DrawerItem = DrawerItem;
+Drawer.TemporarytDrawerHeader = TemporarytDrawerHeader;
+Drawer.TemporarytDrawerContent = TemporarytDrawerContent;
 Drawer.TemporaryDrawer = TemporaryDrawer;
 Drawer.PermanentDrawer = PermanentDrawer;
 

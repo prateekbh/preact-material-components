@@ -18,7 +18,7 @@ Smaller bundles FTW!!!
 
 - 👍 dialog
 
-- 👎🏽 drawer
+- 👍 drawer
 
 - 👍 elevation
 

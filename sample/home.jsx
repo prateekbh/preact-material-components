@@ -22,6 +22,7 @@ export default class Home extends Component {
 	render(){
 		return (<div>
 			<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}}>
+				<Drawer.TemporarytDrawerHeader>Hello Header1</Drawer.TemporarytDrawerHeader>
 				<Drawer.DrawerItem>Item1</Drawer.DrawerItem>
 				<Drawer.DrawerItem selected={true}>Item2</Drawer.DrawerItem>
 			</Drawer.TemporaryDrawer>
