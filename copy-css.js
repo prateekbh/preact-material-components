@@ -1,4 +1,6 @@
 /*globals require, __dirname*/
+'use strict';
+
 const cp = require('cp');
 const path = require('path');
 
