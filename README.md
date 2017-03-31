@@ -9,6 +9,7 @@ You can use `n` number of components without taking the weight of any extra code
 
 Smaller bundles FTW!!!
 
+
 ## Components
 - 👍 button
 
@@ -18,7 +19,7 @@ Smaller bundles FTW!!!
 
 - 👍 dialog
 
-- 👎🏽 drawer
+- 👍 drawer
 
 - 👍 elevation
 
@@ -28,7 +29,7 @@ Smaller bundles FTW!!!
 
 - 👎🏽 icon-toggle
 
-- 👍 list(currently nly supports single line text list)
+- 👍 list(currently only supports single line text list, with no start/end details)
 
 - 👎🏽 menu
 

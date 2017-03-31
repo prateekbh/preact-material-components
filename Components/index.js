@@ -12,6 +12,7 @@ import Elevation from './Elevation/Elevation';
 import FormField from './FormField/FormField';
 import Dialog from './Dialog/Dialog';
 import List from './List/List';
+import Drawer from './Drawer';
 export {
 	Button,
 	Checkbox,
@@ -26,5 +27,6 @@ export {
 	Elevation,
 	FormField,
 	Dialog,
-	List
+	List,
+	Drawer
 };
