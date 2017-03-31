@@ -1,0 +1,668 @@
+/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/** MDC Ripple keyframes are split into their own file so that _mixins.scss can rely on them. */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@-webkit-keyframes mdc-ripple-fg-radius-in {
+  from {
+    -webkit-transform: translate(0) scale(1);
+            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  to {
+    -webkit-transform: translate(0) scale(0);
+            transform: translate(0) scale(0);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+@keyframes mdc-ripple-fg-radius-in {
+  from {
+    -webkit-transform: translate(0) scale(1);
+            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  to {
+    -webkit-transform: translate(0) scale(0);
+            transform: translate(0) scale(0);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-out {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 0; } }
+
+@keyframes mdc-ripple-fg-opacity-out {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
+  from {
+    -webkit-transform: 0;
+            transform: 0;
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
+  from {
+    -webkit-transform: 0;
+            transform: 0;
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Applies the correct theme color style to the specified property.
+ * $property is typically color or background-color, but can be any CSS property that accepts color values.
+ * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).
+ */
+/**
+ * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.
+ * Should provide the $root-selector option if applied to anything other than the root selector.
+ * When used with a modifier class, provide a second argument of `true` for the $compound parameter
+ * to specify that this should be attached as a compound class.
+ *
+ * Usage example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   color: black;
+ *
+ *   @include mdc-theme-dark {
+ *     color: white;
+ *   }
+ *
+ *   &__bar {
+ *     background: black;
+ *
+ *     @include mdc-theme-dark(".mdc-foo") {
+ *       background: white;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--disabled {
+ *   opacity: .38;
+ *
+ *   @include mdc-theme-dark(".mdc-foo", true) {
+ *     opacity: .5;
+ *   }
+ * }
+ * ```
+ */
+.mdc-radio {
+  --mdc-ripple-left: 0;
+  --mdc-ripple-top: 0;
+  --mdc-ripple-fg-size: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+  --mdc-ripple-xfo-x: center;
+  --mdc-ripple-xfo-y: center;
+  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
+  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+  --mdc-ripple-fg-approx-xf: 0;
+  will-change: transform, opacity;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  cursor: pointer;
+  will-change: opacity, transform, border-color, background-color, color; }
+  .mdc-radio:not(.mdc-ripple-upgraded):hover::before, .mdc-radio:not(.mdc-ripple-upgraded):focus::before, .mdc-radio:not(.mdc-ripple-upgraded):active::after {
+    -webkit-transition-duration: 85ms;
+            transition-duration: 85ms;
+    opacity: .6; }
+  .mdc-radio::before {
+    background-color: rgba(63, 81, 181, 0.14);
+    position: absolute;
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+    @supports (background-color: color(green a(10%))) {
+      .mdc-radio::before {
+        background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }
+  .mdc-radio.mdc-ripple-upgraded::before {
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-radio.mdc-ripple-upgraded--background-active::before {
+    opacity: .99999; }
+  .mdc-radio.mdc-ripple-upgraded--background-active:active::before {
+    -webkit-transition-duration: 600ms;
+            transition-duration: 600ms; }
+  .mdc-radio.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    -webkit-transition-duration: 120ms;
+            transition-duration: 120ms;
+    opacity: 1; }
+  .mdc-radio.mdc-ripple-upgraded--unbounded::before {
+    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
+    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-radio::after {
+    background-color: rgba(63, 81, 181, 0.14);
+    position: absolute;
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+    @supports (background-color: color(green a(10%))) {
+      .mdc-radio::after {
+        background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }
+  .mdc-radio.mdc-ripple-upgraded::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    opacity: 0; }
+  .mdc-radio:not(.mdc-ripple-upgraded--unbounded)::after {
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-radio.mdc-ripple-upgraded--unbounded::after {
+    top: 0;
+    top: var(--mdc-ripple-top, 0);
+    left: 0;
+    left: var(--mdc-ripple-left, 0);
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-radio.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+  .mdc-radio.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
+    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+    transition: opacity 110ms linear, transform 0 linear 80ms;
+    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    opacity: 1; }
+  .mdc-radio.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-radio::before, .mdc-radio::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .mdc-radio.mdc-ripple-upgraded .mdc-radio__background::before {
+    content: none; }
+  .mdc-radio__background {
+    display: inline-block;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    box-sizing: border-box; }
+    .mdc-radio__background::before {
+      background-color: #3f51b5;
+      background-color: var(--mdc-theme-primary, #3f51b5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transform: scale(0, 0);
+              transform: scale(0, 0);
+      -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+      transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+      transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+      transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+      border-radius: 50%;
+      content: "";
+      opacity: 0;
+      pointer-events: none; }
+  .mdc-radio__outer-circle {
+    border-color: rgba(0, 0, 0, 0.54);
+    border-color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: border-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    transition: border-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    box-sizing: border-box; }
+    .mdc-radio--theme-dark .mdc-radio__outer-circle,
+    .mdc-theme--dark .mdc-radio__outer-circle {
+      border-color: rgba(255, 255, 255, 0.7);
+      border-color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
+  .mdc-radio__inner-circle {
+    background-color: rgba(0, 0, 0, 0.54);
+    background-color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    -webkit-transition: background-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    transition: background-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    transition: transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    transition: transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    border-radius: 50%;
+    box-sizing: border-box; }
+    .mdc-radio--theme-dark .mdc-radio__inner-circle,
+    .mdc-theme--dark .mdc-radio__inner-circle {
+      background-color: rgba(255, 255, 255, 0.7);
+      background-color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
+  .mdc-radio__native-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: inherit;
+    opacity: 0;
+    z-index: 1; }
+
+.mdc-radio__native-control:checked + .mdc-radio__background,
+.mdc-radio__native-control:disabled + .mdc-radio__background {
+  -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }
+  .mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle,
+  .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle {
+    -webkit-transition: border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+    transition: border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }
+  .mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle,
+  .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle {
+    -webkit-transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+    transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+    transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+    transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }
+
+.mdc-radio--disabled {
+  cursor: default;
+  pointer-events: none; }
+
+.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle {
+  border-color: #3f51b5;
+  border-color: var(--mdc-theme-primary, #3f51b5); }
+
+.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle {
+  background-color: #3f51b5;
+  background-color: var(--mdc-theme-primary, #3f51b5);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }
+
+.mdc-radio__native-control:disabled + .mdc-radio__background,
+fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
+[aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background {
+  cursor: default; }
+  .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle,
+  fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle,
+  [aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {
+    border-color: rgba(0, 0, 0, 0.26); }
+    .mdc-radio--theme-dark .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle,
+    .mdc-theme--dark .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle, .mdc-radio--theme-dark
+    fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle,
+    .mdc-theme--dark
+    fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle, .mdc-radio--theme-dark
+    [aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle,
+    .mdc-theme--dark
+    [aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {
+      border-color: rgba(255, 255, 255, 0.3); }
+  .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle,
+  fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle,
+  [aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {
+    background-color: rgba(0, 0, 0, 0.26); }
+    .mdc-radio--theme-dark .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle,
+    .mdc-theme--dark .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle, .mdc-radio--theme-dark
+    fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle,
+    .mdc-theme--dark
+    fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle, .mdc-radio--theme-dark
+    [aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle,
+    .mdc-theme--dark
+    [aria-disabled="true"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {
+      background-color: rgba(255, 255, 255, 0.3); }
+
+.mdc-radio__native-control:focus + .mdc-radio__background::before {
+  -webkit-transform: scale(2, 2);
+          transform: scale(2, 2);
+  -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+  opacity: .26; }

@@ -1,0 +1,599 @@
+/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* TODO(sgomes): Figure out what to do about desktop font sizes. */
+/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Applies the correct theme color style to the specified property.
+ * $property is typically color or background-color, but can be any CSS property that accepts color values.
+ * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).
+ */
+/**
+ * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.
+ * Should provide the $root-selector option if applied to anything other than the root selector.
+ * When used with a modifier class, provide a second argument of `true` for the $compound parameter
+ * to specify that this should be attached as a compound class.
+ *
+ * Usage example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   color: black;
+ *
+ *   @include mdc-theme-dark {
+ *     color: white;
+ *   }
+ *
+ *   &__bar {
+ *     background: black;
+ *
+ *     @include mdc-theme-dark(".mdc-foo") {
+ *       background: white;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--disabled {
+ *   opacity: .38;
+ *
+ *   @include mdc-theme-dark(".mdc-foo", true) {
+ *     opacity: .5;
+ *   }
+ * }
+ * ```
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.
+ *
+ * Usage Example:
+ * ```scss
+ * .mdc-foo {
+ *   position: absolute;
+ *   left: 0;
+ *
+ *   @include mdc-rtl {
+ *     left: auto;
+ *     right: 0;
+ *   }
+ *
+ *   &__bar {
+ *     margin-left: 4px;
+ *     @include mdc-rtl(".mdc-foo") {
+ *       margin-left: auto;
+ *       margin-right: 4px;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--mod {
+ *   padding-left: 4px;
+ *
+ *   @include mdc-rtl {
+ *     padding-left: auto;
+ *     padding-right: 4px;
+ *   }
+ * }
+ * ```
+ *
+ * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work
+ * in most cases, it will in some cases lead to false negatives, e.g.
+ *
+ * ```html
+ * <html dir="rtl">
+ *   <!-- ... -->
+ *   <div dir="ltr">
+ *     <div class="mdc-foo">Styled incorrectly as RTL!</div>
+ *   </div>
+ * </html>
+ * ```
+ *
+ * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.
+ */
+/**
+ * Takes a base box-model property - e.g. margin / border / padding - along with a default
+ * direction and value, and emits rules which apply the value to the
+ * "<base-property>-<default-direction>" property by default, but flips the direction
+ * when within an RTL context.
+ *
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, left, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 8px;
+ *     margin-left: 0;
+ *   }
+ * }
+ * ```
+ * whereas:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, right, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-right: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 0;
+ *     margin-left: 8px;
+ *   }
+ * }
+ * ```
+ *
+ * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,
+ * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, ".mdc-component")`.
+ *
+ * Note that this function will always zero out the original value in an RTL context. If you're
+ * trying to flip the values, use mdc-rtl-reflexive-property().
+ */
+/**
+ * Takes a base property and emits rules that assign <base-property>-left to <left-value> and
+ * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-property(margin, auto, 12px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: auto;
+ *   margin-right: 12px;
+ *
+ *   @include mdc-rtl {
+ *     margin-left: 12px;
+ *     margin-right: auto;
+ *   }
+ * }
+ * ```
+ *
+ * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.
+ */
+/**
+ * Takes an argument specifying a horizontal position property (either "left" or "right") as well
+ * as a value, and applies that value to the specified position in a LTR context, and flips it in a
+ * RTL context. For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-position(left, 0);
+ *   position: absolute;
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ *  .mdc-foo {
+ *    position: absolute;
+ *    left: 0;
+ *    right: initial;
+ *
+ *    @include mdc-rtl {
+ *      right: 0;
+ *      left: initial;
+ *    }
+ *  }
+ * ```
+ * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.
+ */
+.mdc-select {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.75rem;
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+  padding-left: 0;
+  padding-right: 24px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  max-width: calc(100% - 24px);
+  height: 32px;
+  -webkit-transition: border-bottom-color 150ms 0ms cubic-bezier(0.4, 0, 1, 1), background-color 150ms 0ms cubic-bezier(0.4, 0, 1, 1);
+  transition: border-bottom-color 150ms 0ms cubic-bezier(0.4, 0, 1, 1), background-color 150ms 0ms cubic-bezier(0.4, 0, 1, 1);
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+  background: none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);
+  font-family: Roboto, sans-serif;
+  font-size: .936rem;
+  cursor: pointer; }
+  [dir="rtl"] .mdc-select, .mdc-select[dir="rtl"] {
+    padding-left: 24px;
+    padding-right: 0; }
+  .mdc-select::-ms-expand {
+    display: none; }
+  .mdc-select:focus {
+    border-bottom-color: #3f51b5;
+    border-bottom-color: var(--mdc-theme-primary, #3f51b5);
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.06); }
+  [dir="rtl"] .mdc-select, .mdc-select[dir="rtl"] {
+    background-position: left center; }
+  .mdc-select--theme-dark,
+  .mdc-theme--dark .mdc-select {
+    color: white;
+    color: var(--mdc-theme-text-primary-on-dark, white);
+    background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+    .mdc-select--theme-dark:focus,
+    .mdc-theme--dark .mdc-select:focus {
+      border-bottom-color: #3f51b5;
+      border-bottom-color: var(--mdc-theme-primary, #3f51b5);
+      background-color: rgba(255, 255, 255, 0.09); }
+  .mdc-select__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 100%;
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    overflow-y: scroll; }
+  .mdc-select__selected-text {
+    -webkit-transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);
+    white-space: nowrap;
+    overflow: hidden; }
+
+.mdc-select--open .mdc-select__selected-text {
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+  -webkit-transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);
+  opacity: 0; }
+
+.mdc-select--disabled,
+.mdc-select[disabled] {
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));
+  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);
+  border-bottom-style: dotted;
+  cursor: default;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.mdc-select--theme-dark.mdc-select--disabled,
+.mdc-theme--dark .mdc-select--disabled {
+  color: rgba(255, 255, 255, 0.5);
+  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5));
+  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.38); }
+
+.mdc-select--theme-dark.mdc-select[disabled],
+.mdc-theme--dark .mdc-select[disabled] {
+  color: rgba(255, 255, 255, 0.5);
+  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5));
+  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.38); }
+
+.mdc-select__menu .mdc-list-item {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.75rem;
+  color: rgba(0, 0, 0, 0.54);
+  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }
+  .mdc-select__menu .mdc-list-item[aria-selected="true"] {
+    color: rgba(0, 0, 0, 0.87);
+    color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }
+  .mdc-select--theme-dark .mdc-select__menu .mdc-list-item,
+  .mdc-theme--dark .mdc-select__menu .mdc-list-item {
+    color: rgba(255, 255, 255, 0.7);
+    color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
+    .mdc-select--theme-dark .mdc-select__menu .mdc-list-item[aria-selected="true"],
+    .mdc-theme--dark .mdc-select__menu .mdc-list-item[aria-selected="true"] {
+      color: white;
+      color: var(--mdc-theme-text-primary-on-dark, white); }
+
+.mdc-select__menu .mdc-list-group,
+.mdc-select__menu .mdc-list-group > .mdc-list-item:first-child {
+  margin-top: 12px; }
+
+.mdc-select__menu .mdc-list-group {
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+  font-weight: normal; }
+  .mdc-select__menu .mdc-list-group .mdc-list-item {
+    color: rgba(0, 0, 0, 0.87);
+    color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }
+
+.mdc-select--theme-dark .mdc-select__menu .mdc-list-group,
+.mdc-theme--dark .mdc-select__menu .mdc-list-group {
+  color: rgba(255, 255, 255, 0.5);
+  color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+  .mdc-select--theme-dark .mdc-select__menu .mdc-list-group .mdc-list-item,
+  .mdc-theme--dark .mdc-select__menu .mdc-list-group .mdc-list-item {
+    color: white;
+    color: var(--mdc-theme-text-primary-on-dark, white); }
+
+.mdc-multi-select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 250px;
+  padding: 0;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.38);
+  border-color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+  outline: none; }
+  .mdc-multi-select--theme-dark,
+  .mdc-theme--dark .mdc-multi-select {
+    border-color: rgba(255, 255, 255, 0.5);
+    border-color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+  .mdc-multi-select .mdc-list-group {
+    margin: 16px 0 0;
+    padding: 0 0 0 16px;
+    color: rgba(0, 0, 0, 0.38);
+    color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+    font-weight: normal; }
+    .mdc-multi-select .mdc-list-group--theme-dark,
+    .mdc-theme--dark .mdc-multi-select .mdc-list-group {
+      color: rgba(255, 255, 255, 0.5);
+      color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+    .mdc-multi-select .mdc-list-group:last-child {
+      margin-bottom: 16px; }
+    .mdc-multi-select .mdc-list-group .mdc-list-divider {
+      margin-left: -16px; }
+  .mdc-multi-select .mdc-list-item {
+    margin: 0 0 0 -16px;
+    padding: 0 16px;
+    color: rgba(0, 0, 0, 0.87);
+    color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }
+    .mdc-multi-select .mdc-list-item--theme-dark,
+    .mdc-theme--dark .mdc-multi-select .mdc-list-item {
+      color: white;
+      color: var(--mdc-theme-text-primary-on-dark, white); }
+    .mdc-multi-select .mdc-list-item:first-child {
+      margin-top: 12px; }
+    .mdc-multi-select .mdc-list-item:last-child {
+      margin-bottom: 8px; }
+  .mdc-multi-select .mdc-list-item:checked {
+    background-color: rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    background-color: var(--mdc-theme-background, #fff); }
+    .mdc-multi-select .mdc-list-item:checked--theme-dark,
+    .mdc-theme--dark .mdc-multi-select .mdc-list-item:checked {
+      background-color: white;
+      background-color: var(--mdc-theme-text-primary-on-dark, white); }
+
+.mdc-multi-select:focus .mdc-list-item:checked {
+  background-color: #3f51b5;
+  background-color: var(--mdc-theme-primary, #3f51b5); }
+  .mdc-multi-select:focus .mdc-list-item:checked--theme-dark,
+  .mdc-theme--dark .mdc-multi-select:focus .mdc-list-item:checked {
+    background-color: white;
+    background-color: var(--mdc-theme-text-primary-on-dark, white); }
+
+.mdc-list-divider {
+  margin-bottom: 8px;
+  padding-top: 8px;
+  font-size: 0; }

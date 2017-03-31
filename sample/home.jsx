@@ -9,13 +9,18 @@ import {
   Radio,
   Textfield,
 	Card,
+	Select,
 	Elevation,
 	Dialog,
+<<<<<<< HEAD
+	List
+} from "../Components/";
+=======
 	List,
 	Drawer
 } from "../src/";
+>>>>>>> 2a60702c8d8455459f04700dae6f9c48a95536a6
 
-import Select from "../src/Select/Select";
 
 
 export default class Home extends Component {
