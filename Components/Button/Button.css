@@ -1,0 +1,1395 @@
+/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * The css property used for elevation. In most cases this should not be changed. It is exposed
+ * as a variable for abstraction / easy use when needing to reference the property directly, for
+ * example in a `will-change` rule.
+ */
+/**
+ * The default duration value for elevation transitions.
+ */
+/**
+ * The default easing value for elevation transitions.
+ */
+/**
+ * Applies the correct css rules to an element to give it the elevation specified by $z-value.
+ * The $z-value must be between 0 and 24.
+ */
+/**
+ * Returns a string that can be used as the value for a `transition` property for elevation.
+ * Calling this function directly is useful in situations where a component needs to transition
+ * more than one property.
+ *
+ * ```scss
+ * .foo {
+ *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;
+ *   will-change: $mdc-elevation-property, opacity;
+ * }
+ * ```
+ */
+/**
+ * Applies the correct css rules needed to have an element transition between elevations.
+ * This mixin should be applied to elements whose elevation values will change depending on their
+ * context (e.g. when active or disabled).
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/** MDC Ripple keyframes are split into their own file so that _mixins.scss can rely on them. */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@-webkit-keyframes mdc-ripple-fg-radius-in {
+  from {
+    -webkit-transform: translate(0) scale(1);
+            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  to {
+    -webkit-transform: translate(0) scale(0);
+            transform: translate(0) scale(0);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+@keyframes mdc-ripple-fg-radius-in {
+  from {
+    -webkit-transform: translate(0) scale(1);
+            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  to {
+    -webkit-transform: translate(0) scale(0);
+            transform: translate(0) scale(0);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-out {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 0; } }
+
+@keyframes mdc-ripple-fg-opacity-out {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
+  from {
+    -webkit-transform: 0;
+            transform: 0;
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
+  from {
+    -webkit-transform: 0;
+            transform: 0;
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Applies the correct theme color style to the specified property.
+ * $property is typically color or background-color, but can be any CSS property that accepts color values.
+ * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).
+ */
+/**
+ * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.
+ * Should provide the $root-selector option if applied to anything other than the root selector.
+ * When used with a modifier class, provide a second argument of `true` for the $compound parameter
+ * to specify that this should be attached as a compound class.
+ *
+ * Usage example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   color: black;
+ *
+ *   @include mdc-theme-dark {
+ *     color: white;
+ *   }
+ *
+ *   &__bar {
+ *     background: black;
+ *
+ *     @include mdc-theme-dark(".mdc-foo") {
+ *       background: white;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--disabled {
+ *   opacity: .38;
+ *
+ *   @include mdc-theme-dark(".mdc-foo", true) {
+ *     opacity: .5;
+ *   }
+ * }
+ * ```
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* TODO(sgomes): Figure out what to do about desktop font sizes. */
+/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
+.mdc-button {
+  --mdc-ripple-left: 0;
+  --mdc-ripple-top: 0;
+  --mdc-ripple-fg-size: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+  --mdc-ripple-xfo-x: center;
+  --mdc-ripple-xfo-y: center;
+  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
+  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+  --mdc-ripple-fg-approx-xf: 0;
+  will-change: transform, opacity;
+  -webkit-tap-highlight-color: transparent;
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.5rem;
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+  display: inline-block;
+  position: relative;
+  min-width: 64px;
+  height: 36px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); }
+  .mdc-button:not(.mdc-ripple-upgraded):hover::before, .mdc-button:not(.mdc-ripple-upgraded):focus::before, .mdc-button:not(.mdc-ripple-upgraded):active::after {
+    -webkit-transition-duration: 85ms;
+            transition-duration: 85ms;
+    opacity: .6; }
+  .mdc-button::before {
+    background-color: rgba(0, 0, 0, 0.06);
+    position: absolute;
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+  .mdc-button.mdc-ripple-upgraded::before {
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-button.mdc-ripple-upgraded--background-active::before {
+    opacity: .99999; }
+  .mdc-button.mdc-ripple-upgraded--background-active:active::before {
+    -webkit-transition-duration: 600ms;
+            transition-duration: 600ms; }
+  .mdc-button.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    -webkit-transition-duration: 120ms;
+            transition-duration: 120ms;
+    opacity: 1; }
+  .mdc-button.mdc-ripple-upgraded--unbounded::before {
+    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
+    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-button::after {
+    background-color: rgba(0, 0, 0, 0.06);
+    position: absolute;
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+  .mdc-button.mdc-ripple-upgraded::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    opacity: 0; }
+  .mdc-button:not(.mdc-ripple-upgraded--unbounded)::after {
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-button.mdc-ripple-upgraded--unbounded::after {
+    top: 0;
+    top: var(--mdc-ripple-top, 0);
+    left: 0;
+    left: var(--mdc-ripple-left, 0);
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-button.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+  .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
+    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+    transition: opacity 110ms linear, transform 0 linear 80ms;
+    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    opacity: 1; }
+  .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-button--theme-dark,
+  .mdc-theme--dark .mdc-button {
+    --mdc-ripple-left: 0;
+    --mdc-ripple-top: 0;
+    --mdc-ripple-fg-size: 0;
+    --mdc-ripple-surface-height: 0;
+    --mdc-ripple-surface-width: 0;
+    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+    --mdc-ripple-xfo-x: center;
+    --mdc-ripple-xfo-y: center;
+    --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
+    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+    --mdc-ripple-fg-approx-xf: 0;
+    will-change: transform, opacity;
+    -webkit-tap-highlight-color: transparent;
+    color: white;
+    color: var(--mdc-theme-text-primary-on-dark, white);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.18); }
+    .mdc-button--theme-dark:not(.mdc-ripple-upgraded):hover::before, .mdc-button--theme-dark:not(.mdc-ripple-upgraded):focus::before, .mdc-button--theme-dark:not(.mdc-ripple-upgraded):active::after,
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):hover::before,
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):focus::before,
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):active::after {
+      -webkit-transition-duration: 85ms;
+              transition-duration: 85ms;
+      opacity: .6; }
+    .mdc-button--theme-dark::before,
+    .mdc-theme--dark .mdc-button::before {
+      background-color: rgba(255, 255, 255, 0.14);
+      position: absolute;
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transition: opacity 250ms linear;
+      transition: opacity 250ms linear;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      content: ""; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded::before {
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active::before {
+      opacity: .99999; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active:active::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active:active::before {
+      -webkit-transition-duration: 600ms;
+              transition-duration: 600ms; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--background-bounded-active-fill::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-bounded-active-fill::before {
+      -webkit-transition-duration: 120ms;
+              transition-duration: 120ms;
+      opacity: 1; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded::before {
+      top: calc(50% - 50%);
+      top: var(--mdc-ripple-top, calc(50% - 50%));
+      left: calc(50% - 50%);
+      left: var(--mdc-ripple-left, calc(50% - 50%));
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+    .mdc-button--theme-dark::after,
+    .mdc-theme--dark .mdc-button::after {
+      background-color: rgba(255, 255, 255, 0.14);
+      position: absolute;
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transition: opacity 250ms linear;
+      transition: opacity 250ms linear;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      content: ""; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded::after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      opacity: 0; }
+    .mdc-button--theme-dark:not(.mdc-ripple-upgraded--unbounded)::after,
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded--unbounded)::after {
+      -webkit-transform-origin: center center;
+              transform-origin: center center; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded::after {
+      top: 0;
+      top: var(--mdc-ripple-top, 0);
+      left: 0;
+      left: var(--mdc-ripple-left, 0);
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform-origin: center center;
+              transform-origin: center center; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--foreground-bounded-active-fill::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+      -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+              animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0));
+      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+      transition: opacity 110ms linear, transform 0 linear 80ms;
+      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      opacity: 1; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-button.mdc-button--primary {
+    --mdc-ripple-left: 0;
+    --mdc-ripple-top: 0;
+    --mdc-ripple-fg-size: 0;
+    --mdc-ripple-surface-height: 0;
+    --mdc-ripple-surface-width: 0;
+    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+    --mdc-ripple-xfo-x: center;
+    --mdc-ripple-xfo-y: center;
+    --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
+    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+    --mdc-ripple-fg-approx-xf: 0;
+    will-change: transform, opacity;
+    -webkit-tap-highlight-color: transparent; }
+    .mdc-button.mdc-button--primary:not(.mdc-ripple-upgraded):hover::before, .mdc-button.mdc-button--primary:not(.mdc-ripple-upgraded):focus::before, .mdc-button.mdc-button--primary:not(.mdc-ripple-upgraded):active::after {
+      -webkit-transition-duration: 85ms;
+              transition-duration: 85ms;
+      opacity: .6; }
+    .mdc-button.mdc-button--primary::before {
+      background-color: rgba(63, 81, 181, 0.12);
+      position: absolute;
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transition: opacity 250ms linear;
+      transition: opacity 250ms linear;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      content: ""; }
+      @supports (background-color: color(green a(10%))) {
+        .mdc-button.mdc-button--primary::before {
+          background-color: color(var(--mdc-theme-primary, #3f51b5) a(12%)); } }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded::before {
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-active::before {
+      opacity: .99999; }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-active:active::before {
+      -webkit-transition-duration: 600ms;
+              transition-duration: 600ms; }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-bounded-active-fill::before {
+      -webkit-transition-duration: 120ms;
+              transition-duration: 120ms;
+      opacity: 1; }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded::before {
+      top: calc(50% - 50%);
+      top: var(--mdc-ripple-top, calc(50% - 50%));
+      left: calc(50% - 50%);
+      left: var(--mdc-ripple-left, calc(50% - 50%));
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+    .mdc-button.mdc-button--primary::after {
+      background-color: rgba(63, 81, 181, 0.12);
+      position: absolute;
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transition: opacity 250ms linear;
+      transition: opacity 250ms linear;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      content: ""; }
+      @supports (background-color: color(green a(10%))) {
+        .mdc-button.mdc-button--primary::after {
+          background-color: color(var(--mdc-theme-primary, #3f51b5) a(12%)); } }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded::after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      opacity: 0; }
+    .mdc-button.mdc-button--primary:not(.mdc-ripple-upgraded--unbounded)::after {
+      -webkit-transform-origin: center center;
+              transform-origin: center center; }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded::after {
+      top: 0;
+      top: var(--mdc-ripple-top, 0);
+      left: 0;
+      left: var(--mdc-ripple-left, 0);
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform-origin: center center;
+              transform-origin: center center; }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+      -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+              animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0));
+      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+      transition: opacity 110ms linear, transform 0 linear 80ms;
+      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      opacity: 1; }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-button.mdc-button--accent {
+    --mdc-ripple-left: 0;
+    --mdc-ripple-top: 0;
+    --mdc-ripple-fg-size: 0;
+    --mdc-ripple-surface-height: 0;
+    --mdc-ripple-surface-width: 0;
+    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+    --mdc-ripple-xfo-x: center;
+    --mdc-ripple-xfo-y: center;
+    --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
+    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+    --mdc-ripple-fg-approx-xf: 0;
+    will-change: transform, opacity;
+    -webkit-tap-highlight-color: transparent; }
+    .mdc-button.mdc-button--accent:not(.mdc-ripple-upgraded):hover::before, .mdc-button.mdc-button--accent:not(.mdc-ripple-upgraded):focus::before, .mdc-button.mdc-button--accent:not(.mdc-ripple-upgraded):active::after {
+      -webkit-transition-duration: 85ms;
+              transition-duration: 85ms;
+      opacity: .6; }
+    .mdc-button.mdc-button--accent::before {
+      background-color: rgba(255, 64, 129, 0.12);
+      position: absolute;
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transition: opacity 250ms linear;
+      transition: opacity 250ms linear;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      content: ""; }
+      @supports (background-color: color(green a(10%))) {
+        .mdc-button.mdc-button--accent::before {
+          background-color: color(var(--mdc-theme-accent, #ff4081) a(12%)); } }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded::before {
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-active::before {
+      opacity: .99999; }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-active:active::before {
+      -webkit-transition-duration: 600ms;
+              transition-duration: 600ms; }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-bounded-active-fill::before {
+      -webkit-transition-duration: 120ms;
+              transition-duration: 120ms;
+      opacity: 1; }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded::before {
+      top: calc(50% - 50%);
+      top: var(--mdc-ripple-top, calc(50% - 50%));
+      left: calc(50% - 50%);
+      left: var(--mdc-ripple-left, calc(50% - 50%));
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+    .mdc-button.mdc-button--accent::after {
+      background-color: rgba(255, 64, 129, 0.12);
+      position: absolute;
+      top: calc(50% - 100%);
+      left: calc(50% - 100%);
+      width: 200%;
+      height: 200%;
+      -webkit-transition: opacity 250ms linear;
+      transition: opacity 250ms linear;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      content: ""; }
+      @supports (background-color: color(green a(10%))) {
+        .mdc-button.mdc-button--accent::after {
+          background-color: color(var(--mdc-theme-accent, #ff4081) a(12%)); } }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded::after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      opacity: 0; }
+    .mdc-button.mdc-button--accent:not(.mdc-ripple-upgraded--unbounded)::after {
+      -webkit-transform-origin: center center;
+              transform-origin: center center; }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded::after {
+      top: 0;
+      top: var(--mdc-ripple-top, 0);
+      left: 0;
+      left: var(--mdc-ripple-left, 0);
+      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
+      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform-origin: center center;
+              transform-origin: center center; }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+      -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+              animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0));
+      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+      transition: opacity 110ms linear, transform 0 linear 80ms;
+      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      opacity: 1; }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-button:active {
+    outline: none; }
+  .mdc-button:hover {
+    cursor: pointer; }
+  .mdc-button::-moz-focus-inner {
+    padding: 0;
+    border: 0; }
+  .mdc-button--dense {
+    height: 32px;
+    font-size: .8125rem;
+    line-height: 32px; }
+  .mdc-button--raised {
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    -webkit-transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: box-shadow;
+    min-width: 88px; }
+    .mdc-button--raised:active {
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }
+    .mdc-button--raised.mdc-button--primary {
+      --mdc-ripple-left: 0;
+      --mdc-ripple-top: 0;
+      --mdc-ripple-fg-size: 0;
+      --mdc-ripple-surface-height: 0;
+      --mdc-ripple-surface-width: 0;
+      --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+      --mdc-ripple-xfo-x: center;
+      --mdc-ripple-xfo-y: center;
+      --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
+      --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+      --mdc-ripple-fg-approx-xf: 0;
+      will-change: transform, opacity;
+      -webkit-tap-highlight-color: transparent; }
+      .mdc-button--raised.mdc-button--primary:not(.mdc-ripple-upgraded):hover::before, .mdc-button--raised.mdc-button--primary:not(.mdc-ripple-upgraded):focus::before, .mdc-button--raised.mdc-button--primary:not(.mdc-ripple-upgraded):active::after {
+        -webkit-transition-duration: 85ms;
+                transition-duration: 85ms;
+        opacity: .6; }
+      .mdc-button--raised.mdc-button--primary::before {
+        background-color: rgba(255, 255, 255, 0.14);
+        position: absolute;
+        top: calc(50% - 100%);
+        left: calc(50% - 100%);
+        width: 200%;
+        height: 200%;
+        -webkit-transition: opacity 250ms linear;
+        transition: opacity 250ms linear;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        content: ""; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded::before {
+        top: calc(50% - 100%);
+        left: calc(50% - 100%);
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-active::before {
+        opacity: .99999; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-active:active::before {
+        -webkit-transition-duration: 600ms;
+                transition-duration: 600ms; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-bounded-active-fill::before {
+        -webkit-transition-duration: 120ms;
+                transition-duration: 120ms;
+        opacity: 1; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded::before {
+        top: calc(50% - 50%);
+        top: var(--mdc-ripple-top, calc(50% - 50%));
+        left: calc(50% - 50%);
+        left: var(--mdc-ripple-left, calc(50% - 50%));
+        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
+        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+      .mdc-button--raised.mdc-button--primary::after {
+        background-color: rgba(255, 255, 255, 0.14);
+        position: absolute;
+        top: calc(50% - 100%);
+        left: calc(50% - 100%);
+        width: 200%;
+        height: 200%;
+        -webkit-transition: opacity 250ms linear;
+        transition: opacity 250ms linear;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        content: ""; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
+        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        opacity: 0; }
+      .mdc-button--raised.mdc-button--primary:not(.mdc-ripple-upgraded--unbounded)::after {
+        -webkit-transform-origin: center center;
+                transform-origin: center center; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded::after {
+        top: 0;
+        top: var(--mdc-ripple-top, 0);
+        left: 0;
+        left: var(--mdc-ripple-left, 0);
+        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
+        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform-origin: center center;
+                transform-origin: center center; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+                animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0));
+        -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+        transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+        transition: opacity 110ms linear, transform 0 linear 80ms;
+        transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+        -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        opacity: 1; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+                animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+                animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+    .mdc-button--raised.mdc-button--accent {
+      --mdc-ripple-left: 0;
+      --mdc-ripple-top: 0;
+      --mdc-ripple-fg-size: 0;
+      --mdc-ripple-surface-height: 0;
+      --mdc-ripple-surface-width: 0;
+      --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+      --mdc-ripple-xfo-x: center;
+      --mdc-ripple-xfo-y: center;
+      --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
+      --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+      --mdc-ripple-fg-approx-xf: 0;
+      will-change: transform, opacity;
+      -webkit-tap-highlight-color: transparent; }
+      .mdc-button--raised.mdc-button--accent:not(.mdc-ripple-upgraded):hover::before, .mdc-button--raised.mdc-button--accent:not(.mdc-ripple-upgraded):focus::before, .mdc-button--raised.mdc-button--accent:not(.mdc-ripple-upgraded):active::after {
+        -webkit-transition-duration: 85ms;
+                transition-duration: 85ms;
+        opacity: .6; }
+      .mdc-button--raised.mdc-button--accent::before {
+        background-color: rgba(255, 255, 255, 0.14);
+        position: absolute;
+        top: calc(50% - 100%);
+        left: calc(50% - 100%);
+        width: 200%;
+        height: 200%;
+        -webkit-transition: opacity 250ms linear;
+        transition: opacity 250ms linear;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        content: ""; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded::before {
+        top: calc(50% - 100%);
+        left: calc(50% - 100%);
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-active::before {
+        opacity: .99999; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-active:active::before {
+        -webkit-transition-duration: 600ms;
+                transition-duration: 600ms; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-bounded-active-fill::before {
+        -webkit-transition-duration: 120ms;
+                transition-duration: 120ms;
+        opacity: 1; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded::before {
+        top: calc(50% - 50%);
+        top: var(--mdc-ripple-top, calc(50% - 50%));
+        left: calc(50% - 50%);
+        left: var(--mdc-ripple-left, calc(50% - 50%));
+        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
+        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+      .mdc-button--raised.mdc-button--accent::after {
+        background-color: rgba(255, 255, 255, 0.14);
+        position: absolute;
+        top: calc(50% - 100%);
+        left: calc(50% - 100%);
+        width: 200%;
+        height: 200%;
+        -webkit-transition: opacity 250ms linear;
+        transition: opacity 250ms linear;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        content: ""; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
+        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        opacity: 0; }
+      .mdc-button--raised.mdc-button--accent:not(.mdc-ripple-upgraded--unbounded)::after {
+        -webkit-transform-origin: center center;
+                transform-origin: center center; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded::after {
+        top: 0;
+        top: var(--mdc-ripple-top, 0);
+        left: 0;
+        left: var(--mdc-ripple-left, 0);
+        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
+        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform-origin: center center;
+                transform-origin: center center; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+                animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0));
+        -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+        transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+        transition: opacity 110ms linear, transform 0 linear 80ms;
+        transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+        -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        opacity: 1; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+                animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+                animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+    .mdc-button--theme-dark .mdc-button--raised,
+    .mdc-theme--dark .mdc-button--raised {
+      background-color: #3f51b5;
+      background-color: var(--mdc-theme-primary, #3f51b5); }
+      .mdc-button--theme-dark .mdc-button--raised::before,
+      .mdc-theme--dark .mdc-button--raised::before {
+        color: black; }
+  .mdc-button--primary {
+    color: #3f51b5;
+    color: var(--mdc-theme-primary, #3f51b5); }
+    .mdc-button--theme-dark .mdc-button--primary,
+    .mdc-theme--dark .mdc-button--primary {
+      color: #3f51b5;
+      color: var(--mdc-theme-primary, #3f51b5); }
+    .mdc-button--primary.mdc-button--raised {
+      background-color: #3f51b5;
+      background-color: var(--mdc-theme-primary, #3f51b5);
+      color: white;
+      color: var(--mdc-theme-text-primary-on-primary, white); }
+      .mdc-button--primary.mdc-button--raised::before {
+        color: black; }
+  .mdc-button--accent {
+    color: #ff4081;
+    color: var(--mdc-theme-accent, #ff4081); }
+    .mdc-button--theme-dark .mdc-button--accent,
+    .mdc-theme--dark .mdc-button--accent {
+      color: #ff4081;
+      color: var(--mdc-theme-accent, #ff4081); }
+    .mdc-button--accent.mdc-button--raised {
+      background-color: #ff4081;
+      background-color: var(--mdc-theme-accent, #ff4081);
+      color: white;
+      color: var(--mdc-theme-text-primary-on-accent, white); }
+      .mdc-button--accent.mdc-button--raised::before {
+        color: black; }
+  .mdc-button--compact {
+    padding: 0 8px; }
+  fieldset:disabled .mdc-button, .mdc-button:disabled {
+    color: rgba(0, 0, 0, 0.26);
+    cursor: default;
+    pointer-events: none; }
+    .mdc-button--theme-dark fieldset:disabled .mdc-button,
+    .mdc-theme--dark fieldset:disabled .mdc-button, .mdc-button--theme-dark .mdc-button:disabled,
+    .mdc-theme--dark .mdc-button:disabled {
+      color: rgba(255, 255, 255, 0.3); }
+  fieldset:disabled .mdc-button--raised, .mdc-button--raised:disabled {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+    background-color: rgba(0, 0, 0, 0.12);
+    pointer-events: none; }
+    .mdc-button--theme-dark fieldset:disabled .mdc-button--raised,
+    .mdc-theme--dark fieldset:disabled .mdc-button--raised, .mdc-button--theme-dark .mdc-button--raised:disabled,
+    .mdc-theme--dark .mdc-button--raised:disabled {
+      background-color: rgba(255, 255, 255, 0.12); }

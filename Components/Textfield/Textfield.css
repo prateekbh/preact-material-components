@@ -1,0 +1,857 @@
+/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.
+ *
+ * Usage Example:
+ * ```scss
+ * .mdc-foo {
+ *   position: absolute;
+ *   left: 0;
+ *
+ *   @include mdc-rtl {
+ *     left: auto;
+ *     right: 0;
+ *   }
+ *
+ *   &__bar {
+ *     margin-left: 4px;
+ *     @include mdc-rtl(".mdc-foo") {
+ *       margin-left: auto;
+ *       margin-right: 4px;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--mod {
+ *   padding-left: 4px;
+ *
+ *   @include mdc-rtl {
+ *     padding-left: auto;
+ *     padding-right: 4px;
+ *   }
+ * }
+ * ```
+ *
+ * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work
+ * in most cases, it will in some cases lead to false negatives, e.g.
+ *
+ * ```html
+ * <html dir="rtl">
+ *   <!-- ... -->
+ *   <div dir="ltr">
+ *     <div class="mdc-foo">Styled incorrectly as RTL!</div>
+ *   </div>
+ * </html>
+ * ```
+ *
+ * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.
+ */
+/**
+ * Takes a base box-model property - e.g. margin / border / padding - along with a default
+ * direction and value, and emits rules which apply the value to the
+ * "<base-property>-<default-direction>" property by default, but flips the direction
+ * when within an RTL context.
+ *
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, left, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 8px;
+ *     margin-left: 0;
+ *   }
+ * }
+ * ```
+ * whereas:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, right, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-right: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 0;
+ *     margin-left: 8px;
+ *   }
+ * }
+ * ```
+ *
+ * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,
+ * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, ".mdc-component")`.
+ *
+ * Note that this function will always zero out the original value in an RTL context. If you're
+ * trying to flip the values, use mdc-rtl-reflexive-property().
+ */
+/**
+ * Takes a base property and emits rules that assign <base-property>-left to <left-value> and
+ * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-property(margin, auto, 12px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: auto;
+ *   margin-right: 12px;
+ *
+ *   @include mdc-rtl {
+ *     margin-left: 12px;
+ *     margin-right: auto;
+ *   }
+ * }
+ * ```
+ *
+ * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.
+ */
+/**
+ * Takes an argument specifying a horizontal position property (either "left" or "right") as well
+ * as a value, and applies that value to the specified position in a LTR context, and flips it in a
+ * RTL context. For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-position(left, 0);
+ *   position: absolute;
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ *  .mdc-foo {
+ *    position: absolute;
+ *    left: 0;
+ *    right: initial;
+ *
+ *    @include mdc-rtl {
+ *      right: 0;
+ *      left: initial;
+ *    }
+ *  }
+ * ```
+ * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Applies the correct theme color style to the specified property.
+ * $property is typically color or background-color, but can be any CSS property that accepts color values.
+ * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).
+ */
+/**
+ * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.
+ * Should provide the $root-selector option if applied to anything other than the root selector.
+ * When used with a modifier class, provide a second argument of `true` for the $compound parameter
+ * to specify that this should be attached as a compound class.
+ *
+ * Usage example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   color: black;
+ *
+ *   @include mdc-theme-dark {
+ *     color: white;
+ *   }
+ *
+ *   &__bar {
+ *     background: black;
+ *
+ *     @include mdc-theme-dark(".mdc-foo") {
+ *       background: white;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--disabled {
+ *   opacity: .38;
+ *
+ *   @include mdc-theme-dark(".mdc-foo", true) {
+ *     opacity: .5;
+ *   }
+ * }
+ * ```
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* TODO(sgomes): Figure out what to do about desktop font sizes. */
+/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* TODO(sgomes): Figure out what to do about desktop font sizes. */
+/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
+.mdc-textfield {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  margin-bottom: 8px;
+  will-change: opacity, transform, color; }
+  .mdc-textfield__input {
+    color: rgba(0, 0, 0, 0.87);
+    color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+    padding: 0 0 8px;
+    border: none;
+    background: none;
+    font-size: inherit;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
+    .mdc-textfield__input::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 0.38);
+      color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+      -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 1; }
+    .mdc-textfield__input::-moz-placeholder {
+      color: rgba(0, 0, 0, 0.38);
+      color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+      -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 1; }
+    .mdc-textfield__input:-ms-input-placeholder {
+      color: rgba(0, 0, 0, 0.38);
+      color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+      -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 1; }
+    .mdc-textfield__input::placeholder {
+      color: rgba(0, 0, 0, 0.38);
+      color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+      -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 1; }
+    .mdc-textfield__input:focus {
+      outline: none; }
+      .mdc-textfield__input:focus::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.54);
+        color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }
+      .mdc-textfield__input:focus::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.54);
+        color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }
+      .mdc-textfield__input:focus:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.54);
+        color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }
+      .mdc-textfield__input:focus::placeholder {
+        color: rgba(0, 0, 0, 0.54);
+        color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }
+    .mdc-textfield__input:invalid {
+      box-shadow: none; }
+    .mdc-textfield__input--theme-dark,
+    .mdc-theme--dark .mdc-textfield__input {
+      color: white; }
+      .mdc-textfield__input--theme-dark::-webkit-input-placeholder,
+      .mdc-theme--dark .mdc-textfield__input::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+      .mdc-textfield__input--theme-dark::-moz-placeholder,
+      .mdc-theme--dark .mdc-textfield__input::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+      .mdc-textfield__input--theme-dark:-ms-input-placeholder,
+      .mdc-theme--dark .mdc-textfield__input:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+      .mdc-textfield__input--theme-dark::placeholder,
+      .mdc-theme--dark .mdc-textfield__input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+      .mdc-textfield__input--theme-dark:focus::-webkit-input-placeholder,
+      .mdc-theme--dark .mdc-textfield__input:focus::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
+      .mdc-textfield__input--theme-dark:focus::-moz-placeholder,
+      .mdc-theme--dark .mdc-textfield__input:focus::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
+      .mdc-textfield__input--theme-dark:focus:-ms-input-placeholder,
+      .mdc-theme--dark .mdc-textfield__input:focus:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
+      .mdc-textfield__input--theme-dark:focus::placeholder,
+      .mdc-theme--dark .mdc-textfield__input:focus::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
+  .mdc-textfield__label {
+    color: rgba(0, 0, 0, 0.38);
+    color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+    -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: text; }
+    [dir="rtl"] .mdc-textfield .mdc-textfield__label,
+    .mdc-textfield[dir="rtl"] .mdc-textfield__label {
+      right: 0;
+      left: auto;
+      -webkit-transform-origin: right top;
+              transform-origin: right top; }
+    .mdc-textfield--theme-dark .mdc-textfield__label,
+    .mdc-theme--dark .mdc-textfield__label {
+      color: rgba(255, 255, 255, 0.5);
+      color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+    .mdc-textfield__label--float-above {
+      -webkit-transform: translateY(-100%) scale(0.75, 0.75);
+              transform: translateY(-100%) scale(0.75, 0.75);
+      cursor: auto; }
+
+.mdc-textfield__input:-webkit-autofill + .mdc-textfield__label {
+  -webkit-transform: translateY(-100%) scale(0.75, 0.75);
+          transform: translateY(-100%) scale(0.75, 0.75);
+  cursor: auto; }
+
+.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth) {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 16px; }
+  .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline) {
+    height: 48px; }
+    .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      -webkit-transform: translateY(50%) scaleY(1);
+              transform: translateY(50%) scaleY(1);
+      -webkit-transform-origin: center bottom;
+              transform-origin: center bottom;
+      -webkit-transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1), transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1), transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      background-color: rgba(0, 0, 0, 0.12);
+      content: ""; }
+      .mdc-textfield--theme-dark .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after,
+      .mdc-theme--dark .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {
+        background-color: rgba(255, 255, 255, 0.12); }
+  .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth) .mdc-textfield__label {
+    pointer-events: none; }
+
+.mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {
+  background-color: #3f51b5;
+  background-color: var(--mdc-theme-primary, #3f51b5);
+  -webkit-transform: translateY(100%) scaleY(2);
+          transform: translateY(100%) scaleY(2);
+  -webkit-transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-textfield--theme-dark.mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after,
+  .mdc-theme--dark .mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {
+    background-color: #3f51b5;
+    background-color: var(--mdc-theme-primary, #3f51b5);
+    -webkit-transform: translateY(100%) scaleY(2);
+            transform: translateY(100%) scaleY(2);
+    -webkit-transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+.mdc-textfield--focused .mdc-textfield__label {
+  color: #3f51b5;
+  color: var(--mdc-theme-primary, #3f51b5); }
+  .mdc-textfield--theme-dark .mdc-textfield--focused .mdc-textfield__label,
+  .mdc-theme--dark .mdc-textfield--focused .mdc-textfield__label {
+    color: #3f51b5;
+    color: var(--mdc-theme-primary, #3f51b5); }
+
+.mdc-textfield--dense {
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: .813rem; }
+  .mdc-textfield--dense .mdc-textfield__label--float-above {
+    -webkit-transform: translateY(calc(-100% - 2px)) scale(0.923, 0.923);
+            transform: translateY(calc(-100% - 2px)) scale(0.923, 0.923); }
+
+.mdc-textfield--invalid:not(.mdc-textfield--focused)::after {
+  background-color: #d50000; }
+
+.mdc-textfield--invalid:not(.mdc-textfield--focused) .mdc-textfield__label {
+  color: #d50000; }
+
+.mdc-textfield--theme-dark.mdc-textfield--invalid:not(.mdc-textfield--focused)::after,
+.mdc-theme--dark .mdc-textfield--invalid:not(.mdc-textfield--focused)::after {
+  background-color: #ff6e6e; }
+
+.mdc-textfield--theme-dark.mdc-textfield--invalid:not(.mdc-textfield--focused) .mdc-textfield__label,
+.mdc-theme--dark .mdc-textfield--invalid:not(.mdc-textfield--focused) .mdc-textfield__label {
+  color: #ff6e6e; }
+
+.mdc-textfield--disabled {
+  border-bottom: 1px dotted rgba(35, 31, 32, 0.26); }
+  .mdc-textfield--disabled::after {
+    display: none; }
+  .mdc-textfield--disabled .mdc-textfield__input {
+    padding-bottom: 7px; }
+  .mdc-textfield--theme-dark.mdc-textfield--disabled,
+  .mdc-theme--dark .mdc-textfield--disabled {
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3); }
+  .mdc-textfield--disabled .mdc-textfield__input,
+  .mdc-textfield--disabled .mdc-textfield__label,
+  .mdc-textfield--disabled + .mdc-textfield-helptext {
+    color: rgba(0, 0, 0, 0.38);
+    color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }
+  .mdc-textfield--theme-dark .mdc-textfield--disabled .mdc-textfield__input,
+  .mdc-theme--dark .mdc-textfield--disabled .mdc-textfield__input, .mdc-textfield--theme-dark
+  .mdc-textfield--disabled .mdc-textfield__label,
+  .mdc-theme--dark
+  .mdc-textfield--disabled .mdc-textfield__label {
+    color: rgba(255, 255, 255, 0.5);
+    color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)); }
+  .mdc-textfield--theme-dark.mdc-textfield--disabled + .mdc-textfield-helptext,
+  .mdc-theme--dark .mdc-textfield--disabled + .mdc-textfield-helptext {
+    color: rgba(255, 255, 255, 0.5);
+    color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)); }
+  .mdc-textfield--disabled .mdc-textfield__label {
+    bottom: 7px;
+    cursor: default; }
+
+.mdc-textfield__input:required + .mdc-textfield__label::after {
+  margin-left: 1px;
+  content: "*"; }
+  .mdc-textfield--focused .mdc-textfield__input:required + .mdc-textfield__label::after {
+    color: #d50000; }
+  .mdc-textfield--focused .mdc-textfield--theme-dark .mdc-textfield__input:required + .mdc-textfield__label::after, .mdc-textfield--focused
+  .mdc-theme--dark .mdc-textfield__input:required + .mdc-textfield__label::after {
+    color: #ff6e6e; }
+
+.mdc-textfield--multiline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: initial;
+  -webkit-transition: none;
+  transition: none; }
+  .mdc-textfield--multiline::after {
+    content: initial; }
+  .mdc-textfield--multiline .mdc-textfield__input {
+    padding: 4px;
+    -webkit-transition: border-color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 2px; }
+    .mdc-textfield--theme-dark .mdc-textfield--multiline .mdc-textfield__input,
+    .mdc-theme--dark .mdc-textfield--multiline .mdc-textfield__input {
+      border-color: rgba(255, 255, 255, 0.12); }
+    .mdc-textfield--multiline .mdc-textfield__input:focus {
+      border-color: #3f51b5;
+      border-color: var(--mdc-theme-primary, #3f51b5); }
+    .mdc-textfield--multiline .mdc-textfield__input:invalid:not(:focus) {
+      border-color: #d50000; }
+    .mdc-textfield--theme-dark .mdc-textfield--multiline .mdc-textfield__input:invalid:not(:focus),
+    .mdc-theme--dark .mdc-textfield--multiline .mdc-textfield__input:invalid:not(:focus) {
+      border-color: #ff6e6e; }
+  .mdc-textfield--multiline .mdc-textfield__label {
+    top: 6px;
+    bottom: initial;
+    left: 4px; }
+    [dir="rtl"] .mdc-textfield--multiline .mdc-textfield--multiline .mdc-textfield__label,
+    .mdc-textfield--multiline[dir="rtl"] .mdc-textfield--multiline .mdc-textfield__label {
+      right: 4px;
+      left: auto; }
+    .mdc-textfield--multiline .mdc-textfield__label--float-above {
+      -webkit-transform: translateY(calc(-100% - 6px)) scale(0.923, 0.923);
+              transform: translateY(calc(-100% - 6px)) scale(0.923, 0.923); }
+  .mdc-textfield--multiline.mdc-textfield--disabled {
+    border-bottom: none; }
+    .mdc-textfield--multiline.mdc-textfield--disabled .mdc-textfield__input {
+      border: 1px dotted rgba(35, 31, 32, 0.26); }
+      .mdc-textfield--theme-dark .mdc-textfield--multiline.mdc-textfield--disabled .mdc-textfield__input,
+      .mdc-theme--dark .mdc-textfield--multiline.mdc-textfield--disabled .mdc-textfield__input {
+        border-color: rgba(255, 255, 255, 0.3); }
+
+.mdc-textfield--fullwidth {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  outline: none; }
+  .mdc-textfield--fullwidth:not(.mdc-textfield--multiline) {
+    height: 56px; }
+  .mdc-textfield--fullwidth.mdc-textfield--multiline {
+    padding: 20px 0 0; }
+  .mdc-textfield--fullwidth.mdc-textfield--dense:not(.mdc-textfield--multiline) {
+    height: 48px; }
+  .mdc-textfield--fullwidth.mdc-textfield--dense.mdc-textfield--multiline {
+    padding: 16px 0 0; }
+  .mdc-textfield--fullwidth.mdc-textfield--disabled, .mdc-textfield--fullwidth.mdc-textfield--disabled.mdc-textfield--multiline {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.12); }
+  .mdc-textfield--fullwidth--theme-dark,
+  .mdc-theme--dark .mdc-textfield--fullwidth {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+    .mdc-textfield--fullwidth--theme-dark.mdc-textfield--disabled, .mdc-textfield--fullwidth--theme-dark.mdc-textfield--disabled.mdc-textfield--multiline,
+    .mdc-theme--dark .mdc-textfield--fullwidth.mdc-textfield--disabled,
+    .mdc-theme--dark .mdc-textfield--fullwidth.mdc-textfield--disabled.mdc-textfield--multiline {
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.12); }
+  .mdc-textfield--fullwidth .mdc-textfield__input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    resize: none;
+    border: none !important; }
+
+.mdc-textfield:not(.mdc-textfield--upgraded):not(.mdc-textfield--multiline) .mdc-textfield__input {
+  -webkit-transition: border-bottom-color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-bottom-color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+.mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:focus {
+  border-color: #3f51b5;
+  border-color: var(--mdc-theme-primary, #3f51b5); }
+
+.mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:disabled {
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));
+  border-style: dotted;
+  border-color: rgba(35, 31, 32, 0.26); }
+
+.mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:invalid:not(:focus) {
+  border-color: #d50000; }
+
+.mdc-textfield--theme-dark:not(.mdc-textfield--upgraded) .mdc-textfield__input:not(:focus),
+.mdc-theme--dark .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:not(:focus) {
+  border-color: rgba(255, 255, 255, 0.12); }
+
+.mdc-textfield--theme-dark:not(.mdc-textfield--upgraded) .mdc-textfield__input:disabled,
+.mdc-theme--dark .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:disabled {
+  color: rgba(255, 255, 255, 0.5);
+  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5));
+  border-color: rgba(255, 255, 255, 0.3); }
+
+.mdc-textfield--theme-dark:not(.mdc-textfield--upgraded) .mdc-textfield__input:invalid:not(:focus),
+.mdc-theme--dark .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:invalid:not(:focus) {
+  border-color: #ff6e6e; }
+
+.mdc-textfield-helptext {
+  color: rgba(0, 0, 0, 0.38);
+  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));
+  margin: 0;
+  -webkit-transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: .75rem;
+  opacity: 0;
+  will-change: opacity; }
+  .mdc-textfield-helptext--theme-dark,
+  .mdc-theme--dark .mdc-textfield-helptext {
+    color: rgba(255, 255, 255, 0.5);
+    color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }
+  .mdc-textfield + .mdc-textfield-helptext {
+    margin-bottom: 8px; }
+  .mdc-textfield--dense + .mdc-textfield-helptext {
+    margin-bottom: 4px; }
+  .mdc-textfield--focused + .mdc-textfield-helptext:not(.mdc-textfield-helptext--validation-msg) {
+    opacity: 1; }
+
+.mdc-textfield-helptext--persistent {
+  -webkit-transition: none;
+  transition: none;
+  opacity: 1;
+  will-change: initial; }
+
+.mdc-textfield--invalid + .mdc-textfield-helptext--validation-msg {
+  color: #d50000;
+  opacity: 1; }
+
+.mdc-textfield--theme-dark.mdc-textfield--invalid + .mdc-textfield-helptext--validation-msg,
+.mdc-theme--dark .mdc-textfield--invalid + .mdc-textfield-helptext--validation-msg {
+  color: #ff6e6e; }
+
+.mdc-form-field > .mdc-textfield + label {
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
