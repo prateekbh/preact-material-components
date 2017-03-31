@@ -44,9 +44,9 @@
     "babel-regenerator-runtime": "^6.5.0",
     "babili-webpack-plugin": "0.0.11",
     "clean-webpack-plugin": "^0.1.15",
-    "cp": "^0.2.0",
     "eslint": "^3.17.1",
     "eslint-plugin-react": "^6.10.0",
+    "glob-cp": "^1.0.4",
     "preact": "^7.2.0",
     "webpack": "^2.2.1"
   }
