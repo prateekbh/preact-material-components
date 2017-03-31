@@ -2,7 +2,8 @@
   "name": "preact-material-components",
   "version": "1.0.0",
   "description": "preact wrapper for \"Material Components for the web\"",
-  "main": "index.js",
+	"module": "Components/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepublish": "node copy-css.js",
     "test": "npm run lint",
@@ -28,6 +29,10 @@
       "email": "StijnDeWitt@hotmail.com"
     }
   ],
+	"files": [
+		"Components",
+		"dist"
+	],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/prateekbh/preact-material-components/issues"
