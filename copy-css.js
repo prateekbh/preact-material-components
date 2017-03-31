@@ -8,6 +8,7 @@ const bundleMapping = {
 	Card: 'card',
 	Checkbox: 'checkbox',
 	Dialog: 'dialog',
+	Drawer: 'drawer',
 	Elevation: 'elevation',
 	Fab: 'fab',
 	FormField: 'form-field',
