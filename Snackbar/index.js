@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCSnackbar } from "../../node_modules/@material/snackbar/";
+import { MDCSnackbar } from "@material/snackbar/";
 /**
  * @prop mini = false
  * @prop plain = false

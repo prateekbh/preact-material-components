@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCRadio } from "../../node_modules/@material/radio/";
+import { MDCRadio } from "@material/radio/";
 
 /**
  * @prop mini = false

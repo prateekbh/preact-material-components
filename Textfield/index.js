@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCTextfield } from "../../node_modules/@material/textfield/";
+import { MDCTextfield } from "@material/textfield/";
 
 /**
  * @prop fullwidth = false

@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCDialog } from "../../node_modules/@material/dialog/";
+import { MDCDialog } from "@material/dialog/";
 import Button from "../Button/Button";
 /**
  */

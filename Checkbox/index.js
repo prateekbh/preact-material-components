@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCCheckbox } from "../../node_modules/@material/checkbox/";
+import { MDCCheckbox } from "@material/checkbox/";
 
 /**
  */
