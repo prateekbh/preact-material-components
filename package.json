@@ -1,8 +1,8 @@
 {
 	"name": "preact-material-components",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "preact wrapper for \"Material Components for the web\"",
-	"module": "Components/index.js",
+	"module": "index.js",
 	"main": "dist/index.js",
 	"scripts": {
 		"prepublish": "node copy-css.js && ./node_modules/.bin/webpack && npm run test ",

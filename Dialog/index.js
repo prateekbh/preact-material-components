@@ -1,7 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCDialog } from "@material/dialog/";
-import Button from "../Button/Button";
+import Button from "../Button";
 /**
  */
 class Dialog extends MaterialComponent {

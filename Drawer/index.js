@@ -1,7 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCTemporaryDrawer } from "../../node_modules/@material/drawer/temporary";
-import List from "../List/List";
+import { MDCTemporaryDrawer } from "@material/drawer/temporary";
+import List from "../List";
 
 class TemporaryDrawer extends MaterialComponent {
 	constructor() {

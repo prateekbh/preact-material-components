@@ -1,7 +1,7 @@
-/* globals module, require */
+/* globals module, require, __dirname */
 const webpack = require('webpack');
 module.exports = {
-	entry : './Components/index.js',
+	entry : './index.js',
 	output : {
 		path: __dirname + '/dist',
 		filename: 'index.js',

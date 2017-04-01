@@ -31,7 +31,7 @@ for (let dest in bundleMapping) {
 	if (bundleMapping.hasOwnProperty(dest)) {
 		const source = bundleMapping[dest];
 		const sourcePath = path.join(srcPath, source, 'dist', 'mdc.' + source + '.css');
-		const destPath = path.join(__dirname, 'Components', dest, dest + '.css');
+		const destPath = path.join(__dirname, dest, dest + '.css');
 		cp.sync(sourcePath, destPath);
 	}
 }
