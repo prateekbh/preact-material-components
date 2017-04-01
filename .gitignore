@@ -38,3 +38,4 @@ jspm_packages
 
 # Public dirs
 **/public/*
+**/dist/*
