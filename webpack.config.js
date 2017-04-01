@@ -1,11 +1,20 @@
-/* globals module, require */
-const webpack = require('webpack');
-module.exports = {
-	entry : './Components/index.js',
-	output : {
-		path: __dirname + '/dist',
-		filename: 'index.js',
-		libraryTarget: 'umd'
+/* globals require, __dirname, module */
+const webpack = require("webpack");
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractCSS = new ExtractTextPlugin('[name].css');
+
+const config = {
+	entry: {
+	 app: './app.js',
+	 vendor: ['preact']
+	},
+	output: {
+		path: __dirname + '/public',
+		publicPath: '/public/',
+		filename: '[name].js'
 	},
 	module: {
 		rules: [
@@ -18,9 +27,26 @@ module.exports = {
 					plugins:[
 						["transform-react-jsx", { "pragma": "h" }],
 						"transform-async-to-generator",
-					],
+					]
 				}
-			}
+			},
+			{
+				test: /\.css$/,
+				loader: extractCSS.extract({
+					fallbackLoader: 'style-loader',
+					loader: ['css-loader','postcss-loader']
+				}),
+			},
 		]
-	}
+	},
+	plugins: [
+		new CleanWebpackPlugin('./public'),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor',
+			minChunks: 2
+		}),
+		extractCSS
+	]
 };
+
+module.exports = config;
