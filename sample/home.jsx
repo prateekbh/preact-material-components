@@ -12,14 +12,9 @@ import {
 	Select,
 	Elevation,
 	Dialog,
-<<<<<<< HEAD
-	List
-} from "../Components/";
-=======
 	List,
 	Drawer
-} from "../src/";
->>>>>>> 2a60702c8d8455459f04700dae6f9c48a95536a6
+} from "../Components/";
 
 
 
@@ -27,7 +22,7 @@ export default class Home extends Component {
 	render(){
 		return (<div>
 			<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}}>
-				<Drawer.TemporarytDrawerHeader>Hello Header1</Drawer.TemporarytDrawerHeader>
+				<Drawer.TemporarytDrawerHeader>Hello Header</Drawer.TemporarytDrawerHeader>
 				<Drawer.DrawerItem>Item1</Drawer.DrawerItem>
 				<Drawer.DrawerItem selected={true}>Item2</Drawer.DrawerItem>
 			</Drawer.TemporaryDrawer>
