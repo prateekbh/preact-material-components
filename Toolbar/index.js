@@ -13,10 +13,6 @@ class Toolbar extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<header ref={control=>{this.control = control;}} {...props}>
-				<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-					{props.icon && <a class="material-icons">{props.icon}</a>}
-					<span class="mdc-toolbar__title">{props.title}</span>
-				</section>
 				{props.children}
 			</header>
 		);
@@ -25,22 +21,53 @@ class Toolbar extends MaterialComponent {
 
 /**
  * @prop align-end = false
+ * @prop align-start = false
  */
 class ToolbarSection extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "toolbar__section";
-		this._mdcProps = ["align-end"];
+		this._mdcProps = ["align-start", "align-end"];
 	}
 	materialDom(props) {
 		return (
-			<section>
-				{...props}
+			<section {...props}>
+				{props.children}
 			</section>
 		);
 	}
 }
 
+class ToolbarIcon extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "toolbal__icon";
+		this._mdcProps = ["align-end"];
+	}
+	materialDom(props) {
+		return (
+				<a className="material-icons" {...props}>{props.children || 'menu'}</a>
+		);
+	}
+}
+
+/**
+ * @prop title = ''
+ */
+class ToolbarTitle extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "toolbar__title";
+	}
+	materialDom(props) {
+		return (
+				<span {...props}>{props.children}</span>
+		);
+	}
+}
+
 Toolbar.Section = ToolbarSection;
+Toolbar.Icon = ToolbarIcon;
+Toolbar.Title = ToolbarTitle;
 
 export default Toolbar;
