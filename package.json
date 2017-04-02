@@ -29,10 +29,6 @@
       "email": "StijnDeWitt@hotmail.com"
     }
   ],
-  "files": [
-    "Components",
-    "dist"
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/prateekbh/preact-material-components/issues"
