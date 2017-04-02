@@ -21,12 +21,11 @@ const config = {
 			{
 				loader: 'babel-loader',
 				test: /\.(js|jsx)$/,
-				exclude: /node_modules\/proptypes|scripts\/sw.js/,
 				options: {
 					presets: [['es2015', {"modules": false}]],
 					plugins:[
 						["transform-react-jsx", { "pragma": "h" }],
-						"transform-async-to-generator",
+						"transform-async-to-generator"
 					]
 				}
 			},
