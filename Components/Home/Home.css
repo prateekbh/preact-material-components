@@ -3,6 +3,9 @@
 		vertical-align: bottom;
 		background-color: #673ab8;
 		color: #fff;
+		a {
+			color: #fff;
+		}
 	}
 	h1{
 		margin: 0;
