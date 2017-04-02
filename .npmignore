@@ -38,7 +38,11 @@ jspm_packages
 
 # Public dirs
 **/public/*
-**/dist/*
 
-# CSS, so far this repo is just bridge to material components. Hence Css is not required in git repo
-*.css
+
+# Custom files
+webpack.config.js
+copy-css.js
+*.yml
+.eslintrc
+sample

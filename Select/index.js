@@ -1,7 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCSelect } from "../../node_modules/@material/select/";
-import List from "../List/List";
+import { MDCSelect } from "@material/select/";
+import List from "../List";
 class Select extends MaterialComponent {
 	constructor() {
 		super();
