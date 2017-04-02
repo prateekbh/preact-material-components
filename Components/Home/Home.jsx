@@ -1,6 +1,6 @@
 import {h, Component} from 'preact';
-import Icon from 'preact-material-components/Components/Icon/Icon.js';
-import 'preact-material-components/Components/Icon/Icon.css';
+import Icon from 'preact-material-components/Icon/Icon.js';
+import 'preact-material-components/Icon/Icon.css';
 import './Home.css';
 export default class Home extends Component {
 	render(){
