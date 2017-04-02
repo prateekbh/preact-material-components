@@ -1,5 +1,6 @@
 /* globals module, require, __dirname */
 const webpack = require('webpack');
+const CssMigrationWebpackPlugin = require('./CssMigrationWebpackPlugin');
 module.exports = {
 	entry : './index.js',
 	output : {
@@ -18,9 +19,12 @@ module.exports = {
 					plugins:[
 						["transform-react-jsx", { "pragma": "h" }],
 						"transform-async-to-generator",
-					],
+					]
 				}
 			}
 		]
-	}
+	},
+	plugins: [
+		new CssMigrationWebpackPlugin()
+	]
 };

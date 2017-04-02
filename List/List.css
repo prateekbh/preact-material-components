@@ -1,0 +1,973 @@
+/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/** MDC Ripple keyframes are split into their own file so that _mixins.scss can rely on them. */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@-webkit-keyframes mdc-ripple-fg-radius-in {
+  from {
+    -webkit-transform: translate(0) scale(1);
+            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  to {
+    -webkit-transform: translate(0) scale(0);
+            transform: translate(0) scale(0);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+@keyframes mdc-ripple-fg-radius-in {
+  from {
+    -webkit-transform: translate(0) scale(1);
+            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  to {
+    -webkit-transform: translate(0) scale(0);
+            transform: translate(0) scale(0);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-out {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 0; } }
+
+@keyframes mdc-ripple-fg-opacity-out {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
+  from {
+    -webkit-transform: 0;
+            transform: 0;
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
+  from {
+    -webkit-transform: 0;
+            transform: 0;
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.
+ *
+ * Usage Example:
+ * ```scss
+ * .mdc-foo {
+ *   position: absolute;
+ *   left: 0;
+ *
+ *   @include mdc-rtl {
+ *     left: auto;
+ *     right: 0;
+ *   }
+ *
+ *   &__bar {
+ *     margin-left: 4px;
+ *     @include mdc-rtl(".mdc-foo") {
+ *       margin-left: auto;
+ *       margin-right: 4px;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--mod {
+ *   padding-left: 4px;
+ *
+ *   @include mdc-rtl {
+ *     padding-left: auto;
+ *     padding-right: 4px;
+ *   }
+ * }
+ * ```
+ *
+ * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work
+ * in most cases, it will in some cases lead to false negatives, e.g.
+ *
+ * ```html
+ * <html dir="rtl">
+ *   <!-- ... -->
+ *   <div dir="ltr">
+ *     <div class="mdc-foo">Styled incorrectly as RTL!</div>
+ *   </div>
+ * </html>
+ * ```
+ *
+ * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.
+ */
+/**
+ * Takes a base box-model property - e.g. margin / border / padding - along with a default
+ * direction and value, and emits rules which apply the value to the
+ * "<base-property>-<default-direction>" property by default, but flips the direction
+ * when within an RTL context.
+ *
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, left, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 8px;
+ *     margin-left: 0;
+ *   }
+ * }
+ * ```
+ * whereas:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-box(margin, right, 8px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-right: 8px;
+ *
+ *   @include mdc-rtl {
+ *     margin-right: 0;
+ *     margin-left: 8px;
+ *   }
+ * }
+ * ```
+ *
+ * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,
+ * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, ".mdc-component")`.
+ *
+ * Note that this function will always zero out the original value in an RTL context. If you're
+ * trying to flip the values, use mdc-rtl-reflexive-property().
+ */
+/**
+ * Takes a base property and emits rules that assign <base-property>-left to <left-value> and
+ * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.
+ * For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-property(margin, auto, 12px);
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   margin-left: auto;
+ *   margin-right: 12px;
+ *
+ *   @include mdc-rtl {
+ *     margin-left: 12px;
+ *     margin-right: auto;
+ *   }
+ * }
+ * ```
+ *
+ * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.
+ */
+/**
+ * Takes an argument specifying a horizontal position property (either "left" or "right") as well
+ * as a value, and applies that value to the specified position in a LTR context, and flips it in a
+ * RTL context. For example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   @include mdc-rtl-reflexive-position(left, 0);
+ *   position: absolute;
+ * }
+ * ```
+ * is equivalent to:
+ *
+ * ```scss
+ *  .mdc-foo {
+ *    position: absolute;
+ *    left: 0;
+ *    right: initial;
+ *
+ *    @include mdc-rtl {
+ *      right: 0;
+ *      left: initial;
+ *    }
+ *  }
+ * ```
+ * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Applies the correct theme color style to the specified property.
+ * $property is typically color or background-color, but can be any CSS property that accepts color values.
+ * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).
+ */
+/**
+ * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.
+ * Should provide the $root-selector option if applied to anything other than the root selector.
+ * When used with a modifier class, provide a second argument of `true` for the $compound parameter
+ * to specify that this should be attached as a compound class.
+ *
+ * Usage example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   color: black;
+ *
+ *   @include mdc-theme-dark {
+ *     color: white;
+ *   }
+ *
+ *   &__bar {
+ *     background: black;
+ *
+ *     @include mdc-theme-dark(".mdc-foo") {
+ *       background: white;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--disabled {
+ *   opacity: .38;
+ *
+ *   @include mdc-theme-dark(".mdc-foo", true) {
+ *     opacity: .5;
+ *   }
+ * }
+ * ```
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* TODO(sgomes): Figure out what to do about desktop font sizes. */
+/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* TODO(sgomes): Figure out what to do about desktop font sizes. */
+/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
+.mdc-list {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.75rem;
+  color: rgba(0, 0, 0, 0.87);
+  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+  margin: 0;
+  padding: 8px 16px 0;
+  line-height: 1.5rem;
+  list-style-type: none; }
+  .mdc-list--theme-dark,
+  .mdc-theme--dark .mdc-list {
+    color: white;
+    color: var(--mdc-theme-text-primary-on-dark, white); }
+
+.mdc-list--dense {
+  padding-top: 4px;
+  font-size: .812rem; }
+
+.mdc-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 48px; }
+  .mdc-list-item__start-detail {
+    width: 24px;
+    height: 24px;
+    margin-left: 0;
+    margin-right: 32px; }
+    [dir="rtl"] .mdc-list-item .mdc-list-item__start-detail,
+    .mdc-list-item[dir="rtl"] .mdc-list-item__start-detail {
+      margin-left: 32px;
+      margin-right: 0; }
+  .mdc-list-item__end-detail {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: 16px; }
+    [dir="rtl"] .mdc-list-item .mdc-list-item__end-detail,
+    .mdc-list-item[dir="rtl"] .mdc-list-item__end-detail {
+      margin-left: 16px;
+      margin-right: auto; }
+  .mdc-list-item__text {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .mdc-list-item__text__secondary {
+      font-family: Roboto, sans-serif;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1.25rem;
+      color: rgba(0, 0, 0, 0.54);
+      color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }
+      .mdc-list-item__text__secondary--theme-dark,
+      .mdc-theme--dark .mdc-list-item__text__secondary {
+        color: rgba(255, 255, 255, 0.7);
+        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
+      .mdc-list--dense .mdc-list-item__text__secondary {
+        font-size: inherit; }
+  .mdc-list--dense .mdc-list-item {
+    height: 40px; }
+    .mdc-list--dense .mdc-list-item__start-detail {
+      width: 20px;
+      height: 20px;
+      margin-left: 0;
+      margin-right: 36px; }
+      [dir="rtl"] .mdc-list-item .mdc-list--dense .mdc-list-item__start-detail,
+      .mdc-list-item[dir="rtl"] .mdc-list--dense .mdc-list-item__start-detail {
+        margin-left: 36px;
+        margin-right: 0; }
+    .mdc-list--dense .mdc-list-item__end-detail {
+      width: 20px;
+      height: 20px; }
+  .mdc-list--avatar-list .mdc-list-item {
+    height: 56px; }
+    .mdc-list--avatar-list .mdc-list-item__start-detail {
+      width: 40px;
+      height: 40px;
+      margin-left: 0;
+      margin-right: 16px;
+      border-radius: 50%; }
+      [dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__start-detail,
+      .mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__start-detail {
+        margin-left: 16px;
+        margin-right: 0; }
+  .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item {
+    height: 48px; }
+    .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {
+      width: 36px;
+      height: 36px;
+      margin-left: 0;
+      margin-right: 20px; }
+      [dir="rtl"] .mdc-list-item .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail,
+      .mdc-list-item[dir="rtl"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {
+        margin-left: 20px;
+        margin-right: 0; }
+  .mdc-list--two-line .mdc-list-item {
+    height: 72px; }
+  .mdc-list--two-line.mdc-list--dense .mdc-list-item {
+    height: 60px; }
+
+a.mdc-list-item {
+  color: inherit;
+  text-decoration: none; }
+
+.mdc-list-item.mdc-ripple-upgraded {
+  --mdc-ripple-left: 0;
+  --mdc-ripple-top: 0;
+  --mdc-ripple-fg-size: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+  --mdc-ripple-xfo-x: center;
+  --mdc-ripple-xfo-y: center;
+  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
+  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
+  --mdc-ripple-fg-approx-xf: 0;
+  will-change: transform, opacity;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  left: -16px;
+  width: calc(100% + 32px);
+  padding: 0 16px;
+  overflow: hidden; }
+  .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):hover::before, .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):focus::before, .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):active::after {
+    -webkit-transition-duration: 85ms;
+            transition-duration: 85ms;
+    opacity: .6; }
+  .mdc-list-item.mdc-ripple-upgraded::before {
+    background-color: rgba(0, 0, 0, 0.06);
+    position: absolute;
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before {
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {
+    opacity: .99999; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {
+    -webkit-transition-duration: 600ms;
+            transition-duration: 600ms; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    -webkit-transition-duration: 120ms;
+            transition-duration: 120ms;
+    opacity: 1; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {
+    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
+    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-list-item.mdc-ripple-upgraded::after {
+    background-color: rgba(0, 0, 0, 0.06);
+    position: absolute;
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    opacity: 0; }
+  .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {
+    top: 0;
+    top: var(--mdc-ripple-top, 0);
+    left: 0;
+    left: var(--mdc-ripple-left, 0);
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
+    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+    transition: opacity 110ms linear, transform 0 linear 80ms;
+    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    opacity: 1; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-list-item.mdc-ripple-upgraded:focus {
+    outline: none; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::before {
+    background-color: rgba(255, 255, 255, 0.12);
+    position: absolute;
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before {
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {
+    opacity: .99999; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {
+    -webkit-transition-duration: 600ms;
+            transition-duration: 600ms; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    -webkit-transition-duration: 120ms;
+            transition-duration: 120ms;
+    opacity: 1; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {
+    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
+    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::after {
+    background-color: rgba(255, 255, 255, 0.12);
+    position: absolute;
+    top: calc(50% - 100%);
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    opacity: 0; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {
+    top: 0;
+    top: var(--mdc-ripple-top, 0);
+    left: 0;
+    left: var(--mdc-ripple-left, 0);
+    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
+            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
+    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
+    transition: opacity 110ms linear, transform 0 linear 80ms;
+    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    opacity: 1; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+
+.mdc-list-divider {
+  height: 0;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  .mdc-list--theme-dark .mdc-list-divider,
+  .mdc-theme--dark .mdc-list-divider {
+    border-bottom-color: rgba(255, 255, 255, 0.2); }
+
+.mdc-list-divider--inset {
+  margin-left: 56px;
+  margin-right: 0;
+  width: calc(100% - 56px); }
+  [dir="rtl"] .mdc-list-group .mdc-list-divider--inset,
+  .mdc-list-group[dir="rtl"] .mdc-list-divider--inset {
+    margin-left: 0;
+    margin-right: 56px; }
+
+.mdc-list-group {
+  padding: 0 16px; }
+  .mdc-list-group__subheader {
+    font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.5rem;
+    color: rgba(0, 0, 0, 0.87);
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    margin: 0.75rem 0; }
+    .mdc-list-group__subheader--theme-dark,
+    .mdc-theme--dark .mdc-list-group__subheader {
+      color: white;
+      color: var(--mdc-theme-text-primary-on-dark, white); }
+  .mdc-list-group .mdc-list {
+    padding: 0; }

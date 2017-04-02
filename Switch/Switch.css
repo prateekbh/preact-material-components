@@ -1,0 +1,399 @@
+/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * The css property used for elevation. In most cases this should not be changed. It is exposed
+ * as a variable for abstraction / easy use when needing to reference the property directly, for
+ * example in a `will-change` rule.
+ */
+/**
+ * The default duration value for elevation transitions.
+ */
+/**
+ * The default easing value for elevation transitions.
+ */
+/**
+ * Applies the correct css rules to an element to give it the elevation specified by $z-value.
+ * The $z-value must be between 0 and 24.
+ */
+/**
+ * Returns a string that can be used as the value for a `transition` property for elevation.
+ * Calling this function directly is useful in situations where a component needs to transition
+ * more than one property.
+ *
+ * ```scss
+ * .foo {
+ *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;
+ *   will-change: $mdc-elevation-property, opacity;
+ * }
+ * ```
+ */
+/**
+ * Applies the correct css rules needed to have an element transition between elevations.
+ * This mixin should be applied to elements whose elevation values will change depending on their
+ * context (e.g. when active or disabled).
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Applies the correct theme color style to the specified property.
+ * $property is typically color or background-color, but can be any CSS property that accepts color values.
+ * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).
+ */
+/**
+ * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.
+ * Should provide the $root-selector option if applied to anything other than the root selector.
+ * When used with a modifier class, provide a second argument of `true` for the $compound parameter
+ * to specify that this should be attached as a compound class.
+ *
+ * Usage example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   color: black;
+ *
+ *   @include mdc-theme-dark {
+ *     color: white;
+ *   }
+ *
+ *   &__bar {
+ *     background: black;
+ *
+ *     @include mdc-theme-dark(".mdc-foo") {
+ *       background: white;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--disabled {
+ *   opacity: .38;
+ *
+ *   @include mdc-theme-dark(".mdc-foo", true) {
+ *     opacity: .5;
+ *   }
+ * }
+ * ```
+ */
+.mdc-switch {
+  display: inline-block;
+  position: relative; }
+  .mdc-switch__native-control {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 14px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2; }
+  .mdc-switch__background {
+    display: block;
+    position: relative;
+    width: 34px;
+    height: 14px;
+    border-radius: 7px;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .mdc-switch--theme-dark .mdc-switch__background,
+    .mdc-theme--dark .mdc-switch__background {
+      background-color: transparent; }
+    .mdc-switch__background::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      -webkit-transition: opacity 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 7px;
+      background-color: #000;
+      content: "";
+      opacity: .38; }
+      .mdc-switch--theme-dark .mdc-switch__background::before,
+      .mdc-theme--dark .mdc-switch__background::before {
+        background-color: #fff;
+        opacity: .3; }
+    .mdc-switch__background .mdc-switch__knob {
+      display: block;
+      position: absolute;
+      top: -3px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      -webkit-transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 10px;
+      background-color: #fafafa;
+      box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+      z-index: 1; }
+      .mdc-switch--theme-dark .mdc-switch__background .mdc-switch__knob,
+      .mdc-theme--dark .mdc-switch__background .mdc-switch__knob {
+        background-color: #bdbdbd; }
+      .mdc-switch__background .mdc-switch__knob::before {
+        position: absolute;
+        top: -14px;
+        left: -14px;
+        width: 48px;
+        height: 48px;
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 24px;
+        background-color: transparent;
+        content: "";
+        opacity: .2; }
+
+.mdc-switch__native-control:focus ~ .mdc-switch__background .mdc-switch__knob::before {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 24px;
+  background-color: #9e9e9e; }
+  .mdc-switch--theme-dark .mdc-switch__native-control:focus ~ .mdc-switch__background .mdc-switch__knob::before,
+  .mdc-theme--dark .mdc-switch__native-control:focus ~ .mdc-switch__background .mdc-switch__knob::before {
+    background-color: #f1f1f1;
+    opacity: .14; }
+
+.mdc-switch__native-control:checked ~ .mdc-switch__background::before {
+  background-color: #3f51b5;
+  background-color: var(--mdc-theme-primary, #3f51b5);
+  opacity: .5; }
+
+.mdc-switch__native-control:checked ~ .mdc-switch__background .mdc-switch__knob {
+  -webkit-transform: translateX(14px);
+          transform: translateX(14px);
+  -webkit-transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 90ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 90ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #3f51b5;
+  background-color: var(--mdc-theme-primary, #3f51b5); }
+  .mdc-switch__native-control:checked ~ .mdc-switch__background .mdc-switch__knob::before {
+    background-color: #3f51b5;
+    background-color: var(--mdc-theme-primary, #3f51b5);
+    opacity: .15; }
+    .mdc-switch--theme-dark .mdc-switch__native-control:checked ~ .mdc-switch__background .mdc-switch__knob::before,
+    .mdc-theme--dark .mdc-switch__native-control:checked ~ .mdc-switch__background .mdc-switch__knob::before {
+      background-color: #3f51b5;
+      background-color: var(--mdc-theme-primary, #3f51b5); }
+
+.mdc-switch__native-control:disabled {
+  cursor: initial; }
+
+.mdc-switch__native-control:disabled ~ .mdc-switch__background::before {
+  background-color: #000;
+  opacity: .12; }
+  .mdc-switch--theme-dark .mdc-switch__native-control:disabled ~ .mdc-switch__background::before,
+  .mdc-theme--dark .mdc-switch__native-control:disabled ~ .mdc-switch__background::before {
+    background-color: #fff;
+    opacity: .1; }
+
+.mdc-switch__native-control:disabled ~ .mdc-switch__background .mdc-switch__knob {
+  background-color: #bdbdbd; }
+  .mdc-switch--theme-dark .mdc-switch__native-control:disabled ~ .mdc-switch__background .mdc-switch__knob,
+  .mdc-theme--dark .mdc-switch__native-control:disabled ~ .mdc-switch__background .mdc-switch__knob {
+    background-color: #424242; }

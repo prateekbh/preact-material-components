@@ -1,0 +1,304 @@
+/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance() with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Applies the correct theme color style to the specified property.
+ * $property is typically color or background-color, but can be any CSS property that accepts color values.
+ * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).
+ */
+/**
+ * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.
+ * Should provide the $root-selector option if applied to anything other than the root selector.
+ * When used with a modifier class, provide a second argument of `true` for the $compound parameter
+ * to specify that this should be attached as a compound class.
+ *
+ * Usage example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   color: black;
+ *
+ *   @include mdc-theme-dark {
+ *     color: white;
+ *   }
+ *
+ *   &__bar {
+ *     background: black;
+ *
+ *     @include mdc-theme-dark(".mdc-foo") {
+ *       background: white;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--disabled {
+ *   opacity: .38;
+ *
+ *   @include mdc-theme-dark(".mdc-foo", true) {
+ *     opacity: .5;
+ *   }
+ * }
+ * ```
+ */
+:root {
+  --mdc-theme-primary: #3f51b5;
+  --mdc-theme-accent: #ff4081;
+  --mdc-theme-background: #fff;
+  --mdc-theme-text-primary-on-primary: white;
+  --mdc-theme-text-secondary-on-primary: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-primary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-primary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-primary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-primary-on-accent: white;
+  --mdc-theme-text-secondary-on-accent: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-accent: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-accent: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-accent: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-dark: white;
+  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5); }
+
+/* Special case, so that .mdc-theme--background changes background color, not text color. */
+.mdc-theme--background {
+  background-color: #fff;
+  background-color: var(--mdc-theme-background, #fff); }
+
+.mdc-theme--primary {
+  color: #3f51b5 !important;
+  color: var(--mdc-theme-primary, #3f51b5) !important; }
+
+.mdc-theme--accent {
+  color: #ff4081 !important;
+  color: var(--mdc-theme-accent, #ff4081) !important; }
+
+.mdc-theme--text-primary-on-primary {
+  color: white !important;
+  color: var(--mdc-theme-text-primary-on-primary, white) !important; }
+
+.mdc-theme--text-secondary-on-primary {
+  color: rgba(255, 255, 255, 0.7) !important;
+  color: var(--mdc-theme-text-secondary-on-primary, rgba(255, 255, 255, 0.7)) !important; }
+
+.mdc-theme--text-hint-on-primary {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-hint-on-primary, rgba(255, 255, 255, 0.5)) !important; }
+
+.mdc-theme--text-disabled-on-primary {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-disabled-on-primary, rgba(255, 255, 255, 0.5)) !important; }
+
+.mdc-theme--text-icon-on-primary {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-icon-on-primary, rgba(255, 255, 255, 0.5)) !important; }
+
+.mdc-theme--text-primary-on-accent {
+  color: white !important;
+  color: var(--mdc-theme-text-primary-on-accent, white) !important; }
+
+.mdc-theme--text-secondary-on-accent {
+  color: rgba(255, 255, 255, 0.7) !important;
+  color: var(--mdc-theme-text-secondary-on-accent, rgba(255, 255, 255, 0.7)) !important; }
+
+.mdc-theme--text-hint-on-accent {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-hint-on-accent, rgba(255, 255, 255, 0.5)) !important; }
+
+.mdc-theme--text-disabled-on-accent {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-disabled-on-accent, rgba(255, 255, 255, 0.5)) !important; }
+
+.mdc-theme--text-icon-on-accent {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-icon-on-accent, rgba(255, 255, 255, 0.5)) !important; }
+
+.mdc-theme--text-primary-on-background {
+  color: rgba(0, 0, 0, 0.87) !important;
+  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)) !important; }
+
+.mdc-theme--text-secondary-on-background {
+  color: rgba(0, 0, 0, 0.54) !important;
+  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)) !important; }
+
+.mdc-theme--text-hint-on-background {
+  color: rgba(0, 0, 0, 0.38) !important;
+  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-disabled-on-background {
+  color: rgba(0, 0, 0, 0.38) !important;
+  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-icon-on-background {
+  color: rgba(0, 0, 0, 0.38) !important;
+  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-primary-on-light {
+  color: rgba(0, 0, 0, 0.87) !important;
+  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)) !important; }
+
+.mdc-theme--text-secondary-on-light {
+  color: rgba(0, 0, 0, 0.54) !important;
+  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)) !important; }
+
+.mdc-theme--text-hint-on-light {
+  color: rgba(0, 0, 0, 0.38) !important;
+  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-disabled-on-light {
+  color: rgba(0, 0, 0, 0.38) !important;
+  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-icon-on-light {
+  color: rgba(0, 0, 0, 0.38) !important;
+  color: var(--mdc-theme-text-icon-on-light, rgba(0, 0, 0, 0.38)) !important; }
+
+.mdc-theme--text-primary-on-dark {
+  color: white !important;
+  color: var(--mdc-theme-text-primary-on-dark, white) !important; }
+
+.mdc-theme--text-secondary-on-dark {
+  color: rgba(255, 255, 255, 0.7) !important;
+  color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)) !important; }
+
+.mdc-theme--text-hint-on-dark {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)) !important; }
+
+.mdc-theme--text-disabled-on-dark {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)) !important; }
+
+.mdc-theme--text-icon-on-dark {
+  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mdc-theme-text-icon-on-dark, rgba(255, 255, 255, 0.5)) !important; }
+
+/* CSS rules for using primary and accent as background colors. */
+.mdc-theme--primary-bg {
+  background-color: #3f51b5 !important;
+  background-color: var(--mdc-theme-primary, #3f51b5) !important; }
+
+.mdc-theme--accent-bg {
+  background-color: #ff4081 !important;
+  background-color: var(--mdc-theme-accent, #ff4081) !important; }
