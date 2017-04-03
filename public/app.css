@@ -3885,10 +3885,14 @@ a.mdc-list-item {
       color: white; }
 .mdc-list-group .mdc-list {
     padding: 0; }
+.home .mdc-toolbar {
+    background-color: #2b313c;
+}
 .home .hero{
     vertical-align: bottom;
-    background-color: #3f51b5;
+    background-color: #2b313c;
     color: #fff;
+    text-align: center;
     height: 40vh;
 }
 .home .hero a {

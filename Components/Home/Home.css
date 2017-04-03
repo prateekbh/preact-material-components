@@ -1,8 +1,12 @@
 .home{
+	.mdc-toolbar {
+		background-color: #2b313c;
+	}
 	.hero{
 		vertical-align: bottom;
-		background-color: #3f51b5;
+		background-color: #2b313c;
 		color: #fff;
+		text-align: center;
 		height: 40vh;
 		a {
 			color: #fff;

@@ -3,10 +3,10 @@ import Icon from 'preact-material-components/Icon';
 import Toolbar from 'preact-material-components/Toolbar';
 import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
-import 'preact-material-components/Icon/Icon.css';
-import 'preact-material-components/Toolbar/Toolbar.css';
-import 'preact-material-components/Drawer/Drawer.css';
-import 'preact-material-components/List/List.css';
+import 'preact-material-components/Icon/style.css';
+import 'preact-material-components/Toolbar/style.css';
+import 'preact-material-components/Drawer/style.css';
+import 'preact-material-components/List/style.css';
 import './Home.css';
 export default class Home extends Component {
 	render(){
@@ -44,13 +44,13 @@ export default class Home extends Component {
 							</g>
 						</g>
 					</svg>
-					<div className="name">preact-material-component</div>
+					<div className="mdc-typography--display2 name">preact-material-component</div>
 				</div>
 				<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}} >
-						<Drawer.TemporarytDrawerHeader className="mdc-theme--primary-bg">
+						<Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
 							Components
-						</Drawer.TemporarytDrawerHeader>
-						<Drawer.TemporarytDrawerContent>
+						</Drawer.TemporaryDrawerHeader>
+						<Drawer.TemporaryDrawerContent>
 							<List>
 								<List.ListItem>
 										<List.ListItemIcon>code</List.ListItemIcon>
@@ -121,7 +121,7 @@ export default class Home extends Component {
 									Toolbar
 								</List.ListItem>
 							</List>
-						</Drawer.TemporarytDrawerContent>
+						</Drawer.TemporaryDrawerContent>
 					</Drawer.TemporaryDrawer>
 			</div>
 		);

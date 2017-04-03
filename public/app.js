@@ -100,7 +100,7 @@ var MaterialComponent = function (_Component) {
 	}, {
 		key: "getClassName",
 		value: function getClassName(element) {
-			if (element && element.attributes && element.attributes.className) {
+			if (element && element.attributes.className) {
 				return this.classText + " " + element.attributes.className;
 			}
 			return this.classText;
@@ -499,14 +499,14 @@ List.ListItemIcon = ListItemIcon;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Toolbar__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Icon_Icon_css__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Icon_Icon_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_preact_material_components_Icon_Icon_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_preact_material_components_Toolbar_Toolbar_css__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_preact_material_components_Toolbar_Toolbar_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_preact_material_components_Toolbar_Toolbar_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_preact_material_components_Drawer_Drawer_css__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_preact_material_components_Drawer_Drawer_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_preact_material_components_Drawer_Drawer_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_List_List_css__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_List_List_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_preact_material_components_List_List_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Icon_style_css__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_preact_material_components_Icon_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_preact_material_components_Toolbar_style_css__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_preact_material_components_Toolbar_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_preact_material_components_Drawer_style_css__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_preact_material_components_Drawer_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_List_style_css__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_preact_material_components_List_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Home_css__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__Home_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -609,7 +609,7 @@ var Home = function (_Component) {
 					),
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						'div',
-						{ className: 'name' },
+						{ className: 'mdc-typography--display2 name' },
 						'preact-material-component'
 					)
 				),
@@ -619,12 +619,12 @@ var Home = function (_Component) {
 							_this2.drawer = drawer;
 						} },
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer__["a" /* default */].TemporarytDrawerHeader,
+						__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer__["a" /* default */].TemporaryDrawerHeader,
 						{ className: 'mdc-theme--primary-bg' },
 						'Components'
 					),
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer__["a" /* default */].TemporarytDrawerContent,
+						__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer__["a" /* default */].TemporaryDrawerContent,
 						null,
 						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 							__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */],
@@ -838,10 +838,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Home_Home_jsx__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_preact_material_components_Typography_Typography_css__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_preact_material_components_Typography_Typography_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_preact_material_components_Typography_Typography_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_preact_material_components_Theme_Theme_css__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_preact_material_components_Theme_Theme_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__node_modules_preact_material_components_Theme_Theme_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_preact_material_components_Typography_style_css__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_preact_material_components_Typography_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_preact_material_components_Typography_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_preact_material_components_Theme_style_css__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_preact_material_components_Theme_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__node_modules_preact_material_components_Theme_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_css__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__app_css__);
 
@@ -2549,19 +2549,19 @@ var TemporaryDrawer = function (_MaterialComponent) {
 	return TemporaryDrawer;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
-var TemporarytDrawerHeader = function (_MaterialComponent2) {
-	_inherits(TemporarytDrawerHeader, _MaterialComponent2);
+var TemporaryDrawerHeader = function (_MaterialComponent2) {
+	_inherits(TemporaryDrawerHeader, _MaterialComponent2);
 
-	function TemporarytDrawerHeader() {
-		_classCallCheck(this, TemporarytDrawerHeader);
+	function TemporaryDrawerHeader() {
+		_classCallCheck(this, TemporaryDrawerHeader);
 
-		var _this3 = _possibleConstructorReturn(this, (TemporarytDrawerHeader.__proto__ || Object.getPrototypeOf(TemporarytDrawerHeader)).call(this));
+		var _this3 = _possibleConstructorReturn(this, (TemporaryDrawerHeader.__proto__ || Object.getPrototypeOf(TemporaryDrawerHeader)).call(this));
 
 		_this3.componentName = "temporary-drawer__header";
 		return _this3;
 	}
 
-	_createClass(TemporarytDrawerHeader, [{
+	_createClass(TemporaryDrawerHeader, [{
 		key: "materialDom",
 		value: function materialDom(props) {
 			var _this4 = this;
@@ -2580,22 +2580,22 @@ var TemporarytDrawerHeader = function (_MaterialComponent2) {
 		}
 	}]);
 
-	return TemporarytDrawerHeader;
+	return TemporaryDrawerHeader;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
-var TemporarytDrawerContent = function (_MaterialComponent3) {
-	_inherits(TemporarytDrawerContent, _MaterialComponent3);
+var TemporaryDrawerContent = function (_MaterialComponent3) {
+	_inherits(TemporaryDrawerContent, _MaterialComponent3);
 
-	function TemporarytDrawerContent() {
-		_classCallCheck(this, TemporarytDrawerContent);
+	function TemporaryDrawerContent() {
+		_classCallCheck(this, TemporaryDrawerContent);
 
-		var _this5 = _possibleConstructorReturn(this, (TemporarytDrawerContent.__proto__ || Object.getPrototypeOf(TemporarytDrawerContent)).call(this));
+		var _this5 = _possibleConstructorReturn(this, (TemporaryDrawerContent.__proto__ || Object.getPrototypeOf(TemporaryDrawerContent)).call(this));
 
 		_this5.componentName = "mdc-temporary-drawer__content";
 		return _this5;
 	}
 
-	_createClass(TemporarytDrawerContent, [{
+	_createClass(TemporaryDrawerContent, [{
 		key: "materialDom",
 		value: function materialDom(props) {
 			var _this6 = this;
@@ -2610,7 +2610,7 @@ var TemporarytDrawerContent = function (_MaterialComponent3) {
 		}
 	}]);
 
-	return TemporarytDrawerContent;
+	return TemporaryDrawerContent;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /**
@@ -2685,8 +2685,8 @@ var DrawerItem = function (_List$LinkItem) {
 var Drawer = {};
 
 Drawer.DrawerItem = DrawerItem;
-Drawer.TemporarytDrawerHeader = TemporarytDrawerHeader;
-Drawer.TemporarytDrawerContent = TemporarytDrawerContent;
+Drawer.TemporaryDrawerHeader = TemporaryDrawerHeader;
+Drawer.TemporaryDrawerContent = TemporaryDrawerContent;
 Drawer.TemporaryDrawer = TemporaryDrawer;
 Drawer.PermanentDrawer = PermanentDrawer;
 
