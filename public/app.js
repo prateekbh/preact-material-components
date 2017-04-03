@@ -879,6 +879,115 @@ var ButtonsPage = function (_Component) {
 				{ className: 'page-buttons' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
+					{ className: 'mdc-typography--display2' },
+					'Props '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'ul',
+					{ className: 'props' },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'li',
+						{ className: 'prop' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--headline' },
+							'ripple'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--subheading1' },
+							'true/false'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--body1' },
+							'Adds riple effect to the button'
+						)
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'li',
+						{ className: 'prop' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--headline' },
+							'accent'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--subheading1' },
+							'true/false'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--body1' },
+							'Adds accent colors to the button'
+						)
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'li',
+						{ className: 'prop' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--headline' },
+							'primary'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--subheading1' },
+							'true/false'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--body1' },
+							'Adds primary colors to the button'
+						)
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'li',
+						{ className: 'prop' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--headline' },
+							'dense'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--subheading1' },
+							'true/false'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--body1' },
+							'Adds dense padding to the button'
+						)
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'li',
+						{ className: 'prop' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--headline' },
+							'compact'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--subheading1' },
+							'true/false'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--body1' },
+							'Adds compact padding to the button'
+						)
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display2' },
+					'Demo '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
 					{ className: 'mdc-typography--title' },
 					'Flats '
 				),
