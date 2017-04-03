@@ -3887,14 +3887,27 @@ a.mdc-list-item {
     padding: 0; }
 .home .hero{
     vertical-align: bottom;
-    background-color: #673ab8;
+    background-color: #3f51b5;
     color: #fff;
+    height: 40vh;
 }
 .home .hero a {
     color: #fff;
 }
 .home h1{
     margin: 0;
+}
+.home .st0{
+    fill:#757575
+}
+.home .st1{
+    fill:#bdbdbd
+}
+.home .st2{
+    fill:#fff
+}
+.home .st3{
+    fill:none
 }/*!
  Material Components for the web
  Copyright (c) 2017 Google Inc.

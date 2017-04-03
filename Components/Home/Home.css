@@ -1,8 +1,9 @@
 .home{
 	.hero{
 		vertical-align: bottom;
-		background-color: #673ab8;
+		background-color: #3f51b5;
 		color: #fff;
+		height: 40vh;
 		a {
 			color: #fff;
 		}
@@ -10,4 +11,5 @@
 	h1{
 		margin: 0;
 	}
+	.st0{fill:#757575}.st1{fill:#bdbdbd}.st2{fill:#fff}.st3{fill:none}
 }
