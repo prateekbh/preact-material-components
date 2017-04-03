@@ -41,7 +41,7 @@ class CssMigrationWebpackPlugin{
 						if (!fs.existsSync(destFolderPath)) {
 							mkdirp(destFolderPath);
 						}
-						const destFilePath = path.join(destFolderPath, dest + '.css');
+						const destFilePath = path.join(destFolderPath, 'style.css');
 						//delete already existing file
 						if (fs.existsSync(destFilePath)) {
 							fs.unlinkSync(destFilePath);
