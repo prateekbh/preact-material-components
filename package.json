@@ -59,7 +59,7 @@
     "@material/theme": "^0.1.2",
     "@material/toolbar": "^0.1.2",
     "@material/typography": "^0.2.0",
-    "material-components-web": "^0.7.0"
+    "material-components-web": "^0.8.0"
   },
   "peerDependencies": {
     "preact": "^7.2.0"
