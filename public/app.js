@@ -2602,7 +2602,7 @@ var TemporaryDrawerContent = function (_MaterialComponent3) {
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"nav",
-				_extends({ id: "icon-with-text-demo", className: "mdc-list", ref: function ref(control) {
+				_extends({ className: "mdc-list", ref: function ref(control) {
 						_this6.control = control;
 					} }, props),
 				props.children
@@ -2642,7 +2642,7 @@ var PermanentDrawer = function (_MaterialComponent4) {
 					{ "class": "mdc-permanent-drawer__content" },
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						"nav",
-						{ id: "icon-with-text-demo", "class": "mdc-list" },
+						{ "class": "mdc-list" },
 						props.children
 					)
 				)
