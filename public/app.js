@@ -501,18 +501,19 @@ List.ListItemIcon = ListItemIcon;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ButtonsPage_ButtonsPage_jsx__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__FabPage_FabPage_jsx__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routie__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__routie__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_Icon_style_css__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_preact_material_components_Icon_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_preact_material_components_Toolbar_style_css__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_preact_material_components_Toolbar_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_preact_material_components_Drawer_style_css__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_preact_material_components_Drawer_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_preact_material_components_List_style_css__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_preact_material_components_List_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__Home_css__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__Home_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CheckboxPage_CheckboxPage_jsx__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__routie__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__routie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_preact_material_components_Icon_style_css__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_preact_material_components_Icon_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_preact_material_components_Toolbar_style_css__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_preact_material_components_Toolbar_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_preact_material_components_Drawer_style_css__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_preact_material_components_Drawer_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_preact_material_components_List_style_css__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_preact_material_components_List_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__Home_css__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__Home_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -520,6 +521,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -549,13 +551,13 @@ var Home = function (_Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
-			__WEBPACK_IMPORTED_MODULE_7__routie___default()('/', function (component) {
+			__WEBPACK_IMPORTED_MODULE_8__routie___default()('/', function (component) {
 				_this2.setState({
 					component: null,
 					toolbarTitle: ""
 				});
 			});
-			__WEBPACK_IMPORTED_MODULE_7__routie___default()('/component/:name', function (component) {
+			__WEBPACK_IMPORTED_MODULE_8__routie___default()('/component/:name', function (component) {
 				_this2.setState({
 					component: component,
 					toolbarTitle: component
@@ -667,7 +669,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_7__routie___default()('/');
+										__WEBPACK_IMPORTED_MODULE_8__routie___default()('/');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -680,7 +682,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_7__routie___default()('/component/button');
+										__WEBPACK_IMPORTED_MODULE_8__routie___default()('/component/button');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -701,8 +703,11 @@ var Home = function (_Component) {
 								'Card'
 							),
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ListItem,
-								null,
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_8__routie___default()('/component/checkbox');
+										_this3.closeDrawer();
+									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ListItemIcon,
 									null,
@@ -743,7 +748,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_7__routie___default()('/component/fab');
+										__WEBPACK_IMPORTED_MODULE_8__routie___default()('/component/fab');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -860,7 +865,8 @@ var Home = function (_Component) {
 					'div',
 					{ className: 'content' },
 					this.state.component === 'button' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_5__ButtonsPage_ButtonsPage_jsx__["a" /* default */], null),
-					this.state.component === 'fab' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_6__FabPage_FabPage_jsx__["a" /* default */], null)
+					this.state.component === 'fab' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_6__FabPage_FabPage_jsx__["a" /* default */], null),
+					this.state.component === 'checkbox' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_7__CheckboxPage_CheckboxPage_jsx__["a" /* default */], null)
 				)
 			);
 		}
@@ -2667,7 +2673,7 @@ var MDCRippleFoundation = function (_MDCFoundation) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(4);
-/* unused harmony reexport MDCRippleFoundation */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__foundation__["a"]; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRipple; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -3716,6 +3722,761 @@ var Routie = function Routie(a, b) {
     a.removeEventListener ? a.removeEventListener("hashchange", m) : a.detachEvent("onhashchange", m);
   };return n(), b ? j : void (a[e] = j);
 }; false ? Routie(window) : module.exports = Routie(window, !0);
+
+/***/ }),
+/* 70 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Checkbox__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Button__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_FormField__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Button_style_css__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Button_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Button_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Checkbox_style_css__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Checkbox_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_preact_material_components_Checkbox_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__CheckboxPage_css__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__CheckboxPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__CheckboxPage_css__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+var CheckboxPage = function (_Component) {
+	_inherits(CheckboxPage, _Component);
+
+	function CheckboxPage() {
+		_classCallCheck(this, CheckboxPage);
+
+		return _possibleConstructorReturn(this, (CheckboxPage.__proto__ || Object.getPrototypeOf(CheckboxPage)).apply(this, arguments));
+	}
+
+	_createClass(CheckboxPage, [{
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'div',
+				{ className: 'page-checkbox' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display2' },
+					'Props '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--body2' },
+					'none'
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display2' },
+					'Demo '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_3_preact_material_components_FormField__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1_preact_material_components_Checkbox__["a" /* default */], { id: 'basic-checkbox-label', ref: function ref(cb) {
+							_this2.cb = cb;
+						} }),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'label',
+						{ 'for': 'basic-checkbox', id: 'basic-checkbox-label' },
+						'This is my checkbox'
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_2_preact_material_components_Button__["a" /* default */],
+					{ raised: true, onClick: function onClick() {
+							_this2.cb.MDComponent.indeterminate = true;
+						} },
+					'Make indeterminate'
+				)
+			);
+		}
+	}]);
+
+	return CheckboxPage;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (CheckboxPage);
+
+/***/ }),
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return strings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return numbers; });
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+var ROOT = 'mdc-checkbox';
+
+var cssClasses = {
+  ROOT: 'mdc-checkbox',
+  UPGRADED: 'mdc-checkbox--upgraded',
+  CHECKED: 'mdc-checkbox--checked',
+  INDETERMINATE: 'mdc-checkbox--indeterminate',
+  ANIM_UNCHECKED_CHECKED: 'mdc-checkbox--anim-unchecked-checked',
+  ANIM_UNCHECKED_INDETERMINATE: 'mdc-checkbox--anim-unchecked-indeterminate',
+  ANIM_CHECKED_UNCHECKED: 'mdc-checkbox--anim-checked-unchecked',
+  ANIM_CHECKED_INDETERMINATE: 'mdc-checkbox--anim-checked-indeterminate',
+  ANIM_INDETERMINATE_CHECKED: 'mdc-checkbox--anim-indeterminate-checked',
+  ANIM_INDETERMINATE_UNCHECKED: 'mdc-checkbox--anim-indeterminate-unchecked'
+};
+
+var strings = {
+  NATIVE_CONTROL_SELECTOR: '.' + ROOT + '__native-control',
+  TRANSITION_STATE_INIT: 'init',
+  TRANSITION_STATE_CHECKED: 'checked',
+  TRANSITION_STATE_UNCHECKED: 'unchecked',
+  TRANSITION_STATE_INDETERMINATE: 'indeterminate'
+};
+
+var numbers = {
+  ANIM_END_LATCH_MS: 100
+};
+
+/***/ }),
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(71);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+var CB_PROTO_PROPS = ['checked', 'indeterminate'];
+
+var MDCCheckboxFoundation = function (_MDCFoundation) {
+  _inherits(MDCCheckboxFoundation, _MDCFoundation);
+
+  _createClass(MDCCheckboxFoundation, null, [{
+    key: 'cssClasses',
+    get: function get() {
+      return __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */];
+    }
+  }, {
+    key: 'strings',
+    get: function get() {
+      return __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */];
+    }
+  }, {
+    key: 'numbers',
+    get: function get() {
+      return __WEBPACK_IMPORTED_MODULE_1__constants__["c" /* numbers */];
+    }
+  }, {
+    key: 'defaultAdapter',
+    get: function get() {
+      return {
+        addClass: function addClass() /* className: string */{},
+        removeClass: function removeClass() /* className: string */{},
+        registerAnimationEndHandler: function registerAnimationEndHandler() /* handler: EventListener */{},
+        deregisterAnimationEndHandler: function deregisterAnimationEndHandler() /* handler: EventListener */{},
+        registerChangeHandler: function registerChangeHandler() /* handler: EventListener */{},
+        deregisterChangeHandler: function deregisterChangeHandler() /* handler: EventListener */{},
+        getNativeControl: function getNativeControl() /* HTMLInputElement */{},
+        forceLayout: function forceLayout() {},
+        isAttachedToDOM: function isAttachedToDOM() /* boolean */{}
+      };
+    }
+  }]);
+
+  function MDCCheckboxFoundation(adapter) {
+    _classCallCheck(this, MDCCheckboxFoundation);
+
+    var _this = _possibleConstructorReturn(this, (MDCCheckboxFoundation.__proto__ || Object.getPrototypeOf(MDCCheckboxFoundation)).call(this, Object.assign(MDCCheckboxFoundation.defaultAdapter, adapter)));
+
+    _this.currentCheckState_ = __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */].TRANSITION_STATE_INIT;
+    _this.currentAnimationClass_ = '';
+    _this.animEndLatchTimer_ = 0;
+    _this.animEndHandler_ = function () {
+      clearTimeout(_this.animEndLatchTimer_);
+      _this.animEndLatchTimer_ = setTimeout(function () {
+        _this.adapter_.removeClass(_this.currentAnimationClass_);
+        _this.adapter_.deregisterAnimationEndHandler(_this.animEndHandler_);
+      }, __WEBPACK_IMPORTED_MODULE_1__constants__["c" /* numbers */].ANIM_END_LATCH_MS);
+    };
+    _this.changeHandler_ = function () {
+      return _this.transitionCheckState_();
+    };
+    return _this;
+  }
+
+  _createClass(MDCCheckboxFoundation, [{
+    key: 'init',
+    value: function init() {
+      this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */].UPGRADED);
+      this.adapter_.registerChangeHandler(this.changeHandler_);
+      this.installPropertyChangeHooks_();
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      this.adapter_.deregisterChangeHandler(this.changeHandler_);
+      this.uninstallPropertyChangeHooks_();
+    }
+  }, {
+    key: 'isChecked',
+    value: function isChecked() {
+      return this.getNativeControl_().checked;
+    }
+  }, {
+    key: 'setChecked',
+    value: function setChecked(checked) {
+      this.getNativeControl_().checked = checked;
+    }
+  }, {
+    key: 'isIndeterminate',
+    value: function isIndeterminate() {
+      return this.getNativeControl_().indeterminate;
+    }
+  }, {
+    key: 'setIndeterminate',
+    value: function setIndeterminate(indeterminate) {
+      this.getNativeControl_().indeterminate = indeterminate;
+    }
+  }, {
+    key: 'isDisabled',
+    value: function isDisabled() {
+      return this.getNativeControl_().disabled;
+    }
+  }, {
+    key: 'setDisabled',
+    value: function setDisabled(disabled) {
+      this.getNativeControl_().disabled = disabled;
+    }
+  }, {
+    key: 'installPropertyChangeHooks_',
+    value: function installPropertyChangeHooks_() {
+      var _this2 = this;
+
+      var nativeCb = this.getNativeControl_();
+      var cbProto = Object.getPrototypeOf(nativeCb);
+
+      CB_PROTO_PROPS.forEach(function (controlState) {
+        var desc = Object.getOwnPropertyDescriptor(cbProto, controlState);
+        // We have to check for this descriptor, since some browsers (Safari) don't support its return.
+        // See: https://bugs.webkit.org/show_bug.cgi?id=49739
+        if (validDescriptor(desc)) {
+          Object.defineProperty(nativeCb, controlState, {
+            get: desc.get,
+            set: function set(state) {
+              desc.set.call(nativeCb, state);
+              _this2.transitionCheckState_();
+            },
+            configurable: desc.configurable,
+            enumerable: desc.enumerable
+          });
+        }
+      });
+    }
+  }, {
+    key: 'uninstallPropertyChangeHooks_',
+    value: function uninstallPropertyChangeHooks_() {
+      var nativeCb = this.getNativeControl_();
+      var cbProto = Object.getPrototypeOf(nativeCb);
+
+      CB_PROTO_PROPS.forEach(function (controlState) {
+        var desc = Object.getOwnPropertyDescriptor(cbProto, controlState);
+        if (validDescriptor(desc)) {
+          Object.defineProperty(nativeCb, controlState, desc);
+        }
+      });
+    }
+  }, {
+    key: 'transitionCheckState_',
+    value: function transitionCheckState_() {
+      var nativeCb = this.adapter_.getNativeControl();
+      if (!nativeCb) {
+        return;
+      }
+      var oldState = this.currentCheckState_;
+      var newState = this.determineCheckState_(nativeCb);
+      if (oldState === newState) {
+        return;
+      }
+
+      // Check to ensure that there isn't a previously existing animation class, in case for example
+      // the user interacted with the checkbox before the animation was finished.
+      if (this.currentAnimationClass_.length > 0) {
+        clearTimeout(this.animEndLatchTimer_);
+        this.adapter_.forceLayout();
+        this.adapter_.removeClass(this.currentAnimationClass_);
+      }
+
+      this.currentAnimationClass_ = this.getTransitionAnimationClass_(oldState, newState);
+      this.currentCheckState_ = newState;
+
+      // Check for parentNode so that animations are only run when the element is attached
+      // to the DOM.
+      if (this.adapter_.isAttachedToDOM() && this.currentAnimationClass_.length > 0) {
+        this.adapter_.addClass(this.currentAnimationClass_);
+        this.adapter_.registerAnimationEndHandler(this.animEndHandler_);
+      }
+    }
+  }, {
+    key: 'determineCheckState_',
+    value: function determineCheckState_(nativeCb) {
+      var TRANSITION_STATE_INDETERMINATE = __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */].TRANSITION_STATE_INDETERMINATE,
+          TRANSITION_STATE_CHECKED = __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */].TRANSITION_STATE_CHECKED,
+          TRANSITION_STATE_UNCHECKED = __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */].TRANSITION_STATE_UNCHECKED;
+
+
+      if (nativeCb.indeterminate) {
+        return TRANSITION_STATE_INDETERMINATE;
+      }
+      return nativeCb.checked ? TRANSITION_STATE_CHECKED : TRANSITION_STATE_UNCHECKED;
+    }
+  }, {
+    key: 'getTransitionAnimationClass_',
+    value: function getTransitionAnimationClass_(oldState, newState) {
+      var TRANSITION_STATE_INIT = __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */].TRANSITION_STATE_INIT,
+          TRANSITION_STATE_CHECKED = __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */].TRANSITION_STATE_CHECKED,
+          TRANSITION_STATE_UNCHECKED = __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */].TRANSITION_STATE_UNCHECKED;
+      var _MDCCheckboxFoundatio = MDCCheckboxFoundation.cssClasses,
+          ANIM_UNCHECKED_CHECKED = _MDCCheckboxFoundatio.ANIM_UNCHECKED_CHECKED,
+          ANIM_UNCHECKED_INDETERMINATE = _MDCCheckboxFoundatio.ANIM_UNCHECKED_INDETERMINATE,
+          ANIM_CHECKED_UNCHECKED = _MDCCheckboxFoundatio.ANIM_CHECKED_UNCHECKED,
+          ANIM_CHECKED_INDETERMINATE = _MDCCheckboxFoundatio.ANIM_CHECKED_INDETERMINATE,
+          ANIM_INDETERMINATE_CHECKED = _MDCCheckboxFoundatio.ANIM_INDETERMINATE_CHECKED,
+          ANIM_INDETERMINATE_UNCHECKED = _MDCCheckboxFoundatio.ANIM_INDETERMINATE_UNCHECKED;
+
+
+      switch (oldState) {
+        case TRANSITION_STATE_INIT:
+          if (newState === TRANSITION_STATE_UNCHECKED) {
+            return '';
+          }
+        // fallthrough
+        case TRANSITION_STATE_UNCHECKED:
+          return newState === TRANSITION_STATE_CHECKED ? ANIM_UNCHECKED_CHECKED : ANIM_UNCHECKED_INDETERMINATE;
+        case TRANSITION_STATE_CHECKED:
+          return newState === TRANSITION_STATE_UNCHECKED ? ANIM_CHECKED_UNCHECKED : ANIM_CHECKED_INDETERMINATE;
+        // TRANSITION_STATE_INDETERMINATE
+        default:
+          return newState === TRANSITION_STATE_CHECKED ? ANIM_INDETERMINATE_CHECKED : ANIM_INDETERMINATE_UNCHECKED;
+      }
+    }
+  }, {
+    key: 'getNativeControl_',
+    value: function getNativeControl_() {
+      return this.adapter_.getNativeControl() || {
+        checked: false,
+        indeterminate: false,
+        disabled: false
+      };
+    }
+  }]);
+
+  return MDCCheckboxFoundation;
+}(__WEBPACK_IMPORTED_MODULE_0__material_base__["b" /* MDCFoundation */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (MDCCheckboxFoundation);
+
+
+function validDescriptor(inputPropDesc) {
+  return inputPropDesc && typeof inputPropDesc.set === 'function';
+}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_ripple__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_ripple_util__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_animation__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(72);
+/* unused harmony reexport MDCCheckboxFoundation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCCheckbox; });
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+
+
+
+
+
+
+var MDCCheckbox = function (_MDCComponent) {
+  _inherits(MDCCheckbox, _MDCComponent);
+
+  _createClass(MDCCheckbox, [{
+    key: 'nativeCb_',
+    get: function get() {
+      var NATIVE_CONTROL_SELECTOR = __WEBPACK_IMPORTED_MODULE_4__foundation__["a" /* default */].strings.NATIVE_CONTROL_SELECTOR;
+
+      return this.root_.querySelector(NATIVE_CONTROL_SELECTOR);
+    }
+  }], [{
+    key: 'attachTo',
+    value: function attachTo(root) {
+      return new MDCCheckbox(root);
+    }
+  }]);
+
+  function MDCCheckbox() {
+    var _ref;
+
+    _classCallCheck(this, MDCCheckbox);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var _this = _possibleConstructorReturn(this, (_ref = MDCCheckbox.__proto__ || Object.getPrototypeOf(MDCCheckbox)).call.apply(_ref, [this].concat(args)));
+
+    _this.ripple_ = _this.initRipple_();
+    return _this;
+  }
+
+  _createClass(MDCCheckbox, [{
+    key: 'initRipple_',
+    value: function initRipple_() {
+      var _this2 = this;
+
+      var MATCHES = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__material_ripple_util__["a" /* getMatchesProperty */])(HTMLElement.prototype);
+      var adapter = Object.assign(__WEBPACK_IMPORTED_MODULE_1__material_ripple__["a" /* MDCRipple */].createAdapter(this), {
+        isUnbounded: function isUnbounded() {
+          return true;
+        },
+        isSurfaceActive: function isSurfaceActive() {
+          return _this2.nativeCb_[MATCHES](':active');
+        },
+        registerInteractionHandler: function registerInteractionHandler(type, handler) {
+          return _this2.nativeCb_.addEventListener(type, handler);
+        },
+        deregisterInteractionHandler: function deregisterInteractionHandler(type, handler) {
+          return _this2.nativeCb_.removeEventListener(type, handler);
+        },
+        computeBoundingRect: function computeBoundingRect() {
+          var _root_$getBoundingCli = _this2.root_.getBoundingClientRect(),
+              left = _root_$getBoundingCli.left,
+              top = _root_$getBoundingCli.top;
+
+          var DIM = 40;
+          return {
+            top: top,
+            left: left,
+            right: left + DIM,
+            bottom: top + DIM,
+            width: DIM,
+            height: DIM
+          };
+        }
+      });
+      var foundation = new __WEBPACK_IMPORTED_MODULE_1__material_ripple__["b" /* MDCRippleFoundation */](adapter);
+      return new __WEBPACK_IMPORTED_MODULE_1__material_ripple__["a" /* MDCRipple */](this.root_, foundation);
+    }
+  }, {
+    key: 'getDefaultFoundation',
+    value: function getDefaultFoundation() {
+      var _this3 = this;
+
+      return new __WEBPACK_IMPORTED_MODULE_4__foundation__["a" /* default */]({
+        addClass: function addClass(className) {
+          return _this3.root_.classList.add(className);
+        },
+        removeClass: function removeClass(className) {
+          return _this3.root_.classList.remove(className);
+        },
+        registerAnimationEndHandler: function registerAnimationEndHandler(handler) {
+          return _this3.root_.addEventListener(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__material_animation__["a" /* getCorrectEventName */])(window, 'animationend'), handler);
+        },
+        deregisterAnimationEndHandler: function deregisterAnimationEndHandler(handler) {
+          return _this3.root_.removeEventListener(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__material_animation__["a" /* getCorrectEventName */])(window, 'animationend'), handler);
+        },
+        registerChangeHandler: function registerChangeHandler(handler) {
+          return _this3.nativeCb_.addEventListener('change', handler);
+        },
+        deregisterChangeHandler: function deregisterChangeHandler(handler) {
+          return _this3.nativeCb_.removeEventListener('change', handler);
+        },
+        getNativeControl: function getNativeControl() {
+          return _this3.nativeCb_;
+        },
+        forceLayout: function forceLayout() {
+          return _this3.root_.offsetWidth;
+        },
+        isAttachedToDOM: function isAttachedToDOM() {
+          return Boolean(_this3.root_.parentNode);
+        }
+      });
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      this.ripple_.destroy();
+      _get(MDCCheckbox.prototype.__proto__ || Object.getPrototypeOf(MDCCheckbox.prototype), 'destroy', this).call(this);
+    }
+  }, {
+    key: 'ripple',
+    get: function get() {
+      return this.ripple_;
+    }
+  }, {
+    key: 'checked',
+    get: function get() {
+      return this.foundation_.isChecked();
+    },
+    set: function set(checked) {
+      this.foundation_.setChecked(checked);
+    }
+  }, {
+    key: 'indeterminate',
+    get: function get() {
+      return this.foundation_.isIndeterminate();
+    },
+    set: function set(indeterminate) {
+      this.foundation_.setIndeterminate(indeterminate);
+    }
+  }, {
+    key: 'disabled',
+    get: function get() {
+      return this.foundation_.isDisabled();
+    },
+    set: function set(disabled) {
+      this.foundation_.setDisabled(disabled);
+    }
+  }]);
+
+  return MDCCheckbox;
+}(__WEBPACK_IMPORTED_MODULE_0__material_base__["a" /* MDCComponent */]);
+
+/***/ }),
+/* 74 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MaterialComponent__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_checkbox___ = __webpack_require__(73);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+/**
+ */
+
+var Checkbox = function (_MaterialComponent) {
+	_inherits(Checkbox, _MaterialComponent);
+
+	function Checkbox() {
+		_classCallCheck(this, Checkbox);
+
+		var _this = _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this));
+
+		_this.componentName = "checkbox";
+		return _this;
+	}
+
+	_createClass(Checkbox, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.MDComponent = new __WEBPACK_IMPORTED_MODULE_2__material_checkbox___["a" /* MDCCheckbox */](this.control);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			var _this2 = this;
+
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				{ "class": "mdc-checkbox", ref: function ref(control) {
+						_this2.control = control;
+					} },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({
+					type: "checkbox",
+					"class": "mdc-checkbox__native-control"
+				}, props)),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"div",
+					{ "class": "mdc-checkbox__background" },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						"svg",
+						{
+							version: "1.1",
+							"class": "mdc-checkbox__checkmark",
+							xmlns: "http://www.w3.org/2000/svg",
+							viewBox: "0 0 24 24"
+						},
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("path", {
+							"class": "mdc-checkbox__checkmark__path",
+							fill: "none",
+							stroke: "white",
+							d: "M1.73,12.91 8.1,19.28 22.79,4.59"
+						})
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-checkbox__mixedmark" })
+				)
+			);
+		}
+	}]);
+
+	return Checkbox;
+}(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Checkbox);
+
+/***/ }),
+/* 75 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MaterialComponent__ = __webpack_require__(1);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+/**
+ * @prop mini = false
+ * @prop plain = false
+ */
+
+var FormField = function (_MaterialComponent) {
+	_inherits(FormField, _MaterialComponent);
+
+	function FormField() {
+		_classCallCheck(this, FormField);
+
+		var _this = _possibleConstructorReturn(this, (FormField.__proto__ || Object.getPrototypeOf(FormField)).call(this));
+
+		_this.componentName = "form-field";
+		_this._mdcProps = ["align-end"];
+		return _this;
+	}
+
+	_createClass(FormField, [{
+		key: "materialDom",
+		value: function materialDom(props) {
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				props,
+				props.children
+			);
+		}
+	}]);
+
+	return FormField;
+}(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (FormField);
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 77 */,
+/* 78 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 ],[11]);

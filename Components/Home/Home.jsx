@@ -5,6 +5,7 @@ import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
 import ButtonsPage from '../ButtonsPage/ButtonsPage.jsx';
 import FabPage from '../FabPage/FabPage.jsx';
+import CheckboxPage from '../CheckboxPage/CheckboxPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
@@ -97,10 +98,13 @@ export default class Home extends Component {
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Card
 								</List.ListItem>
-								<List.ListItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/checkbox');
+										this.closeDrawer();
+									}}>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Checkbox
-								</List.ListItem>
+								</List.LinkItem>
 								<List.ListItem>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Dialog
@@ -166,6 +170,7 @@ export default class Home extends Component {
 					<div className="content">
 						{this.state.component === 'button' && <ButtonsPage/>}
 						{this.state.component === 'fab' && <FabPage/>}
+						{this.state.component === 'checkbox' && <CheckboxPage/>}
 					</div>
 
 			</div>
