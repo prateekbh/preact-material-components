@@ -46,7 +46,7 @@ export default class Home extends Component {
 							</g>
 						</g>
 					</svg>
-					<div className="mdc-typography--display2 name">preact-material-component</div>
+					<div className="mdc-typography--display2 name">preact-material-components</div>
 				</div>
 				<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}} >
 						<Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">

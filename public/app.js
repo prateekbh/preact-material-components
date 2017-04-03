@@ -613,7 +613,7 @@ var Home = function (_Component) {
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						'div',
 						{ className: 'mdc-typography--display2 name' },
-						'preact-material-component'
+						'preact-material-components'
 					)
 				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
