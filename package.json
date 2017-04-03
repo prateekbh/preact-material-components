@@ -57,7 +57,7 @@
     "@material/switch": "^0.1.2",
     "@material/textfield": "^0.2.3",
     "@material/theme": "^0.1.2",
-    "@material/toolbar": "^0.1.2",
+    "@material/toolbar": "^0.2.0",
     "@material/typography": "^0.2.0",
     "material-components-web": "^0.8.0"
   },
