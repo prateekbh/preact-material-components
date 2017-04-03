@@ -1,20 +1,20 @@
 import {h, Component} from 'preact';
 import {
-  Button,
-  Fab,
-  Icon,
-  Switch,
-  Snackbar,
-  Checkbox,
-  Radio,
-  Textfield,
+	Button,
+	Fab,
+	Icon,
+	Switch,
+	Snackbar,
+	Checkbox,
+	Radio,
+	Textfield,
 	Card,
 	Select,
 	Elevation,
 	Dialog,
 	List,
 	Drawer
-} from "../Components/";
+} from "../";
 
 export default class Home extends Component {
 	render(){
