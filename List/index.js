@@ -52,7 +52,34 @@ class LinkItem extends MaterialComponent {
 	}
 }
 
+/**
+ * @prop start-detail = true
+ * @prop end-detail = false
+ */
+class ListItemIcon extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "mdc-list-item__icon";
+	}
+	materialDom(props) {
+		let className = 'material-icons ';
+		// default behavior
+		props['start-detail'] = props['start-detail'] || true;
+
+		// setting class names mutually exclusive
+		if (props['end-detail']) {
+			className += 'mdc-list-item__end-detail';
+		} else if (props['start-detail']) {
+			className += 'mdc-list-item__start-detail';
+		}
+		return (<i className={className} aria-hidden="true" {...props}>
+			{props.children}
+		</i>);
+	}
+}
+
 List.ListItem = ListItem;
 List.LinkItem = LinkItem;
+List.ListItemIcon = ListItemIcon;
 
 export default List;

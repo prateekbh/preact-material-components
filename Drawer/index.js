@@ -22,7 +22,7 @@ class TemporaryDrawer extends MaterialComponent {
 	}
 }
 
-class TemporarytDrawerHeader extends MaterialComponent {
+class TemporaryDrawerHeader extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "temporary-drawer__header";
@@ -38,7 +38,7 @@ class TemporarytDrawerHeader extends MaterialComponent {
 	}
 }
 
-class TemporarytDrawerContent extends MaterialComponent {
+class TemporaryDrawerContent extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "mdc-temporary-drawer__content";
@@ -94,8 +94,8 @@ class DrawerItem extends List.LinkItem {
 let Drawer = {};
 
 Drawer.DrawerItem = DrawerItem;
-Drawer.TemporarytDrawerHeader = TemporarytDrawerHeader;
-Drawer.TemporarytDrawerContent = TemporarytDrawerContent;
+Drawer.TemporaryDrawerHeader = TemporaryDrawerHeader;
+Drawer.TemporaryDrawerContent = TemporaryDrawerContent;
 Drawer.TemporaryDrawer = TemporaryDrawer;
 Drawer.PermanentDrawer = PermanentDrawer;
 
