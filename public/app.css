@@ -6165,6 +6165,14 @@ a.mdc-list-item {
     color: #fff;
     text-align: center;
     height: 40vh;
+    overflow: hidden;
+    max-height: 40vh;
+    transition-property: max-height;
+    will-change: max-height;
+    transition-duration: 300ms;
+}
+.home .hero.collapsed{
+    max-height: 64px;
 }
 .home .hero a {
     color: #fff;
@@ -6703,4 +6711,10 @@ body {
 
 a{
 	text-decoration: none;
+}
+
+
+.mdc-toolbar__title{
+	padding-left: 8px;
+	text-transform: capitalize;
 }

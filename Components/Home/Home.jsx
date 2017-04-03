@@ -5,23 +5,47 @@ import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
 import ButtonsPage from '../ButtonsPage/ButtonsPage.jsx';
 import FabPage from '../FabPage/FabPage.jsx';
-
+import routie from '../routie';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
 import 'preact-material-components/Drawer/style.css';
 import 'preact-material-components/List/style.css';
 import './Home.css';
+
 export default class Home extends Component {
+	constructor(){
+		super();
+	}
+	componentDidMount(){
+		routie('/', (component) => {
+			this.setState({
+				component: null,
+				toolbarTitle: ""
+			});
+		});
+		routie('/component/:name', (component) => {
+			this.setState({
+				component,
+				toolbarTitle: component
+			});
+		});
+	}
+	closeDrawer(){
+		this.drawer.MDComponent.open = false;
+	}
 	render(){
 		return (
 			<div className="home">
-				<div className="hero">
+				<div className={this.state.component? "hero collapsed": "hero"}>
 					<Toolbar>
 						<Toolbar.Section align-start={true}>
 								<Toolbar.Icon href="#" onClick={(e)=>{
 												e.preventDefault();
 												this.drawer.MDComponent.open = true;
 								}}>menu</Toolbar.Icon>
+								<Toolbar.Title>
+									{this.state.toolbarTitle}
+								</Toolbar.Title>
 						</Toolbar.Section>
 					</Toolbar>
 					<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid">
@@ -55,10 +79,20 @@ export default class Home extends Component {
 						</Drawer.TemporaryDrawerHeader>
 						<Drawer.TemporaryDrawerContent>
 							<List>
-								<List.ListItem>
+								<List.LinkItem onClick={()=>{
+										routie('/');
+										this.closeDrawer();
+									}}>
+										<List.ListItemIcon>home</List.ListItemIcon>
+										Home
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/button');
+										this.closeDrawer();
+									}}>
 										<List.ListItemIcon>code</List.ListItemIcon>
 										Button
-								</List.ListItem>
+								</List.LinkItem>
 								<List.ListItem>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Card
@@ -79,10 +113,13 @@ export default class Home extends Component {
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Elevation
 								</List.ListItem>
-								<List.ListItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/fab');
+										this.closeDrawer();
+									}}>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Fab
-								</List.ListItem>
+								</List.LinkItem>
 								<List.ListItem>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									FormField
@@ -127,7 +164,8 @@ export default class Home extends Component {
 						</Drawer.TemporaryDrawerContent>
 					</Drawer.TemporaryDrawer>
 					<div className="content">
-						<FabPage></FabPage>
+						{this.state.component === 'button' && <ButtonsPage/>}
+						{this.state.component === 'fab' && <FabPage/>}
 					</div>
 
 			</div>

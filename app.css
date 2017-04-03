@@ -6,3 +6,9 @@ body {
 a{
 	text-decoration: none;
 }
+
+
+.mdc-toolbar__title{
+	padding-left: 8px;
+	text-transform: capitalize;
+}

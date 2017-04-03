@@ -501,16 +501,18 @@ List.ListItemIcon = ListItemIcon;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ButtonsPage_ButtonsPage_jsx__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__FabPage_FabPage_jsx__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_preact_material_components_Icon_style_css__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_preact_material_components_Icon_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_Toolbar_style_css__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_preact_material_components_Toolbar_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_preact_material_components_Drawer_style_css__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_preact_material_components_Drawer_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_preact_material_components_List_style_css__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_preact_material_components_List_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__Home_css__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__Home_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routie__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__routie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_Icon_style_css__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_preact_material_components_Icon_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_preact_material_components_Toolbar_style_css__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_preact_material_components_Toolbar_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_preact_material_components_Drawer_style_css__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_preact_material_components_Drawer_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_preact_material_components_List_style_css__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_preact_material_components_List_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__Home_css__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__Home_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -539,20 +541,43 @@ var Home = function (_Component) {
 	function Home() {
 		_classCallCheck(this, Home);
 
-		return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+		return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
 	}
 
 	_createClass(Home, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			__WEBPACK_IMPORTED_MODULE_7__routie___default()('/', function (component) {
+				_this2.setState({
+					component: null,
+					toolbarTitle: ""
+				});
+			});
+			__WEBPACK_IMPORTED_MODULE_7__routie___default()('/component/:name', function (component) {
+				_this2.setState({
+					component: component,
+					toolbarTitle: component
+				});
+			});
+		}
+	}, {
+		key: 'closeDrawer',
+		value: function closeDrawer() {
+			this.drawer.MDComponent.open = false;
+		}
+	}, {
 		key: 'render',
 		value: function render() {
-			var _this2 = this;
+			var _this3 = this;
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				'div',
 				{ className: 'home' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
-					{ className: 'hero' },
+					{ className: this.state.component ? "hero collapsed" : "hero" },
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						__WEBPACK_IMPORTED_MODULE_2_preact_material_components_Toolbar__["a" /* default */],
 						null,
@@ -563,9 +588,14 @@ var Home = function (_Component) {
 								__WEBPACK_IMPORTED_MODULE_2_preact_material_components_Toolbar__["a" /* default */].Icon,
 								{ href: '#', onClick: function onClick(e) {
 										e.preventDefault();
-										_this2.drawer.MDComponent.open = true;
+										_this3.drawer.MDComponent.open = true;
 									} },
 								'menu'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_material_components_Toolbar__["a" /* default */].Title,
+								null,
+								this.state.toolbarTitle
 							)
 						)
 					),
@@ -621,7 +651,7 @@ var Home = function (_Component) {
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer__["a" /* default */].TemporaryDrawer,
 					{ ref: function ref(drawer) {
-							_this2.drawer = drawer;
+							_this3.drawer = drawer;
 						} },
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer__["a" /* default */].TemporaryDrawerHeader,
@@ -635,8 +665,24 @@ var Home = function (_Component) {
 							__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */],
 							null,
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ListItem,
-								null,
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_7__routie___default()('/');
+										_this3.closeDrawer();
+									} },
+								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ListItemIcon,
+									null,
+									'home'
+								),
+								'Home'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_7__routie___default()('/component/button');
+										_this3.closeDrawer();
+									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ListItemIcon,
 									null,
@@ -695,8 +741,11 @@ var Home = function (_Component) {
 								'Elevation'
 							),
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ListItem,
-								null,
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_7__routie___default()('/component/fab');
+										_this3.closeDrawer();
+									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ListItemIcon,
 									null,
@@ -810,7 +859,8 @@ var Home = function (_Component) {
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'content' },
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_6__FabPage_FabPage_jsx__["a" /* default */], null)
+					this.state.component === 'button' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_5__ButtonsPage_ButtonsPage_jsx__["a" /* default */], null),
+					this.state.component === 'fab' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_6__FabPage_FabPage_jsx__["a" /* default */], null)
 				)
 			);
 		}
@@ -1100,7 +1150,7 @@ var ButtonsPage = function (_Component) {
 	return ButtonsPage;
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
-/* unused harmony default export */ var _unused_webpack_default_export = (ButtonsPage);
+/* harmony default export */ __webpack_exports__["a"] = (ButtonsPage);
 
 /***/ }),
 /* 11 */
@@ -3564,6 +3614,108 @@ var Fab = function (_MaterialComponent) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/*!
+ * routie - a tiny hash router
+ * v0.3.2
+ * http://projects.jga.me/routie
+ * copyright Greg Allen 2016
+ * MIT License
+*/
+var Routie = function Routie(a, b) {
+  var c = [],
+      d = {},
+      e = "routie",
+      f = a[e],
+      g = function g(a, b) {
+    this.name = b, this.path = a, this.keys = [], this.fns = [], this.params = {}, this.regex = h(this.path, this.keys, !1, !1);
+  };g.prototype.addHandler = function (a) {
+    this.fns.push(a);
+  }, g.prototype.removeHandler = function (a) {
+    for (var b = 0, c = this.fns.length; c > b; b++) {
+      var d = this.fns[b];if (a == d) return void this.fns.splice(b, 1);
+    }
+  }, g.prototype.run = function (a) {
+    for (var b = 0, c = this.fns.length; c > b; b++) {
+      this.fns[b].apply(this, a);
+    }
+  }, g.prototype.match = function (a, b) {
+    var c = this.regex.exec(a);if (!c) return !1;for (var d = 1, e = c.length; e > d; ++d) {
+      var f = this.keys[d - 1],
+          g = "string" == typeof c[d] ? decodeURIComponent(c[d]) : c[d];f && (this.params[f.name] = g), b.push(g);
+    }return !0;
+  }, g.prototype.toURL = function (a) {
+    var b = this.path;for (var c in a) {
+      b = b.replace("/:" + c, "/" + a[c]);
+    }if (b = b.replace(/\/:.*\?/g, "/").replace(/\?/g, ""), -1 != b.indexOf(":")) throw new Error("missing parameters for url: " + b);return b;
+  };var h = function h(a, b, c, d) {
+    return a instanceof RegExp ? a : (a instanceof Array && (a = "(" + a.join("|") + ")"), a = a.concat(d ? "" : "/?").replace(/\/\(/g, "(?:/").replace(/\+/g, "__plus__").replace(/(\/)?(\.)?:(\w+)(?:(\(.*?\)))?(\?)?/g, function (a, c, d, e, f, g) {
+      return b.push({ name: e, optional: !!g }), c = c || "", "" + (g ? "" : c) + "(?:" + (g ? c : "") + (d || "") + (f || d && "([^/.]+?)" || "([^/]+?)") + ")" + (g || "");
+    }).replace(/([\/.])/g, "\\$1").replace(/__plus__/g, "(.+)").replace(/\*/g, "(.*)"), new RegExp("^" + a + "$", c ? "" : "i"));
+  },
+      i = function i(a, b) {
+    var e = a.split(" "),
+        f = 2 == e.length ? e[0] : null;a = 2 == e.length ? e[1] : e[0], d[a] || (d[a] = new g(a, f), c.push(d[a])), d[a].addHandler(b);
+  },
+      j = function j(a, b) {
+    if ("function" == typeof b) i(a, b), j.reload();else if ("object" == (typeof a === "undefined" ? "undefined" : _typeof(a))) {
+      for (var c in a) {
+        i(c, a[c]);
+      }j.reload();
+    } else "undefined" == typeof b && j.navigate(a);
+  };j.lookup = function (a, b) {
+    for (var d = 0, e = c.length; e > d; d++) {
+      var f = c[d];if (f.name == a) return f.toURL(b);
+    }
+  }, j.remove = function (a, b) {
+    var c = d[a];c && c.removeHandler(b);
+  }, j.removeAll = function () {
+    d = {}, c = [];
+  }, j.navigate = function (a, b) {
+    b = b || {};var c = b.silent || !1;c && o(), setTimeout(function () {
+      window.location.hash = a, c && setTimeout(function () {
+        n();
+      }, 1);
+    }, 1);
+  }, j.noConflict = function () {
+    return a[e] = f, j;
+  };var k = function k() {
+    return window.location.hash.substring(1);
+  },
+      l = function l(a, b) {
+    var c = [];return b.match(a, c) ? (b.run(c), !0) : !1;
+  },
+      m = j.reload = function () {
+    for (var a = k(), b = 0, d = c.length; d > b; b++) {
+      var e = c[b];if (l(a, e)) return;
+    }
+  },
+      n = function n() {
+    a.addEventListener ? a.addEventListener("hashchange", m, !1) : a.attachEvent("onhashchange", m);
+  },
+      o = function o() {
+    a.removeEventListener ? a.removeEventListener("hashchange", m) : a.detachEvent("onhashchange", m);
+  };return n(), b ? j : void (a[e] = j);
+}; false ? Routie(window) : module.exports = Routie(window, !0);
 
 /***/ })
 ],[11]);
