@@ -1,7 +1,7 @@
 import {h, render} from 'preact';
 import Home from './Components/Home/Home.jsx';
-import './node_modules/preact-material-components/Typography/style.css';
-import './node_modules/preact-material-components/Theme/style.css';
+import 'preact-material-components/Typography/style.css';
+import 'preact-material-components/Theme/style.css';
 import './app.css';
 render(
 	<Home/>

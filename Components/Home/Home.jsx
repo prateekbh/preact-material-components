@@ -3,6 +3,8 @@ import Icon from 'preact-material-components/Icon';
 import Toolbar from 'preact-material-components/Toolbar';
 import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
+import ButtonsPage from '../ButtonsPage/ButtonsPage.jsx';
+
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
 import 'preact-material-components/Drawer/style.css';
@@ -15,10 +17,10 @@ export default class Home extends Component {
 				<div className="hero">
 					<Toolbar>
 						<Toolbar.Section align-start={true}>
-							<Toolbar.Icon href="#" onClick={(e)=>{
-								e.preventDefault();
-								this.drawer.MDComponent.open = true;
-							}}>menu</Toolbar.Icon>
+								<Toolbar.Icon href="#" onClick={(e)=>{
+												e.preventDefault();
+												this.drawer.MDComponent.open = true;
+								}}>menu</Toolbar.Icon>
 						</Toolbar.Section>
 					</Toolbar>
 					<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid">
@@ -123,6 +125,10 @@ export default class Home extends Component {
 							</List>
 						</Drawer.TemporaryDrawerContent>
 					</Drawer.TemporaryDrawer>
+					<div className="content">
+						<ButtonsPage></ButtonsPage>
+					</div>
+
 			</div>
 		);
 	}

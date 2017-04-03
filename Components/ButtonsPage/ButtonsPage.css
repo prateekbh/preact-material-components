@@ -1,0 +1,9 @@
+.page-buttons{
+	.mdc-typography--title{
+		margin-top: 16px;
+	}
+	button{
+		margin: 8px;
+	}
+
+}
