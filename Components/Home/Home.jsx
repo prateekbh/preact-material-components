@@ -4,6 +4,7 @@ import Toolbar from 'preact-material-components/Toolbar';
 import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
 import ButtonsPage from '../ButtonsPage/ButtonsPage.jsx';
+import FabPage from '../FabPage/FabPage.jsx';
 
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
@@ -126,7 +127,7 @@ export default class Home extends Component {
 						</Drawer.TemporaryDrawerContent>
 					</Drawer.TemporaryDrawer>
 					<div className="content">
-						<ButtonsPage></ButtonsPage>
+						<FabPage></FabPage>
 					</div>
 
 			</div>
