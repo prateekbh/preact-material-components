@@ -254,28 +254,28 @@
   from {
     -webkit-transform: translate(0) scale(1);
             transform: translate(0) scale(1);
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
     -webkit-transform: translate(0) scale(0);
             transform: translate(0) scale(0);
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
     -webkit-transform: translate(0) scale(1);
             transform: translate(0) scale(1);
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
     -webkit-transform: translate(0) scale(0);
             transform: translate(0) scale(0);
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -309,25 +309,25 @@
   from {
     -webkit-transform: 0;
             transform: 0;
-    -webkit-transform: 0;
-            transform: 0; }
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
   to {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); } }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 @keyframes mdc-ripple-fg-unbounded-transform-deactivate {
   from {
     -webkit-transform: 0;
             transform: 0;
-    -webkit-transform: 0;
-            transform: 0; }
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
   to {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); } }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -516,7 +516,7 @@
   letter-spacing: 0.04em;
   line-height: 1.5rem;
   color: rgba(0, 0, 0, 0.87);
-  color: rgba(0, 0, 0, 0.87);
+  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
   display: inline-block;
   position: relative;
   min-width: 64px;
@@ -565,8 +565,8 @@
     height: 200%;
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-button.mdc-ripple-upgraded--background-active::before {
     opacity: .99999; }
   .mdc-button.mdc-ripple-upgraded--background-active:active::before {
@@ -578,17 +578,17 @@
     opacity: 1; }
   .mdc-button.mdc-ripple-upgraded--unbounded::before {
     top: calc(50% - 50%);
-    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
     left: calc(50% - 50%);
-    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-button::after {
     background-color: rgba(0, 0, 0, 0.06);
     position: absolute;
@@ -606,9 +606,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -619,13 +619,13 @@
             transform-origin: center center; }
   .mdc-button.mdc-ripple-upgraded--unbounded::after {
     top: 0;
-    top: 0;
+    top: var(--mdc-ripple-top, 0);
     left: 0;
-    left: 0;
+    left: var(--mdc-ripple-left, 0);
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -638,23 +638,24 @@
   .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
     -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
     opacity: 1; }
   .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
     -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
             animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
-  .mdc-button--theme-dark, .mdc-theme--dark .mdc-button {
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-button--theme-dark,
+  .mdc-theme--dark .mdc-button {
     --mdc-ripple-left: 0;
     --mdc-ripple-top: 0;
     --mdc-ripple-fg-size: 0;
@@ -669,13 +670,17 @@
     will-change: transform, opacity;
     -webkit-tap-highlight-color: transparent;
     color: white;
-    color: white;
+    color: var(--mdc-theme-text-primary-on-dark, white);
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.18); }
-    .mdc-button--theme-dark:not(.mdc-ripple-upgraded):hover::before, .mdc-button--theme-dark:not(.mdc-ripple-upgraded):focus::before, .mdc-button--theme-dark:not(.mdc-ripple-upgraded):active::after, .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):hover::before, .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):focus::before, .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):active::after {
+    .mdc-button--theme-dark:not(.mdc-ripple-upgraded):hover::before, .mdc-button--theme-dark:not(.mdc-ripple-upgraded):focus::before, .mdc-button--theme-dark:not(.mdc-ripple-upgraded):active::after,
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):hover::before,
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):focus::before,
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):active::after {
       -webkit-transition-duration: 85ms;
               transition-duration: 85ms;
       opacity: .6; }
-    .mdc-button--theme-dark::before, .mdc-theme--dark .mdc-button::before {
+    .mdc-button--theme-dark::before,
+    .mdc-theme--dark .mdc-button::before {
       background-color: rgba(255, 255, 255, 0.14);
       position: absolute;
       top: calc(50% - 100%);
@@ -688,38 +693,44 @@
       opacity: 0;
       pointer-events: none;
       content: ""; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded::before, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded::before {
+    .mdc-button--theme-dark.mdc-ripple-upgraded::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded::before {
       top: calc(50% - 100%);
       left: calc(50% - 100%);
       width: 200%;
       height: 200%;
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0); }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active::before, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active::before {
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active::before {
       opacity: .99999; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active:active::before, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active:active::before {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active:active::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active:active::before {
       -webkit-transition-duration: 600ms;
               transition-duration: 600ms; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--background-bounded-active-fill::before, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--background-bounded-active-fill::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-bounded-active-fill::before {
       -webkit-transition-duration: 120ms;
               transition-duration: 120ms;
       opacity: 1; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded::before, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded::before {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded::before {
       top: calc(50% - 50%);
-      top: calc(50% - 50%);
+      top: var(--mdc-ripple-top, calc(50% - 50%));
       left: calc(50% - 50%);
-      left: calc(50% - 50%);
+      left: var(--mdc-ripple-left, calc(50% - 50%));
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0); }
-    .mdc-button--theme-dark::after, .mdc-theme--dark .mdc-button::after {
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+    .mdc-button--theme-dark::after,
+    .mdc-theme--dark .mdc-button::after {
       background-color: rgba(255, 255, 255, 0.14);
       position: absolute;
       top: calc(50% - 100%);
@@ -732,58 +743,64 @@
       opacity: 0;
       pointer-events: none;
       content: ""; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded::after, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded::after {
+    .mdc-button--theme-dark.mdc-ripple-upgraded::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded::after {
       top: 0;
       left: 0;
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
       -webkit-transform-origin: center center;
               transform-origin: center center;
       opacity: 0; }
-    .mdc-button--theme-dark:not(.mdc-ripple-upgraded--unbounded)::after, .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded--unbounded)::after {
+    .mdc-button--theme-dark:not(.mdc-ripple-upgraded--unbounded)::after,
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded--unbounded)::after {
       -webkit-transform-origin: center center;
               transform-origin: center center; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded::after, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded::after {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded::after {
       top: 0;
-      top: 0;
+      top: var(--mdc-ripple-top, 0);
       left: 0;
-      left: 0;
+      left: var(--mdc-ripple-left, 0);
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
       -webkit-transform-origin: center center;
               transform-origin: center center; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--foreground-bounded-active-fill::after, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--foreground-bounded-active-fill::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
       -webkit-animation-fill-mode: forwards;
               animation-fill-mode: forwards;
       -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
               animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0));
       -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
       transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
       transition: opacity 110ms linear, transform 0 linear 80ms;
       transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
       opacity: 1; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after, .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
       -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
               animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
   .mdc-button.mdc-button--primary {
     --mdc-ripple-left: 0;
     --mdc-ripple-top: 0;
@@ -817,7 +834,7 @@
       content: ""; }
       @supports (background-color: color(green a(10%))) {
         .mdc-button.mdc-button--primary::before {
-          background-color: rgba(63, 81, 181, 0.12); } }
+          background-color: color(var(--mdc-theme-primary, #3f51b5) a(12%)); } }
     .mdc-button.mdc-button--primary.mdc-ripple-upgraded::before {
       top: calc(50% - 100%);
       left: calc(50% - 100%);
@@ -825,8 +842,8 @@
       height: 200%;
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0); }
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
     .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-active::before {
       opacity: .99999; }
     .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-active:active::before {
@@ -838,17 +855,17 @@
       opacity: 1; }
     .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded::before {
       top: calc(50% - 50%);
-      top: calc(50% - 50%);
+      top: var(--mdc-ripple-top, calc(50% - 50%));
       left: calc(50% - 50%);
-      left: calc(50% - 50%);
+      left: var(--mdc-ripple-left, calc(50% - 50%));
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0); }
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
     .mdc-button.mdc-button--primary::after {
       background-color: rgba(63, 81, 181, 0.12);
       position: absolute;
@@ -864,14 +881,14 @@
       content: ""; }
       @supports (background-color: color(green a(10%))) {
         .mdc-button.mdc-button--primary::after {
-          background-color: rgba(63, 81, 181, 0.12); } }
+          background-color: color(var(--mdc-theme-primary, #3f51b5) a(12%)); } }
     .mdc-button.mdc-button--primary.mdc-ripple-upgraded::after {
       top: 0;
       left: 0;
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
       -webkit-transform-origin: center center;
@@ -882,13 +899,13 @@
               transform-origin: center center; }
     .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded::after {
       top: 0;
-      top: 0;
+      top: var(--mdc-ripple-top, 0);
       left: 0;
-      left: 0;
+      left: var(--mdc-ripple-left, 0);
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
       -webkit-transform-origin: center center;
@@ -901,22 +918,22 @@
     .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0));
       -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
       transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
       transition: opacity 110ms linear, transform 0 linear 80ms;
       transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
       opacity: 1; }
     .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
       -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
               animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
   .mdc-button.mdc-button--accent {
     --mdc-ripple-left: 0;
     --mdc-ripple-top: 0;
@@ -950,7 +967,7 @@
       content: ""; }
       @supports (background-color: color(green a(10%))) {
         .mdc-button.mdc-button--accent::before {
-          background-color: rgba(255, 64, 129, 0.12); } }
+          background-color: color(var(--mdc-theme-accent, #ff4081) a(12%)); } }
     .mdc-button.mdc-button--accent.mdc-ripple-upgraded::before {
       top: calc(50% - 100%);
       left: calc(50% - 100%);
@@ -958,8 +975,8 @@
       height: 200%;
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0); }
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
     .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-active::before {
       opacity: .99999; }
     .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-active:active::before {
@@ -971,17 +988,17 @@
       opacity: 1; }
     .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded::before {
       top: calc(50% - 50%);
-      top: calc(50% - 50%);
+      top: var(--mdc-ripple-top, calc(50% - 50%));
       left: calc(50% - 50%);
-      left: calc(50% - 50%);
+      left: var(--mdc-ripple-left, calc(50% - 50%));
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0); }
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0)); }
     .mdc-button.mdc-button--accent::after {
       background-color: rgba(255, 64, 129, 0.12);
       position: absolute;
@@ -997,14 +1014,14 @@
       content: ""; }
       @supports (background-color: color(green a(10%))) {
         .mdc-button.mdc-button--accent::after {
-          background-color: rgba(255, 64, 129, 0.12); } }
+          background-color: color(var(--mdc-theme-accent, #ff4081) a(12%)); } }
     .mdc-button.mdc-button--accent.mdc-ripple-upgraded::after {
       top: 0;
       left: 0;
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
       -webkit-transform-origin: center center;
@@ -1015,13 +1032,13 @@
               transform-origin: center center; }
     .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded::after {
       top: 0;
-      top: 0;
+      top: var(--mdc-ripple-top, 0);
       left: 0;
-      left: 0;
+      left: var(--mdc-ripple-left, 0);
       width: 100%;
-      width: 100%;
+      width: var(--mdc-ripple-fg-size, 100%);
       height: 100%;
-      height: 100%;
+      height: var(--mdc-ripple-fg-size, 100%);
       -webkit-transform: scale(0);
               transform: scale(0);
       -webkit-transform-origin: center center;
@@ -1034,22 +1051,22 @@
     .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-transform: scale(0);
-              transform: scale(0);
+      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+              transform: scale(var(--mdc-ripple-fg-scale, 0));
       -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
       transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
       transition: opacity 110ms linear, transform 0 linear 80ms;
       transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
       opacity: 1; }
     .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
       -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
               animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
   .mdc-button:active {
     outline: none; }
   .mdc-button:hover {
@@ -1107,8 +1124,8 @@
         height: 200%;
         -webkit-transform: scale(0);
                 transform: scale(0);
-        -webkit-transform: scale(0);
-                transform: scale(0); }
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0)); }
       .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-active::before {
         opacity: .99999; }
       .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-active:active::before {
@@ -1120,17 +1137,17 @@
         opacity: 1; }
       .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded::before {
         top: calc(50% - 50%);
-        top: calc(50% - 50%);
+        top: var(--mdc-ripple-top, calc(50% - 50%));
         left: calc(50% - 50%);
-        left: calc(50% - 50%);
+        left: var(--mdc-ripple-left, calc(50% - 50%));
         width: 100%;
-        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
         height: 100%;
-        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
         -webkit-transform: scale(0);
                 transform: scale(0);
-        -webkit-transform: scale(0);
-                transform: scale(0); }
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0)); }
       .mdc-button--raised.mdc-button--primary::after {
         background-color: rgba(255, 255, 255, 0.14);
         position: absolute;
@@ -1148,9 +1165,9 @@
         top: 0;
         left: 0;
         width: 100%;
-        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
         height: 100%;
-        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
         -webkit-transform: scale(0);
                 transform: scale(0);
         -webkit-transform-origin: center center;
@@ -1161,13 +1178,13 @@
                 transform-origin: center center; }
       .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded::after {
         top: 0;
-        top: 0;
+        top: var(--mdc-ripple-top, 0);
         left: 0;
-        left: 0;
+        left: var(--mdc-ripple-left, 0);
         width: 100%;
-        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
         height: 100%;
-        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
         -webkit-transform: scale(0);
                 transform: scale(0);
         -webkit-transform-origin: center center;
@@ -1180,22 +1197,22 @@
       .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
         -webkit-transform: scale(0);
                 transform: scale(0);
-        -webkit-transform: scale(0);
-                transform: scale(0);
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0));
         -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
         transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
         transition: opacity 110ms linear, transform 0 linear 80ms;
         transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-        -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-        transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-        transition: opacity 110ms linear, transform 0 linear 80ms;
-        transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+        -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
         opacity: 1; }
       .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
         -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
                 animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-                animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+                animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
     .mdc-button--raised.mdc-button--accent {
       --mdc-ripple-left: 0;
       --mdc-ripple-top: 0;
@@ -1234,8 +1251,8 @@
         height: 200%;
         -webkit-transform: scale(0);
                 transform: scale(0);
-        -webkit-transform: scale(0);
-                transform: scale(0); }
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0)); }
       .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-active::before {
         opacity: .99999; }
       .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-active:active::before {
@@ -1247,17 +1264,17 @@
         opacity: 1; }
       .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded::before {
         top: calc(50% - 50%);
-        top: calc(50% - 50%);
+        top: var(--mdc-ripple-top, calc(50% - 50%));
         left: calc(50% - 50%);
-        left: calc(50% - 50%);
+        left: var(--mdc-ripple-left, calc(50% - 50%));
         width: 100%;
-        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
         height: 100%;
-        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
         -webkit-transform: scale(0);
                 transform: scale(0);
-        -webkit-transform: scale(0);
-                transform: scale(0); }
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0)); }
       .mdc-button--raised.mdc-button--accent::after {
         background-color: rgba(255, 255, 255, 0.14);
         position: absolute;
@@ -1275,9 +1292,9 @@
         top: 0;
         left: 0;
         width: 100%;
-        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
         height: 100%;
-        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
         -webkit-transform: scale(0);
                 transform: scale(0);
         -webkit-transform-origin: center center;
@@ -1288,13 +1305,13 @@
                 transform-origin: center center; }
       .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded::after {
         top: 0;
-        top: 0;
+        top: var(--mdc-ripple-top, 0);
         left: 0;
-        left: 0;
+        left: var(--mdc-ripple-left, 0);
         width: 100%;
-        width: 100%;
+        width: var(--mdc-ripple-fg-size, 100%);
         height: 100%;
-        height: 100%;
+        height: var(--mdc-ripple-fg-size, 100%);
         -webkit-transform: scale(0);
                 transform: scale(0);
         -webkit-transform-origin: center center;
@@ -1307,51 +1324,55 @@
       .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
         -webkit-transform: scale(0);
                 transform: scale(0);
-        -webkit-transform: scale(0);
-                transform: scale(0);
+        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+                transform: scale(var(--mdc-ripple-fg-scale, 0));
         -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
         transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
         transition: opacity 110ms linear, transform 0 linear 80ms;
         transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-        -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-        transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-        transition: opacity 110ms linear, transform 0 linear 80ms;
-        transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+        -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
         opacity: 1; }
       .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
         -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
                 animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-                animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
-    .mdc-button--theme-dark .mdc-button--raised, .mdc-theme--dark .mdc-button--raised {
+        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+                animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+    .mdc-button--theme-dark .mdc-button--raised,
+    .mdc-theme--dark .mdc-button--raised {
       background-color: #3f51b5;
-      background-color: #3f51b5; }
-      .mdc-button--theme-dark .mdc-button--raised::before, .mdc-theme--dark .mdc-button--raised::before {
+      background-color: var(--mdc-theme-primary, #3f51b5); }
+      .mdc-button--theme-dark .mdc-button--raised::before,
+      .mdc-theme--dark .mdc-button--raised::before {
         color: black; }
   .mdc-button--primary {
     color: #3f51b5;
-    color: #3f51b5; }
-    .mdc-button--theme-dark .mdc-button--primary, .mdc-theme--dark .mdc-button--primary {
+    color: var(--mdc-theme-primary, #3f51b5); }
+    .mdc-button--theme-dark .mdc-button--primary,
+    .mdc-theme--dark .mdc-button--primary {
       color: #3f51b5;
-      color: #3f51b5; }
+      color: var(--mdc-theme-primary, #3f51b5); }
     .mdc-button--primary.mdc-button--raised {
       background-color: #3f51b5;
-      background-color: #3f51b5;
+      background-color: var(--mdc-theme-primary, #3f51b5);
       color: white;
-      color: white; }
+      color: var(--mdc-theme-text-primary-on-primary, white); }
       .mdc-button--primary.mdc-button--raised::before {
         color: black; }
   .mdc-button--accent {
     color: #ff4081;
-    color: #ff4081; }
-    .mdc-button--theme-dark .mdc-button--accent, .mdc-theme--dark .mdc-button--accent {
+    color: var(--mdc-theme-accent, #ff4081); }
+    .mdc-button--theme-dark .mdc-button--accent,
+    .mdc-theme--dark .mdc-button--accent {
       color: #ff4081;
-      color: #ff4081; }
+      color: var(--mdc-theme-accent, #ff4081); }
     .mdc-button--accent.mdc-button--raised {
       background-color: #ff4081;
-      background-color: #ff4081;
+      background-color: var(--mdc-theme-accent, #ff4081);
       color: white;
-      color: white; }
+      color: var(--mdc-theme-text-primary-on-accent, white); }
       .mdc-button--accent.mdc-button--raised::before {
         color: black; }
   .mdc-button--compact {
@@ -1360,13 +1381,17 @@
     color: rgba(0, 0, 0, 0.26);
     cursor: default;
     pointer-events: none; }
-    .mdc-button--theme-dark fieldset:disabled .mdc-button, .mdc-theme--dark fieldset:disabled .mdc-button, .mdc-button--theme-dark .mdc-button:disabled, .mdc-theme--dark .mdc-button:disabled {
+    .mdc-button--theme-dark fieldset:disabled .mdc-button,
+    .mdc-theme--dark fieldset:disabled .mdc-button, .mdc-button--theme-dark .mdc-button:disabled,
+    .mdc-theme--dark .mdc-button:disabled {
       color: rgba(255, 255, 255, 0.3); }
   fieldset:disabled .mdc-button--raised, .mdc-button--raised:disabled {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
     background-color: rgba(0, 0, 0, 0.12);
     pointer-events: none; }
-    .mdc-button--theme-dark fieldset:disabled .mdc-button--raised, .mdc-theme--dark fieldset:disabled .mdc-button--raised, .mdc-button--theme-dark .mdc-button--raised:disabled, .mdc-theme--dark .mdc-button--raised:disabled {
+    .mdc-button--theme-dark fieldset:disabled .mdc-button--raised,
+    .mdc-theme--dark fieldset:disabled .mdc-button--raised, .mdc-button--theme-dark .mdc-button--raised:disabled,
+    .mdc-theme--dark .mdc-button--raised:disabled {
       background-color: rgba(255, 255, 255, 0.12); }
 .page-buttons .mdc-typography--title{
     margin-top: 16px;
@@ -1554,28 +1579,28 @@
   from {
     -webkit-transform: translate(0) scale(1);
             transform: translate(0) scale(1);
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
     -webkit-transform: translate(0) scale(0);
             transform: translate(0) scale(0);
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
     -webkit-transform: translate(0) scale(1);
             transform: translate(0) scale(1);
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
     -webkit-transform: translate(0) scale(0);
             transform: translate(0) scale(0);
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -1609,25 +1634,25 @@
   from {
     -webkit-transform: 0;
             transform: 0;
-    -webkit-transform: 0;
-            transform: 0; }
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
   to {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); } }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 @keyframes mdc-ripple-fg-unbounded-transform-deactivate {
   from {
     -webkit-transform: 0;
             transform: 0;
-    -webkit-transform: 0;
-            transform: 0; }
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
   to {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); } }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -1764,7 +1789,7 @@
  */
 .mdc-icon-toggle {
   color: rgba(0, 0, 0, 0.54);
-  color: rgba(0, 0, 0, 0.54);
+  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));
   --mdc-ripple-left: 0;
   --mdc-ripple-top: 0;
   --mdc-ripple-fg-size: 0;
@@ -1824,8 +1849,8 @@
     height: 200%;
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-icon-toggle.mdc-ripple-upgraded--background-active::before {
     opacity: .99999; }
   .mdc-icon-toggle.mdc-ripple-upgraded--background-active:active::before {
@@ -1837,17 +1862,17 @@
     opacity: 1; }
   .mdc-icon-toggle.mdc-ripple-upgraded--unbounded::before {
     top: calc(50% - 50%);
-    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
     left: calc(50% - 50%);
-    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-icon-toggle::after {
     background-color: rgba(0, 0, 0, 0.062);
     position: absolute;
@@ -1865,9 +1890,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -1878,13 +1903,13 @@
             transform-origin: center center; }
   .mdc-icon-toggle.mdc-ripple-upgraded--unbounded::after {
     top: 0;
-    top: 0;
+    top: var(--mdc-ripple-top, 0);
     left: 0;
-    left: 0;
+    left: var(--mdc-ripple-left, 0);
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -1897,23 +1922,24 @@
   .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
     -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
     opacity: 1; }
   .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
     -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
             animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle::before, .mdc-theme--dark .mdc-icon-toggle::before {
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle::before,
+  .mdc-theme--dark .mdc-icon-toggle::before {
     background-color: rgba(255, 255, 255, 0.16);
     position: absolute;
     top: calc(50% - 100%);
@@ -1926,38 +1952,44 @@
     opacity: 0;
     pointer-events: none;
     content: ""; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded::before, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded::before {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded::before,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded::before {
     top: calc(50% - 100%);
     left: calc(50% - 100%);
     width: 200%;
     height: 200%;
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-active::before, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-active::before {
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-active::before,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-active::before {
     opacity: .99999; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-active:active::before, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-active:active::before {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-active:active::before,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-active:active::before {
     -webkit-transition-duration: 600ms;
             transition-duration: 600ms; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-bounded-active-fill::before, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-bounded-active-fill::before,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-bounded-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded::before, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded::before {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded::before,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded::before {
     top: calc(50% - 50%);
-    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
     left: calc(50% - 50%);
-    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle::after, .mdc-theme--dark .mdc-icon-toggle::after {
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle::after,
+  .mdc-theme--dark .mdc-icon-toggle::after {
     background-color: rgba(255, 255, 255, 0.16);
     position: absolute;
     top: calc(50% - 100%);
@@ -1970,71 +2002,78 @@
     opacity: 0;
     pointer-events: none;
     content: ""; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded::after, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded::after {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded::after,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded::after {
     top: 0;
     left: 0;
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center;
     opacity: 0; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle:not(.mdc-ripple-upgraded--unbounded)::after, .mdc-theme--dark .mdc-icon-toggle:not(.mdc-ripple-upgraded--unbounded)::after {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle:not(.mdc-ripple-upgraded--unbounded)::after,
+  .mdc-theme--dark .mdc-icon-toggle:not(.mdc-ripple-upgraded--unbounded)::after {
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded::after, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded::after {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded::after,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded::after {
     top: 0;
-    top: 0;
+    top: var(--mdc-ripple-top, 0);
     left: 0;
-    left: 0;
+    left: var(--mdc-ripple-left, 0);
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--foreground-bounded-active-fill::after, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--foreground-bounded-active-fill::after,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
     -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
             animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
     -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
     opacity: 1; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after, .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
     -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
             animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
   .mdc-icon-toggle::after {
     position: absolute;
     border-radius: 50%;
     content: "";
     opacity: 0;
     pointer-events: none; }
-  .mdc-icon-toggle--theme-dark, .mdc-theme--dark .mdc-icon-toggle {
+  .mdc-icon-toggle--theme-dark,
+  .mdc-theme--dark .mdc-icon-toggle {
     color: white;
-    color: white; }
+    color: var(--mdc-theme-text-primary-on-dark, white); }
 
 .mdc-icon-toggle--primary {
   color: #3f51b5;
-  color: #3f51b5; }
+  color: var(--mdc-theme-primary, #3f51b5); }
   .mdc-icon-toggle--primary::before {
     background-color: rgba(63, 81, 181, 0.14);
     position: absolute;
@@ -2050,7 +2089,7 @@
     content: ""; }
     @supports (background-color: color(green a(10%))) {
       .mdc-icon-toggle--primary::before {
-        background-color: rgba(63, 81, 181, 0.14); } }
+        background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }
   .mdc-icon-toggle--primary.mdc-ripple-upgraded::before {
     top: calc(50% - 100%);
     left: calc(50% - 100%);
@@ -2058,8 +2097,8 @@
     height: 200%;
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-icon-toggle--primary.mdc-ripple-upgraded--background-active::before {
     opacity: .99999; }
   .mdc-icon-toggle--primary.mdc-ripple-upgraded--background-active:active::before {
@@ -2071,17 +2110,17 @@
     opacity: 1; }
   .mdc-icon-toggle--primary.mdc-ripple-upgraded--unbounded::before {
     top: calc(50% - 50%);
-    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
     left: calc(50% - 50%);
-    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-icon-toggle--primary::after {
     background-color: rgba(63, 81, 181, 0.14);
     position: absolute;
@@ -2097,14 +2136,14 @@
     content: ""; }
     @supports (background-color: color(green a(10%))) {
       .mdc-icon-toggle--primary::after {
-        background-color: rgba(63, 81, 181, 0.14); } }
+        background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }
   .mdc-icon-toggle--primary.mdc-ripple-upgraded::after {
     top: 0;
     left: 0;
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -2115,13 +2154,13 @@
             transform-origin: center center; }
   .mdc-icon-toggle--primary.mdc-ripple-upgraded--unbounded::after {
     top: 0;
-    top: 0;
+    top: var(--mdc-ripple-top, 0);
     left: 0;
-    left: 0;
+    left: var(--mdc-ripple-left, 0);
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -2134,26 +2173,26 @@
   .mdc-icon-toggle--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
     -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
     opacity: 1; }
   .mdc-icon-toggle--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
     -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
             animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
 
 .mdc-icon-toggle--accent {
   color: #ff4081;
-  color: #ff4081; }
+  color: var(--mdc-theme-accent, #ff4081); }
   .mdc-icon-toggle--accent::before {
     background-color: rgba(255, 64, 129, 0.14);
     position: absolute;
@@ -2169,7 +2208,7 @@
     content: ""; }
     @supports (background-color: color(green a(10%))) {
       .mdc-icon-toggle--accent::before {
-        background-color: rgba(255, 64, 129, 0.14); } }
+        background-color: color(var(--mdc-theme-accent, #ff4081) a(14%)); } }
   .mdc-icon-toggle--accent.mdc-ripple-upgraded::before {
     top: calc(50% - 100%);
     left: calc(50% - 100%);
@@ -2177,8 +2216,8 @@
     height: 200%;
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-icon-toggle--accent.mdc-ripple-upgraded--background-active::before {
     opacity: .99999; }
   .mdc-icon-toggle--accent.mdc-ripple-upgraded--background-active:active::before {
@@ -2190,17 +2229,17 @@
     opacity: 1; }
   .mdc-icon-toggle--accent.mdc-ripple-upgraded--unbounded::before {
     top: calc(50% - 50%);
-    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
     left: calc(50% - 50%);
-    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-icon-toggle--accent::after {
     background-color: rgba(255, 64, 129, 0.14);
     position: absolute;
@@ -2216,14 +2255,14 @@
     content: ""; }
     @supports (background-color: color(green a(10%))) {
       .mdc-icon-toggle--accent::after {
-        background-color: rgba(255, 64, 129, 0.14); } }
+        background-color: color(var(--mdc-theme-accent, #ff4081) a(14%)); } }
   .mdc-icon-toggle--accent.mdc-ripple-upgraded::after {
     top: 0;
     left: 0;
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -2234,13 +2273,13 @@
             transform-origin: center center; }
   .mdc-icon-toggle--accent.mdc-ripple-upgraded--unbounded::after {
     top: 0;
-    top: 0;
+    top: var(--mdc-ripple-top, 0);
     left: 0;
-    left: 0;
+    left: var(--mdc-ripple-left, 0);
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -2253,30 +2292,31 @@
   .mdc-icon-toggle--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
     -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
     opacity: 1; }
   .mdc-icon-toggle--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
     -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
             animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
 
 .mdc-icon-toggle--disabled {
   color: rgba(0, 0, 0, 0.38);
-  color: rgba(0, 0, 0, 0.38);
+  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));
   pointer-events: none; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle--disabled, .mdc-theme--dark .mdc-icon-toggle--disabled {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle--disabled,
+  .mdc-theme--dark .mdc-icon-toggle--disabled {
     color: rgba(255, 255, 255, 0.5);
-    color: rgba(255, 255, 255, 0.5); }
+    color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)); }
 
 /** postcss-bem-linter: end */
 /*!
@@ -2723,9 +2763,9 @@
   padding: 24px 16px;
   box-sizing: border-box;
   background-color: #3f51b5;
-  background-color: #3f51b5;
+  background-color: var(--mdc-theme-primary, #3f51b5);
   color: white;
-  color: white; }
+  color: var(--mdc-theme-text-primary-on-primary, white); }
   @media (max-width: 599px) {
     .mdc-toolbar {
       height: 56px;
@@ -3344,7 +3384,7 @@
   /* stylelint-enable selector-no-qualifying-type */
   /* TODO(sgomes): Revisit when we have interactive lists. */
   background: #fff;
-  background: #fff;
+  background: var(--mdc-theme-background, #fff);
   border-left: 0;
   border-right: 1px solid #e4e4e4;
   left: 0;
@@ -3379,7 +3419,8 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     /* TODO(sgomes): replace with global breakpoints when we have them */ }
-    .mdc-permanent-drawer__toolbar-spacer--theme-dark .mdc-permanent-drawer__toolbar-spacer, .mdc-theme--dark .mdc-permanent-drawer__toolbar-spacer {
+    .mdc-permanent-drawer__toolbar-spacer--theme-dark .mdc-permanent-drawer__toolbar-spacer,
+    .mdc-theme--dark .mdc-permanent-drawer__toolbar-spacer {
       border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
     @media (min-width: 600px) {
       .mdc-permanent-drawer__toolbar-spacer {
@@ -3404,7 +3445,8 @@
             align-items: flex-end;
     padding: 16px;
     box-sizing: border-box; }
-  .mdc-permanent-drawer .mdc-list-group, .mdc-permanent-drawer .mdc-list {
+  .mdc-permanent-drawer .mdc-list-group,
+  .mdc-permanent-drawer .mdc-list {
     padding-right: 0;
     padding-left: 0; }
   .mdc-permanent-drawer .mdc-list-item {
@@ -3422,11 +3464,13 @@
     line-height: 1.5rem; }
   .mdc-permanent-drawer .mdc-list-item__start-detail {
     color: rgba(0, 0, 0, 0.54); }
-    .mdc-permanent-drawer .mdc-list-item__start-detail--theme-dark .mdc-permanent-drawer .mdc-list-item__start-detail, .mdc-theme--dark .mdc-permanent-drawer .mdc-list-item__start-detail {
+    .mdc-permanent-drawer .mdc-list-item__start-detail--theme-dark .mdc-permanent-drawer .mdc-list-item__start-detail,
+    .mdc-theme--dark .mdc-permanent-drawer .mdc-list-item__start-detail {
       color: rgba(255, 255, 255, 0.54); }
-  .mdc-permanent-drawer--selected.mdc-list-item, .mdc-permanent-drawer--selected.mdc-list-item .mdc-list-item__start-detail {
+  .mdc-permanent-drawer--selected.mdc-list-item,
+  .mdc-permanent-drawer--selected.mdc-list-item .mdc-list-item__start-detail {
     color: #3f51b5;
-    color: #3f51b5; }
+    color: var(--mdc-theme-primary, #3f51b5); }
   .mdc-permanent-drawer .mdc-list-item::before {
     position: absolute;
     top: 0;
@@ -3461,14 +3505,16 @@
   [dir="rtl"] .mdc-permanent-drawer, .mdc-permanent-drawer[dir="rtl"] {
     left: initial;
     right: 0; }
-  .mdc-permanent-drawer--theme-dark, .mdc-theme--dark .mdc-permanent-drawer {
+  .mdc-permanent-drawer--theme-dark,
+  .mdc-theme--dark .mdc-permanent-drawer {
     background: #212121;
     color: white;
-    color: white;
+    color: var(--mdc-theme-text-primary-on-dark, white);
     border-left: 0;
     border-right: 1px solid rgba(255, 255, 255, 0.12); }
     [dir="rtl"] .mdc-permanent-drawer--theme-dark, .mdc-permanent-drawer--theme-dark[dir="rtl"], [dir="rtl"]
-    .mdc-theme--dark .mdc-permanent-drawer, .mdc-theme--dark .mdc-permanent-drawer[dir="rtl"] {
+    .mdc-theme--dark .mdc-permanent-drawer,
+    .mdc-theme--dark .mdc-permanent-drawer[dir="rtl"] {
       border-left: 1px solid rgba(255, 255, 255, 0.12);
       border-right: 0; }
   .mdc-permanent-drawer--floating {
@@ -3478,12 +3524,14 @@
     [dir="rtl"] .mdc-permanent-drawer--floating, .mdc-permanent-drawer--floating[dir="rtl"] {
       border-left: none;
       border-right: 0; }
-    .mdc-permanent-drawer--floating--theme-dark, .mdc-theme--dark .mdc-permanent-drawer--floating {
+    .mdc-permanent-drawer--floating--theme-dark,
+    .mdc-theme--dark .mdc-permanent-drawer--floating {
       background: none;
       border-left: 0;
       border-right: none; }
       [dir="rtl"] .mdc-permanent-drawer--floating--theme-dark, .mdc-permanent-drawer--floating--theme-dark[dir="rtl"], [dir="rtl"]
-      .mdc-theme--dark .mdc-permanent-drawer--floating, .mdc-theme--dark .mdc-permanent-drawer--floating[dir="rtl"] {
+      .mdc-theme--dark .mdc-permanent-drawer--floating,
+      .mdc-theme--dark .mdc-permanent-drawer--floating[dir="rtl"] {
         border-left: none;
         border-right: 0; }
 
@@ -4168,7 +4216,8 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     /* TODO(sgomes): replace with global breakpoints when we have them */ }
-    .mdc-temporary-drawer__toolbar-spacer--theme-dark .mdc-temporary-drawer__toolbar-spacer, .mdc-theme--dark .mdc-temporary-drawer__toolbar-spacer {
+    .mdc-temporary-drawer__toolbar-spacer--theme-dark .mdc-temporary-drawer__toolbar-spacer,
+    .mdc-theme--dark .mdc-temporary-drawer__toolbar-spacer {
       border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
     @media (min-width: 600px) {
       .mdc-temporary-drawer__toolbar-spacer {
@@ -4193,7 +4242,8 @@
             align-items: flex-end;
     padding: 16px;
     box-sizing: border-box; }
-  .mdc-temporary-drawer .mdc-list-group, .mdc-temporary-drawer .mdc-list {
+  .mdc-temporary-drawer .mdc-list-group,
+  .mdc-temporary-drawer .mdc-list {
     padding-right: 0;
     padding-left: 0; }
   .mdc-temporary-drawer .mdc-list-item {
@@ -4211,11 +4261,13 @@
     line-height: 1.5rem; }
   .mdc-temporary-drawer .mdc-list-item__start-detail {
     color: rgba(0, 0, 0, 0.54); }
-    .mdc-temporary-drawer .mdc-list-item__start-detail--theme-dark .mdc-temporary-drawer .mdc-list-item__start-detail, .mdc-theme--dark .mdc-temporary-drawer .mdc-list-item__start-detail {
+    .mdc-temporary-drawer .mdc-list-item__start-detail--theme-dark .mdc-temporary-drawer .mdc-list-item__start-detail,
+    .mdc-theme--dark .mdc-temporary-drawer .mdc-list-item__start-detail {
       color: rgba(255, 255, 255, 0.54); }
-  .mdc-temporary-drawer--selected.mdc-list-item, .mdc-temporary-drawer--selected.mdc-list-item .mdc-list-item__start-detail {
+  .mdc-temporary-drawer--selected.mdc-list-item,
+  .mdc-temporary-drawer--selected.mdc-list-item .mdc-list-item__start-detail {
     color: #3f51b5;
-    color: #3f51b5; }
+    color: var(--mdc-theme-primary, #3f51b5); }
   .mdc-temporary-drawer .mdc-list-item::before {
     position: absolute;
     top: 0;
@@ -4254,12 +4306,12 @@
     background: rgba(0, 0, 0, 0.6);
     content: "";
     opacity: 0;
-    opacity: 0;
+    opacity: var(--mdc-temporary-drawer-opacity, 0);
     will-change: opacity;
     box-sizing: border-box; }
   .mdc-temporary-drawer__drawer {
     background: #fff;
-    background: #fff;
+    background: var(--mdc-theme-background, #fff);
     box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
     left: 0;
     right: initial;
@@ -4287,11 +4339,13 @@
     [dir="rtl"] .mdc-temporary-drawer__drawer, .mdc-temporary-drawer__drawer[dir="rtl"] {
       left: initial;
       right: 0; }
-    .mdc-temporary-drawer--theme-dark .mdc-temporary-drawer__drawer, .mdc-theme--dark .mdc-temporary-drawer__drawer {
+    .mdc-temporary-drawer--theme-dark .mdc-temporary-drawer__drawer,
+    .mdc-theme--dark .mdc-temporary-drawer__drawer {
       background: #303030;
       color: white;
-      color: white; }
-    [dir="rtl"] .mdc-temporary-drawer .mdc-temporary-drawer__drawer, .mdc-temporary-drawer[dir="rtl"] .mdc-temporary-drawer__drawer {
+      color: var(--mdc-theme-text-primary-on-dark, white); }
+    [dir="rtl"] .mdc-temporary-drawer .mdc-temporary-drawer__drawer,
+    .mdc-temporary-drawer[dir="rtl"] .mdc-temporary-drawer__drawer {
       -webkit-transform: translateX(107%);
               transform: translateX(107%);
       -webkit-transform: translateX(calc(100% + 20px));
@@ -4332,7 +4386,7 @@
     pointer-events: auto; }
     .mdc-temporary-drawer--open::before {
       opacity: 1;
-      opacity: 1; }
+      opacity: var(--mdc-temporary-drawer-opacity, 1); }
     .mdc-temporary-drawer--open .mdc-temporary-drawer__drawer {
       -webkit-transform: none;
               transform: none; }
@@ -4473,28 +4527,28 @@
   from {
     -webkit-transform: translate(0) scale(1);
             transform: translate(0) scale(1);
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
     -webkit-transform: translate(0) scale(0);
             transform: translate(0) scale(0);
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
     -webkit-transform: translate(0) scale(1);
             transform: translate(0) scale(1);
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
+            transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
     -webkit-transform: translate(0) scale(0);
             transform: translate(0) scale(0);
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -4528,25 +4582,25 @@
   from {
     -webkit-transform: 0;
             transform: 0;
-    -webkit-transform: 0;
-            transform: 0; }
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
   to {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); } }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 @keyframes mdc-ripple-fg-unbounded-transform-deactivate {
   from {
     -webkit-transform: 0;
             transform: 0;
-    -webkit-transform: 0;
-            transform: 0; }
+    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
+            transform: var(--mdc-ripple-fg-approx-xf, 0); }
   to {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); } }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -4905,14 +4959,15 @@
   letter-spacing: 0.04em;
   line-height: 1.75rem;
   color: rgba(0, 0, 0, 0.87);
-  color: rgba(0, 0, 0, 0.87);
+  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
   margin: 0;
   padding: 8px 16px 0;
   line-height: 1.5rem;
   list-style-type: none; }
-  .mdc-list--theme-dark, .mdc-theme--dark .mdc-list {
+  .mdc-list--theme-dark,
+  .mdc-theme--dark .mdc-list {
     color: white;
-    color: white; }
+    color: var(--mdc-theme-text-primary-on-dark, white); }
 
 .mdc-list--dense {
   padding-top: 4px;
@@ -4934,7 +4989,8 @@
     height: 24px;
     margin-left: 0;
     margin-right: 32px; }
-    [dir="rtl"] .mdc-list-item .mdc-list-item__start-detail, .mdc-list-item[dir="rtl"] .mdc-list-item__start-detail {
+    [dir="rtl"] .mdc-list-item .mdc-list-item__start-detail,
+    .mdc-list-item[dir="rtl"] .mdc-list-item__start-detail {
       margin-left: 32px;
       margin-right: 0; }
   .mdc-list-item__end-detail {
@@ -4942,7 +4998,8 @@
     height: 24px;
     margin-left: auto;
     margin-right: 16px; }
-    [dir="rtl"] .mdc-list-item .mdc-list-item__end-detail, .mdc-list-item[dir="rtl"] .mdc-list-item__end-detail {
+    [dir="rtl"] .mdc-list-item .mdc-list-item__end-detail,
+    .mdc-list-item[dir="rtl"] .mdc-list-item__end-detail {
       margin-left: 16px;
       margin-right: auto; }
   .mdc-list-item__text {
@@ -4962,10 +5019,11 @@
       letter-spacing: 0.04em;
       line-height: 1.25rem;
       color: rgba(0, 0, 0, 0.54);
-      color: rgba(0, 0, 0, 0.54); }
-      .mdc-list-item__text__secondary--theme-dark, .mdc-theme--dark .mdc-list-item__text__secondary {
+      color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }
+      .mdc-list-item__text__secondary--theme-dark,
+      .mdc-theme--dark .mdc-list-item__text__secondary {
         color: rgba(255, 255, 255, 0.7);
-        color: rgba(255, 255, 255, 0.7); }
+        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }
       .mdc-list--dense .mdc-list-item__text__secondary {
         font-size: inherit; }
   .mdc-list--dense .mdc-list-item {
@@ -4975,7 +5033,8 @@
       height: 20px;
       margin-left: 0;
       margin-right: 36px; }
-      [dir="rtl"] .mdc-list-item .mdc-list--dense .mdc-list-item__start-detail, .mdc-list-item[dir="rtl"] .mdc-list--dense .mdc-list-item__start-detail {
+      [dir="rtl"] .mdc-list-item .mdc-list--dense .mdc-list-item__start-detail,
+      .mdc-list-item[dir="rtl"] .mdc-list--dense .mdc-list-item__start-detail {
         margin-left: 36px;
         margin-right: 0; }
     .mdc-list--dense .mdc-list-item__end-detail {
@@ -4989,7 +5048,8 @@
       margin-left: 0;
       margin-right: 16px;
       border-radius: 50%; }
-      [dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__start-detail, .mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__start-detail {
+      [dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__start-detail,
+      .mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__start-detail {
         margin-left: 16px;
         margin-right: 0; }
   .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item {
@@ -4999,7 +5059,8 @@
       height: 36px;
       margin-left: 0;
       margin-right: 20px; }
-      [dir="rtl"] .mdc-list-item .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail, .mdc-list-item[dir="rtl"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {
+      [dir="rtl"] .mdc-list-item .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail,
+      .mdc-list-item[dir="rtl"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {
         margin-left: 20px;
         margin-right: 0; }
   .mdc-list--two-line .mdc-list-item {
@@ -5054,8 +5115,8 @@ a.mdc-list-item {
     height: 200%;
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {
     opacity: .99999; }
   .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {
@@ -5067,17 +5128,17 @@ a.mdc-list-item {
     opacity: 1; }
   .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {
     top: calc(50% - 50%);
-    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
     left: calc(50% - 50%);
-    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
   .mdc-list-item.mdc-ripple-upgraded::after {
     background-color: rgba(0, 0, 0, 0.06);
     position: absolute;
@@ -5095,9 +5156,9 @@ a.mdc-list-item {
     top: 0;
     left: 0;
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -5108,13 +5169,13 @@ a.mdc-list-item {
             transform-origin: center center; }
   .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {
     top: 0;
-    top: 0;
+    top: var(--mdc-ripple-top, 0);
     left: 0;
-    left: 0;
+    left: var(--mdc-ripple-left, 0);
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
@@ -5127,25 +5188,26 @@ a.mdc-list-item {
   .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
     -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
     opacity: 1; }
   .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
     -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
             animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
   .mdc-list-item.mdc-ripple-upgraded:focus {
     outline: none; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::before, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::before {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::before {
     background-color: rgba(255, 255, 255, 0.12);
     position: absolute;
     top: calc(50% - 100%);
@@ -5158,38 +5220,44 @@ a.mdc-list-item {
     opacity: 0;
     pointer-events: none;
     content: ""; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before {
     top: calc(50% - 100%);
     left: calc(50% - 100%);
     width: 200%;
     height: 200%;
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {
     opacity: .99999; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {
     -webkit-transition-duration: 600ms;
             transition-duration: 600ms; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {
     top: calc(50% - 50%);
-    top: calc(50% - 50%);
+    top: var(--mdc-ripple-top, calc(50% - 50%));
     left: calc(50% - 50%);
-    left: calc(50% - 50%);
+    left: var(--mdc-ripple-left, calc(50% - 50%));
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0); }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::after, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::after {
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0)); }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::after {
     background-color: rgba(255, 255, 255, 0.12);
     position: absolute;
     top: calc(50% - 100%);
@@ -5202,72 +5270,80 @@ a.mdc-list-item {
     opacity: 0;
     pointer-events: none;
     content: ""; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after {
     top: 0;
     left: 0;
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center;
     opacity: 0; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {
     top: 0;
-    top: 0;
+    top: var(--mdc-ripple-top, 0);
     left: 0;
-    left: 0;
+    left: var(--mdc-ripple-left, 0);
     width: 100%;
-    width: 100%;
+    width: var(--mdc-ripple-fg-size, 100%);
     height: 100%;
-    height: 100%;
+    height: var(--mdc-ripple-fg-size, 100%);
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
     -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
             animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
+            transform: scale(var(--mdc-ripple-fg-scale, 0));
     -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms;
     transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
+    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
+    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
     opacity: 1; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after, .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
     -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
             animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1); }
+    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
+            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
 
 .mdc-list-divider {
   height: 0;
   margin: 0;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-  .mdc-list--theme-dark .mdc-list-divider, .mdc-theme--dark .mdc-list-divider {
+  .mdc-list--theme-dark .mdc-list-divider,
+  .mdc-theme--dark .mdc-list-divider {
     border-bottom-color: rgba(255, 255, 255, 0.2); }
 
 .mdc-list-divider--inset {
   margin-left: 56px;
   margin-right: 0;
   width: calc(100% - 56px); }
-  [dir="rtl"] .mdc-list-group .mdc-list-divider--inset, .mdc-list-group[dir="rtl"] .mdc-list-divider--inset {
+  [dir="rtl"] .mdc-list-group .mdc-list-divider--inset,
+  .mdc-list-group[dir="rtl"] .mdc-list-divider--inset {
     margin-left: 0;
     margin-right: 56px; }
 
@@ -5282,11 +5358,12 @@ a.mdc-list-item {
     letter-spacing: 0.04em;
     line-height: 1.5rem;
     color: rgba(0, 0, 0, 0.87);
-    color: rgba(0, 0, 0, 0.87);
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
     margin: 0.75rem 0; }
-    .mdc-list-group__subheader--theme-dark, .mdc-theme--dark .mdc-list-group__subheader {
+    .mdc-list-group__subheader--theme-dark,
+    .mdc-theme--dark .mdc-list-group__subheader {
       color: white;
-      color: white; }
+      color: var(--mdc-theme-text-primary-on-dark, white); }
   .mdc-list-group .mdc-list {
     padding: 0; }
 .home .mdc-toolbar {
@@ -5678,158 +5755,157 @@ a.mdc-list-item {
  * }
  * ```
  */
+:root {
+  --mdc-theme-primary: #3f51b5;
+  --mdc-theme-accent: #ff4081;
+  --mdc-theme-background: #fff;
+  --mdc-theme-text-primary-on-primary: white;
+  --mdc-theme-text-secondary-on-primary: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-primary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-primary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-primary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-primary-on-accent: white;
+  --mdc-theme-text-secondary-on-accent: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-accent: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-accent: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-accent: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-dark: white;
+  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5); }
 
 /* Special case, so that .mdc-theme--background changes background color, not text color. */
 .mdc-theme--background {
   background-color: #fff;
-  background-color: #fff;
-  background-color: #fff; }
+  background-color: var(--mdc-theme-background, #fff); }
 
 .mdc-theme--primary {
   color: #3f51b5 !important;
-  color: #3f51b5 !important;
-  color: #3f51b5 !important; }
+  color: var(--mdc-theme-primary, #3f51b5) !important; }
 
 .mdc-theme--accent {
   color: #ff4081 !important;
-  color: #ff4081 !important;
-  color: #ff4081 !important; }
+  color: var(--mdc-theme-accent, #ff4081) !important; }
 
 .mdc-theme--text-primary-on-primary {
   color: white !important;
-  color: white !important;
-  color: white !important; }
+  color: var(--mdc-theme-text-primary-on-primary, white) !important; }
 
 .mdc-theme--text-secondary-on-primary {
   color: rgba(255, 255, 255, 0.7) !important;
-  color: rgba(255, 255, 255, 0.7) !important;
-  color: rgba(255, 255, 255, 0.7) !important; }
+  color: var(--mdc-theme-text-secondary-on-primary, rgba(255, 255, 255, 0.7)) !important; }
 
 .mdc-theme--text-hint-on-primary {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-hint-on-primary, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-disabled-on-primary {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-disabled-on-primary, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-icon-on-primary {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-icon-on-primary, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-primary-on-accent {
   color: white !important;
-  color: white !important;
-  color: white !important; }
+  color: var(--mdc-theme-text-primary-on-accent, white) !important; }
 
 .mdc-theme--text-secondary-on-accent {
   color: rgba(255, 255, 255, 0.7) !important;
-  color: rgba(255, 255, 255, 0.7) !important;
-  color: rgba(255, 255, 255, 0.7) !important; }
+  color: var(--mdc-theme-text-secondary-on-accent, rgba(255, 255, 255, 0.7)) !important; }
 
 .mdc-theme--text-hint-on-accent {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-hint-on-accent, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-disabled-on-accent {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-disabled-on-accent, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-icon-on-accent {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-icon-on-accent, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-primary-on-background {
   color: rgba(0, 0, 0, 0.87) !important;
-  color: rgba(0, 0, 0, 0.87) !important;
-  color: rgba(0, 0, 0, 0.87) !important; }
+  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)) !important; }
 
 .mdc-theme--text-secondary-on-background {
   color: rgba(0, 0, 0, 0.54) !important;
-  color: rgba(0, 0, 0, 0.54) !important;
-  color: rgba(0, 0, 0, 0.54) !important; }
+  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)) !important; }
 
 .mdc-theme--text-hint-on-background {
   color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important; }
+  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)) !important; }
 
 .mdc-theme--text-disabled-on-background {
   color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important; }
+  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)) !important; }
 
 .mdc-theme--text-icon-on-background {
   color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important; }
+  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)) !important; }
 
 .mdc-theme--text-primary-on-light {
   color: rgba(0, 0, 0, 0.87) !important;
-  color: rgba(0, 0, 0, 0.87) !important;
-  color: rgba(0, 0, 0, 0.87) !important; }
+  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)) !important; }
 
 .mdc-theme--text-secondary-on-light {
   color: rgba(0, 0, 0, 0.54) !important;
-  color: rgba(0, 0, 0, 0.54) !important;
-  color: rgba(0, 0, 0, 0.54) !important; }
+  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)) !important; }
 
 .mdc-theme--text-hint-on-light {
   color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important; }
+  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38)) !important; }
 
 .mdc-theme--text-disabled-on-light {
   color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important; }
+  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)) !important; }
 
 .mdc-theme--text-icon-on-light {
   color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important;
-  color: rgba(0, 0, 0, 0.38) !important; }
+  color: var(--mdc-theme-text-icon-on-light, rgba(0, 0, 0, 0.38)) !important; }
 
 .mdc-theme--text-primary-on-dark {
   color: white !important;
-  color: white !important;
-  color: white !important; }
+  color: var(--mdc-theme-text-primary-on-dark, white) !important; }
 
 .mdc-theme--text-secondary-on-dark {
   color: rgba(255, 255, 255, 0.7) !important;
-  color: rgba(255, 255, 255, 0.7) !important;
-  color: rgba(255, 255, 255, 0.7) !important; }
+  color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)) !important; }
 
 .mdc-theme--text-hint-on-dark {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-disabled-on-dark {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)) !important; }
 
 .mdc-theme--text-icon-on-dark {
   color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: var(--mdc-theme-text-icon-on-dark, rgba(255, 255, 255, 0.5)) !important; }
 
 /* CSS rules for using primary and accent as background colors. */
 .mdc-theme--primary-bg {
   background-color: #3f51b5 !important;
-  background-color: #3f51b5 !important;
-  background-color: #3f51b5 !important; }
+  background-color: var(--mdc-theme-primary, #3f51b5) !important; }
 
 .mdc-theme--accent-bg {
   background-color: #ff4081 !important;
-  background-color: #ff4081 !important;
-  background-color: #ff4081 !important; }
+  background-color: var(--mdc-theme-accent, #ff4081) !important; }
 body {
 	padding: 0;
 	margin: 0;
