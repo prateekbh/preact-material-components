@@ -1,5 +1,5 @@
 import { h, Component } from "preact";
-import { MDCRipple } from "@material/ripple/index";
+import { MDCRipple } from "@material/ripple";
 
 /**
  * Base class for every Material component in this package

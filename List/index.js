@@ -78,8 +78,8 @@ class ListItemIcon extends MaterialComponent {
 	}
 }
 
-List.ListItem = ListItem;
+List.Item = ListItem;
 List.LinkItem = LinkItem;
-List.ListItemIcon = ListItemIcon;
+List.ItemIcon = ListItemIcon;
 
 export default List;
