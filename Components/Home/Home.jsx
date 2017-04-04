@@ -6,6 +6,8 @@ import List from 'preact-material-components/List';
 import ButtonsPage from '../ButtonsPage/ButtonsPage.jsx';
 import FabPage from '../FabPage/FabPage.jsx';
 import CheckboxPage from '../CheckboxPage/CheckboxPage.jsx';
+import SwitchPage from '../SwitchPage/SwitchPage.jsx';
+import DialogPage from '../DialogPage/DialogPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
@@ -39,7 +41,8 @@ export default class Home extends Component {
 			<div className="home">
 				<div className={this.state.component? "hero collapsed": "hero"}>
 					<Toolbar>
-						<Toolbar.Section align-start={true}>
+						<Toolbar.Row>
+							<Toolbar.Section align-start={true}>
 								<Toolbar.Icon href="#" onClick={(e)=>{
 												e.preventDefault();
 												this.drawer.MDComponent.open = true;
@@ -47,7 +50,8 @@ export default class Home extends Component {
 								<Toolbar.Title>
 									{this.state.toolbarTitle}
 								</Toolbar.Title>
-						</Toolbar.Section>
+							</Toolbar.Section>
+						</Toolbar.Row>
 					</Toolbar>
 					<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid">
 						<g>
@@ -105,10 +109,13 @@ export default class Home extends Component {
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Checkbox
 								</List.LinkItem>
-								<List.ListItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/dialog');
+										this.closeDrawer();
+									}}>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Dialog
-								</List.ListItem>
+								</List.LinkItem>
 								<List.ListItem>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Drawer
@@ -152,10 +159,13 @@ export default class Home extends Component {
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Snackbar
 								</List.ListItem>
-								<List.ListItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/switch');
+										this.closeDrawer();
+									}}>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Switch
-								</List.ListItem>
+								</List.LinkItem>
 								<List.ListItem>
 									<List.ListItemIcon>code</List.ListItemIcon>
 									Textfield
@@ -171,6 +181,8 @@ export default class Home extends Component {
 						{this.state.component === 'button' && <ButtonsPage/>}
 						{this.state.component === 'fab' && <FabPage/>}
 						{this.state.component === 'checkbox' && <CheckboxPage/>}
+						{this.state.component === 'switch' && <SwitchPage/>}
+						{this.state.component === 'dialog' && <DialogPage/>}
 					</div>
 
 			</div>
