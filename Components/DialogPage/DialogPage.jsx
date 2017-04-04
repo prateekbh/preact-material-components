@@ -25,28 +25,28 @@ export default class DialogPage extends Component {
 					Show Scrollable Dialog
 				</Button>
 				<Dialog ref={normalDlg=>{this.normalDlg=normalDlg;}}>
-					<Dialog.DialogHeader>Use Google's location service?</Dialog.DialogHeader>
-					<Dialog.DialogBody>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</Dialog.DialogBody>
-					<Dialog.DialogFooter>
-						<Dialog.DialogFooterButton cancel={true}>Decline</Dialog.DialogFooterButton>
-						<Dialog.DialogFooterButton accept={true}>Accept</Dialog.DialogFooterButton>
-					</Dialog.DialogFooter>
+					<Dialog.Header>Use Google's location service?</Dialog.Header>
+					<Dialog.Body>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</Dialog.Body>
+					<Dialog.Footer>
+						<Dialog.FooterButton cancel={true}>Decline</Dialog.FooterButton>
+						<Dialog.FooterButton accept={true}>Accept</Dialog.FooterButton>
+					</Dialog.Footer>
 				</Dialog>
 				<Dialog ref={scrollingDlg=>{this.scrollingDlg=scrollingDlg;}}>
-					<Dialog.DialogHeader>Scroll for me ;)</Dialog.DialogHeader>
-					<Dialog.DialogBody scrollable={true}>
+					<Dialog.Header>Scroll for me ;)</Dialog.Header>
+					<Dialog.Body scrollable={true}>
 						<List>
-							<List.ListItem>Item 1</List.ListItem>
-							<List.ListItem>Item 2</List.ListItem>
-							<List.ListItem>Item 3</List.ListItem>
-							<List.ListItem>Item 4</List.ListItem>
-							<List.ListItem>Item 5</List.ListItem>
+							<List.Item>Item 1</List.Item>
+							<List.Item>Item 2</List.Item>
+							<List.Item>Item 3</List.Item>
+							<List.Item>Item 4</List.Item>
+							<List.Item>Item 5</List.Item>
 						</List>
-					</Dialog.DialogBody>
-					<Dialog.DialogFooter>
-						<Dialog.DialogFooterButton cancel={true}>Decline</Dialog.DialogFooterButton>
-						<Dialog.DialogFooterButton accept={true}>Accept</Dialog.DialogFooterButton>
-					</Dialog.DialogFooter>
+					</Dialog.Body>
+					<Dialog.Footer>
+						<Dialog.FooterButton cancel={true}>Decline</Dialog.FooterButton>
+						<Dialog.FooterButton accept={true}>Accept</Dialog.FooterButton>
+					</Dialog.Footer>
 				</Dialog>
 			</div>
 		);

@@ -14,7 +14,7 @@ import {
 	Dialog,
 	List,
 	Drawer
-} from "../Components/";
+} from "preact-material-components";
 
 export default class Home extends Component {
 	render(){
