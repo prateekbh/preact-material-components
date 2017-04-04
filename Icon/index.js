@@ -12,7 +12,7 @@ export default class Icon extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<i {...props} className="material-icons">
-				{props.icon}
+				{props.children}
 			</i>
 		);
 	}
