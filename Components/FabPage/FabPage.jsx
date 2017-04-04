@@ -29,33 +29,33 @@ export default class FabPage extends Component {
 				<div className="mdc-typography--display2">Demo </div>
 				<div className="mdc-typography--title">Defaults </div>
 				<Fab>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 				<Fab ripple={true}>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 				<Fab mini={true}>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 				<div className="mdc-typography--title">Plain </div>
 				<Fab plain={true}>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 				<Fab plain={true} ripple={true}>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 				<Fab plain={true} mini={true}>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 				<div className="mdc-typography--title">Disabled </div>
 				<Fab disabled={true}>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 				<Fab disabled={true} ripple={true}>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 				<Fab disabled={true} mini={true}>
-					<Icon icon="favorite_border"></Icon>
+					<Icon>favorite_border</Icon>
 				</Fab>
 			</div>
 		);
