@@ -41,7 +41,7 @@ class TemporaryDrawerHeader extends MaterialComponent {
 class TemporaryDrawerContent extends MaterialComponent {
 	constructor() {
 		super();
-		this.componentName = "mdc-temporary-drawer__content";
+		this.componentName = "temporary-drawer__content";
 	}
 	materialDom(props) {
 		return (
