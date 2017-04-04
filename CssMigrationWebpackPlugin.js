@@ -29,6 +29,17 @@ const bundleMapping = {
 };
 
 class CssMigrationWebpackPlugin{
+	copySuperCss() {
+		const sourcePath = path.join(__dirname, 'node_modules', 'material-components-web', 'dist', 'material-components-web.css');
+		const destFilePath = path.join(__dirname, 'style.css');
+
+		//delete already existing file
+		if (fs.existsSync(destFilePath)) {
+			fs.unlinkSync(destFilePath);
+		}
+
+		cp.sync(sourcePath, destFilePath);
+	}
 	apply(compiler){
 		compiler.plugin('after-emit', (compilation, callback) => {
 			for (let dest in bundleMapping) {
@@ -53,6 +64,7 @@ class CssMigrationWebpackPlugin{
 					}
 				}
 			}
+			this.copySuperCss();
 			callback();
 		});
 	}
