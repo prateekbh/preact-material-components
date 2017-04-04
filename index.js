@@ -13,6 +13,7 @@ import FormField from './FormField';
 import Dialog from './Dialog';
 import List from './List';
 import Drawer from './Drawer';
+import Toolbar from './Toolbar';
 export {
 	Button,
 	Checkbox,
@@ -28,5 +29,6 @@ export {
 	FormField,
 	Dialog,
 	List,
-	Drawer
+	Drawer,
+	Toolbar
 };

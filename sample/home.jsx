@@ -13,12 +13,21 @@ import {
 	Elevation,
 	Dialog,
 	List,
-	Drawer
+	Drawer,
+	Toolbar
 } from "../";
 
 export default class Home extends Component {
 	render(){
 		return (<div>
+			<Toolbar>
+				<Toolbar.Row>
+					<Toolbar.Section>
+						<Toolbar.Icon>menu</Toolbar.Icon>
+						<Toolbar.Title>Hi</Toolbar.Title>
+					</Toolbar.Section>
+				</Toolbar.Row>
+			</Toolbar>
 			<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}}>
 				<Drawer.TemporarytDrawerHeader>Hello Header</Drawer.TemporarytDrawerHeader>
 				<Drawer.DrawerItem>Item1</Drawer.DrawerItem>
