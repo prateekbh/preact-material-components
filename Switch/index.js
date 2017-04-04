@@ -8,6 +8,7 @@ export default class Switch extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "switch";
+		this._mdcProps = ["disabled"];
 	}
 	materialDom(props) {
 		return (
