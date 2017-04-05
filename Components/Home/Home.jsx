@@ -9,6 +9,7 @@ import CheckboxPage from '../CheckboxPage/CheckboxPage.jsx';
 import SwitchPage from '../SwitchPage/SwitchPage.jsx';
 import DialogPage from '../DialogPage/DialogPage.jsx';
 import ElevationPage from '../ElevationPage/ElevationPage.jsx';
+import RadioPage from '../RadioPage/RadioPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
@@ -151,10 +152,13 @@ export default class Home extends Component {
 									<List.ItemIcon>code</List.ItemIcon>
 									List
 								</List.Item>
-								<List.Item>
+								<List.LinkItem onClick={()=>{
+										routie('/component/radio');
+										this.closeDrawer();
+									}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Radio
-								</List.Item>
+								</List.LinkItem>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
 									Select
@@ -188,6 +192,7 @@ export default class Home extends Component {
 						{this.state.component === 'switch' && <SwitchPage/>}
 						{this.state.component === 'dialog' && <DialogPage/>}
 						{this.state.component === 'elevation' && <ElevationPage/>}
+						{this.state.component === 'radio' && <RadioPage/>}
 					</div>
 
 			</div>
