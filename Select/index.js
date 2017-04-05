@@ -24,6 +24,6 @@ class Select extends MaterialComponent {
 	}
 }
 
-Select.ListItem = List.ListItem;
+Select.Item = List.Item;
 
 export default Select;
