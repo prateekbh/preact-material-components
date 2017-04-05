@@ -33,4 +33,8 @@
 			color: #ccc;
 		}
 	}
+	.mdc-temporary-drawer__header-content{
+		background-image: url('https://www.whatswithtech.com/wp-content/uploads/2015/09/black-color-material-design-wallpaper.jpg');
+		color: #fff;
+	}
 }

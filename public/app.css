@@ -6732,7 +6732,7 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
   transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
   transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
   opacity: .26; }
-.page-icon{
+.page-radio{
 
 }/*!
  Material Components for the web
@@ -9780,6 +9780,10 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
 }
 .home .mdc-temporary-drawer li.mdc-list-item{
     color: #ccc;
+}
+.home .mdc-temporary-drawer__header-content{
+    background-image: url('https://www.whatswithtech.com/wp-content/uploads/2015/09/black-color-material-design-wallpaper.jpg');
+    color: #fff;
 }/*!
  Material Components for the web
  Copyright (c) 2017 Google Inc.
