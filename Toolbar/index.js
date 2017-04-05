@@ -19,6 +19,13 @@ class Toolbar extends MaterialComponent {
 	}
 }
 
+class ToolbarRow extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "toolbar__row";
+	}
+}
+
 /**
  * @prop align-end = false
  * @prop align-start = false
@@ -69,5 +76,6 @@ class ToolbarTitle extends MaterialComponent {
 Toolbar.Section = ToolbarSection;
 Toolbar.Icon = ToolbarIcon;
 Toolbar.Title = ToolbarTitle;
+Toolbar.Row = ToolbarRow;
 
 export default Toolbar;

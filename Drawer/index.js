@@ -22,14 +22,14 @@ class TemporaryDrawer extends MaterialComponent {
 	}
 }
 
-class TemporarytDrawerHeader extends MaterialComponent {
+class TemporaryDrawerHeader extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "temporary-drawer__header";
 	}
 	materialDom(props) {
 		return (
-			<header class="mdc-temporary-drawer__header" ref={control=>{this.control = control;}} {...props}>
+			<header ref={control=>{this.control = control;}} {...props}>
 				<div class="mdc-temporary-drawer__header-content">
 					{props.children}
 				</div>
@@ -38,14 +38,14 @@ class TemporarytDrawerHeader extends MaterialComponent {
 	}
 }
 
-class TemporarytDrawerContent extends MaterialComponent {
+class TemporaryDrawerContent extends MaterialComponent {
 	constructor() {
 		super();
-		this.componentName = "mdc-temporary-drawer__content";
+		this.componentName = "temporary-drawer__content";
 	}
 	materialDom(props) {
 		return (
-			<nav id="icon-with-text-demo" className="mdc-list" ref={control=>{this.control = control;}} {...props}>
+			<nav className="mdc-list" ref={control=>{this.control = control;}} {...props}>
 				{props.children}
 			</nav>
 		);
@@ -65,7 +65,7 @@ class PermanentDrawer extends MaterialComponent {
 			<nav className="mdc-typography">
 				{props.spacer && <div class="mdc-permanent-drawer__toolbar-spacer"></div>}
 				<div class="mdc-permanent-drawer__content">
-					<nav id="icon-with-text-demo" class="mdc-list">
+					<nav class="mdc-list">
 						{props.children}
 					</nav>
 				</div>
@@ -94,8 +94,8 @@ class DrawerItem extends List.LinkItem {
 let Drawer = {};
 
 Drawer.DrawerItem = DrawerItem;
-Drawer.TemporarytDrawerHeader = TemporarytDrawerHeader;
-Drawer.TemporarytDrawerContent = TemporarytDrawerContent;
+Drawer.TemporaryDrawerHeader = TemporaryDrawerHeader;
+Drawer.TemporaryDrawerContent = TemporaryDrawerContent;
 Drawer.TemporaryDrawer = TemporaryDrawer;
 Drawer.PermanentDrawer = PermanentDrawer;
 

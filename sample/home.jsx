@@ -1,24 +1,33 @@
 import {h, Component} from 'preact';
 import {
-  Button,
-  Fab,
-  Icon,
-  Switch,
-  Snackbar,
-  Checkbox,
-  Radio,
-  Textfield,
+	Button,
+	Fab,
+	Icon,
+	Switch,
+	Snackbar,
+	Checkbox,
+	Radio,
+	Textfield,
 	Card,
 	Select,
 	Elevation,
 	Dialog,
 	List,
-	Drawer
-} from "../Components/";
+	Drawer,
+	Toolbar
+} from "../";
 
 export default class Home extends Component {
 	render(){
 		return (<div>
+			<Toolbar>
+				<Toolbar.Row>
+					<Toolbar.Section>
+						<Toolbar.Icon>menu</Toolbar.Icon>
+						<Toolbar.Title>Hi</Toolbar.Title>
+					</Toolbar.Section>
+				</Toolbar.Row>
+			</Toolbar>
 			<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}}>
 				<Drawer.TemporarytDrawerHeader>Hello Header</Drawer.TemporarytDrawerHeader>
 				<Drawer.DrawerItem>Item1</Drawer.DrawerItem>

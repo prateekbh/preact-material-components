@@ -95,9 +95,9 @@ class DialogFooterButton extends Button {
 	}
 }
 
-Dialog.DialogHeader = DialogHeader;
-Dialog.DialogBody = DialogBody;
-Dialog.DialogFooter = DialogFooter;
-Dialog.DialogFooterButton = DialogFooterButton;
+Dialog.Header = DialogHeader;
+Dialog.Body = DialogBody;
+Dialog.Footer = DialogFooter;
+Dialog.FooterButton = DialogFooterButton;
 
 export default Dialog;

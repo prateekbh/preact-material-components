@@ -106,8 +106,8 @@ Card.CardPrimary = CardPrimary;
 Card.CardSupportingText = CardSupportingText;
 Card.Actions = CardActions;
 Card.Action = CardAction;
-Card.CardMedia = CardMedia;
-Card.CardTitle = CardTitle;
-Card.CardSubtitle = CardSubtitle;
+Card.Media = CardMedia;
+Card.Title = CardTitle;
+Card.Subtitle = CardSubtitle;
 
 export default Card;
