@@ -8,6 +8,7 @@ import FabPage from '../FabPage/FabPage.jsx';
 import CheckboxPage from '../CheckboxPage/CheckboxPage.jsx';
 import SwitchPage from '../SwitchPage/SwitchPage.jsx';
 import DialogPage from '../DialogPage/DialogPage.jsx';
+import ElevationPage from '../ElevationPage/ElevationPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
@@ -120,10 +121,13 @@ export default class Home extends Component {
 									<List.ItemIcon>code</List.ItemIcon>
 									Drawer
 								</List.Item>
-								<List.Item>
+								<List.LinkItem onClick={()=>{
+										routie('/component/elevation');
+										this.closeDrawer();
+									}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Elevation
-								</List.Item>
+								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
 										routie('/component/fab');
 										this.closeDrawer();
@@ -183,6 +187,7 @@ export default class Home extends Component {
 						{this.state.component === 'checkbox' && <CheckboxPage/>}
 						{this.state.component === 'switch' && <SwitchPage/>}
 						{this.state.component === 'dialog' && <DialogPage/>}
+						{this.state.component === 'elevation' && <ElevationPage/>}
 					</div>
 
 			</div>
