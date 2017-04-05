@@ -10,6 +10,8 @@ import SwitchPage from '../SwitchPage/SwitchPage.jsx';
 import DialogPage from '../DialogPage/DialogPage.jsx';
 import ElevationPage from '../ElevationPage/ElevationPage.jsx';
 import RadioPage from '../RadioPage/RadioPage.jsx';
+import ListPage from '../ListPage/ListPage.jsx';
+import SelectPage from '../SelectPage/SelectPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
@@ -100,10 +102,6 @@ export default class Home extends Component {
 										<List.ItemIcon>code</List.ItemIcon>
 										Button
 								</List.LinkItem>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
-									Card
-								</List.Item>
 								<List.LinkItem onClick={()=>{
 										routie('/component/checkbox');
 										this.closeDrawer();
@@ -118,10 +116,6 @@ export default class Home extends Component {
 									<List.ItemIcon>code</List.ItemIcon>
 									Dialog
 								</List.LinkItem>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
-									Drawer
-								</List.Item>
 								<List.LinkItem onClick={()=>{
 										routie('/component/elevation');
 										this.closeDrawer();
@@ -136,6 +130,42 @@ export default class Home extends Component {
 									<List.ItemIcon>code</List.ItemIcon>
 									Fab
 								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/list');
+										this.closeDrawer();
+									}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									List
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/radio');
+										this.closeDrawer();
+									}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Radio
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/select');
+										this.closeDrawer();
+									}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Select
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/switch');
+										this.closeDrawer();
+									}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Switch
+								</List.LinkItem>
+								<List.Item>
+									<List.ItemIcon>code</List.ItemIcon>
+									Card
+								</List.Item>
+								<List.Item>
+									<List.ItemIcon>code</List.ItemIcon>
+									Drawer
+								</List.Item>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
 									FormField
@@ -150,30 +180,8 @@ export default class Home extends Component {
 								</List.Item>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
-									List
-								</List.Item>
-								<List.LinkItem onClick={()=>{
-										routie('/component/radio');
-										this.closeDrawer();
-									}}>
-									<List.ItemIcon>code</List.ItemIcon>
-									Radio
-								</List.LinkItem>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
-									Select
-								</List.Item>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
 									Snackbar
 								</List.Item>
-								<List.LinkItem onClick={()=>{
-										routie('/component/switch');
-										this.closeDrawer();
-									}}>
-									<List.ItemIcon>code</List.ItemIcon>
-									Switch
-								</List.LinkItem>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
 									Textfield
@@ -193,6 +201,8 @@ export default class Home extends Component {
 						{this.state.component === 'dialog' && <DialogPage/>}
 						{this.state.component === 'elevation' && <ElevationPage/>}
 						{this.state.component === 'radio' && <RadioPage/>}
+						{this.state.component === 'list' && <ListPage/>}
+						{this.state.component === 'select' && <SelectPage/>}
 					</div>
 
 			</div>
