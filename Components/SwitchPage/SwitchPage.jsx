@@ -1,5 +1,6 @@
 import {h, Component} from 'preact';
 import Switch from 'preact-material-components/Switch';
+import 'preact-material-components/List/style.css';
 import 'preact-material-components/Switch/style.css';
 import './SwitchPage.css';
 export default class SwitchPage extends Component {
