@@ -18,6 +18,7 @@ const bundleMapping = {
 	Icon: 'icon-toggle',
 	IconToggle: 'icon-toggle',
 	List: 'list',
+	Menu: 'menu',
 	Radio: 'radio',
 	Select: 'select',
 	Snackbar: 'snackbar',
