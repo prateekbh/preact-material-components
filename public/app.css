@@ -10814,6 +10814,9 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
 }
 .home .field-darkmode{
     color: #fff;
+}
+.home .switch-darkmode{
+    margin-left: 8px;
 }/*!
  Material Components for the web
  Copyright (c) 2017 Google Inc.

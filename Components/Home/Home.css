@@ -40,4 +40,7 @@
 	.field-darkmode{
 		color: #fff;
 	}
+	.switch-darkmode{
+		margin-left: 8px;
+	}
 }

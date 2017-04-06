@@ -26,6 +26,9 @@ import './Home.css';
 export default class Home extends Component {
 	constructor(){
 		super();
+		this.state = {
+			darkMode: false
+		};
 	}
 	componentDidMount(){
 		routie('/', (component) => {
@@ -43,6 +46,12 @@ export default class Home extends Component {
 	}
 	closeDrawer(){
 		this.drawer.MDComponent.open = false;
+	}
+	toggleDarkMode(){
+		this.setState({
+			darkMode: !this.state.darkMode
+		});
+		console.log(this.state.darkMode);
 	}
 	render(){
 		return (
@@ -62,7 +71,7 @@ export default class Home extends Component {
 							<Toolbar.Section align-end={true}>
 								<FormField className="field-darkmode">
 									Dark Mode
-									<Switch className="switch-darkmode"/>
+									<Switch className="switch-darkmode" onChange={()=>{this.toggleDarkMode();}}/>
 								</FormField>
 							</Toolbar.Section>
 						</Toolbar.Row>
