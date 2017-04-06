@@ -40,7 +40,11 @@ export default class MaterialComponent extends Component {
 		}
 	}
 	getClassName(element) {
-		if (element && element.attributes.className) {
+		if (!element) {
+			return '';
+		}
+		element.attributes = element.attributes || {};
+		if (element.attributes.className) {
 			return this.classText + " " + element.attributes.className;
 		}
 		return this.classText;
@@ -56,6 +60,7 @@ export default class MaterialComponent extends Component {
 		this.buildClassName();
 		// Fetch a VNode
 		const element = this.materialDom(this.props);
+		element.attributes = element.attributes || {};
 		const autoInits = this.getAutoInitNames();
 		// Fix for className
 		element.attributes.class = this.getClassName(element);
