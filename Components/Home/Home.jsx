@@ -12,6 +12,7 @@ import ElevationPage from '../ElevationPage/ElevationPage.jsx';
 import RadioPage from '../RadioPage/RadioPage.jsx';
 import ListPage from '../ListPage/ListPage.jsx';
 import SelectPage from '../SelectPage/SelectPage.jsx';
+import SnackbarPage from '../SnackbarPage/SnackbarPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
@@ -152,6 +153,13 @@ export default class Home extends Component {
 									Select
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
+										routie('/component/snackbar');
+										this.closeDrawer();
+									}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Snackbar
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
 										routie('/component/switch');
 										this.closeDrawer();
 									}}>
@@ -180,10 +188,6 @@ export default class Home extends Component {
 								</List.Item>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
-									Snackbar
-								</List.Item>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
 									Textfield
 								</List.Item>
 								<List.Item>
@@ -203,6 +207,7 @@ export default class Home extends Component {
 						{this.state.component === 'radio' && <RadioPage/>}
 						{this.state.component === 'list' && <ListPage/>}
 						{this.state.component === 'select' && <SelectPage/>}
+						{this.state.component === 'snackbar' && <SnackbarPage/>}
 					</div>
 
 			</div>

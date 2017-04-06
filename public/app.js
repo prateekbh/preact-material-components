@@ -965,18 +965,19 @@ var Icon = function (_MaterialComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__RadioPage_RadioPage_jsx__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ListPage_ListPage_jsx__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__SelectPage_SelectPage_jsx__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__routie__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__routie__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_preact_material_components_Icon_style_css__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_preact_material_components_Icon_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_preact_material_components_Toolbar_style_css__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_preact_material_components_Toolbar_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_preact_material_components_Drawer_style_css__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_preact_material_components_Drawer_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_preact_material_components_List_style_css__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_preact_material_components_List_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__Home_css__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__Home_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__SnackbarPage_SnackbarPage_jsx__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__routie__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__routie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_preact_material_components_Icon_style_css__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_preact_material_components_Icon_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_preact_material_components_Toolbar_style_css__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_preact_material_components_Toolbar_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_preact_material_components_Drawer_style_css__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_preact_material_components_Drawer_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_preact_material_components_List_style_css__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_preact_material_components_List_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__Home_css__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__Home_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -984,6 +985,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -1020,13 +1022,13 @@ var Home = function (_Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
-			__WEBPACK_IMPORTED_MODULE_14__routie___default()('/', function (component) {
+			__WEBPACK_IMPORTED_MODULE_15__routie___default()('/', function (component) {
 				_this2.setState({
 					component: null,
 					toolbarTitle: ""
 				});
 			});
-			__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/:name', function (component) {
+			__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/:name', function (component) {
 				_this2.setState({
 					component: component,
 					toolbarTitle: component
@@ -1142,7 +1144,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1155,7 +1157,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/button');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/button');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1168,7 +1170,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/checkbox');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/checkbox');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1181,7 +1183,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/dialog');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/dialog');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1194,7 +1196,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/elevation');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/elevation');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1207,7 +1209,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/fab');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/fab');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1220,7 +1222,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/list');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/list');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1233,7 +1235,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/radio');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/radio');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1246,7 +1248,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/select');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/select');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1259,7 +1261,20 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_14__routie___default()('/component/switch');
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/snackbar');
+										_this3.closeDrawer();
+									} },
+								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
+									null,
+									'code'
+								),
+								'Snackbar'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_15__routie___default()('/component/switch');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1327,16 +1342,6 @@ var Home = function (_Component) {
 									null,
 									'code'
 								),
-								'Snackbar'
-							),
-							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].Item,
-								null,
-								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
-									null,
-									'code'
-								),
 								'Textfield'
 							),
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1363,7 +1368,8 @@ var Home = function (_Component) {
 					this.state.component === 'elevation' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_10__ElevationPage_ElevationPage_jsx__["a" /* default */], null),
 					this.state.component === 'radio' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_11__RadioPage_RadioPage_jsx__["a" /* default */], null),
 					this.state.component === 'list' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_12__ListPage_ListPage_jsx__["a" /* default */], null),
-					this.state.component === 'select' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_13__SelectPage_SelectPage_jsx__["a" /* default */], null)
+					this.state.component === 'select' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_13__SelectPage_SelectPage_jsx__["a" /* default */], null),
+					this.state.component === 'snackbar' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_14__SnackbarPage_SnackbarPage_jsx__["a" /* default */], null)
 				)
 			);
 		}
@@ -8186,6 +8192,584 @@ Toolbar.Row = ToolbarRow;
 
 /***/ }),
 /* 81 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Snackbar__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Button__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Button_style_css__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Button_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Button_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Snackbar_style_css__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Snackbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Snackbar_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SnackbarPage_css__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SnackbarPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__SnackbarPage_css__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+var SnackbarPage = function (_Component) {
+	_inherits(SnackbarPage, _Component);
+
+	function SnackbarPage() {
+		_classCallCheck(this, SnackbarPage);
+
+		return _possibleConstructorReturn(this, (SnackbarPage.__proto__ || Object.getPrototypeOf(SnackbarPage)).apply(this, arguments));
+	}
+
+	_createClass(SnackbarPage, [{
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'div',
+				{ className: 'page-snackbar' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display2' },
+					'Props '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--body1' },
+					'none'
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display2' },
+					'Demo '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_2_preact_material_components_Button__["a" /* default */],
+					{ raised: true, primary: true, onClick: function onClick() {
+							_this2.bar.MDComponent.show({
+								message: "Hello Snack!"
+							});
+						} },
+					'Show snack'
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1_preact_material_components_Snackbar__["a" /* default */], { ref: function ref(bar) {
+						_this2.bar = bar;
+					} })
+			);
+		}
+	}]);
+
+	return SnackbarPage;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (SnackbarPage);
+
+/***/ }),
+/* 119 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return strings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return numbers; });
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+var ROOT = 'mdc-snackbar';
+
+var cssClasses = {
+  ROOT: ROOT,
+  TEXT: ROOT + '__text',
+  ACTION_WRAPPER: ROOT + '__action-wrapper',
+  ACTION_BUTTON: ROOT + '__action-button',
+  ACTIVE: ROOT + '--active',
+  MULTILINE: ROOT + '--multiline',
+  ACTION_ON_BOTTOM: ROOT + '--action-on-bottom'
+};
+
+var strings = {
+  TEXT_SELECTOR: '.' + cssClasses.TEXT,
+  ACTION_WRAPPER_SELECTOR: '.' + cssClasses.ACTION_WRAPPER,
+  ACTION_BUTTON_SELECTOR: '.' + cssClasses.ACTION_BUTTON
+};
+
+var numbers = {
+  MESSAGE_TIMEOUT: 2750
+};
+
+/***/ }),
+/* 120 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(119);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+var MDCSnackbarFoundation = function (_MDCFoundation) {
+  _inherits(MDCSnackbarFoundation, _MDCFoundation);
+
+  _createClass(MDCSnackbarFoundation, [{
+    key: 'active',
+    get: function get() {
+      return this.active_;
+    }
+  }], [{
+    key: 'cssClasses',
+    get: function get() {
+      return __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */];
+    }
+  }, {
+    key: 'strings',
+    get: function get() {
+      return __WEBPACK_IMPORTED_MODULE_1__constants__["b" /* strings */];
+    }
+  }, {
+    key: 'defaultAdapter',
+    get: function get() {
+      return {
+        addClass: function addClass() /* className: string */{},
+        removeClass: function removeClass() /* className: string */{},
+        setAriaHidden: function setAriaHidden() {},
+        unsetAriaHidden: function unsetAriaHidden() {},
+        setMessageText: function setMessageText() /* message: string */{},
+        setActionText: function setActionText() /* actionText: string */{},
+        setActionAriaHidden: function setActionAriaHidden() {},
+        unsetActionAriaHidden: function unsetActionAriaHidden() {},
+        registerActionClickHandler: function registerActionClickHandler() /* handler: EventListener */{},
+        deregisterActionClickHandler: function deregisterActionClickHandler() /* handler: EventListener */{},
+        registerTransitionEndHandler: function registerTransitionEndHandler() /* handler: EventListener */{},
+        deregisterTransitionEndHandler: function deregisterTransitionEndHandler() /* handler: EventListener */{}
+      };
+    }
+  }]);
+
+  function MDCSnackbarFoundation(adapter) {
+    _classCallCheck(this, MDCSnackbarFoundation);
+
+    var _this = _possibleConstructorReturn(this, (MDCSnackbarFoundation.__proto__ || Object.getPrototypeOf(MDCSnackbarFoundation)).call(this, Object.assign(MDCSnackbarFoundation.defaultAdapter, adapter)));
+
+    _this.active_ = false;
+    _this.queue_ = [];
+    _this.actionClickHandler_ = function () {
+      return _this.invokeAction_();
+    };
+    return _this;
+  }
+
+  _createClass(MDCSnackbarFoundation, [{
+    key: 'init',
+    value: function init() {
+      this.adapter_.registerActionClickHandler(this.actionClickHandler_);
+      this.adapter_.setAriaHidden();
+      this.adapter_.setActionAriaHidden();
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      this.adapter_.deregisterActionClickHandler(this.actionClickHandler_);
+    }
+  }, {
+    key: 'show',
+    value: function show(data) {
+      if (!data) {
+        throw new Error('Please provide a data object with at least a message to display.');
+      }
+      if (!data.message) {
+        throw new Error('Please provide a message to be displayed.');
+      }
+      if (data.actionHandler && !data.actionText) {
+        throw new Error('Please provide action text with the handler.');
+      }
+
+      if (this.active) {
+        this.queue_.push(data);
+        return;
+      }
+
+      var ACTIVE = __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */].ACTIVE,
+          MULTILINE = __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */].MULTILINE,
+          ACTION_ON_BOTTOM = __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */].ACTION_ON_BOTTOM;
+      var MESSAGE_TIMEOUT = __WEBPACK_IMPORTED_MODULE_1__constants__["c" /* numbers */].MESSAGE_TIMEOUT;
+
+
+      this.adapter_.setMessageText(data.message);
+
+      if (data.multiline) {
+        this.adapter_.addClass(MULTILINE);
+        if (data.actionOnBottom) {
+          this.adapter_.addClass(ACTION_ON_BOTTOM);
+        }
+      }
+
+      if (data.actionHandler) {
+        this.adapter_.setActionText(data.actionText);
+        this.actionHandler_ = data.actionHandler;
+        this.setActionHidden_(false);
+      } else {
+        this.setActionHidden_(true);
+        this.actionHandler_ = null;
+        this.adapter_.setActionText(null);
+      }
+
+      this.active_ = true;
+      this.adapter_.addClass(ACTIVE);
+      this.adapter_.unsetAriaHidden();
+
+      setTimeout(this.cleanup_.bind(this), data.timeout || MESSAGE_TIMEOUT);
+    }
+  }, {
+    key: 'invokeAction_',
+    value: function invokeAction_() {
+      if (!this.actionHandler_) {
+        return;
+      }
+
+      this.actionHandler_();
+    }
+  }, {
+    key: 'cleanup_',
+    value: function cleanup_() {
+      var _this2 = this;
+
+      var ACTIVE = __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */].ACTIVE,
+          MULTILINE = __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */].MULTILINE,
+          ACTION_ON_BOTTOM = __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssClasses */].ACTION_ON_BOTTOM;
+
+
+      this.adapter_.removeClass(ACTIVE);
+
+      var handler = function handler() {
+        _this2.adapter_.deregisterTransitionEndHandler(handler);
+        _this2.adapter_.removeClass(MULTILINE);
+        _this2.adapter_.removeClass(ACTION_ON_BOTTOM);
+        _this2.setActionHidden_(true);
+        _this2.adapter_.setMessageText(null);
+        _this2.adapter_.setActionText(null);
+        _this2.adapter_.setAriaHidden();
+        _this2.active_ = false;
+        _this2.showNext_();
+      };
+
+      this.adapter_.registerTransitionEndHandler(handler);
+    }
+  }, {
+    key: 'showNext_',
+    value: function showNext_() {
+      if (!this.queue_.length) {
+        return;
+      }
+
+      this.show(this.queue_.shift());
+    }
+  }, {
+    key: 'setActionHidden_',
+    value: function setActionHidden_(isHidden) {
+      if (isHidden) {
+        this.adapter_.setActionAriaHidden();
+      } else {
+        this.adapter_.unsetActionAriaHidden();
+      }
+    }
+  }]);
+
+  return MDCSnackbarFoundation;
+}(__WEBPACK_IMPORTED_MODULE_0__material_base__["b" /* MDCFoundation */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (MDCSnackbarFoundation);
+
+/***/ }),
+/* 121 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_animation__ = __webpack_require__(28);
+/* unused harmony reexport MDCSnackbarFoundation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCSnackbar; });
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+
+
+
+var MDCSnackbar = function (_MDCComponent) {
+  _inherits(MDCSnackbar, _MDCComponent);
+
+  function MDCSnackbar() {
+    _classCallCheck(this, MDCSnackbar);
+
+    return _possibleConstructorReturn(this, (MDCSnackbar.__proto__ || Object.getPrototypeOf(MDCSnackbar)).apply(this, arguments));
+  }
+
+  _createClass(MDCSnackbar, [{
+    key: 'show',
+    value: function show(data) {
+      this.foundation_.show(data);
+    }
+  }, {
+    key: 'getDefaultFoundation',
+    value: function getDefaultFoundation() {
+      var _this2 = this;
+
+      var _MDCSnackbarFoundatio = __WEBPACK_IMPORTED_MODULE_1__foundation__["a" /* default */].strings,
+          TEXT_SELECTOR = _MDCSnackbarFoundatio.TEXT_SELECTOR,
+          ACTION_BUTTON_SELECTOR = _MDCSnackbarFoundatio.ACTION_BUTTON_SELECTOR;
+
+      var getText = function getText() {
+        return _this2.root_.querySelector(TEXT_SELECTOR);
+      };
+      var getActionButton = function getActionButton() {
+        return _this2.root_.querySelector(ACTION_BUTTON_SELECTOR);
+      };
+
+      /* eslint brace-style: "off" */
+      return new __WEBPACK_IMPORTED_MODULE_1__foundation__["a" /* default */]({
+        addClass: function addClass(className) {
+          return _this2.root_.classList.add(className);
+        },
+        removeClass: function removeClass(className) {
+          return _this2.root_.classList.remove(className);
+        },
+        setAriaHidden: function setAriaHidden() {
+          return _this2.root_.setAttribute('aria-hidden', 'true');
+        },
+        unsetAriaHidden: function unsetAriaHidden() {
+          return _this2.root_.removeAttribute('aria-hidden');
+        },
+        setActionAriaHidden: function setActionAriaHidden() {
+          return getActionButton().setAttribute('aria-hidden', 'true');
+        },
+        unsetActionAriaHidden: function unsetActionAriaHidden() {
+          return getActionButton().removeAttribute('aria-hidden');
+        },
+        setActionText: function setActionText(text) {
+          getActionButton().textContent = text;
+        },
+        setMessageText: function setMessageText(text) {
+          getText().textContent = text;
+        },
+        registerActionClickHandler: function registerActionClickHandler(handler) {
+          return getActionButton().addEventListener('click', handler);
+        },
+        deregisterActionClickHandler: function deregisterActionClickHandler(handler) {
+          return getActionButton().removeEventListener('click', handler);
+        },
+        registerTransitionEndHandler: function registerTransitionEndHandler(handler) {
+          return _this2.root_.addEventListener(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__material_animation__["a" /* getCorrectEventName */])(window, 'transitionend'), handler);
+        },
+        deregisterTransitionEndHandler: function deregisterTransitionEndHandler(handler) {
+          return _this2.root_.removeEventListener(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__material_animation__["a" /* getCorrectEventName */])(window, 'transitionend'), handler);
+        }
+      });
+    }
+  }], [{
+    key: 'attachTo',
+    value: function attachTo(root) {
+      return new MDCSnackbar(root);
+    }
+  }]);
+
+  return MDCSnackbar;
+}(__WEBPACK_IMPORTED_MODULE_0__material_base__["a" /* MDCComponent */]);
+
+/***/ }),
+/* 122 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MaterialComponent__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_snackbar___ = __webpack_require__(121);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+/**
+ * @prop mini = false
+ * @prop plain = false
+ */
+
+var Snackbar = function (_MaterialComponent) {
+	_inherits(Snackbar, _MaterialComponent);
+
+	function Snackbar() {
+		_classCallCheck(this, Snackbar);
+
+		var _this = _possibleConstructorReturn(this, (Snackbar.__proto__ || Object.getPrototypeOf(Snackbar)).call(this));
+
+		_this.componentName = "snackbar";
+		return _this;
+	}
+
+	_createClass(Snackbar, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.MDComponent = __WEBPACK_IMPORTED_MODULE_2__material_snackbar___["a" /* MDCSnackbar */].attachTo(this.control);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(props) {
+			var _this2 = this;
+
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				{
+					"aria-live": "assertive",
+					"aria-atomic": "true",
+					"aria-hidden": "true",
+					ref: function ref(control) {
+						return _this2.control = control;
+					}
+				},
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-snackbar__text" }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"div",
+					{ "class": "mdc-snackbar__action-wrapper" },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("button", {
+						type: "button",
+						"class": "mdc-button mdc-snackbar__action-button"
+					})
+				)
+			);
+		}
+	}]);
+
+	return Snackbar;
+}(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Snackbar);
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 124 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
