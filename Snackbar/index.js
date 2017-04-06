@@ -20,7 +20,7 @@ export default class Snackbar extends MaterialComponent {
 				aria-live="assertive"
 				aria-atomic="true"
 				aria-hidden="true"
-				ref={control => this.control = control}
+				ref={control => this.control = control} {...props}
 			>
 				<div class="mdc-snackbar__text" />
 				<div class="mdc-snackbar__action-wrapper">
