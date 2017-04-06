@@ -252,30 +252,38 @@
  */
 @-webkit-keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
+
+@keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -292,42 +300,6 @@
             animation-timing-function: linear; }
   to {
     opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
-
-@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -495,17 +467,14 @@
 /* TODO(sgomes): Figure out what to do about desktop font sizes. */
 /* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
 .mdc-button {
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-fg-size: 0;
   --mdc-ripple-left: 0;
   --mdc-ripple-top: 0;
-  --mdc-ripple-fg-size: 0;
-  --mdc-ripple-surface-height: 0;
-  --mdc-ripple-surface-width: 0;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-xfo-x: center;
-  --mdc-ripple-xfo-y: center;
-  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-fg-approx-xf: 0;
+  --mdc-ripple-fg-scale: 1;
+  --mdc-ripple-fg-translate-end: 0;
+  --mdc-ripple-fg-translate-start: 0;
   will-change: transform, opacity;
   -webkit-tap-highlight-color: transparent;
   font-family: Roboto, sans-serif;
@@ -539,8 +508,7 @@
       -ms-user-select: none;
           user-select: none;
   box-sizing: border-box;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); }
+  -webkit-appearance: none; }
   .mdc-button:not(.mdc-ripple-upgraded):hover::before, .mdc-button:not(.mdc-ripple-upgraded):focus::before, .mdc-button:not(.mdc-ripple-upgraded):active::after {
     -webkit-transition-duration: 85ms;
             transition-duration: 85ms;
@@ -567,12 +535,9 @@
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-button.mdc-ripple-upgraded--background-active::before {
+  .mdc-button.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-button.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-button.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-button.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -630,48 +595,30 @@
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-button.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-button.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-button.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
+  .mdc-button:not(.mdc-ripple-upgraded) {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); }
   .mdc-button--theme-dark,
   .mdc-theme--dark .mdc-button {
+    --mdc-ripple-surface-width: 0;
+    --mdc-ripple-surface-height: 0;
+    --mdc-ripple-fg-size: 0;
     --mdc-ripple-left: 0;
     --mdc-ripple-top: 0;
-    --mdc-ripple-fg-size: 0;
-    --mdc-ripple-surface-height: 0;
-    --mdc-ripple-surface-width: 0;
-    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-    --mdc-ripple-xfo-x: center;
-    --mdc-ripple-xfo-y: center;
-    --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-    --mdc-ripple-fg-approx-xf: 0;
+    --mdc-ripple-fg-scale: 1;
+    --mdc-ripple-fg-translate-end: 0;
+    --mdc-ripple-fg-translate-start: 0;
     will-change: transform, opacity;
     -webkit-tap-highlight-color: transparent;
     color: white;
-    color: var(--mdc-theme-text-primary-on-dark, white);
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.18); }
+    color: var(--mdc-theme-text-primary-on-dark, white); }
     .mdc-button--theme-dark:not(.mdc-ripple-upgraded):hover::before, .mdc-button--theme-dark:not(.mdc-ripple-upgraded):focus::before, .mdc-button--theme-dark:not(.mdc-ripple-upgraded):active::after,
     .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):hover::before,
     .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded):focus::before,
@@ -703,15 +650,11 @@
               transform: scale(0);
       -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
               transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active::before,
-    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active::before {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--background-focused::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-focused::before {
       opacity: .99999; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active:active::before,
-    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active:active::before {
-      -webkit-transition-duration: 600ms;
-              transition-duration: 600ms; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--background-bounded-active-fill::before,
-    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    .mdc-button--theme-dark.mdc-ripple-upgraded--background-active-fill::before,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--background-active-fill::before {
       -webkit-transition-duration: 120ms;
               transition-duration: 120ms;
       opacity: 1; }
@@ -774,45 +717,28 @@
               transform: scale(0);
       -webkit-transform-origin: center center;
               transform-origin: center center; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--foreground-bounded-active-fill::after,
-    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-      -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards;
-      -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-              animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,
-    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-              transform: scale(var(--mdc-ripple-fg-scale, 0));
-      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      opacity: 1; }
-    .mdc-button--theme-dark.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,
-    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--foreground-activation::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--foreground-activation::after {
+      -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+              animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+    .mdc-button--theme-dark.mdc-ripple-upgraded--foreground-deactivation::after,
+    .mdc-theme--dark .mdc-button.mdc-ripple-upgraded--foreground-deactivation::after {
+      -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+              transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+      -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+              animation: 250ms mdc-ripple-fg-opacity-out; }
+    .mdc-button--theme-dark:not(.mdc-ripple-upgraded),
+    .mdc-theme--dark .mdc-button:not(.mdc-ripple-upgraded) {
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0.18); }
   .mdc-button.mdc-button--primary {
+    --mdc-ripple-surface-width: 0;
+    --mdc-ripple-surface-height: 0;
+    --mdc-ripple-fg-size: 0;
     --mdc-ripple-left: 0;
     --mdc-ripple-top: 0;
-    --mdc-ripple-fg-size: 0;
-    --mdc-ripple-surface-height: 0;
-    --mdc-ripple-surface-width: 0;
-    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-    --mdc-ripple-xfo-x: center;
-    --mdc-ripple-xfo-y: center;
-    --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-    --mdc-ripple-fg-approx-xf: 0;
+    --mdc-ripple-fg-scale: 1;
+    --mdc-ripple-fg-translate-end: 0;
+    --mdc-ripple-fg-translate-start: 0;
     will-change: transform, opacity;
     -webkit-tap-highlight-color: transparent; }
     .mdc-button.mdc-button--primary:not(.mdc-ripple-upgraded):hover::before, .mdc-button.mdc-button--primary:not(.mdc-ripple-upgraded):focus::before, .mdc-button.mdc-button--primary:not(.mdc-ripple-upgraded):active::after {
@@ -844,12 +770,9 @@
               transform: scale(0);
       -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
               transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-active::before {
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-focused::before {
       opacity: .99999; }
-    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-active:active::before {
-      -webkit-transition-duration: 600ms;
-              transition-duration: 600ms; }
-    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--background-active-fill::before {
       -webkit-transition-duration: 120ms;
               transition-duration: 120ms;
       opacity: 1; }
@@ -910,42 +833,23 @@
               transform: scale(0);
       -webkit-transform-origin: center center;
               transform-origin: center center; }
-    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-      -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards;
-      -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-              animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-              transform: scale(var(--mdc-ripple-fg-scale, 0));
-      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      opacity: 1; }
-    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--foreground-activation::after {
+      -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+              animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+    .mdc-button.mdc-button--primary.mdc-ripple-upgraded--foreground-deactivation::after {
+      -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+              transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+      -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+              animation: 250ms mdc-ripple-fg-opacity-out; }
   .mdc-button.mdc-button--accent {
+    --mdc-ripple-surface-width: 0;
+    --mdc-ripple-surface-height: 0;
+    --mdc-ripple-fg-size: 0;
     --mdc-ripple-left: 0;
     --mdc-ripple-top: 0;
-    --mdc-ripple-fg-size: 0;
-    --mdc-ripple-surface-height: 0;
-    --mdc-ripple-surface-width: 0;
-    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-    --mdc-ripple-xfo-x: center;
-    --mdc-ripple-xfo-y: center;
-    --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-    --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-    --mdc-ripple-fg-approx-xf: 0;
+    --mdc-ripple-fg-scale: 1;
+    --mdc-ripple-fg-translate-end: 0;
+    --mdc-ripple-fg-translate-start: 0;
     will-change: transform, opacity;
     -webkit-tap-highlight-color: transparent; }
     .mdc-button.mdc-button--accent:not(.mdc-ripple-upgraded):hover::before, .mdc-button.mdc-button--accent:not(.mdc-ripple-upgraded):focus::before, .mdc-button.mdc-button--accent:not(.mdc-ripple-upgraded):active::after {
@@ -977,12 +881,9 @@
               transform: scale(0);
       -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
               transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-active::before {
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-focused::before {
       opacity: .99999; }
-    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-active:active::before {
-      -webkit-transition-duration: 600ms;
-              transition-duration: 600ms; }
-    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--background-active-fill::before {
       -webkit-transition-duration: 120ms;
               transition-duration: 120ms;
       opacity: 1; }
@@ -1043,30 +944,14 @@
               transform: scale(0);
       -webkit-transform-origin: center center;
               transform-origin: center center; }
-    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-      -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards;
-      -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-              animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-              transform: scale(var(--mdc-ripple-fg-scale, 0));
-      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      opacity: 1; }
-    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--foreground-activation::after {
+      -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+              animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+    .mdc-button.mdc-button--accent.mdc-ripple-upgraded--foreground-deactivation::after {
+      -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+              transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+      -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+              animation: 250ms mdc-ripple-fg-opacity-out; }
   .mdc-button:active {
     outline: none; }
   .mdc-button:hover {
@@ -1087,17 +972,14 @@
     .mdc-button--raised:active {
       box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }
     .mdc-button--raised.mdc-button--primary {
+      --mdc-ripple-surface-width: 0;
+      --mdc-ripple-surface-height: 0;
+      --mdc-ripple-fg-size: 0;
       --mdc-ripple-left: 0;
       --mdc-ripple-top: 0;
-      --mdc-ripple-fg-size: 0;
-      --mdc-ripple-surface-height: 0;
-      --mdc-ripple-surface-width: 0;
-      --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-      --mdc-ripple-xfo-x: center;
-      --mdc-ripple-xfo-y: center;
-      --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-      --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-      --mdc-ripple-fg-approx-xf: 0;
+      --mdc-ripple-fg-scale: 1;
+      --mdc-ripple-fg-translate-end: 0;
+      --mdc-ripple-fg-translate-start: 0;
       will-change: transform, opacity;
       -webkit-tap-highlight-color: transparent; }
       .mdc-button--raised.mdc-button--primary:not(.mdc-ripple-upgraded):hover::before, .mdc-button--raised.mdc-button--primary:not(.mdc-ripple-upgraded):focus::before, .mdc-button--raised.mdc-button--primary:not(.mdc-ripple-upgraded):active::after {
@@ -1126,12 +1008,9 @@
                 transform: scale(0);
         -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
                 transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-active::before {
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-focused::before {
         opacity: .99999; }
-      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-active:active::before {
-        -webkit-transition-duration: 600ms;
-                transition-duration: 600ms; }
-      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-bounded-active-fill::before {
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--background-active-fill::before {
         -webkit-transition-duration: 120ms;
                 transition-duration: 120ms;
         opacity: 1; }
@@ -1189,42 +1068,23 @@
                 transform: scale(0);
         -webkit-transform-origin: center center;
                 transform-origin: center center; }
-      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-        -webkit-animation-fill-mode: forwards;
-                animation-fill-mode: forwards;
-        -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-                animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-        -webkit-transform: scale(0);
-                transform: scale(0);
-        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-                transform: scale(var(--mdc-ripple-fg-scale, 0));
-        -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-        transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-        transition: opacity 110ms linear, transform 0 linear 80ms;
-        transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-        -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-        transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-        opacity: 1; }
-      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-                animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-                animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--foreground-activation::after {
+        -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+                animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+      .mdc-button--raised.mdc-button--primary.mdc-ripple-upgraded--foreground-deactivation::after {
+        -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+                transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+        -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+                animation: 250ms mdc-ripple-fg-opacity-out; }
     .mdc-button--raised.mdc-button--accent {
+      --mdc-ripple-surface-width: 0;
+      --mdc-ripple-surface-height: 0;
+      --mdc-ripple-fg-size: 0;
       --mdc-ripple-left: 0;
       --mdc-ripple-top: 0;
-      --mdc-ripple-fg-size: 0;
-      --mdc-ripple-surface-height: 0;
-      --mdc-ripple-surface-width: 0;
-      --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-      --mdc-ripple-xfo-x: center;
-      --mdc-ripple-xfo-y: center;
-      --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-      --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-      --mdc-ripple-fg-approx-xf: 0;
+      --mdc-ripple-fg-scale: 1;
+      --mdc-ripple-fg-translate-end: 0;
+      --mdc-ripple-fg-translate-start: 0;
       will-change: transform, opacity;
       -webkit-tap-highlight-color: transparent; }
       .mdc-button--raised.mdc-button--accent:not(.mdc-ripple-upgraded):hover::before, .mdc-button--raised.mdc-button--accent:not(.mdc-ripple-upgraded):focus::before, .mdc-button--raised.mdc-button--accent:not(.mdc-ripple-upgraded):active::after {
@@ -1253,12 +1113,9 @@
                 transform: scale(0);
         -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
                 transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-active::before {
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-focused::before {
         opacity: .99999; }
-      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-active:active::before {
-        -webkit-transition-duration: 600ms;
-                transition-duration: 600ms; }
-      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-bounded-active-fill::before {
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--background-active-fill::before {
         -webkit-transition-duration: 120ms;
                 transition-duration: 120ms;
         opacity: 1; }
@@ -1316,30 +1173,14 @@
                 transform: scale(0);
         -webkit-transform-origin: center center;
                 transform-origin: center center; }
-      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-        -webkit-animation-fill-mode: forwards;
-                animation-fill-mode: forwards;
-        -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-                animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-        -webkit-transform: scale(0);
-                transform: scale(0);
-        -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-                transform: scale(var(--mdc-ripple-fg-scale, 0));
-        -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-        transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-        transition: opacity 110ms linear, transform 0 linear 80ms;
-        transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-        -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-        transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-        transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-        opacity: 1; }
-      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-                animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-                animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--foreground-activation::after {
+        -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+                animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+      .mdc-button--raised.mdc-button--accent.mdc-ripple-upgraded--foreground-deactivation::after {
+        -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+                transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+        -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+                animation: 250ms mdc-ripple-fg-opacity-out; }
     .mdc-button--theme-dark .mdc-button--raised,
     .mdc-theme--dark .mdc-button--raised {
       background-color: #3f51b5;
@@ -1653,30 +1494,38 @@
  */
 @-webkit-keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
+
+@keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -1693,42 +1542,6 @@
             animation-timing-function: linear; }
   to {
     opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
-
-@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -1864,17 +1677,14 @@
  * ```
  */
 .mdc-fab {
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-fg-size: 0;
   --mdc-ripple-left: 0;
   --mdc-ripple-top: 0;
-  --mdc-ripple-fg-size: 0;
-  --mdc-ripple-surface-height: 0;
-  --mdc-ripple-surface-width: 0;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-xfo-x: center;
-  --mdc-ripple-xfo-y: center;
-  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-fg-approx-xf: 0;
+  --mdc-ripple-fg-scale: 1;
+  --mdc-ripple-fg-translate-end: 0;
+  --mdc-ripple-fg-translate-start: 0;
   will-change: transform, opacity;
   -webkit-tap-highlight-color: transparent;
   display: -webkit-inline-box;
@@ -1900,7 +1710,6 @@
   fill: currentColor;
   -moz-appearance: none;
   -webkit-appearance: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18);
   overflow: hidden;
   background-color: #ff4081;
   background-color: var(--mdc-theme-accent, #ff4081);
@@ -1933,12 +1742,9 @@
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-fab.mdc-ripple-upgraded--background-active::before {
+  .mdc-fab.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-fab.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-fab.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-fab.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -1996,30 +1802,16 @@
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-fab.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-fab.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-fab.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-fab.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-fab.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
+  .mdc-fab:not(.mdc-ripple-upgraded) {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); }
   .mdc-fab--mini {
     width: 40px;
     height: 40px; }
@@ -2049,12 +1841,9 @@
               transform: scale(0);
       -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
               transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-    .mdc-fab--plain.mdc-ripple-upgraded--background-active::before {
+    .mdc-fab--plain.mdc-ripple-upgraded--background-focused::before {
       opacity: .99999; }
-    .mdc-fab--plain.mdc-ripple-upgraded--background-active:active::before {
-      -webkit-transition-duration: 600ms;
-              transition-duration: 600ms; }
-    .mdc-fab--plain.mdc-ripple-upgraded--background-bounded-active-fill::before {
+    .mdc-fab--plain.mdc-ripple-upgraded--background-active-fill::before {
       -webkit-transition-duration: 120ms;
               transition-duration: 120ms;
       opacity: 1; }
@@ -2112,53 +1901,14 @@
               transform: scale(0);
       -webkit-transform-origin: center center;
               transform-origin: center center; }
-    .mdc-fab--plain.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-      -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards;
-      -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-              animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-    .mdc-fab--plain.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-              transform: scale(var(--mdc-ripple-fg-scale, 0));
-      -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms;
-      transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-      opacity: 1; }
-    .mdc-fab--plain.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
-  .mdc-fab::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
-    transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);
-    border-radius: inherit;
-    background: rgba(0, 0, 0, 0.2);
-    content: "";
-    opacity: 0; }
-  .mdc-fab:focus::before {
-    -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
-    transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
-    opacity: .12; }
-  .mdc-fab:active::before {
-    -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
-    transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
-    opacity: .18; }
-  .mdc-fab:active:focus::before {
-    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+    .mdc-fab--plain.mdc-ripple-upgraded--foreground-activation::after {
+      -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+              animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+    .mdc-fab--plain.mdc-ripple-upgraded--foreground-deactivation::after {
+      -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+              transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+      -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+              animation: 250ms mdc-ripple-fg-opacity-out; }
   .mdc-fab:active, .mdc-fab:focus {
     outline: none; }
   .mdc-fab:active {
@@ -2381,30 +2131,38 @@
  */
 @-webkit-keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
+
+@keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -2421,42 +2179,6 @@
             animation-timing-function: linear; }
   to {
     opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
-
-@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -3074,17 +2796,14 @@
     opacity: 0; } }
 
 .mdc-checkbox {
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-fg-size: 0;
   --mdc-ripple-left: 0;
   --mdc-ripple-top: 0;
-  --mdc-ripple-fg-size: 0;
-  --mdc-ripple-surface-height: 0;
-  --mdc-ripple-surface-width: 0;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-xfo-x: center;
-  --mdc-ripple-xfo-y: center;
-  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-fg-approx-xf: 0;
+  --mdc-ripple-fg-scale: 1;
+  --mdc-ripple-fg-translate-end: 0;
+  --mdc-ripple-fg-translate-start: 0;
   will-change: transform, opacity;
   -webkit-tap-highlight-color: transparent;
   display: inline-block;
@@ -3126,12 +2845,9 @@
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-checkbox.mdc-ripple-upgraded--background-active::before {
+  .mdc-checkbox.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-checkbox.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-checkbox.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-checkbox.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -3192,30 +2908,14 @@
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-checkbox.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-checkbox.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-checkbox.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-checkbox.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-checkbox.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
   .mdc-checkbox::before, .mdc-checkbox::after {
     top: 0;
     left: 0;
@@ -3614,30 +3314,38 @@ fieldset:disabled .mdc-checkbox__native-control,
  */
 @-webkit-keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
+
+@keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -3654,42 +3362,6 @@ fieldset:disabled .mdc-checkbox__native-control,
             animation-timing-function: linear; }
   to {
     opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
-
-@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -4162,17 +3834,14 @@ a.mdc-list-item {
   text-decoration: none; }
 
 .mdc-list-item.mdc-ripple-upgraded {
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-fg-size: 0;
   --mdc-ripple-left: 0;
   --mdc-ripple-top: 0;
-  --mdc-ripple-fg-size: 0;
-  --mdc-ripple-surface-height: 0;
-  --mdc-ripple-surface-width: 0;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-xfo-x: center;
-  --mdc-ripple-xfo-y: center;
-  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-fg-approx-xf: 0;
+  --mdc-ripple-fg-scale: 1;
+  --mdc-ripple-fg-translate-end: 0;
+  --mdc-ripple-fg-translate-start: 0;
   will-change: transform, opacity;
   -webkit-tap-highlight-color: transparent;
   position: relative;
@@ -4206,12 +3875,9 @@ a.mdc-list-item {
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -4269,30 +3935,14 @@ a.mdc-list-item {
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
   .mdc-list-item.mdc-ripple-upgraded:focus {
     outline: none; }
   .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::before,
@@ -4319,15 +3969,11 @@ a.mdc-list-item {
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before,
-  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before,
-  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before,
-  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -4390,33 +4036,16 @@ a.mdc-list-item {
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after,
-  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,
-  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,
-  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after,
+  .mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
 
 .mdc-list-divider {
   height: 0;
@@ -5336,8 +4965,6 @@ a.mdc-list-item {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    position: absolute;
-    bottom: 50vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -5352,6 +4979,7 @@ a.mdc-list-item {
     transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
     transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
     transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);
+    border-radius: 2px;
     background-color: #fff;
     background-color: var(--mdc-theme-background, #fff);
     opacity: 0; }
@@ -6226,30 +5854,38 @@ a.mdc-list-item {
  */
 @-webkit-keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
+
+@keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -6266,42 +5902,6 @@ a.mdc-list-item {
             animation-timing-function: linear; }
   to {
     opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
-
-@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -6437,17 +6037,14 @@ a.mdc-list-item {
  * ```
  */
 .mdc-radio {
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-fg-size: 0;
   --mdc-ripple-left: 0;
   --mdc-ripple-top: 0;
-  --mdc-ripple-fg-size: 0;
-  --mdc-ripple-surface-height: 0;
-  --mdc-ripple-surface-width: 0;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-xfo-x: center;
-  --mdc-ripple-xfo-y: center;
-  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-fg-approx-xf: 0;
+  --mdc-ripple-fg-scale: 1;
+  --mdc-ripple-fg-translate-end: 0;
+  --mdc-ripple-fg-translate-start: 0;
   will-change: transform, opacity;
   -webkit-tap-highlight-color: transparent;
   display: inline-block;
@@ -6487,12 +6084,9 @@ a.mdc-list-item {
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-radio.mdc-ripple-upgraded--background-active::before {
+  .mdc-radio.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-radio.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-radio.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-radio.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -6553,30 +6147,14 @@ a.mdc-list-item {
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-radio.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-radio.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-radio.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-radio.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-radio.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
   .mdc-radio::before, .mdc-radio::after {
     top: 0;
     left: 0;
@@ -6737,6 +6315,435 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
 }.page-list .mdc-list{
     border: 1px solid #eee;
 }/*!
+ Material Components for the web
+ Copyright (c) 2017 Google Inc.
+ License: Apache-2.0
+*/
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * The css property used for elevation. In most cases this should not be changed. It is exposed
+ * as a variable for abstraction / easy use when needing to reference the property directly, for
+ * example in a `will-change` rule.
+ */
+/**
+ * The default duration value for elevation transitions.
+ */
+/**
+ * The default easing value for elevation transitions.
+ */
+/**
+ * Applies the correct css rules to an element to give it the elevation specified by $z-value.
+ * The $z-value must be between 0 and 24.
+ */
+/**
+ * Returns a string that can be used as the value for a `transition` property for elevation.
+ * Calling this function directly is useful in situations where a component needs to transition
+ * more than one property.
+ *
+ * ```scss
+ * .foo {
+ *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;
+ *   will-change: $mdc-elevation-property, opacity;
+ * }
+ * ```
+ */
+/**
+ * Applies the correct css rules needed to have an element transition between elevations.
+ * This mixin should be applied to elements whose elevation values will change depending on their
+ * context (e.g. when active or disabled).
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+  Precomputed linear color channel values, for use in contrast calculations.
+  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+
+  Algorithm, for c in 0 to 255:
+  f(c) {
+    c = c / 255;
+    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  This lookup table is needed since there is no `pow` in SASS.
+*/
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns "dark" for dark text and "light" for light text.
+ */
+/*
+  Main theme colors.
+  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
+*/
+/* Indigo 500 */
+/* Pink A200 */
+/* White */
+/* Which set of text colors to use for each main theme color (light or dark) */
+/* Text colors according to light vs dark and text type */
+/* Primary text colors for each of the theme colors */
+/**
+ * Applies the correct theme color style to the specified property.
+ * $property is typically color or background-color, but can be any CSS property that accepts color values.
+ * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).
+ */
+/**
+ * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.
+ * Should provide the $root-selector option if applied to anything other than the root selector.
+ * When used with a modifier class, provide a second argument of `true` for the $compound parameter
+ * to specify that this should be attached as a compound class.
+ *
+ * Usage example:
+ *
+ * ```scss
+ * .mdc-foo {
+ *   color: black;
+ *
+ *   @include mdc-theme-dark {
+ *     color: white;
+ *   }
+ *
+ *   &__bar {
+ *     background: black;
+ *
+ *     @include mdc-theme-dark(".mdc-foo") {
+ *       background: white;
+ *     }
+ *   }
+ * }
+ *
+ * .mdc-foo--disabled {
+ *   opacity: .38;
+ *
+ *   @include mdc-theme-dark(".mdc-foo", true) {
+ *     opacity: .5;
+ *   }
+ * }
+ * ```
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* TODO(sgomes): Figure out what to do about desktop font sizes. */
+/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */
+/* postcss-bem-linter: define simple-menu */
+.mdc-simple-menu {
+  display: none;
+  position: absolute;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  margin: 0;
+  padding: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 2px;
+  background-color: white;
+  white-space: nowrap;
+  opacity: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  will-change: transform, opacity;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  /* stylelint-disable plugin/selector-bem-pattern */
+  /* stylelint-enable plugin/selector-bem-pattern */
+  /* stylelint-disable plugin/selector-bem-pattern */
+  /* stylelint-disable selector-no-qualifying-type */
+  /* stylelint-enable selector-no-qualifying-type */
+  /* TODO(sgomes): Revisit when we have interactive lists. */
+  /* stylelint-enable plugin/selector-bem-pattern */ }
+  .mdc-simple-menu--theme-dark,
+  .mdc-theme--dark .mdc-simple-menu {
+    background-color: #424242; }
+  .mdc-simple-menu:focus {
+    outline: none; }
+  .mdc-simple-menu--open {
+    display: inline-block;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  .mdc-simple-menu--animating {
+    display: inline-block;
+    -webkit-transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1);
+    transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1); }
+  .mdc-simple-menu__items {
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    will-change: transform;
+    /* stylelint-disable plugin/selector-bem-pattern, selector-no-universal */
+    /* stylelint-enable plugin/selector-bem-pattern, selector-no-universal */ }
+    .mdc-simple-menu__items > * {
+      opacity: 0; }
+    .mdc-simple-menu__items > .mdc-list-item {
+      cursor: pointer; }
+    .mdc-simple-menu--animating .mdc-simple-menu__items {
+      overflow-y: hidden; }
+      .mdc-simple-menu--animating .mdc-simple-menu__items > * {
+        -webkit-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
+        -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+                transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+    .mdc-simple-menu--open .mdc-simple-menu__items > * {
+      opacity: 1;
+      will-change: opacity; }
+  [dir="rtl"] .mdc-simple-menu {
+    -webkit-transform-origin: top right;
+            transform-origin: top right; }
+  .mdc-simple-menu--open-from-top-left {
+    -webkit-transform-origin: top left !important;
+            transform-origin: top left !important; }
+  .mdc-simple-menu--open-from-top-right {
+    -webkit-transform-origin: top right !important;
+            transform-origin: top right !important; }
+  .mdc-simple-menu--open-from-bottom-left {
+    -webkit-transform-origin: bottom left !important;
+            transform-origin: bottom left !important; }
+  .mdc-simple-menu--open-from-bottom-right {
+    -webkit-transform-origin: bottom right !important;
+            transform-origin: bottom right !important; }
+  .mdc-simple-menu .mdc-list-group,
+  .mdc-simple-menu .mdc-list {
+    padding: 0; }
+  .mdc-simple-menu .mdc-list-item {
+    position: relative;
+    padding: 0 16px;
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.5rem; }
+    .mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-item,
+    .mdc-theme--dark .mdc-simple-menu .mdc-list-item {
+      color: white; }
+  .mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-divider,
+  .mdc-theme--dark .mdc-simple-menu .mdc-list-divider {
+    border-color: rgba(255, 255, 255, 0.12); }
+  .mdc-simple-menu .mdc-list-item__start-detail {
+    color: rgba(0, 0, 0, 0.54); }
+    .mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-item__start-detail,
+    .mdc-theme--dark .mdc-simple-menu .mdc-list-item__start-detail {
+      color: rgba(255, 255, 255, 0.54); }
+  .mdc-simple-menu--selected.mdc-list-item,
+  .mdc-simple-menu--selected.mdc-list-item .mdc-list-item__start-detail {
+    color: #3f51b5;
+    color: var(--mdc-theme-primary, #3f51b5); }
+  .mdc-simple-menu .mdc-list-item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: opacity 120ms cubic-bezier(0, 0, 0.2, 1);
+    transition: opacity 120ms cubic-bezier(0, 0, 0.2, 1);
+    border-radius: inherit;
+    background: currentColor;
+    content: "";
+    opacity: 0; }
+  .mdc-simple-menu .mdc-list-item:focus::before {
+    opacity: .12; }
+  .mdc-simple-menu .mdc-list-item:active::before {
+    /*
+      Slightly darker value for visual distinction.
+      This allows a full base that has distinct modes.
+      Progressive enhancement with ripples will provide complete button spec alignment.
+    */
+    opacity: .18; }
+
+/* postcss-bem-linter: end */
+.mdc-menu-anchor {
+  position: relative;
+  overflow: visible; }
+/*!
  Material Components for the web
  Copyright (c) 2017 Google Inc.
  License: Apache-2.0
@@ -7185,7 +7192,8 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
     max-height: 100%;
     -webkit-transform-origin: center center;
             transform-origin: center center;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    z-index: 4; }
   .mdc-select__selected-text {
     -webkit-transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);
     transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);
@@ -7335,8 +7343,8 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
   margin-bottom: 8px;
   padding-top: 8px;
   font-size: 0; }
-.page-select{
-
+.page-select .mdc-select{
+    margin: 8px;
 }/*!
  Material Components for the web
  Copyright (c) 2017 Google Inc.
@@ -7515,30 +7523,38 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
  */
 @-webkit-keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
 @keyframes mdc-ripple-fg-radius-in {
   from {
-    -webkit-transform: translate(0) scale(1);
-            transform: translate(0) scale(1);
     -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
             transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);
     -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
   to {
-    -webkit-transform: translate(0) scale(0);
-            transform: translate(0) scale(0);
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0));
-            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 0)); } }
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }
+
+@-webkit-keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
+
+@keyframes mdc-ripple-fg-opacity-in {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  to {
+    opacity: 1; } }
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out {
   from {
@@ -7555,42 +7571,6 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             animation-timing-function: linear; }
   to {
     opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
-
-@keyframes mdc-ripple-fg-unbounded-transform-deactivate {
-  from {
-    -webkit-transform: 0;
-            transform: 0;
-    -webkit-transform: var(--mdc-ripple-fg-approx-xf, 0);
-            transform: var(--mdc-ripple-fg-approx-xf, 0); }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0)); } }
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -7728,17 +7708,14 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
 .mdc-icon-toggle {
   color: rgba(0, 0, 0, 0.54);
   color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));
+  --mdc-ripple-surface-width: 0;
+  --mdc-ripple-surface-height: 0;
+  --mdc-ripple-fg-size: 0;
   --mdc-ripple-left: 0;
   --mdc-ripple-top: 0;
-  --mdc-ripple-fg-size: 0;
-  --mdc-ripple-surface-height: 0;
-  --mdc-ripple-surface-width: 0;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-xfo-x: center;
-  --mdc-ripple-xfo-y: center;
-  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;
-  --mdc-ripple-fg-unbounded-transform-duration: 0ms;
-  --mdc-ripple-fg-approx-xf: 0;
+  --mdc-ripple-fg-scale: 1;
+  --mdc-ripple-fg-translate-end: 0;
+  --mdc-ripple-fg-translate-start: 0;
   will-change: transform, opacity;
   -webkit-tap-highlight-color: transparent;
   will-change: initial;
@@ -7789,12 +7766,9 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-icon-toggle.mdc-ripple-upgraded--background-active::before {
+  .mdc-icon-toggle.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-icon-toggle.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-icon-toggle.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-icon-toggle.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -7852,30 +7826,14 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-icon-toggle.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-icon-toggle.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-icon-toggle.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
   .mdc-icon-toggle--theme-dark.mdc-icon-toggle::before,
   .mdc-theme--dark .mdc-icon-toggle::before {
     background-color: rgba(255, 255, 255, 0.16);
@@ -7900,15 +7858,11 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-active::before,
-  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-active::before {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-focused::before,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-active:active::before,
-  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-bounded-active-fill::before,
-  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--background-active-fill::before,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -7971,33 +7925,16 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--foreground-bounded-active-fill::after,
-  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,
-  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,
-  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--foreground-activation::after,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded--foreground-deactivation::after,
+  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
   .mdc-icon-toggle::after {
     position: absolute;
     border-radius: 50%;
@@ -8037,12 +7974,9 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-icon-toggle--primary.mdc-ripple-upgraded--background-active::before {
+  .mdc-icon-toggle--primary.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-icon-toggle--primary.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-icon-toggle--primary.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-icon-toggle--primary.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -8103,30 +8037,14 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-icon-toggle--primary.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-icon-toggle--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-icon-toggle--primary.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-icon-toggle--primary.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-icon-toggle--primary.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
 
 .mdc-icon-toggle--accent {
   color: #ff4081;
@@ -8156,12 +8074,9 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             transform: scale(0);
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
             transform: scale(var(--mdc-ripple-fg-scale, 0)); }
-  .mdc-icon-toggle--accent.mdc-ripple-upgraded--background-active::before {
+  .mdc-icon-toggle--accent.mdc-ripple-upgraded--background-focused::before {
     opacity: .99999; }
-  .mdc-icon-toggle--accent.mdc-ripple-upgraded--background-active:active::before {
-    -webkit-transition-duration: 600ms;
-            transition-duration: 600ms; }
-  .mdc-icon-toggle--accent.mdc-ripple-upgraded--background-bounded-active-fill::before {
+  .mdc-icon-toggle--accent.mdc-ripple-upgraded--background-active-fill::before {
     -webkit-transition-duration: 120ms;
             transition-duration: 120ms;
     opacity: 1; }
@@ -8222,30 +8137,14 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
             transform: scale(0);
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-  .mdc-icon-toggle--accent.mdc-ripple-upgraded--foreground-bounded-active-fill::after {
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;
-            animation: 300ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }
-  .mdc-icon-toggle--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));
-            transform: scale(var(--mdc-ripple-fg-scale, 0));
-    -webkit-transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms;
-    transition: opacity 110ms linear, transform 0 linear 80ms, -webkit-transform 0 linear 80ms;
-    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration, 0) linear 80ms;
-    opacity: 1; }
-  .mdc-icon-toggle--accent.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate 0 linear, mdc-ripple-fg-unbounded-transform-deactivate 0 cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1);
-            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration, 0) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration, 0) cubic-bezier(0.4, 0, 0.2, 1); }
+  .mdc-icon-toggle--accent.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;
+            animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }
+  .mdc-icon-toggle--accent.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+    -webkit-animation: 250ms mdc-ripple-fg-opacity-out;
+            animation: 250ms mdc-ripple-fg-opacity-out; }
 
 .mdc-icon-toggle--disabled {
   color: rgba(0, 0, 0, 0.38);
