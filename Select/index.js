@@ -6,6 +6,7 @@ class Select extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "select";
+		this._mdcProps = ["disabled"];
 	}
 	componentDidMount() {
 		this.MDComponent = new MDCSelect(this.control);
