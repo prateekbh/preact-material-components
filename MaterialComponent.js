@@ -40,8 +40,11 @@ export default class MaterialComponent extends Component {
 		}
 	}
 	getClassName(element) {
+		if (!element) {
+			return '';
+		}
 		element.attributes = element.attributes || {};
-		if (element && element.attributes.className) {
+		if (element.attributes.className) {
 			return this.classText + " " + element.attributes.className;
 		}
 		return this.classText;
