@@ -10,6 +10,11 @@ class Select extends MaterialComponent {
 	}
 	componentDidMount() {
 		this.MDComponent = new MDCSelect(this.control);
+		this.MDComponent.listen('MDCSelect:change', () => {
+			if (this.props.onChange) {
+				this.props.onChange();
+			}
+		});
 	}
 	materialDom(props) {
 		return (
