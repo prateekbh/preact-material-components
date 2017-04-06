@@ -100,6 +100,7 @@ var MaterialComponent = function (_Component) {
 	}, {
 		key: "getClassName",
 		value: function getClassName(element) {
+			element.attributes = element.attributes || {};
 			if (element && element.attributes.className) {
 				return this.classText + " " + element.attributes.className;
 			}
@@ -127,6 +128,7 @@ var MaterialComponent = function (_Component) {
 			this.buildClassName();
 			// Fetch a VNode
 			var element = this.materialDom(this.props);
+			element.attributes = element.attributes || {};
 			var autoInits = this.getAutoInitNames();
 			// Fix for className
 			element.attributes.class = this.getClassName(element);
@@ -967,7 +969,7 @@ var Icon = function (_MaterialComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__routie__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_preact_material_components_Icon_style_css__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_preact_material_components_Icon_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_preact_material_components_Toolbar_style_css__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_preact_material_components_Toolbar_style_css__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_preact_material_components_Toolbar_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_preact_material_components_Drawer_style_css__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_preact_material_components_Drawer_style_css__);
@@ -2418,7 +2420,7 @@ var ListPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_FormField__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_FormField_style_css__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_FormField_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_FormField_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Radio_style_css__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Radio_style_css__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Radio_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Radio_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__RadioPage_css__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__RadioPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__RadioPage_css__);
@@ -2514,9 +2516,9 @@ var RadioPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Select__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Menu_style_css__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Menu_style_css__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Menu_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_preact_material_components_Menu_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Select_style_css__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Select_style_css__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Select_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Select_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SelectPage_css__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SelectPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__SelectPage_css__);
@@ -2659,7 +2661,7 @@ var SelectPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Switch__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_List_style_css__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_preact_material_components_List_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Switch_style_css__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Switch_style_css__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Switch_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Switch_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SwitchPage_css__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SwitchPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__SwitchPage_css__);
@@ -8183,42 +8185,7 @@ Toolbar.Row = ToolbarRow;
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */
+/* 81 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
