@@ -100,8 +100,11 @@ var MaterialComponent = function (_Component) {
 	}, {
 		key: "getClassName",
 		value: function getClassName(element) {
+			if (!element) {
+				return '';
+			}
 			element.attributes = element.attributes || {};
-			if (element && element.attributes.className) {
+			if (element.attributes.className) {
 				return this.classText + " " + element.attributes.className;
 			}
 			return this.classText;
@@ -631,8 +634,6 @@ function getNormalizedEventCoords(ev, pageOffset, clientRect) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MaterialComponent__ = __webpack_require__(2);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -659,17 +660,6 @@ var FormField = function (_MaterialComponent) {
 		_this._mdcProps = ["align-end"];
 		return _this;
 	}
-
-	_createClass(FormField, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				"div",
-				props,
-				props.children
-			);
-		}
-	}]);
 
 	return FormField;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
@@ -1085,6 +1075,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -1113,11 +1105,14 @@ var Switch = function (_MaterialComponent) {
 
 	_createClass(Switch, [{
 		key: "materialDom",
-		value: function materialDom(props) {
+		value: function materialDom(allprops) {
+			var className = allprops.className,
+			    props = _objectWithoutProperties(allprops, ["className"]);
+
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"div",
-				{ className: "" },
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ type: "checkbox", className: "mdc-switch__native-control" }, props)),
+				null,
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ type: "checkbox", id: "basic-switch", className: "mdc-switch__native-control " + className }, props)),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"div",
 					{ className: "mdc-switch__background" },
@@ -7655,32 +7650,32 @@ var Checkbox = function (_MaterialComponent) {
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"div",
-				{ "class": "mdc-checkbox", ref: function ref(control) {
+				{ className: "mdc-checkbox", ref: function ref(control) {
 						_this2.control = control;
 					} },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({
 					type: "checkbox",
-					"class": "mdc-checkbox__native-control"
+					className: "mdc-checkbox__native-control"
 				}, props)),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"div",
-					{ "class": "mdc-checkbox__background" },
+					{ className: "mdc-checkbox__background" },
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						"svg",
 						{
 							version: "1.1",
-							"class": "mdc-checkbox__checkmark",
+							className: "mdc-checkbox__checkmark",
 							xmlns: "http://www.w3.org/2000/svg",
 							viewBox: "0 0 24 24"
 						},
 						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("path", {
-							"class": "mdc-checkbox__checkmark__path",
+							className: "mdc-checkbox__checkmark__path",
 							fill: "none",
 							stroke: "white",
 							d: "M1.73,12.91 8.1,19.28 22.79,4.59"
 						})
 					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-checkbox__mixedmark" })
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { className: "mdc-checkbox__mixedmark" })
 				)
 			);
 		}
@@ -8286,12 +8281,12 @@ var Radio = function (_MaterialComponent) {
 				{ ref: function ref(control) {
 						_this2.control = control;
 					} },
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ "class": "mdc-radio__native-control", type: "radio" }, props, { name: "radios" })),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ className: "mdc-radio__native-control", type: "radio" }, props)),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"div",
-					{ "class": "mdc-radio__background" },
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-radio__outer-circle" }),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-radio__inner-circle" })
+					{ className: "mdc-radio__background" },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { className: "mdc-radio__outer-circle" }),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { className: "mdc-radio__inner-circle" })
 				)
 			);
 		}
@@ -8343,17 +8338,24 @@ var Select = function (_MaterialComponent) {
 	_createClass(Select, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
+			var _this2 = this;
+
 			this.MDComponent = new __WEBPACK_IMPORTED_MODULE_2__material_select___["a" /* MDCSelect */](this.control);
+			this.MDComponent.listen('MDCSelect:change', function () {
+				if (_this2.props.onChange) {
+					_this2.props.onChange();
+				}
+			});
 		}
 	}, {
 		key: "materialDom",
 		value: function materialDom(props) {
-			var _this2 = this;
+			var _this3 = this;
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"div",
 				_extends({ role: "listbox", tabindex: "0" }, props, { ref: function ref(control) {
-						_this2.control = control;
+						_this3.control = control;
 					} }),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"span",
