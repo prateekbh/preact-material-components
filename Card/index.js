@@ -5,6 +5,7 @@ class Card extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "card";
+		this._mdcProps=["theme-dark"];
 	}
 	materialDom(props) {
 		return (

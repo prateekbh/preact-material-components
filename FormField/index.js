@@ -11,11 +11,4 @@ export default class FormField extends MaterialComponent {
 		this.componentName = "form-field";
 		this._mdcProps = ["align-end"];
 	}
-	materialDom(props) {
-		return (
-			<div {...props}>
-			 {props.children}
-			</div>
-		);
-	}
 }
