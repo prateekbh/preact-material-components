@@ -73,15 +73,15 @@ export default class Home extends Component {
 				</Dialog.DialogFooter>
 			</Dialog>
 			<Select hintText="Select an option">
-				<Select.ListItem>opt1</Select.ListItem>
-				<Select.ListItem>opt2</Select.ListItem>
-				<Select.ListItem>opt3</Select.ListItem>
-				<Select.ListItem>opt4</Select.ListItem>
+				<Select.Item>opt1</Select.Item>
+				<Select.Item>opt2</Select.Item>
+				<Select.Item>opt3</Select.Item>
+				<Select.Item>opt4</Select.Item>
 			</Select>
 			<List>
-				<List.ListItem>Item1</List.ListItem>
-				<List.ListItem>Item2</List.ListItem>
-				<List.ListItem>Item3</List.ListItem>
+				<List.Item>Item1</List.Item>
+				<List.Item>Item2</List.Item>
+				<List.Item>Item3</List.Item>
 			</List>
 
 			<hr/>
