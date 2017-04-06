@@ -13,9 +13,9 @@ export default class Switch extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<div>
-				<input type="checkbox" id="basic-switch" class="mdc-switch__native-control" {...props} />
-				<div class="mdc-switch__background">
-					<div class="mdc-switch__knob"></div>
+				<input type="checkbox" id="basic-switch" className="mdc-switch__native-control" {...props} />
+				<div className="mdc-switch__background">
+					<div className="mdc-switch__knob"></div>
 				</div>
 			</div>
 		);

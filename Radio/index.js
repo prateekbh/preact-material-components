@@ -17,10 +17,10 @@ export default class Radio extends MaterialComponent {
 	materialDom(props) {
 		return (
 		<div ref={control=>{this.control = control;}}>
-			<input class="mdc-radio__native-control" type="radio" {...props} name="radios" />
-			<div class="mdc-radio__background">
-				<div class="mdc-radio__outer-circle"></div>
-				<div class="mdc-radio__inner-circle"></div>
+			<input className="mdc-radio__native-control" type="radio" {...props} />
+			<div className="mdc-radio__background">
+				<div className="mdc-radio__outer-circle"></div>
+				<div className="mdc-radio__inner-circle"></div>
 			</div>
 		</div>
 		);

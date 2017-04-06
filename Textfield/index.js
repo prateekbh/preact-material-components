@@ -26,12 +26,12 @@ export default class Fab extends MaterialComponent {
 			<div ref={control => this.control = control}>
 				{
 					props.multiline ?
-						<textarea class="mdc-textfield__input" {...props}></textarea> :
-						<input type="text" class="mdc-textfield__input" {...props}/>
+						<textarea className="mdc-textfield__input" {...props}></textarea> :
+						<input type="text" className="mdc-textfield__input" {...props}/>
 				}
 				{
 					props.label && this.state.showFloatingLabel &&
-					<label class="mdc-textfield__label mdc-textfield__label">
+					<label className="mdc-textfield__label mdc-textfield__label">
 						{props.label}
 					</label>
 				}
