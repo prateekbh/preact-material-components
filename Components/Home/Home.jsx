@@ -3,6 +3,8 @@ import Icon from 'preact-material-components/Icon';
 import Toolbar from 'preact-material-components/Toolbar';
 import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
+import Switch from 'preact-material-components/Switch';
+import FormField from 'preact-material-components/FormField';
 import ButtonsPage from '../ButtonsPage/ButtonsPage.jsx';
 import FabPage from '../FabPage/FabPage.jsx';
 import CheckboxPage from '../CheckboxPage/CheckboxPage.jsx';
@@ -14,6 +16,7 @@ import ListPage from '../ListPage/ListPage.jsx';
 import SelectPage from '../SelectPage/SelectPage.jsx';
 import SnackbarPage from '../SnackbarPage/SnackbarPage.jsx';
 import routie from '../routie';
+import 'preact-material-components/List/style.css';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
 import 'preact-material-components/Drawer/style.css';
@@ -55,6 +58,12 @@ export default class Home extends Component {
 								<Toolbar.Title>
 									{this.state.toolbarTitle}
 								</Toolbar.Title>
+							</Toolbar.Section>
+							<Toolbar.Section align-end={true}>
+								<FormField className="field-darkmode">
+									Dark Mode
+									<Switch className="switch-darkmode"/>
+								</FormField>
 							</Toolbar.Section>
 						</Toolbar.Row>
 					</Toolbar>
