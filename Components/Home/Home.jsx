@@ -16,6 +16,7 @@ import ListPage from '../ListPage/ListPage.jsx';
 import SelectPage from '../SelectPage/SelectPage.jsx';
 import SnackbarPage from '../SnackbarPage/SnackbarPage.jsx';
 import TextfieldPage from '../TextfieldPage/TextfieldPage.jsx';
+import ToolbarPage from '../ToolbarPage/ToolbarPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/List/style.css';
 import 'preact-material-components/Icon/style.css';
@@ -197,6 +198,13 @@ export default class Home extends Component {
 									<List.ItemIcon>code</List.ItemIcon>
 									Textfield
 								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+										routie('/component/toolbar');
+										this.closeDrawer();
+									}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Toolbar
+								</List.LinkItem>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
 									Card
@@ -217,10 +225,6 @@ export default class Home extends Component {
 									<List.ItemIcon>code</List.ItemIcon>
 									IconToggle
 								</List.Item>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
-									Toolbar
-								</List.Item>
 							</List>
 						</Drawer.TemporaryDrawerContent>
 					</Drawer.TemporaryDrawer>
@@ -236,6 +240,7 @@ export default class Home extends Component {
 						{this.state.component === 'select' && <SelectPage/>}
 						{this.state.component === 'snackbar' && <SnackbarPage/>}
 						{this.state.component === 'textfield' && <TextfieldPage/>}
+						{this.state.component === 'toolbar' && <ToolbarPage/>}
 					</div>
 
 			</div>

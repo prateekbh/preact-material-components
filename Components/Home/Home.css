@@ -30,7 +30,7 @@
 	.st0{fill:#757575}.st1{fill:#bdbdbd}.st2{fill:#fff}.st3{fill:none}
 	.mdc-temporary-drawer{
 		li.mdc-list-item{
-			color: #ccc;
+			color: #ddd;
 		}
 	}
 	.mdc-temporary-drawer__header-content{
@@ -46,5 +46,7 @@
 }
 
 .mdc-theme--dark{
-	background-color: #aaa;
+	.mdc-temporary-drawer li.mdc-list-item{
+		color: #666;
+	}
 }

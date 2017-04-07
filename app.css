@@ -12,3 +12,8 @@ a{
 	padding-left: 8px;
 	text-transform: capitalize;
 }
+
+
+.mdc-theme--dark{
+	background-color: #333;
+}
