@@ -1150,20 +1150,21 @@ var Switch = function (_MaterialComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ListPage_ListPage_jsx__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__SelectPage_SelectPage_jsx__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__SnackbarPage_SnackbarPage_jsx__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__routie__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__routie__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_preact_material_components_List_style_css__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_preact_material_components_List_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_preact_material_components_Icon_style_css__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_preact_material_components_Icon_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_preact_material_components_Toolbar_style_css__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_preact_material_components_Toolbar_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_preact_material_components_Drawer_style_css__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_preact_material_components_Drawer_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_preact_material_components_Theme_style_css__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_preact_material_components_Theme_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_preact_material_components_Theme_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__Home_css__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23__Home_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__TextfieldPage_TextfieldPage_jsx__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__routie__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__routie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_preact_material_components_List_style_css__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_preact_material_components_List_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_preact_material_components_Icon_style_css__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_preact_material_components_Icon_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_preact_material_components_Toolbar_style_css__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_preact_material_components_Toolbar_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_preact_material_components_Drawer_style_css__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_preact_material_components_Drawer_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_preact_material_components_Theme_style_css__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_preact_material_components_Theme_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_preact_material_components_Theme_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__Home_css__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__Home_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1171,6 +1172,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -1217,13 +1219,13 @@ var Home = function (_Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
-			__WEBPACK_IMPORTED_MODULE_17__routie___default()('/', function (component) {
+			__WEBPACK_IMPORTED_MODULE_18__routie___default()('/', function (component) {
 				_this2.setState({
 					component: null,
 					toolbarTitle: ""
 				});
 			});
-			__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/:name', function (component) {
+			__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/:name', function (component) {
 				_this2.setState({
 					component: component,
 					toolbarTitle: component
@@ -1363,7 +1365,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1376,7 +1378,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/button');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/button');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1389,7 +1391,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/checkbox');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/checkbox');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1402,7 +1404,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/dialog');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/dialog');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1415,7 +1417,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/elevation');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/elevation');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1428,7 +1430,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/fab');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/fab');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1441,7 +1443,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/list');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/list');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1454,7 +1456,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/radio');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/radio');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1467,7 +1469,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/select');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/select');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1480,7 +1482,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/snackbar');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/snackbar');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1493,7 +1495,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_17__routie___default()('/component/switch');
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/switch');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1502,6 +1504,19 @@ var Home = function (_Component) {
 									'code'
 								),
 								'Switch'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_18__routie___default()('/component/textfield');
+										_this3.closeDrawer();
+									} },
+								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
+									null,
+									'code'
+								),
+								'Textfield'
 							),
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].Item,
@@ -1561,16 +1576,6 @@ var Home = function (_Component) {
 									null,
 									'code'
 								),
-								'Textfield'
-							),
-							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].Item,
-								null,
-								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
-									null,
-									'code'
-								),
 								'Toolbar'
 							)
 						)
@@ -1588,7 +1593,8 @@ var Home = function (_Component) {
 					this.state.component === 'radio' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_13__RadioPage_RadioPage_jsx__["a" /* default */], null),
 					this.state.component === 'list' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_14__ListPage_ListPage_jsx__["a" /* default */], null),
 					this.state.component === 'select' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_15__SelectPage_SelectPage_jsx__["a" /* default */], null),
-					this.state.component === 'snackbar' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_16__SnackbarPage_SnackbarPage_jsx__["a" /* default */], null)
+					this.state.component === 'snackbar' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_16__SnackbarPage_SnackbarPage_jsx__["a" /* default */], null),
+					this.state.component === 'textfield' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_17__TextfieldPage_TextfieldPage_jsx__["a" /* default */], null)
 				)
 			);
 		}
@@ -8784,6 +8790,698 @@ Toolbar.Row = ToolbarRow;
 
 /***/ }),
 /* 88 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Textfield__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Textfield_style_css__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Textfield_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_preact_material_components_Textfield_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__TextfieldPage_css__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__TextfieldPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__TextfieldPage_css__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var TextfieldPage = function (_Component) {
+	_inherits(TextfieldPage, _Component);
+
+	function TextfieldPage() {
+		_classCallCheck(this, TextfieldPage);
+
+		return _possibleConstructorReturn(this, (TextfieldPage.__proto__ || Object.getPrototypeOf(TextfieldPage)).apply(this, arguments));
+	}
+
+	_createClass(TextfieldPage, [{
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'div',
+				{ className: 'page-textfield' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display2' },
+					'Props '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'ul',
+					{ className: 'props' },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'li',
+						{ className: 'prop' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--headline' },
+							'fullwidth'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--subheading1' },
+							'true/false'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--body1' },
+							'Makes the textfield full width'
+						)
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'li',
+						{ className: 'prop' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--headline' },
+							'multiline'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--subheading1' },
+							'true/false'
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'div',
+							{ className: 'mdc-typography--body1' },
+							'Toggles between TextArea and TextField'
+						)
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display2' },
+					'Demo '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--title' },
+					'Default '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1_preact_material_components_Textfield__["a" /* default */], { label: 'Your name', onKeyUp: function onKeyUp(e) {
+						_this2.setState({
+							name: e.target.value
+						});
+					} }),
+				' Hi - ',
+				this.state.name,
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--title' },
+					'Multiline '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1_preact_material_components_Textfield__["a" /* default */], { multiline: true, label: 'Textarea tag' })
+			);
+		}
+	}]);
+
+	return TextfieldPage;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (TextfieldPage);
+
+/***/ }),
+/* 128 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base__ = __webpack_require__(1);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+var MDCTextfieldFoundation = function (_MDCFoundation) {
+  _inherits(MDCTextfieldFoundation, _MDCFoundation);
+
+  _createClass(MDCTextfieldFoundation, null, [{
+    key: 'cssClasses',
+    get: function get() {
+      return {
+        ROOT: 'mdc-textfield',
+        UPGRADED: 'mdc-textfield--upgraded',
+        DISABLED: 'mdc-textfield--disabled',
+        FOCUSED: 'mdc-textfield--focused',
+        INVALID: 'mdc-textfield--invalid',
+        HELPTEXT_PERSISTENT: 'mdc-textfield-helptext--persistent',
+        HELPTEXT_VALIDATION_MSG: 'mdc-textfield-helptext--validation-msg',
+        LABEL_FLOAT_ABOVE: 'mdc-textfield__label--float-above'
+      };
+    }
+  }, {
+    key: 'strings',
+    get: function get() {
+      return {
+        ARIA_HIDDEN: 'aria-hidden',
+        ROLE: 'role'
+      };
+    }
+  }, {
+    key: 'defaultAdapter',
+    get: function get() {
+      return {
+        addClass: function addClass() /* className: string */{},
+        removeClass: function removeClass() /* className: string */{},
+        addClassToLabel: function addClassToLabel() /* className: string */{},
+        removeClassFromLabel: function removeClassFromLabel() /* className: string */{},
+        addClassToHelptext: function addClassToHelptext() /* className: string */{},
+        removeClassFromHelptext: function removeClassFromHelptext() /* className: string */{},
+        helptextHasClass: function helptextHasClass() {
+          return (/* className: string */ /* boolean */false
+          );
+        },
+        registerInputFocusHandler: function registerInputFocusHandler() /* handler: EventListener */{},
+        deregisterInputFocusHandler: function deregisterInputFocusHandler() /* handler: EventListener */{},
+        registerInputBlurHandler: function registerInputBlurHandler() /* handler: EventListener */{},
+        deregisterInputBlurHandler: function deregisterInputBlurHandler() /* handler: EventListener */{},
+        registerInputInputHandler: function registerInputInputHandler() /* handler: EventListener */{},
+        deregisterInputInputHandler: function deregisterInputInputHandler() /* handler: EventListener */{},
+        registerInputKeydownHandler: function registerInputKeydownHandler() /* handler: EventListener */{},
+        deregisterInputKeydownHandler: function deregisterInputKeydownHandler() /* handler: EventListener */{},
+        setHelptextAttr: function setHelptextAttr() /* name: string, value: string */{},
+        removeHelptextAttr: function removeHelptextAttr() /* name: string */{},
+        getNativeInput: function getNativeInput() {
+          return (/* HTMLInputElement */{}
+          );
+        }
+      };
+    }
+  }]);
+
+  function MDCTextfieldFoundation() {
+    var adapter = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    _classCallCheck(this, MDCTextfieldFoundation);
+
+    var _this = _possibleConstructorReturn(this, (MDCTextfieldFoundation.__proto__ || Object.getPrototypeOf(MDCTextfieldFoundation)).call(this, Object.assign(MDCTextfieldFoundation.defaultAdapter, adapter)));
+
+    _this.receivedUserInput_ = false;
+    _this.inputFocusHandler_ = function () {
+      return _this.activateFocus_();
+    };
+    _this.inputBlurHandler_ = function () {
+      return _this.deactivateFocus_();
+    };
+    _this.inputInputHandler_ = function () {
+      return _this.autoCompleteFocus_();
+    };
+    _this.inputKeydownHandler_ = function () {
+      return _this.receivedUserInput_ = true;
+    };
+    return _this;
+  }
+
+  _createClass(MDCTextfieldFoundation, [{
+    key: 'init',
+    value: function init() {
+      this.adapter_.addClass(MDCTextfieldFoundation.cssClasses.UPGRADED);
+      this.adapter_.registerInputFocusHandler(this.inputFocusHandler_);
+      this.adapter_.registerInputBlurHandler(this.inputBlurHandler_);
+      this.adapter_.registerInputInputHandler(this.inputInputHandler_);
+      this.adapter_.registerInputKeydownHandler(this.inputKeydownHandler_);
+
+      // Ensure label does not collide with any pre-filled value.
+      if (this.getNativeInput_().value) {
+        this.adapter_.addClassToLabel(MDCTextfieldFoundation.cssClasses.LABEL_FLOAT_ABOVE);
+      }
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      this.adapter_.removeClass(MDCTextfieldFoundation.cssClasses.UPGRADED);
+      this.adapter_.deregisterInputFocusHandler(this.inputFocusHandler_);
+      this.adapter_.deregisterInputBlurHandler(this.inputBlurHandler_);
+      this.adapter_.deregisterInputInputHandler(this.inputInputHandler_);
+      this.adapter_.deregisterInputKeydownHandler(this.inputKeydownHandler_);
+    }
+  }, {
+    key: 'activateFocus_',
+    value: function activateFocus_() {
+      var _MDCTextfieldFoundati = MDCTextfieldFoundation.cssClasses,
+          FOCUSED = _MDCTextfieldFoundati.FOCUSED,
+          LABEL_FLOAT_ABOVE = _MDCTextfieldFoundati.LABEL_FLOAT_ABOVE;
+
+      this.adapter_.addClass(FOCUSED);
+      this.adapter_.addClassToLabel(LABEL_FLOAT_ABOVE);
+      this.showHelptext_();
+    }
+  }, {
+    key: 'autoCompleteFocus_',
+    value: function autoCompleteFocus_() {
+      if (!this.receivedUserInput_) {
+        this.activateFocus_();
+      }
+    }
+  }, {
+    key: 'showHelptext_',
+    value: function showHelptext_() {
+      var ARIA_HIDDEN = MDCTextfieldFoundation.strings.ARIA_HIDDEN;
+
+      this.adapter_.removeHelptextAttr(ARIA_HIDDEN);
+    }
+  }, {
+    key: 'deactivateFocus_',
+    value: function deactivateFocus_() {
+      var _MDCTextfieldFoundati2 = MDCTextfieldFoundation.cssClasses,
+          FOCUSED = _MDCTextfieldFoundati2.FOCUSED,
+          INVALID = _MDCTextfieldFoundati2.INVALID,
+          LABEL_FLOAT_ABOVE = _MDCTextfieldFoundati2.LABEL_FLOAT_ABOVE;
+
+      var input = this.getNativeInput_();
+      var isValid = input.checkValidity();
+
+      this.adapter_.removeClass(FOCUSED);
+      if (!input.value) {
+        this.adapter_.removeClassFromLabel(LABEL_FLOAT_ABOVE);
+        this.receivedUserInput_ = false;
+      }
+      if (isValid) {
+        this.adapter_.removeClass(INVALID);
+      } else {
+        this.adapter_.addClass(INVALID);
+      }
+      this.updateHelptextOnDeactivation_(isValid);
+    }
+  }, {
+    key: 'updateHelptextOnDeactivation_',
+    value: function updateHelptextOnDeactivation_(isValid) {
+      var _MDCTextfieldFoundati3 = MDCTextfieldFoundation.cssClasses,
+          HELPTEXT_PERSISTENT = _MDCTextfieldFoundati3.HELPTEXT_PERSISTENT,
+          HELPTEXT_VALIDATION_MSG = _MDCTextfieldFoundati3.HELPTEXT_VALIDATION_MSG;
+      var ROLE = MDCTextfieldFoundation.strings.ROLE;
+
+      var helptextIsPersistent = this.adapter_.helptextHasClass(HELPTEXT_PERSISTENT);
+      var helptextIsValidationMsg = this.adapter_.helptextHasClass(HELPTEXT_VALIDATION_MSG);
+      var validationMsgNeedsDisplay = helptextIsValidationMsg && !isValid;
+
+      if (validationMsgNeedsDisplay) {
+        this.adapter_.setHelptextAttr(ROLE, 'alert');
+      } else {
+        this.adapter_.removeHelptextAttr(ROLE);
+      }
+
+      if (helptextIsPersistent || validationMsgNeedsDisplay) {
+        return;
+      }
+      this.hideHelptext_();
+    }
+  }, {
+    key: 'hideHelptext_',
+    value: function hideHelptext_() {
+      var ARIA_HIDDEN = MDCTextfieldFoundation.strings.ARIA_HIDDEN;
+
+      this.adapter_.setHelptextAttr(ARIA_HIDDEN, 'true');
+    }
+  }, {
+    key: 'isDisabled',
+    value: function isDisabled() {
+      return this.getNativeInput_().disabled;
+    }
+  }, {
+    key: 'setDisabled',
+    value: function setDisabled(disabled) {
+      var DISABLED = MDCTextfieldFoundation.cssClasses.DISABLED;
+
+      this.getNativeInput_().disabled = disabled;
+      if (disabled) {
+        this.adapter_.addClass(DISABLED);
+      } else {
+        this.adapter_.removeClass(DISABLED);
+      }
+    }
+  }, {
+    key: 'getNativeInput_',
+    value: function getNativeInput_() {
+      return this.adapter_.getNativeInput() || {
+        checkValidity: function checkValidity() {
+          return true;
+        },
+        value: '',
+        disabled: false
+      };
+    }
+  }]);
+
+  return MDCTextfieldFoundation;
+}(__WEBPACK_IMPORTED_MODULE_0__material_base__["b" /* MDCFoundation */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (MDCTextfieldFoundation);
+
+/***/ }),
+/* 129 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_base__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(128);
+/* unused harmony reexport MDCTextfieldFoundation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextfield; });
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+
+
+
+var cssClasses = __WEBPACK_IMPORTED_MODULE_1__foundation__["a" /* default */].cssClasses;
+
+
+var MDCTextfield = function (_MDCComponent) {
+  _inherits(MDCTextfield, _MDCComponent);
+
+  _createClass(MDCTextfield, null, [{
+    key: 'attachTo',
+    value: function attachTo(root) {
+      return new MDCTextfield(root);
+    }
+  }]);
+
+  function MDCTextfield() {
+    var _ref;
+
+    _classCallCheck(this, MDCTextfield);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var _this = _possibleConstructorReturn(this, (_ref = MDCTextfield.__proto__ || Object.getPrototypeOf(MDCTextfield)).call.apply(_ref, [this].concat(args)));
+
+    var input = _this.input_;
+    _this.helptextElement = input.hasAttribute('aria-controls') ? document.getElementById(input.getAttribute('aria-controls')) : null;
+    return _this;
+  }
+
+  _createClass(MDCTextfield, [{
+    key: 'initialSyncWithDom',
+    value: function initialSyncWithDom() {
+      this.disabled = this.input_.disabled;
+    }
+  }, {
+    key: 'getDefaultFoundation',
+    value: function getDefaultFoundation() {
+      var _this2 = this;
+
+      return new __WEBPACK_IMPORTED_MODULE_1__foundation__["a" /* default */](Object.assign({
+        addClass: function addClass(className) {
+          return _this2.root_.classList.add(className);
+        },
+        removeClass: function removeClass(className) {
+          return _this2.root_.classList.remove(className);
+        },
+        addClassToLabel: function addClassToLabel(className) {
+          var label = _this2.label_;
+          if (label) {
+            label.classList.add(className);
+          }
+        },
+        removeClassFromLabel: function removeClassFromLabel(className) {
+          var label = _this2.label_;
+          if (label) {
+            label.classList.remove(className);
+          }
+        }
+      }, this.getInputAdapterMethods_(), this.getHelptextAdapterMethods_()));
+    }
+  }, {
+    key: 'getInputAdapterMethods_',
+    value: function getInputAdapterMethods_() {
+      var _this3 = this;
+
+      return {
+        registerInputFocusHandler: function registerInputFocusHandler(handler) {
+          return _this3.input_.addEventListener('focus', handler);
+        },
+        registerInputBlurHandler: function registerInputBlurHandler(handler) {
+          return _this3.input_.addEventListener('blur', handler);
+        },
+        registerInputInputHandler: function registerInputInputHandler(handler) {
+          return _this3.input_.addEventListener('input', handler);
+        },
+        registerInputKeydownHandler: function registerInputKeydownHandler(handler) {
+          return _this3.input_.addEventListener('keydown', handler);
+        },
+        deregisterInputFocusHandler: function deregisterInputFocusHandler(handler) {
+          return _this3.input_.removeEventListener('focus', handler);
+        },
+        deregisterInputBlurHandler: function deregisterInputBlurHandler(handler) {
+          return _this3.input_.removeEventListener('blur', handler);
+        },
+        deregisterInputInputHandler: function deregisterInputInputHandler(handler) {
+          return _this3.input_.removeEventListener('input', handler);
+        },
+        deregisterInputKeydownHandler: function deregisterInputKeydownHandler(handler) {
+          return _this3.input_.removeEventListener('keydown', handler);
+        },
+        getNativeInput: function getNativeInput() {
+          return _this3.input_;
+        }
+      };
+    }
+  }, {
+    key: 'getHelptextAdapterMethods_',
+    value: function getHelptextAdapterMethods_() {
+      var _this4 = this;
+
+      return {
+        addClassToHelptext: function addClassToHelptext(className) {
+          if (_this4.helptextElement) {
+            _this4.helptextElement.classList.add(className);
+          }
+        },
+        removeClassFromHelptext: function removeClassFromHelptext(className) {
+          if (_this4.helptextElement) {
+            _this4.helptextElement.classList.remove(className);
+          }
+        },
+        helptextHasClass: function helptextHasClass(className) {
+          if (!_this4.helptextElement) {
+            return false;
+          }
+          return _this4.helptextElement.classList.contains(className);
+        },
+        setHelptextAttr: function setHelptextAttr(name, value) {
+          if (_this4.helptextElement) {
+            _this4.helptextElement.setAttribute(name, value);
+          }
+        },
+        removeHelptextAttr: function removeHelptextAttr(name) {
+          if (_this4.helptextElement) {
+            _this4.helptextElement.removeAttribute(name);
+          }
+        }
+      };
+    }
+  }, {
+    key: 'disabled',
+    get: function get() {
+      return this.foundation_.isDisabled();
+    },
+    set: function set(disabled) {
+      this.foundation_.setDisabled(disabled);
+    }
+  }, {
+    key: 'input_',
+    get: function get() {
+      return this.root_.querySelector('.' + cssClasses.ROOT + '__input');
+    }
+  }, {
+    key: 'label_',
+    get: function get() {
+      return this.root_.querySelector('.' + cssClasses.ROOT + '__label');
+    }
+  }]);
+
+  return MDCTextfield;
+}(__WEBPACK_IMPORTED_MODULE_0__material_base__["a" /* MDCComponent */]);
+
+/***/ }),
+/* 130 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MaterialComponent__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_textfield___ = __webpack_require__(129);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+/**
+ * @prop fullwidth = false
+ * @prop multiline = false
+ */
+
+var Fab = function (_MaterialComponent) {
+	_inherits(Fab, _MaterialComponent);
+
+	function Fab() {
+		_classCallCheck(this, Fab);
+
+		var _this = _possibleConstructorReturn(this, (Fab.__proto__ || Object.getPrototypeOf(Fab)).call(this));
+
+		_this.componentName = "textfield";
+		_this.state = {
+			showFloatingLabel: false
+		};
+		_this._mdcProps = ["fullwidth", "multiline"];
+		return _this;
+	}
+
+	_createClass(Fab, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.setState({
+				showFloatingLabel: true
+			});
+			this.MDComponent = new __WEBPACK_IMPORTED_MODULE_2__material_textfield___["a" /* MDCTextfield */](this.control);
+		}
+	}, {
+		key: "materialDom",
+		value: function materialDom(allprops) {
+			var _this2 = this;
+
+			var className = allprops.className,
+			    props = _objectWithoutProperties(allprops, ["className"]);
+
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"div",
+				{ className: className + '', ref: function ref(control) {
+						return _this2.control = control;
+					} },
+				props.multiline ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("textarea", _extends({ className: "mdc-textfield__input" }, props)) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ type: "text", className: "mdc-textfield__input" }, props)),
+				props.label && this.state.showFloatingLabel && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					"label",
+					{ className: "mdc-textfield__label mdc-textfield__label" },
+					props.label
+				)
+			);
+		}
+	}]);
+
+	return Fab;
+}(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Fab);
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 132 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
