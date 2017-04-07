@@ -1,11 +1,11 @@
 {
   "name": "preact-material-components",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "./node_modules/.bin/webpack && npm run test ",
+    "prepublish": "node compileComponents.js && ./node_modules/.bin/webpack && npm run test ",
     "test": "npm run lint",
     "lint": "./node_modules/.bin/eslint src/"
   },
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "babel": "^6.5.2",
+    "babel-cli": "^6.24.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",

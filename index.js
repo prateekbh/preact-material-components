@@ -9,7 +9,7 @@ import Textfield from './Textfield';
 import Select from './Select';
 import Card from './Card';
 import Elevation from './Elevation';
-import FormField from './FormField';
+import Formfield from './Formfield';
 import Dialog from './Dialog';
 import List from './List';
 import Drawer from './Drawer';
@@ -26,7 +26,7 @@ export {
 	Select,
 	Card,
 	Elevation,
-	FormField,
+	Formfield,
 	Dialog,
 	List,
 	Drawer,
