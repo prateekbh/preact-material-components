@@ -1,39 +1,44 @@
 import {h, Component} from 'preact';
 import Button from 'preact-material-components/Button';
+import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Button/style.css';
 import './ButtonsPage.css';
 export default class ButtonsPage extends Component {
+	constructor() {
+		super();
+		this.propsTable = [
+			{
+				component: 'Button',
+				props: [
+					{
+						name: 'ripple',
+						description: 'Adds riple effect to the button'
+					},
+					{
+						name: 'primary',
+						description: 'Adds primary colors to the button'
+					},
+					{
+						name: 'accent',
+						description: 'Adds accent colors to the button'
+					},
+					{
+						name: 'dense',
+						description: 'Adds dense padding to the button'
+					},
+					{
+						name: 'compact',
+						description: 'Adds compact padding to the button'
+					}
+				]
+			}
+		];
+	}
 	render(){
 		return (
 			<div className="page-buttons">
-				<div className="mdc-typography--display2">Props </div>
-				<ul className="props">
-					<li className="prop">
-						<div className="mdc-typography--headline">ripple</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Adds riple effect to the button</div>
-					</li>
-					<li className="prop">
-						<div className="mdc-typography--headline">accent</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Adds accent colors to the button</div>
-					</li>
-					<li className="prop">
-						<div className="mdc-typography--headline">primary</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Adds primary colors to the button</div>
-					</li>
-					<li className="prop">
-						<div className="mdc-typography--headline">dense</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Adds dense padding to the button</div>
-					</li>
-					<li className="prop">
-						<div className="mdc-typography--headline">compact</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Adds compact padding to the button</div>
-					</li>
-				</ul>
+				<div className="mdc-typography--display2">Props Table</div>
+				<ComponentTable data={this.propsTable} />
 
 				<div className="mdc-typography--display2">Demo </div>
 				<div className="mdc-typography--title">Flats </div>

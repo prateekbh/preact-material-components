@@ -1,21 +1,51 @@
 import {h, Component} from 'preact';
 import Toolbar from 'preact-material-components/Toolbar';
 import Icon from 'preact-material-components/Icon';
+import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Toolbar/style.css';
 import './ToolbarPage.css';
 export default class ToolbarPage extends Component {
+	constructor() {
+		super();
+		this.propsTable = [
+			{
+				component: 'Toolbar',
+				props: [
+					{
+						name: 'fixed',
+						description: 'Makes the toolbar fixed'
+					}
+				]
+			},
+			{
+				component: 'Toolbar.Row'
+			},
+			{
+				component: 'Toolbar.Section',
+				props: [
+					{
+						name: 'align-start',
+						description: 'Aligns the section to start of the toolbar row'
+					},
+					{
+						name: 'align-end',
+						description: 'Aligns the section to end of the toolbar row'
+					}
+				]
+			},
+			{
+				component: 'Toolbar.Icon'
+			},
+			{
+				component: 'Toolbar.Title'
+			}
+		];
+	}
 	render(){
 		return (
 			<div className="page-toolbar">
-				<div className="mdc-typography--display2">Props </div>
-				<ul className="props">
-					<li className="prop">
-						<div className="mdc-typography--headline">fixed</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Makes the toolbar fixed</div>
-					</li>
-				</ul>
-
+				<div className="mdc-typography--display2">Components and their props</div>
+				<ComponentTable data={this.propsTable} />
 				<div className="mdc-typography--display2">Demo </div>
 				<div className="mdc-typography--title">Default </div>
 				<Toolbar className="toolbar">

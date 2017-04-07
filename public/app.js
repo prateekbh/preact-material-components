@@ -1636,10 +1636,11 @@ var Home = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Button__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Button_style_css__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Button_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_preact_material_components_Button_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ButtonsPage_css__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ButtonsPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__ButtonsPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Button_style_css__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Button_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Button_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ButtonsPage_css__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ButtonsPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ButtonsPage_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1653,13 +1654,35 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var ButtonsPage = function (_Component) {
 	_inherits(ButtonsPage, _Component);
 
 	function ButtonsPage() {
 		_classCallCheck(this, ButtonsPage);
 
-		return _possibleConstructorReturn(this, (ButtonsPage.__proto__ || Object.getPrototypeOf(ButtonsPage)).apply(this, arguments));
+		var _this = _possibleConstructorReturn(this, (ButtonsPage.__proto__ || Object.getPrototypeOf(ButtonsPage)).call(this));
+
+		_this.propsTable = [{
+			component: 'Button',
+			props: [{
+				name: 'ripple',
+				description: 'Adds riple effect to the button'
+			}, {
+				name: 'primary',
+				description: 'Adds primary colors to the button'
+			}, {
+				name: 'accent',
+				description: 'Adds accent colors to the button'
+			}, {
+				name: 'dense',
+				description: 'Adds dense padding to the button'
+			}, {
+				name: 'compact',
+				description: 'Adds compact padding to the button'
+			}]
+		}];
+		return _this;
 	}
 
 	_createClass(ButtonsPage, [{
@@ -1671,107 +1694,9 @@ var ButtonsPage = function (_Component) {
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display2' },
-					'Props '
+					'Props Table'
 				),
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					'ul',
-					{ className: 'props' },
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						'li',
-						{ className: 'prop' },
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--headline' },
-							'ripple'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--subheading1' },
-							'true/false'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--body1' },
-							'Adds riple effect to the button'
-						)
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						'li',
-						{ className: 'prop' },
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--headline' },
-							'accent'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--subheading1' },
-							'true/false'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--body1' },
-							'Adds accent colors to the button'
-						)
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						'li',
-						{ className: 'prop' },
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--headline' },
-							'primary'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--subheading1' },
-							'true/false'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--body1' },
-							'Adds primary colors to the button'
-						)
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						'li',
-						{ className: 'prop' },
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--headline' },
-							'dense'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--subheading1' },
-							'true/false'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--body1' },
-							'Adds dense padding to the button'
-						)
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						'li',
-						{ className: 'prop' },
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--headline' },
-							'compact'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--subheading1' },
-							'true/false'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--body1' },
-							'Adds compact padding to the button'
-						)
-					)
-				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display2' },
@@ -9449,10 +9374,11 @@ Toolbar.Row = ToolbarRow;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Toolbar__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_Icon__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar_style_css__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ToolbarPage_css__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ToolbarPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ToolbarPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ComponentTable_jsx__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Toolbar_style_css__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Toolbar_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ToolbarPage_css__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ToolbarPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__ToolbarPage_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9467,13 +9393,38 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var ToolbarPage = function (_Component) {
 	_inherits(ToolbarPage, _Component);
 
 	function ToolbarPage() {
 		_classCallCheck(this, ToolbarPage);
 
-		return _possibleConstructorReturn(this, (ToolbarPage.__proto__ || Object.getPrototypeOf(ToolbarPage)).apply(this, arguments));
+		var _this = _possibleConstructorReturn(this, (ToolbarPage.__proto__ || Object.getPrototypeOf(ToolbarPage)).call(this));
+
+		_this.propsTable = [{
+			component: 'Toolbar',
+			props: [{
+				name: 'fixed',
+				description: 'Makes the toolbar fixed'
+			}]
+		}, {
+			component: 'Toolbar.Row'
+		}, {
+			component: 'Toolbar.Section',
+			props: [{
+				name: 'align-start',
+				description: 'Aligns the section to start of the toolbar row'
+			}, {
+				name: 'align-end',
+				description: 'Aligns the section to end of the toolbar row'
+			}]
+		}, {
+			component: 'Toolbar.Icon'
+		}, {
+			component: 'Toolbar.Title'
+		}];
+		return _this;
 	}
 
 	_createClass(ToolbarPage, [{
@@ -9485,31 +9436,9 @@ var ToolbarPage = function (_Component) {
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display2' },
-					'Props '
+					'Components and their props'
 				),
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					'ul',
-					{ className: 'props' },
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						'li',
-						{ className: 'prop' },
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--headline' },
-							'fixed'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--subheading1' },
-							'true/false'
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							'div',
-							{ className: 'mdc-typography--body1' },
-							'Makes the toolbar fixed'
-						)
-					)
-				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display2' },
@@ -9565,6 +9494,93 @@ var ToolbarPage = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 137 */,
+/* 138 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var ComponentTable = function (_Component) {
+	_inherits(ComponentTable, _Component);
+
+	function ComponentTable() {
+		_classCallCheck(this, ComponentTable);
+
+		return _possibleConstructorReturn(this, (ComponentTable.__proto__ || Object.getPrototypeOf(ComponentTable)).apply(this, arguments));
+	}
+
+	_createClass(ComponentTable, [{
+		key: "render",
+		value: function render() {
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				"ul",
+				null,
+				this.props.data.map(function (component) {
+					return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						"li",
+						null,
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							"div",
+							{ className: "mdc-typography--headline" },
+							component.component
+						),
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							"ul",
+							null,
+							component.props && component.props.map(function (prop) {
+								return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+									"li",
+									null,
+									__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+										"div",
+										null,
+										__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+											"div",
+											null,
+											__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+												"span",
+												{ className: "mdc-typography--title" },
+												prop.name,
+												" "
+											),
+											__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+												"span",
+												{ className: "mdc-typography--body2" },
+												prop.value || 'true/false'
+											)
+										),
+										__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+											"div",
+											{ className: "mdc-typography--caption" },
+											prop.description
+										)
+									)
+								);
+							})
+						)
+					);
+				})
+			);
+		}
+	}]);
+
+	return ComponentTable;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (ComponentTable);
 
 /***/ })
 ],[31]);
