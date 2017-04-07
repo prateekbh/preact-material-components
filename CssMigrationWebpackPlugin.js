@@ -4,30 +4,9 @@ const cp = require('cp');
 const path = require('path');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
+const bundleMapping = require('./componentsList');
 const srcPath = path.join(__dirname, 'node_modules', '@material');
 
-const bundleMapping = {
-	Button: 'button',
-	Card: 'card',
-	Checkbox: 'checkbox',
-	Dialog: 'dialog',
-	Drawer: 'drawer',
-	Elevation: 'elevation',
-	Fab: 'fab',
-	FormField: 'form-field',
-	Icon: 'icon-toggle',
-	IconToggle: 'icon-toggle',
-	List: 'list',
-	Menu: 'menu',
-	Radio: 'radio',
-	Select: 'select',
-	Snackbar: 'snackbar',
-	Switch: 'switch',
-	Textfield: 'textfield',
-	Toolbar: 'toolbar',
-	Theme: 'theme',
-	Typography: 'typography'
-};
 
 class CssMigrationWebpackPlugin{
 	copySuperCss() {

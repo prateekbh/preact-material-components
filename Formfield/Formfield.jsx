@@ -5,7 +5,7 @@ import MaterialComponent from "../MaterialComponent";
  * @prop mini = false
  * @prop plain = false
  */
-export default class FormField extends MaterialComponent {
+export default class Formfield extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "form-field";

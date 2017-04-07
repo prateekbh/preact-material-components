@@ -6,7 +6,7 @@ import { MDCTextfield } from "@material/textfield/";
  * @prop fullwidth = false
  * @prop multiline = false
  */
-export default class Fab extends MaterialComponent {
+export default class Textfield extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "textfield";
