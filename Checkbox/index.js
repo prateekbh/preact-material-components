@@ -12,9 +12,10 @@ export default class Checkbox extends MaterialComponent {
 	componentDidMount() {
 		this.MDComponent = new MDCCheckbox(this.control);
 	}
-	materialDom(props) {
+	materialDom(allprops) {
+		const {className, ...props} = allprops;
 		return (
-				<div className="mdc-checkbox" ref={control=>{this.control = control;}}>
+				<div className={"mdc-checkbox " + className} ref={control=>{this.control = control;}}>
 					<input
 						type="checkbox"
 						className="mdc-checkbox__native-control"

@@ -14,9 +14,10 @@ export default class Radio extends MaterialComponent {
 	componentDidMount() {
 		this.MDComponent =  MDCRadio.attachTo(this.control);
 	}
-	materialDom(props) {
+	materialDom(allprops) {
+		const {className, ...props} = allprops;
 		return (
-		<div ref={control=>{this.control = control;}}>
+		<div className={className + ''} ref={control=>{this.control = control;}}>
 			<input className="mdc-radio__native-control" type="radio" {...props} />
 			<div className="mdc-radio__background">
 				<div className="mdc-radio__outer-circle"></div>

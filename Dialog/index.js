@@ -88,7 +88,7 @@ class DialogFooterButton extends Button {
 	}
 	materialDom(props) {
 		return (
-			<button className="mdc-button" ref={control=>{this.control = control;}}>
+			<button {...props} className="mdc-button" ref={control=>{this.control = control;}}>
 				{props.children}
 			</button>
 		);

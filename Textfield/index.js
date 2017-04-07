@@ -21,9 +21,10 @@ export default class Fab extends MaterialComponent {
 		});
 		this.MDComponent = new MDCTextfield(this.control);
 	}
-	materialDom(props) {
+	materialDom(allprops) {
+		const {className, ...props} = allprops;
 		return (
-			<div ref={control => this.control = control}>
+			<div className={className + ''} ref={control => this.control = control}>
 				{
 					props.multiline ?
 						<textarea className="mdc-textfield__input" {...props}></textarea> :

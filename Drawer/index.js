@@ -14,7 +14,7 @@ class TemporaryDrawer extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<aside className="mdc-typography" ref={control=>{this.control = control;}} {...props}>
-				<nav class="mdc-temporary-drawer__drawer">
+				<nav className="mdc-temporary-drawer__drawer">
 					{props.children}
 				</nav>
 			</aside>
@@ -30,7 +30,7 @@ class TemporaryDrawerHeader extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<header ref={control=>{this.control = control;}} {...props}>
-				<div class="mdc-temporary-drawer__header-content">
+				<div className="mdc-temporary-drawer__header-content">
 					{props.children}
 				</div>
 			</header>
@@ -62,10 +62,10 @@ class PermanentDrawer extends MaterialComponent {
 	}
 	materialDom(props) {
 		return (
-			<nav className="mdc-typography">
-				{props.spacer && <div class="mdc-permanent-drawer__toolbar-spacer"></div>}
-				<div class="mdc-permanent-drawer__content">
-					<nav class="mdc-list">
+			<nav className="mdc-typography" {...props}>
+				{props.spacer && <div className="mdc-permanent-drawer__toolbar-spacer"></div>}
+				<div className="mdc-permanent-drawer__content">
+					<nav className="mdc-list">
 						{props.children}
 					</nav>
 				</div>

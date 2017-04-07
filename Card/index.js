@@ -7,13 +7,6 @@ class Card extends MaterialComponent {
 		this.componentName = "card";
 		this._mdcProps=["theme-dark"];
 	}
-	materialDom(props) {
-		return (
-			<div {...props}>
-				{props.children}
-			</div>
-		);
-	}
 }
 
 class CardSection extends MaterialComponent {
@@ -66,7 +59,7 @@ class CardAction extends Button {
 	}
 	materialDom(props) {
 		return (
-			<button className="mdc-button mdc-button--compact" ref={control=>{this.control = control;}}>
+			<button className="mdc-button mdc-button--compact" {...props} ref={control=>{this.control = control;}}>
 				{props.children}
 			</button>
 		);
@@ -81,7 +74,7 @@ class CardTitle extends MaterialComponent {
 	}
 	materialDom(props) {
 		return (
-			<h1>
+			<h1 {...props}>
 				{props.children}
 			</h1>
 		);
@@ -95,7 +88,7 @@ class CardSubtitle extends MaterialComponent {
 	}
 	materialDom(props) {
 		return (
-			<h2>
+			<h2 {...props}>
 				{props.children}
 			</h2>
 		);

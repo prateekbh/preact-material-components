@@ -14,7 +14,7 @@ class List extends MaterialComponent {
 	}
 	materialDom(props) {
 		if (props.interactive) {
-			return (<nav ref={control => this.control = control}>
+			return (<nav ref={control => this.control = control} {...props}>
 				{props.children}
 			</nav>);
 		}

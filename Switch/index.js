@@ -10,9 +10,10 @@ export default class Switch extends MaterialComponent {
 		this.componentName = "switch";
 		this._mdcProps = ["disabled"];
 	}
-	materialDom(props) {
+	materialDom(allprops) {
+		const {className, ...props} = allprops;
 		return (
-			<div>
+			<div className={className + ''}>
 				<input type="checkbox" id="basic-switch" className="mdc-switch__native-control" {...props} />
 				<div className="mdc-switch__background">
 					<div className="mdc-switch__knob"></div>
