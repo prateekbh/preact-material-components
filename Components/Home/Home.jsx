@@ -21,6 +21,7 @@ import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
 import 'preact-material-components/Drawer/style.css';
 import 'preact-material-components/List/style.css';
+import 'preact-material-components/Theme/style.css';
 import './Home.css';
 
 export default class Home extends Component {
@@ -51,7 +52,11 @@ export default class Home extends Component {
 		this.setState({
 			darkMode: !this.state.darkMode
 		});
-		console.log(this.state.darkMode);
+		if (this.state.darkMode) {
+			document.body.classList.add('mdc-theme--dark');
+		} else {
+			document.body.classList.remove('mdc-theme--dark');
+		}
 	}
 	render(){
 		return (

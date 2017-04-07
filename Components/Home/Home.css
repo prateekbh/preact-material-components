@@ -44,3 +44,7 @@
 		margin-left: 8px;
 	}
 }
+
+.mdc-theme--dark{
+	background-color: #aaa;
+}

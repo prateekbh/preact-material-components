@@ -270,9 +270,9 @@ var List = function (_MaterialComponent) {
 			if (props.interactive) {
 				return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"nav",
-					{ ref: function ref(control) {
+					_extends({ ref: function ref(control) {
 							return _this2.control = control;
-						} },
+						} }, props),
 					props.children
 				);
 			}
@@ -1111,8 +1111,8 @@ var Switch = function (_MaterialComponent) {
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"div",
-				null,
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ type: "checkbox", id: "basic-switch", className: "mdc-switch__native-control " + className }, props)),
+				{ className: className + '' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ type: "checkbox", id: "basic-switch", className: "mdc-switch__native-control" }, props)),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"div",
 					{ className: "mdc-switch__background" },
@@ -1160,8 +1160,10 @@ var Switch = function (_MaterialComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_preact_material_components_Toolbar_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_preact_material_components_Drawer_style_css__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_preact_material_components_Drawer_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__Home_css__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22__Home_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_preact_material_components_Theme_style_css__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_preact_material_components_Theme_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_preact_material_components_Theme_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__Home_css__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23__Home_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1169,6 +1171,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -1238,7 +1241,11 @@ var Home = function (_Component) {
 			this.setState({
 				darkMode: !this.state.darkMode
 			});
-			console.log(this.state.darkMode);
+			if (this.state.darkMode) {
+				document.body.classList.add('mdc-theme--dark');
+			} else {
+				document.body.classList.remove('mdc-theme--dark');
+			}
 		}
 	}, {
 		key: 'render',
@@ -7613,6 +7620,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -7645,12 +7654,15 @@ var Checkbox = function (_MaterialComponent) {
 		}
 	}, {
 		key: "materialDom",
-		value: function materialDom(props) {
+		value: function materialDom(allprops) {
 			var _this2 = this;
+
+			var className = allprops.className,
+			    props = _objectWithoutProperties(allprops, ["className"]);
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"div",
-				{ className: "mdc-checkbox", ref: function ref(control) {
+				{ className: "mdc-checkbox " + className, ref: function ref(control) {
 						_this2.control = control;
 					} },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({
@@ -7871,9 +7883,9 @@ var DialogFooterButton = function (_Button) {
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"button",
-				{ className: "mdc-button", ref: function ref(control) {
+				_extends({}, props, { className: "mdc-button", ref: function ref(control) {
 						_this7.control = control;
-					} },
+					} }),
 				props.children
 			);
 		}
@@ -7945,7 +7957,7 @@ var TemporaryDrawer = function (_MaterialComponent) {
 					} }, props),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"nav",
-					{ "class": "mdc-temporary-drawer__drawer" },
+					{ className: "mdc-temporary-drawer__drawer" },
 					props.children
 				)
 			);
@@ -7979,7 +7991,7 @@ var TemporaryDrawerHeader = function (_MaterialComponent2) {
 					} }, props),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"div",
-					{ "class": "mdc-temporary-drawer__header-content" },
+					{ className: "mdc-temporary-drawer__header-content" },
 					props.children
 				)
 			);
@@ -8041,14 +8053,14 @@ var PermanentDrawer = function (_MaterialComponent4) {
 		value: function materialDom(props) {
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"nav",
-				{ className: "mdc-typography" },
-				props.spacer && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-permanent-drawer__toolbar-spacer" }),
+				_extends({ className: "mdc-typography" }, props),
+				props.spacer && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { className: "mdc-permanent-drawer__toolbar-spacer" }),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"div",
-					{ "class": "mdc-permanent-drawer__content" },
+					{ className: "mdc-permanent-drawer__content" },
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 						"nav",
-						{ "class": "mdc-list" },
+						{ className: "mdc-list" },
 						props.children
 					)
 				)
@@ -8239,6 +8251,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -8273,12 +8287,15 @@ var Radio = function (_MaterialComponent) {
 		}
 	}, {
 		key: "materialDom",
-		value: function materialDom(props) {
+		value: function materialDom(allprops) {
 			var _this2 = this;
+
+			var className = allprops.className,
+			    props = _objectWithoutProperties(allprops, ["className"]);
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"div",
-				{ ref: function ref(control) {
+				{ className: className + '', ref: function ref(control) {
 						_this2.control = control;
 					} },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", _extends({ className: "mdc-radio__native-control", type: "radio" }, props)),
@@ -8354,7 +8371,7 @@ var Select = function (_MaterialComponent) {
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"div",
-				_extends({ role: "listbox", tabindex: "0" }, props, { ref: function ref(control) {
+				_extends({ role: "listbox" }, props, { ref: function ref(control) {
 						_this3.control = control;
 					} }),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -8391,6 +8408,8 @@ Select.Item = __WEBPACK_IMPORTED_MODULE_3__List__["a" /* default */].Item;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MaterialComponent__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_snackbar___ = __webpack_require__(55);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8431,14 +8450,13 @@ var Snackbar = function (_MaterialComponent) {
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				"div",
-				{
+				_extends({
 					"aria-live": "assertive",
 					"aria-atomic": "true",
 					"aria-hidden": "true",
 					ref: function ref(control) {
 						return _this2.control = control;
-					}
-				},
+					} }, props),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { "class": "mdc-snackbar__text" }),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					"div",
