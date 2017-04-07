@@ -19,6 +19,7 @@ module.exports = {
 					plugins:[
 						["transform-react-jsx", { "pragma": "h" }],
 						"transform-async-to-generator",
+						"transform-object-rest-spread"
 					]
 				}
 			}
