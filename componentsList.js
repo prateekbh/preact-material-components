@@ -6,7 +6,7 @@ const bundleMapping = {
 	Drawer: 'drawer',
 	Elevation: 'elevation',
 	Fab: 'fab',
-	FormField: 'form-field',
+	Formfield: 'form-field',
 	Icon: 'icon-toggle',
 	IconToggle: 'icon-toggle',
 	List: 'list',
