@@ -38,7 +38,7 @@
     "material-components-web": "0.8.0"
   },
   "peerDependencies": {
-    "preact": "^7.2.0"
+    "preact": "^8.1.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
