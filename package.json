@@ -68,7 +68,7 @@
     "postcss-nested": "^1.0.0",
     "postcss-smart-import": "^0.6.10",
     "preact": "^8.1.0",
-    "preact-material-components": "^0.1.7",
+    "preact-material-components": "^0.2.0",
     "precss": "^1.4.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.2.1"
