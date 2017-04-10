@@ -1,29 +1,54 @@
 import {h, Component} from 'preact';
 import List from 'preact-material-components/List';
+import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/List/style.css';
 import './ListPage.css';
 export default class ListPage extends Component {
 	constructor(){
 		super();
+		this.propsTable = [
+			{
+				component: 'List',
+				props: [
+					{
+						name: 'dense',
+						description: 'Makes the list with lesser padding.'
+					},
+					{
+						name: 'two-line',
+						description: 'Makes container for two line list item.'
+					}
+				]
+			},
+			{
+				component: 'List.Item',
+				props: []
+			},
+			{
+				component: 'List.LinkItem',
+				props: []
+			},
+			{
+				component: 'List.LinkItem',
+				props: [
+					{
+						name: 'align-start',
+						description: 'Makes the Icon align to start.'
+					},
+					{
+						name: 'align-end',
+						description: 'Makes the Icon align to end.'
+					}
+				]
+			}
+		];
 	}
 	render(){
 		return (
 			<div className="page-list">
-				<div className="mdc-typography--display2">Props </div>
-				<ul className="props">
-					<li className="prop">
-						<div className="mdc-typography--headline">dense</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Makes the list with lesser padding</div>
-					</li>
-					<li className="prop">
-						<div className="mdc-typography--headline">two-line(not implemented yet)</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Makes container for two line list item</div>
-					</li>
-				</ul>
+				<ComponentTable data={this.propsTable}/>
 
-				<div className="mdc-typography--display2">Demo </div>
+				<div className="mdc-typography--display1">Demo </div>
 				<List>
 					<List.Item>Item1</List.Item>
 					<List.Item>Item2</List.Item>

@@ -1,26 +1,33 @@
 import {h, Component} from 'preact';
 import Textfield from 'preact-material-components/Textfield';
+import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Textfield/style.css';
 import './TextfieldPage.css';
 export default class TextfieldPage extends Component {
+	constructor(){
+		super();
+		this.propsTable = [
+			{
+				component: 'Textfield',
+				props: [
+					{
+						name: 'fullwidth',
+						description: 'Makes the textfield full width.'
+					},
+					{
+						name: 'multiline',
+						description: 'Toggles between TextArea and TextField.'
+					}
+				]
+			}
+		];
+	}
 	render(){
 		return (
 			<div className="page-textfield">
-				<div className="mdc-typography--display2">Props </div>
-				<ul className="props">
-					<li className="prop">
-						<div className="mdc-typography--headline">fullwidth</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Makes the textfield full width</div>
-					</li>
-					<li className="prop">
-						<div className="mdc-typography--headline">multiline</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Toggles between TextArea and TextField</div>
-					</li>
-				</ul>
+				<ComponentTable data={this.propsTable}/>
 
-				<div className="mdc-typography--display2">Demo </div>
+				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Default </div>
 				<Textfield label="Your name" onKeyUp={e=>{
 					this.setState({

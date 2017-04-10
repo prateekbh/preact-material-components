@@ -37,10 +37,9 @@ export default class ButtonsPage extends Component {
 	render(){
 		return (
 			<div className="page-buttons">
-				<div className="mdc-typography--display2">Props Table</div>
 				<ComponentTable data={this.propsTable} />
 
-				<div className="mdc-typography--display2">Demo </div>
+				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Flats </div>
 				<Button>Flat button without ripple</Button>
 				<Button ripple={true}>Flat button with ripple</Button>

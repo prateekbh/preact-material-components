@@ -1,25 +1,34 @@
 import {h, Component} from 'preact';
 import Select from 'preact-material-components/Select';
+import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Menu/style.css';
 import 'preact-material-components/Select/style.css';
 import './SelectPage.css';
 export default class SelectPage extends Component {
 	constructor(){
 		super();
+		this.propsTable = [
+			{
+				component: 'Select',
+				props: [
+					{
+						name: 'disabled',
+						description: 'Makes the select box disabled.'
+					}
+				]
+			},
+			{
+				component: 'Select.Item',
+				props: []
+			}
+		];
 	}
 	render(){
 		return (
 			<div className="page-select">
-				<div className="mdc-typography--display2">Props </div>
-				<ul className="props">
-					<li className="prop">
-						<div className="mdc-typography--headline">disabled</div>
-						<div className="mdc-typography--subheading1">true/false</div>
-						<div className="mdc-typography--body1">Makes the select box disabled</div>
-					</li>
-				</ul>
+				<ComponentTable data={this.propsTable}/>
 
-				<div className="mdc-typography--display2">Demo </div>
+				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Normal </div>
 				<Select hintText="Select">
 					<Select.Item>Option 1</Select.Item>

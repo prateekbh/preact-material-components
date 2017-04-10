@@ -1,10 +1,9 @@
 import {h, Component} from 'preact';
-import Toolbar from 'preact-material-components/Toolbar';
-import Icon from 'preact-material-components/Icon';
+import Card from 'preact-material-components/Card';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Toolbar/style.css';
-import './ToolbarPage.css';
-export default class ToolbarPage extends Component {
+import 'preact-material-components/Card/style.css';
+import './CardPage.css';
+export default class CardPage extends Component {
 	constructor() {
 		super();
 		this.propsTable = [
@@ -44,6 +43,7 @@ export default class ToolbarPage extends Component {
 	render(){
 		return (
 			<div className="page-toolbar">
+				<div className="mdc-typography--display2">Components and their props</div>
 				<ComponentTable data={this.propsTable} />
 				<div className="mdc-typography--display2">Demo </div>
 				<div className="mdc-typography--title">Default </div>

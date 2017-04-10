@@ -2,26 +2,65 @@ import {h, Component} from 'preact';
 import Dialog from 'preact-material-components/Dialog';
 import Button from 'preact-material-components/Button';
 import List from 'preact-material-components/List';
+import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/List/style.css';
 import 'preact-material-components/Button/style.css';
 import 'preact-material-components/Dialog/style.css';
 import './DialogPage.css';
 export default class DialogPage extends Component {
+	constructor() {
+		super();
+		this.propsTable = [
+			{
+				component: 'Dialog',
+				props: []
+			},
+			{
+				component: 'Dialog.Header',
+				props: []
+			},
+			{
+				component: 'Dialog.Body',
+				props: [
+					{
+						name: 'scrollable',
+						description: 'Adds vertical scroll for content.'
+					}
+				]
+			},
+			{
+				component: 'Dialog.Footer',
+				props: []
+			},
+			{
+				component: 'Dialog.FooterButton',
+				props: [
+					{
+						name: 'accept',
+						description: 'Makes the button, default button.'
+					},
+					{
+						name: 'cencel',
+						description: 'Makes the button, cancel button.'
+					}
+				]
+			}
+		];
+	}
 	render(){
 		return (
 			<div className="page-dialog">
-				<div className="mdc-typography--display2">Props </div>
-				<div className="mdc-typography--body1">none</div>
+				<ComponentTable data={this.propsTable}/>
 
-				<div className="mdc-typography--display2">Demo </div>
+				<div className="mdc-typography--display1">Demo </div>
 				<Button primary={true} raised={true} onClick={()=>{
-						this.normalDlg.MDComponent.show()
-					}}>
+					this.normalDlg.MDComponent.show();
+				}}>
 					Show Dialog
 				</Button>
 				<Button primary={true} raised={true} onClick={()=>{
-						this.scrollingDlg.MDComponent.show()
-					}}>
+					this.scrollingDlg.MDComponent.show();
+				}}>
 					Show Scrollable Dialog
 				</Button>
 				<Dialog ref={normalDlg=>{this.normalDlg=normalDlg;}}>
