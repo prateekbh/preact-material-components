@@ -9647,6 +9647,7 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
 .page-card .mdc-card{
     width: 90%;
     max-width: 400px;
+    margin: 16px;
 }
 .page-card .card-media{
     height: 300px;
