@@ -45,14 +45,14 @@ export default class ToolbarPage extends Component {
 		return (
 			<div className="page-toolbar">
 				<ComponentTable data={this.propsTable} />
-				<div className="mdc-typography--display2">Demo </div>
+				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Default </div>
 				<Toolbar className="toolbar">
 						<Toolbar.Row>
 							<Toolbar.Section align-start={true}>
 								<Toolbar.Icon >menu</Toolbar.Icon>
 								<Toolbar.Title>
-									Toolbar title
+									My App
 								</Toolbar.Title>
 							</Toolbar.Section>
 							<Toolbar.Section align-end={true}>

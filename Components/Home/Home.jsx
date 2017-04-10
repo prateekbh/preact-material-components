@@ -17,6 +17,7 @@ import SelectPage from '../SelectPage/SelectPage.jsx';
 import SnackbarPage from '../SnackbarPage/SnackbarPage.jsx';
 import TextfieldPage from '../TextfieldPage/TextfieldPage.jsx';
 import ToolbarPage from '../ToolbarPage/ToolbarPage.jsx';
+import CardPage from '../CardPage/CardPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/List/style.css';
 import 'preact-material-components/Icon/style.css';
@@ -122,93 +123,96 @@ export default class Home extends Component {
 										Home
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/button');
-										this.closeDrawer();
-									}}>
+									routie('/component/button');
+									this.closeDrawer();
+								}}>
 										<List.ItemIcon>code</List.ItemIcon>
 										Button
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/checkbox');
-										this.closeDrawer();
-									}}>
+									routie('/component/card');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Card
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+									routie('/component/checkbox');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Checkbox
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/dialog');
-										this.closeDrawer();
-									}}>
+									routie('/component/dialog');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Dialog
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/elevation');
-										this.closeDrawer();
-									}}>
+									routie('/component/elevation');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Elevation
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/fab');
-										this.closeDrawer();
-									}}>
+									routie('/component/fab');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Fab
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/list');
-										this.closeDrawer();
-									}}>
+									routie('/component/list');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									List
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/radio');
-										this.closeDrawer();
-									}}>
+									routie('/component/radio');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Radio
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/select');
-										this.closeDrawer();
-									}}>
+									routie('/component/select');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Select
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/snackbar');
-										this.closeDrawer();
-									}}>
+									routie('/component/snackbar');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Snackbar
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/switch');
-										this.closeDrawer();
-									}}>
+									routie('/component/switch');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Switch
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/textfield');
-										this.closeDrawer();
-									}}>
+									routie('/component/textfield');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Textfield
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
-										routie('/component/toolbar');
-										this.closeDrawer();
-									}}>
+									routie('/component/toolbar');
+									this.closeDrawer();
+								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Toolbar
 								</List.LinkItem>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
-									Card
-								</List.Item>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
 									Drawer
@@ -241,6 +245,7 @@ export default class Home extends Component {
 						{this.state.component === 'snackbar' && <SnackbarPage/>}
 						{this.state.component === 'textfield' && <TextfieldPage/>}
 						{this.state.component === 'toolbar' && <ToolbarPage/>}
+						{this.state.component === 'card' && <CardPage/>}
 					</div>
 
 			</div>
