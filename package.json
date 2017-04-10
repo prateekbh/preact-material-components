@@ -1,11 +1,12 @@
 {
   "name": "preact-material-components",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "node compileComponents.js && ./node_modules/.bin/webpack && npm run test ",
+		"build": "node compileComponents.js && ./node_modules/.bin/webpack",
+    "prepublish": "npm run build && npm run test ",
     "test": "npm run lint",
     "lint": "./node_modules/.bin/eslint src/"
   },

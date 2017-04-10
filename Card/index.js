@@ -1,3 +1,5 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Button from "../Button";
@@ -5,7 +7,7 @@ class Card extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "card";
-		this._mdcProps=["theme-dark"];
+		this._mdcProps = ["theme-dark"];
 	}
 }
 
@@ -15,10 +17,10 @@ class CardSection extends MaterialComponent {
 		this.componentName = "";
 	}
 	materialDom(props) {
-		return (
-			<section {...props}>
-				{props.children}
-			</section>
+		return h(
+			"section",
+			props,
+			props.children
 		);
 	}
 }
@@ -41,7 +43,7 @@ class CardActions extends CardSection {
 	constructor() {
 		super();
 		this.componentName = "card__actions";
-		this._mdcProps=["vertical"];
+		this._mdcProps = ["vertical"];
 	}
 }
 
@@ -58,10 +60,12 @@ class CardAction extends Button {
 		this.componentName = "card__action";
 	}
 	materialDom(props) {
-		return (
-			<button className="mdc-button mdc-button--compact" {...props} ref={control=>{this.control = control;}}>
-				{props.children}
-			</button>
+		return h(
+			"button",
+			_extends({ className: "mdc-button mdc-button--compact" }, props, { ref: control => {
+					this.control = control;
+				} }),
+			props.children
 		);
 	}
 }
@@ -70,13 +74,13 @@ class CardTitle extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "card__title";
-		this._mdcProps=["large"];
+		this._mdcProps = ["large"];
 	}
 	materialDom(props) {
-		return (
-			<h1 {...props}>
-				{props.children}
-			</h1>
+		return h(
+			"h1",
+			props,
+			props.children
 		);
 	}
 }
@@ -87,14 +91,13 @@ class CardSubtitle extends MaterialComponent {
 		this.componentName = "card__subtitle";
 	}
 	materialDom(props) {
-		return (
-			<h2 {...props}>
-				{props.children}
-			</h2>
+		return h(
+			"h2",
+			props,
+			props.children
 		);
 	}
 }
-
 
 Card.CardPrimary = CardPrimary;
 Card.CardSupportingText = CardSupportingText;
