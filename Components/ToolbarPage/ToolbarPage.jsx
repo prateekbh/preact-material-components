@@ -4,6 +4,8 @@ import Icon from 'preact-material-components/Icon';
 import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Toolbar/style.css';
 import './ToolbarPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class ToolbarPage extends Component {
 	constructor() {
 		super();
@@ -18,7 +20,8 @@ export default class ToolbarPage extends Component {
 				]
 			},
 			{
-				component: 'Toolbar.Row'
+				component: 'Toolbar.Row',
+				props: []
 			},
 			{
 				component: 'Toolbar.Section',
@@ -34,10 +37,12 @@ export default class ToolbarPage extends Component {
 				]
 			},
 			{
-				component: 'Toolbar.Icon'
+				component: 'Toolbar.Icon',
+				props: []
 			},
 			{
-				component: 'Toolbar.Title'
+				component: 'Toolbar.Title',
+				props: []
 			}
 		];
 	}
@@ -45,9 +50,17 @@ export default class ToolbarPage extends Component {
 		return (
 			<div className="page-toolbar">
 				<ComponentTable data={this.propsTable} />
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
+
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Default </div>
-				<Toolbar className="toolbar">
+					<Toolbar className="toolbar">
 						<Toolbar.Row>
 							<Toolbar.Section align-start={true}>
 								<Toolbar.Icon >menu</Toolbar.Icon>

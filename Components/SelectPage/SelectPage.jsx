@@ -4,6 +4,8 @@ import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Menu/style.css';
 import 'preact-material-components/Select/style.css';
 import './SelectPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class SelectPage extends Component {
 	constructor(){
 		super();
@@ -28,6 +30,13 @@ export default class SelectPage extends Component {
 			<div className="page-select">
 				<ComponentTable data={this.propsTable}/>
 
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
+
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Normal </div>
 				<Select hintText="Select">
@@ -43,6 +52,14 @@ export default class SelectPage extends Component {
 					<Select.Item>Option 3</Select.Item>
 					<Select.Item>Option 4</Select.Item>
 				</Select>
+
+				<div className="mdc-typography--title">Note </div>
+				<div className="mdc-typography--caption">
+					<div>
+							If you are using this component individually, DO NOT FORGET to import
+							<i> 'preact-material-components/Menu/style.css'</i> as well
+					</div>
+				</div>
 			</div>
 		);
 	}

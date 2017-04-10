@@ -1429,28 +1429,31 @@ module.exports = __webpack_amd_options__;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__CheckboxPage_CheckboxPage_jsx__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__SwitchPage_SwitchPage_jsx__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__DialogPage_DialogPage_jsx__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ElevationPage_ElevationPage_jsx__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__RadioPage_RadioPage_jsx__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ListPage_ListPage_jsx__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__SelectPage_SelectPage_jsx__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__SnackbarPage_SnackbarPage_jsx__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__TextfieldPage_TextfieldPage_jsx__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ToolbarPage_ToolbarPage_jsx__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__CardPage_CardPage_jsx__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__routie__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__routie__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_preact_material_components_List_style_css__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_preact_material_components_List_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_preact_material_components_Icon_style_css__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_preact_material_components_Icon_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_preact_material_components_Toolbar_style_css__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_preact_material_components_Toolbar_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_preact_material_components_Drawer_style_css__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_preact_material_components_Drawer_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_preact_material_components_Theme_style_css__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_preact_material_components_Theme_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25_preact_material_components_Theme_style_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__Home_css__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26__Home_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__DrawerPage_DrawerPage_jsx__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ElevationPage_ElevationPage_jsx__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__RadioPage_RadioPage_jsx__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ListPage_ListPage_jsx__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__SelectPage_SelectPage_jsx__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__SnackbarPage_SnackbarPage_jsx__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__TextfieldPage_TextfieldPage_jsx__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ToolbarPage_ToolbarPage_jsx__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__CardPage_CardPage_jsx__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__IconPage_IconPage_jsx__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__FormfieldPage_FormfieldPage_jsx__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__routie__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__routie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23__routie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_preact_material_components_List_style_css__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_preact_material_components_List_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_preact_material_components_Icon_style_css__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_preact_material_components_Icon_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25_preact_material_components_Icon_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_preact_material_components_Toolbar_style_css__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_preact_material_components_Toolbar_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_preact_material_components_Drawer_style_css__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_27_preact_material_components_Drawer_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_preact_material_components_Theme_style_css__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_preact_material_components_Theme_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_28_preact_material_components_Theme_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__Home_css__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_29__Home_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1458,6 +1461,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
 
 
 
@@ -1507,13 +1513,13 @@ var Home = function (_Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
-			__WEBPACK_IMPORTED_MODULE_20__routie___default()('/', function (component) {
+			__WEBPACK_IMPORTED_MODULE_23__routie___default()('/', function (component) {
 				_this2.setState({
 					component: null,
 					toolbarTitle: ""
 				});
 			});
-			__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/:name', function (component) {
+			__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/:name', function (component) {
 				_this2.setState({
 					component: component,
 					toolbarTitle: component
@@ -1653,7 +1659,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1666,7 +1672,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/button');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/button');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1679,7 +1685,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/card');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/card');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1692,7 +1698,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/checkbox');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/checkbox');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1705,7 +1711,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/dialog');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/dialog');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1718,7 +1724,20 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/elevation');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/drawer');
+										_this3.closeDrawer();
+									} },
+								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
+									null,
+									'code'
+								),
+								'Drawer'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/elevation');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1731,7 +1750,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/fab');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/fab');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1744,7 +1763,33 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/list');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/formfield');
+										_this3.closeDrawer();
+									} },
+								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
+									null,
+									'code'
+								),
+								'Formfield'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/icon');
+										_this3.closeDrawer();
+									} },
+								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
+									null,
+									'code'
+								),
+								'Icon'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
+								{ onClick: function onClick() {
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/list');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1757,7 +1802,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/radio');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/radio');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1770,7 +1815,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/select');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/select');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1783,7 +1828,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/snackbar');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/snackbar');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1796,7 +1841,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/switch');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/switch');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1809,7 +1854,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/textfield');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/textfield');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1822,7 +1867,7 @@ var Home = function (_Component) {
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].LinkItem,
 								{ onClick: function onClick() {
-										__WEBPACK_IMPORTED_MODULE_20__routie___default()('/component/toolbar');
+										__WEBPACK_IMPORTED_MODULE_23__routie___default()('/component/toolbar');
 										_this3.closeDrawer();
 									} },
 								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -1840,37 +1885,17 @@ var Home = function (_Component) {
 									null,
 									'code'
 								),
-								'Drawer'
-							),
-							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].Item,
-								null,
-								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
-									null,
-									'code'
-								),
-								'FormField'
-							),
-							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].Item,
-								null,
-								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
-									null,
-									'code'
-								),
-								'Icon'
-							),
-							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].Item,
-								null,
-								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
-									null,
-									'code'
-								),
 								'IconToggle'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].Item,
+								null,
+								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+									__WEBPACK_IMPORTED_MODULE_4_preact_material_components_List__["a" /* default */].ItemIcon,
+									null,
+									'code'
+								),
+								'Menu'
 							)
 						)
 					)
@@ -1880,17 +1905,20 @@ var Home = function (_Component) {
 					{ className: 'content' },
 					this.state.component === 'button' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_7__ButtonsPage_ButtonsPage_jsx__["a" /* default */], null),
 					this.state.component === 'fab' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_8__FabPage_FabPage_jsx__["a" /* default */], null),
+					this.state.component === 'card' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_20__CardPage_CardPage_jsx__["a" /* default */], null),
 					this.state.component === 'checkbox' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_9__CheckboxPage_CheckboxPage_jsx__["a" /* default */], null),
 					this.state.component === 'switch' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_10__SwitchPage_SwitchPage_jsx__["a" /* default */], null),
+					this.state.component === 'drawer' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_12__DrawerPage_DrawerPage_jsx__["a" /* default */], null),
 					this.state.component === 'dialog' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_11__DialogPage_DialogPage_jsx__["a" /* default */], null),
-					this.state.component === 'elevation' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_12__ElevationPage_ElevationPage_jsx__["a" /* default */], null),
-					this.state.component === 'radio' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_13__RadioPage_RadioPage_jsx__["a" /* default */], null),
-					this.state.component === 'list' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_14__ListPage_ListPage_jsx__["a" /* default */], null),
-					this.state.component === 'select' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_15__SelectPage_SelectPage_jsx__["a" /* default */], null),
-					this.state.component === 'snackbar' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_16__SnackbarPage_SnackbarPage_jsx__["a" /* default */], null),
-					this.state.component === 'textfield' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_17__TextfieldPage_TextfieldPage_jsx__["a" /* default */], null),
-					this.state.component === 'toolbar' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_18__ToolbarPage_ToolbarPage_jsx__["a" /* default */], null),
-					this.state.component === 'card' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_19__CardPage_CardPage_jsx__["a" /* default */], null)
+					this.state.component === 'elevation' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_13__ElevationPage_ElevationPage_jsx__["a" /* default */], null),
+					this.state.component === 'radio' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_14__RadioPage_RadioPage_jsx__["a" /* default */], null),
+					this.state.component === 'list' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_15__ListPage_ListPage_jsx__["a" /* default */], null),
+					this.state.component === 'select' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_16__SelectPage_SelectPage_jsx__["a" /* default */], null),
+					this.state.component === 'snackbar' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_17__SnackbarPage_SnackbarPage_jsx__["a" /* default */], null),
+					this.state.component === 'textfield' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_18__TextfieldPage_TextfieldPage_jsx__["a" /* default */], null),
+					this.state.component === 'toolbar' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_19__ToolbarPage_ToolbarPage_jsx__["a" /* default */], null),
+					this.state.component === 'icon' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_21__IconPage_IconPage_jsx__["a" /* default */], null),
+					this.state.component === 'formfield' && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_22__FormfieldPage_FormfieldPage_jsx__["a" /* default */], null)
 				)
 			);
 		}
@@ -2958,6 +2986,9 @@ var FabPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_List_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_List_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ListPage_css__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ListPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ListPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sample_txt__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__sample_txt__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2965,6 +2996,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -3015,6 +3048,20 @@ var ListPage = function (_Component) {
 				'div',
 				{ className: 'page-list' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_5__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_6__sample_txt___default.a
+					)
+				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display1' },
@@ -3103,6 +3150,9 @@ var ListPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Radio_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_preact_material_components_Radio_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__RadioPage_css__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__RadioPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__RadioPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sample_txt__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__sample_txt__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3110,6 +3160,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -3141,6 +3193,20 @@ var RadioPage = function (_Component) {
 				'div',
 				{ className: 'page-radio' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_7__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_8__sample_txt___default.a
+					)
+				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display1' },
@@ -3200,6 +3266,9 @@ var RadioPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Select_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Select_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SelectPage_css__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SelectPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__SelectPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sample_txt__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__sample_txt__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3207,6 +3276,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -3243,6 +3314,20 @@ var SelectPage = function (_Component) {
 				'div',
 				{ className: 'page-select' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_6__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_7__sample_txt___default.a
+					)
+				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display1' },
@@ -3305,6 +3390,26 @@ var SelectPage = function (_Component) {
 						null,
 						'Option 4'
 					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--title' },
+					'Note '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--caption' },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'div',
+						null,
+						'If you are using this component individually, DO NOT FORGET to import',
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'i',
+							null,
+							' \'preact-material-components/Menu/style.css\''
+						),
+						' as well'
+					)
 				)
 			);
 		}
@@ -3331,6 +3436,9 @@ var SelectPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Snackbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_preact_material_components_Snackbar_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SnackbarPage_css__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SnackbarPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__SnackbarPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sample_txt__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__sample_txt__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3338,6 +3446,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -3371,6 +3481,20 @@ var SnackbarPage = function (_Component) {
 				'div',
 				{ className: 'page-snackbar' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_7__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_8__sample_txt___default.a
+					)
+				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display1' },
@@ -3412,6 +3536,9 @@ var SnackbarPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Switch_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Switch_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SwitchPage_css__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SwitchPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__SwitchPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sample_txt__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__sample_txt__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3419,6 +3546,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -3452,6 +3581,20 @@ var SwitchPage = function (_Component) {
 				'div',
 				{ className: 'page-switch' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_6__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_7__sample_txt___default.a
+					)
+				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display1' },
@@ -3491,6 +3634,9 @@ var SwitchPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Textfield_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Textfield_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__TextfieldPage_css__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__TextfieldPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__TextfieldPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sample_txt__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__sample_txt__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3498,6 +3644,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -3535,6 +3683,20 @@ var TextfieldPage = function (_Component) {
 				'div',
 				{ className: 'page-textfield' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_5__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_6__sample_txt___default.a
+					)
+				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display1' },
@@ -3581,6 +3743,9 @@ var TextfieldPage = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Toolbar_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Toolbar_style_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ToolbarPage_css__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ToolbarPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__ToolbarPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sample_txt__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__sample_txt__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3588,6 +3753,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -3611,7 +3778,8 @@ var ToolbarPage = function (_Component) {
 				description: 'Makes the toolbar fixed'
 			}]
 		}, {
-			component: 'Toolbar.Row'
+			component: 'Toolbar.Row',
+			props: []
 		}, {
 			component: 'Toolbar.Section',
 			props: [{
@@ -3622,9 +3790,11 @@ var ToolbarPage = function (_Component) {
 				description: 'Aligns the section to end of the toolbar row'
 			}]
 		}, {
-			component: 'Toolbar.Icon'
+			component: 'Toolbar.Icon',
+			props: []
 		}, {
-			component: 'Toolbar.Title'
+			component: 'Toolbar.Title',
+			props: []
 		}];
 		return _this;
 	}
@@ -3636,6 +3806,20 @@ var ToolbarPage = function (_Component) {
 				'div',
 				{ className: 'page-toolbar' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_6__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_7__sample_txt___default.a
+					)
+				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 					'div',
 					{ className: 'mdc-typography--display1' },
@@ -11117,6 +11301,421 @@ module.exports = "import {h, Component} from 'preact';\nimport Elevation from 'p
 /***/ (function(module, exports) {
 
 module.exports = "import {h, Component} from 'preact';\nimport Fab from 'preact-material-components/Fab';\nimport 'preact-material-components/Fab/style.css';\n\nexport default class FabPage extends Component {\n  render(){\n    return (\n      <div>\n        <Fab>\n          <Icon>favorite_border</Icon>\n        </Fab>\n        <Fab ripple={true}>\n          <Icon>favorite_border</Icon>\n        </Fab>\n        <Fab mini={true}>\n          <Icon>favorite_border</Icon>\n        </Fab>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 160 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport List from 'preact-material-components/List';\nimport 'preact-material-components/List/style.css';\n\nexport default class ListPage extends Component {\n  render(){\n    return (\n      <div>\n        <List>\n          <List.Item>Item1</List.Item>\n          <List.Item>Item2</List.Item>\n          <List.Item>Item3</List.Item>\n          <List.Item>Item4</List.Item>\n          <List.Item>Item5</List.Item>\n        </List>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport List from 'preact-material-components/List';\nimport FormField from 'preact-material-components/FormField';\nimport 'preact-material-components/FormField/style.css';\nimport 'preact-material-components/List/style.css';\n\nexport default class ListPage extends Component {\n  render(){\n    return (\n      <div>\n        <FormField>\n          <Radio id=\"r1\" name='opts'></Radio>\n          <label for=\"r1\">Radio 1</label>\n        </FormField>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport Select from 'preact-material-components/Select';\nimport 'preact-material-components/Menu/style.css';\nimport 'preact-material-components/Select/style.css';\n\nexport default class SelectPage extends Component {\n  render(){\n    return (\n      <div>\n        <Select hintText=\"Select\" ref={select=>{this.select = select;}} onChange={e=>{\n          console.log(this.select.MDComponent.selectedIndex);\n        }}>\n          <Select.Item>Option 1</Select.Item>\n          <Select.Item>Option 2</Select.Item>\n          <Select.Item>Option 3</Select.Item>\n          <Select.Item>Option 4</Select.Item>\n        </Select>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 163 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport Snackbar from 'preact-material-components/Snackbar';\nimport Button from 'preact-material-components/Button';\nimport 'preact-material-components/Button/style.css';\nimport 'preact-material-components/Snackbar/style.css';\n\nexport default class SnackbarPage extends Component {\n  render(){\n    return (\n      <div>\n        <Button raised={true} primary={true} onClick={()=>{\n          this.bar.MDComponent.show({\n            message: \"Hello Snack!\"\n          });\n        }}>\n            Show snack\n        </Button>\n        <Snackbar ref={bar=>{this.bar=bar;}}/>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport Switch from 'preact-material-components/Switch';\nimport 'preact-material-components/Switch/style.css';\n\nexport default class SwitchPage extends Component {\n  render(){\n    return (\n      <div>\n        <Switch/>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport Textfield from 'preact-material-components/Textfield';\nimport 'preact-material-components/Textfield/style.css';\n\nexport default class TextfieldPage extends Component {\n  render(){\n    return (\n      <div>\n        <Textfield multiline={true} label=\"Textarea tag\"/>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport Switch from 'preact-material-components/Switch';\nimport 'preact-material-components/Switch/style.css';\n\nexport default class SwitchPage extends Component {\n  render(){\n    return (\n      <div>\n        <Toolbar className=\"toolbar\">\n            <Toolbar.Row>\n              <Toolbar.Section align-start={true}>\n                <Toolbar.Icon >menu</Toolbar.Icon>\n                <Toolbar.Title>\n                  My App\n                </Toolbar.Title>\n              </Toolbar.Section>\n              <Toolbar.Section align-end={true}>\n                <Icon>more_vert</Icon>\n              </Toolbar.Section>\n            </Toolbar.Row>\n          </Toolbar>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 167 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Drawer__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer_style_css__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Drawer_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__DrawerPage_css__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__DrawerPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__DrawerPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sample_txt__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__sample_txt__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+var DrawerPage = function (_Component) {
+	_inherits(DrawerPage, _Component);
+
+	function DrawerPage() {
+		_classCallCheck(this, DrawerPage);
+
+		var _this = _possibleConstructorReturn(this, (DrawerPage.__proto__ || Object.getPrototypeOf(DrawerPage)).call(this));
+
+		_this.propsTable = [{
+			component: 'Drawer.TemporaryDrawer',
+			props: []
+		}, {
+			component: 'Drawer.TemporaryDrawerHeader',
+			props: []
+		}, {
+			component: 'Drawer.TemporaryDrawerContent',
+			props: []
+		}, {
+			component: 'Drawer.DrawerItem',
+			props: [{
+				name: 'selected',
+				description: 'Tells if the drawer item is selected.'
+			}]
+		}, {
+			component: 'Drawer.PermanentDrawer',
+			props: [{
+				name: 'spacer',
+				description: 'Teels if the tollbar height equivalent spacer is required.'
+			}]
+		}];
+		return _this;
+	}
+
+	_createClass(DrawerPage, [{
+		key: 'render',
+		value: function render() {
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'div',
+				{ className: 'page-toolbar' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_5__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_6__sample_txt___default.a
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Demo '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--title' },
+					'not available '
+				)
+			);
+		}
+	}]);
+
+	return DrawerPage;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (DrawerPage);
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 169 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport Switch from 'preact-material-components/Switch';\nimport 'preact-material-components/Switch/style.css';\n\nexport default class SwitchPage extends Component {\n  render(){\n    return (\n      <div>\n        <Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}} >\n          <Drawer.TemporaryDrawerHeader className=\"mdc-theme--primary-bg\">\n            Components\n          </Drawer.TemporaryDrawerHeader>\n          <Drawer.TemporaryDrawerContent>\n            <List>\n              <List.LinkItem>\n                  <List.ItemIcon>home</List.ItemIcon>\n                  Home\n              </List.LinkItem>\n            </List>\n          </Drawer.TemporaryDrawerContent>\n        </Drawer.TemporaryDrawer>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 170 */,
+/* 171 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Icon__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__IconPage_css__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__IconPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__IconPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sample_txt__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__sample_txt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__linktag_txt__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__linktag_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__linktag_txt__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+var IconPage = function (_Component) {
+	_inherits(IconPage, _Component);
+
+	function IconPage() {
+		_classCallCheck(this, IconPage);
+
+		var _this = _possibleConstructorReturn(this, (IconPage.__proto__ || Object.getPrototypeOf(IconPage)).call(this));
+
+		_this.propsTable = [{
+			component: 'Icon',
+			props: []
+		}];
+		return _this;
+	}
+
+	_createClass(IconPage, [{
+		key: 'render',
+		value: function render() {
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'div',
+				{ className: 'page-list' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'linktag code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_4__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_5__sample_txt___default.a
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Demo '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						__WEBPACK_IMPORTED_MODULE_1_preact_material_components_Icon__["a" /* default */],
+						null,
+						'menu'
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						__WEBPACK_IMPORTED_MODULE_1_preact_material_components_Icon__["a" /* default */],
+						null,
+						'favorite_border'
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--title' },
+					'Note '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--caption' },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'div',
+						null,
+						'In order to use these you will need to import respective font icons '
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'div',
+						null,
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							__WEBPACK_IMPORTED_MODULE_4__CodeBlock_jsx__["a" /* default */],
+							null,
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								'code',
+								{ 'class': 'lang-html' },
+								__WEBPACK_IMPORTED_MODULE_6__linktag_txt___default.a
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return IconPage;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (IconPage);
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport Icon from 'preact-material-components/Icon';\n\nexport default class ListPage extends Component {\n  render(){\n    return (\n      <div>\n        <div><Icon>menu</Icon></div>\n        <div><Icon>favorite_border</Icon></div>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 174 */,
+/* 175 */
+/***/ (function(module, exports) {
+
+module.exports = "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\"/>"
+
+/***/ }),
+/* 176 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_material_components_Radio__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_material_components_FormField__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ComponentTable_jsx__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_FormField_style_css__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_preact_material_components_FormField_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_preact_material_components_FormField_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Radio_style_css__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_preact_material_components_Radio_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_preact_material_components_Radio_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__FormfieldPage_css__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__FormfieldPage_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__FormfieldPage_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CodeBlock_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sample_txt__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sample_txt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__sample_txt__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+var FormfieldPage = function (_Component) {
+	_inherits(FormfieldPage, _Component);
+
+	function FormfieldPage() {
+		_classCallCheck(this, FormfieldPage);
+
+		var _this = _possibleConstructorReturn(this, (FormfieldPage.__proto__ || Object.getPrototypeOf(FormfieldPage)).call(this));
+
+		_this.propsTable = [{
+			component: 'Formfield',
+			props: []
+		}];
+		return _this;
+	}
+
+	_createClass(FormfieldPage, [{
+		key: 'render',
+		value: function render() {
+			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'div',
+				{ className: 'page-radio' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__ComponentTable_jsx__["a" /* default */], { data: this.propsTable }),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Sample code '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_7__CodeBlock_jsx__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'code',
+						{ 'class': 'lang-js' },
+						__WEBPACK_IMPORTED_MODULE_8__sample_txt___default.a
+					)
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: 'mdc-typography--display1' },
+					'Demo '
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					__WEBPACK_IMPORTED_MODULE_2_preact_material_components_FormField__["a" /* default */],
+					null,
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1_preact_material_components_Radio__["a" /* default */], { id: 'r1', name: 'opts' }),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'label',
+						{ 'for': 'r1' },
+						'Radio 1'
+					)
+				)
+			);
+		}
+	}]);
+
+	return FormfieldPage;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (FormfieldPage);
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports) {
+
+module.exports = "import {h, Component} from 'preact';\nimport List from 'preact-material-components/List';\nimport FormField from 'preact-material-components/FormField';\nimport 'preact-material-components/FormField/style.css';\nimport 'preact-material-components/List/style.css';\n\nexport default class ListPage extends Component {\n  render(){\n    return (\n      <div>\n        <FormField>\n          <Radio id=\"r1\" name='opts'></Radio>\n          <label for=\"r1\">Radio 1</label>\n        </FormField>\n      </div>\n    );\n  }\n}\n"
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 ],[38]);

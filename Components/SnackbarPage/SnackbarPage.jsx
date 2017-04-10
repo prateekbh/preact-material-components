@@ -5,6 +5,8 @@ import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Button/style.css';
 import 'preact-material-components/Snackbar/style.css';
 import './SnackbarPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class SnackbarPage extends Component {
 	constructor(){
 		super();
@@ -19,6 +21,13 @@ export default class SnackbarPage extends Component {
 		return (
 			<div className="page-snackbar">
 				<ComponentTable data={this.propsTable}/>
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
 
 				<div className="mdc-typography--display1">Demo </div>
 				<Button raised={true} primary={true} onClick={()=>{

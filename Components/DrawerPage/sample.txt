@@ -1,0 +1,25 @@
+import {h, Component} from 'preact';
+import Switch from 'preact-material-components/Switch';
+import 'preact-material-components/Switch/style.css';
+
+export default class SwitchPage extends Component {
+  render(){
+    return (
+      <div>
+        <Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}} >
+          <Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
+            Components
+          </Drawer.TemporaryDrawerHeader>
+          <Drawer.TemporaryDrawerContent>
+            <List>
+              <List.LinkItem>
+                  <List.ItemIcon>home</List.ItemIcon>
+                  Home
+              </List.LinkItem>
+            </List>
+          </Drawer.TemporaryDrawerContent>
+        </Drawer.TemporaryDrawer>
+      </div>
+    );
+  }
+}

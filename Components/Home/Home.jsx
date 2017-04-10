@@ -10,6 +10,7 @@ import FabPage from '../FabPage/FabPage.jsx';
 import CheckboxPage from '../CheckboxPage/CheckboxPage.jsx';
 import SwitchPage from '../SwitchPage/SwitchPage.jsx';
 import DialogPage from '../DialogPage/DialogPage.jsx';
+import DrawerPage from '../DrawerPage/DrawerPage.jsx';
 import ElevationPage from '../ElevationPage/ElevationPage.jsx';
 import RadioPage from '../RadioPage/RadioPage.jsx';
 import ListPage from '../ListPage/ListPage.jsx';
@@ -18,6 +19,8 @@ import SnackbarPage from '../SnackbarPage/SnackbarPage.jsx';
 import TextfieldPage from '../TextfieldPage/TextfieldPage.jsx';
 import ToolbarPage from '../ToolbarPage/ToolbarPage.jsx';
 import CardPage from '../CardPage/CardPage.jsx';
+import IconPage from '../IconPage/IconPage.jsx';
+import FormfieldPage from '../FormfieldPage/FormfieldPage.jsx';
 import routie from '../routie';
 import 'preact-material-components/List/style.css';
 import 'preact-material-components/Icon/style.css';
@@ -151,6 +154,13 @@ export default class Home extends Component {
 									Dialog
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
+									routie('/component/drawer');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Drawer
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
 									routie('/component/elevation');
 									this.closeDrawer();
 								}}>
@@ -163,6 +173,20 @@ export default class Home extends Component {
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Fab
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+									routie('/component/formfield');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Formfield
+								</List.LinkItem>
+								<List.LinkItem onClick={()=>{
+									routie('/component/icon');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Icon
 								</List.LinkItem>
 								<List.LinkItem onClick={()=>{
 									routie('/component/list');
@@ -215,19 +239,11 @@ export default class Home extends Component {
 								</List.LinkItem>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
-									Drawer
-								</List.Item>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
-									FormField
-								</List.Item>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
-									Icon
-								</List.Item>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
 									IconToggle
+								</List.Item>
+								<List.Item>
+									<List.ItemIcon>code</List.ItemIcon>
+									Menu
 								</List.Item>
 							</List>
 						</Drawer.TemporaryDrawerContent>
@@ -235,8 +251,10 @@ export default class Home extends Component {
 					<div className="content">
 						{this.state.component === 'button' && <ButtonsPage/>}
 						{this.state.component === 'fab' && <FabPage/>}
+						{this.state.component === 'card' && <CardPage/>}
 						{this.state.component === 'checkbox' && <CheckboxPage/>}
 						{this.state.component === 'switch' && <SwitchPage/>}
+						{this.state.component === 'drawer' && <DrawerPage/>}
 						{this.state.component === 'dialog' && <DialogPage/>}
 						{this.state.component === 'elevation' && <ElevationPage/>}
 						{this.state.component === 'radio' && <RadioPage/>}
@@ -245,9 +263,9 @@ export default class Home extends Component {
 						{this.state.component === 'snackbar' && <SnackbarPage/>}
 						{this.state.component === 'textfield' && <TextfieldPage/>}
 						{this.state.component === 'toolbar' && <ToolbarPage/>}
-						{this.state.component === 'card' && <CardPage/>}
+						{this.state.component === 'icon' && <IconPage/>}
+						{this.state.component === 'formfield' && <FormfieldPage/>}
 					</div>
-
 			</div>
 		);
 	}

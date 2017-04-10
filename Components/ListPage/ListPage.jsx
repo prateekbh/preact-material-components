@@ -3,6 +3,8 @@ import List from 'preact-material-components/List';
 import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/List/style.css';
 import './ListPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class ListPage extends Component {
 	constructor(){
 		super();
@@ -47,6 +49,13 @@ export default class ListPage extends Component {
 		return (
 			<div className="page-list">
 				<ComponentTable data={this.propsTable}/>
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
 
 				<div className="mdc-typography--display1">Demo </div>
 				<List>

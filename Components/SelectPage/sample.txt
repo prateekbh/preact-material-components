@@ -1,0 +1,21 @@
+import {h, Component} from 'preact';
+import Select from 'preact-material-components/Select';
+import 'preact-material-components/Menu/style.css';
+import 'preact-material-components/Select/style.css';
+
+export default class SelectPage extends Component {
+  render(){
+    return (
+      <div>
+        <Select hintText="Select" ref={select=>{this.select = select;}} onChange={e=>{
+          console.log(this.select.MDComponent.selectedIndex);
+        }}>
+          <Select.Item>Option 1</Select.Item>
+          <Select.Item>Option 2</Select.Item>
+          <Select.Item>Option 3</Select.Item>
+          <Select.Item>Option 4</Select.Item>
+        </Select>
+      </div>
+    );
+  }
+}

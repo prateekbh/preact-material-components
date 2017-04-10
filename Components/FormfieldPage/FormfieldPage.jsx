@@ -4,15 +4,15 @@ import FormField from 'preact-material-components/FormField';
 import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/FormField/style.css';
 import 'preact-material-components/Radio/style.css';
-import './RadioPage.css';
+import './FormfieldPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';
-export default class RadioPage extends Component {
+export default class FormfieldPage extends Component {
 	constructor(){
 		super();
 		this.propsTable = [
 			{
-				component: 'Radio',
+				component: 'Formfield',
 				props: []
 			}
 		];
@@ -33,14 +33,6 @@ export default class RadioPage extends Component {
 				<FormField>
 					<Radio id="r1" name='opts'></Radio>
 					<label for="r1">Radio 1</label>
-				</FormField>
-				<FormField>
-					<Radio id="r2" name='opts'></Radio>
-					<label for="r2">Radio 2</label>
-				</FormField>
-				<FormField>
-					<Radio id="r3" name='opts' disabled={true}></Radio>
-					<label for="r3">Disabled Radio </label>
 				</FormField>
 
 			</div>

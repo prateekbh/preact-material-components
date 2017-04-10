@@ -3,6 +3,8 @@ import Textfield from 'preact-material-components/Textfield';
 import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Textfield/style.css';
 import './TextfieldPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class TextfieldPage extends Component {
 	constructor(){
 		super();
@@ -26,6 +28,13 @@ export default class TextfieldPage extends Component {
 		return (
 			<div className="page-textfield">
 				<ComponentTable data={this.propsTable}/>
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
 
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Default </div>
