@@ -49,7 +49,6 @@ class ToolbarIcon extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "toolbal__icon";
-		this._mdcProps = ["align-end"];
 	}
 	materialDom(props) {
 		return (
