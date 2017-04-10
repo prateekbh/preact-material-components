@@ -23,6 +23,9 @@ export default class ComponentTable extends Component {
 										);
 									})
 								}
+								{
+									component.props.length === 0 && <li><div className="mdc-typography--caption">no specific props</div></li>
+								}
 							</ul>
 						</li>);})}
 				</ul>

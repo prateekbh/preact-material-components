@@ -1,0 +1,20 @@
+import {h, Component} from 'preact';
+import Card from 'preact-material-components/Card';
+import 'preact-material-components/Card/style.css';
+
+export default class CardsPage extends Component {
+  render(){
+    return (
+      <Card>
+        <Card.CardPrimary>
+          <Card.Title>Hi</Card.Title>
+          <Card.Subtitle>Let me subtitle</Card.Subtitle>
+        </Card.CardPrimary>
+        <Card.Media className='card-media'></Card.Media>
+        <Card.Actions>
+          <Card.Action>OKAy</Card.Action>
+        </Card.Actions>
+      </Card>
+    );
+  }
+}

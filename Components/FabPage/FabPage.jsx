@@ -4,6 +4,8 @@ import Icon from 'preact-material-components/Icon';
 import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Fab/style.css';
 import './FabPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class FabPage extends Component {
 	constructor(){
 		super();
@@ -31,6 +33,13 @@ export default class FabPage extends Component {
 		return (
 			<div className="page-fab">
 				<ComponentTable data={this.propsTable}/>
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
 
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Defaults </div>

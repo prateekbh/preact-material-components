@@ -1,8 +1,11 @@
 import {h, Component} from 'preact';
 import Button from 'preact-material-components/Button';
 import ComponentTable from '../ComponentTable.jsx';
+import CodeBlock from '../CodeBlock.jsx';
 import 'preact-material-components/Button/style.css';
 import './ButtonsPage.css';
+import sample from './sample.txt';
+
 export default class ButtonsPage extends Component {
 	constructor() {
 		super();
@@ -35,9 +38,17 @@ export default class ButtonsPage extends Component {
 		];
 	}
 	render(){
+		console.log(sample);
 		return (
 			<div className="page-buttons">
 				<ComponentTable data={this.propsTable} />
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
 
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Flats </div>

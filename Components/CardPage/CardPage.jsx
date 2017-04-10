@@ -3,6 +3,8 @@ import Card from 'preact-material-components/Card';
 import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Card/style.css';
 import './CardPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class CardPage extends Component {
 	constructor() {
 		super();
@@ -22,6 +24,14 @@ export default class CardPage extends Component {
 		return (
 			<div className="page-card">
 				<ComponentTable data={this.propsTable} />
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
+
 				<div className="mdc-typography--display2">Demo </div>
 				<Card>
 					<Card.CardPrimary>

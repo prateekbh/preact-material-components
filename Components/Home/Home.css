@@ -1,4 +1,8 @@
 .home{
+	.name{
+		margin-bottom: 16px;
+		font-weight: 300;
+	}
 	.mdc-toolbar {
 		background-color: #2b313c;
 	}
@@ -7,9 +11,8 @@
 		background-color: #2b313c;
 		color: #fff;
 		text-align: center;
-		height: 40vh;
 		overflow: hidden;
-		max-height: 40vh;
+		max-height: 100vh;
 		transition-property: max-height;
 		will-change: max-height;
 		transition-duration: 300ms;

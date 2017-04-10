@@ -3,6 +3,8 @@ import Elevation from 'preact-material-components/Elevation';
 import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Elevation/style.css';
 import './ElevationPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class ElevationPage extends Component {
 	constructor(){
 		super();
@@ -22,6 +24,13 @@ export default class ElevationPage extends Component {
 		return (
 			<div className="page-elevation">
 				<ComponentTable data={this.propsTable}/>
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
 
 				<div className="mdc-typography--display1">Demo </div>
 				<Elevation z0={true}>Z0</Elevation>

@@ -6,6 +6,8 @@ import ComponentTable from '../ComponentTable.jsx';
 import 'preact-material-components/Button/style.css';
 import 'preact-material-components/Checkbox/style.css';
 import './CheckboxPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class CheckboxPage extends Component {
 	constructor() {
 		super();
@@ -21,6 +23,14 @@ export default class CheckboxPage extends Component {
 		return (
 			<div className="page-checkbox">
 				<ComponentTable data={this.propsTable}/>
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
+
 				<div className="mdc-typography--display1">Demo </div>
 				<FormField>
 					<Checkbox id="basic-checkbox-label" ref={cb=>{this.cb=cb;}}/>

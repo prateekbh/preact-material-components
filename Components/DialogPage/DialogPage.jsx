@@ -7,6 +7,8 @@ import 'preact-material-components/List/style.css';
 import 'preact-material-components/Button/style.css';
 import 'preact-material-components/Dialog/style.css';
 import './DialogPage.css';
+import CodeBlock from '../CodeBlock.jsx';
+import sample from './sample.txt';
 export default class DialogPage extends Component {
 	constructor() {
 		super();
@@ -51,6 +53,13 @@ export default class DialogPage extends Component {
 		return (
 			<div className="page-dialog">
 				<ComponentTable data={this.propsTable}/>
+
+				<div className="mdc-typography--display1">Sample code </div>
+				<CodeBlock>
+					<code class='lang-js' >
+						{sample}
+					</code>
+				</CodeBlock>
 
 				<div className="mdc-typography--display1">Demo </div>
 				<Button primary={true} raised={true} onClick={()=>{

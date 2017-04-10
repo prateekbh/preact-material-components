@@ -1,3 +1,77 @@
+/* Tomorrow Night Eighties Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #999999;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #f2777a;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f99157;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #ffcc66;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #99cc99;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #6699cc;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #cc99cc;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #2d2d2d;
+  color: #cccccc;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
 /*!
  Material Components for the web
  Copyright (c) 2017 Google Inc.
@@ -12341,6 +12415,13 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
 .mdc-theme--accent-bg {
   background-color: #ff4081 !important;
   background-color: var(--mdc-theme-accent, #ff4081) !important; }
+.home .name{
+
+    margin-bottom: 16px;
+
+    font-weight: 300;
+}
+
 .home .mdc-toolbar {
 
     background-color: #2b313c;
@@ -12356,11 +12437,9 @@ fieldset:disabled .mdc-radio__native-control + .mdc-radio__background,
 
     text-align: center;
 
-    height: 40vh;
-
     overflow: hidden;
 
-    max-height: 40vh;
+    max-height: 100vh;
 
     transition-property: max-height;
 
@@ -12651,13 +12730,15 @@ a{
 	text-decoration: none;
 }
 
-
 .mdc-toolbar__title{
 	padding-left: 8px;
 	text-transform: capitalize;
 }
 
-
 .mdc-theme--dark{
 	background-color: #333;
+}
+
+.highlight.highlight-js {
+	padding-right: 16px;
 }
