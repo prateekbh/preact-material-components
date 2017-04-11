@@ -37,6 +37,12 @@ export default class SelectPage extends Component {
 					</code>
 				</CodeBlock>
 
+				<div className="mdc-typography--display1">Original documentation</div>
+				<div className="mdc-typography--body">
+					This component encapsulates <span className="strong">mdc-select</span>, you can refer to its documentation
+					<a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-select"> here</a>.
+				</div>
+
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Normal </div>
 				<Select hintText="Select">

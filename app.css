@@ -23,3 +23,11 @@ a{
 .content{
 	padding-bottom: 32px;
 }
+
+.strong{
+	font-weight: 700;
+}
+
+.mdc-typography--display1{
+	margin-top: 32px;
+}

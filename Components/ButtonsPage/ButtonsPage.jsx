@@ -50,6 +50,12 @@ export default class ButtonsPage extends Component {
 					</code>
 				</CodeBlock>
 
+				<div className="mdc-typography--display1">Original documentation</div>
+				<div className="mdc-typography--body">
+					This component encapsulates <span className="strong">mdc-button</span>, you can refer to its documentation
+					<a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-button"> here</a>.
+				</div>
+
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Flats </div>
 				<Button>Flat button without ripple</Button>
@@ -74,6 +80,7 @@ export default class ButtonsPage extends Component {
 				<Button disabled={true} dense={true}>Dense Disabled button </Button>
 				<Button disabled={true} compact={true}>Compact Disabled button </Button>
 				<Button disabled={true} primary={true}>Primary Disabled button </Button>
+
 			</div>
 		);
 	}

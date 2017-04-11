@@ -36,6 +36,12 @@ export default class TextfieldPage extends Component {
 					</code>
 				</CodeBlock>
 
+				<div className="mdc-typography--display1">Original documentation</div>
+				<div className="mdc-typography--body">
+					This component encapsulates <span className="strong">mdc-textfield</span>, you can refer to its documentation
+					<a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield"> here</a>.
+				</div>
+
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Default </div>
 				<Textfield label="Your name" onKeyUp={e=>{
