@@ -14,7 +14,8 @@ import {
 	Dialog,
 	List,
 	Drawer,
-	Toolbar
+	Toolbar,
+	LayoutGrid
 } from "../";
 
 export default class Home extends Component {
@@ -28,42 +29,58 @@ export default class Home extends Component {
 					</Toolbar.Section>
 				</Toolbar.Row>
 			</Toolbar>
+
 			<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}}>
-				<Drawer.TemporarytDrawerHeader>Hello Header</Drawer.TemporarytDrawerHeader>
+				<Drawer.TemporaryDrawerHeader>Hello Header</Drawer.TemporaryDrawerHeader>
 				<Drawer.DrawerItem>Item1</Drawer.DrawerItem>
 				<Drawer.DrawerItem selected={true}>Item2</Drawer.DrawerItem>
 			</Drawer.TemporaryDrawer>
+
 			<Button raised={true} accent={true} ripple={true}
 				onClick={e=>{
 					this.drawer.MDComponent.open = true;
 				}}>hi</Button>
+
 			<div>
 				<Fab mini={true} ripple={true}>
 					<Icon icon='share'/>
 				</Fab>
 				<Switch/>
 			</div>
-			<Snackbar ref={bar=>{this.bar = bar;}}/>
+
+			<Snackbar ref={bar=>{this.bar = bar;}} />
+
 			<div>
 				<div className="mdc-form-field">
 					<Checkbox ref={inp=>{this.inp = inp;}} />
 				</div>
 			</div>
+
 			<div className="mdc-form-field">
 				<Radio id="rd" ref={radio=>this.radio=radio}/> <label for="rd">Radio Box</label>
 			</div>
-			<Textfield label="hello" fullwidth={true} required/>
-			<Card>
-				<Card.CardSupportingText>
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-				</Card.CardSupportingText>
-				<Card.Actions>
-						<Card.Action>Hello</Card.Action>
-				</Card.Actions>
-			</Card>
+
+			<Textfield label="hello" fullwidth={true} required />
+
+			<LayoutGrid>
+				<LayoutGrid.Cell columns={6} phone={12}>
+					<Card>
+						<Card.Title>Card title</Card.Title>
+						<Card.Subtitle>Subtitle</Card.Subtitle>
+						<Card.SupportingText>
+							This card is displayed within a layout grid.
+						</Card.SupportingText>
+						<Card.Actions>
+							<Card.Action>Hello</Card.Action>
+						</Card.Actions>
+					</Card>
+				</LayoutGrid.Cell>
+			</LayoutGrid>
+
 			<Elevation z3={true}>
 				hi
 			</Elevation>
+
 			<Dialog ref={dlg=>{this.dlg=dlg;}}>
 				<Dialog.DialogHeader>Hello Dialog</Dialog.DialogHeader>
 				<Dialog.DialogBody>What is this Dialog stuff??</Dialog.DialogBody>
@@ -72,12 +89,14 @@ export default class Home extends Component {
 					<Dialog.DialogFooterButton accept={true}>Yes</Dialog.DialogFooterButton>
 				</Dialog.DialogFooter>
 			</Dialog>
+
 			<Select hintText="Select an option">
 				<Select.Item>opt1</Select.Item>
 				<Select.Item>opt2</Select.Item>
 				<Select.Item>opt3</Select.Item>
 				<Select.Item>opt4</Select.Item>
 			</Select>
+
 			<List>
 				<List.Item>Item1</List.Item>
 				<List.Item>Item2</List.Item>

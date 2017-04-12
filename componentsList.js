@@ -9,6 +9,7 @@ const bundleMapping = {
 	Formfield: 'form-field',
 	Icon: 'icon-toggle',
 	IconToggle: 'icon-toggle',
+	LayoutGrid: 'layout-grid',
 	List: 'list',
 	Menu: 'menu',
 	Radio: 'radio',

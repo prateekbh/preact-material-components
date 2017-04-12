@@ -14,6 +14,7 @@ import Dialog from './Dialog';
 import List from './List';
 import Drawer from './Drawer';
 import Toolbar from './Toolbar';
+import LayoutGrid from './LayoutGrid';
 export {
 	Button,
 	Checkbox,
@@ -30,5 +31,6 @@ export {
 	Dialog,
 	List,
 	Drawer,
-	Toolbar
+	Toolbar,
+	LayoutGrid
 };
