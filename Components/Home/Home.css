@@ -46,10 +46,19 @@
 	.switch-darkmode{
 		margin-left: 8px;
 	}
+	.grey{
+		background-color: #eee;
+		padding: 2px;
+		margin: 2px;
+	}
 }
 
 .mdc-theme--dark{
 	.mdc-temporary-drawer li.mdc-list-item{
 		color: #666;
 	}
+}
+
+.mdc-typography--body{
+	line-height: 28px;
 }

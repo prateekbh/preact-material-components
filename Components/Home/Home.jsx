@@ -121,126 +121,126 @@ export default class Home extends Component {
 							Components
 						</Drawer.TemporaryDrawerHeader>
 						<Drawer.TemporaryDrawerContent>
-							<List>
-								<List.LinkItem onClick={()=>{
+								<Drawer.DrawerItem onClick={()=>{
 										routie('/');
 										this.closeDrawer();
 									}}>
 										<List.ItemIcon>home</List.ItemIcon>
 										Home
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/button');
 									this.closeDrawer();
 								}}>
 										<List.ItemIcon>code</List.ItemIcon>
 										Button
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/card');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Card
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/checkbox');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Checkbox
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/dialog');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Dialog
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/drawer');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Drawer
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/elevation');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Elevation
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/fab');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Fab
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/formfield');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Formfield
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/icon');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Icon
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/list');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									List
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/radio');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Radio
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/select');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Select
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/snackbar');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Snackbar
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/switch');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Switch
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/textfield');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Textfield
-								</List.LinkItem>
-								<List.LinkItem onClick={()=>{
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/toolbar');
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
 									Toolbar
-								</List.LinkItem>
+								</Drawer.DrawerItem>
+							<List>
 								<List.Item>
 									<List.ItemIcon>code</List.ItemIcon>
 									IconToggle
@@ -272,13 +272,14 @@ export default class Home extends Component {
 						{
 							(!this.state.component) &&
 							<div>
-								<div className="mdc-typography--display1">How to use</div>
 								<div className="mdc-typography--body">
 									<div>
-										<span className="grey">preact-material-components</span> is a thin opinionless wrapper around preact-material-components.
+										<span className="grey">preact-material-components</span> is a thin opinionless wrapper around <a href="https://github.com/material-components/material-components-web">material-components-web</a>.
+										Use these components to add material components to your web app, without worrying about the extra code of the the components which you are not using.
 									</div>
+									<div className="mdc-typography--display1">How to use</div>
 									<div>
-										All the components of <span className="grey">preac-material-components</span> are built to work independently.
+										All the components of <span className="grey">preact-material-components</span> are built to work independently.
 										 So there are couple of ways to use them
 									</div>
 									<div>
