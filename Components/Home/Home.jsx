@@ -22,6 +22,10 @@ import CardPage from '../CardPage/CardPage.jsx';
 import IconPage from '../IconPage/IconPage.jsx';
 import FormfieldPage from '../FormfieldPage/FormfieldPage.jsx';
 import routie from '../routie';
+import CodeBlock from '../CodeBlock.jsx';
+import invidualComponentSample from './invidual-component-sample.txt';
+import jsSample from './js-sample.txt';
+import cssSample from './css-sample.txt';
 import 'preact-material-components/List/style.css';
 import 'preact-material-components/Icon/style.css';
 import 'preact-material-components/Toolbar/style.css';
@@ -265,6 +269,64 @@ export default class Home extends Component {
 						{this.state.component === 'toolbar' && <ToolbarPage/>}
 						{this.state.component === 'icon' && <IconPage/>}
 						{this.state.component === 'formfield' && <FormfieldPage/>}
+						{
+							(!this.state.component) &&
+							<div>
+								<div className="mdc-typography--display1">How to use</div>
+								<div className="mdc-typography--body">
+									<div>
+										<span className="grey">preact-material-components</span> is a thin opinionless wrapper around preact-material-components.
+									</div>
+									<div>
+										All the components of <span className="grey">preac-material-components</span> are built to work independently.
+										 So there are couple of ways to use them
+									</div>
+									<div>
+										<CodeBlock>
+											<code class='lang-js' >
+												npm i -D preact-material-components
+											</code>
+										</CodeBlock>
+									</div>
+									<div>
+										<div className="mdc-typography--title">Using the jS of the component</div>
+										<div>
+											If you are using an ES6 based code base consider using the components individually, as none of the tree shaking currently removes unused classes.
+											<CodeBlock>
+												<code class='lang-js' >
+													{jsSample}
+												</code>
+											</CodeBlock>
+											You can however import all the components together, you should not. Importing this way will bring unnecessary code of other components in your final bundle.
+											This might hit you metrics like time to interactivity, load times etc. DO NOT BLOAT THE WEB PLEASE.
+											<CodeBlock>
+												<code class='lang-js' >
+													{invidualComponentSample}
+												</code>
+											</CodeBlock>
+										</div>
+									</div>
+									<div>
+										<div className="mdc-typography--title">Using the CSS of the component</div>
+										<div>
+											If you are using only a couple of components from the entire package, try importing individual css, for the same reasom "TO AVOID THE BLOAT OF YOU CSS BUNDLE".
+											<CodeBlock>
+												<code class='lang-js' >
+													{cssSample}
+												</code>
+											</CodeBlock>
+											However the approach might work against you if you use a lot of components, in this case prefer adding the entire stylesheet at once.
+											 As this is more optimized for such cases.
+											<CodeBlock>
+												<code class='lang-js' >
+													import 'preact-material-components/style.css';
+												</code>
+											</CodeBlock>
+										</div>
+									</div>
+								</div>
+							</div>
+						}
 					</div>
 			</div>
 		);
