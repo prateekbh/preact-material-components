@@ -19,9 +19,9 @@ class Select extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<div role="listbox" {...props} ref={control=>{this.control = control;}}>
-				<span class="mdc-select__selected-text">{props.hintText}</span>
-				<div class="mdc-simple-menu mdc-select__menu">
-					<ul class="mdc-list mdc-simple-menu__items ">
+				<span className="mdc-select__selected-text">{props.hintText}</span>
+				<div className="mdc-simple-menu mdc-select__menu">
+					<ul className="mdc-list mdc-simple-menu__items ">
 						{props.children}
 					</ul>
 				</div>

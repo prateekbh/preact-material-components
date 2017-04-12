@@ -22,11 +22,11 @@ export default class Snackbar extends MaterialComponent {
 				aria-hidden="true"
 				ref={control => this.control = control} {...props}
 			>
-				<div class="mdc-snackbar__text" />
-				<div class="mdc-snackbar__action-wrapper">
+				<div className="mdc-snackbar__text" />
+				<div className="mdc-snackbar__action-wrapper">
 					<button
 						type="button"
-						class="mdc-button mdc-snackbar__action-button"
+						className="mdc-button mdc-snackbar__action-button"
 					/>
 				</div>
 			</div>

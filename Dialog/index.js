@@ -26,10 +26,10 @@ class Dialog extends MaterialComponent {
 			}, props),
 			h(
 				"div",
-				{ "class": "mdc-dialog__surface" },
+				{ className: "mdc-dialog__surface" },
 				props.children
 			),
-			h("div", { "class": "mdc-dialog__backdrop" })
+			h("div", { className: "mdc-dialog__backdrop" })
 		);
 	}
 }
@@ -45,7 +45,7 @@ class DialogHeader extends MaterialComponent {
 			props,
 			h(
 				"h2",
-				{ id: "my-mdc-dialog-label", "class": "mdc-dialog__header__title" },
+				{ className: "mdc-dialog__header__title" },
 				props.children
 			)
 		);

@@ -24,13 +24,13 @@ export default class Snackbar extends MaterialComponent {
 				"aria-atomic": "true",
 				"aria-hidden": "true",
 				ref: control => this.control = control }, props),
-			h("div", { "class": "mdc-snackbar__text" }),
+			h("div", { className: "mdc-snackbar__text" }),
 			h(
 				"div",
-				{ "class": "mdc-snackbar__action-wrapper" },
+				{ className: "mdc-snackbar__action-wrapper" },
 				h("button", {
 					type: "button",
-					"class": "mdc-button mdc-snackbar__action-button"
+					className: "mdc-button mdc-snackbar__action-button"
 				})
 			)
 		);

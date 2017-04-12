@@ -26,15 +26,15 @@ class Select extends MaterialComponent {
 				} }),
 			h(
 				"span",
-				{ "class": "mdc-select__selected-text" },
+				{ className: "mdc-select__selected-text" },
 				props.hintText
 			),
 			h(
 				"div",
-				{ "class": "mdc-simple-menu mdc-select__menu" },
+				{ className: "mdc-simple-menu mdc-select__menu" },
 				h(
 					"ul",
-					{ "class": "mdc-list mdc-simple-menu__items " },
+					{ className: "mdc-list mdc-simple-menu__items " },
 					props.children
 				)
 			)

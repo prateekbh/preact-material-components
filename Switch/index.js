@@ -20,7 +20,7 @@ export default class Switch extends MaterialComponent {
 		return h(
 			"div",
 			{ className: className + '' },
-			h("input", _extends({ type: "checkbox", id: "basic-switch", className: "mdc-switch__native-control" }, props)),
+			h("input", _extends({ type: "checkbox", className: "mdc-switch__native-control" }, props)),
 			h(
 				"div",
 				{ className: "mdc-switch__background" },
