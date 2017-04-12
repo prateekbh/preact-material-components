@@ -2,7 +2,6 @@ import {h, Component} from 'preact';
 import Toolbar from 'preact-material-components/Toolbar';
 import Icon from 'preact-material-components/Icon';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Toolbar/style.css';
 import './ToolbarPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

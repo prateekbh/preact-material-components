@@ -3,8 +3,6 @@ import Checkbox from 'preact-material-components/Checkbox';
 import Button from 'preact-material-components/Button';
 import FormField from 'preact-material-components/FormField';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Button/style.css';
-import 'preact-material-components/Checkbox/style.css';
 import './CheckboxPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

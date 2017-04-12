@@ -2,8 +2,6 @@ import {h, Component} from 'preact';
 import Radio from 'preact-material-components/Radio';
 import FormField from 'preact-material-components/FormField';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/FormField/style.css';
-import 'preact-material-components/Radio/style.css';
 import './RadioPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

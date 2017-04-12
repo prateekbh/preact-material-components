@@ -1,8 +1,6 @@
 import {h, Component} from 'preact';
 import Switch from 'preact-material-components/Switch';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/List/style.css';
-import 'preact-material-components/Switch/style.css';
 import './SwitchPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

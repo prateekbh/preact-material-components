@@ -1,8 +1,6 @@
 import {h, Component} from 'preact';
 import Select from 'preact-material-components/Select';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Menu/style.css';
-import 'preact-material-components/Select/style.css';
 import './SelectPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

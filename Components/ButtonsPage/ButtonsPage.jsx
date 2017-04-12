@@ -2,7 +2,6 @@ import {h, Component} from 'preact';
 import Button from 'preact-material-components/Button';
 import ComponentTable from '../ComponentTable.jsx';
 import CodeBlock from '../CodeBlock.jsx';
-import 'preact-material-components/Button/style.css';
 import './ButtonsPage.css';
 import sample from './sample.txt';
 

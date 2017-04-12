@@ -2,8 +2,6 @@ import {h, Component} from 'preact';
 import Snackbar from 'preact-material-components/Snackbar';
 import Button from 'preact-material-components/Button';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Button/style.css';
-import 'preact-material-components/Snackbar/style.css';
 import './SnackbarPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

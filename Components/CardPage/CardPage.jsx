@@ -1,7 +1,6 @@
 import {h, Component} from 'preact';
 import Card from 'preact-material-components/Card';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Card/style.css';
 import './CardPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

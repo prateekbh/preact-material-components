@@ -1,7 +1,6 @@
 import {h, Component} from 'preact';
 import Textfield from 'preact-material-components/Textfield';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Textfield/style.css';
 import './TextfieldPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

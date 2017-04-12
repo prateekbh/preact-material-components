@@ -1,7 +1,6 @@
 import {h, Component} from 'preact';
 import List from 'preact-material-components/List';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/List/style.css';
 import './ListPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

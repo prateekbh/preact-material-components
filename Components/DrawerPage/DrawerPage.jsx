@@ -1,7 +1,6 @@
 import {h, Component} from 'preact';
 import Drawer from 'preact-material-components/Drawer';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Drawer/style.css';
 import './DrawerPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

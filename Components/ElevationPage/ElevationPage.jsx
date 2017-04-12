@@ -1,7 +1,6 @@
 import {h, Component} from 'preact';
 import Elevation from 'preact-material-components/Elevation';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Elevation/style.css';
 import './ElevationPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';

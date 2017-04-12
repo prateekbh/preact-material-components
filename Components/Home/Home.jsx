@@ -26,12 +26,7 @@ import CodeBlock from '../CodeBlock.jsx';
 import invidualComponentSample from './invidual-component-sample.txt';
 import jsSample from './js-sample.txt';
 import cssSample from './css-sample.txt';
-import 'preact-material-components/List/style.css';
-import 'preact-material-components/Icon/style.css';
-import 'preact-material-components/Toolbar/style.css';
-import 'preact-material-components/Drawer/style.css';
-import 'preact-material-components/List/style.css';
-import 'preact-material-components/Theme/style.css';
+import 'preact-material-components/style.css';
 import './Home.css';
 
 export default class Home extends Component {

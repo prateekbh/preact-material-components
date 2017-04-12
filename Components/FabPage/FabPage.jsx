@@ -2,7 +2,6 @@ import {h, Component} from 'preact';
 import Fab from 'preact-material-components/Fab';
 import Icon from 'preact-material-components/Icon';
 import ComponentTable from '../ComponentTable.jsx';
-import 'preact-material-components/Fab/style.css';
 import './FabPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';
