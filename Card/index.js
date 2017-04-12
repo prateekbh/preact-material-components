@@ -99,8 +99,8 @@ class CardSubtitle extends MaterialComponent {
 	}
 }
 
-Card.CardPrimary = CardPrimary;
-Card.CardSupportingText = CardSupportingText;
+Card.Primary = CardPrimary;
+Card.SupportingText = CardSupportingText;
 Card.Actions = CardActions;
 Card.Action = CardAction;
 Card.Media = CardMedia;

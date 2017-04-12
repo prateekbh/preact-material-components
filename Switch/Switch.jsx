@@ -14,7 +14,7 @@ export default class Switch extends MaterialComponent {
 		const {className, ...props} = allprops;
 		return (
 			<div className={className + ''}>
-				<input type="checkbox" id="basic-switch" className="mdc-switch__native-control" {...props} />
+				<input type="checkbox" className="mdc-switch__native-control" {...props} />
 				<div className="mdc-switch__background">
 					<div className="mdc-switch__knob"></div>
 				</div>

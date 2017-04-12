@@ -19,10 +19,10 @@ class Dialog extends MaterialComponent {
 				aria-hidden="true"
 				ref={control=>{this.control = control;}}
 				{...props}>
-				<div class="mdc-dialog__surface">
+				<div className="mdc-dialog__surface">
 					{props.children}
 				</div>
-				<div class="mdc-dialog__backdrop"></div>
+				<div className="mdc-dialog__backdrop"></div>
 			</aside>
 		);
 	}
@@ -36,7 +36,7 @@ class DialogHeader extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<header {...props}>
-				<h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
+				<h2 className="mdc-dialog__header__title">
 					{props.children}
 				</h2>
 			</header>
