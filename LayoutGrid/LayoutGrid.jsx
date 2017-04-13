@@ -8,19 +8,18 @@ class LayoutGrid extends MaterialComponent {
 	}
 	materialDom(props) {
 		return (
-			<div className="mdc-layout-grid" ref={control=>{this.control = control;}} {...props}>
+			<div ref={control=>{this.control = control;}} {...props}>
 				{props.children}
 			</div>
 		);
 	}
 }
 
-
 /**
- * @prop columns = 0
- * @prop desktop = 0
- * @prop tablet = 0
- * @prop phone = 0
+ * @prop cols = 0
+ * @prop desktopCols = 0
+ * @prop tabletCols = 0
+ * @prop phoneCols = 0
  * @prop order = 0
  * @prop align = ''
  */
@@ -33,20 +32,20 @@ class LayoutGridCell extends MaterialComponent {
 		const baseClass = "mdc-layout-grid__cell--";
 		const classes = [];
 
-		if (props.columns) {
-			classes.push(baseClass + "span-" + props.columns) ;
+		if (props.cols) {
+			classes.push(baseClass + "span-" + props.cols) ;
 		}
 
-		if (props.desktop) {
-			classes.push(baseClass + "span-" + props.desktop + '-desktop') ;
+		if (props.desktopCols) {
+			classes.push(baseClass + "span-" + props.desktopCols + '-desktop') ;
 		}
 
-		if (props.tablet) {
-			classes.push(baseClass + "span-" + props.tablet + '-tablet') ;
+		if (props.tabletCols) {
+			classes.push(baseClass + "span-" + props.tabletCols + '-tablet') ;
 		}
 
-		if (props.phone) {
-			classes.push(baseClass + "span-" + props.phone + '-phone') ;
+		if (props.phoneCols) {
+			classes.push(baseClass + "span-" + props.phoneCols + '-phone') ;
 		}
 
 		if (props.order) {
@@ -68,7 +67,7 @@ class LayoutGridCell extends MaterialComponent {
 	}
 	render() {
 		const element = super.render();
-		["columns", "desktop", "tablet", "phone", "order", "align"].forEach(prop => delete element.attributes[prop]);
+		["cols", "desktopCols", "tabletCols", "phoneCols", "order", "align"].forEach(prop => delete element.attributes[prop]);
 		return element;
 	}
 }

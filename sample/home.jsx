@@ -63,7 +63,7 @@ export default class Home extends Component {
 			<Textfield label="hello" fullwidth={true} required />
 
 			<LayoutGrid>
-				<LayoutGrid.Cell columns={6} phone={12}>
+				<LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
 					<Card>
 						<Card.Title>Card title</Card.Title>
 						<Card.Subtitle>Subtitle</Card.Subtitle>
