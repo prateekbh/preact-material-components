@@ -294,7 +294,7 @@ export default class Home extends Component {
 												</code>
 											</CodeBlock>
 											You can however import all the components together, you should not. Importing this way will bring unnecessary code of other components in your final bundle.
-											This might hit you metrics like time to interactivity, load times etc. DO NOT BLOAT THE WEB PLEASE.
+											This might hit you metrics like time to interactivity, load times etc. DO NOT BLOAT YOUR BUNDLE.
 											<CodeBlock>
 												<code class='lang-js' >
 													{invidualComponentSample}
@@ -305,7 +305,7 @@ export default class Home extends Component {
 									<div>
 										<div className="mdc-typography--title">Using the CSS of the component</div>
 										<div>
-											If you are using only a couple of components from the entire package, try importing individual css, for the same reasom "TO AVOID THE BLOAT OF YOU CSS BUNDLE".
+											If you are using only a couple of components from the entire package, try importing individual css, for the same reasom "TO AVOID THE BLOAT OF YOUR CSS BUNDLE".
 											<CodeBlock>
 												<code class='lang-js' >
 													{cssSample}
