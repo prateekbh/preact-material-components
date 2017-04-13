@@ -5,10 +5,10 @@
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
-		"build": "node compileComponents.js && ./node_modules/.bin/webpack",
+		"build": "node compileComponents.js && webpack",
     "prepublish": "npm run build && npm run test ",
     "test": "npm run lint",
-    "lint": "./node_modules/.bin/eslint src/"
+    "lint": "eslint src/"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,10 @@
     {
       "name": "Stijn de Witt",
       "email": "StijnDeWitt@hotmail.com"
+    },
+    {
+      "name": "Steve Anderson",
+      "email": "steve@twindx.com"
     }
   ],
   "license": "MIT",
