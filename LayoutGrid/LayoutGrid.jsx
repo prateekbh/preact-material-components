@@ -27,33 +27,41 @@ class LayoutGridCell extends MaterialComponent {
 	constructor() {
 		super();
 		this.componentName = "layout-grid__cell";
+		this._propsDict = {
+			cols: 'cols',
+			desktop: 'desktopCols',
+			tablet: 'tabletCols',
+			phone: 'phoneCols',
+			order: 'order',
+			align: 'align'
+		};
 	}
 	createClassName(props) {
 		const baseClass = "mdc-layout-grid__cell--";
 		const classes = [];
 
-		if (props.cols) {
-			classes.push(baseClass + "span-" + props.cols) ;
+		if (props[this._propsDict.cols]) {
+			classes.push(baseClass + "span-" + props[this._propsDict.cols]) ;
 		}
 
-		if (props.desktopCols) {
-			classes.push(baseClass + "span-" + props.desktopCols + '-desktop') ;
+		if (props[this._propsDict.desktop]) {
+			classes.push(baseClass + "span-" + props[this._propsDict.desktop] + '-desktop') ;
 		}
 
-		if (props.tabletCols) {
-			classes.push(baseClass + "span-" + props.tabletCols + '-tablet') ;
+		if (props[this._propsDict.tablet]) {
+			classes.push(baseClass + "span-" + props[this._propsDict.tablet] + '-tablet') ;
 		}
 
-		if (props.phoneCols) {
-			classes.push(baseClass + "span-" + props.phoneCols + '-phone') ;
+		if (props[this._propsDict.phone]) {
+			classes.push(baseClass + "span-" + props[this._propsDict.phone] + '-phone') ;
 		}
 
-		if (props.order) {
-			classes.push(baseClass + "order-" + props.order) ;
+		if (props[this._propsDict.order]) {
+			classes.push(baseClass + "order-" + props[this._propsDict.order]) ;
 		}
 
-		if (props.align) {
-			classes.push(baseClass + "align-" + props.align) ;
+		if (props[this._propsDict.align]) {
+			classes.push(baseClass + "align-" + props[this._propsDict.align]) ;
 		}
 
 		return classes.join(" ");
@@ -67,7 +75,8 @@ class LayoutGridCell extends MaterialComponent {
 	}
 	render() {
 		const element = super.render();
-		["cols", "desktopCols", "tabletCols", "phoneCols", "order", "align"].forEach(prop => delete element.attributes[prop]);
+		// remove the extra attributes used for customising this element - keep the DOM clean
+		Object.keys(this._propsDict).forEach(key => delete element.attributes[this._propsDict[key]]);
 		return element;
 	}
 }
