@@ -89,13 +89,29 @@ export default class Home extends Component {
 					<Dialog.DialogFooterButton accept={true}>Yes</Dialog.DialogFooterButton>
 				</Dialog.DialogFooter>
 			</Dialog>
-
-			<Select hintText="Select an option">
-				<Select.Item>opt1</Select.Item>
-				<Select.Item>opt2</Select.Item>
-				<Select.Item>opt3</Select.Item>
-				<Select.Item>opt4</Select.Item>
-			</Select>
+			<div>
+				<Select hintText="Select an option">
+					<Select.Item>opt1</Select.Item>
+					<Select.Item>opt2</Select.Item>
+					<Select.Item>opt3</Select.Item>
+					<Select.Item>opt4</Select.Item>
+				</Select>
+			</div>
+			<div>
+				<Select basic={true}>
+					<option value="" default selected>Pick a food</option>
+					<option value="grains">Bread, Cereal, Rice, and Pasta</option>
+					<option value="vegetables">Vegetables</option>
+					<optgroup label="Fruits">
+						<option value="apple">Apple</option>
+						<option value="oranges">Orange</option>
+						<option value="banana">Banana</option>
+					</optgroup>
+					<option value="dairy">Milk, Yogurt, and Cheese</option>
+					<option value="meat">Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts</option>
+					<option value="fats">Fats, Oils, and Sweets</option>
+				</Select>
+			</div>
 
 			<List>
 				<List.Item>Item1</List.Item>

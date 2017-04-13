@@ -11,14 +11,31 @@ class Select extends MaterialComponent {
 		this._mdcProps = ["disabled"];
 	}
 	componentDidMount() {
-		this.MDComponent = new MDCSelect(this.control);
-		this.MDComponent.listen('MDCSelect:change', () => {
-			if (this.props.onChange) {
-				this.props.onChange();
-			}
-		});
+		console.log(this.props, "===================");
+
+		if (!this.props.basic) {
+			this.MDComponent = new MDCSelect(this.control);
+			this.MDComponent.listen('MDCSelect:change', () => {
+				if (this.props.onChange) {
+					this.props.onChange();
+				}
+			});
+		}
 	}
 	materialDom(props) {
+		console.log('yo');
+		console.log(props);
+		debugger;
+		if (props.basic) {
+			return h(
+				"select",
+				_extends({}, props, { ref: control => {
+						this.control = control;
+					} }),
+				props.children
+			);
+		}
+
 		return h(
 			"div",
 			_extends({ role: "listbox" }, props, { ref: control => {
