@@ -9,8 +9,6 @@ class Select extends MaterialComponent {
 		this._mdcProps = ["disabled"];
 	}
 	componentDidMount() {
-		console.log(this.props,"===================");
-
 		if (!this.props.basic) {
 			this.MDComponent = new MDCSelect(this.control);
 			this.MDComponent.listen('MDCSelect:change', () => {
@@ -21,9 +19,6 @@ class Select extends MaterialComponent {
 		}
 	}
 	materialDom(props) {
-		console.log('yo');
-		console.log(props);
-		debugger;
 		if (props.basic) {
 			return (
 				<select {...props} ref={control=>{this.control = control;}}>
