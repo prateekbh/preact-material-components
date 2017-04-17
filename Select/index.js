@@ -31,6 +31,19 @@ class Select extends MaterialComponent {
 		this.updateSelection(prevProps);
 	}
 	materialDom(props) {
+		console.log('yo');
+		console.log(props);
+		debugger;
+		if (props.basic) {
+			return h(
+				"select",
+				_extends({}, props, { ref: control => {
+						this.control = control;
+					} }),
+				props.children
+			);
+		}
+
 		return h(
 			"div",
 			_extends({ role: "listbox" }, props, { ref: control => {
