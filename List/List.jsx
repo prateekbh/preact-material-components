@@ -59,23 +59,41 @@ class LinkItem extends MaterialComponent {
 class ListItemIcon extends MaterialComponent {
 	constructor() {
 		super();
-		this.componentName = "mdc-list-item__iconatar";
+		this.componentName = "mdc-list-item__icon";
 	}
-	materialDom(props) {
-		let className = 'material-icons ';
+	getClassName(props){
+		let classNames = [];
+
 		// default behavior
 		props['start-detail'] = props['start-detail'] || true;
 
 		// setting class names mutually exclusive
 		if (props['end-detail']) {
-			className += 'mdc-list-item__end-detail';
+			classNames.push('mdc-list-item__end-detail');
 		} else if (props['start-detail']) {
-			className += 'mdc-list-item__start-detail';
+			classNames.push('mdc-list-item__start-detail');
 		}
-
-		return (<i className={className} aria-hidden="true" {...props}>
+		return classNames.join(' ');
+	}
+	materialDom(props) {
+		return (<i className={'material-icons ' + this.getClassName(props)} aria-hidden="true" {...props} ref={control => this.control = control}>
 			{props.children}
 		</i>);
+	}
+}
+
+/**
+ * @prop start-detail = true
+ * @prop end-detail = false
+ */
+class ListItemAvatar extends ListItemAvatar {
+	constructor() {
+		super();
+		this.componentName = "mdc-list-item__avatar";
+	}
+	materialDom(props) {
+		return (<img {...props} class={super.getClassName(props)} {...props} ref={control => this.control = control}
+			width={props.width || '56'} height={props.height || '56'} alt={props.alt || ''} />);
 	}
 }
 
@@ -96,6 +114,7 @@ class ListDivider extends MaterialComponent {
 List.Item = ListItem;
 List.LinkItem = LinkItem;
 List.ItemIcon = ListItemIcon;
+List.ItemAvatar = ListItemAvatar;
 List.Divider = ListDivider;
 
 export default List;
