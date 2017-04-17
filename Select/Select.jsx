@@ -16,13 +16,17 @@ class Select extends MaterialComponent {
 					this.props.onChange();
 				}
 			});
+			this.updateSelection();
+		}
+	}
+	updateSelection(prevProps){
+		if ((this.props.selectedIndex && this.MDComponent)
+			&& (!prevProps || (prevProps.selectedIndex !== this.props.selectedIndex))) {
+			this.MDComponent.selectedIndex = this.props.selectedIndex;
 		}
 	}
 	componentDidUpdate(prevProps){
-		if (this.props.selectedIndex && this.props.basic
-			&& prevProps.selectedIndex !== this.props.selectedIndex) {
-			this.MDComponent.selectedIndex = this.props.selectedIndex;
-		}
+		this.updateSelection(prevProps);
 	}
 	materialDom(props) {
 		return (

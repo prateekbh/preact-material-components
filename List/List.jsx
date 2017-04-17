@@ -61,7 +61,7 @@ class ListItemIcon extends MaterialComponent {
 		super();
 		this.componentName = "mdc-list-item__icon";
 	}
-	getClassName(props){
+	getProxyClassName(props){
 		let classNames = [];
 
 		// default behavior
@@ -76,7 +76,8 @@ class ListItemIcon extends MaterialComponent {
 		return classNames.join(' ');
 	}
 	materialDom(props) {
-		return (<i className={'material-icons ' + this.getClassName(props)} aria-hidden="true" {...props} ref={control => this.control = control}>
+		const className = 'material-icons ' + this.getProxyClassName(props);
+		return (<i className={className} aria-hidden="true" {...props} ref={control => this.control = control}>
 			{props.children}
 		</i>);
 	}
@@ -86,13 +87,13 @@ class ListItemIcon extends MaterialComponent {
  * @prop start-detail = true
  * @prop end-detail = false
  */
-class ListItemAvatar extends ListItemAvatar {
+class ListItemAvatar extends ListItemIcon {
 	constructor() {
 		super();
 		this.componentName = "mdc-list-item__avatar";
 	}
 	materialDom(props) {
-		return (<img {...props} class={super.getClassName(props)} {...props} ref={control => this.control = control}
+		return (<img {...props} class={super.getProxyClassName(props)} {...props} ref={control => this.control = control}
 			width={props.width || '56'} height={props.height || '56'} alt={props.alt || ''} />);
 	}
 }
