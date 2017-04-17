@@ -59,7 +59,7 @@ class LinkItem extends MaterialComponent {
 class ListItemIcon extends MaterialComponent {
 	constructor() {
 		super();
-		this.componentName = "mdc-list-item__icon";
+		this.componentName = "mdc-list-item__iconatar";
 	}
 	materialDom(props) {
 		let className = 'material-icons ';
@@ -72,14 +72,30 @@ class ListItemIcon extends MaterialComponent {
 		} else if (props['start-detail']) {
 			className += 'mdc-list-item__start-detail';
 		}
+
 		return (<i className={className} aria-hidden="true" {...props}>
 			{props.children}
 		</i>);
 	}
 }
 
+class ListDivider extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "list-divider";
+		this._mdcProps = ["inset"];
+	}
+	componentDidMount(){
+		super.attachRipple();
+	}
+	materialDom(props) {
+		return (<li role="separator" {...props} ref={control => this.control = control}></li>);
+	}
+}
+
 List.Item = ListItem;
 List.LinkItem = LinkItem;
 List.ItemIcon = ListItemIcon;
+List.Divider = ListDivider;
 
 export default List;
