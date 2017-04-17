@@ -17,9 +17,13 @@ export default class Elevation extends MaterialComponent {
 		}
 	}
 	materialDom(props) {
+		let className = '';
+		if (props.z) {
+			className = 'mdc-elevation--z' + props.z;
+		}
 		return h(
 			"p",
-			_extends({}, props, { ref: control => this.control = control }),
+			_extends({ className: className }, props, { ref: control => this.control = control }),
 			props.children
 		);
 	}

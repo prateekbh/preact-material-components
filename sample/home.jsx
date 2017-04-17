@@ -19,6 +19,12 @@ import {
 } from "../";
 
 export default class Home extends Component {
+	constructor(){
+		super();
+		this.state={
+			chosenOption: 2
+		};
+	}
 	render(){
 		return (<div>
 			<Toolbar>
@@ -43,7 +49,7 @@ export default class Home extends Component {
 
 			<div>
 				<Fab mini={true} ripple={true}>
-					<Icon icon='share'/>
+					<Icon>share</Icon>
 				</Fab>
 				<Switch/>
 			</div>
@@ -65,38 +71,47 @@ export default class Home extends Component {
 			<LayoutGrid>
 				<LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
 					<Card>
-						<Card.Title>Card title</Card.Title>
-						<Card.Subtitle>Subtitle</Card.Subtitle>
+						<Card.Primary>
+							<Card.Title>Card title</Card.Title>
+							<Card.Subtitle>Subtitle</Card.Subtitle>
+						</Card.Primary>
 						<Card.SupportingText>
 							This card is displayed within a layout grid.
 						</Card.SupportingText>
 						<Card.Actions>
-							<Card.Action>Hello</Card.Action>
+							<Card.Action>Action</Card.Action>
 						</Card.Actions>
 					</Card>
 				</LayoutGrid.Cell>
 			</LayoutGrid>
 
-			<Elevation z3={true}>
+			<Elevation z="9">
 				hi
 			</Elevation>
 
 			<Dialog ref={dlg=>{this.dlg=dlg;}}>
-				<Dialog.DialogHeader>Hello Dialog</Dialog.DialogHeader>
-				<Dialog.DialogBody>What is this Dialog stuff??</Dialog.DialogBody>
-				<Dialog.DialogFooter>
-					<Dialog.DialogFooterButton>No</Dialog.DialogFooterButton>
-					<Dialog.DialogFooterButton accept={true}>Yes</Dialog.DialogFooterButton>
-				</Dialog.DialogFooter>
+				<Dialog.Header>Hello Dialog</Dialog.Header>
+				<Dialog.Body>What is this Dialog stuff??</Dialog.Body>
+				<Dialog.Footer>
+					<Dialog.FooterButton>No</Dialog.FooterButton>
+					<Dialog.FooterButton accept={true}>Yes</Dialog.FooterButton>
+				</Dialog.Footer>
 			</Dialog>
-			<div>
-				<Select hintText="Select an option">
-					<Select.Item>opt1</Select.Item>
-					<Select.Item>opt2</Select.Item>
-					<Select.Item>opt3</Select.Item>
-					<Select.Item>opt4</Select.Item>
-				</Select>
-			</div>
+
+			<Select hintText="Select an option"
+				ref={presel=>{this.presel = presel;}}
+				selectedIndex={this.state.chosenOption}
+				onChange={()=>{
+					this.setState({
+						chosenOption: this.presel.MDComponent.selectedIndex
+					});
+				}}>
+				<Select.Item>opt1</Select.Item>
+				<Select.Item>opt2</Select.Item>
+				<Select.Item>opt3</Select.Item>
+				<Select.Item>opt4</Select.Item>
+			</Select>
+
 			<div>
 				<Select basic={true}>
 					<option value="" default selected>Pick a food</option>
@@ -122,8 +137,15 @@ export default class Home extends Component {
 			<hr/>
 
 			<List interactive={true}>
-				<List.LinkItem ripple={true} href="#">Item1</List.LinkItem>
-				<List.LinkItem ripple={true} href="#">Item2</List.LinkItem>
+				<List.LinkItem ripple={true} href="#">
+					<List.ItemIcon>menu</List.ItemIcon>
+					Item1
+				</List.LinkItem>
+				<List.LinkItem ripple={true} href="#">
+					<List.ItemAvatar src="https://material-components-web.appspot.com/images/animal1.svg" height="25" width="25"/>
+					Item2
+				</List.LinkItem>
+				<List.Divider/>
 				<List.LinkItem ripple={true} href="#">Item3</List.LinkItem>
 			</List>
 		</div>);
