@@ -93,7 +93,7 @@ class ListItemAvatar extends ListItemIcon {
 		this.componentName = "mdc-list-item__avatar";
 	}
 	materialDom(props) {
-		return (<img {...props} class={super.getProxyClassName(props)} {...props} ref={control => this.control = control}
+		return (<img {...props} className={super.getProxyClassName(props)} {...props} ref={control => this.control = control}
 			width={props.width || '56'} height={props.height || '56'} alt={props.alt || ''} />);
 	}
 }
@@ -104,11 +104,36 @@ class ListDivider extends MaterialComponent {
 		this.componentName = "list-divider";
 		this._mdcProps = ["inset"];
 	}
-	componentDidMount(){
-		super.attachRipple();
-	}
 	materialDom(props) {
 		return (<li role="separator" {...props} ref={control => this.control = control}></li>);
+	}
+}
+
+class ListTextContainer extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "list-item__text";
+	}
+	materialDom(props) {
+		return (
+			<span {...props} ref={control => this.control = control}>
+				{props.children}
+			</span>
+		);
+	}
+}
+
+class ListPrimaryText extends ListTextContainer {
+	constructor() {
+		super();
+		this.componentName = "list-item__text__primary";
+	}
+}
+
+class ListSecondaryText extends ListTextContainer {
+	constructor() {
+		super();
+		this.componentName = "list-item__text__secondary";
 	}
 }
 
@@ -117,5 +142,8 @@ List.LinkItem = LinkItem;
 List.ItemIcon = ListItemIcon;
 List.ItemAvatar = ListItemAvatar;
 List.Divider = ListDivider;
+List.TextContainer = ListTextContainer;
+List.PrimaryText = ListPrimaryText;
+List.SecondaryText = ListSecondaryText;
 
 export default List;
