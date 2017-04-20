@@ -12,7 +12,8 @@ export default class ElevationPage extends Component {
 				component: 'Elevation',
 				props: [
 					{
-						name: 'z1..z25',
+						name: 'z',
+						value: '1 to 25',
 						description: 'Add one of z1 to z25=true to get different elevations.'
 					}
 				]
@@ -38,11 +39,11 @@ export default class ElevationPage extends Component {
 				</div>
 
 				<div className="mdc-typography--display1">Demo </div>
-				<Elevation z0={true}>Z0</Elevation>
-				<Elevation z1={true}>Z1</Elevation>
-				<Elevation z2={true}>Z2</Elevation>
-				<Elevation z3={true}>Z3</Elevation>
-				<Elevation z4={true}>Z4</Elevation>
+				<Elevation z={0}>Z0</Elevation>
+				<Elevation z={1}>Z1</Elevation>
+				<Elevation z={2}>Z2</Elevation>
+				<Elevation z={3}>Z3</Elevation>
+				<Elevation z={4}>Z4</Elevation>
 			</div>
 		);
 	}
