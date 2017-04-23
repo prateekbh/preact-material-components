@@ -9,13 +9,42 @@ export default class CardPage extends Component {
 		super();
 		this.propsTable = [
 			{
-				component: 'Toolbar',
-				props: [
-					{
-						name: 'fixed',
-						description: 'Makes the toolbar fixed'
-					}
-				]
+				component: 'Card',
+				props: []
+			},
+			{
+				component: 'Card.Primary',
+				props: []
+			},
+			{
+				component: 'Card.SupportingText',
+				props: []
+			},
+			{
+				component: 'Card.Actions',
+				props: [{
+					name: 'vertical',
+					description: 'This arranges the actions vertically'
+				}]
+			},
+			{
+				component: 'Card.Action',
+				props: []
+			},
+			{
+				component: 'Card.Media',
+				props: []
+			},
+			{
+				component: 'Card.Title',
+				props: [{
+					name: 'large',
+					description: 'This enlarges the title size'
+				}]
+			},
+			{
+				component: 'Card.Subtitle',
+				props: []
 			}
 		];
 	}
