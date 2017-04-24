@@ -61,25 +61,89 @@ class ListItemIcon extends MaterialComponent {
 		super();
 		this.componentName = "mdc-list-item__icon";
 	}
-	materialDom(props) {
-		let className = 'material-icons ';
+	getProxyClassName(props){
+		let classNames = [];
+
 		// default behavior
 		props['start-detail'] = props['start-detail'] || true;
 
 		// setting class names mutually exclusive
 		if (props['end-detail']) {
-			className += 'mdc-list-item__end-detail';
+			classNames.push('mdc-list-item__end-detail');
 		} else if (props['start-detail']) {
-			className += 'mdc-list-item__start-detail';
+			classNames.push('mdc-list-item__start-detail');
 		}
-		return (<i className={className} aria-hidden="true" {...props}>
+		return classNames.join(' ');
+	}
+	materialDom(props) {
+		const className = 'material-icons ' + this.getProxyClassName(props);
+		return (<i className={className} aria-hidden="true" {...props} ref={control => this.control = control}>
 			{props.children}
 		</i>);
+	}
+}
+
+/**
+ * @prop start-detail = true
+ * @prop end-detail = false
+ */
+class ListItemAvatar extends ListItemIcon {
+	constructor() {
+		super();
+		this.componentName = "mdc-list-item__avatar";
+	}
+	materialDom(props) {
+		return (<img {...props} className={super.getProxyClassName(props)} {...props} ref={control => this.control = control}
+			width={props.width || '56'} height={props.height || '56'} alt={props.alt || ''} />);
+	}
+}
+
+class ListDivider extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "list-divider";
+		this._mdcProps = ["inset"];
+	}
+	materialDom(props) {
+		return (<li role="separator" {...props} ref={control => this.control = control}></li>);
+	}
+}
+
+class ListTextContainer extends MaterialComponent {
+	constructor() {
+		super();
+		this.componentName = "list-item__text";
+	}
+	materialDom(props) {
+		return (
+			<span {...props} ref={control => this.control = control}>
+				{props.children}
+			</span>
+		);
+	}
+}
+
+class ListPrimaryText extends ListTextContainer {
+	constructor() {
+		super();
+		this.componentName = "list-item__text__primary";
+	}
+}
+
+class ListSecondaryText extends ListTextContainer {
+	constructor() {
+		super();
+		this.componentName = "list-item__text__secondary";
 	}
 }
 
 List.Item = ListItem;
 List.LinkItem = LinkItem;
 List.ItemIcon = ListItemIcon;
+List.ItemAvatar = ListItemAvatar;
+List.Divider = ListDivider;
+List.TextContainer = ListTextContainer;
+List.PrimaryText = ListPrimaryText;
+List.SecondaryText = ListSecondaryText;
 
 export default List;

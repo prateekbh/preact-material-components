@@ -1,14 +1,14 @@
 {
   "name": "preact-material-components",
-  "version": "1.0.0-beta",
+  "version": "1.0.0-beta.2",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
-		"build": "node compileComponents.js && ./node_modules/.bin/webpack",
+		"build": "node compileComponents.js && webpack",
     "prepublish": "npm run build && npm run test ",
     "test": "npm run lint",
-    "lint": "./node_modules/.bin/eslint src/"
+    "lint": "eslint src/"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,10 @@
     {
       "name": "Stijn de Witt",
       "email": "StijnDeWitt@hotmail.com"
+    },
+    {
+      "name": "Steve Anderson",
+      "email": "steve@twindx.com"
     }
   ],
   "license": "MIT",
@@ -36,24 +40,24 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components#readme",
   "dependencies": {
-    "material-components-web": "0.8.0"
+    "material-components-web": "0.9.1"
   },
   "peerDependencies": {
-    "preact": "^8.1.0"
+    "preact": "*"
   },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.2.2",
-    "babel-loader": "^6.2.10",
+    "babel-loader": "^7.0.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.22.0",
     "babel-plugin-transform-node-env-inline": "0.0.2",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.3.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.0",
     "babel-polyfill": "^6.22.0",
     "babel-preset-babili": "0.0.12",
     "babel-preset-es2015": "^6.18.0",
