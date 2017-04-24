@@ -5,10 +5,11 @@
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
-		"build": "node compileComponents.js && webpack",
+    "build": "node compileComponents.js && webpack",
     "prepublish": "npm run build && npm run test ",
     "test": "npm run lint",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+		"lint-staged": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -70,8 +71,15 @@
     "cp": "^0.2.0",
     "eslint": "^3.17.1",
     "eslint-plugin-react": "^6.10.0",
+    "lint-staged": "^3.4.0",
     "mkdirp": "^0.5.1",
+    "pre-commit": "^1.2.2",
     "preact": "^7.2.0",
+    "prettier": "^1.2.2",
     "webpack": "^2.2.1"
-  }
+  },
+	"lint-staged": {
+		"*.js": "eslint"
+	},
+	"pre-commit": "lint-staged"
 }
