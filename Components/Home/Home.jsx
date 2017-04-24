@@ -21,6 +21,7 @@ import ToolbarPage from '../ToolbarPage/ToolbarPage.jsx';
 import CardPage from '../CardPage/CardPage.jsx';
 import IconPage from '../IconPage/IconPage.jsx';
 import FormfieldPage from '../FormfieldPage/FormfieldPage.jsx';
+import LayoutGridPage from '../LayoutGridPage/LayoutGridPage.jsx';
 import routie from '../routie';
 import CodeBlock from '../CodeBlock.jsx';
 import invidualComponentSample from './invidual-component-sample.txt';
@@ -187,6 +188,13 @@ export default class Home extends Component {
 									Icon
 								</Drawer.DrawerItem>
 								<Drawer.DrawerItem onClick={()=>{
+									routie('/component/layoutgrid');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									LayoutGrid
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/list');
 									this.closeDrawer();
 								}}>
@@ -264,6 +272,7 @@ export default class Home extends Component {
 						{this.state.component === 'toolbar' && <ToolbarPage/>}
 						{this.state.component === 'icon' && <IconPage/>}
 						{this.state.component === 'formfield' && <FormfieldPage/>}
+						{this.state.component === 'layoutgrid' && <LayoutGridPage/>}
 						{
 							(!this.state.component) &&
 							<div>
