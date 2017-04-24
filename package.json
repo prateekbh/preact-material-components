@@ -1,6 +1,6 @@
 {
   "name": "preact-material-components",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist/index.js",
@@ -43,14 +43,14 @@
     "material-components-web": "0.9.1"
   },
   "peerDependencies": {
-    "preact": "^8.1.0"
+    "preact": "*"
   },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
+    "babel-loader": "^7.0.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.22.0",

@@ -15,8 +15,8 @@ class Dialog extends MaterialComponent {
 	materialDom(props) {
 		return (
 			<aside
+				style="visibility:hidden"
 				role="alertdialog"
-				aria-hidden="true"
 				ref={control=>{this.control = control;}}
 				{...props}>
 				<div className="mdc-dialog__surface">
