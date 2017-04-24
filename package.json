@@ -79,7 +79,14 @@
     "webpack": "^2.2.1"
   },
 	"lint-staged": {
-		"*.js": "eslint"
+		"*.js": [
+      "prettier --write",
+      "git add"
+    ],
+		"**/*.jsx": [
+      "prettier --write",
+      "git add"
+    ]
 	},
 	"pre-commit": "lint-staged"
 }
