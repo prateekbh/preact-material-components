@@ -33,7 +33,7 @@ Smaller bundles FTW!!!
 
 - 👎🏽 icon-toggle
 
-- 👍 list(currently only supports single line text list, with no start/end details)
+- 👍 list
 
 - 👎🏽 menu
 
@@ -47,7 +47,7 @@ Smaller bundles FTW!!!
 
 - 👍 textfield
 
-- 👎🏽 theme
+- 👍 theme
 
 - 👍 toolbar
 
