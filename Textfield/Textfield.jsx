@@ -7,36 +7,33 @@ import { MDCTextfield } from "@material/textfield/";
  * @prop multiline = false
  */
 export default class Textfield extends MaterialComponent {
-	constructor() {
-		super();
-		this.componentName = "textfield";
-		this.state = {
-			showFloatingLabel: false
-		};
-		this._mdcProps = ["fullwidth", "multiline"];
-	}
-	componentDidMount() {
-		this.setState({
-			showFloatingLabel: true
-		});
-		this.MDComponent = new MDCTextfield(this.control);
-	}
-	materialDom(allprops) {
-		const {className, ...props} = allprops;
-		return (
-			<div className={className + ''} ref={control => this.control = control}>
-				{
-					props.multiline ?
-						<textarea className="mdc-textfield__input" {...props}></textarea> :
-						<input type="text" className="mdc-textfield__input" {...props}/>
-				}
-				{
-					props.label && this.state.showFloatingLabel &&
-					<label className="mdc-textfield__label mdc-textfield__label">
-						{props.label}
-					</label>
-				}
-			</div>
-		);
-	}
+  constructor() {
+    super();
+    this.componentName = "textfield";
+    this.state = {
+      showFloatingLabel: false
+    };
+    this._mdcProps = ["fullwidth", "multiline"];
+  }
+  componentDidMount() {
+    this.setState({
+      showFloatingLabel: true
+    });
+    this.MDComponent = new MDCTextfield(this.control);
+  }
+  materialDom(allprops) {
+    const { className, ...props } = allprops;
+    return (
+      <div className={className + ""} ref={control => (this.control = control)}>
+        {props.multiline
+          ? <textarea className="mdc-textfield__input" {...props} />
+          : <input type="text" className="mdc-textfield__input" {...props} />}
+        {props.label &&
+          this.state.showFloatingLabel &&
+          <label className="mdc-textfield__label mdc-textfield__label">
+            {props.label}
+          </label>}
+      </div>
+    );
+  }
 }

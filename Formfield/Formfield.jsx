@@ -6,9 +6,9 @@ import MaterialComponent from "../MaterialComponent";
  * @prop plain = false
  */
 export default class Formfield extends MaterialComponent {
-	constructor() {
-		super();
-		this.componentName = "form-field";
-		this._mdcProps = ["align-end"];
-	}
+  constructor() {
+    super();
+    this.componentName = "form-field";
+    this._mdcProps = ["align-end"];
+  }
 }
