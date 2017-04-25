@@ -92,5 +92,5 @@
       "git add"
     ]
 	},
-	"pre-commit": "lint-staged"
+	"pre-commit": ""
 }
