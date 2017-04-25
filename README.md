@@ -33,6 +33,8 @@ Smaller bundles FTW!!!
 
 - 👎🏽 icon-toggle
 
+- 👍 layout-grid
+
 - 👍 list
 
 - 👎🏽 menu
