@@ -29,6 +29,7 @@ import { MDCTextfield } from "@material/textfield/";
 /**
  * @prop fullwidth = false
  * @prop multiline = false
+ * @prop type = 'text'
  */
 export default class Textfield extends MaterialComponent {
   constructor() {
@@ -55,13 +56,13 @@ export default class Textfield extends MaterialComponent {
         ? h("textarea", _extends({ className: "mdc-textfield__input" }, props))
         : h(
             "input",
-            _extends({ type: "text", className: "mdc-textfield__input" }, props)
+            _extends({ type: props.type || 'text', className: "mdc-textfield__input" }, props)
           ),
       props.label &&
         this.state.showFloatingLabel &&
         h(
           "label",
-          { className: "mdc-textfield__label mdc-textfield__label" },
+          { className: "mdc-textfield__label" },
           props.label
         )
     );

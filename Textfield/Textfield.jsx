@@ -5,6 +5,7 @@ import { MDCTextfield } from "@material/textfield/";
 /**
  * @prop fullwidth = false
  * @prop multiline = false
+ * @prop type = 'text'
  */
 export default class Textfield extends MaterialComponent {
   constructor() {
@@ -27,10 +28,10 @@ export default class Textfield extends MaterialComponent {
       <div className={className + ""} ref={control => (this.control = control)}>
         {props.multiline
           ? <textarea className="mdc-textfield__input" {...props} />
-          : <input type="text" className="mdc-textfield__input" {...props} />}
+          : <input type={props.type || 'text'} className="mdc-textfield__input" {...props} />}
         {props.label &&
           this.state.showFloatingLabel &&
-          <label className="mdc-textfield__label mdc-textfield__label">
+          <label className="mdc-textfield__label">
             {props.label}
           </label>}
       </div>
