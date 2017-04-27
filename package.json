@@ -1,10 +1,10 @@
 {
   "name": "preact-material-components-site",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "preact material component's site",
   "scripts": {
-    "start": "./node_modules/.bin/http-server .",
-    "build": "./node_modules/.bin/webpack",
+    "start": "http-server .",
+    "build": "webpack",
     "test": "npm run lint",
     "lint": "./node_modules/.bin/eslint src/",
 		"lint-staged": "lint-staged"
