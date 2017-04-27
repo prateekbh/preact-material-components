@@ -13,7 +13,7 @@ var _extends =
   };
 
 import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import MaterialComponent from "../MaterialComponent.jsx";
 import { MDCSnackbar } from "@material/snackbar/";
 /**
  * @prop mini = false
