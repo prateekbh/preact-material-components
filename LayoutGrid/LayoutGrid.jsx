@@ -1,5 +1,5 @@
 import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import MaterialComponent from "../MaterialComponent.jsx";
 
 class LayoutGrid extends MaterialComponent {
   constructor() {

@@ -1,5 +1,5 @@
 import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import MaterialComponent from "../MaterialComponent.jsx";
 import Button from "../Button";
 class Card extends MaterialComponent {
   constructor() {
