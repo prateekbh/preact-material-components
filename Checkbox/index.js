@@ -23,7 +23,7 @@ function _objectWithoutProperties(obj, keys) {
 }
 
 import { h } from "preact";
-import MaterialComponent from "../MaterialComponent.jsx";
+import MaterialComponent from "../MaterialComponent";
 import { MDCCheckbox } from "@material/checkbox/";
 
 /**

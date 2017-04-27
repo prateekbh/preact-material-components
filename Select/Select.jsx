@@ -1,5 +1,5 @@
 import { h } from "preact";
-import MaterialComponent from "../MaterialComponent.jsx";
+import MaterialComponent from "../MaterialComponent";
 import { MDCSelect } from "@material/select/";
 import List from "../List";
 class Select extends MaterialComponent {
