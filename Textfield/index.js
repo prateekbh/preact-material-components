@@ -23,7 +23,7 @@ function _objectWithoutProperties(obj, keys) {
 }
 
 import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import MaterialComponent from "../MaterialComponent.jsx";
 import { MDCTextfield } from "@material/textfield/";
 
 /**
@@ -56,15 +56,17 @@ export default class Textfield extends MaterialComponent {
         ? h("textarea", _extends({ className: "mdc-textfield__input" }, props))
         : h(
             "input",
-            _extends({ type: props.type || 'text', className: "mdc-textfield__input" }, props)
+            _extends(
+              {
+                type: props.type || "text",
+                className: "mdc-textfield__input"
+              },
+              props
+            )
           ),
       props.label &&
         this.state.showFloatingLabel &&
-        h(
-          "label",
-          { className: "mdc-textfield__label" },
-          props.label
-        )
+        h("label", { className: "mdc-textfield__label" }, props.label)
     );
   }
 }

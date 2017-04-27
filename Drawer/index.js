@@ -13,7 +13,7 @@ var _extends =
   };
 
 import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import MaterialComponent from "../MaterialComponent.jsx";
 import { MDCTemporaryDrawer } from "@material/drawer/temporary";
 import List from "../List";
 

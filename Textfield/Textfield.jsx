@@ -1,5 +1,5 @@
 import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import MaterialComponent from "../MaterialComponent.jsx";
 import { MDCTextfield } from "@material/textfield/";
 
 /**
@@ -28,7 +28,11 @@ export default class Textfield extends MaterialComponent {
       <div className={className + ""} ref={control => (this.control = control)}>
         {props.multiline
           ? <textarea className="mdc-textfield__input" {...props} />
-          : <input type={props.type || 'text'} className="mdc-textfield__input" {...props} />}
+          : <input
+              type={props.type || "text"}
+              className="mdc-textfield__input"
+              {...props}
+            />}
         {props.label &&
           this.state.showFloatingLabel &&
           <label className="mdc-textfield__label">
