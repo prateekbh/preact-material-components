@@ -8,6 +8,7 @@ export default class Checkbox extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "checkbox";
+    this._mdcProps = ["disabled"];
   }
   componentDidMount() {
     this.MDComponent = new MDCCheckbox(this.control);

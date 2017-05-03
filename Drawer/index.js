@@ -47,6 +47,19 @@ class TemporaryDrawerHeader extends MaterialComponent {
     super();
     this.componentName = "temporary-drawer__header";
   }
+  componentDidMount() {
+    this.MDComponent.addEventListener("MDCPersistentDrawer:open", () => {
+      if (this.props.onOpen) {
+        this.props.onOpen();
+      }
+    });
+
+    this.MDComponent.addEventListener("MDCPersistentDrawer:close", () => {
+      if (this.props.onClose) {
+        this.props.onClose();
+      }
+    });
+  }
   materialDom(props) {
     return h(
       "header",
