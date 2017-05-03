@@ -30,8 +30,14 @@ export default class Home extends Component {
       <div>
         <Toolbar>
           <Toolbar.Row>
-            <Toolbar.Section>
-              <Toolbar.Icon>menu</Toolbar.Icon>
+            <Toolbar.Section align-start={true}>
+              <Toolbar.Icon
+                onClick={() => {
+                  this.drawer.MDComponent.open = true;
+                }}
+              >
+                menu
+              </Toolbar.Icon>
               <Toolbar.Title>Hi</Toolbar.Title>
             </Toolbar.Section>
           </Toolbar.Row>
@@ -40,6 +46,12 @@ export default class Home extends Component {
         <Drawer.TemporaryDrawer
           ref={drawer => {
             this.drawer = drawer;
+          }}
+          onOpen={() => {
+            console.log("open");
+          }}
+          onClose={() => {
+            console.log("Close");
           }}
         >
           <Drawer.TemporaryDrawerHeader>
@@ -76,6 +88,12 @@ export default class Home extends Component {
         <div>
           <div className="mdc-form-field">
             <Checkbox
+              ref={inp => {
+                this.inp = inp;
+              }}
+            />
+            <Checkbox
+              disabled={true}
               ref={inp => {
                 this.inp = inp;
               }}

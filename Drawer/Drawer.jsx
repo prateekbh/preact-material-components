@@ -10,6 +10,17 @@ class TemporaryDrawer extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = MDCTemporaryDrawer.attachTo(this.control);
+    this.MDComponent.listen("MDCTemporaryDrawer:open", () => {
+      if (this.props.onOpen) {
+        this.props.onOpen();
+      }
+    });
+
+    this.MDComponent.listen("MDCTemporaryDrawer:close", () => {
+      if (this.props.onClose) {
+        this.props.onClose();
+      }
+    });
   }
   materialDom(props) {
     return (
@@ -32,19 +43,6 @@ class TemporaryDrawerHeader extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "temporary-drawer__header";
-  }
-  componentDidMount() {
-    this.MDComponent.addEventListener("MDCPersistentDrawer:open", () => {
-      if (this.props.onOpen) {
-        this.props.onOpen();
-      }
-    });
-
-    this.MDComponent.addEventListener("MDCPersistentDrawer:close", () => {
-      if (this.props.onClose) {
-        this.props.onClose();
-      }
-    });
   }
   materialDom(props) {
     return (
