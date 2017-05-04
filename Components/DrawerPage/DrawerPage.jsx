@@ -39,6 +39,16 @@ export default class DrawerPage extends Component {
 				]
 			}
 		];
+		this.eventsTable = [
+			{
+				name: 'onOpen',
+				description: 'Fired when the drawer is opened.'
+			},
+			{
+				name: 'onClose',
+				description: 'Fired when the drawer is closed.'
+			}
+		];
 	}
 	render(){
 		return (

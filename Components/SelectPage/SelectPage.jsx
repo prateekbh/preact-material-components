@@ -1,6 +1,7 @@
 import {h, Component} from 'preact';
 import Select from 'preact-material-components/Select';
 import ComponentTable from '../ComponentTable.jsx';
+import EventsTable from '../EventsTable.jsx';
 import './SelectPage.css';
 import CodeBlock from '../CodeBlock.jsx';
 import sample from './sample.txt';
@@ -26,11 +27,18 @@ export default class SelectPage extends Component {
 				props: []
 			}
 		];
+		this.eventsTable = [
+			{
+				name: 'onChange',
+				description: 'Fired when the selection changes on Select box'
+			}
+		];
 	}
 	render(){
 		return (
 			<div className="page-select">
 				<ComponentTable data={this.propsTable}/>
+				<EventsTable data={this.eventsTable}/>
 
 				<div className="mdc-typography--display1">Sample code </div>
 				<CodeBlock>
