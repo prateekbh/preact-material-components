@@ -24,6 +24,17 @@ class TemporaryDrawer extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = MDCTemporaryDrawer.attachTo(this.control);
+    this.MDComponent.listen("MDCTemporaryDrawer:open", () => {
+      if (this.props.onOpen) {
+        this.props.onOpen();
+      }
+    });
+
+    this.MDComponent.listen("MDCTemporaryDrawer:close", () => {
+      if (this.props.onClose) {
+        this.props.onClose();
+      }
+    });
   }
   materialDom(props) {
     return h(

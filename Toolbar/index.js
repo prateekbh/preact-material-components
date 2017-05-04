@@ -65,7 +65,7 @@ class ToolbarSection extends MaterialComponent {
 class ToolbarIcon extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "toolbal__icon";
+    this.componentName = "toolbar__icon";
   }
   materialDom(props) {
     return h(
