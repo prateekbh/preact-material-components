@@ -54,6 +54,7 @@ export default class DrawerPage extends Component {
 		return (
 			<div className="page-toolbar">
 				<ComponentTable data={this.propsTable} />
+				<EventsTable data={this.eventsTable}/>
 
 				<div className="mdc-typography--display1">Sample code </div>
 				<CodeBlock>
