@@ -1,36 +1,17 @@
-import Button from './Button';
-import Checkbox from './Checkbox';
-import Fab from './Fab';
-import Icon from './Icon';
-import Switch from './Switch';
-import Snackbar from './Snackbar';
-import Radio from './Radio';
-import Textfield from './Textfield';
-import Select from './Select';
-import Card from './Card';
-import Elevation from './Elevation';
-import Formfield from './Formfield';
-import Dialog from './Dialog';
-import List from './List';
-import Drawer from './Drawer';
-import Toolbar from './Toolbar';
-import LayoutGrid from './LayoutGrid';
-export {
-	Button,
-	Checkbox,
-	Fab,
-	Switch,
-	Snackbar,
-	Icon,
-	Radio,
-	Textfield,
-	Select,
-	Card,
-	Elevation,
-	Formfield,
-	Dialog,
-	List,
-	Drawer,
-	Toolbar,
-	LayoutGrid
-};
+export { default as Button } from './Button/Button.jsx';
+export { default as Checkbox } from './Checkbox/Checkbox.jsx';
+export { default as Fab } from './Fab/Fab.jsx';
+export { default as Icon } from './Icon/Icon.jsx';
+export { default as Switch } from './Switch/Switch.jsx';
+export { default as Snackbar } from './Snackbar/Snackbar.jsx';
+export { default as Radio } from './Radio/Radio.jsx';
+export { default as Textfield } from './Textfield/Textfield.jsx';
+export { default as Select } from './Select/Select.jsx';
+export { default as Card } from './Card/Card.jsx';
+export { default as Elevation } from './Elevation/Elevation.jsx';
+export { default as Formfield } from './Formfield/Formfield.jsx';
+export { default as Dialog } from './Dialog/Dialog.jsx';
+export { default as List } from './List/List.jsx';
+export { default as Drawer } from './Drawer/Drawer.jsx';
+export { default as Toolbar } from './Toolbar/Toolbar.jsx';
+export { default as LayoutGrid } from './LayoutGrid/LayoutGrid.jsx';
