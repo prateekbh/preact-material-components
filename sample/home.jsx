@@ -15,7 +15,8 @@ import {
   List,
   Drawer,
   Toolbar,
-  LayoutGrid
+  LayoutGrid,
+  Menu
 } from "../";
 
 export default class Home extends Component {
@@ -203,6 +204,24 @@ export default class Home extends Component {
           <List.Divider />
           <List.LinkItem ripple={true} href="#">Item3</List.LinkItem>
         </List>
+        <Menu.Anchor>
+          <Button
+            onClick={e => {
+              this.menu.MDComponent.open = true;
+            }}
+          >
+            Click for menu
+          </Button>
+          <Menu
+            ref={menu => {
+              this.menu = menu;
+            }}
+          >
+            <Menu.Item>Hello1</Menu.Item>
+            <Menu.Item>Hello2</Menu.Item>
+            <Menu.Item>Hello3</Menu.Item>
+          </Menu>
+        </Menu.Anchor>
       </div>
     );
   }

@@ -42,5 +42,7 @@ class MenuAnchor extends MaterialComponent {
     this.componentName = "menu-anchor";
   }
 }
+
+Menu.Anchor = MenuAnchor;
 Menu.Item = List.Item;
 export default Menu;
