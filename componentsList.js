@@ -12,7 +12,7 @@ const bundleMapping = {
   LayoutGrid: "layout-grid",
   List: "list",
   Menu: "menu",
-  Tabs: "Tabs",
+  Tabs: "tabs",
   Radio: "radio",
   Select: "select",
   Snackbar: "snackbar",
