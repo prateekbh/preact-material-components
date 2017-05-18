@@ -1,9 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import {
-  MDCTemporaryDrawer,
-  MDCPersistentDrawer
-} from "@material/drawer/temporary";
+import { MDCTemporaryDrawer } from "@material/drawer/temporary";
+import { MDCPersistentDrawer } from "@material/drawer/persistent";
 import List from "../List";
 
 class TemporaryDrawer extends MaterialComponent {
