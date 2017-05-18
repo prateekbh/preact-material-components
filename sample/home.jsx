@@ -16,7 +16,8 @@ import {
   Drawer,
   Toolbar,
   LayoutGrid,
-  Menu
+  Menu,
+  Tabs
 } from "../";
 
 export default class Home extends Component {
@@ -161,7 +162,13 @@ export default class Home extends Component {
           <Select.Item>opt3</Select.Item>
           <Select.Item>opt4</Select.Item>
         </Select>
-
+        <div>
+          <Tabs>
+            <Tabs.Tab>tab1</Tabs.Tab>
+            <Tabs.Tab active={true}>tab2</Tabs.Tab>
+            <Tabs.Tab>tab3</Tabs.Tab>
+          </Tabs>
+        </div>
         <div>
           <Select basic={true}>
             <option value="" default selected>Pick a food</option>

@@ -16,6 +16,7 @@ import Drawer from "./Drawer";
 import Toolbar from "./Toolbar";
 import LayoutGrid from "./LayoutGrid";
 import Menu from "./Menu";
+import Tabs from "./Tabs";
 export {
   Button,
   Checkbox,
@@ -34,5 +35,6 @@ export {
   Drawer,
   Menu,
   Toolbar,
-  LayoutGrid
+  LayoutGrid,
+  Tabs
 };
