@@ -16,6 +16,7 @@ import RadioPage from '../RadioPage/RadioPage.jsx';
 import ListPage from '../ListPage/ListPage.jsx';
 import SelectPage from '../SelectPage/SelectPage.jsx';
 import SnackbarPage from '../SnackbarPage/SnackbarPage.jsx';
+import TabsPage from '../TabsPage/TabsPage.jsx';
 import TextfieldPage from '../TextfieldPage/TextfieldPage.jsx';
 import ToolbarPage from '../ToolbarPage/ToolbarPage.jsx';
 import CardPage from '../CardPage/CardPage.jsx';
@@ -230,6 +231,13 @@ export default class Home extends Component {
 									Switch
 								</Drawer.DrawerItem>
 								<Drawer.DrawerItem onClick={()=>{
+									routie('/component/tabs');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Tabs
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/textfield');
 									this.closeDrawer();
 								}}>
@@ -273,6 +281,7 @@ export default class Home extends Component {
 						{this.state.component === 'icon' && <IconPage/>}
 						{this.state.component === 'formfield' && <FormfieldPage/>}
 						{this.state.component === 'layoutgrid' && <LayoutGridPage/>}
+						{this.state.component === 'tabs' && <TabsPage/>}
 						{
 							(!this.state.component) &&
 							<div>
