@@ -44,6 +44,20 @@ class Tab extends MaterialComponent {
   }
 }
 
-Tabs.Tab = Tab;
+class TabIconLabel extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "tab__icon-text";
+  }
+  materialDom(props) {
+    return (
+      <span {...props} ref={control => (this.control = control)}>
+        {props.children}
+      </span>
+    );
+  }
+}
 
+Tabs.Tab = Tab;
+Tabs.TabIconLabel = TabIconLabel;
 export default Tabs;
