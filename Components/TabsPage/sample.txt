@@ -6,19 +6,11 @@ export default class SwitchPage extends Component {
   render(){
     return (
       <div>
-        <Toolbar className="toolbar">
-            <Toolbar.Row>
-              <Toolbar.Section align-start={true}>
-                <Toolbar.Icon >menu</Toolbar.Icon>
-                <Toolbar.Title>
-                  My App
-                </Toolbar.Title>
-              </Toolbar.Section>
-              <Toolbar.Section align-end={true}>
-                <Icon>more_vert</Icon>
-              </Toolbar.Section>
-            </Toolbar.Row>
-          </Toolbar>
+        <Tabs className='demo-tabs' indicator-accent={true}>
+          <Tabs.Tab>Tab1</Tabs.Tab>
+          <Tabs.Tab>Tab2</Tabs.Tab>
+          <Tabs.Tab>Tab3</Tabs.Tab>
+        </Tabs>
       </div>
     );
   }
