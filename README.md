@@ -32,7 +32,7 @@ Smaller bundles FTW!!!
 
 - 👍 list(currently only supports single line text list, with no start/end details)
 
-- 👎🏽 menu
+- 👍 menu
 
 - 👍 radio
 

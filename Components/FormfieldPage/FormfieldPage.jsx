@@ -1,6 +1,6 @@
 import {h, Component} from 'preact';
 import Radio from 'preact-material-components/Radio';
-import FormField from 'preact-material-components/FormField';
+import Formfield from 'preact-material-components/Formfield';
 import ComponentTable from '../ComponentTable.jsx';
 import './FormfieldPage.css';
 import CodeBlock from '../CodeBlock.jsx';
@@ -34,10 +34,10 @@ export default class FormfieldPage extends Component {
 				</div>
 
 				<div className="mdc-typography--display1">Demo </div>
-				<FormField>
+				<Formfield>
 					<Radio id="r1" name='opts'></Radio>
 					<label for="r1">Radio 1</label>
-				</FormField>
+				</Formfield>
 
 			</div>
 		);
