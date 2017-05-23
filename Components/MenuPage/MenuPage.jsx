@@ -50,7 +50,7 @@ export default class MenuPage extends Component {
 				<Menu.Anchor>
           <Button
             onClick={e => {
-              this.menu.MDComponent.open = true;
+              this.menu.MDComponent.open = !this.menu.MDComponent.open;
             }}
           >
             Click for menu
