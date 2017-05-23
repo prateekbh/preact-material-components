@@ -66,7 +66,7 @@
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "babel-regenerator-runtime": "^6.5.0",
-    "babili-webpack-plugin": "0.0.11",
+    "babili-webpack-plugin": "0.1.0",
     "clean-webpack-plugin": "^0.1.15",
     "cp": "^0.2.0",
     "eslint": "^3.17.1",
