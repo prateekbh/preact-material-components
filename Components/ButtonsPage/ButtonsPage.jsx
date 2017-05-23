@@ -72,7 +72,7 @@ export default class ButtonsPage extends Component {
 				<Button raised={true} compact={true}>Compact Raised button </Button>
 				<Button raised={true} primary={true}>Primary Raised button </Button>
 
-				<div className="mdc-typography--title">Raised </div>
+				<div className="mdc-typography--title">Disabled </div>
 				<Button disabled={true}>Disabled button without ripple</Button>
 				<Button disabled={true} ripple={true}>Disabled button with ripple</Button>
 				<Button disabled={true} accent={true}>Accented Disabled button</Button>
