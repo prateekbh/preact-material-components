@@ -22,13 +22,20 @@ export default class Textfield extends MaterialComponent {
     });
     this.MDComponent = new MDCTextfield(this.control);
   }
+  componentWillUnmount() {
+    this.MDComponent.destroy();
+  }
   materialDom(allprops) {
     const { className, ...props } = allprops;
     return (
       <div className={className + ""} ref={control => (this.control = control)}>
         {props.multiline
           ? <textarea className="mdc-textfield__input" {...props} />
-          : <input type={props.type || 'text'} className="mdc-textfield__input" {...props} />}
+          : <input
+              type={props.type || "text"}
+              className="mdc-textfield__input"
+              {...props}
+            />}
         {props.label &&
           this.state.showFloatingLabel &&
           <label className="mdc-textfield__label">

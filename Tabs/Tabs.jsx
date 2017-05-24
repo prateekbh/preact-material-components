@@ -16,6 +16,9 @@ class Tabs extends MaterialComponent {
   componentDidMount() {
     this.MDComponent = new MDCTabBar(this.control);
   }
+  componentWillUnmount() {
+    this.MDComponent.destroy();
+  }
   materialDom(props) {
     return (
       <nav role="tablist" {...props} ref={control => (this.control = control)}>
