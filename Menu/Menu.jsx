@@ -22,7 +22,7 @@ class Menu extends MaterialComponent {
     this.MDComponent = new MDCSimpleMenu(this.control);
   }
   componentWillUnmount() {
-    this.MDComponent.destroy();
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     return (

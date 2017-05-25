@@ -13,7 +13,7 @@ class Dialog extends MaterialComponent {
     this.MDComponent = new MDCDialog(this.control);
   }
   componentWillUnmount() {
-    this.MDComponent.destroy();
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     return (

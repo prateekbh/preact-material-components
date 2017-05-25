@@ -23,7 +23,7 @@ class Select extends MaterialComponent {
   }
   componentWillUnmount() {
     this.MDComponent.unlisten("MDCSelect:change", this._changed);
-    this.MDComponent.destroy();
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   updateSelection(prevProps) {
     if (
