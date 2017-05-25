@@ -25,9 +25,13 @@ class Select extends MaterialComponent {
   componentDidMount() {
     if (!this.props.basic) {
       this.MDComponent = new MDCSelect(this.control);
-      this.MDComponent.listen("MDCSelect:change", () => {
+      this.MDComponent.listen("MDCSelect:change", e => {
+        e = e || {};
+        e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
+        e.selectedOptions =
+          e.selectedOptions || this.MDComponent.selectedOptions;
         if (this.props.onChange) {
-          this.props.onChange();
+          this.props.onChange(e);
         }
       });
       this.updateSelection();
