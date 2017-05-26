@@ -79,7 +79,7 @@
     "webpack": "^2.2.1"
   },
 	"lint-staged": {
-		"*.js": [
+		"index.js": [
       "prettier --write",
       "git add"
     ],
