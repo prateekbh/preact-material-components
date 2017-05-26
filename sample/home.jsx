@@ -15,7 +15,9 @@ import {
   List,
   Drawer,
   Toolbar,
-  LayoutGrid
+  LayoutGrid,
+  Menu,
+  Tabs
 } from "../";
 
 export default class Home extends Component {
@@ -149,9 +151,9 @@ export default class Home extends Component {
             this.presel = presel;
           }}
           selectedIndex={this.state.chosenOption}
-          onChange={() => {
+          onChange={e => {
             this.setState({
-              chosenOption: this.presel.MDComponent.selectedIndex
+              chosenOption: e.selectedIndex
             });
           }}
         >
@@ -160,7 +162,13 @@ export default class Home extends Component {
           <Select.Item>opt3</Select.Item>
           <Select.Item>opt4</Select.Item>
         </Select>
-
+        <div>
+          <Tabs>
+            <Tabs.Tab>tab1</Tabs.Tab>
+            <Tabs.Tab active={true}>tab2</Tabs.Tab>
+            <Tabs.Tab>tab3</Tabs.Tab>
+          </Tabs>
+        </div>
         <div>
           <Select basic={true}>
             <option value="" default selected>Pick a food</option>
@@ -203,6 +211,24 @@ export default class Home extends Component {
           <List.Divider />
           <List.LinkItem ripple={true} href="#">Item3</List.LinkItem>
         </List>
+        <Menu.Anchor>
+          <Button
+            onClick={e => {
+              this.menu.MDComponent.open = true;
+            }}
+          >
+            Click for menu
+          </Button>
+          <Menu
+            ref={menu => {
+              this.menu = menu;
+            }}
+          >
+            <Menu.Item>Hello1</Menu.Item>
+            <Menu.Item>Hello2</Menu.Item>
+            <Menu.Item>Hello3</Menu.Item>
+          </Menu>
+        </Menu.Anchor>
       </div>
     );
   }

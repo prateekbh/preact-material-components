@@ -37,7 +37,7 @@ Smaller bundles FTW!!!
 
 - 👍 list
 
-- 👎🏽 menu
+- 👍 menu
 
 - 👍 radio
 
