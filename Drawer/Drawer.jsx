@@ -29,6 +29,7 @@ class TemporaryDrawer extends MaterialComponent {
   componentWillUnmount() {
     this.MDComponent.unlisten("MDCTemporaryDrawer:close", this._close);
     this.MDComponent.unlisten("MDCTemporaryDrawer:open", this._open);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     return (
@@ -136,6 +137,7 @@ class PersistentDrawer extends MaterialComponent {
   componentWillUnmount() {
     this.MDComponent.unlisten("MDCPersistentDrawer:close", this._close);
     this.MDComponent.unlisten("MDCPersistentDrawer:open", this._open);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     return (
