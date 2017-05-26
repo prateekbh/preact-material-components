@@ -13,7 +13,9 @@ export default class Snackbar extends MaterialComponent {
   componentDidMount() {
     this.MDComponent = MDCSnackbar.attachTo(this.control);
   }
-
+  componentWillUnmount() {
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
   materialDom(props) {
     return (
       <div

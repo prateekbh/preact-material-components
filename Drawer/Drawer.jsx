@@ -8,20 +8,28 @@ class TemporaryDrawer extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "temporary-drawer";
+    this._open = this._open.bind(this);
+    this._close = this._close.bind(this);
+  }
+  _open() {
+    if (this.props.onOpen) {
+      this.props.onOpen();
+    }
+  }
+  _close() {
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
   }
   componentDidMount() {
     this.MDComponent = MDCTemporaryDrawer.attachTo(this.control);
-    this.MDComponent.listen("MDCTemporaryDrawer:open", () => {
-      if (this.props.onOpen) {
-        this.props.onOpen();
-      }
-    });
-
-    this.MDComponent.listen("MDCTemporaryDrawer:close", () => {
-      if (this.props.onClose) {
-        this.props.onClose();
-      }
-    });
+    this.MDComponent.listen("MDCTemporaryDrawer:open", this._open);
+    this.MDComponent.listen("MDCTemporaryDrawer:close", this._close);
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCTemporaryDrawer:close", this._close);
+    this.MDComponent.unlisten("MDCTemporaryDrawer:open", this._open);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     return (
@@ -108,20 +116,28 @@ class PersistentDrawer extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "persistent-drawer";
+    this._open = this._open.bind(this);
+    this._close = this._close.bind(this);
+  }
+  _open() {
+    if (this.props.onOpen) {
+      this.props.onOpen();
+    }
+  }
+  _close() {
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
   }
   componentDidMount() {
     this.MDComponent = MDCPersistentDrawer.attachTo(this.control);
-    this.MDComponent.listen("MDCPersistentDrawer:open", () => {
-      if (this.props.onOpen) {
-        this.props.onOpen();
-      }
-    });
-
-    this.MDComponent.listen("MDCPersistentDrawer:close", () => {
-      if (this.props.onClose) {
-        this.props.onClose();
-      }
-    });
+    this.MDComponent.listen("MDCPersistentDrawer:open", this._open);
+    this.MDComponent.listen("MDCPersistentDrawer:close", this._close);
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCPersistentDrawer:close", this._close);
+    this.MDComponent.unlisten("MDCPersistentDrawer:open", this._open);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     return (
