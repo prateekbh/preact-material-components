@@ -35,6 +35,9 @@ class Menu extends MaterialComponent {
   componentDidMount() {
     this.MDComponent = new MDCSimpleMenu(this.control);
   }
+  componentWillUnmount() {
+    this.MDComponent.destroy();
+  }
   materialDom(props) {
     return h(
       "div",

@@ -46,6 +46,9 @@ export default class Textfield extends MaterialComponent {
     });
     this.MDComponent = new MDCTextfield(this.control);
   }
+  componentWillUnmount() {
+    this.MDComponent.destroy();
+  }
   materialDom(allprops) {
     const { className } = allprops,
       props = _objectWithoutProperties(allprops, ["className"]);
@@ -57,7 +60,10 @@ export default class Textfield extends MaterialComponent {
         : h(
             "input",
             _extends(
-              { type: props.type || "text", className: "mdc-textfield__input" },
+              {
+                type: props.type || "text",
+                className: "mdc-textfield__input"
+              },
               props
             )
           ),

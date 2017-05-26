@@ -37,6 +37,9 @@ export default class Checkbox extends MaterialComponent {
   componentDidMount() {
     this.MDComponent = new MDCCheckbox(this.control);
   }
+  componentWillUnmount() {
+    this.MDComponent.destroy();
+  }
   materialDom(allprops) {
     const { className } = allprops,
       props = _objectWithoutProperties(allprops, ["className"]);
