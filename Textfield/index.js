@@ -47,7 +47,7 @@ export default class Textfield extends MaterialComponent {
     this.MDComponent = new MDCTextfield(this.control);
   }
   componentWillUnmount() {
-    this.MDComponent.destroy();
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(allprops) {
     const { className } = allprops,

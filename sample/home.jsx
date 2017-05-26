@@ -151,9 +151,9 @@ export default class Home extends Component {
             this.presel = presel;
           }}
           selectedIndex={this.state.chosenOption}
-          onChange={() => {
+          onChange={e => {
             this.setState({
-              chosenOption: this.presel.MDComponent.selectedIndex
+              chosenOption: e.selectedIndex
             });
           }}
         >

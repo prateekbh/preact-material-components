@@ -9,9 +9,12 @@ class Select extends MaterialComponent {
     this._mdcProps = ["disabled"];
     this._changed = this._changed.bind(this);
   }
-  _changed() {
+  _changed(e) {
+    e = e || {};
+    e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
+    e.selectedOptions = e.selectedOptions || this.MDComponent.selectedOptions;
     if (this.props.onChange) {
-      this.props.onChange();
+      this.props.onChange(e);
     }
   }
   componentDidMount() {

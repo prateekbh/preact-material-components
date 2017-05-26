@@ -31,7 +31,7 @@ class Tabs extends MaterialComponent {
     this.MDComponent = new MDCTabBar(this.control);
   }
   componentWillUnmount() {
-    this.MDComponent.destroy();
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     return h(
