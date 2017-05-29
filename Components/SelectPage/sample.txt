@@ -8,18 +8,20 @@ export default class SelectPage extends Component {
     return (
       <div>
         <Select hintText="Select an option"
-					ref={presel=>{this.presel = presel;}}
-					selectedIndex={this.state.chosenOption}
-					onChange={()=>{
-						this.setState({
-							chosenOption: this.presel.MDComponent.selectedIndex
-						});
-				}}>
-					<Select.Item>opt1</Select.Item>
-					<Select.Item>opt2</Select.Item>
-					<Select.Item>opt3</Select.Item>
-					<Select.Item>opt4</Select.Item>
-			</Select>
+          ref={presel=>{this.presel = presel;}}
+          selectedIndex={this.state.chosenIndex}
+          onChange={(e)=>{
+            this.setState({
+              chosenIndex: e.selectedIndex
+            });
+            //selected option
+            console.log(e.selectedOption);
+        }}>
+          <Select.Item>opt1</Select.Item>
+          <Select.Item>opt2</Select.Item>
+          <Select.Item>opt3</Select.Item>
+          <Select.Item>opt4</Select.Item>
+      </Select>
     );
   }
 }
