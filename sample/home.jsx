@@ -12,6 +12,7 @@ import {
   Select,
   Elevation,
   Dialog,
+  LinearProgress,
   List,
   Drawer,
   Toolbar,
@@ -144,6 +145,8 @@ export default class Home extends Component {
             <Dialog.FooterButton accept={true}>Yes</Dialog.FooterButton>
           </Dialog.Footer>
         </Dialog>
+
+        <LinearProgress indeterminate={true} accent={true} />
 
         <Select
           hintText="Select an option"

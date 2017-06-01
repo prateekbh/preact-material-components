@@ -1,7 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCTabBar } from "@material/tabs";
-import List from "../List";
 
 /**
  * @prop indicator-accent = false
