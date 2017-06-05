@@ -12,6 +12,16 @@ var _extends =
     return target;
   };
 
+function _objectWithoutProperties(obj, keys) {
+  var target = {};
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+  return target;
+}
+
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCTabBar, MDCTabBarScroller } from "@material/tabs";
@@ -39,16 +49,26 @@ class Tabs extends MaterialComponent {
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
-  materialDom(props) {
-    let className = "";
+  materialDom(allprops) {
+    let { className } = allprops,
+      props = _objectWithoutProperties(allprops, ["className"]);
     if (props.scroller) {
       className = "mdc-tab-bar-scroller__scroll-frame__tabs";
+    } else {
+      className = "";
     }
     return h(
       "nav",
-      _extends({ className: className, role: "tablist" }, props, {
-        ref: control => (this.control = control)
-      }),
+      _extends(
+        {
+          className: className,
+          role: "tablist"
+        },
+        props,
+        {
+          ref: control => (this.control = control)
+        }
+      ),
       props.children,
       h("span", { class: "mdc-tab-bar__indicator" })
     );

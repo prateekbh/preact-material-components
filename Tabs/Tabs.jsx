@@ -25,10 +25,12 @@ class Tabs extends MaterialComponent {
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
-  materialDom(props) {
-    let className = "";
+  materialDom(allprops) {
+    let { className, ...props } = allprops;
     if (props.scroller) {
       className = "mdc-tab-bar-scroller__scroll-frame__tabs";
+    } else {
+      className = "";
     }
     return (
       <nav

@@ -27,6 +27,10 @@ export default class Textfield extends MaterialComponent {
   }
   materialDom(allprops) {
     const { className, ...props } = allprops;
+    let labelClass = ["mdc-textfield__label"];
+    if (props.value) {
+      labelClass.push("mdc-textfield__label--float-above");
+    }
     return (
       <div className={className + ""} ref={control => (this.control = control)}>
         {props.multiline
@@ -38,7 +42,7 @@ export default class Textfield extends MaterialComponent {
             />}
         {props.label &&
           this.state.showFloatingLabel &&
-          <label className="mdc-textfield__label">
+          <label className={labelClass.join(" ")}>
             {props.label}
           </label>}
       </div>
