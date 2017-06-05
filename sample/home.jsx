@@ -12,6 +12,7 @@ import {
   Select,
   Elevation,
   Dialog,
+  LinearProgress,
   List,
   Drawer,
   Toolbar,
@@ -145,6 +146,8 @@ export default class Home extends Component {
           </Dialog.Footer>
         </Dialog>
 
+        <LinearProgress indeterminate={true} accent={true} />
+
         <Select
           hintText="Select an option"
           ref={presel => {
@@ -163,11 +166,28 @@ export default class Home extends Component {
           <Select.Item>opt4</Select.Item>
         </Select>
         <div>
-          <Tabs>
+          <Tabs indicator-accent={true}>
             <Tabs.Tab>tab1</Tabs.Tab>
             <Tabs.Tab active={true}>tab2</Tabs.Tab>
             <Tabs.Tab>tab3</Tabs.Tab>
           </Tabs>
+        </div>
+        <div style="margin: 32px 0">
+          <Tabs.TabBarScroller>
+            <Tabs scroller={true}>
+              <Tabs.Tab>tab1</Tabs.Tab>
+              <Tabs.Tab active={true}>tab2</Tabs.Tab>
+              <Tabs.Tab>tab3</Tabs.Tab>
+              <Tabs.Tab>tab4</Tabs.Tab>
+              <Tabs.Tab>tab5</Tabs.Tab>
+              <Tabs.Tab>tab6</Tabs.Tab>
+              <Tabs.Tab>tab7</Tabs.Tab>
+              <Tabs.Tab>tab7</Tabs.Tab>
+              <Tabs.Tab>tab9</Tabs.Tab>
+              <Tabs.Tab>tab10</Tabs.Tab>
+              <Tabs.Tab>tab11</Tabs.Tab>
+            </Tabs>
+          </Tabs.TabBarScroller>
         </div>
         <div>
           <Select basic={true}>

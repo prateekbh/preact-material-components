@@ -12,20 +12,36 @@ var _extends =
     return target;
   };
 
+function _objectWithoutProperties(obj, keys) {
+  var target = {};
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+  return target;
+}
+
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCTabBar } from "@material/tabs";
-import List from "../List";
+import { MDCTabBar, MDCTabBarScroller } from "@material/tabs";
 
 /**
  * @prop indicator-accent = false
  * @prop icon-tab-bar = false
+ * @prop icons-with-text = false
+ * @prop scroller = false
  */
 class Tabs extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "tab-bar";
-    this._mdcProps = ["indicator-accent", "icon-tab-bar", "icons-with-text"];
+    this._mdcProps = [
+      "indicator-accent",
+      "icon-tab-bar",
+      "icons-with-text",
+      "scroller"
+    ];
   }
   componentDidMount() {
     this.MDComponent = new MDCTabBar(this.control);
@@ -33,14 +49,82 @@ class Tabs extends MaterialComponent {
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
-  materialDom(props) {
+  materialDom(allprops) {
+    let { className } = allprops,
+      props = _objectWithoutProperties(allprops, ["className"]);
+    if (props.scroller) {
+      className = "mdc-tab-bar-scroller__scroll-frame__tabs";
+    } else {
+      className = "";
+    }
     return h(
       "nav",
-      _extends({ role: "tablist" }, props, {
-        ref: control => (this.control = control)
-      }),
+      _extends(
+        {
+          className: className,
+          role: "tablist"
+        },
+        props,
+        {
+          ref: control => (this.control = control)
+        }
+      ),
       props.children,
       h("span", { class: "mdc-tab-bar__indicator" })
+    );
+  }
+}
+
+class TabBarScroller extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "tab-bar-scroller";
+  }
+  componentDidMount() {
+    this.MDComponent = new MDCTabBarScroller(this.control);
+  }
+  componentWillUnmount() {
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  materialDom(props) {
+    return h(
+      "div",
+      _extends({}, props, { ref: control => (this.control = control) }),
+      h(
+        "div",
+        {
+          className: "mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back"
+        },
+        h(
+          "a",
+          {
+            className: "mdc-tab-bar-scroller__indicator__inner material-icons",
+            href: "#",
+            "aria-label": "scroll back button"
+          },
+          "navigate_before"
+        )
+      ),
+      h(
+        "div",
+        { className: "mdc-tab-bar-scroller__scroll-frame" },
+        props.children
+      ),
+      h(
+        "div",
+        {
+          className: "mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward"
+        },
+        h(
+          "a",
+          {
+            className: "mdc-tab-bar-scroller__indicator__inner material-icons",
+            href: "#",
+            "aria-label": "scroll forward button"
+          },
+          "navigate_next"
+        )
+      )
     );
   }
 }
@@ -79,6 +163,7 @@ class TabIconLabel extends MaterialComponent {
   }
 }
 
+Tabs.TabBarScroller = TabBarScroller;
 Tabs.Tab = Tab;
 Tabs.TabIconLabel = TabIconLabel;
 export default Tabs;

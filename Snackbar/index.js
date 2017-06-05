@@ -16,8 +16,7 @@ import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCSnackbar } from "@material/snackbar/";
 /**
- * @prop mini = false
- * @prop plain = false
+ * dismissesOnAction = true
  */
 export default class Snackbar extends MaterialComponent {
   constructor() {
@@ -26,8 +25,18 @@ export default class Snackbar extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = MDCSnackbar.attachTo(this.control);
+    if (
+      this.props.dismissesOnAction === undefined ||
+      this.props.dismissesOnAction === null
+    ) {
+      this.MDComponent.dismissesOnAction = true;
+    } else {
+      this.MDComponent.dismissesOnAction = this.props.dismissesOnAction;
+    }
   }
-
+  componentWillUnmount() {
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
   materialDom(props) {
     return h(
       "div",

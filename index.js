@@ -14,6 +14,7 @@ import Dialog from "./Dialog";
 import List from "./List";
 import Drawer from "./Drawer";
 import Toolbar from "./Toolbar";
+import LinearProgress from "./LinearProgress";
 import LayoutGrid from "./LayoutGrid";
 import Menu from "./Menu";
 import Tabs from "./Tabs";
@@ -31,6 +32,7 @@ export {
   Elevation,
   Formfield,
   Dialog,
+  LinearProgress,
   List,
   Drawer,
   Menu,
