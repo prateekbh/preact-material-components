@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCTabBar } from "@material/tabs";
+import { MDCTabBar, MDCTabBarScroller } from "@material/tabs";
 
 /**
  * @prop indicator-accent = false
@@ -24,6 +24,50 @@ class Tabs extends MaterialComponent {
         {props.children}
         <span class="mdc-tab-bar__indicator" />
       </nav>
+    );
+  }
+}
+
+class TabBarScroller extends Tabs {
+  constructor() {
+    super();
+    this.componentName = "tab-bar-scroller";
+  }
+  componentDidMount() {
+    this.MDComponent = new MDCTabBarScroller(this.control);
+  }
+  materialDom(props) {
+    return (
+      <div>
+        <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
+          <a
+            className="mdc-tab-bar-scroller__indicator__inner material-icons"
+            href="#"
+            aria-label="scroll back button"
+          >
+            navigate_before
+          </a>
+        </div>
+        <div className="mdc-tab-bar-scroller__scroll-frame">
+          <nav
+            className="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs"
+            {...props}
+            ref={control => (this.control = control)}
+          >
+            {props.children}
+            <span className="mdc-tab-bar__indicator" />
+          </nav>
+        </div>
+        <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
+          <a
+            className="mdc-tab-bar-scroller__indicator__inner material-icons"
+            href="#"
+            aria-label="scroll forward button"
+          >
+            navigate_next
+          </a>
+        </div>
+      </div>
     );
   }
 }
@@ -60,6 +104,7 @@ class TabIconLabel extends MaterialComponent {
   }
 }
 
+Tabs.TabBarScroller = TabBarScroller;
 Tabs.Tab = Tab;
 Tabs.TabIconLabel = TabIconLabel;
 export default Tabs;
