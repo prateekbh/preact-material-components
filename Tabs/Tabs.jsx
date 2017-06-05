@@ -5,12 +5,19 @@ import { MDCTabBar, MDCTabBarScroller } from "@material/tabs";
 /**
  * @prop indicator-accent = false
  * @prop icon-tab-bar = false
+ * @prop icons-with-text = false
+ * @prop scroller = false
  */
 class Tabs extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "tab-bar";
-    this._mdcProps = ["indicator-accent", "icon-tab-bar", "icons-with-text"];
+    this._mdcProps = [
+      "indicator-accent",
+      "icon-tab-bar",
+      "icons-with-text",
+      "scroller"
+    ];
   }
   componentDidMount() {
     this.MDComponent = new MDCTabBar(this.control);
@@ -19,8 +26,17 @@ class Tabs extends MaterialComponent {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
+    let className = "";
+    if (props.scroller) {
+      className = "mdc-tab-bar-scroller__scroll-frame__tabs";
+    }
     return (
-      <nav role="tablist" {...props} ref={control => (this.control = control)}>
+      <nav
+        className={className}
+        role="tablist"
+        {...props}
+        ref={control => (this.control = control)}
+      >
         {props.children}
         <span class="mdc-tab-bar__indicator" />
       </nav>
@@ -28,7 +44,7 @@ class Tabs extends MaterialComponent {
   }
 }
 
-class TabBarScroller extends Tabs {
+class TabBarScroller extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "tab-bar-scroller";
@@ -36,9 +52,12 @@ class TabBarScroller extends Tabs {
   componentDidMount() {
     this.MDComponent = new MDCTabBarScroller(this.control);
   }
+  componentWillUnmount() {
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
   materialDom(props) {
     return (
-      <div>
+      <div {...props} ref={control => (this.control = control)}>
         <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
           <a
             className="mdc-tab-bar-scroller__indicator__inner material-icons"
@@ -49,14 +68,7 @@ class TabBarScroller extends Tabs {
           </a>
         </div>
         <div className="mdc-tab-bar-scroller__scroll-frame">
-          <nav
-            className="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs"
-            {...props}
-            ref={control => (this.control = control)}
-          >
-            {props.children}
-            <span className="mdc-tab-bar__indicator" />
-          </nav>
+          {props.children}
         </div>
         <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
           <a

@@ -14,6 +14,7 @@ var _extends =
 
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
+import { MDCLinearProgress } from "@material/linear-progress";
 
 /**
  * @prop indeterminate = false
@@ -26,12 +27,24 @@ export default class LinearProgress extends MaterialComponent {
     this.componentName = "linear-progress";
     this._mdcProps = ["indeterminate", "reversed", "accent"];
   }
+  componentDidMount() {
+    this.MDComponent = new MDCLinearProgress(this.control);
+  }
+  componentWillUnmount() {
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
   materialDom(props) {
     return h(
       "div",
-      _extends({ role: "progressbar" }, props, {
-        ref: control => (this.control = control)
-      }),
+      _extends(
+        {
+          role: "progressbar"
+        },
+        props,
+        {
+          ref: control => (this.control = control)
+        }
+      ),
       h("div", { className: "mdc-linear-progress__buffering-dots" }),
       h("div", { className: "mdc-linear-progress__buffer" }),
       h(
