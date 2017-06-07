@@ -14,6 +14,7 @@ import DrawerPage from '../DrawerPage/DrawerPage.jsx';
 import ElevationPage from '../ElevationPage/ElevationPage.jsx';
 import RadioPage from '../RadioPage/RadioPage.jsx';
 import ListPage from '../ListPage/ListPage.jsx';
+import LinearProgressPage from '../LinearProgressPage/LinearProgressPage.jsx';
 import MenuPage from '../MenuPage/MenuPage.jsx';
 import SelectPage from '../SelectPage/SelectPage.jsx';
 import SnackbarPage from '../SnackbarPage/SnackbarPage.jsx';
@@ -197,6 +198,13 @@ export default class Home extends Component {
 									LayoutGrid
 								</Drawer.DrawerItem>
 								<Drawer.DrawerItem onClick={()=>{
+									routie('/component/linearprogress');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									LinearProgress
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/list');
 									this.closeDrawer();
 								}}>
@@ -287,6 +295,7 @@ export default class Home extends Component {
 						{this.state.component === 'layoutgrid' && <LayoutGridPage/>}
 						{this.state.component === 'tabs' && <TabsPage/>}
 						{this.state.component === 'menu' && <MenuPage/>}
+						{this.state.component === 'linearprogress' && <LinearProgressPage/>}
 						{
 							(!this.state.component) &&
 							<div>

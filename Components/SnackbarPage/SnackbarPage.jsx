@@ -11,7 +11,12 @@ export default class SnackbarPage extends Component {
 		this.propsTable = [
 			{
 				component: 'Snackbar',
-				props: []
+				props: [
+					{
+						name: 'dismissesOnAction',
+						description: 'tells whether or not snackbar auto dismisses upon clicking the action button'
+					}
+				]
 			}
 		];
 	}

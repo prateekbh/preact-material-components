@@ -4,7 +4,7 @@
   "description": "preact material component's site",
   "scripts": {
     "start": "http-server .",
-    "build": "webpack",
+    "build": "webpack -p",
     "test": "npm run lint",
     "lint": "./node_modules/.bin/eslint src/",
 		"lint-staged": "lint-staged"
@@ -76,7 +76,7 @@
     "pre-commit": "^1.2.2",
     "preact": "^7.2.0",
     "prettier": "^1.2.2",
-    "preact-material-components": "^1.0.7",
+    "preact-material-components": "^1.0.8",
     "precss": "^1.4.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.16.1",

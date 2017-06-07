@@ -1,0 +1,13 @@
+import {h, Component} from 'preact';
+import LinearProgress from 'preact-material-components/LinearProgress';
+import 'preact-material-components/LinearProgress/style.css';
+
+export default class SnackbarPage extends Component {
+  render(){
+    return (
+      <div>
+        <LinearProgress reversed={true} />
+      </div>
+    );
+  }
+}
