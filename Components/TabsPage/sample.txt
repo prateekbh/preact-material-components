@@ -1,8 +1,8 @@
 import {h, Component} from 'preact';
-import Switch from 'preact-material-components/Switch';
-import 'preact-material-components/Switch/style.css';
+import Tabs from 'preact-material-components/Tabs';
+import 'preact-material-components/Tabs/style.css';
 
-export default class SwitchPage extends Component {
+export default class TabsPage extends Component {
   render(){
     return (
       <div>

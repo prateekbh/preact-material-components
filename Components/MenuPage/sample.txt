@@ -1,8 +1,10 @@
 import {h, Component} from 'preact';
-import LayoutGrid from 'preact-material-components/LayoutGrid';
-import 'preact-material-components/LayoutGrid/style.css';
+import Menu from 'preact-material-components/Menu';
+import Button from 'preact-material-components/Button';
+import 'preact-material-components/Menu/style.css';
+import 'preact-material-components/Button/style.css';
 
-export default class LayoutGridPage extends Component {
+export default class MenuPage extends Component {
   render(){
     return (
       <div>
