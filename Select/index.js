@@ -21,17 +21,26 @@ class Select extends MaterialComponent {
     super();
     this.componentName = "select";
     this._mdcProps = ["disabled"];
+    this._changed = this._changed.bind(this);
+  }
+  _changed(e) {
+    e = e || {};
+    e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
+    e.selectedOptions = e.selectedOptions || this.MDComponent.selectedOptions;
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
   }
   componentDidMount() {
     if (!this.props.basic) {
       this.MDComponent = new MDCSelect(this.control);
-      this.MDComponent.listen("MDCSelect:change", () => {
-        if (this.props.onChange) {
-          this.props.onChange();
-        }
-      });
+      this.MDComponent.listen("MDCSelect:change", this._changed);
       this.updateSelection();
     }
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCSelect:change", this._changed);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   updateSelection(prevProps) {
     if (

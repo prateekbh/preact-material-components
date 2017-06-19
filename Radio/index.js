@@ -38,6 +38,9 @@ export default class Radio extends MaterialComponent {
   componentDidMount() {
     this.MDComponent = MDCRadio.attachTo(this.control);
   }
+  componentWillUnmount() {
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
   materialDom(allprops) {
     const { className } = allprops,
       props = _objectWithoutProperties(allprops, ["className"]);

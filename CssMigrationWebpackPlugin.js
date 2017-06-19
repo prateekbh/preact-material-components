@@ -10,7 +10,7 @@ const srcPath = path.join(__dirname, 'node_modules', '@material');
 
 class CssMigrationWebpackPlugin{
 	copySuperCss() {
-		const sourcePath = path.join(__dirname, 'node_modules', 'material-components-web', 'dist', 'material-components-web.css');
+		const sourcePath = path.join(__dirname, 'node_modules', 'material-components-web', 'dist', 'material-components-web.min.css');
 		const destFilePath = path.join(__dirname, 'style.css');
 
 		//delete already existing file
