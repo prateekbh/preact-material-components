@@ -233,7 +233,6 @@ Drawer.TemporaryDrawerHeader = TemporaryDrawerHeader;
 Drawer.TemporaryDrawerContent = TemporaryDrawerContent;
 Drawer.TemporaryDrawer = TemporaryDrawer;
 Drawer.PermanentDrawer = PermanentDrawer;
-Drawer.PermanentDrawer = PersistentDrawer;
 Drawer.PersistentDrawer = PersistentDrawer;
 Drawer.PersistentDrawerHeader = PersistentDrawerHeader;
 Drawer.PersistentDrawerContent = PersistentDrawerContent;
