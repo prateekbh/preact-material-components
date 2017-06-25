@@ -18,6 +18,7 @@ import LinearProgress from "./LinearProgress";
 import LayoutGrid from "./LayoutGrid";
 import Menu from "./Menu";
 import Tabs from "./Tabs";
+import Slider from "./Slider";
 export {
   Button,
   Checkbox,
@@ -38,5 +39,6 @@ export {
   Menu,
   Toolbar,
   LayoutGrid,
-  Tabs
+  Tabs,
+  Slider
 };

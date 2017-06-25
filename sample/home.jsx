@@ -18,7 +18,8 @@ import {
   Toolbar,
   LayoutGrid,
   Menu,
-  Tabs
+  Tabs,
+  Slider
 } from "../";
 
 export default class Home extends Component {
@@ -249,6 +250,15 @@ export default class Home extends Component {
             <Menu.Item>Hello3</Menu.Item>
           </Menu>
         </Menu.Anchor>
+
+        <Slider
+          disabled={false}
+          min={0}
+          max={100}
+          value={1}
+          onChange={v => console.log("change:", v)}
+          onInput={v => console.log("input:", v)}
+        />
       </div>
     );
   }

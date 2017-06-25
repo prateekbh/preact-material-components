@@ -16,6 +16,7 @@ const bundleMapping = {
   Tabs: "tabs",
   Radio: "radio",
   Select: "select",
+  Slider: "slider",
   Snackbar: "snackbar",
   Switch: "switch",
   Textfield: "textfield",

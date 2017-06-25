@@ -57,7 +57,8 @@ export default class LinearProgress extends MaterialComponent {
       h(
         "div",
         {
-          className: "mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+          className:
+            "mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
         },
         h("span", { className: "mdc-linear-progress__bar-inner" })
       )
