@@ -36,6 +36,27 @@ class LayoutGrid extends MaterialComponent {
   }
 }
 
+class LayoutGridInner extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "layout-grid__inner";
+  }
+  materialDom(props) {
+    return h(
+      "div",
+      _extends(
+        {
+          ref: control => {
+            this.control = control;
+          }
+        },
+        props
+      ),
+      props.children
+    );
+  }
+}
+
 /**
  * @prop cols = 0
  * @prop desktopCols = 0
@@ -119,5 +140,6 @@ class LayoutGridCell extends MaterialComponent {
 }
 
 LayoutGrid.Cell = LayoutGridCell;
+LayoutGrid.Inner = LayoutGridInner;
 
 export default LayoutGrid;
