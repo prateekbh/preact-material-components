@@ -43,6 +43,8 @@ Smaller bundles FTW!!!
 
 - 👍 select
 
+- 👍 slider
+
 - 👍 snackbar
 
 - 👍 switch

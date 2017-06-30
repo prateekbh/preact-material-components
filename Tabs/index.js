@@ -93,7 +93,8 @@ class TabBarScroller extends MaterialComponent {
       h(
         "div",
         {
-          className: "mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back"
+          className:
+            "mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back"
         },
         h(
           "a",
@@ -113,7 +114,8 @@ class TabBarScroller extends MaterialComponent {
       h(
         "div",
         {
-          className: "mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward"
+          className:
+            "mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward"
         },
         h(
           "a",
