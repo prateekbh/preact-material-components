@@ -16,13 +16,13 @@ export default class SelectPage extends Component {
             });
             //selected option
             console.log(e.selectedOption);
-					}}>
-						<Select.Item>opt1</Select.Item>
-						<Select.Item>opt2</Select.Item>
-						<Select.Item>opt3</Select.Item>
-						<Select.Item>opt4</Select.Item>
-				</Select>
-			</div>
+          }}>
+            <Select.Item>opt1</Select.Item>
+            <Select.Item>opt2</Select.Item>
+            <Select.Item>opt3</Select.Item>
+            <Select.Item>opt4</Select.Item>
+        </Select>
+      </div>
     );
   }
 }
