@@ -76,7 +76,7 @@
     "pre-commit": "^1.2.2",
     "preact": "^7.2.0",
     "prettier": "^1.2.2",
-    "preact-material-components": "^1.0.10",
+    "preact-material-components": "^1.0.12",
     "precss": "^1.4.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.16.1",
