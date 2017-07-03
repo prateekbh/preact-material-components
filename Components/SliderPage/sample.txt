@@ -1,0 +1,13 @@
+import {h, Component} from 'preact';
+import Slider from 'preact-material-components/Slider';
+import 'preact-material-components/Slider/style.css';
+
+export default class SnackbarPage extends Component {
+  render(){
+    return (
+      <div>
+        <Slider step={2} value={10} max={20}/>
+      </div>
+    );
+  }
+}

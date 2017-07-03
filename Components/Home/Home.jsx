@@ -18,6 +18,7 @@ import LinearProgressPage from '../LinearProgressPage/LinearProgressPage.jsx';
 import MenuPage from '../MenuPage/MenuPage.jsx';
 import SelectPage from '../SelectPage/SelectPage.jsx';
 import SnackbarPage from '../SnackbarPage/SnackbarPage.jsx';
+import SliderPage from '../SliderPage/SliderPage.jsx';
 import TabsPage from '../TabsPage/TabsPage.jsx';
 import TextfieldPage from '../TextfieldPage/TextfieldPage.jsx';
 import ToolbarPage from '../ToolbarPage/ToolbarPage.jsx';
@@ -233,6 +234,13 @@ export default class Home extends Component {
 									Select
 								</Drawer.DrawerItem>
 								<Drawer.DrawerItem onClick={()=>{
+									routie('/component/slider');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Slider
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/snackbar');
 									this.closeDrawer();
 								}}>
@@ -288,6 +296,7 @@ export default class Home extends Component {
 						{this.state.component === 'list' && <ListPage/>}
 						{this.state.component === 'select' && <SelectPage/>}
 						{this.state.component === 'snackbar' && <SnackbarPage/>}
+						{this.state.component === 'slider' && <SliderPage/>}
 						{this.state.component === 'textfield' && <TextfieldPage/>}
 						{this.state.component === 'toolbar' && <ToolbarPage/>}
 						{this.state.component === 'icon' && <IconPage/>}
