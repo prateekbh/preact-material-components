@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components#readme",
   "dependencies": {
-    "material-components-web": "0.14.0"
+    "material-components-web": "0.15.0"
   },
   "peerDependencies": {
     "preact": "*"
