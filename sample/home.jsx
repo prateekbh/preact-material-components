@@ -85,10 +85,16 @@ export default class Home extends Component {
         </div>
 
         <div>
-          <Fab mini={true} ripple={true}>
-            <IconToggle>share</IconToggle>
-          </Fab>
-          <Switch />
+          <IconToggle
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            aria-label="Add to favorites"
+            data-toggle-on="{&quot;content&quot;: &quot;favorite&quot;, &quot;label&quot;: &quot;Remove From Favorites&quot;}"
+            data-toggle-off="{&quot;content&quot;: &quot;favorite_border&quot;, &quot;label&quot;: &quot;Add to Favorites&quot;}"
+          >
+            favorite_border
+          </IconToggle>
         </div>
 
         <Snackbar
