@@ -2,6 +2,7 @@ import Button from "./Button";
 import Checkbox from "./Checkbox";
 import Fab from "./Fab";
 import Icon from "./Icon";
+import IconToggle from "./IconToggle";
 import Switch from "./Switch";
 import Snackbar from "./Snackbar";
 import Radio from "./Radio";
@@ -19,6 +20,7 @@ import LayoutGrid from "./LayoutGrid";
 import Menu from "./Menu";
 import Tabs from "./Tabs";
 import Slider from "./Slider";
+
 export {
   Button,
   Checkbox,
@@ -26,6 +28,7 @@ export {
   Switch,
   Snackbar,
   Icon,
+  IconToggle,
   Radio,
   Textfield,
   Select,
