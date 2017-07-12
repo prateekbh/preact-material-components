@@ -90,8 +90,8 @@ export default class Home extends Component {
             tabindex="0"
             aria-pressed="false"
             aria-label="Add to favorites"
-            data-toggle-on="{&quot;content&quot;: &quot;favorite&quot;, &quot;label&quot;: &quot;Remove From Favorites&quot;}"
-            data-toggle-off="{&quot;content&quot;: &quot;favorite_border&quot;, &quot;label&quot;: &quot;Add to Favorites&quot;}"
+            data-toggle-on="{'content': 'favorite', 'label': 'Remove From Favorites'}"
+            data-toggle-off="{'content': 'favorite_border', 'label': 'Add to Favorites'}"
           >
             favorite_border
           </IconToggle>
