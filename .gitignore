@@ -42,3 +42,7 @@ jspm_packages
 
 # CSS, so far this repo is just bridge to material components. Hence Css is not required in git repo
 *.css
+
+# Ignores all index.js files for all components since they are auto-generated.
+**/index.js
+!/index.js
