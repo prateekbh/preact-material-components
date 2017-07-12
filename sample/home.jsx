@@ -3,6 +3,7 @@ import {
   Button,
   Fab,
   Icon,
+  IconToggle,
   Switch,
   Snackbar,
   Checkbox,
@@ -83,6 +84,13 @@ export default class Home extends Component {
           <Switch />
         </div>
 
+        <div>
+          <Fab mini={true} ripple={true}>
+            <IconToggle>share</IconToggle>
+          </Fab>
+          <Switch />
+        </div>
+
         <Snackbar
           ref={bar => {
             this.bar = bar;
@@ -106,8 +114,7 @@ export default class Home extends Component {
         </div>
 
         <div className="mdc-form-field">
-          <Radio id="rd" ref={radio => (this.radio = radio)} />
-          {" "}
+          <Radio id="rd" ref={radio => (this.radio = radio)} />{" "}
           <label for="rd">Radio Box</label>
         </div>
 
@@ -130,9 +137,7 @@ export default class Home extends Component {
           </LayoutGrid.Cell>
         </LayoutGrid>
 
-        <Elevation z="9">
-          hi
-        </Elevation>
+        <Elevation z="9">hi</Elevation>
 
         <Dialog
           ref={dlg => {
@@ -192,7 +197,9 @@ export default class Home extends Component {
         </div>
         <div>
           <Select basic={true}>
-            <option value="" default selected>Pick a food</option>
+            <option value="" default selected>
+              Pick a food
+            </option>
             <option value="grains">Bread, Cereal, Rice, and Pasta</option>
             <option value="vegetables">Vegetables</option>
             <optgroup label="Fruits">
@@ -230,7 +237,9 @@ export default class Home extends Component {
             Item2
           </List.LinkItem>
           <List.Divider />
-          <List.LinkItem ripple={true} href="#">Item3</List.LinkItem>
+          <List.LinkItem ripple={true} href="#">
+            Item3
+          </List.LinkItem>
         </List>
         <Menu.Anchor>
           <Button
