@@ -31,6 +31,14 @@ export default class Home extends Component {
     };
   }
   render() {
+    const toggleOnIcon = {
+      content: "favorite",
+      label: "Remove From Favorites"
+    };
+    const toggleOffIcon = {
+      content: "favorite_border",
+      label: "Add to Favorites"
+    };
     return (
       <div>
         <Toolbar>
@@ -90,8 +98,8 @@ export default class Home extends Component {
             tabindex="0"
             aria-pressed="false"
             aria-label="Add to favorites"
-            data-toggle-on="{'content': 'favorite', 'label': 'Remove From Favorites'}"
-            data-toggle-off="{'content': 'favorite_border', 'label': 'Add to Favorites'}"
+            data-toggle-on={toggleOnIcon}
+            data-toggle-off={toggleOffIcon}
           >
             favorite_border
           </IconToggle>

@@ -29,11 +29,7 @@ const config = {
 	]
   },
   plugins: [
-      new CleanWebpackPlugin('./public'),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        minChunks: 2,
-      }),
+      new CleanWebpackPlugin('./public')
   ]
 };
 

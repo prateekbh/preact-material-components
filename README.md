@@ -31,7 +31,7 @@ Smaller bundles FTW!!!
 
 - 👍 form-field
 
-- 👎🏽 icon-toggle
+- 👍 icon-toggle
 
 - 👍 layout-grid
 
