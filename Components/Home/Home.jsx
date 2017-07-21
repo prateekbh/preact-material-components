@@ -24,6 +24,7 @@ import TextfieldPage from '../TextfieldPage/TextfieldPage.jsx';
 import ToolbarPage from '../ToolbarPage/ToolbarPage.jsx';
 import CardPage from '../CardPage/CardPage.jsx';
 import IconPage from '../IconPage/IconPage.jsx';
+import IconToggle from '../IconToggle/IconToggle.jsx';
 import FormfieldPage from '../FormfieldPage/FormfieldPage.jsx';
 import LayoutGridPage from '../LayoutGridPage/LayoutGridPage.jsx';
 import routie from '../routie';
@@ -192,6 +193,13 @@ export default class Home extends Component {
 									Icon
 								</Drawer.DrawerItem>
 								<Drawer.DrawerItem onClick={()=>{
+									routie('/component/icontoggle');
+									this.closeDrawer();
+								}}>
+									<List.ItemIcon>code</List.ItemIcon>
+									Icon Toggle
+								</Drawer.DrawerItem>
+								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/layoutgrid');
 									this.closeDrawer();
 								}}>
@@ -275,12 +283,6 @@ export default class Home extends Component {
 									<List.ItemIcon>code</List.ItemIcon>
 									Toolbar
 								</Drawer.DrawerItem>
-							<List>
-								<List.Item>
-									<List.ItemIcon>code</List.ItemIcon>
-									IconToggle
-								</List.Item>
-							</List>
 						</Drawer.TemporaryDrawerContent>
 					</Drawer.TemporaryDrawer>
 					<div className="content">
@@ -300,6 +302,7 @@ export default class Home extends Component {
 						{this.state.component === 'textfield' && <TextfieldPage/>}
 						{this.state.component === 'toolbar' && <ToolbarPage/>}
 						{this.state.component === 'icon' && <IconPage/>}
+						{this.state.component === 'icontoggle' && <IconToggle/>}
 						{this.state.component === 'formfield' && <FormfieldPage/>}
 						{this.state.component === 'layoutgrid' && <LayoutGridPage/>}
 						{this.state.component === 'tabs' && <TabsPage/>}
