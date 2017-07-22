@@ -101,6 +101,13 @@ class CardSubtitle extends MaterialComponent {
   }
 }
 
+class CardHorizontalBlock extends CardSection {
+  constructor() {
+    super();
+    this.componentName = "card__horizontal-block";
+  }
+}
+
 Card.Primary = CardPrimary;
 Card.SupportingText = CardSupportingText;
 Card.Actions = CardActions;
@@ -108,5 +115,6 @@ Card.Action = CardAction;
 Card.Media = CardMedia;
 Card.Title = CardTitle;
 Card.Subtitle = CardSubtitle;
+Card.HorizontalBlock = CardHorizontalBlock;
 
 export default Card;
