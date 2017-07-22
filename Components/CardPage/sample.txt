@@ -7,10 +7,10 @@ export default class CardsPage extends Component {
   render(){
     return (
       <Card>
-        <Card.CardPrimary>
+        <Card.Primary>
           <Card.Title>Hi</Card.Title>
           <Card.Subtitle>Let me subtitle</Card.Subtitle>
-        </Card.CardPrimary>
+        </Card.Primary>
         <Card.Media className='card-media'></Card.Media>
         <Card.Actions>
           <Card.Action>OKAY</Card.Action>
