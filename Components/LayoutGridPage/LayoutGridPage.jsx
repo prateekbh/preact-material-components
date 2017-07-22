@@ -13,6 +13,10 @@ export default class LayoutGridPage extends Component {
 				props: []
 			},
 			{
+				component: 'LayoutGrid.Inner',
+				props: []
+			},
+			{
 				component: 'LayoutGrid.Cell',
 				props: [
 					{
