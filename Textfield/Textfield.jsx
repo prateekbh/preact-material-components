@@ -11,15 +11,9 @@ export default class Textfield extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "textfield";
-    this.state = {
-      showFloatingLabel: false
-    };
-    this._mdcProps = ["fullwidth", "multiline"];
+    this._mdcProps = ["fullwidth", "multiline", "dense", "disabled"];
   }
   componentDidMount() {
-    this.setState({
-      showFloatingLabel: true
-    });
     this.MDComponent = new MDCTextfield(this.control);
   }
   componentWillUnmount() {
@@ -41,7 +35,6 @@ export default class Textfield extends MaterialComponent {
               {...props}
             />}
         {props.label &&
-          this.state.showFloatingLabel &&
           <label className={labelClass.join(" ")}>
             {props.label}
           </label>}
