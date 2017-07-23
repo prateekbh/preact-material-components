@@ -5,6 +5,8 @@ import { MDCTextfield } from "@material/textfield/";
 /**
  * @prop fullwidth = false
  * @prop multiline = false
+ * @prop dense = false
+ * @prop disabled = false
  * @prop type = 'text'
  */
 export default class Textfield extends MaterialComponent {
