@@ -7,9 +7,11 @@ export default class LayoutGridPage extends Component {
     return (
       <div>
         <LayoutGrid>
-          <LayoutGrid.Cell cols="6">First cell</LayoutGrid.Cell>
-          <LayoutGrid.Cell cols="4">Second cell</LayoutGrid.Cell>
-          <LayoutGrid.Cell cols="2">Third cell</LayoutGrid.Cell>
+          <LayoutGrid.Inner>
+            <LayoutGrid.Cell cols="6">First cell</LayoutGrid.Cell>
+            <LayoutGrid.Cell cols="4">Second cell</LayoutGrid.Cell>
+            <LayoutGrid.Cell cols="2">Third cell</LayoutGrid.Cell>
+          </LayoutGrid.Inner>
         </LayoutGrid>
       </div>
     );
