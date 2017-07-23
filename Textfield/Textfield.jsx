@@ -28,10 +28,10 @@ class Helptext extends MaterialComponent {
  * @prop disabled = false
  * @prop type = 'text'
  */
-export default class Textfield extends MaterialComponent {
+class TextfieldInput extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "";
+    this.componentName = "textfield";
     this._mdcProps = ["fullwidth", "multiline", "dense", "disabled"];
   }
   componentDidMount() {
@@ -41,6 +41,49 @@ export default class Textfield extends MaterialComponent {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(allprops) {
+    const { className, ...props } = allprops;
+
+    // Label
+    const labelClass = ["mdc-textfield__label"];
+    if (props.value) {
+      labelClass.push("mdc-textfield__label--float-above");
+    }
+
+    return (
+      <div className={className} ref={control => (this.control = control)}>
+        {props.multiline
+          ? <textarea
+              className="mdc-textfield__input"
+              aria-controls={props.id + "-helptext"}
+              {...props}
+            />
+          : <input
+              type={props.type || "text"}
+              className="mdc-textfield__input"
+              aria-controls={props.id + "-helptext"}
+              {...props}
+            />}
+        {props.label &&
+          <label className={labelClass.join(" ")}>
+            {props.label}
+          </label>}
+      </div>
+    );
+  }
+}
+
+/**
+ * @prop fullwidth = false
+ * @prop multiline = false
+ * @prop dense = false
+ * @prop disabled = false
+ * @prop type = 'text'
+ * @prop helptext = ''
+ * @prop helptextPersistent = false
+ * @prop helptextValidationMsg = false
+ */
+export default class Textfield {
+  render(allprops) {
     const {
       className,
       helptextPersistent,
@@ -54,39 +97,13 @@ export default class Textfield extends MaterialComponent {
       "validation-msg": helptextValidationMsg
     };
 
-    // Label
-    const labelClass = ["mdc-textfield__label"];
-    if (props.value) {
-      labelClass.push("mdc-textfield__label--float-above");
-    }
-
-    // Component
-    const inputClass = ["mdc-textfield"];
-    if (className) {
-      inputClass.push(className);
-    }
-
-    return (
-      <div>
-        <div className={inputClass} ref={control => (this.control = control)}>
-          {props.multiline
-            ? <textarea className="mdc-textfield__input" {...props} />
-            : <input
-                type={props.type || "text"}
-                className="mdc-textfield__input"
-                aria-controls={props.id + "-helptext"}
-                {...props}
-              />}
-          {props.label &&
-            <label className={labelClass.join(" ")}>
-              {props.label}
-            </label>}
-        </div>
-        {props.helptext &&
+    return props.helptext
+      ? <div className={className}>
+          <TextfieldInput {...props} />
           <Helptext id={props.id + "-helptext"} {...helptextProps}>
             {props.helptext}
-          </Helptext>}
-      </div>
-    );
+          </Helptext>
+        </div>
+      : <TextfieldInput className={className} {...props} />;
   }
 }
