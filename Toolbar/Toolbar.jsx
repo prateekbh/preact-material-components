@@ -3,12 +3,22 @@ import MaterialComponent from "../MaterialComponent";
 
 /**
  * @prop fixed = false
+ * @prop fixed-lastrow-only = false
+ * @prop waterfall = false
+ * @prop flexible = false
+ * @prop flexible-default-behavior = false
  */
 class Toolbar extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "toolbar";
-    this._mdcProps = ["fixed"];
+    this._mdcProps = [
+      "fixed",
+      "fixed-lastrow-only",
+      "waterfall",
+      "flexible",
+      "flexible-default-behavior"
+    ];
   }
   materialDom(props) {
     return (
@@ -34,12 +44,13 @@ class ToolbarRow extends MaterialComponent {
 /**
  * @prop align-end = false
  * @prop align-start = false
+ * @prop shrink-to-fit = false
  */
 class ToolbarSection extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "toolbar__section";
-    this._mdcProps = ["align-start", "align-end"];
+    this._mdcProps = ["align-start", "align-end", "shrink-to-fit"];
   }
   materialDom(props) {
     return (
@@ -57,7 +68,9 @@ class ToolbarIcon extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <a className="material-icons" {...props}>{props.children || "menu"}</a>
+      <a className="material-icons" {...props}>
+        {props.children || "menu"}
+      </a>
     );
   }
 }
@@ -71,7 +84,11 @@ class ToolbarTitle extends MaterialComponent {
     this.componentName = "toolbar__title";
   }
   materialDom(props) {
-    return <span {...props}>{props.children}</span>;
+    return (
+      <span {...props}>
+        {props.children}
+      </span>
+    );
   }
 }
 
