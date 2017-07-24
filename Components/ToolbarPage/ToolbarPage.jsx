@@ -14,7 +14,23 @@ export default class ToolbarPage extends Component {
 				props: [
 					{
 						name: 'fixed',
-						description: 'Makes the toolbar fixed'
+						description: 'Makes toolbar fixed on top and have persistent elevation'
+					},
+					{
+						name: 'fixed-lastrow-only',
+						description: 'Makes only last row of fixed toolbar anchored on top'
+					},
+					{
+						name: 'waterfall',
+						description: 'Removes fixed toolbar persistent elevation and makes it to gain elevation when a user begins to scroll down the page'
+					},
+					{
+						name: 'flexible',
+						description: 'Makes toolbar first row has flexible space'
+					},
+					{
+						name: 'flexible-default-behavior',
+						description: 'Further defines the background and title movement behavior'
 					}
 				]
 			},
@@ -32,6 +48,10 @@ export default class ToolbarPage extends Component {
 					{
 						name: 'align-end',
 						description: 'Aligns the section to end of the toolbar row'
+					},
+					{
+						name: 'shrink-to-fit',
+						description: 'Makes section takes the width of its content'
 					}
 				]
 			},

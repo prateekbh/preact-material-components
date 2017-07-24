@@ -80,6 +80,10 @@ export default class ButtonsPage extends Component {
 				<Button disabled={true} compact={true}>Compact Disabled button </Button>
 				<Button disabled={true} primary={true}>Primary Disabled button </Button>
 
+				<div className="mdc-typography--title">Note</div>
+				<div className="mdc-typography--caption">
+					<div>Adding an <code>href</code> to the <code>Button</code> automatically makes in an <code>&lt;a&gt;</code>.</div>
+				</div>
 			</div>
 		);
 	}
