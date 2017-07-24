@@ -20,6 +20,12 @@ export default class MaterialComponent extends Component {
     // The final class name given to the dom
     this.classText = "";
   }
+  static uid() {
+    if (!this.uidCounter) {
+      this.uidCounter = 0;
+    }
+    return ++this.uidCounter;
+  }
   attachRipple() {
     if (this.props.ripple && this.control) {
       MDCRipple.attachTo(this.control);

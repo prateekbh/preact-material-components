@@ -83,13 +83,19 @@ class TextfieldInput extends MaterialComponent {
  * @prop helptextValidationMsg = false
  */
 export default class Textfield {
+  constructor() {
+    this.id = MaterialComponent.uid();
+  }
+
   render(allprops) {
     const {
+      id,
       className,
       helptextPersistent,
       helptextValidationMsg,
       ...props
     } = allprops;
+    const tfId = id || "tf-" + this.id;
 
     // Helper text
     const helptextProps = {
@@ -99,8 +105,8 @@ export default class Textfield {
 
     return props.helptext
       ? <div className={className}>
-          <TextfieldInput {...props} />
-          <Helptext id={props.id + "-helptext"} {...helptextProps}>
+          <TextfieldInput {...props} id={tfId} />
+          <Helptext id={tfId + "-helptext"} {...helptextProps}>
             {props.helptext}
           </Helptext>
         </div>
