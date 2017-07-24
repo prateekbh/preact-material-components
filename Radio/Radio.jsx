@@ -21,7 +21,7 @@ export default class Radio extends MaterialComponent {
     const { className, ...props } = allprops;
     return (
       <div
-        className={className + ""}
+        className={className}
         ref={control => {
           this.control = control;
         }}
