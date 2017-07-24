@@ -39,7 +39,7 @@ export default class DialogPage extends Component {
 						description: 'Makes the button, default button.'
 					},
 					{
-						name: 'cencel',
+						name: 'cancel',
 						description: 'Makes the button, cancel button.'
 					}
 				]
