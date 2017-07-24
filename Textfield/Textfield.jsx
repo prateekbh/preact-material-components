@@ -84,7 +84,14 @@ class TextfieldInput extends MaterialComponent {
  */
 export default class Textfield {
   constructor() {
-    this.id = MaterialComponent.uid();
+    this.id = Textfield.uid();
+  }
+
+  static uid() {
+    if (!this.uidCounter) {
+      this.uidCounter = 0;
+    }
+    return ++this.uidCounter;
   }
 
   render(allprops) {
