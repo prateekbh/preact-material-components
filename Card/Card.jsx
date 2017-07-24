@@ -1,6 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Button from "../Button";
+
 class Card extends MaterialComponent {
   constructor() {
     super();
@@ -108,6 +109,21 @@ class CardHorizontalBlock extends CardSection {
   }
 }
 
+class CardMediaItem extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "card__media-item";
+    this._mdcProps = [];
+  }
+  materialDom(props) {
+    let className = "";
+    if (props.x) {
+      className = "mdc-card__media-item--" + props.x + "x";
+    }
+    return <img className={className} {...props} />;
+  }
+}
+
 Card.Primary = CardPrimary;
 Card.SupportingText = CardSupportingText;
 Card.Actions = CardActions;
@@ -116,5 +132,6 @@ Card.Media = CardMedia;
 Card.Title = CardTitle;
 Card.Subtitle = CardSubtitle;
 Card.HorizontalBlock = CardHorizontalBlock;
+Card.MediaItem = CardMediaItem;
 
 export default Card;
