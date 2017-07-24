@@ -21,8 +21,8 @@ export default class IconToggle extends MaterialComponent {
     this.MDComponent.listen("MDCIconToggle:change", this._onChange);
   }
   componentWillUnmount() {
-    this.MDComponent.destroy && this.MDComponent.destroy();
     this.MDComponent.unlisten("MDCIconToggle:change", this._onChange);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     if (props["data-toggle-on"])
