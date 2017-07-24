@@ -19,15 +19,17 @@ export default class Button extends MaterialComponent {
     super.attachRipple();
   }
   materialDom(props) {
+    const ButtonElement = props.href ? "a" : "button";
+
     return (
-      <button
+      <ButtonElement
         ref={control => {
           this.control = control;
         }}
         {...props}
       >
         {this.props.children}
-      </button>
+      </ButtonElement>
     );
   }
 }
