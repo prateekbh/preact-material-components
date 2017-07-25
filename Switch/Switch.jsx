@@ -13,7 +13,7 @@ export default class Switch extends MaterialComponent {
   materialDom(allprops) {
     const { className, ...props } = allprops;
     return (
-      <div className={className + ""}>
+      <div className={className}>
         <input
           type="checkbox"
           className="mdc-switch__native-control"

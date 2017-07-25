@@ -32,7 +32,7 @@ export default class Textfield extends MaterialComponent {
       labelClass.push("mdc-textfield__label--float-above");
     }
     return (
-      <div className={className + ""} ref={control => (this.control = control)}>
+      <div className={className} ref={control => (this.control = control)}>
         {props.multiline
           ? <textarea className="mdc-textfield__input" {...props} />
           : <input
