@@ -32,7 +32,7 @@ class TextfieldInput extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "textfield";
-    this._mdcProps = ["fullwidth", "multiline", "dense", "disabled"];
+    this._mdcProps = ["fullwidth", "multiline", "dense", "disabled", "box"];
     this.state = {
       showFloatingLabel: false
     };
