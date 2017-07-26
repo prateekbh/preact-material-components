@@ -40,7 +40,10 @@ class Label extends MaterialComponent {
  * @prop multiline = false
  * @prop dense = false
  * @prop disabled = false
- * @prop type = 'text'
+ * @prop box = false
+ * @prop type = ''
+ * @prop value = ''
+ * @prop label = ''
  */
 class TextfieldInput extends MaterialComponent {
   constructor() {
@@ -103,7 +106,10 @@ class TextfieldInput extends MaterialComponent {
  * @prop multiline = false
  * @prop dense = false
  * @prop disabled = false
- * @prop type = 'text'
+ * @prop box = false
+ * @prop type = ''
+ * @prop value = ''
+ * @prop label = ''
  * @prop helptext = ''
  * @prop helptextPersistent = false
  * @prop helptextValidationMsg = false
