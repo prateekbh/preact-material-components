@@ -41,7 +41,7 @@ class Label extends MaterialComponent {
  * @prop dense = false
  * @prop disabled = false
  * @prop box = false
- * @prop type = ''
+ * @prop type = 'text'
  * @prop value = ''
  * @prop label = ''
  */
@@ -107,7 +107,7 @@ class TextfieldInput extends MaterialComponent {
  * @prop dense = false
  * @prop disabled = false
  * @prop box = false
- * @prop type = ''
+ * @prop type = 'text'
  * @prop value = ''
  * @prop label = ''
  * @prop helptext = ''
