@@ -101,7 +101,7 @@ class TextfieldInput extends MaterialComponent {
  * @prop helptextPersistent = false
  * @prop helptextValidationMsg = false
  */
-export default class Textfield extends Component {
+class Textfield extends Component {
   constructor() {
     super();
     this.id = Textfield.uid();
@@ -139,19 +139,25 @@ export default class Textfield extends Component {
       "validation-msg": helptextValidationMsg
     };
 
-    return (
-      <div className={className}>
-        {props.label &&
-          !showFloatingLabel &&
-          <label for={tfId}>
-            {props.cssLabel || `${props.label}: `}
-          </label>}
-        <TextfieldInput {...props} id={tfId} />
-        {props.helptext &&
-          <Helptext id={tfId + "-helptext"} {...helptextProps}>
-            {props.helptext}
-          </Helptext>}
-      </div>
-    );
+    const showDiv = props.helptext || props.label & !showFloatingLabel;
+
+    return showDiv
+      ? <div className={className}>
+          {props.label &&
+            !showFloatingLabel &&
+            <label for={tfId}>
+              {props.cssLabel || `${props.label}: `}
+            </label>}
+          <TextfieldInput {...props} id={tfId} />
+          {props.helptext &&
+            <Helptext id={tfId + "-helptext"} {...helptextProps}>
+              {props.helptext}
+            </Helptext>}
+        </div>
+      : <TextfieldInput {...props} id={tfId} className={className} />;
   }
 }
+
+Textfield.Helptext = Helptext;
+
+export default Textfield;
