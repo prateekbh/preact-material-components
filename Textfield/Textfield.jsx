@@ -33,9 +33,19 @@ class TextfieldInput extends MaterialComponent {
     super();
     this.componentName = "textfield";
     this._mdcProps = ["fullwidth", "multiline", "dense", "disabled"];
+    this.state = {
+      showFloatingLabel: false
+    };
   }
   componentDidMount() {
-    this.MDComponent = new MDCTextfield(this.control);
+    this.setState(
+      {
+        showFloatingLabel: true
+      },
+      () => {
+        this.MDComponent = new MDCTextfield(this.control);
+      }
+    );
   }
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
@@ -64,7 +74,8 @@ class TextfieldInput extends MaterialComponent {
               {...props}
             />}
         {props.label &&
-          <label className={labelClass.join(" ")}>
+          this.state.showFloatingLabel &&
+          <label className={labelClass.join(" ")} for={props.id}>
             {props.label}
           </label>}
       </div>
