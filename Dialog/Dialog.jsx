@@ -18,7 +18,6 @@ class Dialog extends MaterialComponent {
   materialDom(props) {
     return (
       <aside
-        style="visibility:hidden"
         role="alertdialog"
         ref={control => {
           this.control = control;

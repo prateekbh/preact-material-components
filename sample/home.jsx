@@ -85,6 +85,18 @@ export default class Home extends Component {
           hi
         </Button>
 
+        <Button
+          raised={true}
+          accent={true}
+          ripple={true}
+          onClick={e => {
+            console.log(this.dlg.MDComponent);
+            this.dlg.MDComponent.show();
+          }}
+        >
+          Open Dialog
+        </Button>
+
         <div>
           <Fab mini={true} ripple={true}>
             <Icon>share</Icon>
