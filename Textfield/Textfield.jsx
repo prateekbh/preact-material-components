@@ -65,7 +65,11 @@ class TextfieldInput extends MaterialComponent {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(allprops) {
-    const { className, ...props } = allprops;
+    let { className, ...props } = allprops;
+
+    if (props.value && this.state.showFloatingLabel) {
+      className = [className, "mdc-textfield--upgraded"].join(" ");
+    }
 
     return (
       <div className={className} ref={control => (this.control = control)}>
@@ -83,7 +87,10 @@ class TextfieldInput extends MaterialComponent {
             />}
         {props.label &&
           this.state.showFloatingLabel &&
-          <Label for={props.id}>
+          <Label
+            for={props.id}
+            className={props.value && "mdc-textfield__label--float-above"}
+          >
             {props.label}
           </Label>}
       </div>
