@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h, Component } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCTextfield } from "@material/textfield/";
 
@@ -17,6 +17,20 @@ class Helptext extends MaterialComponent {
       <p {...props} aria-hidden="true">
         {props.children}
       </p>
+    );
+  }
+}
+
+class Label extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "textfield__label";
+  }
+  materialDom(props) {
+    return (
+      <label {...props}>
+        {props.children}
+      </label>
     );
   }
 }
@@ -53,12 +67,6 @@ class TextfieldInput extends MaterialComponent {
   materialDom(allprops) {
     const { className, ...props } = allprops;
 
-    // Label
-    const labelClass = ["mdc-textfield__label"];
-    if (props.value) {
-      labelClass.push("mdc-textfield__label--float-above");
-    }
-
     return (
       <div className={className} ref={control => (this.control = control)}>
         {props.multiline
@@ -75,9 +83,9 @@ class TextfieldInput extends MaterialComponent {
             />}
         {props.label &&
           this.state.showFloatingLabel &&
-          <label className={labelClass.join(" ")} for={props.id}>
+          <Label for={props.id}>
             {props.label}
-          </label>}
+          </Label>}
       </div>
     );
   }
@@ -93,9 +101,19 @@ class TextfieldInput extends MaterialComponent {
  * @prop helptextPersistent = false
  * @prop helptextValidationMsg = false
  */
-export default class Textfield {
+export default class Textfield extends Component {
   constructor() {
+    super();
     this.id = Textfield.uid();
+    this.state = {
+      showFloatingLabel: false
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      showFloatingLabel: true
+    });
   }
 
   static uid() {
@@ -105,7 +123,7 @@ export default class Textfield {
     return ++this.uidCounter;
   }
 
-  render(allprops) {
+  render(allprops, { showFloatingLabel }) {
     const {
       id,
       className,
@@ -121,13 +139,19 @@ export default class Textfield {
       "validation-msg": helptextValidationMsg
     };
 
-    return props.helptext
-      ? <div className={className}>
-          <TextfieldInput {...props} id={tfId} />
+    return (
+      <div className={className}>
+        {props.label &&
+          !showFloatingLabel &&
+          <label for={tfId}>
+            {props.cssLabel || `${props.label}: `}
+          </label>}
+        <TextfieldInput {...props} id={tfId} />
+        {props.helptext &&
           <Helptext id={tfId + "-helptext"} {...helptextProps}>
             {props.helptext}
-          </Helptext>
-        </div>
-      : <TextfieldInput className={className} {...props} />;
+          </Helptext>}
+      </div>
+    );
   }
 }
