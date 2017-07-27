@@ -79,13 +79,11 @@ class TextfieldInput extends MaterialComponent {
         {props.multiline
           ? <textarea
               className="mdc-textfield__input"
-              aria-controls={props.id + "-helptext"}
               {...props}
             />
           : <input
               type={props.type || "text"}
               className="mdc-textfield__input"
-              aria-controls={props.id + "-helptext"}
               {...props}
             />}
         {props.label &&
@@ -162,7 +160,7 @@ class Textfield extends Component {
             <label for={props.id}>
               {props.cssLabel || `${props.label}: `}
             </label>}
-          <TextfieldInput {...props} />
+          <TextfieldInput {...props} aria-controls={props.helptext && props.id + "-helptext"} />
           {props.helptext &&
             <Helptext id={props.id + "-helptext"} {...helptextProps}>
               {props.helptext}
