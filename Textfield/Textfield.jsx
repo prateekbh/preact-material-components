@@ -167,7 +167,7 @@ class Textfield extends Component {
               {props.helptext}
             </Helptext>}
         </div>
-      : <TextfieldInput {...props} id={tfId} className={className} />;
+      : <TextfieldInput {...props} className={className} />;
   }
 }
 
