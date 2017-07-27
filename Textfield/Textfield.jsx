@@ -65,7 +65,7 @@ class TextfieldInput extends MaterialComponent {
     );
   }
   componentWillUnmount() {
-    this.MDComponent.destroy && this.MDComponent.destroy();
+    this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(allprops) {
     let { className, ...props } = allprops;
@@ -138,13 +138,16 @@ class Textfield extends Component {
 
   render(allprops, { showFloatingLabel }) {
     const {
-      id,
       className,
       helptextPersistent,
       helptextValidationMsg,
       ...props
     } = allprops;
-    const tfId = id || "tf-" + this.id;
+    const showDiv = props.helptext || (props.label && !showFloatingLabel);
+
+    if (showDiv && !props.id) {
+      props.id = "tf-" + this.id;
+    }
 
     // Helper text
     const helptextProps = {
@@ -152,22 +155,20 @@ class Textfield extends Component {
       "validation-msg": helptextValidationMsg
     };
 
-    const showDiv = props.helptext || props.label & !showFloatingLabel;
-
     return showDiv
       ? <div className={className}>
           {props.label &&
             !showFloatingLabel &&
-            <label for={tfId}>
+            <label for={props.id}>
               {props.cssLabel || `${props.label}: `}
             </label>}
-          <TextfieldInput {...props} id={tfId} />
+          <TextfieldInput {...props} />
           {props.helptext &&
-            <Helptext id={tfId + "-helptext"} {...helptextProps}>
+            <Helptext id={props.id + "-helptext"} {...helptextProps}>
               {props.helptext}
             </Helptext>}
         </div>
-      : <TextfieldInput {...{...props, className: className, id: id}} />;
+      : <TextfieldInput {...props} className={className} />;
   }
 }
 
