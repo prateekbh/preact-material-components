@@ -65,6 +65,7 @@ class ToolbarIcon extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "toolbar__icon";
+    this._mdcProps = ["menu"];
   }
   materialDom(props) {
     return (
