@@ -94,6 +94,7 @@
   },
   "pre-commit": "",
   "dependencies": {
-    "eslint": "^3.19.0"
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.1.0"
   }
 }
