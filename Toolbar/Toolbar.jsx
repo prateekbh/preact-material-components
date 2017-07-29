@@ -62,10 +62,10 @@ class ToolbarSection extends MaterialComponent {
 }
 
 class ToolbarIcon extends MaterialComponent {
-  constructor() {
+  constructor(props) {
     super();
     this.componentName = "toolbar__icon";
-    if (this.props.menu) {
+    if (props.menu) {
       this.componentName += "--menu";
     }
   }
