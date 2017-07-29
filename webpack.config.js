@@ -8,7 +8,7 @@ const extractCSS = new ExtractTextPlugin('[name].css');
 
 const config = {
 	entry: {
-	 app: './app.js',
+	 app: './app.jsx',
 	 vendor: ['preact']
 	},
 	output: {
