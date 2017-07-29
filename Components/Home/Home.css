@@ -18,6 +18,9 @@
 		transition-duration: 300ms;
 		&.collapsed{
 			max-height: 64px;
+			@media (max-width: 959px) and (orientation: landscape) {
+				max-height: 56px;
+			}
 			@media (max-width: 599px) {
 				max-height: 56px;
 			}
