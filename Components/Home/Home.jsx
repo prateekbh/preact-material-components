@@ -1,5 +1,4 @@
 import {h, Component} from 'preact';
-import Icon from 'preact-material-components/Icon';
 import Toolbar from 'preact-material-components/Toolbar';
 import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
@@ -76,7 +75,7 @@ export default class Home extends Component {
 					<Toolbar>
 						<Toolbar.Row>
 							<Toolbar.Section align-start={true}>
-								<Toolbar.Icon href="#" onClick={(e)=>{
+								<Toolbar.Icon menu={true} href="#" onClick={(e)=>{
 												e.preventDefault();
 												this.drawer.MDComponent.open = true;
 								}}>menu</Toolbar.Icon>
