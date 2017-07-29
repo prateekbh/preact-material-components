@@ -1,6 +1,5 @@
 import {h, Component} from 'preact';
 import Toolbar from 'preact-material-components/Toolbar';
-import Icon from 'preact-material-components/Icon';
 import ComponentTable from '../ComponentTable.jsx';
 import './ToolbarPage.css';
 import CodeBlock from '../CodeBlock.jsx';
@@ -37,7 +36,13 @@ export default class ToolbarPage extends Component {
 			},
 			{
 				component: 'Toolbar.Icon',
-				props: []
+				props: [
+					{
+						name: 'menu',
+						description:
+							'Adds additional padding, intended for the left-most icon'
+					}
+				]
 			},
 			{
 				component: 'Toolbar.Title',
@@ -65,19 +70,17 @@ export default class ToolbarPage extends Component {
 
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Default </div>
-					<Toolbar className="toolbar">
-						<Toolbar.Row>
-							<Toolbar.Section align-start={true}>
-								<Toolbar.Icon >menu</Toolbar.Icon>
-								<Toolbar.Title>
-									My App
-								</Toolbar.Title>
-							</Toolbar.Section>
-							<Toolbar.Section align-end={true}>
-								<Icon>more_vert</Icon>
-							</Toolbar.Section>
-						</Toolbar.Row>
-					</Toolbar>
+				<Toolbar className="toolbar">
+					<Toolbar.Row>
+						<Toolbar.Section align-start={true}>
+							<Toolbar.Icon menu={true}>menu</Toolbar.Icon>
+							<Toolbar.Title>My App</Toolbar.Title>
+						</Toolbar.Section>
+						<Toolbar.Section align-end={true}>
+							<Toolbar.Icon>more_vert</Toolbar.Icon>
+						</Toolbar.Section>
+					</Toolbar.Row>
+				</Toolbar>
 			</div>
 		);
 	}

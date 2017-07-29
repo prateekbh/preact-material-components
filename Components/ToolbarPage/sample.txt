@@ -9,13 +9,13 @@ export default class ToolbarPage extends Component {
         <Toolbar className="toolbar">
             <Toolbar.Row>
               <Toolbar.Section align-start={true}>
-                <Toolbar.Icon>menu</Toolbar.Icon>
+                <Toolbar.Icon menu={true}>menu</Toolbar.Icon>
                 <Toolbar.Title>
                   My App
                 </Toolbar.Title>
               </Toolbar.Section>
               <Toolbar.Section align-end={true}>
-                <Icon>more_vert</Icon>
+                <Toolbar.Icon>more_vert</Toolbar.Icon>
               </Toolbar.Section>
             </Toolbar.Row>
           </Toolbar>
