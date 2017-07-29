@@ -36,6 +36,14 @@ export default class CardPage extends Component {
 				props: []
 			},
 			{
+				component: 'Card.MediaItem',
+				props: [{
+					name: 'x',
+					value: '1dot5, 2, 3',
+					description: 'Changes the size of the image'
+				}]
+			},
+			{
 				component: 'Card.Title',
 				props: [{
 					name: 'large',
@@ -45,6 +53,10 @@ export default class CardPage extends Component {
 			{
 				component: 'Card.Subtitle',
 				props: []
+			},
+			{
+				component: 'Card.HorizontalBlock',
+				props: []
 			}
 		];
 	}
@@ -53,9 +65,9 @@ export default class CardPage extends Component {
 			<div className="page-card">
 				<ComponentTable data={this.propsTable} />
 
-				<div className="mdc-typography--display1">Sample code </div>
+				<div className="mdc-typography--display1">Sample code</div>
 				<CodeBlock>
-					<code class='lang-js' >
+					<code class="lang-js">
 						{sample}
 					</code>
 				</CodeBlock>
@@ -66,15 +78,15 @@ export default class CardPage extends Component {
 					<a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-card"> here</a>.
 				</div>
 
-				<div className="mdc-typography--display1">Demo </div>
+				<div className="mdc-typography--display1">Demo</div>
 				<Card>
 					<Card.Primary>
 						<Card.Title>Hi</Card.Title>
 						<Card.Subtitle>Let me subtitle</Card.Subtitle>
 					</Card.Primary>
-					<Card.Media className='card-media'></Card.Media>
+					<Card.Media className="card-media" />
 					<Card.Actions>
-						<Card.Action>OKAy</Card.Action>
+						<Card.Action>OKAY</Card.Action>
 					</Card.Actions>
 				</Card>
 				<Card>
@@ -86,7 +98,19 @@ export default class CardPage extends Component {
 						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 					</Card.SupportingText>
 					<Card.Actions>
-						<Card.Action>OKAy</Card.Action>
+						<Card.Action>OKAY</Card.Action>
+					</Card.Actions>
+				</Card>
+				<Card>
+					<Card.HorizontalBlock>
+						<Card.Primary>
+							<Card.Title large>Hi</Card.Title>
+							<Card.Subtitle>Let me subtitle</Card.Subtitle>
+						</Card.Primary>
+						<Card.MediaItem src="favicon.png" x="1dot5" />
+					</Card.HorizontalBlock>
+					<Card.Actions>
+						<Card.Action>OKAY</Card.Action>
 					</Card.Actions>
 				</Card>
 			</div>
