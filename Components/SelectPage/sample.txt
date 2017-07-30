@@ -1,5 +1,6 @@
 import {h, Component} from 'preact';
 import Select from 'preact-material-components/Select';
+import 'preact-material-components/List/style.css';
 import 'preact-material-components/Menu/style.css';
 import 'preact-material-components/Select/style.css';
 

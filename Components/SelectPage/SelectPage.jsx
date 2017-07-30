@@ -85,11 +85,12 @@ export default class SelectPage extends Component {
 					<Select.Item>Option 4</Select.Item>
 				</Select>
 
-				<div className="mdc-typography--title">Note </div>
-				<div className="mdc-typography--caption">
+				<div className="mdc-typography--display1">Note </div>
+				<div className="mdc-typography--body">
 					<div>
-							If you are using this component individually, DO NOT FORGET to import
-							<i> 'preact-material-components/Menu/style.css'</i> as well
+						If you are using this component individually, DO NOT FORGET to import
+						<i> 'preact-material-components/Menu/style.css'</i> and
+						<i> 'preact-material-components/List/style.css'</i>
 					</div>
 				</div>
 			</div>

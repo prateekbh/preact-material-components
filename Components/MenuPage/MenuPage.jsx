@@ -65,6 +65,14 @@ export default class MenuPage extends Component {
             <Menu.Item>Hello3</Menu.Item>
           </Menu>
         </Menu.Anchor>
+
+				<div className="mdc-typography--display1">Note </div>
+				<div className="mdc-typography--body">
+					<div>
+						If you are using this component individually, DO NOT FORGET to import
+						<i> 'preact-material-components/List/style.css'</i>
+					</div>
+				</div>
 			</div>
 		);
 	}

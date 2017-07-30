@@ -1,6 +1,7 @@
 import {h, Component} from 'preact';
 import Menu from 'preact-material-components/Menu';
 import Button from 'preact-material-components/Button';
+import 'preact-material-components/List/style.css';
 import 'preact-material-components/Menu/style.css';
 import 'preact-material-components/Button/style.css';
 
