@@ -83,7 +83,7 @@ export default class Home extends Component {
 									{this.state.toolbarTitle}
 								</Toolbar.Title>
 							</Toolbar.Section>
-							<Toolbar.Section align-end={true}>
+							<Toolbar.Section className="mdc-theme--dark" align-end={true}>
 								<FormField className="field-darkmode">
 									Dark Mode
 									<Switch className="switch-darkmode" onChange={()=>{this.toggleDarkMode();}}/>
