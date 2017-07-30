@@ -315,7 +315,7 @@ export default class Home extends Component {
 								<div>
 									<div className="mdc-typography--body">
 										<div>
-											<span className="grey">preact-material-components</span> is a thin opinionless wrapper around <a href="https://github.com/material-components/material-components-web">material-components-web</a>.
+											<a href="https://github.com/prateekbh/preact-material-components"><span className="grey">preact-material-components</span></a> is a thin opinionless wrapper around <a href="https://github.com/material-components/material-components-web">material-components-web</a>.
 											Use these components to add material components to your web app, without worrying about the extra code of components which you are not using.
 										</div>
 										<div className="mdc-typography--display1">How to use</div>
