@@ -331,7 +331,7 @@ export default class Home extends Component {
 											</CodeBlock>
 										</div>
 										<div>
-											<div className="mdc-typography--title">Using the jS of the component</div>
+											<div className="mdc-typography--title">Using the JS of the component</div>
 											<div>
 												If you are using an ES6 based code base consider using the components individually, as none of the tree shaking currently removes unused classes.
 												<CodeBlock>
