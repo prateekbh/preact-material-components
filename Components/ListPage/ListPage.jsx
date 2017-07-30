@@ -27,10 +27,6 @@ export default class ListPage extends Component {
 			},
 			{
 				component: 'List.LinkItem',
-				props: []
-			},
-			{
-				component: 'List.LinkItem',
 				props: [
 					{
 						name: 'align-start',
