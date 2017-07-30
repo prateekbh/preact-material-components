@@ -20,7 +20,7 @@ export default class IconPage extends Component {
 			<div className="page-list">
 				<ComponentTable data={this.propsTable}/>
 
-				<div className="mdc-typography--display1">linktag code </div>
+				<div className="mdc-typography--display1">Sample code </div>
 				<CodeBlock>
 					<code class='lang-js' >
 						{sample}
