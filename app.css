@@ -31,6 +31,6 @@ a{
 	font-weight: 700;
 }
 
-.mdc-typography--display1{
+.mdc-typography--display1:not(:first-child){
 	margin-top: 32px;
 }
