@@ -4,6 +4,7 @@ import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
 import Switch from 'preact-material-components/Switch';
 import FormField from 'preact-material-components/FormField';
+import LayoutGrid from 'preact-material-components/LayoutGrid';
 import ButtonsPage from '../ButtonsPage/ButtonsPage.jsx';
 import FabPage from '../FabPage/FabPage.jsx';
 import CheckboxPage from '../CheckboxPage/CheckboxPage.jsx';
@@ -284,89 +285,93 @@ export default class Home extends Component {
 								</Drawer.DrawerItem>
 						</Drawer.TemporaryDrawerContent>
 					</Drawer.TemporaryDrawer>
-					<div className="content">
-						{this.state.component === 'button' && <ButtonsPage/>}
-						{this.state.component === 'fab' && <FabPage/>}
-						{this.state.component === 'card' && <CardPage/>}
-						{this.state.component === 'checkbox' && <CheckboxPage/>}
-						{this.state.component === 'switch' && <SwitchPage/>}
-						{this.state.component === 'drawer' && <DrawerPage/>}
-						{this.state.component === 'dialog' && <DialogPage/>}
-						{this.state.component === 'elevation' && <ElevationPage/>}
-						{this.state.component === 'radio' && <RadioPage/>}
-						{this.state.component === 'list' && <ListPage/>}
-						{this.state.component === 'select' && <SelectPage/>}
-						{this.state.component === 'snackbar' && <SnackbarPage/>}
-						{this.state.component === 'slider' && <SliderPage/>}
-						{this.state.component === 'textfield' && <TextfieldPage/>}
-						{this.state.component === 'toolbar' && <ToolbarPage/>}
-						{this.state.component === 'icon' && <IconPage/>}
-						{this.state.component === 'icontoggle' && <IconToggle/>}
-						{this.state.component === 'formfield' && <FormfieldPage/>}
-						{this.state.component === 'layoutgrid' && <LayoutGridPage/>}
-						{this.state.component === 'tabs' && <TabsPage/>}
-						{this.state.component === 'menu' && <MenuPage/>}
-						{this.state.component === 'linearprogress' && <LinearProgressPage/>}
-						{
-							(!this.state.component) &&
-							<div>
-								<div className="mdc-typography--body">
-									<div>
-										<span className="grey">preact-material-components</span> is a thin opinionless wrapper around <a href="https://github.com/material-components/material-components-web">material-components-web</a>.
-										Use these components to add material components to your web app, without worrying about the extra code of the the components which you are not using.
-									</div>
-									<div className="mdc-typography--display1">How to use</div>
-									<div>
-										All the components of <span className="grey">preact-material-components</span> are built to work independently.
-										 So there are couple of ways to use them
-									</div>
-									<div>
-										<CodeBlock>
-											<code class='lang-js' >
-												npm i -D preact-material-components
-											</code>
-										</CodeBlock>
-									</div>
-									<div>
-										<div className="mdc-typography--title">Using the jS of the component</div>
+				<LayoutGrid className="content">
+					<LayoutGrid.Inner>
+						<LayoutGrid.Cell cols="12">
+							{this.state.component === 'button' && <ButtonsPage/>}
+							{this.state.component === 'fab' && <FabPage/>}
+							{this.state.component === 'card' && <CardPage/>}
+							{this.state.component === 'checkbox' && <CheckboxPage/>}
+							{this.state.component === 'switch' && <SwitchPage/>}
+							{this.state.component === 'drawer' && <DrawerPage/>}
+							{this.state.component === 'dialog' && <DialogPage/>}
+							{this.state.component === 'elevation' && <ElevationPage/>}
+							{this.state.component === 'radio' && <RadioPage/>}
+							{this.state.component === 'list' && <ListPage/>}
+							{this.state.component === 'select' && <SelectPage/>}
+							{this.state.component === 'snackbar' && <SnackbarPage/>}
+							{this.state.component === 'slider' && <SliderPage/>}
+							{this.state.component === 'textfield' && <TextfieldPage/>}
+							{this.state.component === 'toolbar' && <ToolbarPage/>}
+							{this.state.component === 'icon' && <IconPage/>}
+							{this.state.component === 'icontoggle' && <IconToggle/>}
+							{this.state.component === 'formfield' && <FormfieldPage/>}
+							{this.state.component === 'layoutgrid' && <LayoutGridPage/>}
+							{this.state.component === 'tabs' && <TabsPage/>}
+							{this.state.component === 'menu' && <MenuPage/>}
+							{this.state.component === 'linearprogress' && <LinearProgressPage/>}
+							{
+								(!this.state.component) &&
+								<div>
+									<div className="mdc-typography--body">
 										<div>
-											If you are using an ES6 based code base consider using the components individually, as none of the tree shaking currently removes unused classes.
+											<span className="grey">preact-material-components</span> is a thin opinionless wrapper around <a href="https://github.com/material-components/material-components-web">material-components-web</a>.
+											Use these components to add material components to your web app, without worrying about the extra code of the the components which you are not using.
+										</div>
+										<div className="mdc-typography--display1">How to use</div>
+										<div>
+											All the components of <span className="grey">preact-material-components</span> are built to work independently.
+											 So there are couple of ways to use them
+										</div>
+										<div>
 											<CodeBlock>
 												<code class='lang-js' >
-													{jsSample}
-												</code>
-											</CodeBlock>
-											You can however import all the components together, you should not. Importing this way will bring unnecessary code of other components in your final bundle.
-											This might hit you metrics like time to interactivity, load times etc. DO NOT BLOAT YOUR BUNDLE.
-											<CodeBlock>
-												<code class='lang-js' >
-													{invidualComponentSample}
+													npm i -D preact-material-components
 												</code>
 											</CodeBlock>
 										</div>
-									</div>
-									<div>
-										<div className="mdc-typography--title">Using the CSS of the component</div>
 										<div>
-											If you are using only a couple of components from the entire package, try importing individual css, for the same reasom "TO AVOID THE BLOAT OF YOUR CSS BUNDLE".
-											<CodeBlock>
-												<code class='lang-js' >
-													{cssSample}
-												</code>
-											</CodeBlock>
-											However the approach might work against you if you use a lot of components, in this case prefer adding the entire stylesheet at once.
-											 As this is more optimized for such cases.
-											<CodeBlock>
-												<code class='lang-js' >
-													import 'preact-material-components/style.css';
-												</code>
-											</CodeBlock>
+											<div className="mdc-typography--title">Using the jS of the component</div>
+											<div>
+												If you are using an ES6 based code base consider using the components individually, as none of the tree shaking currently removes unused classes.
+												<CodeBlock>
+													<code class='lang-js' >
+														{jsSample}
+													</code>
+												</CodeBlock>
+												You can however import all the components together, you should not. Importing this way will bring unnecessary code of other components in your final bundle.
+												This might hit you metrics like time to interactivity, load times etc. DO NOT BLOAT YOUR BUNDLE.
+												<CodeBlock>
+													<code class='lang-js' >
+														{invidualComponentSample}
+													</code>
+												</CodeBlock>
+											</div>
+										</div>
+										<div>
+											<div className="mdc-typography--title">Using the CSS of the component</div>
+											<div>
+												If you are using only a couple of components from the entire package, try importing individual css, for the same reasom "TO AVOID THE BLOAT OF YOUR CSS BUNDLE".
+												<CodeBlock>
+													<code class='lang-js' >
+														{cssSample}
+													</code>
+												</CodeBlock>
+												However the approach might work against you if you use a lot of components, in this case prefer adding the entire stylesheet at once.
+												 As this is more optimized for such cases.
+												<CodeBlock>
+													<code class='lang-js' >
+														import 'preact-material-components/style.css';
+													</code>
+												</CodeBlock>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						}
-					</div>
+							}
+						</LayoutGrid.Cell>
+					</LayoutGrid.Inner>
+				</LayoutGrid>
 			</div>
 		);
 	}
