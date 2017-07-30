@@ -316,12 +316,12 @@ export default class Home extends Component {
 									<div className="mdc-typography--body">
 										<div>
 											<span className="grey">preact-material-components</span> is a thin opinionless wrapper around <a href="https://github.com/material-components/material-components-web">material-components-web</a>.
-											Use these components to add material components to your web app, without worrying about the extra code of the the components which you are not using.
+											Use these components to add material components to your web app, without worrying about the extra code of components which you are not using.
 										</div>
 										<div className="mdc-typography--display1">How to use</div>
 										<div>
 											All the components of <span className="grey">preact-material-components</span> are built to work independently.
-											 So there are couple of ways to use them
+											 So there are couple of ways to use them.
 										</div>
 										<div>
 											<CodeBlock>
@@ -333,14 +333,14 @@ export default class Home extends Component {
 										<div>
 											<div className="mdc-typography--title">Using the JS of the component</div>
 											<div>
-												If you are using an ES6 based code base consider using the components individually, as none of the tree shaking currently removes unused classes.
+												If you are using an ES6 codebase, consider using the components individually, as none of the tree shaking currently removes unused classes.
 												<CodeBlock>
 													<code class='lang-js' >
 														{jsSample}
 													</code>
 												</CodeBlock>
-												You can however import all the components together, you should not. Importing this way will bring unnecessary code of other components in your final bundle.
-												This might hit you metrics like time to interactivity, load times etc. DO NOT BLOAT YOUR BUNDLE.
+												Although you can import all the components together, you should not. Importing this way will bring unnecessary code of other components into your final bundle.
+												This might hit your metrics like time to interactivity, load times, etc. DO NOT BLOAT YOUR BUNDLE.
 												<CodeBlock>
 													<code class='lang-js' >
 														{invidualComponentSample}
@@ -351,14 +351,14 @@ export default class Home extends Component {
 										<div>
 											<div className="mdc-typography--title">Using the CSS of the component</div>
 											<div>
-												If you are using only a couple of components from the entire package, try importing individual css, for the same reasom "TO AVOID THE BLOAT OF YOUR CSS BUNDLE".
+												If you are using only a couple of components from the entire package, try importing individual CSS, for the same reason: TO AVOID BLOATING YOUR CSS BUNDLE.
 												<CodeBlock>
 													<code class='lang-js' >
 														{cssSample}
 													</code>
 												</CodeBlock>
-												However the approach might work against you if you use a lot of components, in this case prefer adding the entire stylesheet at once.
-												 As this is more optimized for such cases.
+												However this approach might work against you if you use a lot of components. In that case, prefer adding the entire stylesheet at once,
+												as it is more optimized for such cases.
 												<CodeBlock>
 													<code class='lang-js' >
 														import 'preact-material-components/style.css';
