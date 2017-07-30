@@ -196,7 +196,7 @@ export default class Home extends Component {
 									this.closeDrawer();
 								}}>
 									<List.ItemIcon>code</List.ItemIcon>
-									Icon Toggle
+									IconToggle
 								</Drawer.DrawerItem>
 								<Drawer.DrawerItem onClick={()=>{
 									routie('/component/layoutgrid');
