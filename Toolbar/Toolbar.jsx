@@ -61,6 +61,9 @@ class ToolbarSection extends MaterialComponent {
   }
 }
 
+/**
+ * @prop menu = false
+ */
 class ToolbarIcon extends MaterialComponent {
   constructor(props) {
     super();
