@@ -73,7 +73,7 @@ export default class Home extends Component {
 		return (
 			<div className="home">
 				<div className={this.state.component? "hero collapsed": "hero"}>
-					<Toolbar>
+					<Toolbar className="mdc-theme--dark">
 						<Toolbar.Row>
 							<Toolbar.Section align-start={true}>
 								<Toolbar.Icon menu={true} href="#" onClick={(e)=>{
