@@ -8,7 +8,7 @@ const extractCSS = new ExtractTextPlugin('[name].css');
 
 const config = {
 	entry: {
-	 app: './app.js',
+	 app: './src/app.jsx',
 	 vendor: ['preact']
 	},
 	output: {
@@ -20,7 +20,7 @@ const config = {
 		rules: [
 			{
 				test: /\.txt$/,
-				use: 'raw-loader'
+				loader: 'raw-loader'
 			},
 			{
 				loader: 'babel-loader',
@@ -36,10 +36,10 @@ const config = {
 			{
 				test: /\.css$/,
 				loader: extractCSS.extract({
-					fallbackLoader: 'style-loader',
-					loader: ['css-loader','postcss-loader']
-				}),
-			},
+					fallback: 'style-loader',
+					use: ['css-loader','postcss-loader']
+				})
+			}
 		]
 	},
 	plugins: [
