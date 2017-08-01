@@ -1,40 +1,86 @@
-import { h } from "preact";
+import { h, Component } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCTextfield } from "@material/textfield/";
 
 /**
+ * @prop persistent = false
+ * @prop validation-msg = false
+ */
+class Helptext extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "textfield-helptext";
+    this._mdcProps = ["persistent", "validation-msg"];
+  }
+  materialDom(props) {
+    return (
+      <p {...props} aria-hidden="true">
+        {props.children}
+      </p>
+    );
+  }
+}
+
+class Label extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "textfield__label";
+  }
+  materialDom(props) {
+    return (
+      <label {...props}>
+        {props.children}
+      </label>
+    );
+  }
+}
+
+/**
  * @prop fullwidth = false
  * @prop multiline = false
+ * @prop dense = false
+ * @prop disabled = false
+ * @prop box = false
  * @prop type = 'text'
+ * @prop value = ''
+ * @prop label = ''
  */
-export default class Textfield extends MaterialComponent {
+class TextfieldInput extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "textfield";
+    this._mdcProps = ["fullwidth", "multiline", "dense", "disabled", "box"];
     this.state = {
       showFloatingLabel: false
     };
-    this._mdcProps = ["fullwidth", "multiline"];
   }
   componentDidMount() {
-    this.setState({
-      showFloatingLabel: true
-    });
-    this.MDComponent = new MDCTextfield(this.control);
+    this.setState(
+      {
+        showFloatingLabel: true
+      },
+      () => {
+        this.MDComponent = new MDCTextfield(this.control);
+      }
+    );
   }
   componentWillUnmount() {
-    this.MDComponent.destroy && this.MDComponent.destroy();
+    this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(allprops) {
-    const { className, ...props } = allprops;
-    let labelClass = ["mdc-textfield__label"];
-    if (props.value) {
-      labelClass.push("mdc-textfield__label--float-above");
+    let { className, ...props } = allprops;
+
+    if (props.value && this.state.showFloatingLabel) {
+      className = [className, "mdc-textfield--upgraded"].join(" ");
     }
+
     return (
-      <div className={className + ""} ref={control => (this.control = control)}>
+      <div className={className} ref={control => (this.control = control)}>
         {props.multiline
-          ? <textarea className="mdc-textfield__input" {...props} />
+          ? <textarea
+              className="mdc-textfield__input"
+              {...props}
+            />
           : <input
               type={props.type || "text"}
               className="mdc-textfield__input"
@@ -42,10 +88,88 @@ export default class Textfield extends MaterialComponent {
             />}
         {props.label &&
           this.state.showFloatingLabel &&
-          <label className={labelClass.join(" ")}>
+          <Label
+            for={props.id}
+            className={props.value && "mdc-textfield__label--float-above"}
+          >
             {props.label}
-          </label>}
+          </Label>}
       </div>
     );
   }
 }
+
+/**
+ * @prop fullwidth = false
+ * @prop multiline = false
+ * @prop dense = false
+ * @prop disabled = false
+ * @prop box = false
+ * @prop type = 'text'
+ * @prop value = ''
+ * @prop label = ''
+ * @prop helptext = ''
+ * @prop helptextPersistent = false
+ * @prop helptextValidationMsg = false
+ */
+class Textfield extends Component {
+  constructor() {
+    super();
+    this.id = Textfield.uid();
+    this.state = {
+      showFloatingLabel: false
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      showFloatingLabel: true
+    });
+  }
+
+  static uid() {
+    if (!this.uidCounter) {
+      this.uidCounter = 0;
+    }
+    return ++this.uidCounter;
+  }
+
+  render(allprops, { showFloatingLabel }) {
+    const {
+      className,
+      helptextPersistent,
+      helptextValidationMsg,
+      ...props
+    } = allprops;
+    const showDiv = props.helptext || (props.label && !showFloatingLabel);
+
+    if (showDiv && !props.id) {
+      props.id = "tf-" + this.id;
+    }
+
+    // Helper text
+    const helptextProps = {
+      persistent: helptextPersistent,
+      "validation-msg": helptextValidationMsg
+    };
+
+    return showDiv
+      ? <div className={className}>
+          {props.label &&
+            !showFloatingLabel &&
+            <label for={props.id}>
+              {props.cssLabel || `${props.label}: `}
+            </label>}
+          <TextfieldInput {...props} aria-controls={props.helptext && props.id + "-helptext"} />
+          {props.helptext &&
+            <Helptext id={props.id + "-helptext"} {...helptextProps}>
+              {props.helptext}
+            </Helptext>}
+        </div>
+      : <TextfieldInput {...props} className={className} />;
+  }
+}
+
+Textfield.Helptext = Helptext;
+
+export default Textfield;
