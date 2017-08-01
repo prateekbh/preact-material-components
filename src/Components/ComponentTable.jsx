@@ -16,7 +16,7 @@ export default class ComponentTable extends Component {
 											<li>
 												<div>
 													<div><span className="mdc-typography--title">{prop.name} </span>
-													<span className="mdc-typography--body2">{prop.value || 'true/false'}</span></div>
+														<span className="mdc-typography--body2">{prop.value || 'true/false'}</span></div>
 													<div className="mdc-typography--caption">{prop.description}</div>
 												</div>
 											</li>

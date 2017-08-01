@@ -41,8 +41,8 @@ export default class CheckboxPage extends Component {
 					<label for="basic-checkbox" id="basic-checkbox-label">This is my checkbox</label>
 				</FormField>
 				<Button raised={true} onClick={()=>{
-						this.cb.MDComponent.indeterminate = true;
-					}}>Make indeterminate</Button>
+					this.cb.MDComponent.indeterminate = true;
+				}}>Make indeterminate</Button>
 			</div>
 		);
 	}

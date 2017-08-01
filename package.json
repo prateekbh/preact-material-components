@@ -6,7 +6,7 @@
     "start": "http-server .",
     "build": "webpack -p",
     "test": "npm run lint",
-    "lint": "./node_modules/.bin/eslint src/",
+    "lint": "./node_modules/.bin/eslint src/ --ignore-pattern **/*.min.js",
     "lint-staged": "lint-staged"
   },
   "repository": {

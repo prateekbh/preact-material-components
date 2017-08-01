@@ -7,7 +7,7 @@ import sample from './sample.txt';
 import scrollerSample from './scroller-sample.txt';
 import './TabsPage.css';
 export default class TabsPage
- extends Component {
+	extends Component {
 	constructor() {
 		super();
 		this.propsTable = [
@@ -38,9 +38,9 @@ export default class TabsPage
 					{
 						name: 'active',
 						description: 'Makes the current tab active.'
-					},
+					}
 				]
-			},
+			}
 		];
 	}
 	render(){
@@ -70,60 +70,60 @@ export default class TabsPage
 
 				<div className="mdc-typography--display1">Demo </div>
 				<div className="mdc-typography--title">Default </div>
-					<Tabs className='demo-tabs'>
-						<Tabs.Tab>Tab1</Tabs.Tab>
-						<Tabs.Tab>Tab2</Tabs.Tab>
-						<Tabs.Tab>Tab3</Tabs.Tab>
-					</Tabs>
+				<Tabs className='demo-tabs'>
+					<Tabs.Tab>Tab1</Tabs.Tab>
+					<Tabs.Tab>Tab2</Tabs.Tab>
+					<Tabs.Tab>Tab3</Tabs.Tab>
+				</Tabs>
 				<div className="mdc-typography--title">With indicator accent </div>
-					<Tabs className='demo-tabs' indicator-accent={true}>
-						<Tabs.Tab>Tab1</Tabs.Tab>
-						<Tabs.Tab>Tab2</Tabs.Tab>
-						<Tabs.Tab>Tab3</Tabs.Tab>
-					</Tabs>
+				<Tabs className='demo-tabs' indicator-accent={true}>
+					<Tabs.Tab>Tab1</Tabs.Tab>
+					<Tabs.Tab>Tab2</Tabs.Tab>
+					<Tabs.Tab>Tab3</Tabs.Tab>
+				</Tabs>
 				<div className="mdc-typography--title">Icons tabs bar </div>
-					<Tabs className='demo-tabs' icon-tab-bar={true}>
-						<Tabs.Tab>
-							<Icon>favorite</Icon>
-						</Tabs.Tab>
-						<Tabs.Tab>
-							<Icon>done</Icon>
-						</Tabs.Tab>
-						<Tabs.Tab>
-							<Icon>info</Icon>
-						</Tabs.Tab>
-					</Tabs>
+				<Tabs className='demo-tabs' icon-tab-bar={true}>
+					<Tabs.Tab>
+						<Icon>favorite</Icon>
+					</Tabs.Tab>
+					<Tabs.Tab>
+						<Icon>done</Icon>
+					</Tabs.Tab>
+					<Tabs.Tab>
+						<Icon>info</Icon>
+					</Tabs.Tab>
+				</Tabs>
 				<div className="mdc-typography--title">Icons with test tabs bar </div>
-					<Tabs className='demo-tabs' icons-with-text={true}>
-						<Tabs.Tab>
-							<Icon>favorite</Icon>
-							<Tabs.TabIconLabel>Heart</Tabs.TabIconLabel>
-						</Tabs.Tab>
-						<Tabs.Tab active={true}>
-							<Icon>done</Icon>
-							<Tabs.TabIconLabel>Done</Tabs.TabIconLabel>
-						</Tabs.Tab>
-						<Tabs.Tab>
-							<Icon>info</Icon>
-							<Tabs.TabIconLabel>Info</Tabs.TabIconLabel>
-						</Tabs.Tab>
-					</Tabs>
+				<Tabs className='demo-tabs' icons-with-text={true}>
+					<Tabs.Tab>
+						<Icon>favorite</Icon>
+						<Tabs.TabIconLabel>Heart</Tabs.TabIconLabel>
+					</Tabs.Tab>
+					<Tabs.Tab active={true}>
+						<Icon>done</Icon>
+						<Tabs.TabIconLabel>Done</Tabs.TabIconLabel>
+					</Tabs.Tab>
+					<Tabs.Tab>
+						<Icon>info</Icon>
+						<Tabs.TabIconLabel>Info</Tabs.TabIconLabel>
+					</Tabs.Tab>
+				</Tabs>
 				<div className="mdc-typography--title">Scrollable tabs </div>
-					<Tabs.TabBarScroller>
-            <Tabs scroller={true}>
-							<Tabs.Tab>tab1</Tabs.Tab>
-							<Tabs.Tab active={true}>tab2</Tabs.Tab>
-							<Tabs.Tab>tab3</Tabs.Tab>
-							<Tabs.Tab>tab4</Tabs.Tab>
-							<Tabs.Tab>tab5</Tabs.Tab>
-							<Tabs.Tab>tab6</Tabs.Tab>
-							<Tabs.Tab>tab7</Tabs.Tab>
-							<Tabs.Tab>tab7</Tabs.Tab>
-							<Tabs.Tab>tab9</Tabs.Tab>
-							<Tabs.Tab>tab10</Tabs.Tab>
-							<Tabs.Tab>tab11</Tabs.Tab>
-						</Tabs>
-					</Tabs.TabBarScroller>
+				<Tabs.TabBarScroller>
+					<Tabs scroller={true}>
+						<Tabs.Tab>tab1</Tabs.Tab>
+						<Tabs.Tab active={true}>tab2</Tabs.Tab>
+						<Tabs.Tab>tab3</Tabs.Tab>
+						<Tabs.Tab>tab4</Tabs.Tab>
+						<Tabs.Tab>tab5</Tabs.Tab>
+						<Tabs.Tab>tab6</Tabs.Tab>
+						<Tabs.Tab>tab7</Tabs.Tab>
+						<Tabs.Tab>tab7</Tabs.Tab>
+						<Tabs.Tab>tab9</Tabs.Tab>
+						<Tabs.Tab>tab10</Tabs.Tab>
+						<Tabs.Tab>tab11</Tabs.Tab>
+					</Tabs>
+				</Tabs.TabBarScroller>
 			</div>
 		);
 	}

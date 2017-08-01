@@ -55,15 +55,15 @@ export default class IconTogglePage extends Component {
 
 				<div className="mdc-typography--display1">Demo </div>
 				<IconToggle
-          role="button"
-          tabindex="0"
-          aria-pressed="false"
-          aria-label="Add to favorites"
-          data-toggle-on={toggleOnIcon}
-          data-toggle-off={toggleOffIcon}
-        >
+					role="button"
+					tabindex="0"
+					aria-pressed="false"
+					aria-label="Add to favorites"
+					data-toggle-on={toggleOnIcon}
+					data-toggle-off={toggleOffIcon}
+				>
           favorite_border
-        </IconToggle>
+				</IconToggle>
 
 			</div>
 		);

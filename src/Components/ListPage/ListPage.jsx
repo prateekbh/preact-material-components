@@ -59,7 +59,7 @@ export default class ListPage extends Component {
 			{
 				component: 'List.SecondaryText',
 				props: []
-			},
+			}
 		];
 	}
 	render(){

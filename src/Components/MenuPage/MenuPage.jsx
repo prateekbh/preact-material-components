@@ -48,23 +48,23 @@ export default class MenuPage extends Component {
 
 				<div className="mdc-typography--display1">Demo </div>
 				<Menu.Anchor>
-          <Button
-            onClick={e => {
-              this.menu.MDComponent.open = !this.menu.MDComponent.open;
-            }}
-          >
+					<Button
+						onClick={e => {
+							this.menu.MDComponent.open = !this.menu.MDComponent.open;
+						}}
+					>
             Click for menu
-          </Button>
-          <Menu
-            ref={menu => {
-              this.menu = menu;
-            }}
-          >
-            <Menu.Item>Hello1</Menu.Item>
-            <Menu.Item>Hello2</Menu.Item>
-            <Menu.Item>Hello3</Menu.Item>
-          </Menu>
-        </Menu.Anchor>
+					</Button>
+					<Menu
+						ref={menu => {
+							this.menu = menu;
+						}}
+					>
+						<Menu.Item>Hello1</Menu.Item>
+						<Menu.Item>Hello2</Menu.Item>
+						<Menu.Item>Hello3</Menu.Item>
+					</Menu>
+				</Menu.Anchor>
 
 				<div className="mdc-typography--display1">Note </div>
 				<div className="mdc-typography--body">
