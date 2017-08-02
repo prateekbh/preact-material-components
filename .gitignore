@@ -43,6 +43,30 @@ jspm_packages
 # CSS, so far this repo is just bridge to material components. Hence Css is not required in git repo
 *.css
 
-# Ignores all index.js files for all components since they are auto-generated.
-**/index.js
-!/index.js
+# IntelliJ/Webstorm
+.idea/
+
+# Compiled ES6 components
+Button.js
+Checkbox.js
+Fab.js
+Switch.js
+Snackbar.js
+Icon.js
+IconToggle.js
+Radio.js
+Textfield.js
+Select.js
+Card.js
+Elevation.js
+Formfield.js
+Dialog.js
+LinearProgress.js
+List.js
+Drawer.js
+Menu.js
+Toolbar.js
+LayoutGrid.js
+Tabs.js
+Slider.js
+

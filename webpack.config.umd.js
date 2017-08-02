@@ -1,7 +1,5 @@
 /* globals module, require, __dirname */
 const webpack = require("webpack");
-const CssMigrationWebpackPlugin = require("./CssMigrationWebpackPlugin");
-const WebpackShellPlugin = require("webpack-shell-plugin");
 
 module.exports = {
   entry: "./index.js",
@@ -10,6 +8,9 @@ module.exports = {
     filename: "index.js",
     libraryTarget: "umd"
   },
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
   module: {
     rules: [
       {
@@ -17,19 +18,16 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/proptypes|scripts\/sw.js/,
         options: {
-          presets: [["es2015", { modules: false }]],
-          plugins: [
-            ["transform-react-jsx", { pragma: "h" }],
-            "transform-object-rest-spread"
-          ]
+          presets: ["es2015"]
         }
       }
     ]
   },
   plugins: [
-    new CssMigrationWebpackPlugin(),
-    new WebpackShellPlugin({
-      onBuildEnd: ["node compileComponents.js"]
+    new webpack.optimize.UglifyJsPlugin({
+      beautify: true,
+      comments: true,
+      mangle: false
     })
   ]
 };

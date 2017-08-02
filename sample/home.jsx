@@ -21,7 +21,7 @@ import {
   Menu,
   Tabs,
   Slider
-} from "../";
+} from "../index";
 
 export default class Home extends Component {
   constructor() {
