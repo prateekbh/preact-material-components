@@ -8,6 +8,8 @@ class Dialog extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "dialog";
+    this._onAccept = this._onAccept.bind(this);
+    this._onCancel = this._onCancel.bind(this);
   }
   componentDidMount() {
     this.MDComponent = new MDCDialog(this.control);
