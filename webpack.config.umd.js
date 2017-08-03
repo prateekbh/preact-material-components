@@ -18,7 +18,12 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/proptypes|scripts\/sw.js/,
         options: {
-          presets: ["es2015"]
+          babelrc: false,
+          presets: ["es2015", "react", "stage-0"],
+          plugins: [
+            ["transform-react-jsx", { pragma: "h" }],
+            "transform-runtime"
+          ]
         }
       }
     ]
