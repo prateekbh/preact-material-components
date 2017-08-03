@@ -21,8 +21,7 @@ module.exports = {
           babelrc: false,
           presets: ["es2015", "react", "stage-0"],
           plugins: [
-            ["transform-react-jsx", { pragma: "h" }],
-            "transform-runtime"
+            ["transform-react-jsx", { pragma: "h" }]
           ]
         }
       }
