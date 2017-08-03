@@ -9,9 +9,9 @@
     "build:umd": "cross-env NODE_ENV=production webpack --config webpack.config.umd.js",
     "build:es": "cross-env NODE_ENV=production babel . --out-dir . --extensions \".jsx\" --ignore node_modules,sample && npm run copycss",
     "copycss": "node copyCss.js",
-    "prepublish": "npm run build && npm run test ",
+    "prepublish": "npm run test",
     "test": "npm run build && npm run lint",
-    "lint": "eslint .",
+    "lint": "eslint src",
     "lint-staged": "lint-staged"
   },
   "repository": {
@@ -44,6 +44,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components#readme",
   "dependencies": {
+    "babel-runtime": "^6.25.0",
     "material-components-web": "0.16.0"
   },
   "peerDependencies": {
@@ -75,6 +76,7 @@
     "cp": "^0.2.0",
     "cross-env": "^5.0.2",
     "eslint": "^4.0.0",
+    "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-react": "^7.0.0",
     "lint-staged": "^4.0.0",
     "mkdirp": "^0.5.1",
