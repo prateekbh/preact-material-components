@@ -27,41 +27,39 @@ export default class Slider extends MaterialComponent {
     this.MDComponent = new MDCSlider(this.base);
     this.MDComponent.listen("MDCSlider:change", this._onChange);
     this.MDComponent.listen("MDCSlider:input", this._onInput);
+    this.setValue(); // set initial value programatically because of error if min is greater than initial max
   }
   componentWillUnmount() {
     this.MDComponent.unlisten("MDCSlider:change", this._onChange);
     this.MDComponent.unlisten("MDCSlider:input", this._onInput);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
+  setValue(props = this.props) {
+    const { disabled = false, min = 0, max = 100, value, step } = props;
+    if (this.MDComponent) {
+      if (min > this.MDComponent.max) {
+        this.MDComponent.max = max;
+        this.MDComponent.min = min;
+      } else {
+        this.MDComponent.min = min;
+        this.MDComponent.max = max;
+      }
+
+      this.MDComponent.value = value;
+      this.MDComponent.disabled = disabled;
+      this.MDComponent.step = step;
+    }
+  }
+
   materialDom(allprops) {
-    const {
-      disabled = false,
-      min = 0,
-      max = 100,
-      value,
-      step,
-      tabindex = 0,
-      ...props
-    } = allprops;
+    const { tabindex = 0, ...props } = allprops;
 
-    let dynamicProps = {};
-    if (disabled) {
-      dynamicProps["aria-disabled"] = true;
-    }
-
-    if (step) {
-      dynamicProps["data-step"] = step;
-    }
-
+    this.setValue(allprops);
     return (
       <div
         tabindex={tabindex}
         role="slider"
-        aria-valuemin={min}
-        aria-valuemax={max}
-        aria-valuenow={value}
         aria-label="Select Value"
-        {...dynamicProps}
         {...props}
       >
         <div class="mdc-slider__track-container">
