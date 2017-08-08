@@ -1,6 +1,6 @@
 {
   "name": "preact-material-components",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist/index.js",
@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components#readme",
   "dependencies": {
-    "material-components-web": "0.16.0"
+    "material-components-web": "0.17.0"
   },
   "peerDependencies": {
     "preact": "*"

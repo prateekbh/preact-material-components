@@ -8,12 +8,28 @@ class Dialog extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "dialog";
+    this._onAccept = this._onAccept.bind(this);
+    this._onCancel = this._onCancel.bind(this);
   }
   componentDidMount() {
     this.MDComponent = new MDCDialog(this.control);
+    this.MDComponent.listen("MDCDialog:accept", this._onAccept);
+    this.MDComponent.listen("MDCDialog:cancel", this._onCancel);
   }
   componentWillUnmount() {
+    this.MDComponent.unlisten("MDCDialog:accept", this._onAccept);
+    this.MDComponent.unlisten("MDCDialog:cancel", this._onCancel);
     this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  _onAccept(e) {
+    if (this.props.onAccept) {
+      this.props.onAccept(e);
+    }
+  }
+  _onCancel(e) {
+    if (this.props.onCancel) {
+      this.props.onCancel(e);
+    }
   }
   materialDom(props) {
     return (
