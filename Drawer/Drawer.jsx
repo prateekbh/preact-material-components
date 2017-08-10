@@ -133,7 +133,7 @@ class PermanentDrawerHeader extends MaterialComponent {
   }
 }
 
-class PermanentDrawerContent extends PermanentDrawerContent {
+class PermanentDrawerContent extends TemporaryDrawerContent {
   constructor() {
     super();
     this.componentName = "permanent-drawer__content";
