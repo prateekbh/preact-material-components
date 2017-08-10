@@ -49,9 +49,6 @@ export default class MaterialComponent extends Component {
     }
     return this.classText;
   }
-  getAutoInitNames() {
-    return this.autoInitText;
-  }
   // Components must implement this method for their specific DOM structure
   materialDom(props) {
     return h("div", Object.assign({}, props), props.children);
