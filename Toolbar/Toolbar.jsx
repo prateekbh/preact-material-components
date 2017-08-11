@@ -22,8 +22,10 @@ class Toolbar extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = new MDCToolbar(this.control);
+    this.MDComponent.listen("MDCToolbar:change", this._onChange);
   }
   componentWillUnmount() {
+    this.MDComponent.unlisten("MDCToolbar:change", this._onChange);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
