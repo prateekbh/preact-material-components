@@ -19,6 +19,12 @@ class Toolbar extends MaterialComponent {
       "flexible",
       "flexible-default-behavior"
     ];
+    this._onChange = this._onChange.bind(this);
+  }
+  _onChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
   }
   componentDidMount() {
     this.MDComponent = new MDCToolbar(this.control);
