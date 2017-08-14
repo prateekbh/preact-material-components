@@ -162,7 +162,7 @@ export default class Home extends Component {
 
 	_handleRoute(e) {
 		this.setState({
-			toolbarTitle: e.url === '/' ? null : this.menuItems.find(item => item.link === e.url).text
+			toolbarTitle: e.url === '/' ? null : (this.menuItems.find(item => item.link === e.url) || {}).text
 		});
 	}
 
