@@ -28,6 +28,7 @@ export default class Menu extends Component {
 	}
 
 	_handleLinkClick(e) {
+		// eslint-disable-next-line eqeqeq
 		if (e.button == 0) {
 			this._routeFromLink(e.currentTarget || e.target || this);
 			return this._prevent(e);

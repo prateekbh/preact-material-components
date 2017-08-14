@@ -84,6 +84,6 @@ export default class FormFieldPage extends Component {
 					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 }
