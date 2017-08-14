@@ -1,15 +1,15 @@
+// Dependencies
 import {h, Component} from 'preact';
+import Router from 'preact-router';
 
 // Material Components
-import Drawer from 'preact-material-components/Drawer';
 import FormField from 'preact-material-components/FormField';
 import LayoutGrid from 'preact-material-components/LayoutGrid';
-import List from 'preact-material-components/List';
 import Switch from 'preact-material-components/Switch';
 import Toolbar from 'preact-material-components/Toolbar';
 
 // Routes
-import ButtonsPage from '../../routes/buttons';
+import ButtonPage from '../../routes/button';
 import CardPage from '../../routes/card';
 import CheckboxPage from '../../routes/checkbox';
 import DialogPage from '../../routes/dialog';
@@ -19,7 +19,7 @@ import FabPage from '../../routes/fab';
 import FormFieldPage from '../../routes/form-field';
 import HomePage from '../../routes/home';
 import IconPage from '../../routes/icon';
-import IconToggle from '../../routes/icon-toggle';
+import IconTogglePage from '../../routes/icon-toggle';
 import LayoutGridPage from '../../routes/layout-grid';
 import LinearProgressPage from '../../routes/linear-progress';
 import ListPage from '../../routes/list';
@@ -33,37 +33,121 @@ import TabsPage from '../../routes/tabs';
 import TextfieldPage from '../../routes/textfield';
 import ToolbarPage from '../../routes/toolbar';
 
-// Dependencies
-import routie from '../routie.min';
+// Components
+import Menu from '../menu';
 
 // Style
 import 'preact-material-components/style.css';
 import './style';
 
 export default class Home extends Component {
+
 	constructor(){
 		super();
 		this.state = {
 			darkMode: false
 		};
+		this.menuItems = [{
+			text: 'Home',
+			icon: 'home',
+			link: '/',
+			component: HomePage
+		}, {
+			text: 'Button',
+			link: '/component/button',
+			component: ButtonPage
+		}, {
+			text: 'Card',
+			link: '/component/card',
+			component: CardPage
+		}, {
+			text: 'Checkbox',
+			link: '/component/checkbox',
+			component: CheckboxPage
+		}, {
+			text: 'Dialog',
+			link: '/component/dialog',
+			component: DialogPage
+		}, {
+			text: 'Drawer',
+			link: '/component/drawer',
+			component: DrawerPage
+		}, {
+			text: 'Elevation',
+			link: '/component/elevation',
+			component: ElevationPage
+		}, {
+			text: 'Fab',
+			link: '/component/fab',
+			component: FabPage
+		}, {
+			text: 'Formfield',
+			link: '/component/form-field',
+			component: FormFieldPage
+		}, {
+			text: 'Icon',
+			link: '/component/icon',
+			component: IconPage
+		}, {
+			text: 'IconToggle',
+			link: '/component/icon-toggle',
+			component: IconTogglePage
+		}, {
+			text: 'LayoutGrid',
+			link: '/component/layout-grid',
+			component: LayoutGridPage
+		}, {
+			text: 'LinearProgress',
+			link: '/component/linear-progress',
+			component: LinearProgressPage
+		}, {
+			text: 'List',
+			link: '/component/list',
+			component: ListPage
+		}, {
+			text: 'Menu',
+			link: '/component/menu',
+			component: MenuPage
+		}, {
+			text: 'Radio',
+			link: '/component/radio',
+			component: RadioPage
+		}, {
+			text: 'Select',
+			link: '/component/select',
+			component: SelectPage
+		}, {
+			text: 'Slider',
+			link: '/component/slider',
+			component: SliderPage
+		}, {
+			text: 'Snackbar',
+			link: '/component/snackbar',
+			component: SnackbarPage
+		}, {
+			text: 'Switch',
+			link: '/component/switch',
+			component: SwitchPage
+		}, {
+			text: 'Tabs',
+			link: '/component/tabs',
+			component: TabsPage
+		}, {
+			text: 'Textfield',
+			link: '/component/textfield',
+			component: TextfieldPage
+		}, {
+			text: 'Toolbar',
+			link: '/component/toolbar',
+			component: ToolbarPage
+		}];
+		this._handleRoute = this._handleRoute.bind(this);
 	}
-	componentDidMount(){
-		routie('/', (component) => {
-			this.setState({
-				component: null,
-				toolbarTitle: ""
-			});
-		});
-		routie('/component/:name', (component) => {
-			this.setState({
-				component,
-				toolbarTitle: component
-			});
-		});
-	}
+
 	closeDrawer(){
-		this.drawer.MDComponent.open = false;
+		this.menu.close();
 	}
+
 	toggleDarkMode(){
 		this.setState({
 			darkMode: !this.state.darkMode
@@ -74,17 +158,24 @@ export default class Home extends Component {
 			document.body.classList.remove('mdc-theme--dark');
 		}
 	}
-	render(){
+
+	_handleRoute(e) {
+		this.setState({
+			toolbarTitle: e.url === '/' ? null : this.menuItems.find(item => item.link === e.url).text
+		});
+	}
+
+	render() {
 		return (
 			<div className="home mdc-typography">
 				<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-				<div className={this.state.component? "hero collapsed": "hero"}>
+				<div className={this.state.toolbarTitle ? "hero collapsed" : "hero"}>
 					<Toolbar className="mdc-theme--dark">
 						<Toolbar.Row>
 							<Toolbar.Section align-start={true}>
 								<Toolbar.Icon menu={true} href="#" onClick={(e)=>{
 									e.preventDefault();
-									this.drawer.MDComponent.open = true;
+									this.menu.open();
 								}}>menu</Toolbar.Icon>
 								<Toolbar.Title>
 									{this.state.toolbarTitle}
@@ -123,204 +214,20 @@ export default class Home extends Component {
 					</svg>
 					<div className="mdc-typography--display2 name">preact-material-components</div>
 				</div>
-				<Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}} >
-					<Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
-							Components
-					</Drawer.TemporaryDrawerHeader>
-					<Drawer.TemporaryDrawerContent>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>home</List.ItemIcon>
-										Home
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/button');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-										Button
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/card');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Card
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/checkbox');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Checkbox
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/dialog');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Dialog
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/drawer');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Drawer
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/elevation');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Elevation
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/fab');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Fab
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/formfield');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Formfield
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/icon');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Icon
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/icontoggle');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									IconToggle
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/layoutgrid');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									LayoutGrid
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/linearprogress');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									LinearProgress
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/list');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									List
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/menu');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Menu
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/radio');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Radio
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/select');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Select
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/slider');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Slider
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/snackbar');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Snackbar
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/switch');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Switch
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/tabs');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Tabs
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/textfield');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Textfield
-						</Drawer.DrawerItem>
-						<Drawer.DrawerItem onClick={()=>{
-							routie('/component/toolbar');
-							this.closeDrawer();
-						}}>
-							<List.ItemIcon>code</List.ItemIcon>
-									Toolbar
-						</Drawer.DrawerItem>
-					</Drawer.TemporaryDrawerContent>
-				</Drawer.TemporaryDrawer>
+				<Menu items={this.menuItems} ref={menu => this.menu = menu} />
 				<LayoutGrid className="content">
 					<LayoutGrid.Inner>
 						<LayoutGrid.Cell cols="12">
-							{this.state.component === 'button' && <ButtonsPage />}
-							{this.state.component === 'fab' && <FabPage />}
-							{this.state.component === 'card' && <CardPage />}
-							{this.state.component === 'checkbox' && <CheckboxPage />}
-							{this.state.component === 'switch' && <SwitchPage />}
-							{this.state.component === 'drawer' && <DrawerPage />}
-							{this.state.component === 'dialog' && <DialogPage />}
-							{this.state.component === 'elevation' && <ElevationPage />}
-							{this.state.component === 'radio' && <RadioPage />}
-							{this.state.component === 'list' && <ListPage />}
-							{this.state.component === 'select' && <SelectPage />}
-							{this.state.component === 'snackbar' && <SnackbarPage />}
-							{this.state.component === 'slider' && <SliderPage />}
-							{this.state.component === 'textfield' && <TextfieldPage />}
-							{this.state.component === 'toolbar' && <ToolbarPage />}
-							{this.state.component === 'icon' && <IconPage />}
-							{this.state.component === 'icontoggle' && <IconToggle />}
-							{this.state.component === 'formfield' && <FormFieldPage />}
-							{this.state.component === 'layoutgrid' && <LayoutGridPage />}
-							{this.state.component === 'tabs' && <TabsPage />}
-							{this.state.component === 'menu' && <MenuPage />}
-							{this.state.component === 'linearprogress' && <LinearProgressPage />}
-							{!this.state.component && <HomePage />}
+							<Router onChange={this._handleRoute}>
+								{this.menuItems.map(({ component: Element, link }) =>
+									<Element path={link} />)}
+								<HomePage default />
+							</Router>
 						</LayoutGrid.Cell>
 					</LayoutGrid.Inner>
 				</LayoutGrid>
 			</div>
 		);
 	}
+
 }

@@ -5,7 +5,7 @@ import CodeBlock from '../../components/code-block';
 import style from './style';
 import sample from './sample.txt';
 
-export default class ButtonsPage extends Component {
+export default class ButtonPage extends Component {
 	constructor() {
 		super();
 		this.propsTable = [
