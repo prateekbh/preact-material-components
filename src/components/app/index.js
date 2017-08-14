@@ -17,6 +17,7 @@ import DrawerPage from '../../routes/drawer';
 import ElevationPage from '../../routes/elevation';
 import FabPage from '../../routes/fab';
 import FormFieldPage from '../../routes/form-field';
+import HomePage from '../../routes/home';
 import IconPage from '../../routes/icon';
 import IconToggle from '../../routes/icon-toggle';
 import LayoutGridPage from '../../routes/layout-grid';
@@ -34,14 +35,6 @@ import ToolbarPage from '../../routes/toolbar';
 
 // Dependencies
 import routie from '../routie.min';
-
-// Components
-import CodeBlock from '../code-block';
-
-// Samples
-import invidualComponentSample from './invidual-component-sample.txt';
-import jsSample from './js-sample.txt';
-import cssSample from './css-sample.txt';
 
 // Style
 import 'preact-material-components/style.css';
@@ -301,87 +294,29 @@ export default class Home extends Component {
 				<LayoutGrid className="content">
 					<LayoutGrid.Inner>
 						<LayoutGrid.Cell cols="12">
-							{this.state.component === 'button' && <ButtonsPage/>}
-							{this.state.component === 'fab' && <FabPage/>}
-							{this.state.component === 'card' && <CardPage/>}
-							{this.state.component === 'checkbox' && <CheckboxPage/>}
-							{this.state.component === 'switch' && <SwitchPage/>}
-							{this.state.component === 'drawer' && <DrawerPage/>}
-							{this.state.component === 'dialog' && <DialogPage/>}
-							{this.state.component === 'elevation' && <ElevationPage/>}
-							{this.state.component === 'radio' && <RadioPage/>}
-							{this.state.component === 'list' && <ListPage/>}
-							{this.state.component === 'select' && <SelectPage/>}
-							{this.state.component === 'snackbar' && <SnackbarPage/>}
-							{this.state.component === 'slider' && <SliderPage/>}
-							{this.state.component === 'textfield' && <TextfieldPage/>}
-							{this.state.component === 'toolbar' && <ToolbarPage/>}
-							{this.state.component === 'icon' && <IconPage/>}
-							{this.state.component === 'icontoggle' && <IconToggle/>}
-							{this.state.component === 'formfield' && <FormFieldPage/>}
-							{this.state.component === 'layoutgrid' && <LayoutGridPage/>}
-							{this.state.component === 'tabs' && <TabsPage/>}
-							{this.state.component === 'menu' && <MenuPage/>}
-							{this.state.component === 'linearprogress' && <LinearProgressPage/>}
-							{
-								(!this.state.component) &&
-								<div>
-									<div className="mdc-typography--body">
-										<div>
-											<a href="https://github.com/prateekbh/preact-material-components"><span className="grey">preact-material-components</span></a> is a thin opinionless wrapper around <a href="https://github.com/material-components/material-components-web">material-components-web</a>.
-											Use these components to add material components to your web app, without worrying about the extra code of components which you are not using.
-										</div>
-										<div className="mdc-typography--display1">How to use</div>
-										<div>
-											All the components of <span className="grey">preact-material-components</span> are built to work independently.
-											 So there are couple of ways to use them.
-										</div>
-										<div>
-											<CodeBlock>
-												<code class='lang-js' >
-													npm i -D preact-material-components
-												</code>
-											</CodeBlock>
-										</div>
-										<div>
-											<div className="mdc-typography--title">Using the JS of the component</div>
-											<div>
-												If you are using an ES6 codebase, consider using the components individually, as none of the tree shaking currently removes unused classes.
-												<CodeBlock>
-													<code class='lang-js' >
-														{jsSample}
-													</code>
-												</CodeBlock>
-												Although you can import all the components together, you should not. Importing this way will bring unnecessary code of other components into your final bundle.
-												This might hit your metrics like time to interactivity, load times, etc. DO NOT BLOAT YOUR BUNDLE.
-												<CodeBlock>
-													<code class='lang-js' >
-														{invidualComponentSample}
-													</code>
-												</CodeBlock>
-											</div>
-										</div>
-										<div>
-											<div className="mdc-typography--title">Using the CSS of the component</div>
-											<div>
-												If you are using only a couple of components from the entire package, try importing individual CSS, for the same reason: TO AVOID BLOATING YOUR CSS BUNDLE.
-												<CodeBlock>
-													<code class='lang-js' >
-														{cssSample}
-													</code>
-												</CodeBlock>
-												However this approach might work against you if you use a lot of components. In that case, prefer adding the entire stylesheet at once,
-												as it is more optimized for such cases.
-												<CodeBlock>
-													<code class='lang-js' >
-														import 'preact-material-components/style.css';
-													</code>
-												</CodeBlock>
-											</div>
-										</div>
-									</div>
-								</div>
-							}
+							{this.state.component === 'button' && <ButtonsPage />}
+							{this.state.component === 'fab' && <FabPage />}
+							{this.state.component === 'card' && <CardPage />}
+							{this.state.component === 'checkbox' && <CheckboxPage />}
+							{this.state.component === 'switch' && <SwitchPage />}
+							{this.state.component === 'drawer' && <DrawerPage />}
+							{this.state.component === 'dialog' && <DialogPage />}
+							{this.state.component === 'elevation' && <ElevationPage />}
+							{this.state.component === 'radio' && <RadioPage />}
+							{this.state.component === 'list' && <ListPage />}
+							{this.state.component === 'select' && <SelectPage />}
+							{this.state.component === 'snackbar' && <SnackbarPage />}
+							{this.state.component === 'slider' && <SliderPage />}
+							{this.state.component === 'textfield' && <TextfieldPage />}
+							{this.state.component === 'toolbar' && <ToolbarPage />}
+							{this.state.component === 'icon' && <IconPage />}
+							{this.state.component === 'icontoggle' && <IconToggle />}
+							{this.state.component === 'formfield' && <FormFieldPage />}
+							{this.state.component === 'layoutgrid' && <LayoutGridPage />}
+							{this.state.component === 'tabs' && <TabsPage />}
+							{this.state.component === 'menu' && <MenuPage />}
+							{this.state.component === 'linearprogress' && <LinearProgressPage />}
+							{!this.state.component && <HomePage />}
 						</LayoutGrid.Cell>
 					</LayoutGrid.Inner>
 				</LayoutGrid>
