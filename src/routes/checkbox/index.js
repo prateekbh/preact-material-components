@@ -4,7 +4,7 @@ import {h, Component} from 'preact';
 // Material Components
 import Checkbox from 'preact-material-components/Checkbox';
 import Button from 'preact-material-components/Button';
-import FormField from 'preact-material-components/FormField';
+import Formfield from 'preact-material-components/Formfield';
 
 // Components
 import ComponentTable from '../../components/component-table';
@@ -47,10 +47,10 @@ export default class CheckboxPage extends Component {
 				</div>
 
 				<div className="mdc-typography--display1">Demo </div>
-				<FormField>
+				<Formfield>
 					<Checkbox id="basic-checkbox-label" ref={cb=>{this.cb=cb;}}/>
 					<label for="basic-checkbox" id="basic-checkbox-label">This is my checkbox</label>
-				</FormField>
+				</Formfield>
 				<Button raised={true} onClick={()=>{
 					this.cb.MDComponent.indeterminate = true;
 				}}>Make indeterminate</Button>

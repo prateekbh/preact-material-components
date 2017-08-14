@@ -3,7 +3,7 @@ import {h, Component} from 'preact';
 
 // Material Components
 import Radio from 'preact-material-components/Radio';
-import FormField from 'preact-material-components/FormField';
+import Formfield from 'preact-material-components/Formfield';
 
 // Components
 import ComponentTable from '../../components/component-table';
@@ -42,18 +42,18 @@ export default class RadioPage extends Component {
 				</div>
 
 				<div className="mdc-typography--display1">Demo </div>
-				<FormField>
+				<Formfield>
 					<Radio id="r1" name='opts'></Radio>
 					<label for="r1">Radio 1</label>
-				</FormField>
-				<FormField>
+				</Formfield>
+				<Formfield>
 					<Radio id="r2" name='opts'></Radio>
 					<label for="r2">Radio 2</label>
-				</FormField>
-				<FormField>
+				</Formfield>
+				<Formfield>
 					<Radio id="r3" name='opts' disabled={true}></Radio>
 					<label for="r3">Disabled Radio </label>
-				</FormField>
+				</Formfield>
 
 			</div>
 		);

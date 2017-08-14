@@ -3,7 +3,7 @@ import {h, Component} from 'preact';
 import Router from 'preact-router';
 
 // Material Components
-import FormField from 'preact-material-components/FormField';
+import Formfield from 'preact-material-components/Formfield';
 import LayoutGrid from 'preact-material-components/LayoutGrid';
 import Switch from 'preact-material-components/Switch';
 import Toolbar from 'preact-material-components/Toolbar';
@@ -183,10 +183,10 @@ export default class Home extends Component {
 								</Toolbar.Title>
 							</Toolbar.Section>
 							<Toolbar.Section align-end={true}>
-								<FormField className="field-darkmode">
+								<Formfield className="field-darkmode">
 									Dark Mode
 									<Switch className="switch-darkmode" onChange={()=>{this.toggleDarkMode();}}/>
-								</FormField>
+								</Formfield>
 							</Toolbar.Section>
 						</Toolbar.Row>
 					</Toolbar>
