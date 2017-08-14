@@ -36,10 +36,11 @@ import ToolbarPage from '../../routes/toolbar';
 // Components
 import Menu from '../menu';
 
-// Style
+// Styles
 import 'preact-material-components/style.css';
 import './style';
 
+// Class
 export default class Home extends Component {
 
 	constructor(){

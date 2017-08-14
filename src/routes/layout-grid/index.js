@@ -1,9 +1,20 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import LayoutGrid from 'preact-material-components/LayoutGrid';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Styles
 import './style';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class LayoutGridPage extends Component {
 	constructor(){
 		super();

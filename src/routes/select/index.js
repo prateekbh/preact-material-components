@@ -1,9 +1,18 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Select from 'preact-material-components/Select';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
 import EventsTable from '../../components/events-table';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class SelectPage extends Component {
 	constructor(){
 		super();

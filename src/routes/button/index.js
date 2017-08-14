@@ -1,10 +1,20 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Button from 'preact-material-components/Button';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Styles
 import style from './style';
+
+// Samples
 import sample from './sample.txt';
 
+// Class
 export default class ButtonPage extends Component {
 	constructor() {
 		super();

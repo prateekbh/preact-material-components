@@ -1,9 +1,18 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Drawer from 'preact-material-components/Drawer';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
 import EventsTable from '../../components/events-table';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class DrawerPage extends Component {
 	constructor() {
 		super();

@@ -1,3 +1,4 @@
+// Dependencies
 import { h } from 'preact';
 import cx from 'classnames';
 import hljs from 'highlight.js/lib/highlight';
@@ -9,6 +10,7 @@ import 'highlight.js/styles/tomorrow-night-eighties.css';
 const LANGUAGES = { javascript, json, xml };
 Object.keys(LANGUAGES).forEach( key => hljs.registerLanguage(key, LANGUAGES[key]) );
 
+// Class
 export default ({ children, ...props }) => {
 	let child = children && children[0],
 		isHighlight = child && child.nodeName==='code';

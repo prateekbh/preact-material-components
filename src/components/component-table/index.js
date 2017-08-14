@@ -1,5 +1,7 @@
+// Dependencies
 import {h, Component} from 'preact';
 
+// Class
 export default class ComponentTable extends Component {
 	render(){
 		return (

@@ -1,9 +1,20 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Switch from 'preact-material-components/Switch';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Styles
 import './style';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class SwitchPage extends Component {
 	constructor(){
 		super();

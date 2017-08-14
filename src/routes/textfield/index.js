@@ -1,8 +1,17 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Textfield from 'preact-material-components/Textfield';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class TextfieldPage extends Component {
 	constructor(){
 		super();

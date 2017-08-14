@@ -1,9 +1,18 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Icon from 'preact-material-components/Icon';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
-import sample from './sample.txt';
+
+// Samples
 import linktag from './linktag.txt';
+import sample from './sample.txt';
+
+// Class
 export default class IconPage extends Component {
 	constructor(){
 		super();

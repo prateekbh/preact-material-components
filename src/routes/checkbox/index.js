@@ -1,11 +1,22 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Checkbox from 'preact-material-components/Checkbox';
 import Button from 'preact-material-components/Button';
 import FormField from 'preact-material-components/FormField';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Styles
 import './style';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class CheckboxPage extends Component {
 	constructor() {
 		super();

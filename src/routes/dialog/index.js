@@ -1,11 +1,22 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Dialog from 'preact-material-components/Dialog';
 import Button from 'preact-material-components/Button';
 import List from 'preact-material-components/List';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Styles
 import './style';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class DialogPage extends Component {
 	constructor() {
 		super();

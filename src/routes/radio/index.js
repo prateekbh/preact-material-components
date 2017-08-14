@@ -1,9 +1,18 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Radio from 'preact-material-components/Radio';
 import FormField from 'preact-material-components/FormField';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class RadioPage extends Component {
 	constructor(){
 		super();

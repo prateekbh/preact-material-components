@@ -1,3 +1,4 @@
+// Dependencies
 import {h, Component} from 'preact';
 
 // Material Components

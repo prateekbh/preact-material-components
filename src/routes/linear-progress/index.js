@@ -1,8 +1,17 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import LinearProgress from 'preact-material-components/LinearProgress';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class LinearProgressPage extends Component {
 	constructor(){
 		super();

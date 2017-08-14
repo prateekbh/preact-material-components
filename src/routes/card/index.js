@@ -1,9 +1,20 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Card from 'preact-material-components/Card';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Style
 import './style';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class CardPage extends Component {
 	constructor() {
 		super();

@@ -1,10 +1,21 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Fab from 'preact-material-components/Fab';
 import Icon from 'preact-material-components/Icon';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Styles
 import './style';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class FabPage extends Component {
 	constructor(){
 		super();

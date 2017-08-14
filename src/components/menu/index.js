@@ -6,6 +6,7 @@ import {route} from 'preact-router';
 import Drawer from 'preact-material-components/Drawer';
 import List from 'preact-material-components/List';
 
+// Class
 export default class Menu extends Component {
 
 	constructor() {

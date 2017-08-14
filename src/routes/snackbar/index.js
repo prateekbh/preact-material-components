@@ -1,10 +1,21 @@
+// Dependencies
 import {h, Component} from 'preact';
+
+// Material Components
 import Snackbar from 'preact-material-components/Snackbar';
 import Button from 'preact-material-components/Button';
+
+// Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+
+// Styles
 import './style';
+
+// Samples
 import sample from './sample.txt';
+
+// Class
 export default class SnackbarPage extends Component {
 	constructor(){
 		super();
