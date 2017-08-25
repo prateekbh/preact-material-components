@@ -49,9 +49,6 @@ export default class MaterialComponent extends Component {
     }
     return this.classText;
   }
-  getAutoInitNames() {
-    return this.autoInitText;
-  }
   // Components must implement this method for their specific DOM structure
   materialDom(props) {
     return h("div", Object.assign({}, props), props.children);
@@ -61,9 +58,8 @@ export default class MaterialComponent extends Component {
     // Fetch a VNode
     const element = this.materialDom(this.props);
     element.attributes = element.attributes || {};
-    const autoInits = this.getAutoInitNames();
     // Fix for className
-    element.attributes.class = this.getClassName(element);
+    element.attributes.className = this.getClassName(element);
     // Clean this shit of proxy attributes
     this._mdcProps.forEach(prop => {
       delete element.attributes[prop];

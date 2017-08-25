@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-
+import { MDCToolbar } from "@material/toolbar";
 /**
  * @prop fixed = false
  * @prop fixed-lastrow-only = false
@@ -19,6 +19,20 @@ class Toolbar extends MaterialComponent {
       "flexible",
       "flexible-default-behavior"
     ];
+    this._onChange = this._onChange.bind(this);
+  }
+  _onChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
+  }
+  componentDidMount() {
+    this.MDComponent = new MDCToolbar(this.control);
+    this.MDComponent.listen("MDCToolbar:change", this._onChange);
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCToolbar:change", this._onChange);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
     return (

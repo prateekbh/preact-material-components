@@ -112,6 +112,34 @@ class PermanentDrawer extends MaterialComponent {
   }
 }
 
+class PermanentDrawerHeader extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "permanent-drawer__header";
+  }
+  materialDom(props) {
+    return (
+      <header
+        ref={control => {
+          this.control = control;
+        }}
+        {...props}
+      >
+        <div className="mdc-permanent-drawer__header-content">
+          {props.children}
+        </div>
+      </header>
+    );
+  }
+}
+
+class PermanentDrawerContent extends TemporaryDrawerContent {
+  constructor() {
+    super();
+    this.componentName = "permanent-drawer__content";
+  }
+}
+
 class PersistentDrawer extends MaterialComponent {
   constructor() {
     super();
@@ -178,7 +206,7 @@ class PersistentDrawerHeader extends MaterialComponent {
 class PersistentDrawerContent extends TemporaryDrawerContent {
   constructor() {
     super();
-    this.componentName = "mdc-persistent-drawer__content";
+    this.componentName = "persistent-drawer__content";
   }
 }
 
@@ -203,10 +231,12 @@ class DrawerItem extends List.LinkItem {
 let Drawer = {};
 
 Drawer.DrawerItem = DrawerItem;
+Drawer.TemporaryDrawer = TemporaryDrawer;
 Drawer.TemporaryDrawerHeader = TemporaryDrawerHeader;
 Drawer.TemporaryDrawerContent = TemporaryDrawerContent;
-Drawer.TemporaryDrawer = TemporaryDrawer;
 Drawer.PermanentDrawer = PermanentDrawer;
+Drawer.PermanentDrawerHeader = PermanentDrawerHeader;
+Drawer.PermanentDrawerContent = PermanentDrawerContent;
 Drawer.PersistentDrawer = PersistentDrawer;
 Drawer.PersistentDrawerHeader = PersistentDrawerHeader;
 Drawer.PersistentDrawerContent = PersistentDrawerContent;

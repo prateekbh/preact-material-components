@@ -28,17 +28,16 @@ class Select extends MaterialComponent {
     this.MDComponent.unlisten("MDCSelect:change", this._changed);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
-  updateSelection(prevProps) {
-    if (
-      "selectedIndex" in this.props &&
-      this.MDComponent &&
-      (!prevProps || prevProps.selectedIndex !== this.props.selectedIndex)
-    ) {
+  updateSelection() {
+    if ("selectedIndex" in this.props && this.MDComponent) {
       this.MDComponent.selectedIndex = this.props.selectedIndex;
     }
   }
-  componentDidUpdate(prevProps) {
-    this.updateSelection(prevProps);
+  componentDidUpdate() {
+    this.updateSelection();
+    if (this.MDComponent && this.MDComponent.foundation_) {
+      this.MDComponent.foundation_.resize();
+    }
   }
   materialDom(props) {
     if (props.basic) {
@@ -62,7 +61,9 @@ class Select extends MaterialComponent {
           this.control = control;
         }}
       >
-        <span className="mdc-select__selected-text">{props.hintText}</span>
+        <span className="mdc-select__selected-text">
+          {props.hintText}
+        </span>
         <div className="mdc-simple-menu mdc-select__menu">
           <ul className="mdc-list mdc-simple-menu__items ">
             {props.children}
