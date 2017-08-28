@@ -25,8 +25,10 @@ class Select extends MaterialComponent {
     }
   }
   componentWillUnmount() {
-    this.MDComponent.unlisten("MDCSelect:change", this._changed);
-    this.MDComponent.destroy && this.MDComponent.destroy();
+    if (!this.props.basic) {
+      this.MDComponent.unlisten("MDCSelect:change", this._changed);
+      this.MDComponent.destroy && this.MDComponent.destroy();
+    }
   }
   updateSelection() {
     if ("selectedIndex" in this.props && this.MDComponent) {
