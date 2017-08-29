@@ -8,12 +8,14 @@ import MaterialComponent from "../MaterialComponent";
  *  @prop primary = false
  *  @prop accent = false
  *  @prop disabled = false
+ *  @prop raised = false
+ *  @prop unelevated = false
  */
 export default class Button extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "button";
-    this._mdcProps = ["dense", "raised", "compact", "primary", "accent"];
+    this._mdcProps = ["dense", "raised", "compact", "primary", "accent", "raised", "unelevated"];
   }
   componentDidMount() {
     super.attachRipple();
