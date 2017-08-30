@@ -59,6 +59,7 @@ export default class MaterialComponent extends Component {
     const element = this.materialDom(this.props);
     element.attributes = element.attributes || {};
     // Fix for className
+    element.attributes.class = this.getClassName(element);
     element.attributes.className = this.getClassName(element);
     // Clean this shit of proxy attributes
     this._mdcProps.forEach(prop => {
