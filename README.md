@@ -35,6 +35,8 @@ Smaller bundles FTW!!!
 
 - 👍 layout-grid
 
+- 👍 linear-progress
+
 - 👍 list
 
 - 👍 menu
@@ -49,11 +51,20 @@ Smaller bundles FTW!!!
 
 - 👍 switch
 
+- 👍 tabs
+
 - 👍 textfield
 
 - 👍 theme
 
 - 👍 toolbar
+
+## Using preact-material-components?
+- [HopOn](https://hopon-a72e9.firebaseapp.com). A progressive web game built with #preact, #babylonJs #preact-material-components
+
+- [Plustime](https://plustimer.firebaseapp.com).
+
+Let us know if you're using `preact-material-components` and love them. Send us a PR and add your projects and link right here.
 
 ## Docs and Demos
 https://prateekbh.github.io/preact-material-components/
