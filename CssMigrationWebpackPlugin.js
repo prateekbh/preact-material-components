@@ -30,7 +30,7 @@ class CssMigrationWebpackPlugin{
 					try {
 						//create folder if not already present
 						if (!fs.existsSync(destFolderPath)) {
-							mkdirp(destFolderPath);
+							mkdirp.sync(destFolderPath);
 						}
 						const destFilePath = path.join(destFolderPath, 'style.css');
 						//delete already existing file
