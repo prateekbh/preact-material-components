@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "node ./compileComponents.js && webpack",
-    "prepublishOnly": "npm run build && npm run test ",
+    "prepublishOnly": "npm run build && npm run test",
     "test": "npm run build && npm run lint",
     "lint": "eslint src/",
     "lint-staged": "lint-staged"
