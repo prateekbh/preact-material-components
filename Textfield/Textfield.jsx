@@ -51,9 +51,13 @@ class TextfieldInput extends MaterialComponent {
     this.componentName = "textfield";
     this._mdcProps = ["fullwidth", "multiline", "dense", "disabled", "box"];
     this.state = {
-      showFloatingLabel: false
+      showFloatingLabel: false,
+      isFocused: false
     };
+    this._onFocus = this._onFocus.bind(this);
+    this._onBlur = this._onBlur.bind(this);
   }
+
   componentDidMount() {
     this.setState(
       {
@@ -64,13 +68,28 @@ class TextfieldInput extends MaterialComponent {
       }
     );
   }
+
   componentWillUnmount() {
     this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
   }
-  materialDom(allprops) {
-    let { className, ...props } = allprops;
+  
+  _onFocus() {
+    this.setState({
+      isFocused: true
+    });
+  }
 
-    if (props.value && this.state.showFloatingLabel) {
+  _onBlur() {
+    this.setState({
+      isFocused: false
+    });
+  }
+
+  materialDom(allprops, { showFloatingLabel, isFocused }) {
+    let { className, ...props } = allprops;
+    const upgrade = props.value || isFocused;
+
+    if (showFloatingLabel && upgrade) {
       className = [className, "mdc-textfield--upgraded"].join(" ");
     }
 
@@ -79,18 +98,22 @@ class TextfieldInput extends MaterialComponent {
         {props.multiline
           ? <textarea
               className="mdc-textfield__input"
+              onFocus={this._onFocus}
+              onBlur={this._onBlur}
               {...props}
             />
           : <input
               type={props.type || "text"}
               className="mdc-textfield__input"
+              onFocus={this._onFocus}
+              onBlur={this._onBlur}
               {...props}
             />}
         {props.label &&
           this.state.showFloatingLabel &&
           <Label
             for={props.id}
-            className={props.value && "mdc-textfield__label--float-above"}
+            className={upgrade && "mdc-textfield__label--float-above"}
           >
             {props.label}
           </Label>}
@@ -134,6 +157,13 @@ class Textfield extends Component {
     return ++this.uidCounter;
   }
 
+  _setInputRef(ref) {
+    if (ref) {
+      this.input = ref;
+      this.MDComponent = ref.MDComponent;
+    }
+  }
+
   render(allprops, { showFloatingLabel }) {
     const {
       className,
@@ -146,6 +176,8 @@ class Textfield extends Component {
     if (showDiv && !props.id) {
       props.id = "tf-" + this.id;
     }
+
+    props.ref = this._setInputRef;
 
     // Helper text
     const helptextProps = {
