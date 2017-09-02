@@ -21,20 +21,10 @@
     "material components",
     "material design"
   ],
-  "contributors": [
-    {
-      "name": "Prateek Bhatnagar",
-      "email": "prateek89born@gmail.com"
-    },
-    {
-      "name": "Stijn de Witt",
-      "email": "StijnDeWitt@hotmail.com"
-    },
-    {
-      "name": "Steve Anderson",
-      "email": "steve@twindx.com"
-    }
-  ],
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/prateekbh/preact-material-components/issues"
