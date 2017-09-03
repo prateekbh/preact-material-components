@@ -87,10 +87,16 @@ class TextfieldInput extends MaterialComponent {
 
   materialDom(allprops, { showFloatingLabel, isFocused }) {
     let { className, ...props } = allprops;
+    let labelClassName = "mdc-textfield__label";
+
     const upgrade = props.value || isFocused;
 
-    if (showFloatingLabel && upgrade) {
+    if (showFloatingLabel) {
       className = [className, "mdc-textfield--upgraded"].join(" ");
+    }
+
+    if (upgrade) {
+      labelClassName = [labelClassName, "mdc-textfield__label--float-above"].join(" ");
     }
 
     return (
@@ -113,7 +119,7 @@ class TextfieldInput extends MaterialComponent {
           this.state.showFloatingLabel &&
           <Label
             for={props.id}
-            className={upgrade && "mdc-textfield__label--float-above"}
+            className={labelClassName}
           >
             {props.label}
           </Label>}
