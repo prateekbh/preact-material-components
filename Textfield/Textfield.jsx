@@ -70,17 +70,14 @@ class TextfieldInput extends MaterialComponent {
   materialDom(allprops) {
     let { className, ...props } = allprops;
 
-    if (props.value && this.state.showFloatingLabel) {
+    if ("value" in props && this.state.showFloatingLabel) {
       className = [className, "mdc-textfield--upgraded"].join(" ");
     }
 
     return (
       <div className={className} ref={control => (this.control = control)}>
         {props.multiline
-          ? <textarea
-              className="mdc-textfield__input"
-              {...props}
-            />
+          ? <textarea className="mdc-textfield__input" {...props} />
           : <input
               type={props.type || "text"}
               className="mdc-textfield__input"
@@ -160,7 +157,10 @@ class Textfield extends Component {
             <label for={props.id}>
               {props.cssLabel || `${props.label}: `}
             </label>}
-          <TextfieldInput {...props} aria-controls={props.helptext && props.id + "-helptext"} />
+          <TextfieldInput
+            {...props}
+            aria-controls={props.helptext && props.id + "-helptext"}
+          />
           {props.helptext &&
             <Helptext id={props.id + "-helptext"} {...helptextProps}>
               {props.helptext}
