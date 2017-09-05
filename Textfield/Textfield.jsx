@@ -85,14 +85,7 @@ class TextfieldInput extends MaterialComponent {
             />}
         {props.label &&
           this.state.showFloatingLabel &&
-          <Label
-            for={props.id}
-            className={
-              this.state.showFloatingLabel
-                ? ""
-                : "mdc-textfield__label--float-above"
-            }
-          >
+          <Label for={props.id}>
             {props.label}
           </Label>}
       </div>
