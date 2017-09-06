@@ -20,7 +20,8 @@ export default class Button extends MaterialComponent {
       "compact",
       "primary",
       "accent",
-      "unelevated"
+      "unelevated",
+      "stroked"
     ];
   }
   componentDidMount() {

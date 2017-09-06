@@ -80,6 +80,7 @@ export default class Home extends Component {
           ripple={true}
           onClick={e => {
             this.drawer.MDComponent.open = true;
+            console.log(this.tb.MDComponent);
           }}
         >
           hi
@@ -144,7 +145,14 @@ export default class Home extends Component {
           <label for="rd">Radio Box</label>
         </div>
 
-        <Textfield label="hello" fullwidth={true} required />
+        <Textfield
+          label="hello"
+          fullwidth
+          required
+          ref={tb => {
+            this.tb = tb;
+          }}
+        />
 
         <LayoutGrid>
           <LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
