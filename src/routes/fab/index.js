@@ -78,16 +78,6 @@ export default class FabPage extends Component {
 				<Fab plain={true} mini={true}>
 					<Icon>favorite_border</Icon>
 				</Fab>
-				<div className="mdc-typography--title">Disabled </div>
-				<Fab disabled={true}>
-					<Icon>favorite_border</Icon>
-				</Fab>
-				<Fab disabled={true} ripple={true}>
-					<Icon>favorite_border</Icon>
-				</Fab>
-				<Fab disabled={true} mini={true}>
-					<Icon>favorite_border</Icon>
-				</Fab>
 			</div>
 		);
 	}
