@@ -21,9 +21,8 @@ const config = {
         options: {
           presets: [['es2015', {"modules": false}]],
           plugins:[
-            ["transform-react-jsx", { "pragma": "h" }],
-            "transform-async-to-generator",
-          ],
+            ["transform-react-jsx", { "pragma": "h" }]
+          ]
         }
       }
 	]
