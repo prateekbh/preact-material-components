@@ -40,9 +40,7 @@ class Dialog extends MaterialComponent {
         }}
         {...props}
       >
-        <div className="mdc-dialog__surface">
-          {props.children}
-        </div>
+        <div className="mdc-dialog__surface">{props.children}</div>
         <div className="mdc-dialog__backdrop" />
       </aside>
     );
@@ -57,9 +55,7 @@ class DialogHeader extends MaterialComponent {
   materialDom(props) {
     return (
       <header {...props}>
-        <h2 className="mdc-dialog__header__title">
-          {props.children}
-        </h2>
+        <h2 className="mdc-dialog__header__title">{props.children}</h2>
       </header>
     );
   }
@@ -75,11 +71,7 @@ class DialogBody extends MaterialComponent {
     this._mdcProps = ["scrollable"];
   }
   materialDom(props) {
-    return (
-      <section {...props}>
-        {props.children}
-      </section>
-    );
+    return <section {...props}>{props.children}</section>;
   }
 }
 
@@ -89,11 +81,7 @@ class DialogFooter extends MaterialComponent {
     this.componentName = "dialog__footer";
   }
   materialDom(props) {
-    return (
-      <footer {...props}>
-        {props.children}
-      </footer>
-    );
+    return <footer {...props}>{props.children}</footer>;
   }
 }
 

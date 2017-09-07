@@ -7,9 +7,11 @@
   "scripts": {
     "build": "node ./compileComponents.js && webpack",
     "prepublishOnly": "npm run build && npm run test",
-    "test": "npm run build && npm run lint",
-    "lint": "eslint src/",
-    "lint-staged": "lint-staged"
+    "test": "npm run build && npm run prettier",
+    "lint": "eslint index.js **/*.jsx",
+    "lint-staged": "lint-staged",
+    "prettier": "prettier -l index.js **/*.jsx",
+    "prettier:write": "prettier --write index.js **/*.jsx"
   },
   "repository": {
     "type": "git",
@@ -46,7 +48,8 @@
     "clean-webpack-plugin": "^0.1.16",
     "cp": "^0.2.0",
     "eslint": "^4.5.0",
-    "eslint-plugin-react": "^7.3.0",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-plugin-prettier": "^2.2.0",
     "lint-staged": "^4.0.4",
     "mkdirp": "^0.5.1",
     "pre-commit": "^1.2.2",
