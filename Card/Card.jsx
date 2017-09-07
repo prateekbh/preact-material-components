@@ -16,11 +16,7 @@ class CardSection extends MaterialComponent {
     this.componentName = "";
   }
   materialDom(props) {
-    return (
-      <section {...props}>
-        {props.children}
-      </section>
-    );
+    return <section {...props}>{props.children}</section>;
   }
 }
 
@@ -80,11 +76,7 @@ class CardTitle extends MaterialComponent {
     this._mdcProps = ["large"];
   }
   materialDom(props) {
-    return (
-      <h1 {...props}>
-        {props.children}
-      </h1>
-    );
+    return <h1 {...props}>{props.children}</h1>;
   }
 }
 
@@ -94,11 +86,7 @@ class CardSubtitle extends MaterialComponent {
     this.componentName = "card__subtitle";
   }
   materialDom(props) {
-    return (
-      <h2 {...props}>
-        {props.children}
-      </h2>
-    );
+    return <h2 {...props}>{props.children}</h2>;
   }
 }
 

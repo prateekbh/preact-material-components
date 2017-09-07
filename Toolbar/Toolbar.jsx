@@ -67,11 +67,7 @@ class ToolbarSection extends MaterialComponent {
     this._mdcProps = ["align-start", "align-end", "shrink-to-fit"];
   }
   materialDom(props) {
-    return (
-      <section {...props}>
-        {props.children}
-      </section>
-    );
+    return <section {...props}>{props.children}</section>;
   }
 }
 
@@ -104,11 +100,7 @@ class ToolbarTitle extends MaterialComponent {
     this.componentName = "toolbar__title";
   }
   materialDom(props) {
-    return (
-      <span {...props}>
-        {props.children}
-      </span>
-    );
+    return <span {...props}>{props.children}</span>;
   }
 }
 
