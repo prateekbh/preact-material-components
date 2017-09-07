@@ -13,7 +13,7 @@ install:
 
 script:
   - cd $TRAVIS_BUILD_DIR && npm test
-  - cd $TRAVIS_BUILD_DIR/docs && npm test && npm build
+  - cd $TRAVIS_BUILD_DIR/docs && npm test && npm run build
 
 cache:
   directories:
