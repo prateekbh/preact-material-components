@@ -47,5 +47,4 @@ jspm_packages
 **/index.js
 !/index.js
 
-
 package-lock.json

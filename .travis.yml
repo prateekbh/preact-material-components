@@ -5,7 +5,7 @@ node_js:
 
 script:
 - npm test
-- cd docs && npm run build
+- cd docs && npm test && npm build
 
 # blocklist
 branches:
