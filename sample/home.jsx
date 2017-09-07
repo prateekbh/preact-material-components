@@ -80,7 +80,6 @@ export default class Home extends Component {
           ripple={true}
           onClick={e => {
             this.drawer.MDComponent.open = true;
-            console.log(this.tb.MDComponent);
           }}
         >
           hi
@@ -149,9 +148,6 @@ export default class Home extends Component {
           label="hello"
           fullwidth
           required
-          ref={tb => {
-            this.tb = tb;
-          }}
         />
 
         <LayoutGrid>
