@@ -1,0 +1,41 @@
+{
+  "name": "preact-material-components-site",
+  "version": "1.0.1",
+  "description": "preact material component's site",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch",
+    "test": "preact test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/preact-material-components.git"
+  },
+  "keywords": [
+    "preact",
+    "preact components",
+    "material components",
+    "material design"
+  ],
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prateekbh/preact-material-components/issues"
+  },
+  "homepage": "https://github.com/prateekbh/preact-material-components#readme",
+  "devDependencies": {
+    "classnames": "^2.2.5",
+    "highlight.js": "^9.12.0",
+    "if-env": "^1.0.0",
+    "node-sass": "^4.5.3",
+    "preact": "^8.2.1",
+    "preact-cli": "^1.4.1",
+    "preact-material-components": "^1.1.6",
+    "sass-loader": "^6.0.6"
+  }
+}

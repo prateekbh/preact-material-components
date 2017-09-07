@@ -1,0 +1,3 @@
+import 'preact-material-components/Radio/style.css';
+import 'preact-material-components/FormField/style.css';
+import 'preact-material-components/Button/style.css';

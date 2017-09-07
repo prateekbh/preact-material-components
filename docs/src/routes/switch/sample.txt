@@ -1,0 +1,13 @@
+import {h, Component} from 'preact';
+import Switch from 'preact-material-components/Switch';
+import 'preact-material-components/Switch/style.css';
+
+export default class SwitchPage extends Component {
+  render(){
+    return (
+      <div>
+        <Switch/>
+      </div>
+    );
+  }
+}

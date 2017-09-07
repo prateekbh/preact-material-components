@@ -3,7 +3,20 @@ node_js:
 - "7"
 - "8"
 
+script:
+- npm test
+- cd docs && npm run build
+
 # blocklist
 branches:
   except:
   - gh-pages
+
+deploy:
+  provider: pages
+  local_dir: docs/build
+  target_branch: gh-pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master

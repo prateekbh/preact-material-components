@@ -1,0 +1,21 @@
+import {h, Component} from 'preact';
+import Fab from 'preact-material-components/Fab';
+import 'preact-material-components/Fab/style.css';
+
+export default class FabPage extends Component {
+  render(){
+    return (
+      <div>
+        <Fab>
+          <Icon>favorite_border</Icon>
+        </Fab>
+        <Fab ripple={true}>
+          <Icon>favorite_border</Icon>
+        </Fab>
+        <Fab mini={true}>
+          <Icon>favorite_border</Icon>
+        </Fab>
+      </div>
+    );
+  }
+}
