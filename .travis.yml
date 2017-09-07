@@ -1,20 +1,24 @@
 language: node_js
 node_js:
-- "7"
-- "8"
+  - "7"
+  - "8"
 
 install:
-- npm install
-- cd docs && npm install
+  - npm install
+  - cd docs && npm install
 
 script:
-- npm test
-- cd docs && npm test && npm build
+  - npm test
+  - cd docs && npm test && npm build
+
+cache:
+  directories:
+    - "node_modules"
 
 # blocklist
 branches:
   except:
-  - gh-pages
+    - gh-pages
 
 deploy:
   provider: pages
