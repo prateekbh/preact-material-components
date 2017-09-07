@@ -3,6 +3,10 @@ node_js:
   - "7"
   - "8"
 
+# Remove warning for node-sass
+before_install:
+  - npm i -g node-gyp
+
 install:
   - npm install
   - cd docs && npm install
