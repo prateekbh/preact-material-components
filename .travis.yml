@@ -7,6 +7,8 @@ env:
   - TEST_DIR=
   - TEST_DIR=docs
 
+# Skip npm install because our script takes care of that
+install: true
 script: ./scripts/travis.sh $TEST_DIR
 
 cache:
