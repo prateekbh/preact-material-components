@@ -26,6 +26,7 @@ deploy:
   github_token: $GITHUB_TOKEN
   on:
     branch: master
+    condition: $(./scripts/has-changes.sh docs) = "yes"
 
 # blocklist
 branches:
