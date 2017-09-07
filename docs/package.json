@@ -7,7 +7,7 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "npm run prettier && preact test",
+    "test": "npm run prettier",
     "lint": "eslint src/**/*.js",
     "prettier": "prettier -l src/**/*.js",
     "prettier:write": "prettier --write src/**/*.js"
