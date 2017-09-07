@@ -17,7 +17,8 @@ script:
 
 cache:
   directories:
-    - "node_modules"
+    - node_modules
+    - docs/node_modules
 
 # blocklist
 branches:
