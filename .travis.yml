@@ -3,10 +3,6 @@ node_js:
   - "7"
   - "8"
 
-# Remove warning for node-sass
-before_install:
-  - npm i -g node-gyp
-
 env:
   - TEST_DIR=$TRAVIS_BUILD_DIR
   - TEST_DIR=$TRAVIS_BUILD_DIR/docs
