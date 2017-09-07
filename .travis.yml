@@ -8,11 +8,11 @@ before_install:
   - npm i -g node-gyp
 
 install:
-  - npm install
+  - cd && npm install
   - cd docs && npm install
 
 script:
-  - npm test
+  - cd && npm test
   - cd docs && npm test && npm build
 
 cache:
