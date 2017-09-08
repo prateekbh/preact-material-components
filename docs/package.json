@@ -5,7 +5,8 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build && npm run copyAssets",
-    "copyAssets": "cp -R *.png build/ && cp *.json build/",
+    "build:prod": "preact build --template template.html && npm run copyAssets",
+		"copyAssets": "cp -R *.png build/ && cp -R *.json build/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "test": "npm run prettier",
