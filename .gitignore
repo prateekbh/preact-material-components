@@ -46,6 +46,3 @@ jspm_packages
 # Ignores all index.js files for all components since they are auto-generated.
 **/index.js
 !/index.js
-
-
-package-lock.json

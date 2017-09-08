@@ -1,0 +1,33 @@
+import {h, Component} from 'preact';
+import Menu from 'preact-material-components/Menu';
+import Button from 'preact-material-components/Button';
+import 'preact-material-components/List/style.css';
+import 'preact-material-components/Menu/style.css';
+import 'preact-material-components/Button/style.css';
+
+export default class MenuPage extends Component {
+  render(){
+    return (
+      <div>
+        <Menu.Anchor>
+          <Button
+            onClick={e => {
+              this.menu.MDComponent.open = true;
+            }}
+          >
+            Click for menu
+          </Button>
+          <Menu
+            ref={menu => {
+              this.menu = menu;
+            }}
+          >
+            <Menu.Item>Hello1</Menu.Item>
+            <Menu.Item>Hello2</Menu.Item>
+            <Menu.Item>Hello3</Menu.Item>
+          </Menu>
+        </Menu.Anchor>
+      </div>
+    );
+  }
+}

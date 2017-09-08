@@ -1,0 +1,27 @@
+import {h, Component} from 'preact';
+import Drawer from 'preact-material-components/Drawer';
+import List from 'preact-material-components/List';
+import 'preact-material-components/Drawer/style.css';
+import 'preact-material-components/List/style.css';
+
+export default class DrawerPage extends Component {
+  render(){
+    return (
+      <div>
+        <Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}} >
+          <Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
+            Components
+          </Drawer.TemporaryDrawerHeader>
+          <Drawer.TemporaryDrawerContent>
+            <List>
+              <List.LinkItem>
+                  <List.ItemIcon>home</List.ItemIcon>
+                  Home
+              </List.LinkItem>
+            </List>
+          </Drawer.TemporaryDrawerContent>
+        </Drawer.TemporaryDrawer>
+      </div>
+    );
+  }
+}

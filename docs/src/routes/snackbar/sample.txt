@@ -1,0 +1,22 @@
+import {h, Component} from 'preact';
+import Snackbar from 'preact-material-components/Snackbar';
+import Button from 'preact-material-components/Button';
+import 'preact-material-components/Button/style.css';
+import 'preact-material-components/Snackbar/style.css';
+
+export default class SnackbarPage extends Component {
+  render(){
+    return (
+      <div>
+        <Button raised={true} primary={true} onClick={()=>{
+          this.bar.MDComponent.show({
+            message: "Hello Snack!"
+          });
+        }}>
+            Show snack
+        </Button>
+        <Snackbar ref={bar=>{this.bar=bar;}}/>
+      </div>
+    );
+  }
+}

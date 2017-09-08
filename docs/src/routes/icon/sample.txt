@@ -1,0 +1,13 @@
+import {h, Component} from 'preact';
+import Icon from 'preact-material-components/Icon';
+
+export default class ListPage extends Component {
+  render(){
+    return (
+      <div>
+        <div><Icon>menu</Icon></div>
+        <div><Icon>favorite_border</Icon></div>
+      </div>
+    );
+  }
+}

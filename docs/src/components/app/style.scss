@@ -1,0 +1,70 @@
+:global .home{
+	.name{
+		margin-bottom: 16px;
+		font-weight: 300;
+	}
+	.mdc-toolbar {
+		background-color: #2b313c;
+	}
+	.hero{
+		vertical-align: bottom;
+		background-color: #2b313c;
+		color: #fff;
+		text-align: center;
+		overflow: hidden;
+		max-height: 100vh;
+		transition-property: max-height;
+		will-change: max-height;
+		transition-duration: 300ms;
+		&.collapsed{
+			max-height: 64px;
+			@media (max-width: 959px) and (orientation: landscape) {
+				max-height: 56px;
+			}
+			@media (max-width: 599px) {
+				max-height: 56px;
+			}
+		}
+		a {
+			color: #fff;
+		}
+	}
+	h1{
+		margin: 0;
+	}
+	.content{
+		max-width: 1280px;
+	}
+	.st0{fill:#757575}.st1{fill:#bdbdbd}.st2{fill:#fff}.st3{fill:none}
+	.mdc-temporary-drawer{
+		li.mdc-list-item{
+			color: #ddd;
+		}
+	}
+	.mdc-temporary-drawer__header-content{
+		background-image: url('https://www.whatswithtech.com/wp-content/uploads/2015/09/black-color-material-design-wallpaper.jpg');
+		color: #fff;
+	}
+	.field-darkmode{
+		color: #fff;
+	}
+	.switch-darkmode{
+		margin-left: 8px;
+		margin-right: 16px;
+	}
+	.grey{
+		background-color: #eee;
+		padding: 2px;
+		margin: 2px;
+	}
+}
+
+:global .mdc-theme--dark{
+	.mdc-temporary-drawer li.mdc-list-item{
+		color: #666;
+	}
+}
+
+:global .mdc-typography--body{
+	line-height: 28px;
+}
