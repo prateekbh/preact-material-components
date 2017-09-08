@@ -19,11 +19,10 @@ cache:
 before_deploy: cd $TRAVIS_BUILD_DIR/docs && npm run build:prod
 
 deploy:
-  provider: pages
-  local_dir: $TRAVIS_BUILD_DIR/docs/build
-  target_branch: gh-pages
+  provider: surge
+  project: $TRAVIS_BUILD_DIR/docs/build
+  domain: preact-material-components.surge.sh
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
   on:
     branch: master
     condition: $(./scripts/has-changes.sh docs) = "yes" && $TEST_DIR = "docs"
