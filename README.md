@@ -67,4 +67,4 @@ Smaller bundles FTW!!!
 Let us know if you're using `preact-material-components` and love them. Send us a PR and add your projects and link right here.
 
 ## Docs and Demos
-https://prateekbh.github.io/preact-material-components/
+https://preact-material-components.surge.sh/
