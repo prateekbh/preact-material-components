@@ -1,11 +1,10 @@
 #!/bin/bash
-set -e
 
 SUBFOLDERS=("docs")
 SUBFOLDER=$1
 
 function test {
-    set -v
+    set -ev
     cd $TRAVIS_BUILD_DIR/$SUBFOLDER
     npm install
     npm test
