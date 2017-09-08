@@ -1,11 +1,10 @@
 #!/bin/bash
-set -e
 
 SUBFOLDERS=("docs")
 SUBFOLDER=$1
 
 function test {
-    set -v
+    set -ev
     cd $TRAVIS_BUILD_DIR/$SUBFOLDER
     npm install
     npm test
@@ -19,8 +18,8 @@ fi
 
 CHANGES=$(git --no-pager diff --name-only $TRAVIS_COMMIT_RANGE)
 
-# If .travis.yml changed, run all tests
-if echo $"$CHANGES" | grep -q "^.travis.yml$"
+# If .travis.yml or scripts/travis.sh changed, run all tests
+if echo $"$CHANGES" | grep -qE "^(\.travis\.yml|scripts\/travis\.sh)$"
 then
     test
 fi
