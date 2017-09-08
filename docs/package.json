@@ -4,7 +4,8 @@
   "description": "preact material component's site",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build --template template.html",
+    "build": "preact build",
+    "build:prod": "preact build --template template.html",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "test": "npm run prettier",
