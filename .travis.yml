@@ -16,7 +16,7 @@ cache:
     - node_modules
     - docs/node_modules
 
-before_deploy: cd $TRAVIS_BUILD_DIR/docs && npm run build
+before_deploy: cd $TRAVIS_BUILD_DIR/docs && npm run build:prod
 
 deploy:
   provider: pages
