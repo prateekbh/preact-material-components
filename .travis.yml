@@ -20,13 +20,14 @@ before_deploy: cd $TRAVIS_BUILD_DIR/docs && npm run build
 
 deploy:
   provider: pages
-  local_dir: docs/build
+  local_dir: $TRAVIS_BUILD_DIR/docs/build
   target_branch: gh-pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   on:
     branch: master
-    condition: $(./scripts/has-changes.sh docs) = "yes"
+    condition: $(./scripts/has-changes.sh docs) = "yes" && $TEST_DIR = "docs"
+    node: "8"
 
 # blocklist
 branches:
