@@ -15,6 +15,9 @@ import sample from "./sample.txt";
 export default class TextfieldPage extends Component {
   constructor() {
     super();
+    this.state = {
+      value: ""
+    };
     this.propsTable = [
       {
         component: "Textfield",
@@ -105,6 +108,13 @@ export default class TextfieldPage extends Component {
         <Textfield label="Dense" dense />
         <div className="mdc-typography--headline">Disabled</div>
         <Textfield label="Disabled" disabled />
+        <div className="mdc-typography--headline">Link state</div>
+        <Textfield
+          label="State"
+          value={this.state.value}
+          onInput={e => this.setState({ value: e.target.value })}
+        />
+        State: {this.state.value}
       </div>
     );
   }
