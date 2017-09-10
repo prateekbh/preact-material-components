@@ -6,9 +6,9 @@ export default class ElevationPage extends Component {
   render(){
     return (
       <div>
-        <Elevation z0={true}>Z0</Elevation>
-        <Elevation z1={true}>Z1</Elevation>
-        <Elevation z2={true}>Z2</Elevation>
+        <Elevation z={0}>Z0</Elevation>
+        <Elevation z={1}>Z1</Elevation>
+        <Elevation z={2}>Z2</Elevation>
       </div>
     );
   }
