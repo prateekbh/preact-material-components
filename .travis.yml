@@ -21,7 +21,7 @@ before_deploy: cd $TRAVIS_BUILD_DIR/docs && npm run build:prod
 deploy:
   provider: surge
   project: ./docs/build
-  domain: preact-material-components.surge.sh
+  domain: material.preactjs.com
   skip_cleanup: true
   on:
     branch: master
