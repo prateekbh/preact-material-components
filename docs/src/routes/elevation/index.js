@@ -25,8 +25,7 @@ export default class ElevationPage extends Component {
           {
             name: "z",
             value: "1 to 25",
-            description:
-              "Add one of z1 to z25=true to get different elevations."
+            description: "Add z=(1 to 25) to get different elevations."
           }
         ]
       }
