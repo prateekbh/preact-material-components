@@ -70,10 +70,10 @@ Let us know if you're using `preact-material-components` and love them. Send us 
 ### Error while using preact-material-components with **less**
 If you are using less-loader you have set **strictMath: true** in your webpack config
 ```
-        {
-			loader: 'less-loader',
-			options: { strictMath: true }
-		}
+{
+	loader: 'less-loader',
+	options: { strictMath: true }
+}
 ```
 
 
