@@ -66,5 +66,16 @@ Smaller bundles FTW!!!
 
 Let us know if you're using `preact-material-components` and love them. Send us a PR and add your projects and link right here.
 
+## FAQ
+### Error while using preact-material-components with **less**
+If you are using less-loader you have to set **strictMath: true** option in your webpack config
+```
+{
+	loader: 'less-loader',
+	options: { strictMath: true }
+}
+```
+
+
 ## Docs and Demos
 https://material.preactjs.com/
