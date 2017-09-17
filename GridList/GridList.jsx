@@ -2,19 +2,6 @@ import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Icon from "../Icon";
 
-const VALIDATION_VALUES_BY_KEY = {
-  "with-icon-align": ["start", "end"],
-  "tile-gutter": [1],
-  "tile-aspect-ratio": ["1x1", "16x9", "2x3", "3x2", "4x3", "3x4"]
-};
-
-const isValidValue = (validationValues, testValue) => {
-  return (
-    validationValues &&
-    validationValues.findIndex(val => val === testValue) >= 0
-  );
-};
-
 const notEmptyString = val => val !== "";
 
 /**
@@ -25,6 +12,21 @@ const notEmptyString = val => val !== "";
  * @prop tile-aspect-ratio {"1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4"} - aspect ratio for <GridList.Tile.Primary>
  */
 class GridList extends MaterialComponent {
+  get validationValuesByKey() {
+    return {
+      "with-icon-align": ["start", "end"],
+      "tile-gutter": [1],
+      "tile-aspect-ratio": ["1x1", "16x9", "2x3", "3x2", "4x3", "3x4"]
+    };
+  }
+
+  isValidValue(validationValues, testValue) {
+    return (
+      validationValues &&
+      validationValues.findIndex(val => val === testValue) >= 0
+    );
+  }
+
   constructor() {
     super();
     this.componentName = "grid-list";
@@ -38,14 +40,14 @@ class GridList extends MaterialComponent {
   }
   mapClassName(propKey, props) {
     const propValue = props[propKey];
-    const validationValues = VALIDATION_VALUES_BY_KEY[propKey];
+    const validationValues = this.validationValuesByKey[propKey];
 
-    return isValidValue(validationValues, propValue)
+    return this.isValidValue(validationValues, propValue)
       ? `mdc-${this.componentName}--${propKey}-${propValue}`
       : "";
   }
   materialDom(props) {
-    const className = Object.keys(VALIDATION_VALUES_BY_KEY)
+    const className = Object.keys(this.validationValuesByKey)
       .map(key => {
         return this.mapClassName(key, props);
       })
