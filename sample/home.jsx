@@ -20,7 +20,8 @@ import {
   LayoutGrid,
   Menu,
   Tabs,
-  Slider
+  Slider,
+  GridList
 } from "../";
 
 export default class Home extends Component {

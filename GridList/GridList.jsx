@@ -1,178 +1,138 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
+import Icon from "../Icon";
 
 /**
- * @prop cellHeight	{number} - Number of px for one cell height. You can set 'auto' if you want to let the children determine the height.
- * @prop cols {number} - Number of columns.
- * @prop padding {1|4} - Number of px for the padding/spacing between items.
- * @prop style {object} - Override the inline styles of the root element
+ * @prop tile-gutter {1|4} - Number of px for the padding/spacing between items.
+ * @prop header-caption {boolean} - position <GridList.Tile.Secondary> at top
+ * @prop twoline-caption {boolean} - add spacing to <GridList.Tile.Secondary> for <GridList.Tile.SupportText>
+ * @prop icon-align {"start"|"end"} - position <GridList.Tile.Icon> at beginning or end of <GridList.Tile.Secondary>
+ * @prop tile-aspect-ratio {"1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4"} - aspect ratio for <GridList.Tile.Primary>
  */
 class GridList extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "grid-list";
-    this._propsDict = {
-      cols: "cols",
-      padding: "padding",
-      cellHeight: "cellHeight",
-      secondaryActionIconAlign: "secondaryActionIconAlign",
-      aspectRatio: "aspectRatio",
-      twoLineCaptions: "twoLineCaptions"
-    };
-  }
-  createClassName(props) {
-    const baseClass = "mdc-grid-list";
-    const classes = [];
-
-    if (
-      props[this._propsDict.padding] &&
-      props[this._propsDict.padding] === 1
-    ) {
-      classes.push("mdc-grid-list--tile-gutter-1");
-    }
-
-    if (props[this._propsDict.secondaryActionIconAlign]) {
-      classes.push(
-        "mdc-grid-list--with-icon-align-" +
-          props[this._propsDict.secondaryActionIconAlign]
-      );
-    }
-
-    if (props[this._propsDict.aspectRatio]) {
-      classes.push(
-        "mdc-grid-list--tile-aspect-" + props[this._propsDict.aspectRatio]
-      );
-    }
-
-    if (props[this._propsDict.twoLineCaptions]) {
-      classes.push("mdc-grid-list--twoline-caption");
-    }
-
-    return classes.join(" ");
+    this._mdcProps = [
+      "header-caption",
+      "twoline-caption",
+      "tile-gutter",
+      "icon-align",
+      "tile-aspect-ratio"
+    ];
   }
   materialDom(props) {
-    const cols = props.cols || 2;
-    const tileWidthPct = Math.floor(100 / cols) + "%";
+    // TODO: validate that the only values are "start" or "end"
+    let className = props["icon-align"]
+      ? `mdc-grid-list--with-icon-align-${props["icon-align"]}`
+      : "";
+
+    // TODO: validate that the only values are "1x1", "16x9", "2x3", "3x2", "4x3", or "3x4"
+    if (props["tile-aspect-ratio"]) {
+      className += ` mdc-grid-list--tile-aspect-${props["tile-aspect-ratio"]}`;
+    }
+
+    // TODO: validate that the only value is "1"
+    if (props["tile-gutter"]) {
+      className += ` mdc-grid-list--tile-gutter-${props["tile-gutter"]}`;
+    }
 
     return (
-      <span>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-        .mdc-grid-list__tiles {
-          --mdc-grid-list-tile-width: ${tileWidthPct};
-        }
-        .mdc-grid-list__tiles > .mdc-grid-tile > * img {
-          width: 100%;
-        }
-      `
-          }}
-        />
-        <div
-          className={this.createClassName(props)}
-          ref={control => {
-            this.control = control;
-          }}
-          {...props}
-        >
-          <ul class="mdc-grid-list__tiles">{props.children}</ul>
-        </div>
-      </span>
+      <div {...props} className={className}>
+        {props.children}
+      </div>
     );
   }
 }
 
-/**
- * @prop actionIcon	{Node} - An IconButton element to be used as secondary action target (primary action target is the tile itself).
- * @prop actionPosition {'left'|'right'} - Position of secondary action IconButton.
- * @prop children	{Node} - Theoretically you can pass any node as children, but the main use case is to pass an img, in whichcase GridTile takes care of making the image "cover" available space (similar to background-size: cover or to object-fit:cover).
- * @prop cols	{number} - Width of the tile in number of grid cells.
- * @prop containerElement	{string|node} - Either a string used as tag name for the tile root element, or a ReactElement. This is useful when you have, for example, a custom implementation of a navigation link (that knows about your routes) and you want to use it as the primary tile action. In case you pass a ReactElement, please ensure that it passes all props, accepts styles overrides and render it's children.
- * @prop rows	{number} - Height of the tile in number of grid cells.
- * @prop style {object} - Override the inline-styles of the root element.
- * @prop subtitle	{Node} - String or element serving as subtitle (support text).
- * @prop subtitleStyle {object} - Override the inline-styles of the subtitle element.
- * @prop title {Node} - Title to be displayed on tile.
- * @prop titleBackground {string} - 'rgba(0, 0, 0, 0.4)'	Style used for title bar background. Useful for setting custom gradients for example
- * @prop titlePosition {'top'|'bottom'} - Position of the title bar (container of title, subtitle and action icon).
- * @prop titleStyle {object} - Override the inline-styles of the title element.
- */
+class GridListTiles extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "grid-list__tiles";
+  }
+  materialDom(props) {
+    return <ul {...props}>{props.children}</ul>;
+  }
+}
+
 class GridListTile extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "grid-list-tile";
-    this._propsDict = {
-      actionIcon: "actionIcon",
-      actionPosition: "actionPosition",
-      children: "children",
-      cols: "cols",
-      containerElement: "containerElement",
-      rows: "rows",
-      subtitle: "subtitle",
-      subtitleStyle: "subtitleStyle",
-      title: "title",
-      titleBackground: "titleBackground",
-      titlePosition: "titlePosition",
-      titleStyle: "titleStyle",
-      actionHandler: "actionHandler"
-    };
-  }
-  createClassName(props) {
-    const baseClass = "mdc-grid-list-tile--";
-    const classes = [];
-
-    if (props[this._propsDict.cols]) {
-      classes.push(baseClass + "span-" + props[this._propsDict.cols]);
-    }
-
-    return classes.join(" ");
+    this.componentName = "grid-tile";
   }
   materialDom(props) {
-    const actionHandler = props.actionHandler || function() {};
-    const action = props.actionIcon ? (
-      <i class="mdc-grid-tile__icon material-icons" onClick={actionHandler}>
-        {props.actionIcon}
-      </i>
-    ) : (
-      ""
-    );
-    return (
-      <li
-        className="mdc-grid-tile"
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
-        <div class="mdc-grid-tile__primary">
-          <div class="mdc-grid-tile__primary-content">{props.children}</div>
-        </div>
-        {props.title ? (
-          <span class="mdc-grid-tile__secondary">
-            {action}
-            <span class="mdc-grid-tile__title">{props.title}</span>
-            {props.subtitle ? (
-              <span class="mdc-grid-tile__support-text">{props.subtitle}</span>
-            ) : (
-              ""
-            )}
-          </span>
-        ) : (
-          ""
-        )}
-      </li>
-    );
-  }
-  render() {
-    const element = super.render();
-    // remove the extra attributes used for customising this element - keep the DOM clean
-    Object.keys(this._propsDict).forEach(
-      key => delete element.attributes[this._propsDict[key]]
-    );
-    return element;
+    return <li {...props}>{props.children}</li>;
   }
 }
 
+class GridListTilePrimary extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "grid-tile__primary";
+  }
+  materialDom(props) {
+    return <div {...props}>{props.children}</div>;
+  }
+}
+
+class GridListTilePrimaryContent extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "grid-tile__primary-content";
+  }
+  materialDom(props) {
+    return (
+      <div>
+        <img {...props} />
+      </div>
+    );
+  }
+}
+
+class GridListTileSecondary extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "grid-tile__secondary";
+  }
+  materialDom(props) {
+    return <span {...props}>{props.children}</span>;
+  }
+}
+
+class GridListTileTitle extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "grid-tile__title";
+  }
+  materialDom(props) {
+    return <span {...props}>{props.children}</span>;
+  }
+}
+
+class GridListTileSupportText extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "grid-tile__support-text";
+  }
+  materialDom(props) {
+    return <span {...props}>{props.children}</span>;
+  }
+}
+
+class GridListTileIcon extends Icon {
+  constructor() {
+    super();
+    this.componentName = "grid-tile__icon";
+  }
+}
+
+GridList.Tiles = GridListTiles;
 GridList.Tile = GridListTile;
+GridList.Tile.Primary = GridListTilePrimary;
+GridList.Tile.Primary.Content = GridListTilePrimaryContent;
+GridList.Tile.Secondary = GridListTileSecondary;
+GridList.Tile.Title = GridListTileTitle;
+GridList.Tile.SupportText = GridListTileSupportText;
+GridList.Tile.Icon = GridListTileIcon;
 
 export default GridList;
