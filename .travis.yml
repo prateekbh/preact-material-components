@@ -1,9 +1,34 @@
 language: node_js
 node_js:
-- "7"
-- "8"
+  - "7"
+  - "8"
+
+env:
+  - TEST_DIR=
+  - TEST_DIR=docs
+
+# Skip npm install because our script takes care of that
+install: true
+script: ./scripts/travis.sh $TEST_DIR
+
+cache:
+  directories:
+    - node_modules
+    - docs/node_modules
+
+before_deploy: cd $TRAVIS_BUILD_DIR/docs && npm run build:prod
+
+deploy:
+  provider: surge
+  project: ./docs/build
+  domain: material.preactjs.com
+  skip_cleanup: true
+  on:
+    branch: master
+    condition: $(./scripts/has-changes.sh docs) = "yes" && $TEST_DIR = "docs"
+    node: "8"
 
 # blocklist
 branches:
   except:
-  - gh-pages
+    - gh-pages

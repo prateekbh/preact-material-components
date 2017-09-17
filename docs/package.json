@@ -1,0 +1,51 @@
+{
+  "name": "preact-material-components-site",
+  "version": "1.0.1",
+  "description": "preact material component's site",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "build:prod": "preact build --template template.html && npm run copyAssets",
+    "copyAssets": "cp -R *.png build/ && cp -R *.json build/",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch",
+    "test": "npm run prettier",
+    "lint": "eslint src/**/*.js",
+    "prettier": "prettier -l src/**/*.js",
+    "prettier:write": "prettier --write src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/preact-material-components.git"
+  },
+  "keywords": [
+    "preact",
+    "preact components",
+    "material components",
+    "material design"
+  ],
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prateekbh/preact-material-components/issues"
+  },
+  "homepage": "https://github.com/prateekbh/preact-material-components#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "classnames": "^2.2.5",
+    "eslint": "^4.6.1",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "highlight.js": "^9.12.0",
+    "if-env": "^1.0.0",
+    "node-sass": "^4.5.3",
+    "preact": "^8.2.1",
+    "preact-cli": "^1.4.1",
+    "preact-material-components": "^1.1.6",
+    "prettier": "^1.6.1",
+    "sass-loader": "^6.0.6"
+  }
+}

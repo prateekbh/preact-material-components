@@ -8,10 +8,10 @@
     "build": "node ./compileComponents.js && webpack",
     "prepublishOnly": "npm run build && npm run test",
     "test": "npm run build && npm run prettier",
-    "lint": "eslint index.js **/*.jsx",
+    "lint": "eslint index.js */*.jsx",
     "lint-staged": "lint-staged",
-    "prettier": "prettier -l index.js **/*.jsx",
-    "prettier:write": "prettier --write index.js **/*.jsx"
+    "prettier": "prettier -l index.js */*.jsx",
+    "prettier:write": "prettier --write index.js */*.jsx"
   },
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",

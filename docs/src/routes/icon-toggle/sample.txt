@@ -1,0 +1,31 @@
+import {h, Component} from 'preact';
+import List from 'preact-material-components/List';
+import Formfield from 'preact-material-components/Formfield';
+import 'preact-material-components/List/style.css';
+
+export default class ListPage extends Component {
+  const toggleOnIcon = {
+    content: "favorite",
+    label: "Remove From Favorites"
+  };
+  const toggleOffIcon = {
+    content: "favorite_border",
+    label: "Add to Favorites"
+  };
+  render(){
+    return (
+      <div>
+        <IconToggle
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          aria-label="Add to favorites"
+          data-toggle-on={toggleOnIcon}
+          data-toggle-off={toggleOffIcon}
+        >
+          favorite_border
+        </IconToggle>
+      </div>
+    );
+  }
+}

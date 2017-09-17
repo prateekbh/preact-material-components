@@ -1,0 +1,15 @@
+import {h, Component} from 'preact';
+import Elevation from 'preact-material-components/Elevation';
+import 'preact-material-components/Elevation/style.css';
+
+export default class ElevationPage extends Component {
+  render(){
+    return (
+      <div>
+        <Elevation z={0}>Z0</Elevation>
+        <Elevation z={1}>Z1</Elevation>
+        <Elevation z={2}>Z2</Elevation>
+      </div>
+    );
+  }
+}
