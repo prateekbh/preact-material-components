@@ -96,11 +96,7 @@ class GridListTilePrimaryContent extends MaterialComponent {
     this.componentName = "grid-tile__primary-content";
   }
   materialDom(props) {
-    return (
-      <div>
-        <img {...props} />
-      </div>
-    );
+    return <img {...props} />;
   }
 }
 
