@@ -2,11 +2,26 @@ import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Icon from "../Icon";
 
+const VALIDATION_VALUES_BY_KEY = {
+  "with-icon-align": ["start", "end"],
+  "tile-gutter": [1],
+  "tile-aspect-ratio": ["1x1", "16x9", "2x3", "3x2", "4x3", "3x4"]
+};
+
+const isValidValue = (validationValues, testValue) => {
+  return (
+    validationValues &&
+    validationValues.findIndex(val => val === testValue) >= 0
+  );
+};
+
+const notEmptyString = val => val !== "";
+
 /**
  * @prop tile-gutter {1|4} - Number of px for the padding/spacing between items.
  * @prop header-caption {boolean} - position <GridList.Tile.Secondary> at top
  * @prop twoline-caption {boolean} - add spacing to <GridList.Tile.Secondary> for <GridList.Tile.SupportText>
- * @prop icon-align {"start"|"end"} - position <GridList.Tile.Icon> at beginning or end of <GridList.Tile.Secondary>
+ * @prop with-icon-align {"start"|"end"} - position <GridList.Tile.Icon> at beginning or end of <GridList.Tile.Secondary>
  * @prop tile-aspect-ratio {"1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4"} - aspect ratio for <GridList.Tile.Primary>
  */
 class GridList extends MaterialComponent {
@@ -17,25 +32,25 @@ class GridList extends MaterialComponent {
       "header-caption",
       "twoline-caption",
       "tile-gutter",
-      "icon-align",
+      "with-icon-align",
       "tile-aspect-ratio"
     ];
   }
-  materialDom(props) {
-    // TODO: validate that the only values are "start" or "end"
-    let className = props["icon-align"]
-      ? `mdc-grid-list--with-icon-align-${props["icon-align"]}`
+  mapClassName(propKey, props) {
+    const propValue = props[propKey];
+    const validationValues = VALIDATION_VALUES_BY_KEY[propKey];
+
+    return isValidValue(validationValues, propValue)
+      ? `mdc-${this.componentName}--${propKey}-${propValue}`
       : "";
-
-    // TODO: validate that the only values are "1x1", "16x9", "2x3", "3x2", "4x3", or "3x4"
-    if (props["tile-aspect-ratio"]) {
-      className += ` mdc-grid-list--tile-aspect-${props["tile-aspect-ratio"]}`;
-    }
-
-    // TODO: validate that the only value is "1"
-    if (props["tile-gutter"]) {
-      className += ` mdc-grid-list--tile-gutter-${props["tile-gutter"]}`;
-    }
+  }
+  materialDom(props) {
+    const className = Object.keys(VALIDATION_VALUES_BY_KEY)
+      .map(key => {
+        return this.mapClassName(key, props);
+      })
+      .filter(notEmptyString)
+      .join(" ");
 
     return (
       <div {...props} className={className}>
