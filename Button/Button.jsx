@@ -1,6 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Icon from "../Icon/";
+
 /**
  *  @prop dense = false
  *  @prop raised = false
