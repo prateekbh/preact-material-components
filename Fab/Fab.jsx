@@ -1,15 +1,16 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
+import Icon from "../Icon/";
 
 /**
  * @prop mini = false
- * @prop plain = false
+ * @prop exited = false
  */
-export default class Fab extends MaterialComponent {
+class Fab extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "fab";
-    this._mdcProps = ["mini", "plain"];
+    this._mdcProps = ["mini", "exited"];
   }
   componentDidMount() {
     super.attachRipple();
@@ -22,3 +23,13 @@ export default class Fab extends MaterialComponent {
     );
   }
 }
+
+class FabIcon extends Icon {
+  constructor() {
+    super();
+    this.componentName = "fab__icon";
+  }
+}
+
+Fab.Icon = FabIcon;
+export default Fab;
