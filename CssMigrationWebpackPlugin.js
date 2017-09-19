@@ -1,6 +1,6 @@
 /*globals require, __dirname, module*/
-
 const cp = require('cp');
+const globCopy = require('glob-copy');
 const path = require('path');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
@@ -10,35 +10,47 @@ const srcPath = path.join(__dirname, 'node_modules', '@material');
 
 class CssMigrationWebpackPlugin{
 	copySuperCss() {
-		const sourcePath = path.join(__dirname, 'node_modules', 'material-components-web', 'dist', 'material-components-web.min.css');
-		const destFilePath = path.join(__dirname, 'style.css');
+		const sourceCssPath = path.join(__dirname, 'node_modules', 'material-components-web', 'dist', 'material-components-web.min.css');
+		const sourceScssPath = path.join(__dirname, 'node_modules', 'material-components-web', 'material-components-web.scss');
+		const destCssFilePath = path.join(__dirname, 'style.css');
+		const destScssFilePath = path.join(__dirname);
 
 		//delete already existing file
-		if (fs.existsSync(destFilePath)) {
-			fs.unlinkSync(destFilePath);
+		if (fs.existsSync(destCssFilePath)) {
+			fs.unlinkSync(destCssFilePath);
+		}
+		cp.sync(sourceCssPath, destCssFilePath);
+		globCopy.sync(sourceScssPath, destScssFilePath);
+	}
+	copyIndividualCss(component, destFolder){
+		const sourcePath = path.join(srcPath, component);
+		const sourceCssPath = path.join(sourcePath, 'dist', 'mdc.' + component + '.css');
+		const sourceScssPath = path.join(sourcePath, '*.scss');
+		const destCssFilePath = path.join(destFolder, 'style.css');
+		const destScssFilePath = path.join(destFolder);
+		//delete already existing file
+		if (fs.existsSync(destCssFilePath)) {
+			fs.unlinkSync(destCssFilePath);
 		}
 
-		cp.sync(sourcePath, destFilePath);
+		//copy new file
+		cp.sync(sourceCssPath, destCssFilePath);
+		globCopy.sync(sourceScssPath, destScssFilePath);
 	}
 	apply(compiler){
 		compiler.plugin('after-emit', (compilation, callback) => {
 			for (let dest in bundleMapping) {
 				if (bundleMapping.hasOwnProperty(dest)) {
 					const source = bundleMapping[dest];
-					const sourcePath = path.join(srcPath, source, 'dist', 'mdc.' + source + '.css');
 					const destFolderPath = path.join(__dirname, dest);
 					try {
 						//create folder if not already present
 						if (!fs.existsSync(destFolderPath)) {
 							mkdirp.sync(destFolderPath);
 						}
-						const destFilePath = path.join(destFolderPath, 'style.css');
-						//delete already existing file
-						if (fs.existsSync(destFilePath)) {
-							fs.unlinkSync(destFilePath);
-						}
-						//copy new file
-						cp.sync(sourcePath, destFilePath);
+
+						this.copyIndividualCss(source, destFolderPath);
+
 					} catch (err) {
 						return callback(err);
 					}
