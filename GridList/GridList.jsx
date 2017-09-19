@@ -5,11 +5,11 @@ import Icon from "../Icon";
 const notEmptyString = val => val !== "";
 
 /**
- * @prop tile-gutter {1|4} - Number of px for the padding/spacing between items.
- * @prop header-caption {boolean} - position <GridList.Tile.Secondary> at top
- * @prop twoline-caption {boolean} - add spacing to <GridList.Tile.Secondary> for <GridList.Tile.SupportText>
- * @prop with-icon-align {"start"|"end"} - position <GridList.Tile.Icon> at beginning or end of <GridList.Tile.Secondary>
- * @prop tile-aspect-ratio {"1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4"} - aspect ratio for <GridList.Tile.Primary>
+ * @prop tile-gutter-1 {boolean} - use 1px gutter (default is 4px)
+ * @prop header-caption {boolean} - position <GridList.SecondaryTile> at top
+ * @prop twoline-caption {boolean} - add spacing to <GridList.SecondaryTile> for <GridList.SupportTextTile>
+ * @prop with-icon-align {"start"|"end"} - position <GridList.IconTile> at beginning or end of <GridList.SecondaryTile>
+ * @prop aspect-ratio {"1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4"} - aspect ratio for <GridList.PrimaryTile>
  */
 class GridList extends MaterialComponent {
   get validationValuesByKey() {
