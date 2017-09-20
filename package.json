@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components#readme",
   "dependencies": {
-    "material-components-web": "0.21.1"
+    "material-components-web": "0.21.1",
   },
   "peerDependencies": {
     "preact": "*"
@@ -50,6 +50,7 @@
     "eslint": "^4.5.0",
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-prettier": "^2.2.0",
+    "glob-copy": "^0.1.0",
     "lint-staged": "^4.0.4",
     "mkdirp": "^0.5.1",
     "pre-commit": "^1.2.2",
