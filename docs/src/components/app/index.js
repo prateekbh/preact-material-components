@@ -17,6 +17,7 @@ import DrawerPage from "../../routes/drawer";
 import ElevationPage from "../../routes/elevation";
 import FabPage from "../../routes/fab";
 import FormFieldPage from "../../routes/form-field";
+import GridListPage from "../../routes/grid-list";
 import HomePage from "../../routes/home";
 import IconPage from "../../routes/icon";
 import IconTogglePage from "../../routes/icon-toggle";
@@ -93,6 +94,11 @@ export default class Home extends Component {
         text: "Formfield",
         link: "/component/form-field",
         component: FormFieldPage
+      },
+      {
+        text: "GridList",
+        link: "/component/grid-list",
+        component: GridListPage
       },
       {
         text: "Icon",

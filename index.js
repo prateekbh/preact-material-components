@@ -17,6 +17,7 @@ import Drawer from "./Drawer";
 import Toolbar from "./Toolbar";
 import LinearProgress from "./LinearProgress";
 import LayoutGrid from "./LayoutGrid";
+import GridList from "./GridList";
 import Menu from "./Menu";
 import Tabs from "./Tabs";
 import Slider from "./Slider";
@@ -42,6 +43,7 @@ export {
   Menu,
   Toolbar,
   LayoutGrid,
+  GridList,
   Tabs,
   Slider
 };
