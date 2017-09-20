@@ -95,6 +95,7 @@ export default class Home extends Component {
             this.dlg.MDComponent.show();
           }}
         >
+          <Button.Icon>favorite_border</Button.Icon>
           Open Dialog
         </Button>
 
