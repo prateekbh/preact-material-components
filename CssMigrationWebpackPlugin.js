@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const bundleMapping = require('./componentsList');
-const srcPath = path.join(__dirname, 'node_modules', 'material-components-web', 'node_modules', '@material');
+const srcPath = path.join(__dirname, 'node_modules', '@material');
 
 
 class CssMigrationWebpackPlugin{
