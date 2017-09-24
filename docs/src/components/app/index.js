@@ -31,6 +31,7 @@ import SnackbarPage from "../../routes/snackbar";
 import SwitchPage from "../../routes/switch";
 import TabsPage from "../../routes/tabs";
 import TextfieldPage from "../../routes/textfield";
+import ThemePage from "../../routes/theme";
 import ToolbarPage from "../../routes/toolbar";
 
 // Components
@@ -158,6 +159,11 @@ export default class Home extends Component {
         text: "Textfield",
         link: "/component/textfield",
         component: TextfieldPage
+      },
+      {
+        text: "Theme",
+        link: "/component/theme",
+        component: ThemePage
       },
       {
         text: "Toolbar",
