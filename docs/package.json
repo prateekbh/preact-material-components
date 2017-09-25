@@ -6,7 +6,7 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "build:prod": "preact build --template template.html && npm run copyAssets",
-    "copyAssets": "cp -R *.png build/ && cp -R *.json build/",
+    "copyAssets": "cp -R images *.png *.json build/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "test": "npm run prettier",
@@ -44,7 +44,7 @@
     "node-sass": "^4.5.3",
     "preact": "^8.2.1",
     "preact-cli": "^1.4.1",
-    "preact-material-components": "^1.1.6",
+    "preact-material-components": "^1.1.7",
     "prettier": "^1.6.1",
     "sass-loader": "^6.0.6"
   }
