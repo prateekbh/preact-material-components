@@ -1,5 +1,6 @@
 // Dependencies
 import { h, Component } from "preact";
+import jsxToString from "jsx-to-string";
 
 // Material Components
 import Fab from "preact-material-components/Fab";
@@ -19,6 +20,9 @@ import sample from "./sample.txt";
 export default class FabPage extends Component {
   constructor() {
     super();
+    this.state = {
+      fabShowing: true
+    };
     this.propsTable = [
       {
         component: "Fab",
@@ -28,8 +32,8 @@ export default class FabPage extends Component {
             description: "Adds riple effect to the fab."
           },
           {
-            name: "plain",
-            description: "Adds plain colors to the fab."
+            name: "exited",
+            description: "Adds exited animated effect to fab."
           },
           {
             name: "mini",
@@ -60,26 +64,75 @@ export default class FabPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
-        <div className="mdc-typography--title">Defaults </div>
         <Fab>
           <Icon>favorite_border</Icon>
         </Fab>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(
+                <Fab>
+                  <Icon>favorite_border</Icon>
+                </Fab>
+              ).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
+
         <Fab ripple={true}>
           <Icon>favorite_border</Icon>
         </Fab>
+
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(
+                <Fab ripple={true}>
+                  <Icon>favorite_border</Icon>
+                </Fab>
+              ).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
+
         <Fab mini={true}>
           <Icon>favorite_border</Icon>
         </Fab>
-        <div className="mdc-typography--title">Plain </div>
-        <Fab plain={true}>
-          <Icon>favorite_border</Icon>
+
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(
+                <Fab mini={true}>
+                  <Icon>favorite_border</Icon>
+                </Fab>
+              ).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <Fab
+          exited={!this.state.fabShowing}
+          onClick={() => {
+            this.setState({
+              fabShowing: false
+            });
+          }}
+        >
+          <Icon>directions_run</Icon>
         </Fab>
-        <Fab plain={true} ripple={true}>
-          <Icon>favorite_border</Icon>
-        </Fab>
-        <Fab plain={true} mini={true}>
-          <Icon>favorite_border</Icon>
-        </Fab>
+
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(
+                <Fab exited>
+                  <Icon>directions_run</Icon>
+                </Fab>
+              ).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
       </div>
     );
   }
