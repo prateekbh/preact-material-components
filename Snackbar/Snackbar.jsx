@@ -34,10 +34,7 @@ export default class Snackbar extends MaterialComponent {
       >
         <div className="mdc-snackbar__text" />
         <div className="mdc-snackbar__action-wrapper">
-          <button
-            type="button"
-            className="mdc-button mdc-snackbar__action-button"
-          />
+          <button type="button" className="mdc-snackbar__action-button" />
         </div>
       </div>
     );
