@@ -1,5 +1,6 @@
 // Dependencies
 import { h, Component } from "preact";
+import jsxToString from "jsx-to-string";
 
 // Material Components
 import Button from "preact-material-components/Button";
@@ -14,6 +15,42 @@ import style from "./style";
 // Samples
 import sample from "./sample.txt";
 
+// Demo Elements
+const flatButton = <Button>Default Flat button without ripple</Button>;
+const defaultRaisedButton = <Button raised>Default Raised button</Button>;
+const unelevatedBtn = <Button unelevated>Default Unelevated button</Button>;
+const strokedBtn = <Button stroked>Default Stroked button</Button>;
+const disabledBtn = (
+  <Button raised disabled>
+    Disabled Raised button
+  </Button>
+);
+const rippleBtn = (
+  <Button raised ripple>
+    Raised button with ripple
+  </Button>
+);
+const primaryBtn = (
+  <Button raised className="mdc-theme--primary-bg">
+    Primary Raised button{" "}
+  </Button>
+);
+const secondaryBtn = (
+  <Button raised className="mdc-theme--secondary-bg">
+    Secondary Raised button{" "}
+  </Button>
+);
+const denseBtn = (
+  <Button raised dense>
+    Dense Raised button{" "}
+  </Button>
+);
+const compactBtn = (
+  <Button raised compact>
+    Compact Raised button{" "}
+  </Button>
+);
+
 // Class
 export default class ButtonPage extends Component {
   constructor() {
@@ -27,14 +64,6 @@ export default class ButtonPage extends Component {
             description: "Adds riple effect to the button"
           },
           {
-            name: "primary",
-            description: "Adds primary colors to the button"
-          },
-          {
-            name: "accent",
-            description: "Adds accent colors to the button"
-          },
-          {
             name: "dense",
             description: "Adds dense padding to the button"
           },
@@ -45,6 +74,10 @@ export default class ButtonPage extends Component {
           {
             name: "raised",
             description: "Adds raised effect to the button"
+          },
+          {
+            name: "disabled",
+            description: "Disables the button"
           },
           {
             name: "unelevated",
@@ -80,85 +113,95 @@ export default class ButtonPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
-        <div className="mdc-typography--title">Flats </div>
-        <Button>Flat button without ripple</Button>
-        <Button ripple>Flat button with ripple</Button>
-        <Button accent>Accented Flat button</Button>
-        <Button dense>Dense Flat button </Button>
-        <Button compact>Compact Flat button </Button>
-        <Button primary>Primary Flat button </Button>
+        <div>
+          {flatButton}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(flatButton).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
 
-        <div className="mdc-typography--title">Raised </div>
-        <Button raised>Raised button without ripple</Button>
-        <Button raised ripple>
-          Raised button with ripple
-        </Button>
-        <Button raised accent>
-          Accented Raised button
-        </Button>
-        <Button raised dense>
-          Dense Raised button{" "}
-        </Button>
-        <Button raised compact>
-          Compact Raised button{" "}
-        </Button>
-        <Button raised primary>
-          Primary Raised button{" "}
-        </Button>
+        <div>
+          {defaultRaisedButton}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(defaultRaisedButton).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
 
-        <div className="mdc-typography--title">Unelevated </div>
-        <Button unelevated>Unelevated button without ripple</Button>
-        <Button unelevated ripple>
-          Unelevated button with ripple
-        </Button>
-        <Button unelevated accent>
-          Accented Unelevated button
-        </Button>
-        <Button unelevated dense>
-          Dense Unelevated button{" "}
-        </Button>
-        <Button unelevated compact>
-          Compact Unelevated button{" "}
-        </Button>
-        <Button unelevated primary>
-          Primary Unelevated button{" "}
-        </Button>
+        <div>
+          {unelevatedBtn}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(unelevatedBtn).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
 
-        <div className="mdc-typography--title">Stroked </div>
-        <Button stroked>Stroked button without ripple</Button>
-        <Button stroked ripple>
-          Stroked button with ripple
-        </Button>
-        <Button stroked accent>
-          Accented Stroked button
-        </Button>
-        <Button stroked dense>
-          Dense Stroked button{" "}
-        </Button>
-        <Button stroked compact>
-          Compact Stroked button{" "}
-        </Button>
-        <Button stroked primary>
-          Primary Stroked button{" "}
-        </Button>
+        <div>
+          {strokedBtn}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(strokedBtn).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
 
-        <div className="mdc-typography--title">Disabled </div>
-        <Button disabled>Disabled button without ripple</Button>
-        <Button disabled ripple>
-          Disabled button with ripple
-        </Button>
-        <Button disabled accent>
-          Accented Disabled button
-        </Button>
-        <Button disabled dense>
-          Dense Disabled button{" "}
-        </Button>
-        <Button disabled compact>
-          Compact Disabled button{" "}
-        </Button>
-        <Button disabled primary>
-          Primary Disabled button{" "}
-        </Button>
+        <div>
+          {disabledBtn}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(disabledBtn).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          {rippleBtn}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(rippleBtn).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          {primaryBtn}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(primaryBtn).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          {secondaryBtn}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(secondaryBtn).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          {denseBtn}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(denseBtn).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          {compactBtn}
+          <CodeBlock>
+            <code class="lang-html">
+              {jsxToString(compactBtn).replace("\n ", "")}
+            </code>
+          </CodeBlock>
+        </div>
 
         <div className="mdc-typography--title">Note</div>
         <div className="mdc-typography--caption">

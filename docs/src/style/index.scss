@@ -26,3 +26,8 @@ a{
 .mdc-typography--display1:not(:first-child){
 	margin-top: 32px;
 }
+
+.hljs.lang-html{
+	display: inline-block;
+	min-width: 50%;
+}
