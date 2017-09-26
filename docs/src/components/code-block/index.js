@@ -3,11 +3,12 @@ import { h } from "preact";
 import cx from "classnames";
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
+import htmlbars from "highlight.js/lib/languages/htmlbars";
 import json from "highlight.js/lib/languages/json";
 import xml from "highlight.js/lib/languages/xml";
-import "highlight.js/styles/tomorrow-night-eighties.css";
+import "highlight.js/styles/github.css";
 
-const LANGUAGES = { javascript, json, xml };
+const LANGUAGES = { javascript, json, xml, htmlbars };
 Object.keys(LANGUAGES).forEach(key =>
   hljs.registerLanguage(key, LANGUAGES[key])
 );

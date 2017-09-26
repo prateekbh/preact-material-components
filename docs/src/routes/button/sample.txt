@@ -5,7 +5,7 @@ import 'preact-material-components/Button/style.css';
 export default class ButtonsPage extends Component {
   render(){
     return (
-      <Button ripple={true} primary={true} raised={true}>
+      <Button ripple={true} raised={true}>
         Flat button with ripple
       </Button>
       <Button href="/">This button will be rendered as an anchor</Button>

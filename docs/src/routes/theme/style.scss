@@ -1,0 +1,22 @@
+.page-theme{
+	.css-prop-override{
+		background-color: #3F51B5;
+	}
+	.css-var-override{
+		--mdc-theme-primary: #E91E63;
+		background-color: var(--mdc-theme-primary);
+	}
+	.parentbox{
+		display: inline-block;
+		width:400px;
+	}
+	.box{
+		display: inline-block;
+		width: 200px;
+	}
+	.cell{
+		display: block;
+		padding: 16px;
+		margin: 2px;
+	}
+}
