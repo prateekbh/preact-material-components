@@ -65,6 +65,9 @@
     "title": "Textfield",
     "url": "/component/textfield"
 }, {
+    "title": "Theme",
+    "url": "/component/theme"
+}, {
     "title": "Toolbar",
     "url": "/component/toolbar"
 }]
