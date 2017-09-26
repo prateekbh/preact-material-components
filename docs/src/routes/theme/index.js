@@ -19,7 +19,7 @@ export default class ThemePage extends Component {
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
           preact-material-components brings{" "}
-          <span className="strong">mdc-theme</span>as is, you can refer to its
+          <span className="strong">mdc-theme</span> as is, you can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-theme">
             {" "}
@@ -31,7 +31,7 @@ export default class ThemePage extends Component {
         <div className="mdc-typography--body">
           With preact-material-components you can either choose to use the
           bundled <span className="strong">.css </span>
-          files or the <span className="strong">.scss </span> files. Both have
+          files or the <span className="strong">.scss</span> files. Both have
           their different ways to handle theming.
           <div>
             With the css files you can either override the colors and
