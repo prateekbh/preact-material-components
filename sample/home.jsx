@@ -28,7 +28,8 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      chosenOption: 2
+      chosenOption: 2,
+      fabExited: false
     };
   }
   render() {
@@ -95,12 +96,23 @@ export default class Home extends Component {
             this.dlg.MDComponent.show();
           }}
         >
+          <Button.Icon>favorite_border</Button.Icon>
           Open Dialog
         </Button>
 
         <div>
-          <Fab mini={true} ripple={true}>
-            <Icon>share</Icon>
+          <Fab
+            mini={true}
+            onClick={() => {
+              this.setState({
+                fabExited: true
+              });
+            }}
+          >
+            <Fab.Icon>share</Fab.Icon>
+          </Fab>
+          <Fab exited={this.state.fabExited} ripple={true}>
+            <Fab.Icon>share</Fab.Icon>
           </Fab>
           <Switch />
         </div>
