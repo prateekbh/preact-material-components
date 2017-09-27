@@ -1,6 +1,5 @@
 // Dependencies
 import { h, Component } from "preact";
-import jsxToString from "jsx-to-string";
 
 // Material Components
 import Fab from "preact-material-components/Fab";
@@ -70,11 +69,7 @@ export default class FabPage extends Component {
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(
-                <Fab>
-                  <Icon>favorite_border</Icon>
-                </Fab>
-              ).replace("\n ", "")}
+              {`<Fab><Icon>favorite_border</Icon></Fab>`}
             </code>
           </CodeBlock>
         </div>
@@ -86,11 +81,7 @@ export default class FabPage extends Component {
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(
-                <Fab ripple={true}>
-                  <Icon>favorite_border</Icon>
-                </Fab>
-              ).replace("\n ", "")}
+              {`<Fab ripple={true}><Icon>favorite_border</Icon></Fab>`}
             </code>
           </CodeBlock>
         </div>
@@ -102,11 +93,7 @@ export default class FabPage extends Component {
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(
-                <Fab mini={true}>
-                  <Icon>favorite_border</Icon>
-                </Fab>
-              ).replace("\n ", "")}
+              {`<Fab mini={true}><Icon>favorite_border</Icon></Fab>`}
             </code>
           </CodeBlock>
         </div>
@@ -125,11 +112,7 @@ export default class FabPage extends Component {
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(
-                <Fab exited>
-                  <Icon>directions_run</Icon>
-                </Fab>
-              ).replace("\n ", "")}
+              {`<Fab exited><Icon>directions_run</Icon></Fab>`}
             </code>
           </CodeBlock>
         </div>

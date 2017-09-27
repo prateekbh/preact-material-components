@@ -1,6 +1,5 @@
 // Dependencies
 import { h, Component } from "preact";
-import jsxToString from "jsx-to-string";
 
 // Material Components
 import Button from "preact-material-components/Button";
@@ -14,42 +13,6 @@ import style from "./style";
 
 // Samples
 import sample from "./sample.txt";
-
-// Demo Elements
-const flatButton = <Button>Default Flat button without ripple</Button>;
-const defaultRaisedButton = <Button raised>Default Raised button</Button>;
-const unelevatedBtn = <Button unelevated>Default Unelevated button</Button>;
-const strokedBtn = <Button stroked>Default Stroked button</Button>;
-const disabledBtn = (
-  <Button raised disabled>
-    Disabled Raised button
-  </Button>
-);
-const rippleBtn = (
-  <Button raised ripple>
-    Raised button with ripple
-  </Button>
-);
-const primaryBtn = (
-  <Button raised className="mdc-theme--primary-bg">
-    Primary Raised button{" "}
-  </Button>
-);
-const secondaryBtn = (
-  <Button raised className="mdc-theme--secondary-bg">
-    Secondary Raised button{" "}
-  </Button>
-);
-const denseBtn = (
-  <Button raised dense>
-    Dense Raised button{" "}
-  </Button>
-);
-const compactBtn = (
-  <Button raised compact>
-    Compact Raised button{" "}
-  </Button>
-);
 
 // Class
 export default class ButtonPage extends Component {
@@ -114,91 +77,107 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <div>
-          {flatButton}
+          <Button>Default Flat button without ripple</Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(flatButton).replace("\n ", "")}
+              {"<Button>Default Flat button without ripple</Button>"}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {defaultRaisedButton}
+          <Button raised>Default Raised button</Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(defaultRaisedButton).replace("\n ", "")}
+              {"<Button raised>Default Raised button</Button>"}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {unelevatedBtn}
+          <Button unelevated>Default Unelevated button</Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(unelevatedBtn).replace("\n ", "")}
+              {"<Button unelevated>Default Unelevated button</Button>"}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {strokedBtn}
+          <Button stroked>Default Stroked button</Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(strokedBtn).replace("\n ", "")}
+              {"<Button stroked>Default Stroked button</Button>"}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {disabledBtn}
+          <Button raised disabled>
+            Disabled Raised button
+          </Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(disabledBtn).replace("\n ", "")}
+              {"<Button raised disabled>Disabled Raised button</Button>"}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {rippleBtn}
+          <Button raised ripple>
+            Raised button with ripple
+          </Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(rippleBtn).replace("\n ", "")}
+              {"<Button raised ripple>Raised button with ripple</Button>"}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {primaryBtn}
+          <Button raised className="mdc-theme--primary-bg">
+            Primary Raised button{" "}
+          </Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(primaryBtn).replace("\n ", "")}
+              {`
+									<Button raised className="mdc-theme--primary-bg">Primary Raised button{" "}</Button>
+								`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {secondaryBtn}
+          <Button raised className="mdc-theme--secondary-bg">
+            Secondary Raised button{" "}
+          </Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(secondaryBtn).replace("\n ", "")}
+              {`
+								<Button raised className="mdc-theme--secondary-bg">Secondary Raised button{" "}</Button>
+							`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {denseBtn}
+          <Button raised dense>
+            Dense Raised button{" "}
+          </Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(denseBtn).replace("\n ", "")}
+              {`<Button raised dense>Dense Raised button{" "}</Button>`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          {compactBtn}
+          <Button raised compact>
+            Compact Raised button{" "}
+          </Button>
           <CodeBlock>
             <code class="lang-html">
-              {jsxToString(compactBtn).replace("\n ", "")}
+              {'<Button raised compact>Compact Raised button{" "}</Button>'}
             </code>
           </CodeBlock>
         </div>
