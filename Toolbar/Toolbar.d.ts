@@ -1,41 +1,41 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 
-export interface IToolbarProps {
+export interface IToolbarProps extends JSX.HTMLAttributes {
   fixed?: boolean,
   'fixed-lastrow-only'?: boolean,
   waterfall?: boolean,
   flexible?: boolean,
   'flexible-default-behavior'?: boolean
 }
-export class Toolbar extends MaterialComponent<IToolbarProps, {}> {
+export default class Toolbar extends MaterialComponent<IToolbarProps, {}> {
   private _onChange(e: Event): void;
   componentDidMount(): void;
   componentWillUnmount(): void;
   materialDom(props: IToolbarProps): VNode;
 }
 
-export class ToolbarRow extends MaterialComponent<{}, {}> {}
+export class Row extends MaterialComponent<{}, {}> {}
 
-export interface IToolbarSectionProps {
+export interface ISectionProps extends JSX.HTMLAttributes {
   'align-start'?: boolean,
   'align-end'?: boolean,
   'shrink-to-fit'?: boolean
 }
-export class ToolbarSection extends MaterialComponent<IToolbarSectionProps, {}> {
-  materialDom(props: IToolbarSectionProps): VNode;
+export class Section extends MaterialComponent<ISectionProps, {}> {
+  materialDom(props: ISectionProps): VNode;
 }
 
-export interface IToolbarIconProps {
+export interface IIconProps extends JSX.HTMLAttributes {
   menu?: boolean
 }
-export class ToolbarIcon extends MaterialComponent<IToolbarIconProps, {}> {
-  materialDom(props: IToolbarIconProps): VNode;
+export class Icon extends MaterialComponent<IIconProps, {}> {
+  materialDom(props: IIconProps): VNode;
 }
 
-export interface IToolbarTitleProps {
+export interface ITitleProps extends JSX.HTMLAttributes {
   title?: string
 }
-export class ToolbarTitle extends MaterialComponent<IToolbarTitleProps, {}> {
-  materialDom(props: IToolbarTitleProps): VNode;
+export class Title extends MaterialComponent<ITitleProps, {}> {
+  materialDom(props: ITitleProps): VNode;
 }
