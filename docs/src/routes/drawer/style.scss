@@ -1,0 +1,14 @@
+:global .demo-drawer {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  z-index: 6;
+}
+:global .demo-drawer .mdc-temporary-drawer {
+  position: static;
+  overflow: auto;
+}
+
+:global .mdc-drawer-scroll-lock {
+  overflow: auto;
+}
