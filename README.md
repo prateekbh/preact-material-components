@@ -62,7 +62,7 @@ Smaller bundles FTW!!!
 ## Using preact-material-components?
 - [HopOn](https://hopon-a72e9.firebaseapp.com). A progressive web game built with #preact, #babylonJs #preact-material-components
 
-- [Documentaion](https://prateekbh.github.io/preact-material-components/). Documentaion and demo site for `preact-material-components`.
+- [Documentaion](https://material.preactjs.com/). Documentaion and demo site for `preact-material-components`.
 
 Let us know if you're using `preact-material-components` and love them. Send us a PR and add your projects and link right here.
 
