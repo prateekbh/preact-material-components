@@ -6,8 +6,6 @@ import Drawer from "preact-material-components/Drawer";
 import Button from "preact-material-components/Button";
 import List from "preact-material-components/List";
 
-import "./style";
-
 // Components
 import ComponentTable from "../../components/component-table";
 import CodeBlock from "../../components/code-block";
