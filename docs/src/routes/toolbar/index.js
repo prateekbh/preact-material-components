@@ -7,6 +7,7 @@ import Toolbar from "preact-material-components/Toolbar";
 // Components
 import ComponentTable from "../../components/component-table";
 import CodeBlock from "../../components/code-block";
+import EventsTable from "../../components/events-table";
 
 // Styles
 import "./style";
@@ -83,11 +84,18 @@ export default class ToolbarPage extends Component {
         props: []
       }
     ];
+    this.eventsTable = [
+      {
+        name: "onChange",
+        description: "Fired when toolbar's expansion ratio is changed."
+      }
+    ];
   }
   render() {
     return (
       <div className="page-toolbar">
         <ComponentTable data={this.propsTable} />
+        <EventsTable data={this.eventsTable} />
 
         <div className="mdc-typography--display1">Sample code </div>
         <CodeBlock>

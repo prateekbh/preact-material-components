@@ -7,6 +7,7 @@ import Slider from "preact-material-components/Slider";
 // Components
 import ComponentTable from "../../components/component-table";
 import CodeBlock from "../../components/code-block";
+import EventsTable from "../../components/events-table";
 
 // Samples
 import sample from "./sample.txt";
@@ -46,11 +47,24 @@ export default class SliderPage extends Component {
         ]
       }
     ];
+    this.eventsTable = [
+      {
+        name: "onInput",
+        description:
+          "Fired when a user is dragging the slider or changing the value using the arrow keys."
+      },
+      {
+        name: "onChange",
+        description:
+          "Fired when a user stops dragging the slider or changes the value using the arrow keys.."
+      }
+    ];
   }
   render() {
     return (
       <div className="page-slider">
         <ComponentTable data={this.propsTable} />
+        <EventsTable data={this.eventsTable} />
 
         <div className="mdc-typography--display1">Sample code </div>
         <CodeBlock>
