@@ -3,11 +3,16 @@ import { h, Component } from "preact";
 
 // Material Components
 import Drawer from "preact-material-components/Drawer";
+import Button from "preact-material-components/Button";
+import List from "preact-material-components/List";
 
 // Components
 import ComponentTable from "../../components/component-table";
 import CodeBlock from "../../components/code-block";
 import EventsTable from "../../components/events-table";
+
+// Styles
+import "./style";
 
 // Samples
 import sample from "./sample.txt";
@@ -83,7 +88,34 @@ export default class DrawerPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
-        <div className="mdc-typography--title">not available </div>
+        <Button
+          primary={true}
+          raised={true}
+          onClick={() => {
+            this.drawer.MDComponent.open = !this.drawer.MDComponent.open;
+          }}
+        >
+          Toggle Drawer
+        </Button>
+        <div className="demo-drawer">
+          <Drawer.TemporaryDrawer
+            ref={drawer => {
+              this.drawer = drawer;
+            }}
+          >
+            <Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
+              Components
+            </Drawer.TemporaryDrawerHeader>
+            <Drawer.TemporaryDrawerContent>
+              <List>
+                <List.LinkItem>
+                  <List.ItemIcon>home</List.ItemIcon>
+                  Home
+                </List.LinkItem>
+              </List>
+            </Drawer.TemporaryDrawerContent>
+          </Drawer.TemporaryDrawer>
+        </div>
       </div>
     );
   }
