@@ -13,6 +13,9 @@ import ComponentTable from "../../components/component-table";
 import CodeBlock from "../../components/code-block";
 import EventsTable from "../../components/events-table";
 
+// Styles
+import "./style";
+
 // Samples
 import sample from "./sample.txt";
 
