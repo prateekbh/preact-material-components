@@ -51,7 +51,7 @@ export default class CheckboxPage extends Component {
         <div className="mdc-typography--display1">Demo </div>
         <Formfield>
           <Checkbox
-            id="basic-checkbox-label"
+            id="basic-checkbox"
             ref={cb => {
               this.cb = cb;
             }}
