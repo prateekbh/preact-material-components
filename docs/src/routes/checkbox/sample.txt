@@ -7,7 +7,7 @@ export default class CheckboxPage extends Component {
   render(){
     return (
       <FormField>
-        <Checkbox id="basic-checkbox-label" ref={cb=>{this.cb=cb;}}/>
+        <Checkbox id="basic-checkbox" ref={cb=>{this.cb=cb;}}/>
         <label for="basic-checkbox" id="basic-checkbox-label">This is my checkbox</label>
       </FormField>
     );
