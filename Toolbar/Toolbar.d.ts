@@ -9,7 +9,6 @@ export interface IToolbarProps extends JSX.HTMLAttributes {
   'flexible-default-behavior'?: boolean
 }
 export default class Toolbar extends MaterialComponent<IToolbarProps, {}> {
-  private _onChange(e: Event): void;
   componentDidMount(): void;
   componentWillUnmount(): void;
   materialDom(props: IToolbarProps): VNode;

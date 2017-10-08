@@ -6,7 +6,6 @@ export interface ISelectProps extends JSX.HTMLAttributes {
 }
 
 export default class Select extends MaterialComponent<ISelectProps, {}> {
-  private _changed(e: any): void;
   componentDidMount(): void;
   componentWillUnmount(): void;
   updateSelection(): void;
