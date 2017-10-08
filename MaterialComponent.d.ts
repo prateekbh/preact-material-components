@@ -7,18 +7,6 @@ import { Component, VNode } from 'preact';
  * dom for autoInit Properties
  */
 export default class MaterialComponent<PropsType, StateType> extends Component<PropsType, StateType> {
-  /**
-   * Attributes inside this array will be check for boolean value true
-   * and will be converted to mdc classes
-   */
-  private _mdcProps: string[];
-
-  /** This will again be used to add apt classname to the component */
-  private componentName: string;
-
-  /** The final class name given to the dom */
-  private classText: string;
-
   /** Attach the ripple effect */
   attachRipple(): void;
 
