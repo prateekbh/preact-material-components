@@ -86,6 +86,7 @@ class TextfieldInput extends MaterialComponent {
         this.state.showFloatingLabel && (
           <Label for={props.id}>{props.label}</Label>
         )}
+        {props.multiline ? "" : <div class="mdc-textfield__bottom-line" />}
       </div>
     );
   }
