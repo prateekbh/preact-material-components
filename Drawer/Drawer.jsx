@@ -169,11 +169,15 @@ class PersistentDrawer extends MaterialComponent {
     this.MDComponent = MDCPersistentDrawer.attachTo(this.control);
     this.MDComponent.listen("MDCPersistentDrawer:open", this._open);
     this.MDComponent.listen("MDCPersistentDrawer:close", this._close);
+    toggleDrawer(defaultProps, this.props, this.MDComponent);
   }
   componentWillUnmount() {
     this.MDComponent.unlisten("MDCPersistentDrawer:close", this._close);
     this.MDComponent.unlisten("MDCPersistentDrawer:open", this._open);
     this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    toggleDrawer(this.props, nextProps, this.MDComponent);
   }
   materialDom(props) {
     return (
