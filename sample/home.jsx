@@ -29,7 +29,8 @@ export default class Home extends Component {
     super();
     this.state = {
       chosenOption: 2,
-      fabExited: false
+      fabExited: false,
+      drawerOpen: false
     };
   }
   render() {
@@ -48,7 +49,9 @@ export default class Home extends Component {
             <Toolbar.Section align-start={true}>
               <Toolbar.Icon
                 onClick={() => {
-                  this.drawer.MDComponent.open = true;
+                  this.setState({
+                    drawerOpen: !this.state.drawerOpen
+                  });
                 }}
               >
                 menu
@@ -62,11 +65,15 @@ export default class Home extends Component {
           ref={drawer => {
             this.drawer = drawer;
           }}
+          open={this.state.drawerOpen}
           onOpen={() => {
             console.log("open");
           }}
           onClose={() => {
-            console.log("Close");
+            this.setState({
+              drawerOpen: false
+            });
+            console.log("Closed");
           }}
         >
           <Drawer.TemporaryDrawerHeader>
