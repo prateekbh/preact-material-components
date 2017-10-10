@@ -4,6 +4,13 @@ import { MDCTemporaryDrawer } from "@material/drawer/temporary";
 import { MDCPersistentDrawer } from "@material/drawer/persistent";
 import List from "../List";
 
+/*
+ * Default props for drawers
+ */
+const defaultProps = {
+  open: false
+};
+
 class TemporaryDrawer extends MaterialComponent {
   constructor() {
     super();
@@ -25,11 +32,15 @@ class TemporaryDrawer extends MaterialComponent {
     this.MDComponent = MDCTemporaryDrawer.attachTo(this.control);
     this.MDComponent.listen("MDCTemporaryDrawer:open", this._open);
     this.MDComponent.listen("MDCTemporaryDrawer:close", this._close);
+    toggleDrawer(defaultProps, this.props, this.MDComponent);
   }
   componentWillUnmount() {
     this.MDComponent.unlisten("MDCTemporaryDrawer:close", this._close);
     this.MDComponent.unlisten("MDCTemporaryDrawer:open", this._open);
     this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    toggleDrawer(this.props, nextProps, this.MDComponent);
   }
   materialDom(props) {
     return (
@@ -158,11 +169,15 @@ class PersistentDrawer extends MaterialComponent {
     this.MDComponent = MDCPersistentDrawer.attachTo(this.control);
     this.MDComponent.listen("MDCPersistentDrawer:open", this._open);
     this.MDComponent.listen("MDCPersistentDrawer:close", this._close);
+    toggleDrawer(defaultProps, this.props, this.MDComponent);
   }
   componentWillUnmount() {
     this.MDComponent.unlisten("MDCPersistentDrawer:close", this._close);
     this.MDComponent.unlisten("MDCPersistentDrawer:open", this._open);
     this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    toggleDrawer(this.props, nextProps, this.MDComponent);
   }
   materialDom(props) {
     return (
@@ -222,6 +237,19 @@ class DrawerItem extends List.LinkItem {
         "mdc-temporary-drawer--selected mdc-permanent-drawer--selected";
     }
     return returnedNode;
+  }
+}
+
+/*
+ * Function to add declarative opening/closing to drawer
+ */
+function toggleDrawer(oldprops, newprops, drawer) {
+  if (
+    "open" in oldprops &&
+    "open" in newprops &&
+    oldprops.open !== newprops.open
+  ) {
+    drawer.open = newprops.open;
   }
 }
 
