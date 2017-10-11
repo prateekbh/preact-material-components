@@ -7,13 +7,29 @@ import 'preact-material-components/List/style.css';
 import 'preact-material-components/Button/style.css';
 
 export default class DrawerPage extends Component {
+  constructor(){
+    super();
+    this.state = {
+      drawerOpened = false
+    };
+  }
   render(){
     return (
       <div>
-        <Button onClick={()=>{this.drawer.MDComponent.open = true;}}>
+        <Button onClick={() => {
+            this.setState({
+              drawerOpened: !this.state.drawerOpened
+            })
+          }}
+        >
           Open Drawer
         </Button>
-        <Drawer.TemporaryDrawer ref={drawer=>{this.drawer = drawer;}} >
+        <Drawer.TemporaryDrawer open={this.state.drawerOpened} onClose={() => {
+            this.setState({
+              drawerOpened: false
+            });
+          }}
+        >
           <Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
             Components
           </Drawer.TemporaryDrawerHeader>
