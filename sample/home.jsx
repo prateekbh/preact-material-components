@@ -30,7 +30,8 @@ export default class Home extends Component {
     this.state = {
       chosenOption: 2,
       fabExited: false,
-      drawerOpen: false
+      drawerOpen: false,
+      menuOpened: false
     };
   }
   render() {
@@ -290,14 +291,19 @@ export default class Home extends Component {
         <Menu.Anchor>
           <Button
             onClick={e => {
-              this.menu.MDComponent.open = true;
+              this.setState({
+                menuOpened: true
+              });
             }}
           >
             Click for menu
           </Button>
           <Menu
-            ref={menu => {
-              this.menu = menu;
+            open={this.state.menuOpened}
+            onMenuClosed={() => {
+              this.setState({
+                menuOpened: false
+              });
             }}
           >
             <Menu.Item>Hello1</Menu.Item>
