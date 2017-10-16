@@ -34,9 +34,9 @@ class Menu extends MaterialComponent {
     toggleMenu(defaultProps, this.props, this.MDComponent);
   }
   componentWillUnmount() {
-    this.MDComponent.destroy && this.MDComponent.destroy();
     this.MDComponent.unlisten("MDCSimpleMenu:selected", this._select);
     this.MDComponent.unlisten("MDCSimpleMenu:cancel", this._cancel);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   _select() {
     if (this.props.onSelect) {
