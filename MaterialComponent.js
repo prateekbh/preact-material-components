@@ -60,7 +60,12 @@ export default class MaterialComponent extends Component {
   render() {
     this.buildClassName();
     // Fetch a VNode
-    const element = this.materialDom(this.props);
+    const componentProps = this.props;
+    if (componentProps.class){
+      // We delete class prop here so that any sub node's class doesn't get over-ridden from this
+      delete componentProps.class;
+    }
+    const element = this.materialDom(componentProps);
     element.attributes = element.attributes || {};
     // Fix for className
     element.attributes.class = this.getClassName(element);
