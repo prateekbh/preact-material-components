@@ -49,7 +49,7 @@
     "@material/layout-grid": "^0.4.4",
     "@material/linear-progress": "^0.1.10",
     "@material/list": "^0.2.19",
-    "@material/menu": "^0.4.7",
+    "@material/menu": "^0.23.0",
     "@material/radio": "^0.23.0",
     "@material/ripple": "^0.23.0",
     "@material/rtl": "^0.1.8",
