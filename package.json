@@ -45,7 +45,7 @@
     "@material/fab": "^0.5.1",
     "@material/form-field": "^0.2.16",
     "@material/grid-list": "^0.2.12",
-    "@material/icon-toggle": "^0.1.21",
+    "@material/icon-toggle": "^0.23.0",
     "@material/layout-grid": "^0.23.0",
     "@material/linear-progress": "^0.1.10",
     "@material/list": "^0.23.0",
