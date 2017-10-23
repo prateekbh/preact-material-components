@@ -64,36 +64,36 @@ export default class FabPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <Fab>
-          <Icon>favorite_border</Icon>
+          <Fab.Icon>favorite_border</Fab.Icon>
         </Fab>
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Fab><Icon>favorite_border</Icon></Fab>`}
+              {`<Fab><Fab.Icon>favorite_border</Fab.Icon></Fab>`}
             </code>
           </CodeBlock>
         </div>
 
         <Fab ripple={true}>
-          <Icon>favorite_border</Icon>
+          <Fab.Icon>favorite_border</Fab.Icon>
         </Fab>
 
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Fab ripple={true}><Icon>favorite_border</Icon></Fab>`}
+              {`<Fab ripple={true}><Fab.Icon>favorite_border</Fab.Icon></Fab>`}
             </code>
           </CodeBlock>
         </div>
 
         <Fab mini={true}>
-          <Icon>favorite_border</Icon>
+          <Fab.Icon>favorite_border</Fab.Icon>
         </Fab>
 
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Fab mini={true}><Icon>favorite_border</Icon></Fab>`}
+              {`<Fab mini={true}><Fab.Icon>favorite_border</Fab.Icon></Fab>`}
             </code>
           </CodeBlock>
         </div>
@@ -106,13 +106,13 @@ export default class FabPage extends Component {
             });
           }}
         >
-          <Icon>directions_run</Icon>
+          <Fab.Icon>directions_run</Fab.Icon>
         </Fab>
 
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Fab exited><Icon>directions_run</Icon></Fab>`}
+              {`<Fab exited><Fab.Icon>directions_run</Fab.Icon></Fab>`}
             </code>
           </CodeBlock>
         </div>
