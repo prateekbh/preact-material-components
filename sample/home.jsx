@@ -146,7 +146,20 @@ export default class Home extends Component {
 
         <div>
           <div className="mdc-form-field">
+            <Button
+              onClick={() => {
+                this.setState({
+                  checkIt: true
+                });
+              }}
+            >
+              Check
+            </Button>
             <Checkbox
+              checked={this.state.checkIt || false}
+              onChange={e => {
+                console.log("changed", e);
+              }}
               ref={inp => {
                 this.inp = inp;
               }}
