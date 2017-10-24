@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import List from 'preact-material-components/List';
+import Radio from 'preact-material-components/Radio';
 import FormField from 'preact-material-components/FormField';
 import 'preact-material-components/FormField/style.css';
 import 'preact-material-components/List/style.css';
