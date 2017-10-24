@@ -79,7 +79,7 @@ class ToolbarIcon extends MaterialComponent {
     super();
     this.componentName = "toolbar__icon";
     if (props.menu) {
-      this.componentName += "-menu";
+      this.componentName += "-menu-icon";
     }
   }
   materialDom(props) {
