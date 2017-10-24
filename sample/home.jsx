@@ -31,7 +31,8 @@ export default class Home extends Component {
       chosenOption: 2,
       fabExited: false,
       drawerOpen: false,
-      menuOpened: false
+      menuOpened: false,
+      progress: 0.2
     };
   }
   render() {
@@ -212,7 +213,16 @@ export default class Home extends Component {
           </Dialog.Footer>
         </Dialog>
 
-        <LinearProgress indeterminate={true} accent={true} />
+        <Button
+          onClick={() => {
+            this.setState({
+              progress: 0.5
+            });
+          }}
+        >
+          Set half progress
+        </Button>
+        <LinearProgress progress={this.state.progress} accent={true} />
 
         <Select
           hintText="Select an option"
