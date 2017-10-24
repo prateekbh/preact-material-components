@@ -2,6 +2,14 @@ import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCCheckbox } from "@material/checkbox/";
 
+/*
+ * Default props for check box
+ */
+const defaultProps = {
+  checked: false,
+  indeterminate: false
+};
+
 /**
  */
 export default class Checkbox extends MaterialComponent {
@@ -12,9 +20,13 @@ export default class Checkbox extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = new MDCCheckbox(this.control);
+    toggleCheckbox(defaultProps, this.props, this.MDComponent);
   }
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    toggleCheckbox(this.props, nextProps, this.MDComponent);
   }
   materialDom(allprops) {
     const { className, ...props } = allprops;
@@ -48,5 +60,26 @@ export default class Checkbox extends MaterialComponent {
         </div>
       </div>
     );
+  }
+}
+
+/*
+ * Function to add declarative opening/closing to drawer
+ */
+function toggleCheckbox(oldprops, newprops, cbox) {
+  if (
+    "checked" in oldprops &&
+    "checked" in newprops &&
+    oldprops.checked !== newprops.checked
+  ) {
+    cbox.checked = newprops.checked;
+  }
+
+  if (
+    "indeterminate" in oldprops &&
+    "indeterminate" in newprops &&
+    oldprops.indeterminate !== newprops.indeterminate
+  ) {
+    cbox.indeterminate = newprops.indeterminate;
   }
 }
