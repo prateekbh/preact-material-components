@@ -9,7 +9,7 @@ export default class Slider extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "slider";
-    this._mdcProps = [];
+    this._mdcProps = ["discrete"];
     this._onChange = this._onChange.bind(this);
     this._onInput = this._onInput.bind(this);
   }
@@ -66,6 +66,11 @@ export default class Slider extends MaterialComponent {
           <div class="mdc-slider__track" />
         </div>
         <div class="mdc-slider__thumb-container">
+          {allprops.discrete && (
+            <div class="mdc-slider__pin">
+              <span class="mdc-slider__pin-value-marker" />
+            </div>
+          )}
           <svg class="mdc-slider__thumb" width="21" height="21">
             <circle cx="10.5" cy="10.5" r="7.875" />
           </svg>
