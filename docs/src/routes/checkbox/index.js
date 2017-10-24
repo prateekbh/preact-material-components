@@ -23,7 +23,20 @@ export default class CheckboxPage extends Component {
     this.propsTable = [
       {
         component: "Checkbox",
-        props: []
+        props: [
+          {
+            name: "disabled",
+            description: "This makes the checkbox disabled"
+          },
+          {
+            name: "checked",
+            description: "This makes the checkbox checked"
+          },
+          {
+            name: "indeterminate",
+            description: "This makes the checkbox indeterminate"
+          }
+        ]
       }
     ];
   }
@@ -68,6 +81,20 @@ export default class CheckboxPage extends Component {
         >
           Make indeterminate
         </Button>
+
+        <div className="mdc-typography--title">Checked </div>
+        <Formfield>
+          <Checkbox
+            id="basic-checkbox2"
+            checked={true}
+            ref={cb => {
+              this.cb = cb;
+            }}
+          />
+          <label for="basic-checkbox2" id="basic-checkbox2-label">
+            This is checked checkbox
+          </label>
+        </Formfield>
       </div>
     );
   }
