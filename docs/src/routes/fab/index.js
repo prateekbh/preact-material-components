@@ -3,7 +3,6 @@ import { h, Component } from "preact";
 
 // Material Components
 import Fab from "preact-material-components/Fab";
-import Icon from "preact-material-components/Icon";
 
 // Components
 import ComponentTable from "../../components/component-table";
