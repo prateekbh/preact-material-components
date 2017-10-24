@@ -15,9 +15,13 @@ export default class LinearProgress extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = new MDCLinearProgress(this.control);
+    updateProgress(this.props, this.MDComponent);
   }
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    updateProgress(nextProps, this.MDComponent);
   }
   materialDom(props) {
     return (
@@ -36,5 +40,11 @@ export default class LinearProgress extends MaterialComponent {
         </div>
       </div>
     );
+  }
+}
+
+function updateProgress(props, progressBar) {
+  if (!props.indeterminate && props.progress) {
+    progressBar.progress = props.progress;
   }
 }
