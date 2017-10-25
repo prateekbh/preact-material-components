@@ -1,5 +1,5 @@
 // Components
-import Home from "./components/app";
+import App from "./components/app";
 
 // Material Components
 import "preact-material-components/Typography/style.css";
@@ -9,4 +9,4 @@ import "preact-material-components/Theme/style.css";
 import "./style";
 
 // Export
-export default Home;
+export default App;
