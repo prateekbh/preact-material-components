@@ -66,7 +66,7 @@ export default class Slider extends MaterialComponent {
           <div class="mdc-slider__track" />
         </div>
         <div class="mdc-slider__thumb-container">
-          {allprops.discrete && (
+          {props.discrete && (
             <div class="mdc-slider__pin">
               <span class="mdc-slider__pin-value-marker" />
             </div>
