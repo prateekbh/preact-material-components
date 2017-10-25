@@ -38,17 +38,19 @@
     "classnames": "^2.2.5",
     "eslint": "^4.6.1",
     "eslint-config-prettier": "^2.4.0",
+    "eslint-config-synacor": "^1.1.0",
     "eslint-plugin-prettier": "^2.2.0",
     "highlight.js": "^9.12.0",
     "if-env": "^1.0.0",
     "node-sass": "^4.5.3",
-    "preact": "^8.2.1",
-    "preact-cli": "^2.0.0",
+    "preact-cli": "^2.0.2",
     "preact-material-components": "^1.2.3",
     "prettier": "^1.6.1",
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
-    "@webpack-blocks/webpack2": "^0.4.0"
+    "preact": "^8.2.1",
+    "preact-compat": "^3.17.0",
+    "preact-router": "^2.5.5"
   }
 }
