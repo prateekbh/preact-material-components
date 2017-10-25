@@ -43,9 +43,12 @@
     "if-env": "^1.0.0",
     "node-sass": "^4.5.3",
     "preact": "^8.2.1",
-    "preact-cli": "^1.4.1",
+    "preact-cli": "^2.0.0",
     "preact-material-components": "^1.2.1",
     "prettier": "^1.6.1",
     "sass-loader": "^6.0.6"
+  },
+  "dependencies": {
+    "@webpack-blocks/webpack2": "^0.4.0"
   }
 }

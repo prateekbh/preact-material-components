@@ -179,6 +179,26 @@ export default class Home extends Component {
           <label for="rd">Radio Box</label>
         </div>
 
+        <div className="mdc-form-field">
+          <Radio
+            id="rd1"
+            name="rbox"
+            checked={true}
+            ref={radio => (this.radio = radio)}
+          />{" "}
+          <label for="rd1">Radio Box2</label>
+        </div>
+
+        <div className="mdc-form-field">
+          <Radio
+            id="rd2"
+            name="rbox"
+            checked={true}
+            ref={radio => (this.radio = radio)}
+          />{" "}
+          <label for="rd2">Radio Box3</label>
+        </div>
+
         <Textfield label="hello" fullwidth required />
 
         <LayoutGrid>
