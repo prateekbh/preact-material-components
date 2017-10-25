@@ -356,6 +356,7 @@ export default class Home extends Component {
         </Menu.Anchor>
 
         <Slider
+          discrete
           disabled={false}
           min={0}
           max={100}
