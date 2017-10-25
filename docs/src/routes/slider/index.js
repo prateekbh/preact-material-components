@@ -22,27 +22,31 @@ export default class SliderPage extends Component {
         props: [
           {
             name: "disabled",
-            description: "tells if the slider is disabled"
+            description: "Tells if the slider is disabled."
           },
           {
             name: "min",
             value: "number",
-            description: "tells minimum value of the slider"
+            description: "Tells minimum value of the slider."
           },
           {
             name: "max",
             value: "number",
-            description: "tells maximum value of the slider"
+            description: "Tells maximum value of the slider."
           },
           {
             name: "step",
             value: "number",
-            description: "tells step/jump of the slider"
+            description: "Tells step/jump of the slider."
           },
           {
             name: "value",
             value: "number",
-            description: "tells current value of the slider"
+            description: "Tells current value of the slider."
+          },
+          {
+            name: "discrete",
+            description: "Tells if the slider is discrete."
           }
         ]
       }
@@ -94,6 +98,10 @@ export default class SliderPage extends Component {
         <div className="mdc-typography--title">Step 2, Max 20, Value 10 </div>
         <div className="slider-container">
           <Slider step={2} value={10} max={20} />
+        </div>
+        <div className="mdc-typography--title">Discrete </div>
+        <div className="slider-container">
+          <Slider step={2} value={10} max={20} discrete />
         </div>
       </div>
     );

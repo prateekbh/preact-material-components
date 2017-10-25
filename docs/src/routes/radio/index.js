@@ -22,7 +22,11 @@ export default class RadioPage extends Component {
         props: [
           {
             name: "checked",
-            description: "This makes the checkbox checked"
+            description: "This makes the Radio button checked."
+          },
+          {
+            name: "disabled",
+            description: "This makes the Radio button disabled."
           }
         ]
       }
