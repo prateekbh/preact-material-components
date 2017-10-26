@@ -19,7 +19,16 @@ export default class RadioPage extends Component {
     this.propsTable = [
       {
         component: "Radio",
-        props: []
+        props: [
+          {
+            name: "checked",
+            description: "This makes the Radio button checked."
+          },
+          {
+            name: "disabled",
+            description: "This makes the Radio button disabled."
+          }
+        ]
       }
     ];
   }
