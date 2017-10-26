@@ -38,7 +38,6 @@
     "classnames": "^2.2.5",
     "eslint": "^4.6.1",
     "eslint-config-prettier": "^2.4.0",
-    "eslint-config-synacor": "^1.1.0",
     "eslint-plugin-prettier": "^2.2.0",
     "highlight.js": "^9.12.0",
     "if-env": "^1.0.0",
@@ -50,7 +49,6 @@
   },
   "dependencies": {
     "preact": "^8.2.1",
-    "preact-compat": "^3.17.0",
     "preact-router": "^2.5.5"
   }
 }
