@@ -45,7 +45,8 @@
     "preact-cli": "^2.0.2",
     "preact-material-components": "^1.2.3",
     "prettier": "^1.6.1",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.8.1"
   },
   "dependencies": {
     "preact": "^8.2.1",
