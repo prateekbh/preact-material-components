@@ -92,6 +92,10 @@ class TextfieldInput extends MaterialComponent {
   }
 }
 
+const defaultProps = {
+  valid: true
+};
+
 /**
  * @prop fullwidth = false
  * @prop multiline = false
@@ -115,7 +119,7 @@ class Textfield extends Component {
   }
 
   componentDidMount() {
-    this._setInvalid(this.props, nextProps, this.MDComponent);
+    this._setInvalid(defaultProps, this.props, this.MDComponent);
     this.setState({
       showFloatingLabel: true
     });
