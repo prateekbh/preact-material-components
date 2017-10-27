@@ -31,6 +31,10 @@ class Label extends MaterialComponent {
   }
 }
 
+const defaultProps = {
+  valid: true
+};
+
 /**
  * @prop fullwidth = false
  * @prop multiline = false
@@ -61,6 +65,9 @@ class TextfieldInput extends MaterialComponent {
         setValid(defaultProps, this.props, this.MDComponent);
       }
     );
+  }
+  componentWillUpdate(nextProps) {
+    setValid(this.props, nextProps, this.MDComponent);
   }
   componentWillUnmount() {
     this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
@@ -93,10 +100,6 @@ class TextfieldInput extends MaterialComponent {
   }
 }
 
-const defaultProps = {
-  valid: true
-};
-
 /**
  * @prop fullwidth = false
  * @prop multiline = false
@@ -123,10 +126,6 @@ class Textfield extends Component {
     this.setState({
       showFloatingLabel: true
     });
-  }
-
-  componentWillUpdate(nextProps) {
-    setValid(this.props, nextProps, this.MDComponent);
   }
 
   static uid() {
