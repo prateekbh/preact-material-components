@@ -91,9 +91,9 @@ class TextfieldInput extends MaterialComponent {
           />
         )}
         {props.label &&
-          this.state.showFloatingLabel && (
-            <Label for={props.id}>{props.label}</Label>
-          )}
+        this.state.showFloatingLabel && (
+          <Label for={props.id}>{props.label}</Label>
+        )}
         {props.multiline ? "" : <div class="mdc-textfield__bottom-line" />}
       </div>
     );
@@ -157,9 +157,9 @@ class Textfield extends Component {
     return showDiv ? (
       <div className={className}>
         {props.label &&
-          !showFloatingLabel && (
-            <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
-          )}
+        !showFloatingLabel && (
+          <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
+        )}
         <TextfieldInput
           {...props}
           onInit={MDComponent => {
