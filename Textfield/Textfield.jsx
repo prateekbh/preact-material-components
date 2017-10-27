@@ -115,6 +115,7 @@ class Textfield extends Component {
   }
 
   componentDidMount() {
+    this._setInvalid(this.props, nextProps, this.MDComponent);
     this.setState({
       showFloatingLabel: true
     });
