@@ -83,9 +83,9 @@ class TextfieldInput extends MaterialComponent {
           />
         )}
         {props.label &&
-        this.state.showFloatingLabel && (
-          <Label for={props.id}>{props.label}</Label>
-        )}
+          this.state.showFloatingLabel && (
+            <Label for={props.id}>{props.label}</Label>
+          )}
         {props.multiline ? "" : <div class="mdc-textfield__bottom-line" />}
       </div>
     );
@@ -120,6 +120,20 @@ class Textfield extends Component {
     });
   }
 
+  _setInvalid(oldprops, newprops, textfield) {
+    if (
+      "valid" in oldprops &&
+      "valid" in newprops &&
+      oldprops.valid !== newprops.valid
+    ) {
+      textfield.valid = newprops.valid;
+    }
+  }
+
+  componentWillUpdate(nextProps) {
+    this._setInvalid(this.props, nextProps, this.MDComponent);
+  }
+
   static uid() {
     if (!this.uidCounter) {
       this.uidCounter = 0;
@@ -134,6 +148,7 @@ class Textfield extends Component {
       helptextValidationMsg,
       ...props
     } = allprops;
+    console.log(allprops);
     const showDiv = props.helptext || (props.label && !showFloatingLabel);
 
     if (showDiv && !props.id) {
@@ -149,9 +164,9 @@ class Textfield extends Component {
     return showDiv ? (
       <div className={className}>
         {props.label &&
-        !showFloatingLabel && (
-          <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
-        )}
+          !showFloatingLabel && (
+            <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
+          )}
         <TextfieldInput
           {...props}
           onInit={MDComponent => {
