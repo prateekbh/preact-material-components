@@ -148,7 +148,6 @@ class Textfield extends Component {
       helptextValidationMsg,
       ...props
     } = allprops;
-    console.log(allprops);
     const showDiv = props.helptext || (props.label && !showFloatingLabel);
 
     if (showDiv && !props.id) {
