@@ -58,6 +58,7 @@ class TextfieldInput extends MaterialComponent {
       () => {
         this.MDComponent = new MDCTextfield(this.control);
         this.props.onInit && this.props.onInit(this.MDComponent);
+        setValid(defaultProps, this.props, this.MDComponent);
       }
     );
   }
@@ -119,24 +120,13 @@ class Textfield extends Component {
   }
 
   componentDidMount() {
-    this._setInvalid(defaultProps, this.props, this.MDComponent);
     this.setState({
       showFloatingLabel: true
     });
   }
 
-  _setInvalid(oldprops, newprops, textfield) {
-    if (
-      "valid" in oldprops &&
-      "valid" in newprops &&
-      oldprops.valid !== newprops.valid
-    ) {
-      textfield.valid = newprops.valid;
-    }
-  }
-
   componentWillUpdate(nextProps) {
-    this._setInvalid(this.props, nextProps, this.MDComponent);
+    setValid(this.props, nextProps, this.MDComponent);
   }
 
   static uid() {
@@ -193,6 +183,16 @@ class Textfield extends Component {
         }}
       />
     );
+  }
+}
+
+function setValid(oldprops, newprops, textfield) {
+  if (
+    "valid" in oldprops &&
+    "valid" in newprops &&
+    oldprops.valid !== newprops.valid
+  ) {
+    textfield.valid = newprops.valid;
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "preact-material-components",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist/index.js",
@@ -90,14 +90,8 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "lint-staged": {
-    "index.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "**/*.jsx": [
-      "prettier --write",
-      "git add"
-    ]
+    "index.js": ["prettier --write", "git add"],
+    "**/*.jsx": ["prettier --write", "git add"]
   },
   "pre-commit": "lint-staged"
 }
