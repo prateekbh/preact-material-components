@@ -40,7 +40,7 @@
     "@material/card": "^0.2.9",
     "@material/checkbox": "^0.23.0",
     "@material/dialog": "^0.23.0",
-    "@material/drawer": "^0.5.8",
+    "@material/drawer": "^0.24.0",
     "@material/elevation": "^0.1.12",
     "@material/fab": "^0.23.0",
     "@material/form-field": "^0.23.0",
