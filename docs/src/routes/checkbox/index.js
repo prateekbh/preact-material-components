@@ -15,6 +15,9 @@ import "./style";
 
 // Samples
 import sample from "./sample.txt";
+import basicExample from "./basic-example.txt";
+import indeterminateExample from "./indeterminate-example.txt";
+import controlledExample from "./controlled-example.txt";
 
 // Class
 export default class CheckboxPage extends Component {
@@ -69,18 +72,7 @@ export default class CheckboxPage extends Component {
           <label for="basic-checkbox">Basic checkbox</label>
         </Formfield>
         <CodeBlock>
-          <code class="lang-html">
-            {`
-<Formfield>
-  <Checkbox
-    id="basic-checkbox"
-  />
-  <label for="basic-checkbox">
-    Basic checkbox
-  </label>
-</Formfield>
-        `}
-          </code>
+          <code class="lang-html">{basicExample}</code>
         </CodeBlock>
 
         <div className="mdc-typography--title">Indeterminate Checkbox </div>
@@ -89,46 +81,16 @@ export default class CheckboxPage extends Component {
           <label for="inderminate-checkbox">Indeterminate checkbox</label>
         </Formfield>
         <CodeBlock>
-          <code class="lang-html">
-            {`
-<Formfield>
-  <Checkbox
-    id="indeterminate-checkbox"
-    indeterminate={true}
-  />
-  <label for="indeterminate-checkbox">
-    Indeterminate checkbox
-  </label>
-</Formfield>
-        `}
-          </code>
+          <code class="lang-html">{indeterminateExample}</code>
         </CodeBlock>
 
         <div className="mdc-typography--title">Checked </div>
         <Formfield>
-          <Checkbox
-            id="controlled-checkbox"
-            checked={true}
-            ref={cb => {
-              this.cb = cb;
-            }}
-          />
+          <Checkbox id="controlled-checkbox" checked={true} />
           <label for="controlled-checkbox">Controlled checkbox</label>
         </Formfield>
         <CodeBlock>
-          <code class="lang-html">
-            {`
-<Formfield>
-  <Checkbox
-    id="controlled-checkbox"
-    checked={true}
-  />
-  <label for="controlled-checkbox">
-    Controlled checkbox
-  </label>
-</Formfield>
-      `}
-          </code>
+          <code class="lang-html">{controlledExample}</code>
         </CodeBlock>
       </div>
     );
