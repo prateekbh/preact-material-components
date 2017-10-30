@@ -53,7 +53,7 @@
     "@material/radio": "^0.23.0",
     "@material/ripple": "^0.23.0",
     "@material/rtl": "^0.1.8",
-    "@material/select": "^0.23.0",
+    "@material/select": "^0.24.0",
     "@material/selection-control": "^0.23.0",
     "@material/slider": "^0.23.0",
     "@material/snackbar": "^0.4.0",
