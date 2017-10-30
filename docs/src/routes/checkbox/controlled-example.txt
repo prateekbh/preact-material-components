@@ -1,0 +1,9 @@
+<Formfield>
+  <Checkbox
+    id="controlled-checkbox"
+    checked={true}
+  />
+  <label for="controlled-checkbox">
+    Controlled checkbox
+  </label>
+</Formfield>
