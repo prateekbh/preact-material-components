@@ -31,6 +31,10 @@ class Label extends MaterialComponent {
   }
 }
 
+const defaultProps = {
+  valid: true
+};
+
 /**
  * @prop fullwidth = false
  * @prop multiline = false
@@ -58,8 +62,12 @@ class TextfieldInput extends MaterialComponent {
       () => {
         this.MDComponent = new MDCTextfield(this.control);
         this.props.onInit && this.props.onInit(this.MDComponent);
+        setValid(defaultProps, this.props, this.MDComponent);
       }
     );
+  }
+  componentWillUpdate(nextProps) {
+    setValid(this.props, nextProps, this.MDComponent);
   }
   componentWillUnmount() {
     this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
@@ -174,6 +182,16 @@ class Textfield extends Component {
         }}
       />
     );
+  }
+}
+
+function setValid(oldprops, newprops, textfield) {
+  if (
+    "valid" in oldprops &&
+    "valid" in newprops &&
+    oldprops.valid !== newprops.valid
+  ) {
+    textfield.valid = newprops.valid;
   }
 }
 
