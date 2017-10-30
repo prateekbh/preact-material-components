@@ -39,7 +39,7 @@ export default class GridListPage extends Component {
               "position <GridList.IconTile> at beginning or end of <GridList.SecondaryTile>"
           },
           {
-            name: "aspect-ratio",
+            name: "tile-aspect",
             value: "1x1, 16x9, 2x3, 3x2, 4x3, 3x4",
             description: "aspect ratio for <GridList.PrimaryTile>"
           }
