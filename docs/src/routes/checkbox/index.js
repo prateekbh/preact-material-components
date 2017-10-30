@@ -62,39 +62,74 @@ export default class CheckboxPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
+
+        <div className="mdc-typography--title">Basic Checkbox </div>
         <Formfield>
-          <Checkbox
-            id="basic-checkbox"
-            ref={cb => {
-              this.cb = cb;
-            }}
-          />
-          <label for="basic-checkbox" id="basic-checkbox-label">
-            This is my checkbox
-          </label>
+          <Checkbox id="basic-checkbox" />
+          <label for="basic-checkbox">Basic checkbox</label>
         </Formfield>
-        <Button
-          raised={true}
-          onClick={() => {
-            this.cb.MDComponent.indeterminate = true;
-          }}
-        >
-          Make indeterminate
-        </Button>
+        <CodeBlock>
+          <code class="lang-html">
+            {`
+<Formfield>
+  <Checkbox
+    id="basic-checkbox"
+  />
+  <label for="basic-checkbox">
+    Basic checkbox
+  </label>
+</Formfield>
+        `}
+          </code>
+        </CodeBlock>
+
+        <div className="mdc-typography--title">Indeterminate Checkbox </div>
+        <Formfield>
+          <Checkbox id="inderminate-checkbox" indeterminate={true} />
+          <label for="inderminate-checkbox">Indeterminate checkbox</label>
+        </Formfield>
+        <CodeBlock>
+          <code class="lang-html">
+            {`
+<Formfield>
+  <Checkbox
+    id="indeterminate-checkbox"
+    indeterminate={true}
+  />
+  <label for="indeterminate-checkbox">
+    Indeterminate checkbox
+  </label>
+</Formfield>
+        `}
+          </code>
+        </CodeBlock>
 
         <div className="mdc-typography--title">Checked </div>
         <Formfield>
           <Checkbox
-            id="basic-checkbox2"
+            id="controlled-checkbox"
             checked={true}
             ref={cb => {
               this.cb = cb;
             }}
           />
-          <label for="basic-checkbox2" id="basic-checkbox2-label">
-            This is checked checkbox
-          </label>
+          <label for="controlled-checkbox">Controlled checkbox</label>
         </Formfield>
+        <CodeBlock>
+          <code class="lang-html">
+            {`
+<Formfield>
+  <Checkbox
+    id="controlled-checkbox"
+    checked={true}
+  />
+  <label for="controlled-checkbox">
+    Controlled checkbox
+  </label>
+</Formfield>
+      `}
+          </code>
+        </CodeBlock>
       </div>
     );
   }
