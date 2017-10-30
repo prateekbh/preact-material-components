@@ -1,0 +1,46 @@
+import { h, Component } from "preact";
+
+class ControlledRadioExample extends Component {
+  getInitialState() {
+    return { 
+      options: [
+        { name: "Radio 1", checked: false },
+        { name: "Radio 2", checked: false },
+        { name: "Radio 3", checked: false }
+      ]
+    };
+  }
+
+  onChange(i) {
+    this.setState(prevState => {
+      var updatedState = prevState;
+      updatedState.options[i].checked = true;
+
+      this.setState({
+        options: updatedState
+      });
+    });
+  }
+  
+  render() {
+    var controlledRadioElements = this.state.options.map((option, i) => {
+      return (
+        <Formfield>
+          <Radio 
+            id={`radio-${i}`} 
+            name="Controlled Options" 
+            checked={option.checked}
+            onChange={this.onChange.bind(undefined, i)}
+          />
+          <label for={`radio-${i}`}>{option.name}</label>
+        </Formfield>
+      )
+    });
+
+    return (
+      <div>
+        {controlledRadioElements}
+      </div>
+    );
+  }
+}
