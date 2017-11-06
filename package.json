@@ -50,7 +50,7 @@
     "@material/linear-progress": "^0.1.10",
     "@material/list": "^0.23.0",
     "@material/menu": "^0.23.0",
-    "@material/radio": "^0.23.0",
+    "@material/radio": "^0.24.0",
     "@material/ripple": "^0.24.0",
     "@material/rtl": "^0.1.8",
     "@material/select": "^0.24.0",
