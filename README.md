@@ -31,19 +31,27 @@ Smaller bundles FTW!!!
 
 - 👍 form-field
 
-- 👎🏽 icon-toggle
+- 👍 icon-toggle
+
+- 👍 layout-grid
+
+- 👍 linear-progress
 
 - 👍 list
 
-- 👎🏽 menu
+- 👍 menu
 
 - 👍 radio
 
 - 👍 select
 
+- 👍 slider
+
 - 👍 snackbar
 
 - 👍 switch
+
+- 👍 tabs
 
 - 👍 textfield
 
@@ -51,5 +59,23 @@ Smaller bundles FTW!!!
 
 - 👍 toolbar
 
+## Using preact-material-components?
+- [HopOn](https://hopon-a72e9.firebaseapp.com). A progressive web game built with #preact, #babylonJs #preact-material-components
+
+- [Documentaion](https://material.preactjs.com/). Documentaion and demo site for `preact-material-components`.
+
+Let us know if you're using `preact-material-components` and love them. Send us a PR and add your projects and link right here.
+
+## FAQ
+### Error while using preact-material-components with **less**
+If you are using less-loader you have to set **strictMath: true** option in your webpack config
+```
+{
+	loader: 'less-loader',
+	options: { strictMath: true }
+}
+```
+
+
 ## Docs and Demos
-https://prateekbh.github.io/preact-material-components/
+https://material.preactjs.com/

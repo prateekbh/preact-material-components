@@ -2,6 +2,13 @@ import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCRadio } from "@material/radio/";
 
+/*
+ * Default props for check box
+ */
+const defaultProps = {
+  checked: false
+};
+
 /**
  * @prop mini = false
  * @prop plain = false
@@ -13,12 +20,19 @@ export default class Radio extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = MDCRadio.attachTo(this.control);
+    toggleRadio(defaultProps, this.props, this.MDComponent);
+  }
+  componentWillUnmount() {
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    toggleRadio(this.props, nextProps, this.MDComponent);
   }
   materialDom(allprops) {
     const { className, ...props } = allprops;
     return (
       <div
-        className={className + ""}
+        className={className}
         ref={control => {
           this.control = control;
         }}
@@ -30,5 +44,18 @@ export default class Radio extends MaterialComponent {
         </div>
       </div>
     );
+  }
+}
+
+/*
+ * Function to add declarative checked to radio
+ */
+function toggleRadio(oldprops, newprops, radio) {
+  if (
+    "checked" in oldprops &&
+    "checked" in newprops &&
+    oldprops.checked !== newprops.checked
+  ) {
+    radio.checked = newprops.checked;
   }
 }

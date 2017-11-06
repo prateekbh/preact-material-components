@@ -1,0 +1,34 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+.mdc-toolbar__title{
+	text-transform: capitalize;
+}
+
+.mdc-theme--dark{
+	background-color: #333;
+	color: #fff;
+	.grey{
+		background-color: #999;
+	}
+}
+
+.strong{
+	font-weight: 700;
+}
+
+.mdc-typography--display1:not(:first-child){
+	margin-top: 32px;
+}
+
+.hljs.lang-html{
+	display: inline-block;
+	min-width: 50%;
+	max-width: 50%;
+}

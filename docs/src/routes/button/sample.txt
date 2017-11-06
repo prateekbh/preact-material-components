@@ -1,0 +1,20 @@
+import {h, Component} from 'preact';
+import Button from 'preact-material-components/Button';
+import 'preact-material-components/Button/style.css';
+import 'preact-material-components/Theme/style.css';
+
+export default class ButtonsPage extends Component {
+  render(){
+    return (
+      <div>
+        <Button ripple raised>
+          Flat button with ripple
+        </Button>
+        <Button ripple raised className="mdc-theme--primary-bg">
+          Primary background button
+        </Button>
+        <Button href="/">This button will be rendered as an anchor</Button>
+      </div>
+    );
+  }
+}

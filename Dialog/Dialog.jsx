@@ -8,23 +8,39 @@ class Dialog extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "dialog";
+    this._onAccept = this._onAccept.bind(this);
+    this._onCancel = this._onCancel.bind(this);
   }
   componentDidMount() {
     this.MDComponent = new MDCDialog(this.control);
+    this.MDComponent.listen("MDCDialog:accept", this._onAccept);
+    this.MDComponent.listen("MDCDialog:cancel", this._onCancel);
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCDialog:accept", this._onAccept);
+    this.MDComponent.unlisten("MDCDialog:cancel", this._onCancel);
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  _onAccept(e) {
+    if (this.props.onAccept) {
+      this.props.onAccept(e);
+    }
+  }
+  _onCancel(e) {
+    if (this.props.onCancel) {
+      this.props.onCancel(e);
+    }
   }
   materialDom(props) {
     return (
       <aside
-        style="visibility:hidden"
         role="alertdialog"
         ref={control => {
           this.control = control;
         }}
         {...props}
       >
-        <div className="mdc-dialog__surface">
-          {props.children}
-        </div>
+        <div className="mdc-dialog__surface">{props.children}</div>
         <div className="mdc-dialog__backdrop" />
       </aside>
     );
@@ -39,9 +55,7 @@ class DialogHeader extends MaterialComponent {
   materialDom(props) {
     return (
       <header {...props}>
-        <h2 className="mdc-dialog__header__title">
-          {props.children}
-        </h2>
+        <h2 className="mdc-dialog__header__title">{props.children}</h2>
       </header>
     );
   }
@@ -57,11 +71,7 @@ class DialogBody extends MaterialComponent {
     this._mdcProps = ["scrollable"];
   }
   materialDom(props) {
-    return (
-      <section {...props}>
-        {props.children}
-      </section>
-    );
+    return <section {...props}>{props.children}</section>;
   }
 }
 
@@ -71,11 +81,7 @@ class DialogFooter extends MaterialComponent {
     this.componentName = "dialog__footer";
   }
   materialDom(props) {
-    return (
-      <footer {...props}>
-        {props.children}
-      </footer>
-    );
+    return <footer {...props}>{props.children}</footer>;
   }
 }
 

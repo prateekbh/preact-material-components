@@ -1,0 +1,48 @@
+import {h, Component} from 'preact';
+import Drawer from 'preact-material-components/Drawer';
+import List from 'preact-material-components/List';
+import Button from 'preact-material-components/Button';
+import 'preact-material-components/Drawer/style.css';
+import 'preact-material-components/List/style.css';
+import 'preact-material-components/Button/style.css';
+
+export default class DrawerPage extends Component {
+  constructor(){
+    super();
+    this.state = {
+      drawerOpened = false
+    };
+  }
+  render(){
+    return (
+      <div>
+        <Button onClick={() => {
+            this.setState({
+              drawerOpened: !this.state.drawerOpened
+            })
+          }}
+        >
+          Open Drawer
+        </Button>
+        <Drawer.TemporaryDrawer open={this.state.drawerOpened} onClose={() => {
+            this.setState({
+              drawerOpened: false
+            });
+          }}
+        >
+          <Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
+            Components
+          </Drawer.TemporaryDrawerHeader>
+          <Drawer.TemporaryDrawerContent>
+            <List>
+              <List.LinkItem>
+                  <List.ItemIcon>home</List.ItemIcon>
+                  Home
+              </List.LinkItem>
+            </List>
+          </Drawer.TemporaryDrawerContent>
+        </Drawer.TemporaryDrawer>
+      </div>
+    );
+  }
+}

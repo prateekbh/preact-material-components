@@ -1,6 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Button from "../Button";
+
 class Card extends MaterialComponent {
   constructor() {
     super();
@@ -15,11 +16,7 @@ class CardSection extends MaterialComponent {
     this.componentName = "";
   }
   materialDom(props) {
-    return (
-      <section {...props}>
-        {props.children}
-      </section>
-    );
+    return <section {...props}>{props.children}</section>;
   }
 }
 
@@ -79,11 +76,7 @@ class CardTitle extends MaterialComponent {
     this._mdcProps = ["large"];
   }
   materialDom(props) {
-    return (
-      <h1 {...props}>
-        {props.children}
-      </h1>
-    );
+    return <h1 {...props}>{props.children}</h1>;
   }
 }
 
@@ -93,11 +86,29 @@ class CardSubtitle extends MaterialComponent {
     this.componentName = "card__subtitle";
   }
   materialDom(props) {
-    return (
-      <h2 {...props}>
-        {props.children}
-      </h2>
-    );
+    return <h2 {...props}>{props.children}</h2>;
+  }
+}
+
+class CardHorizontalBlock extends CardSection {
+  constructor() {
+    super();
+    this.componentName = "card__horizontal-block";
+  }
+}
+
+class CardMediaItem extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "card__media-item";
+    this._mdcProps = [];
+  }
+  materialDom(props) {
+    let className = "";
+    if (props.x) {
+      className = "mdc-card__media-item--" + props.x + "x";
+    }
+    return <img className={className} {...props} />;
   }
 }
 
@@ -108,5 +119,7 @@ Card.Action = CardAction;
 Card.Media = CardMedia;
 Card.Title = CardTitle;
 Card.Subtitle = CardSubtitle;
+Card.HorizontalBlock = CardHorizontalBlock;
+Card.MediaItem = CardMediaItem;
 
 export default Card;

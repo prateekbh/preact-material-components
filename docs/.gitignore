@@ -1,0 +1,5 @@
+# Preact-cli build
+/build
+
+# For parent .gitignore
+!/**/index.js

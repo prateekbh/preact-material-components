@@ -3,6 +3,7 @@ import {
   Button,
   Fab,
   Icon,
+  IconToggle,
   Switch,
   Snackbar,
   Checkbox,
@@ -12,26 +13,51 @@ import {
   Select,
   Elevation,
   Dialog,
+  LinearProgress,
   List,
   Drawer,
   Toolbar,
-  LayoutGrid
+  LayoutGrid,
+  Menu,
+  Tabs,
+  Slider,
+  GridList
 } from "../";
 
 export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      chosenOption: 2
+      chosenOption: 2,
+      fabExited: false,
+      drawerOpen: false,
+      menuOpened: false,
+      progress: 0.2
     };
   }
   render() {
+    const toggleOnIcon = {
+      content: "favorite",
+      label: "Remove From Favorites"
+    };
+    const toggleOffIcon = {
+      content: "favorite_border",
+      label: "Add to Favorites"
+    };
     return (
       <div>
         <Toolbar>
           <Toolbar.Row>
-            <Toolbar.Section>
-              <Toolbar.Icon>menu</Toolbar.Icon>
+            <Toolbar.Section align-start={true}>
+              <Toolbar.Icon
+                onClick={() => {
+                  this.setState({
+                    drawerOpen: !this.state.drawerOpen
+                  });
+                }}
+              >
+                menu
+              </Toolbar.Icon>
               <Toolbar.Title>Hi</Toolbar.Title>
             </Toolbar.Section>
           </Toolbar.Row>
@@ -40,6 +66,16 @@ export default class Home extends Component {
         <Drawer.TemporaryDrawer
           ref={drawer => {
             this.drawer = drawer;
+          }}
+          open={this.state.drawerOpen}
+          onOpen={() => {
+            console.log("open");
+          }}
+          onClose={() => {
+            this.setState({
+              drawerOpen: false
+            });
+            console.log("Closed");
           }}
         >
           <Drawer.TemporaryDrawerHeader>
@@ -60,11 +96,47 @@ export default class Home extends Component {
           hi
         </Button>
 
+        <Button
+          raised={true}
+          accent={true}
+          ripple={true}
+          onClick={e => {
+            console.log(this.dlg.MDComponent);
+            this.dlg.MDComponent.show();
+          }}
+        >
+          <Button.Icon>favorite_border</Button.Icon>
+          Open Dialog
+        </Button>
+
         <div>
-          <Fab mini={true} ripple={true}>
-            <Icon>share</Icon>
+          <Fab
+            mini={true}
+            onClick={() => {
+              this.setState({
+                fabExited: true
+              });
+            }}
+          >
+            <Fab.Icon>share</Fab.Icon>
+          </Fab>
+          <Fab exited={this.state.fabExited} ripple={true}>
+            <Fab.Icon>share</Fab.Icon>
           </Fab>
           <Switch />
+        </div>
+
+        <div>
+          <IconToggle
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            aria-label="Add to favorites"
+            data-toggle-on={toggleOnIcon}
+            data-toggle-off={toggleOffIcon}
+          >
+            favorite_border
+          </IconToggle>
         </div>
 
         <Snackbar
@@ -75,7 +147,26 @@ export default class Home extends Component {
 
         <div>
           <div className="mdc-form-field">
+            <Button
+              onClick={() => {
+                this.setState({
+                  checkIt: true
+                });
+              }}
+            >
+              Check
+            </Button>
             <Checkbox
+              checked={this.state.checkIt || false}
+              onChange={e => {
+                console.log("changed", e);
+              }}
+              ref={inp => {
+                this.inp = inp;
+              }}
+            />
+            <Checkbox
+              disabled={true}
               ref={inp => {
                 this.inp = inp;
               }}
@@ -84,12 +175,31 @@ export default class Home extends Component {
         </div>
 
         <div className="mdc-form-field">
-          <Radio id="rd" ref={radio => (this.radio = radio)} />
-          {" "}
+          <Radio id="rd" ref={radio => (this.radio = radio)} />{" "}
           <label for="rd">Radio Box</label>
         </div>
 
-        <Textfield label="hello" fullwidth={true} required />
+        <div className="mdc-form-field">
+          <Radio
+            id="rd1"
+            name="rbox"
+            checked={true}
+            ref={radio => (this.radio = radio)}
+          />{" "}
+          <label for="rd1">Radio Box2</label>
+        </div>
+
+        <div className="mdc-form-field">
+          <Radio
+            id="rd2"
+            name="rbox"
+            checked={true}
+            ref={radio => (this.radio = radio)}
+          />{" "}
+          <label for="rd2">Radio Box3</label>
+        </div>
+
+        <Textfield label="hello" fullwidth required />
 
         <LayoutGrid>
           <LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
@@ -108,9 +218,7 @@ export default class Home extends Component {
           </LayoutGrid.Cell>
         </LayoutGrid>
 
-        <Elevation z="9">
-          hi
-        </Elevation>
+        <Elevation z="9">hi</Elevation>
 
         <Dialog
           ref={dlg => {
@@ -125,15 +233,26 @@ export default class Home extends Component {
           </Dialog.Footer>
         </Dialog>
 
+        <Button
+          onClick={() => {
+            this.setState({
+              progress: 0.5
+            });
+          }}
+        >
+          Set half progress
+        </Button>
+        <LinearProgress progress={this.state.progress} accent={true} />
+
         <Select
           hintText="Select an option"
           ref={presel => {
             this.presel = presel;
           }}
           selectedIndex={this.state.chosenOption}
-          onChange={() => {
+          onChange={e => {
             this.setState({
-              chosenOption: this.presel.MDComponent.selectedIndex
+              chosenOption: e.selectedIndex
             });
           }}
         >
@@ -142,10 +261,35 @@ export default class Home extends Component {
           <Select.Item>opt3</Select.Item>
           <Select.Item>opt4</Select.Item>
         </Select>
-
+        <div>
+          <Tabs indicator-accent={true}>
+            <Tabs.Tab>tab1</Tabs.Tab>
+            <Tabs.Tab active={true}>tab2</Tabs.Tab>
+            <Tabs.Tab>tab3</Tabs.Tab>
+          </Tabs>
+        </div>
+        <div style="margin: 32px 0">
+          <Tabs.TabBarScroller>
+            <Tabs scroller={true}>
+              <Tabs.Tab>tab1</Tabs.Tab>
+              <Tabs.Tab active={true}>tab2</Tabs.Tab>
+              <Tabs.Tab>tab3</Tabs.Tab>
+              <Tabs.Tab>tab4</Tabs.Tab>
+              <Tabs.Tab>tab5</Tabs.Tab>
+              <Tabs.Tab>tab6</Tabs.Tab>
+              <Tabs.Tab>tab7</Tabs.Tab>
+              <Tabs.Tab>tab7</Tabs.Tab>
+              <Tabs.Tab>tab9</Tabs.Tab>
+              <Tabs.Tab>tab10</Tabs.Tab>
+              <Tabs.Tab>tab11</Tabs.Tab>
+            </Tabs>
+          </Tabs.TabBarScroller>
+        </div>
         <div>
           <Select basic={true}>
-            <option value="" default selected>Pick a food</option>
+            <option value="" default selected>
+              Pick a food
+            </option>
             <option value="grains">Bread, Cereal, Rice, and Pasta</option>
             <option value="vegetables">Vegetables</option>
             <optgroup label="Fruits">
@@ -183,8 +327,43 @@ export default class Home extends Component {
             Item2
           </List.LinkItem>
           <List.Divider />
-          <List.LinkItem ripple={true} href="#">Item3</List.LinkItem>
+          <List.LinkItem ripple={true} href="#">
+            Item3
+          </List.LinkItem>
         </List>
+        <Menu.Anchor>
+          <Button
+            onClick={e => {
+              this.setState({
+                menuOpened: true
+              });
+            }}
+          >
+            Click for menu
+          </Button>
+          <Menu
+            open={this.state.menuOpened}
+            onMenuClosed={() => {
+              this.setState({
+                menuOpened: false
+              });
+            }}
+          >
+            <Menu.Item>Hello1</Menu.Item>
+            <Menu.Item>Hello2</Menu.Item>
+            <Menu.Item>Hello3</Menu.Item>
+          </Menu>
+        </Menu.Anchor>
+
+        <Slider
+          discrete
+          disabled={false}
+          min={0}
+          max={100}
+          value={1}
+          onChange={v => console.log("change:", v)}
+          onInput={v => console.log("input:", v)}
+        />
       </div>
     );
   }

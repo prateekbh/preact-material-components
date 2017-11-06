@@ -1,0 +1,35 @@
+import {h, Component} from 'preact';
+import Card from 'preact-material-components/Card';
+import 'preact-material-components/Card/style.css';
+import 'preact-material-components/Button/style.css';
+
+export default class CardsPage extends Component {
+  render(){
+    return (
+      <div>
+        <Card>
+          <Card.Primary>
+            <Card.Title>Hi</Card.Title>
+            <Card.Subtitle>Let me subtitle</Card.Subtitle>
+          </Card.Primary>
+          <Card.Media className='card-media'></Card.Media>
+          <Card.Actions>
+            <Card.Action>OKAY</Card.Action>
+          </Card.Actions>
+        </Card>
+        <Card>
+          <Card.HorizontalBlock>
+            <Card.Primary>
+              <Card.Title large>Hi</Card.Title>
+              <Card.Subtitle>Let me subtitle</Card.Subtitle>
+            </Card.Primary>
+            <Card.MediaItem src="some-picture.jpg" x="1dot5" />
+          </Card.HorizontalBlock>
+          <Card.Actions>
+            <Card.Action>OKAY</Card.Action>
+          </Card.Actions>
+        </Card>
+      </div>
+    );
+  }
+}

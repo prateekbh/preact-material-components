@@ -1,0 +1,15 @@
+import {h, Component} from 'preact';
+import Checkbox from 'preact-material-components/Checkbox';
+import FormField from 'preact-material-components/FormField';
+import 'preact-material-components/Checkbox/style.css';
+
+export default class CheckboxPage extends Component {
+  render(){
+    return (
+      <FormField>
+        <Checkbox id="basic-checkbox" ref={cb=>{this.cb=cb;}}/>
+        <label for="basic-checkbox" id="basic-checkbox-label">This is my checkbox</label>
+      </FormField>
+    );
+  }
+}

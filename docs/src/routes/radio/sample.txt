@@ -1,0 +1,18 @@
+import {h, Component} from 'preact';
+import Radio from 'preact-material-components/Radio';
+import FormField from 'preact-material-components/FormField';
+import 'preact-material-components/FormField/style.css';
+import 'preact-material-components/List/style.css';
+
+export default class ListPage extends Component {
+  render(){
+    return (
+      <div>
+        <FormField>
+          <Radio id="r1" name='opts'></Radio>
+          <label for="r1">Radio 1</label>
+        </FormField>
+      </div>
+    );
+  }
+}
