@@ -3,7 +3,11 @@
 		background-color: #ddd;
 		margin-bottom: 32px;
     height: 200px;
-	}
+  }
+
+  .mdc-layout-grid__inner{
+    height: 100%;
+  }
 
 	.mdc-layout-grid__cell {
 		box-sizing: border-box;
