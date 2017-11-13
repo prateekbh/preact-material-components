@@ -60,7 +60,7 @@
     "@material/switch": "^0.24.0",
     "@material/tabs": "^0.24.0",
     "@material/textfield": "^0.24.0",
-    "@material/theme": "^0.24.0",
+    "@material/theme": "^0.25.0",
     "@material/toolbar": "^0.24.0",
     "@material/typography": "^0.3.0",
     "material-components-web": "0.24.0"
