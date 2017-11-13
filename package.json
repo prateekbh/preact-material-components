@@ -39,7 +39,7 @@
     "@material/button": "^0.24.0",
     "@material/card": "^0.24.0",
     "@material/checkbox": "^0.24.0",
-    "@material/dialog": "^0.24.0",
+    "@material/dialog": "^0.25.0",
     "@material/drawer": "^0.24.0",
     "@material/elevation": "^0.1.12",
     "@material/fab": "^0.24.0",
