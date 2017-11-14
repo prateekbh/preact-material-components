@@ -2,14 +2,17 @@
 	.mdc-layout-grid {
 		background-color: #ddd;
 		margin-bottom: 32px;
-    height: 200px;
+	}
+
+	.mdc-layout-grid__inner {
+		min-height: 200px;
 	}
 
 	.mdc-layout-grid__cell {
 		box-sizing: border-box;
-    background-color: #666;
-    padding: 8px;
-    color: #fff;
-    font-size: 1.5em;
+		background-color: #666;
+		padding: 8px;
+		color: #fff;
+		font-size: 1.5em;
 	}
 }
