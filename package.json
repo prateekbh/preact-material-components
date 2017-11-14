@@ -61,7 +61,7 @@
     "@material/tabs": "^0.24.0",
     "@material/textfield": "^0.24.0",
     "@material/theme": "^0.24.0",
-    "@material/toolbar": "^0.24.0",
+    "@material/toolbar": "^0.25.0",
     "@material/typography": "^0.3.0",
     "material-components-web": "0.24.0"
   },
@@ -81,7 +81,7 @@
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-prettier": "^2.2.0",
     "glob-copy": "^0.1.0",
-    "lint-staged": "^4.0.4",
+    "lint-staged": "^5.0.0",
     "mkdirp": "^0.5.1",
     "pre-commit": "^1.2.2",
     "preact": "^8.2.5",
