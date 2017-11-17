@@ -43,12 +43,12 @@ export default class LayoutGridPage extends Component {
           {
             name: "tabletCols",
             description: "Column width of cell (tablet breakpoint).",
-            value: "[1..12]"
+            value: "[1..8]"
           },
           {
             name: "phoneCols",
             description: "Column width of cell (phone breakpoint).",
-            value: "[1..12]"
+            value: "[1..4]"
           },
           {
             name: "order",
@@ -86,7 +86,9 @@ export default class LayoutGridPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo</div>
-        <div className="mdc-typography--body">Grid of 1 column wide items</div>
+        <div className="mdc-typography--body">
+          Grid of 12, 1 column wide items
+        </div>
         <LayoutGrid>
           <LayoutGrid.Inner>
             <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
@@ -104,7 +106,9 @@ export default class LayoutGridPage extends Component {
           </LayoutGrid.Inner>
         </LayoutGrid>
 
-        <div className="mdc-typography--body">Grid of 4 column wide items</div>
+        <div className="mdc-typography--body">
+          Grid of 3, 4 column wide items
+        </div>
         <LayoutGrid>
           <LayoutGrid.Inner>
             <LayoutGrid.Cell cols="4">4</LayoutGrid.Cell>
@@ -118,8 +122,10 @@ export default class LayoutGridPage extends Component {
         </div>
         <LayoutGrid>
           <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="6">6</LayoutGrid.Cell>
             <LayoutGrid.Cell cols="4">4</LayoutGrid.Cell>
+            <LayoutGrid.Cell cols="3">3</LayoutGrid.Cell>
+            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
+            <LayoutGrid.Cell cols="2">2</LayoutGrid.Cell>
             <LayoutGrid.Cell cols="2">2</LayoutGrid.Cell>
           </LayoutGrid.Inner>
         </LayoutGrid>
@@ -146,14 +152,26 @@ export default class LayoutGridPage extends Component {
         </div>
         <LayoutGrid>
           <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="3">default</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" align="bottom">
+            <LayoutGrid.Cell phoneCols="1" tabletCols="2" cols="3">
+              default
+            </LayoutGrid.Cell>
+            <LayoutGrid.Cell
+              phoneCols="1"
+              tabletCols="2"
+              cols="3"
+              align="bottom"
+            >
               bottom
             </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" align="top">
+            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" align="top">
               top
             </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" align="middle">
+            <LayoutGrid.Cell
+              cols="3"
+              tabletCols="2"
+              phoneCols="1"
+              align="middle"
+            >
               middle
             </LayoutGrid.Cell>
           </LayoutGrid.Inner>
@@ -162,16 +180,16 @@ export default class LayoutGridPage extends Component {
         <div className="mdc-typography--body">Grid with reordered items</div>
         <LayoutGrid>
           <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="3" order="3">
+            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" order="3">
               First cell
             </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" order="1">
+            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" order="1">
               Second cell
             </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" order="4">
+            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" order="4">
               Third cell
             </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" order="2">
+            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" order="2">
               Fourth cell
             </LayoutGrid.Cell>
           </LayoutGrid.Inner>
