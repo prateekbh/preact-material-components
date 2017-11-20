@@ -45,7 +45,7 @@ const defaultProps = {
  * @prop value = ''
  * @prop label = ''
  */
-class TextfieldInput extends MaterialComponent {
+class TextFieldInput extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "text-field";
@@ -113,10 +113,10 @@ class TextfieldInput extends MaterialComponent {
  * @prop helptextPersistent = false
  * @prop helptextValidationMsg = false
  */
-class Textfield extends Component {
+class TextField extends Component {
   constructor() {
     super();
-    this.id = Textfield.uid();
+    this.id = TextField.uid();
     this.state = {
       showFloatingLabel: false
     };
@@ -160,7 +160,7 @@ class Textfield extends Component {
           !showFloatingLabel && (
             <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
           )}
-        <TextfieldInput
+        <TextFieldInput
           {...props}
           onInit={MDComponent => {
             this.MDComponent = MDComponent;
@@ -174,7 +174,7 @@ class Textfield extends Component {
         )}
       </div>
     ) : (
-      <TextfieldInput
+      <TextFieldInput
         {...props}
         className={className}
         onInit={MDComponent => {
@@ -195,6 +195,6 @@ function setValid(oldprops, newprops, textfield) {
   }
 }
 
-Textfield.Helptext = Helptext;
+TextField.Helptext = Helptext;
 
-export default Textfield;
+export default TextField;
