@@ -1,6 +1,6 @@
 import { h, Component } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCTextfield } from "@material/textfield/";
+import { MDCTextField } from "@material/textfield";
 
 /**
  * @prop persistent = false
@@ -9,7 +9,7 @@ import { MDCTextfield } from "@material/textfield/";
 class Helptext extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "textfield-helptext";
+    this.componentName = "text-field-helptext";
     this._mdcProps = ["persistent", "validation-msg"];
   }
   materialDom(props) {
@@ -24,7 +24,7 @@ class Helptext extends MaterialComponent {
 class Label extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "textfield__label";
+    this.componentName = "text-field__label";
   }
   materialDom(props) {
     return <label {...props}>{props.children}</label>;
@@ -48,7 +48,7 @@ const defaultProps = {
 class TextfieldInput extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "textfield";
+    this.componentName = "text-field";
     this._mdcProps = ["fullwidth", "multiline", "dense", "disabled", "box"];
     this.state = {
       showFloatingLabel: false
@@ -60,7 +60,7 @@ class TextfieldInput extends MaterialComponent {
         showFloatingLabel: true
       },
       () => {
-        this.MDComponent = new MDCTextfield(this.control);
+        this.MDComponent = new MDCTextField(this.control);
         this.props.onInit && this.props.onInit(this.MDComponent);
         setValid(defaultProps, this.props, this.MDComponent);
       }
@@ -76,25 +76,25 @@ class TextfieldInput extends MaterialComponent {
     let { className, ...props } = allprops;
 
     if ("value" in props && this.state.showFloatingLabel) {
-      className = [className, "mdc-textfield--upgraded"].join(" ");
+      className = [className, "mdc-text-field--upgraded"].join(" ");
     }
 
     return (
       <div className={className} ref={control => (this.control = control)}>
         {props.multiline ? (
-          <textarea className="mdc-textfield__input" {...props} />
+          <textarea className="mdc-text-field__input" {...props} />
         ) : (
           <input
             type={props.type || "text"}
-            className="mdc-textfield__input"
+            className="mdc-text-field__input"
             {...props}
           />
         )}
         {props.label &&
-        this.state.showFloatingLabel && (
-          <Label for={props.id}>{props.label}</Label>
-        )}
-        {props.multiline ? "" : <div class="mdc-textfield__bottom-line" />}
+          this.state.showFloatingLabel && (
+            <Label for={props.id}>{props.label}</Label>
+          )}
+        {props.multiline ? "" : <div class="mdc-text-field__bottom-line" />}
       </div>
     );
   }
@@ -157,9 +157,9 @@ class Textfield extends Component {
     return showDiv ? (
       <div className={className}>
         {props.label &&
-        !showFloatingLabel && (
-          <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
-        )}
+          !showFloatingLabel && (
+            <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
+          )}
         <TextfieldInput
           {...props}
           onInit={MDComponent => {
