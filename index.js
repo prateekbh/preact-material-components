@@ -6,11 +6,11 @@ import IconToggle from "./IconToggle";
 import Switch from "./Switch";
 import Snackbar from "./Snackbar";
 import Radio from "./Radio";
-import Textfield from "./Textfield";
+import TextField from "./TextField";
 import Select from "./Select";
 import Card from "./Card";
 import Elevation from "./Elevation";
-import Formfield from "./Formfield";
+import FormField from "./FormField";
 import Dialog from "./Dialog";
 import List from "./List";
 import Drawer from "./Drawer";
@@ -31,11 +31,11 @@ export {
   Icon,
   IconToggle,
   Radio,
-  Textfield,
+  TextField,
   Select,
   Card,
   Elevation,
-  Formfield,
+  FormField,
   Dialog,
   LinearProgress,
   List,
