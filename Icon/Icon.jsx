@@ -10,7 +10,7 @@ export default class Icon extends MaterialComponent {
     this.componentName = "icon";
   }
   materialDom(props) {
-    const classes = "material-icons";
+    const classes = ["material-icons"];
     if (props.className) {
       classes.push(props.className);
     }
