@@ -78,6 +78,12 @@ class TextFieldInput extends MaterialComponent {
     if ("value" in props && this.state.showFloatingLabel) {
       className = [className, "mdc-text-field--upgraded"].join(" ");
     }
+    if (props.label && props.fullwidth) {
+      console.error(
+        'Passing a "label" prop is not supported when using a "fullwidth" text field.'
+      );
+      delete props.label;
+    }
 
     return (
       <div className={className} ref={control => (this.control = control)}>
