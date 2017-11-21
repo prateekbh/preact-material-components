@@ -37,7 +37,7 @@ const defaultProps = {
 
 /**
  * @prop fullwidth = false
- * @prop multiline = false
+ * @prop textarea = false
  * @prop dense = false
  * @prop disabled = false
  * @prop box = false
@@ -49,7 +49,7 @@ class TextFieldInput extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "text-field";
-    this._mdcProps = ["fullwidth", "multiline", "dense", "disabled", "box"];
+    this._mdcProps = ["fullwidth", "textarea", "dense", "disabled", "box"];
     this.state = {
       showFloatingLabel: false
     };
@@ -81,7 +81,7 @@ class TextFieldInput extends MaterialComponent {
 
     return (
       <div className={className} ref={control => (this.control = control)}>
-        {props.multiline ? (
+        {props.textarea ? (
           <textarea className="mdc-text-field__input" {...props} />
         ) : (
           <input
@@ -94,7 +94,7 @@ class TextFieldInput extends MaterialComponent {
           this.state.showFloatingLabel && (
             <Label for={props.id}>{props.label}</Label>
           )}
-        {props.multiline ? "" : <div class="mdc-text-field__bottom-line" />}
+        {props.textarea ? "" : <div class="mdc-text-field__bottom-line" />}
       </div>
     );
   }
@@ -102,7 +102,7 @@ class TextFieldInput extends MaterialComponent {
 
 /**
  * @prop fullwidth = false
- * @prop multiline = false
+ * @prop textarea = false
  * @prop dense = false
  * @prop disabled = false
  * @prop box = false
