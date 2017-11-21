@@ -11,7 +11,7 @@ export default class LinearProgress extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "linear-progress";
-    this._mdcProps = ["indeterminate", "reversed", "accent"];
+    this._mdcProps = ["indeterminate", "reversed"];
   }
   componentDidMount() {
     this.MDComponent = new MDCLinearProgress(this.control);
