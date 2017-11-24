@@ -28,10 +28,6 @@ export default class LinearProgressPage extends Component {
             description: "Tells if the progress bar direction is reversed."
           },
           {
-            name: "accent",
-            description: "Makes the colour of the progress bar accented."
-          },
-          {
             name: "progress",
             description: "Sets the current progress of the progress bar."
           }
@@ -66,9 +62,6 @@ export default class LinearProgressPage extends Component {
 
         <div className="mdc-typography--title">Reversed </div>
         <LinearProgress reversed={true} indeterminate={true} />
-
-        <div className="mdc-typography--title">Accent </div>
-        <LinearProgress indeterminate={true} accent={true} />
 
         <div className="mdc-typography--title">Progress </div>
         <LinearProgress progress={0.8} accent={true} />

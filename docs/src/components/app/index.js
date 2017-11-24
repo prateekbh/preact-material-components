@@ -92,7 +92,7 @@ export default class Home extends Component {
         component: FabPage
       },
       {
-        text: "Formfield",
+        text: "FormField",
         link: "/component/form-field",
         component: FormFieldPage
       },
@@ -162,7 +162,7 @@ export default class Home extends Component {
         component: TabsPage
       },
       {
-        text: "Textfield",
+        text: "TextField",
         link: "/component/textfield",
         component: TextfieldPage
       },
