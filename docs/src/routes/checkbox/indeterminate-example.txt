@@ -1,0 +1,9 @@
+<Formfield>
+  <Checkbox
+    id="indeterminate-checkbox"
+    indeterminate={true}
+  />
+  <label for="indeterminate-checkbox">
+    Indeterminate checkbox
+  </label>
+</Formfield>

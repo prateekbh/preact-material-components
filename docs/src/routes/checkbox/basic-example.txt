@@ -1,0 +1,8 @@
+<Formfield>
+  <Checkbox
+    id="basic-checkbox"
+  />
+  <label for="basic-checkbox">
+    Basic checkbox
+  </label>
+</Formfield> 

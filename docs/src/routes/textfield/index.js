@@ -2,7 +2,7 @@
 import { h, Component } from "preact";
 
 // Material Components
-import Textfield from "preact-material-components/Textfield";
+import TextField from "preact-material-components/TextField";
 
 // Components
 import ComponentTable from "../../components/component-table";
@@ -12,7 +12,7 @@ import CodeBlock from "../../components/code-block";
 import sample from "./sample.txt";
 
 // Class
-export default class TextfieldPage extends Component {
+export default class TextFieldPage extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,14 +20,14 @@ export default class TextfieldPage extends Component {
     };
     this.propsTable = [
       {
-        component: "Textfield",
+        component: "TextField",
         props: [
           {
             name: "fullwidth",
             description: "Makes the textfield full width."
           },
           {
-            name: "multiline",
+            name: "textarea",
             description: "Toggles between TextArea and TextField."
           },
           {
@@ -72,16 +72,16 @@ export default class TextfieldPage extends Component {
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
           This component encapsulates{" "}
-          <span className="strong">mdc-textfield</span>. You can refer to its
+          <span className="strong">mdc-text-field</span>. You can refer to its
           documentation
-          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield">
+          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-text-field">
             {" "}
             here
           </a>.
         </div>
         <div className="mdc-typography--display1">Demo</div>
         <div className="mdc-typography--headline">Default</div>
-        <Textfield
+        <TextField
           label="Your name"
           onKeyUp={e => {
             this.setState({
@@ -90,26 +90,26 @@ export default class TextfieldPage extends Component {
           }}
         />{" "}
         Hi - {this.state.name}
-        <div className="mdc-typography--headline">Multiline</div>
-        <Textfield multiline={true} label="Textarea tag" />
+        <div className="mdc-typography--headline">Textarea</div>
+        <TextField textarea={true} label="Textarea tag" />
         <div className="mdc-typography--headline">Password</div>
-        <Textfield type="password" label="Enter a password" />
+        <TextField type="password" label="Enter a password" />
         <div className="mdc-typography--headline">With help text</div>
-        <Textfield label="Help text" helptext="This is the helptext" />
+        <TextField label="Help text" helptext="This is the helptext" />
         <div className="mdc-typography--headline">
           With persistent help text
         </div>
-        <Textfield
+        <TextField
           label="Persistent help text"
           helptext="This is the helptext"
           helptextPersistent
         />
         <div className="mdc-typography--headline">Dense</div>
-        <Textfield label="Dense" dense />
+        <TextField label="Dense" dense />
         <div className="mdc-typography--headline">Disabled</div>
-        <Textfield label="Disabled" disabled />
+        <TextField label="Disabled" disabled />
         <div className="mdc-typography--headline">Link state</div>
-        <Textfield
+        <TextField
           label="State"
           value={this.state.value}
           onInput={e => this.setState({ value: e.target.value })}

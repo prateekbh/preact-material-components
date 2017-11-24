@@ -43,11 +43,15 @@ export default class MaterialComponent extends Component {
     if (!element) {
       return "";
     }
-    element.attributes = element.attributes || {};
-    if (element.attributes.className) {
-      return this.classText + " " + element.attributes.className;
+    const attrs = (element.attributes = element.attributes || {});
+    let classText = this.classText;
+    if (attrs.class) {
+      classText += " " + attrs.class;
     }
-    return this.classText;
+    if (attrs.className && attrs.className !== attrs.class) {
+      classText += " " + attrs.className;
+    }
+    return classText;
   }
   // Components must implement this method for their specific DOM structure
   materialDom(props) {
@@ -56,7 +60,12 @@ export default class MaterialComponent extends Component {
   render() {
     this.buildClassName();
     // Fetch a VNode
-    const element = this.materialDom(this.props);
+    const componentProps = this.props;
+    if (componentProps.class) {
+      // We delete class prop here so that any sub node's class doesn't get over-ridden from this
+      delete componentProps.class;
+    }
+    const element = this.materialDom(componentProps);
     element.attributes = element.attributes || {};
     // Fix for className
     element.attributes.class = this.getClassName(element);

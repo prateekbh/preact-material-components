@@ -9,6 +9,7 @@ import List from "preact-material-components/List";
 // Components
 import ComponentTable from "../../components/component-table";
 import CodeBlock from "../../components/code-block";
+import EventsTable from "../../components/events-table";
 
 // Styles
 import "./style";
@@ -56,11 +57,22 @@ export default class DialogPage extends Component {
         ]
       }
     ];
+    this.eventsTable = [
+      {
+        name: "onAccept",
+        description: "Fired when the dialog's accept button is clicked."
+      },
+      {
+        name: "onCancel",
+        description: "Fired when the dialog's cancel button is clicked."
+      }
+    ];
   }
   render() {
     return (
       <div className="page-dialog">
         <ComponentTable data={this.propsTable} />
+        <EventsTable data={this.eventsTable} />
 
         <div className="mdc-typography--display1">Sample code </div>
         <CodeBlock>

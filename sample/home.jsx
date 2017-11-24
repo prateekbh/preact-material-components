@@ -8,7 +8,7 @@ import {
   Snackbar,
   Checkbox,
   Radio,
-  Textfield,
+  TextField,
   Card,
   Select,
   Elevation,
@@ -29,7 +29,10 @@ export default class Home extends Component {
     super();
     this.state = {
       chosenOption: 2,
-      fabExited: false
+      fabExited: false,
+      drawerOpen: false,
+      menuOpened: false,
+      progress: 0.2
     };
   }
   render() {
@@ -48,7 +51,9 @@ export default class Home extends Component {
             <Toolbar.Section align-start={true}>
               <Toolbar.Icon
                 onClick={() => {
-                  this.drawer.MDComponent.open = true;
+                  this.setState({
+                    drawerOpen: !this.state.drawerOpen
+                  });
                 }}
               >
                 menu
@@ -62,11 +67,15 @@ export default class Home extends Component {
           ref={drawer => {
             this.drawer = drawer;
           }}
+          open={this.state.drawerOpen}
           onOpen={() => {
             console.log("open");
           }}
           onClose={() => {
-            console.log("Close");
+            this.setState({
+              drawerOpen: false
+            });
+            console.log("Closed");
           }}
         >
           <Drawer.TemporaryDrawerHeader>
@@ -138,7 +147,20 @@ export default class Home extends Component {
 
         <div>
           <div className="mdc-form-field">
+            <Button
+              onClick={() => {
+                this.setState({
+                  checkIt: true
+                });
+              }}
+            >
+              Check
+            </Button>
             <Checkbox
+              checked={this.state.checkIt || false}
+              onChange={e => {
+                console.log("changed", e);
+              }}
               ref={inp => {
                 this.inp = inp;
               }}
@@ -157,7 +179,33 @@ export default class Home extends Component {
           <label for="rd">Radio Box</label>
         </div>
 
-        <Textfield label="hello" fullwidth required />
+        <div className="mdc-form-field">
+          <Radio
+            id="rd1"
+            name="rbox"
+            checked={true}
+            ref={radio => (this.radio = radio)}
+          />{" "}
+          <label for="rd1">Radio Box2</label>
+        </div>
+
+        <div className="mdc-form-field">
+          <Radio
+            id="rd2"
+            name="rbox"
+            checked={true}
+            ref={radio => (this.radio = radio)}
+          />{" "}
+          <label for="rd2">Radio Box3</label>
+        </div>
+
+        <div>
+          <TextField label="textarea" textarea />
+        </div>
+
+        <div>
+          <TextField label="fullwidth" fullwidth />
+        </div>
 
         <LayoutGrid>
           <LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
@@ -191,7 +239,16 @@ export default class Home extends Component {
           </Dialog.Footer>
         </Dialog>
 
-        <LinearProgress indeterminate={true} accent={true} />
+        <Button
+          onClick={() => {
+            this.setState({
+              progress: 0.5
+            });
+          }}
+        >
+          Set half progress
+        </Button>
+        <LinearProgress progress={this.state.progress} accent={true} />
 
         <Select
           hintText="Select an option"
@@ -283,14 +340,19 @@ export default class Home extends Component {
         <Menu.Anchor>
           <Button
             onClick={e => {
-              this.menu.MDComponent.open = true;
+              this.setState({
+                menuOpened: true
+              });
             }}
           >
             Click for menu
           </Button>
           <Menu
-            ref={menu => {
-              this.menu = menu;
+            open={this.state.menuOpened}
+            onMenuClosed={() => {
+              this.setState({
+                menuOpened: false
+              });
             }}
           >
             <Menu.Item>Hello1</Menu.Item>
@@ -300,6 +362,7 @@ export default class Home extends Component {
         </Menu.Anchor>
 
         <Slider
+          discrete
           disabled={false}
           min={0}
           max={100}

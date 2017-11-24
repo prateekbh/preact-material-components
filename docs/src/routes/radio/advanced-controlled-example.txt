@@ -1,0 +1,47 @@
+import { Component } from "preact";
+import Radio from "preact-material-components/Radio";
+import FormField from "preact-material-components/FormField";
+import "preact-material-components/FormField/style.css";
+import "preact-material-components/List/style.css";
+
+export default class ControlledRadioExample extends Component {
+  constructor() {
+    super();
+    this.state = {
+      options: [
+        { name: "Radio 1", checked: false },
+        { name: "Radio 2", checked: false },
+        { name: "Radio 3", checked: false }
+      ]
+    };
+  }
+
+  onChange = selectedIndex => {
+    var updatedOptions = this.state.options.slice().map((option, index) => {
+      option.checked = index === selectedIndex ? true : false;
+      return option;
+    });
+
+    this.setState({
+      options: updatedOptions
+    });
+  };
+
+  render() {
+    var controlledRadioElements = this.state.options.map((option, i) => {
+      return (
+        <FormField>
+          <Radio
+            id={`radio-${i}`}
+            name="Controlled Options"
+            checked={option.checked}
+            onChange={this.onChange.bind(undefined, i)}
+          />
+          <label for={`radio-${i}`}>{option.name}</label>
+        </FormField>
+      );
+    });
+
+    return <div>{controlledRadioElements}</div>;
+  }
+}

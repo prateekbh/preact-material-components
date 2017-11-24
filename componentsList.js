@@ -6,7 +6,7 @@ const bundleMapping = {
   Drawer: "drawer",
   Elevation: "elevation",
   Fab: "fab",
-  Formfield: "form-field",
+  FormField: "form-field",
   GridList: "grid-list",
   Icon: "icon-toggle",
   IconToggle: "icon-toggle",
@@ -20,7 +20,7 @@ const bundleMapping = {
   Slider: "slider",
   Snackbar: "snackbar",
   Switch: "switch",
-  Textfield: "textfield",
+  TextField: "textfield",
   Toolbar: "toolbar",
   Theme: "theme",
   Typography: "typography"

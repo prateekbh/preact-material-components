@@ -3,11 +3,18 @@ import { h, Component } from "preact";
 
 // Material Components
 import Drawer from "preact-material-components/Drawer";
+import Button from "preact-material-components/Button";
+import List from "preact-material-components/List";
+
+import "./style";
 
 // Components
 import ComponentTable from "../../components/component-table";
 import CodeBlock from "../../components/code-block";
 import EventsTable from "../../components/events-table";
+
+// Styles
+import "./style";
 
 // Samples
 import sample from "./sample.txt";
@@ -59,6 +66,9 @@ export default class DrawerPage extends Component {
         description: "Fired when the drawer is closed."
       }
     ];
+    this.state = {
+      drawerOpened: false
+    };
   }
   render() {
     return (
@@ -83,7 +93,39 @@ export default class DrawerPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
-        <div className="mdc-typography--title">not available </div>
+        <Button
+          primary={true}
+          raised={true}
+          onClick={() => {
+            this.setState({
+              drawerOpened: !this.state.drawerOpened
+            });
+          }}
+        >
+          Toggle Drawer
+        </Button>
+        <div className="demo-drawer">
+          <Drawer.TemporaryDrawer
+            open={this.state.drawerOpened}
+            onClose={() => {
+              this.setState({
+                drawerOpened: false
+              });
+            }}
+          >
+            <Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
+              Components
+            </Drawer.TemporaryDrawerHeader>
+            <Drawer.TemporaryDrawerContent>
+              <List>
+                <List.LinkItem>
+                  <List.ItemIcon>home</List.ItemIcon>
+                  Home
+                </List.LinkItem>
+              </List>
+            </Drawer.TemporaryDrawerContent>
+          </Drawer.TemporaryDrawer>
+        </div>
       </div>
     );
   }
