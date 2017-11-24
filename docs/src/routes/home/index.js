@@ -3,7 +3,7 @@ import { h, Component } from "preact";
 
 // Material Components
 import Radio from "preact-material-components/Radio";
-import Formfield from "preact-material-components/Formfield";
+import Formfield from "preact-material-components/FormField";
 
 // Components
 import ComponentTable from "../../components/component-table";

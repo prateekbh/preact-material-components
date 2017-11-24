@@ -3,7 +3,7 @@ import { h, Component } from "preact";
 import Router from "preact-router";
 
 // Material Components
-import Formfield from "preact-material-components/Formfield";
+import Formfield from "preact-material-components/FormField";
 import LayoutGrid from "preact-material-components/LayoutGrid";
 import Switch from "preact-material-components/Switch";
 import Toolbar from "preact-material-components/Toolbar";
