@@ -10,7 +10,7 @@ export declare class MDCFoundation<A = {}> {
 }
 
 export declare class MDCComponent<F> {
-  static attachTo(root: Element): MDCComponent<MDCFoundation>;
+  static attachTo<F>(root: Element): MDCComponent<F>;
   constructor(root: Element, foundation?: F, ...args: any[]);
   initialize(): void;
   getDefaultFoundation(): F;
