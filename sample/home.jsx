@@ -199,7 +199,13 @@ export default class Home extends Component {
           <label for="rd2">Radio Box3</label>
         </div>
 
-        <TextField label="hello" fullwidth required />
+        <div>
+          <TextField label="textarea" textarea />
+        </div>
+
+        <div>
+          <TextField label="fullwidth" fullwidth />
+        </div>
 
         <LayoutGrid>
           <LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
