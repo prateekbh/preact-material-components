@@ -26,4 +26,8 @@ export class Title extends MaterialComponent<ITitleProps, {}> {}
 
 export class Subtitle extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 export class HorizontalBlock extends Section<JSX.HTMLAttributes, {}> {}
+
+export interface IMediaItemProps extends JSX.HTMLAttributes {
+  x?: "1dot5"|"2"|"3";
+}
 export class MediaItem extends MaterialComponent<JSX.HTMLAttributes, {}> {}

@@ -5,6 +5,7 @@ export interface IButtonProps extends JSX.HTMLAttributes {
   dense?: boolean;
   raised?: boolean;
   compact?: boolean;
+  disabled?: boolean;
   unelevated?: boolean;
   stroked?: boolean;
 }
