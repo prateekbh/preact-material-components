@@ -31,7 +31,11 @@ class Select extends MaterialComponent {
     }
   }
   updateSelection() {
-    if ("selectedIndex" in this.props && this.MDComponent) {
+    if (
+      "selectedIndex" in this.props &&
+      this.props.selectedIndex != null &&
+      this.MDComponent
+    ) {
       this.MDComponent.selectedIndex = this.props.selectedIndex;
     }
   }
