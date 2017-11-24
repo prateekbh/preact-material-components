@@ -34,7 +34,7 @@ declare class MDCSlider extends MDCComponent<MDCSliderFoundation> {
   max: number;
   step: number;
   disabled: boolean;
-  layout(): vqoid;
+  layout(): void;
   stepUp(amount?: number): void;
   stepDown(amount?: number): void;
 }
