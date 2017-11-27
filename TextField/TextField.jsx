@@ -75,6 +75,19 @@ class TextFieldInput extends MaterialComponent {
   materialDom(allprops) {
     let { className, ...props } = allprops;
 
+    props.leadingIcon
+      ? className != null
+        ? (className +=
+            " mdc-text-field--box mdc-text-field--with-leading-icon")
+        : (className = "mdc-text-field--box mdc-text-field--with-leading-icon")
+      : null;
+    props.trailingIcon
+      ? className != null
+        ? (className +=
+            " mdc-text-field--box mdc-text-field--with-trailing-icon")
+        : (className = "mdc-text-field--box mdc-text-field--with-trailing-icon")
+      : null;
+
     if ("value" in props && this.state.showFloatingLabel) {
       className = [className, "mdc-text-field--upgraded"].join(" ");
     }
@@ -86,6 +99,11 @@ class TextFieldInput extends MaterialComponent {
 
     return (
       <div className={className} ref={control => (this.control = control)}>
+        {props.leadingIcon ? (
+          <i className="material-icons mdc-text-field__icon">
+            {props.leadingIcon}
+          </i>
+        ) : null}
         {props.textarea ? (
           <textarea className="mdc-text-field__input" {...props} />
         ) : (
@@ -99,6 +117,11 @@ class TextFieldInput extends MaterialComponent {
           this.state.showFloatingLabel && (
             <Label for={props.id}>{props.label}</Label>
           )}
+        {props.trailingIcon ? (
+          <i className="material-icons mdc-text-field__icon">
+            {props.trailingIcon}
+          </i>
+        ) : null}
         {props.textarea ? "" : <div class="mdc-text-field__bottom-line" />}
       </div>
     );

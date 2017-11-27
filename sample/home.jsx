@@ -200,7 +200,11 @@ export default class Home extends Component {
         </div>
 
         <div>
-          <TextField label="plain" leadingIcon="check" />
+          <TextField label="trailing" trailingIcon="check" />
+        </div>
+
+        <div>
+          <TextField label="leading" leadingIcon="check" />
         </div>
 
         <div>
