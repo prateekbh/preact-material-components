@@ -207,6 +207,10 @@ export default class Home extends Component {
           <TextField label="fullwidth" fullwidth />
         </div>
 
+        <div>
+          <Icon className="some-class">check</Icon>
+        </div>
+
         <LayoutGrid>
           <LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
             <Card>
