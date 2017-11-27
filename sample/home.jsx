@@ -200,6 +200,14 @@ export default class Home extends Component {
         </div>
 
         <div>
+          <TextField label="plain" leadingIcon="check" />
+        </div>
+
+        <div>
+          <TextField label="plain" />
+        </div>
+
+        <div>
           <TextField label="textarea" textarea />
         </div>
 
