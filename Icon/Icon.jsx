@@ -10,12 +10,12 @@ export default class Icon extends MaterialComponent {
     this.componentName = "icon";
   }
   materialDom(props) {
-    const classes = ["material-icons"];
+    let classes = ["material-icons"];
     if (props.className) {
       classes.push(props.className);
     }
     return (
-      <i {...props} className={classes.join(",")}>
+      <i {...props} className={classes.join(" ")}>
         {props.children}
       </i>
     );
