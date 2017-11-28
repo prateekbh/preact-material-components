@@ -188,7 +188,7 @@ class PersistentDrawer extends MaterialComponent {
         }}
         {...props}
       >
-        <nav className="mdc-persistent-drawer__drawer" />
+        <nav className="mdc-persistent-drawer__drawer">{props.children}</nav>
       </aside>
     );
   }
