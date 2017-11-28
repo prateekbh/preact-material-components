@@ -1,6 +1,6 @@
 import {h, Component} from 'preact';
 import List from 'preact-material-components/List';
-import Formfield from 'preact-material-components/Formfield';
+import Formfield from 'preact-material-components/FormField';
 import 'preact-material-components/List/style.css';
 
 export default class ListPage extends Component {

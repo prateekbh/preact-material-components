@@ -8,7 +8,7 @@ import {
   Snackbar,
   Checkbox,
   Radio,
-  Textfield,
+  TextField,
   Card,
   Select,
   Elevation,
@@ -199,7 +199,17 @@ export default class Home extends Component {
           <label for="rd2">Radio Box3</label>
         </div>
 
-        <Textfield label="hello" fullwidth required />
+        <div>
+          <TextField label="textarea" textarea />
+        </div>
+
+        <div>
+          <TextField label="fullwidth" fullwidth />
+        </div>
+
+        <div>
+          <Icon className="some-class">check</Icon>
+        </div>
 
         <LayoutGrid>
           <LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>

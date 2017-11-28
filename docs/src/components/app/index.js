@@ -3,7 +3,7 @@ import { h, Component } from "preact";
 import Router from "preact-router";
 
 // Material Components
-import Formfield from "preact-material-components/Formfield";
+import Formfield from "preact-material-components/FormField";
 import LayoutGrid from "preact-material-components/LayoutGrid";
 import Switch from "preact-material-components/Switch";
 import Toolbar from "preact-material-components/Toolbar";
@@ -92,7 +92,7 @@ export default class Home extends Component {
         component: FabPage
       },
       {
-        text: "Formfield",
+        text: "FormField",
         link: "/component/form-field",
         component: FormFieldPage
       },
@@ -162,7 +162,7 @@ export default class Home extends Component {
         component: TabsPage
       },
       {
-        text: "Textfield",
+        text: "TextField",
         link: "/component/textfield",
         component: TextfieldPage
       },

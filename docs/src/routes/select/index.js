@@ -27,6 +27,18 @@ export default class SelectPage extends Component {
           {
             name: "basic",
             description: "Makes the select box CSS only."
+          },
+          {
+            name: "hintText",
+            value: "string",
+            description:
+              'Helpful text to display when no selection has been made. ("selectedIndex" must be "null" for the hintText to show)'
+          },
+          {
+            name: "onChange",
+            value: "function",
+            description:
+              'Function that returns an event with an updated "selectedIndex" property anytime the selection changes.'
           }
         ]
       },
