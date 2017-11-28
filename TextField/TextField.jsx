@@ -1,6 +1,7 @@
 import { h, Component } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCTextField } from "@material/textfield";
+import Icon from "../Icon";
 
 /**
  * @prop persistent = false
@@ -100,9 +101,7 @@ class TextFieldInput extends MaterialComponent {
     return (
       <div className={className} ref={control => (this.control = control)}>
         {props.leadingIcon ? (
-          <i className="material-icons mdc-text-field__icon">
-            {props.leadingIcon}
-          </i>
+          <Icon className="mdc-text-field__icon">{props.leadingIcon}</Icon>
         ) : null}
         {props.textarea ? (
           <textarea className="mdc-text-field__input" {...props} />
@@ -118,9 +117,7 @@ class TextFieldInput extends MaterialComponent {
             <Label for={props.id}>{props.label}</Label>
           )}
         {props.trailingIcon ? (
-          <i className="material-icons mdc-text-field__icon">
-            {props.trailingIcon}
-          </i>
+          <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
         {props.textarea ? "" : <div class="mdc-text-field__bottom-line" />}
       </div>
