@@ -75,19 +75,15 @@ class TextFieldInput extends MaterialComponent {
   }
   materialDom(allprops) {
     let { className, ...props } = allprops;
+    className = className || "";
 
-    props.leadingIcon
-      ? className != null
-        ? (className +=
-            " mdc-text-field--box mdc-text-field--with-leading-icon")
-        : (className = "mdc-text-field--box mdc-text-field--with-leading-icon")
-      : null;
-    props.trailingIcon
-      ? className != null
-        ? (className +=
-            " mdc-text-field--box mdc-text-field--with-trailing-icon")
-        : (className = "mdc-text-field--box mdc-text-field--with-trailing-icon")
-      : null;
+    if ("leadingIcon" in props) {
+      className += " mdc-text-field--box mdc-text-field--with-leading-icon";
+    }
+
+    if ("trailingIcon" in props) {
+      className += " mdc-text-field--box mdc-text-field--with-trailing-icon";
+    }
 
     if ("value" in props && this.state.showFloatingLabel) {
       className = [className, "mdc-text-field--upgraded"].join(" ");
