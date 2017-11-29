@@ -11,7 +11,8 @@
     "lint": "eslint index.js */*.jsx",
     "lint-staged": "lint-staged",
     "prettier": "prettier -l *.js */*.jsx sample/webpack.config.js",
-    "prettier:write": "prettier --write *.js */*.jsx sample/webpack.config.js"
+    "prettier:write": "prettier --write *.js */*.jsx sample/webpack.config.js",
+    "sample": "http-server ./sample"
   },
   "repository": {
     "type": "git",
@@ -81,6 +82,7 @@
     "eslint-config-prettier": "^2.7.0",
     "eslint-plugin-prettier": "^2.3.1",
     "glob-copy": "^0.1.0",
+    "http-server": "^0.10.0",
     "lint-staged": "^5.0.0",
     "mkdirp": "^0.5.1",
     "pre-commit": "^1.2.2",
@@ -90,14 +92,8 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "lint-staged": {
-    "index.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "**/*.jsx": [
-      "prettier --write",
-      "git add"
-    ]
+    "index.js": ["prettier --write", "git add"],
+    "**/*.jsx": ["prettier --write", "git add"]
   },
   "pre-commit": "lint-staged"
 }
