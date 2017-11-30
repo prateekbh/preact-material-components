@@ -5,6 +5,9 @@ import { Item as ListItem } from '../List/List';
 
 export interface ISelectProps extends JSX.HTMLAttributes {
   disabled?: boolean;
+  basic?: boolean;
+  selectedIndex?: number;
+  onChange?: (e: { selectedIndex: number, selectedOptions: NodeListOf<Element> }) => void;
 }
 
 export default class Select extends MaterialComponent<ISelectProps, {}> {

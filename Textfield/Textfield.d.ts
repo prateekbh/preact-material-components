@@ -8,16 +8,16 @@ export interface IHelptextProps extends JSX.HTMLAttributes {
 }
 export class Helptext extends MaterialComponent<IHelptextProps, {}> {}
 
-export interface ITextfieldProps extends JSX.HTMLAttributes {
+export interface ITextFieldProps extends JSX.HTMLAttributes {
   helptext?: string;
   helptextPersistent?: string;
   helptextValidationMsg?: string;
   cssLabel?: string;
 }
-export interface ITextfieldState {
+export interface ITextFieldState {
   showFloatingLabel: boolean;
 }
-export default class Textfield extends MaterialComponent<ITextfieldProps, ITextfieldState> {
+export default class TextField extends MaterialComponent<ITextFieldProps, ITextFieldState> {
   static uid(): number;
   MDComponent: MDCTextField;
 }

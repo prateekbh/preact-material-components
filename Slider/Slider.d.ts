@@ -4,9 +4,13 @@ import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
 export interface ISliderProps extends JSX.HTMLAttributes {
   disabled?: boolean;
+  discrete?: boolean;
+  value?: number;
   min?: number;
   max?: number;
   step?: number;
+  onInput?: (value: number) => void;
+  onChange?: (value: number) => void;
 }
 
 export default class Slider extends MaterialComponent<ISliderProps, {}> {
