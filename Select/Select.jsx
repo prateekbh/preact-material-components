@@ -43,7 +43,10 @@ class Select extends MaterialComponent {
     this.updateSelection();
     if (this.MDComponent && this.MDComponent.foundation_) {
       this.MDComponent.foundation_.resize();
-      if (this.props.selectedIndex == null || this.props.selectedIndex == -1) {
+      if (
+        this.props.selectedIndex === null ||
+        this.props.selectedIndex === -1
+      ) {
         this.MDComponent.foundation_.adapter_.setSelectedTextContent(
           this.props.hintText
         );
