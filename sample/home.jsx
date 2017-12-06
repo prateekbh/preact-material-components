@@ -276,23 +276,29 @@ export default class Home extends Component {
         </Button>
         <LinearProgress progress={this.state.progress} accent={true} />
 
-        <Select
-          hintText="Select an option"
-          ref={presel => {
-            this.presel = presel;
-          }}
-          selectedIndex={this.state.chosenOption}
-          onChange={e => {
-            this.setState({
-              chosenOption: e.selectedIndex
-            });
-          }}
-        >
-          <Select.Item>opt1</Select.Item>
-          <Select.Item>opt2</Select.Item>
-          <Select.Item>opt3</Select.Item>
-          <Select.Item>opt4</Select.Item>
-        </Select>
+        <Button raised onClick={() => this.setState({ chosenOption: -1 })}>
+          Clear Select
+        </Button>
+        <div>
+          <Select
+            hintText="Select an option"
+            ref={presel => {
+              this.presel = presel;
+            }}
+            selectedIndex={this.state.chosenOption}
+            onChange={e => {
+              this.setState({
+                chosenOption: e.selectedIndex
+              });
+            }}
+          >
+            <Select.Item>opt1</Select.Item>
+            <Select.Item>opt2</Select.Item>
+            <Select.Item>opt3</Select.Item>
+            <Select.Item>opt4</Select.Item>
+          </Select>
+        </div>
+
         <div>
           <Tabs indicator-accent={true}>
             <Tabs.Tab>tab1</Tabs.Tab>
