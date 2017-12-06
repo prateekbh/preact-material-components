@@ -32,7 +32,7 @@ export default class SelectPage extends Component {
             name: "hintText",
             value: "string",
             description:
-              'Helpful text to display when no selection has been made. ("selectedIndex" must be "null" for the hintText to show)'
+              'Helpful text to display when no selection has been made. ("selectedIndex" must be -1 for the hintText to show)'
           },
           {
             name: "onChange",
@@ -67,9 +67,8 @@ export default class SelectPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates <span className="strong">
-            mdc-select
-          </span>, you can refer to its documentation
+          This component encapsulates <span className="strong">mdc-select</span>,
+          you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-select">
             {" "}
             here
