@@ -62,7 +62,7 @@
     "@material/tabs": "^0.26.0",
     "@material/textfield": "^0.26.0",
     "@material/theme": "^0.25.0",
-    "@material/toolbar": "^0.25.0",
+    "@material/toolbar": "^0.27.0",
     "@material/typography": "^0.3.0",
     "material-components-web": "^0.26.0"
   },
