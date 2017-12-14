@@ -1,9 +1,9 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
-import List from '../List/List';
+import List from '../List';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
-export default interface Drawer {
+export default class Drawer {
   DrawerItem: typeof DrawerItem;
   TemporaryDrawer: typeof TemporaryDrawer;
   TemporaryDrawerHeader: typeof TemporaryDrawerHeader;
