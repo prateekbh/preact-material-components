@@ -11,12 +11,6 @@ declare interface ISnackbarData {
   multiline?: boolean;
   actionOnBottom?: boolean;
   timeout?: number;
-}
-declare interface ISnackbarData {
-  message: string;
-  multiline?: boolean;
-  actionOnBottom?: boolean;
-  timeout?: number;
   actionHandler: Function;
   actionText: string;
 }

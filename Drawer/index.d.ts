@@ -16,20 +16,20 @@ export default class Drawer {
   PersistentDrawerContent: typeof PersistentDrawerContent;
 }
 
-declare interface IDrawerProps {
+declare interface IDrawerProps extends JSX.HTMLAttributes {
   onOpen?: () => void;
   onClose?: () => void;
 }
-declare class TemporaryDrawer extends MaterialComponent<IDrawerProps & JSX.HTMLAttributes, {}> {
+declare class TemporaryDrawer extends MaterialComponent<IDrawerProps, {}> {
   MDComponent: MDCTemporaryDrawer;
 }
 declare class TemporaryDrawerHeader extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 declare class TemporaryDrawerContent<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType & {}> {}
 
-declare interface IPermanentDrawerProps {
+declare interface IPermanentDrawerProps extends JSX.HTMLAttributes {
   spacer?: boolean;
 }
-declare class PermanentDrawer extends MaterialComponent<IPermanentDrawerProps & JSX.HTMLAttributes, {}> {}
+declare class PermanentDrawer extends MaterialComponent<IPermanentDrawerProps, {}> {}
 declare class PermanentDrawerHeader extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 declare class PermanentDrawerContent extends TemporaryDrawerContent<JSX.HTMLAttributes, {}> {}
 
@@ -39,10 +39,10 @@ declare class PersistentDrawer extends MaterialComponent<IDrawerProps, {}> {
 declare class PersistentDrawerHeader extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 declare class PersistentDrawerContent extends TemporaryDrawerContent<JSX.HTMLAttributes, {}> {}
 
-declare interface IDrawerItemProps {
+declare interface IDrawerItemProps extends JSX.HTMLAttributes {
   selected?: boolean;
 }
-declare class DrawerItem extends List.LinkItem<IDrawerItemProps & JSX.HTMLAttributes> {}
+declare class DrawerItem extends List.LinkItem<IDrawerItemProps> {}
 
 declare class MDCSlidableDrawerFoundation<A> extends MDCFoundation<A> {
   open(): void;

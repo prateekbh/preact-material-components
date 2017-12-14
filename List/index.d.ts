@@ -1,12 +1,12 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 
-declare interface IListProps {
+declare interface IListProps extends JSX.HTMLAttributes {
   dense?: boolean;
   'two-line'?: boolean;
   interactive?: boolean;
 }
-export default class List extends MaterialComponent<IListProps & JSX.HTMLAttributes, {}> {
+export default class List extends MaterialComponent<IListProps, {}> {
   static Item: typeof Item;
   static LinkItem: typeof LinkItem;
   static ItemIcon: typeof ItemIcon;
@@ -21,20 +21,20 @@ declare class Item extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
 declare class LinkItem<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
 
-declare interface IItemIconProps {
+declare interface IItemIconProps extends JSX.HTMLAttributes {
   'start-detail'?: boolean;
   'end-detail'?: boolean;
 }
-declare class ItemIcon extends MaterialComponent<IItemIconProps & JSX.HTMLAttributes, {}> {
-  getProxyClassName(props: IItemIconProps & JSX.HTMLAttributes): string;
+declare class ItemIcon extends MaterialComponent<IItemIconProps, {}> {
+  getProxyClassName(props: IItemIconProps): string;
 }
 
 declare class ItemAvatar extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-declare interface IDividerProps {
+declare interface IDividerProps extends JSX.HTMLAttributes {
   inset?: boolean;
 }
-declare class Divider extends MaterialComponent<IDividerProps & JSX.HTMLAttributes, {}> {}
+declare class Divider extends MaterialComponent<IDividerProps, {}> {}
 
 declare class TextContainer extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 

@@ -4,10 +4,10 @@ import Button from '../Button';
 
 declare class Section<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
 
-declare interface ICardProps {
+declare interface ICardProps extends JSX.HTMLAttributes {
   'theme-dark'?: boolean;
 }
-export default class Card extends MaterialComponent<ICardProps & JSX.HTMLAttributes, {}> {
+export default class Card extends MaterialComponent<ICardProps, {}> {
   static Primary: typeof Primary;
   static SupportingText: typeof SupportingText;
   static Actions: typeof Actions;
@@ -21,23 +21,23 @@ export default class Card extends MaterialComponent<ICardProps & JSX.HTMLAttribu
 
 declare class Primary extends Section<JSX.HTMLAttributes, {}> {}
 declare class SupportingText extends Section<JSX.HTMLAttributes, {}> {}
-declare interface IActionsProps {
+declare interface IActionsProps extends JSX.HTMLAttributes {
   vertical?: boolean;
 }
-declare class Actions extends Section<IActionsProps & JSX.HTMLAttributes, {}> {}
+declare class Actions extends Section<IActionsProps, {}> {}
 declare class Media extends Section<JSX.HTMLAttributes, {}> {}
 
 declare class Action extends Button<JSX.HTMLAttributes, {}> {}
 
-declare interface ITitleProps {
+declare interface ITitleProps extends JSX.HTMLAttributes {
   large?: boolean;
 }
-declare class Title extends MaterialComponent<ITitleProps & JSX.HTMLAttributes, {}> {}
+declare class Title extends MaterialComponent<ITitleProps, {}> {}
 
 declare class Subtitle extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 declare class HorizontalBlock extends Section<JSX.HTMLAttributes, {}> {}
 
-declare interface IMediaItemProps {
+declare interface IMediaItemProps extends JSX.HTMLAttributes {
   x?: "1dot5"|"2"|"3";
 }
-declare class MediaItem extends MaterialComponent<IMediaItemProps & JSX.HTMLAttributes, {}> {}
+declare class MediaItem extends MaterialComponent<IMediaItemProps, {}> {}

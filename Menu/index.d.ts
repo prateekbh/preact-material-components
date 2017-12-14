@@ -3,7 +3,7 @@ import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 import List from '../List/List';
 
-declare interface IMenuProps {
+declare interface IMenuProps extends JSX.HTMLAttributes {
   open?: boolean;
   'open-from-top-left'?: boolean;
   'open-from-top-right'?: boolean;
@@ -11,7 +11,7 @@ declare interface IMenuProps {
   'open-from-bottom-right'?: boolean;
 }
 
-export default class Menu extends MaterialComponent<IMenuProps & JSX.HTMLAttributes, {}> {
+export default class Menu extends MaterialComponent<IMenuProps, {}> {
   static Anchor: typeof Anchor;
   static Item: typeof List.Item;
 
