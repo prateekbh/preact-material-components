@@ -2,26 +2,30 @@ import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
-export interface ITabsProps extends JSX.HTMLAttributes {
+declare interface ITabsProps extends JSX.HTMLAttributes {
   'indicator-accent'?: boolean;
   'icon-tab-bar'?: boolean;
   'icons-with-text'?: boolean;
   'scroller'?: boolean;
 }
 export default class Tabs extends MaterialComponent<ITabsProps, {}> {
+  static TabBarScroller: typeof TabBarScroller;
+  static Tab: typeof Tab;
+  static TabIconLabel: typeof TabIconLabel;
+
   MDComponent: MDCTabBar;
 }
 
-export class TabBarScroller extends MaterialComponent<JSX.HTMLAttributes, {}> {
+declare class TabBarScroller extends MaterialComponent<JSX.HTMLAttributes, {}> {
   MDComponent: MDCTabBarScroller;
 }
 
-export interface ITabProps extends JSX.HTMLAttributes {
+interface ITabProps extends JSX.HTMLAttributes {
   active?: boolean;
 }
-export class Tab extends MaterialComponent<ITabProps, {}> {}
+declare class Tab extends MaterialComponent<ITabProps, {}> {}
 
-export class TabIconLabel extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class TabIconLabel extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
 declare class MDCTabFoundation extends MDCFoundation<MDCTab> {
   getComputedWidth(): number;

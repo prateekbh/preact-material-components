@@ -1,7 +1,7 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 
-export interface IIconProps extends JSX.HTMLAttributes {
+declare interface IIconProps {
   disabled?: boolean;
 }
-export default class Icon extends MaterialComponent<IIconProps, {}> {}
+export default class Icon extends MaterialComponent<IIconProps & JSX.HTMLAttributes, {}> {}

@@ -3,28 +3,33 @@ import { VNode } from 'preact';
 import Button from '../Button/Button';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
-export interface IDialogProps extends JSX.HTMLAttributes {
+declare interface IDialogProps {
   onAccept?: () => void;
   onCancel?: () => void;
 }
-export default class Dialog extends MaterialComponent<IDialogProps, {}> {
+export default class Dialog extends MaterialComponent<IDialogProps & JSX.HTMLAttributes, {}> {
+  static Header: typeof Header;
+  static Body: typeof Body;
+  static Footer: typeof Footer;
+  static FooterButton: typeof FooterButton;
+
   MDComponent: MDCDialog;
 }
 
-export class Header extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class Header extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-export interface IBodyProps extends JSX.HTMLAttributes {
+declare interface IBodyProps {
   scrollable?: boolean;
 }
-export class Body extends MaterialComponent<IBodyProps, {}> {}
+declare class Body extends MaterialComponent<IBodyProps & JSX.HTMLAttributes, {}> {}
 
-export class Footer extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class Footer extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-export interface IFooterButtonProps {
+declare interface IFooterButtonProps {
   accept?: boolean;
   cancel?: boolean;
 }
-export class FooterButton extends Button<IFooterButtonProps & JSX.HTMLAttributes, {}> {}
+declare class FooterButton extends Button<IFooterButtonProps & JSX.HTMLAttributes, {}> {}
 
 declare class MDCDialogFoundation extends MDCFoundation<MDCDialog> {
   open(): void;

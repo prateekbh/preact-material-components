@@ -4,30 +4,40 @@ import Button from '../Button/Button';
 
 declare class Section<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
 
-export interface ICardProps extends JSX.HTMLAttributes {
+declare interface ICardProps {
   'theme-dark'?: boolean;
 }
-export default class Card extends MaterialComponent<ICardProps, {}> {}
+export default class Card extends MaterialComponent<ICardProps & JSX.HTMLAttributes, {}> {
+  static Primary: typeof Primary;
+  static SupportingText: typeof SupportingText;
+  static Actions: typeof Actions;
+  static Action: typeof Action;
+  static Media: typeof Media;
+  static Title: typeof Title;
+  static Subtitle: typeof Subtitle;
+  static HorizontalBlock: typeof HorizontalBlock;
+  static MediaItem: typeof MediaItem;
+}
 
-export class Primary extends Section<JSX.HTMLAttributes, {}> {}
-export class SupportingText extends Section<JSX.HTMLAttributes, {}> {}
-export interface IActionsProps extends JSX.HTMLAttributes {
+declare class Primary extends Section<JSX.HTMLAttributes, {}> {}
+declare class SupportingText extends Section<JSX.HTMLAttributes, {}> {}
+declare interface IActionsProps {
   vertical?: boolean;
 }
-export class Actions extends Section<IActionsProps, {}> {}
-export class Media extends Section<JSX.HTMLAttributes, {}> {}
+declare class Actions extends Section<IActionsProps & JSX.HTMLAttributes, {}> {}
+declare class Media extends Section<JSX.HTMLAttributes, {}> {}
 
-export class Action extends Button<JSX.HTMLAttributes, {}> {}
+declare class Action extends Button<JSX.HTMLAttributes, {}> {}
 
-export interface ITitleProps extends JSX.HTMLAttributes {
+declare interface ITitleProps {
   large?: boolean;
 }
-export class Title extends MaterialComponent<ITitleProps, {}> {}
+declare class Title extends MaterialComponent<ITitleProps & JSX.HTMLAttributes, {}> {}
 
-export class Subtitle extends MaterialComponent<JSX.HTMLAttributes, {}> {}
-export class HorizontalBlock extends Section<JSX.HTMLAttributes, {}> {}
+declare class Subtitle extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class HorizontalBlock extends Section<JSX.HTMLAttributes, {}> {}
 
-export interface IMediaItemProps extends JSX.HTMLAttributes {
+declare interface IMediaItemProps {
   x?: "1dot5"|"2"|"3";
 }
-export class MediaItem extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class MediaItem extends MaterialComponent<IMediaItemProps & JSX.HTMLAttributes, {}> {}

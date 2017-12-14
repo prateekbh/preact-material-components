@@ -1,8 +1,9 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
+import { Item } from '../List/List';
 
-export interface IMenuProps extends JSX.HTMLAttributes {
+declare interface IMenuProps {
   open?: boolean;
   'open-from-top-left'?: boolean;
   'open-from-top-right'?: boolean;
@@ -10,11 +11,14 @@ export interface IMenuProps extends JSX.HTMLAttributes {
   'open-from-bottom-right'?: boolean;
 }
 
-export default class Menu extends MaterialComponent<IMenuProps, {}> {
+export default class Menu extends MaterialComponent<IMenuProps & JSX.HTMLAttributes, {}> {
+  static Anchor: typeof Anchor;
+  static Item: typeof Item;
+
   MDComponent: MDCSimpleMenu;
 }
 
-export class Anchor extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class Anchor extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
 declare class MDCSimpleMenuFoundation extends MDCFoundation<MDCSimpleMenu> {
   open(options?: { focusIndex?: number }): void;

@@ -1,11 +1,14 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 
-export default class LayoutGrid extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+export default class LayoutGrid extends MaterialComponent<JSX.HTMLAttributes, {}> {
+  static Cell: typeof LayoutGridCell;
+  static Inner: typeof LayoutGridInner;
+}
 
-export class LayoutGridInner extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class LayoutGridInner extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-export interface ILayoutGridCellProps extends JSX.HTMLAttributes {
+declare interface ILayoutGridCellProps extends JSX.HTMLAttributes {
   cols?: number;
   desktopCols?: number;
   tabletCols?: number;
@@ -13,4 +16,4 @@ export interface ILayoutGridCellProps extends JSX.HTMLAttributes {
   order?: number;
   align?: string;
 }
-export class LayoutGridCell extends MaterialComponent<ILayoutGridCellProps, {}> {}
+declare class LayoutGridCell extends MaterialComponent<ILayoutGridCellProps, {}> {}

@@ -2,7 +2,7 @@ import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
-export interface ISliderProps extends JSX.HTMLAttributes {
+declare interface ISliderProps {
   disabled?: boolean;
   discrete?: boolean;
   value?: number;
@@ -13,7 +13,7 @@ export interface ISliderProps extends JSX.HTMLAttributes {
   onChange?: (value: number) => void;
 }
 
-export default class Slider extends MaterialComponent<ISliderProps, {}> {
+export default class Slider extends MaterialComponent<ISliderProps & JSX.HTMLAttributes, {}> {
   MDComponent: MDCSlider;
   setValue(props: ISliderProps): void;
 }

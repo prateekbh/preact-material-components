@@ -1,10 +1,12 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 
-export interface IFabProps extends JSX.HTMLAttributes {
+declare interface IFabProps {
   'mini'?: boolean;
   'exited'?: boolean;
 }
 
-export default class Fab extends MaterialComponent<IFabProps, {}> {}
+export default class Fab extends MaterialComponent<IFabProps & JSX.HTMLAttributes, {}> {
+  static Icon: typeof Icon;
+}
 export class Icon extends MaterialComponent<JSX.HTMLAttributes, {}> {}

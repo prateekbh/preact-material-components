@@ -2,10 +2,10 @@ import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent, MDCRipple } from '../MaterialComponentsWeb';
 
-export interface ICheckboxProps extends JSX.HTMLAttributes {
+declare interface ICheckboxProps {
   disabled?: boolean;
 }
-export default class Checkbox extends MaterialComponent<ICheckboxProps, {}> {
+export default class Checkbox extends MaterialComponent<ICheckboxProps & JSX.HTMLAttributes, {}> {
   MDComponent: MDCCheckbox;
 }
 

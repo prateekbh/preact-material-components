@@ -1,30 +1,35 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 
-export interface IToolbarProps extends JSX.HTMLAttributes {
+declare interface IToolbarProps {
   fixed?: boolean;
   'fixed-lastrow-only'?: boolean;
   waterfall?: boolean;
   flexible?: boolean;
   'flexible-default-behavior'?: boolean;
 }
-export default class Toolbar extends MaterialComponent<IToolbarProps, {}> {}
+export default class Toolbar extends MaterialComponent<IToolbarProps & JSX.HTMLAttributes, {}> {
+  static Section: typeof Section;
+  static Icon: typeof Icon;
+  static Title: typeof Title;
+  static Row: typeof Row;
+}
 
-export class Row extends MaterialComponent<{}, {}> {}
+declare class Row extends MaterialComponent<{}, {}> {}
 
-export interface ISectionProps extends JSX.HTMLAttributes {
+declare interface ISectionProps {
   'align-start'?: boolean;
   'align-end'?: boolean;
   'shrink-to-fit'?: boolean;
 }
-export class Section extends MaterialComponent<ISectionProps, {}> {}
+declare class Section extends MaterialComponent<ISectionProps & JSX.HTMLAttributes, {}> {}
 
-export interface IIconProps extends JSX.HTMLAttributes {
+declare interface IIconProps {
   menu?: boolean;
 }
-export class Icon extends MaterialComponent<IIconProps, {}> {}
+declare class Icon extends MaterialComponent<IIconProps & JSX.HTMLAttributes, {}> {}
 
-export interface ITitleProps extends JSX.HTMLAttributes {
+declare interface ITitleProps {
   title?: string;
 }
-export class Title extends MaterialComponent<ITitleProps, {}> {}
+declare class Title extends MaterialComponent<ITitleProps & JSX.HTMLAttributes, {}> {}

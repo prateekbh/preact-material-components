@@ -2,12 +2,12 @@ import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
-export interface ILinearProgressProps extends JSX.HTMLAttributes {
+declare interface ILinearProgressProps {
   indeterminate?: boolean;
   reversed?: boolean;
   accent?: boolean;
 }
-export default class LinearProgress extends MaterialComponent<ILinearProgressProps, {}> {
+export default class LinearProgress extends MaterialComponent<ILinearProgressProps & JSX.HTMLAttributes, {}> {
   MDComponent: MDCLinearProgress;
 }
 

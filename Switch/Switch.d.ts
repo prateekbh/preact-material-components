@@ -1,7 +1,7 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 
-export interface ISwitchProps extends JSX.HTMLAttributes {
+declare interface ISwitchProps {
   disabled?: boolean;
 }
-export default class Switch extends MaterialComponent<ISwitchProps, {}> {}
+export default class Switch extends MaterialComponent<ISwitchProps & JSX.HTMLAttributes, {}> {}

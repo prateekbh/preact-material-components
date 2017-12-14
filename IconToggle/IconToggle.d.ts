@@ -2,12 +2,12 @@ import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent, MDCRipple } from '../MaterialComponentsWeb';
 
-export interface IIconToggleProps extends JSX.HTMLAttributes {
+declare interface IIconToggleProps {
   disabled?: boolean;
   'data-toggle-on'?: any;
   'data-toggle-off'?: any;
 }
-export default class IconToggle extends MaterialComponent<IIconToggleProps, {}> {
+export default class IconToggle extends MaterialComponent<IIconToggleProps & JSX.HTMLAttributes, {}> {
   MDComponent: MDCIconToggle;
 }
 
