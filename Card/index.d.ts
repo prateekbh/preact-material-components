@@ -1,6 +1,6 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
-import Button from '../Button/Button';
+import Button from '../Button';
 
 declare class Section<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
 

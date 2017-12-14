@@ -1,7 +1,7 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
-import { Item as ListItem } from '../List/List';
+import List from '../List';
 
 declare interface ISelectProps {
   disabled?: boolean;
@@ -16,7 +16,7 @@ export default class Select extends MaterialComponent<ISelectProps & JSX.HTMLAtt
   MDComponent: MDCSelect;
   updateSelection(): void;
 }
-declare class Item extends ListItem {}
+declare class Item extends List.Item {}
 
 declare class MDCSelectFoundation extends MDCFoundation<MDCSelect> {
   getValue(): string;

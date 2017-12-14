@@ -1,7 +1,7 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
-import { Item } from '../List/List';
+import List from '../List/List';
 
 declare interface IMenuProps {
   open?: boolean;
@@ -13,7 +13,7 @@ declare interface IMenuProps {
 
 export default class Menu extends MaterialComponent<IMenuProps & JSX.HTMLAttributes, {}> {
   static Anchor: typeof Anchor;
-  static Item: typeof Item;
+  static Item: typeof List.Item;
 
   MDComponent: MDCSimpleMenu;
 }

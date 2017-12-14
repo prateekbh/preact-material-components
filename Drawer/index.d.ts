@@ -1,6 +1,6 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
-import { LinkItem } from '../List/List';
+import List from '../List/List';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
 export default interface Drawer {
@@ -42,7 +42,7 @@ declare class PersistentDrawerContent extends TemporaryDrawerContent<JSX.HTMLAtt
 declare interface IDrawerItemProps {
   selected?: boolean;
 }
-declare class DrawerItem extends LinkItem<IDrawerItemProps & JSX.HTMLAttributes> {}
+declare class DrawerItem extends List.LinkItem<IDrawerItemProps & JSX.HTMLAttributes> {}
 
 declare class MDCSlidableDrawerFoundation<A> extends MDCFoundation<A> {
   open(): void;
