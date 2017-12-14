@@ -25,7 +25,7 @@ declare class Body extends MaterialComponent<IBodyProps, {}> {}
 
 declare class Footer extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-declare interface IFooterButtonProps extends HTMLAttributes {
+declare interface IFooterButtonProps extends HTMLAttributesWithoutAccept {
   accept?: boolean;
   cancel?: boolean;
 }
@@ -45,7 +45,13 @@ declare class MDCDialog extends MDCComponent<MDCDialogFoundation> {
   close(): void;
 }
 
-interface HTMLAttributes extends PreactHTMLAttributes, JSX.DOMAttributes {
+/**
+ * `IFooterButtonProps` conflicts with `JSX.HTMLAttributes` as
+ * `IFooterButtonProps` has the property `accept` which is also defined in
+ * `JSX.HTMLAttributes`. To allow for the other type of `accept` it has been
+ * removed in `HTMLAttributesWithoutAccept`.
+ */
+interface HTMLAttributesWithoutAccept extends PreactHTMLAttributes, JSX.DOMAttributes {
   // Standard HTML Attributes
   acceptCharset?:string;
   accessKey?:string;

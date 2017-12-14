@@ -2,7 +2,7 @@ import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
-declare interface ISliderProps extends HTMLAttributes {
+declare interface ISliderProps extends HTMLAttributesWithoutValue {
   disabled?: boolean;
   discrete?: boolean;
   value?: number;
@@ -43,7 +43,12 @@ declare class MDCSlider extends MDCComponent<MDCSliderFoundation> {
   stepDown(amount?: number): void;
 }
 
-interface DOMAttributes {
+/**
+ * ISliderProps is specifying `onInput` and `onChange` but they conflict with
+ * `JSX.DOMAttributes`. To allow for `onInput` and `onChange` this is needed to
+ * exclude them from the DOMAttributes.
+ */
+interface DOMAttributesWithoutOnInputAndOnChange {
   // Image Events
   onLoad?:JSX.GenericEventHandler;
 
@@ -138,7 +143,12 @@ interface DOMAttributes {
   onTransitionEnd?:JSX.TransitionEventHandler;
 }
 
-interface HTMLAttributes extends preact.PreactHTMLAttributes, DOMAttributes {
+/**
+ * `ISliderProps` is specifying `value` which is reserved by HTMLAttributes.
+ * This is a version of HTMLAttributes but without `value`. This also extends
+ * from the modified DOMAttributes.
+ */
+interface HTMLAttributesWithoutValue extends preact.PreactHTMLAttributes, DOMAttributesWithoutOnInputAndOnChange {
   // Standard HTML Attributes
   accept?:string;
   acceptCharset?:string;

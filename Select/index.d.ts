@@ -3,7 +3,7 @@ import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 import List from '../List';
 
-declare interface ISelectProps extends HTMLAttributes {
+declare interface ISelectProps extends HTMLAttributesWithoutOnChange {
   disabled?: boolean;
   basic?: boolean;
   selectedIndex?: number;
@@ -36,7 +36,12 @@ declare class MDCSelect extends MDCComponent<MDCSelectFoundation> {
   nameditem(key: string): Element|null;
 }
 
-interface DOMAttributes {
+/**
+ * ISliderProps is specifying `onChange` but it conflict with
+ * `JSX.DOMAttributes`. To allow for `onChange` this is needed to exclude it
+ * from the DOMAttributes.
+ */
+interface DOMAttributesWithoutOnChange {
   // Image Events
   onLoad?:JSX.GenericEventHandler;
 
@@ -132,7 +137,12 @@ interface DOMAttributes {
   onTransitionEnd?:JSX.TransitionEventHandler;
 }
 
-interface HTMLAttributes extends preact.PreactHTMLAttributes, DOMAttributes {
+/**
+ * It's `JSX.HTMLAttributes` but instead of extending from `DOMAttributes` it
+ * extends from `DOMAttributesWithoutOnChange`. This is needed otherwise
+ * `onChange` in `ISelectProps` will conflict with `JSX.HTMLAttributes`.
+ */
+interface HTMLAttributesWithoutOnChange extends preact.PreactHTMLAttributes, DOMAttributesWithoutOnChange {
   // Standard HTML Attributes
   accept?:string;
   acceptCharset?:string;
