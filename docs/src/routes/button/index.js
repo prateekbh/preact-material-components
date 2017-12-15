@@ -186,7 +186,7 @@ export default class ButtonPage extends Component {
         <div className="mdc-typography--caption">
           <div>
             Adding an <code>href</code> to the <code>Button</code> automatically
-            makes in an <code>&lt;a&gt;</code>.
+            makes it an <code>&lt;a&gt;</code>.
           </div>
         </div>
       </div>
