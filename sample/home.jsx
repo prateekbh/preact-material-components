@@ -200,11 +200,27 @@ export default class Home extends Component {
         </div>
 
         <div>
+          <TextField label="trailing" trailingIcon="check" />
+        </div>
+
+        <div>
+          <TextField label="leading" leadingIcon="check" />
+        </div>
+
+        <div>
+          <TextField label="plain" />
+        </div>
+
+        <div>
           <TextField label="textarea" textarea />
         </div>
 
         <div>
           <TextField label="fullwidth" fullwidth />
+        </div>
+
+        <div>
+          <Icon className="some-class">check</Icon>
         </div>
 
         <LayoutGrid>
