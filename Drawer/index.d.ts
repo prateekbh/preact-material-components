@@ -4,16 +4,16 @@ import List from '../List';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
 export default class Drawer {
-  DrawerItem: typeof DrawerItem;
-  TemporaryDrawer: typeof TemporaryDrawer;
-  TemporaryDrawerHeader: typeof TemporaryDrawerHeader;
-  TemporaryDrawerContent: typeof TemporaryDrawerContent;
-  PermanentDrawer: typeof PermanentDrawer;
-  PermanentDrawerHeader: typeof PermanentDrawerHeader;
-  PermanentDrawerContent: typeof PermanentDrawerContent;
-  PersistentDrawer: typeof PersistentDrawer;
-  PersistentDrawerHeader: typeof PersistentDrawerHeader;
-  PersistentDrawerContent: typeof PersistentDrawerContent;
+  static DrawerItem: typeof DrawerItem;
+  static TemporaryDrawer: typeof TemporaryDrawer;
+  static TemporaryDrawerHeader: typeof TemporaryDrawerHeader;
+  static TemporaryDrawerContent: typeof TemporaryDrawerContent;
+  static PermanentDrawer: typeof PermanentDrawer;
+  static PermanentDrawerHeader: typeof PermanentDrawerHeader;
+  static PermanentDrawerContent: typeof PermanentDrawerContent;
+  static PersistentDrawer: typeof PersistentDrawer;
+  static PersistentDrawerHeader: typeof PersistentDrawerHeader;
+  static PersistentDrawerContent: typeof PersistentDrawerContent;
 }
 
 declare interface IDrawerProps extends JSX.HTMLAttributes {

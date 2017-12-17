@@ -1,7 +1,7 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 
-declare interface IButtonProps extends JSX.HTMLAttributes {
+declare interface IButtonProps {
   dense?: boolean;
   raised?: boolean;
   compact?: boolean;
@@ -9,7 +9,7 @@ declare interface IButtonProps extends JSX.HTMLAttributes {
   unelevated?: boolean;
   stroked?: boolean;
 }
-export default class Button<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & IButtonProps, StateType> {
+export default class Button<PropsType = JSX.HTMLAttributes, StateType = {}> extends MaterialComponent<PropsType & IButtonProps, StateType> {
   static Icon: typeof Icon;
 }
 declare class Icon extends MaterialComponent<JSX.HTMLAttributes, {}> {}
