@@ -2,23 +2,23 @@ import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent, MDCRipple } from '../MaterialComponentsWeb';
 
-declare interface IHelptextProps extends JSX.HTMLAttributes {
+declare interface IHelperTextProps extends JSX.HTMLAttributes {
   persistent?: boolean;
   'validation-msg'?: boolean;
 }
-declare class Helptext extends MaterialComponent<IHelptextProps, {}> {}
+declare class HelperText extends MaterialComponent<IHelperTextProps, {}> {}
 
 declare interface ITextFieldProps extends JSX.HTMLAttributes {
-  helptext?: string;
-  helptextPersistent?: string;
-  helptextValidationMsg?: string;
+  helperText?: string;
+  helperTextPersistent?: string;
+  helperTextValidationMsg?: string;
   cssLabel?: string;
 }
 declare interface ITextFieldState {
   showFloatingLabel: boolean;
 }
 export default class TextField extends MaterialComponent<ITextFieldProps, ITextFieldState> {
-  static Helptext: typeof Helptext;
+  static HelperText: typeof HelperText;
 
   static uid(): number;
   MDComponent: MDCTextField;
