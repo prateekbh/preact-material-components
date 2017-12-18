@@ -1,7 +1,7 @@
 import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
-import List from '../List/List';
+import List from '../List';
 
 declare interface IMenuProps extends JSX.HTMLAttributes {
   open?: boolean;
