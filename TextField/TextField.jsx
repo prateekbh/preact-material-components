@@ -7,10 +7,10 @@ import Icon from "../Icon";
  * @prop persistent = false
  * @prop validation-msg = false
  */
-class Helptext extends MaterialComponent {
+class HelperText extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "text-field-helptext";
+    this.componentName = "text-field-helper-text";
     this._mdcProps = ["persistent", "validation-msg"];
   }
   materialDom(props) {
@@ -130,9 +130,9 @@ class TextFieldInput extends MaterialComponent {
  * @prop type = 'text'
  * @prop value = ''
  * @prop label = ''
- * @prop helptext = ''
- * @prop helptextPersistent = false
- * @prop helptextValidationMsg = false
+ * @prop helperText = ''
+ * @prop helperTextPersistent = false
+ * @prop helperTextValidationMsg = false
  */
 class TextField extends Component {
   constructor() {
@@ -159,20 +159,20 @@ class TextField extends Component {
   render(allprops, { showFloatingLabel }) {
     const {
       className,
-      helptextPersistent,
-      helptextValidationMsg,
+      helperTextPersistent,
+      helperTextValidationMsg,
       ...props
     } = allprops;
-    const showDiv = props.helptext || (props.label && !showFloatingLabel);
+    const showDiv = props.helperText || (props.label && !showFloatingLabel);
 
     if (showDiv && !props.id) {
       props.id = "tf-" + this.id;
     }
 
     // Helper text
-    const helptextProps = {
-      persistent: helptextPersistent,
-      "validation-msg": helptextValidationMsg
+    const helperTextProps = {
+      persistent: helperTextPersistent,
+      "validation-msg": helperTextValidationMsg
     };
 
     return showDiv ? (
@@ -186,12 +186,12 @@ class TextField extends Component {
           onInit={MDComponent => {
             this.MDComponent = MDComponent;
           }}
-          aria-controls={props.helptext && props.id + "-helptext"}
+          aria-controls={props.helperText && props.id + "-helper-text"}
         />
-        {props.helptext && (
-          <Helptext id={props.id + "-helptext"} {...helptextProps}>
-            {props.helptext}
-          </Helptext>
+        {props.helperText && (
+          <HelperText id={props.id + "-helper-text"} {...helperTextProps}>
+            {props.helperText}
+          </HelperText>
         )}
       </div>
     ) : (
@@ -216,6 +216,6 @@ function setValid(oldprops, newprops, textfield) {
   }
 }
 
-TextField.Helptext = Helptext;
+TextField.Helptext = HelperText;
 
 export default TextField;

@@ -220,6 +220,16 @@ export default class Home extends Component {
         </div>
 
         <div>
+          <TextField
+            label="helperText"
+            helperText="helper text"
+            helperTextPersistent
+            helperTextValidationMsg
+            required
+          />
+        </div>
+
+        <div>
           <Icon className="some-class">check</Icon>
         </div>
 
