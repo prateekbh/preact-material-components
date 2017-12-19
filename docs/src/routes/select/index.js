@@ -32,7 +32,7 @@ export default class SelectPage extends Component {
             name: "hintText",
             value: "string",
             description:
-              'Helpful text to display when no selection has been made. ("selectedIndex" must be "null" for the hintText to show)'
+              'Helpful text to display when no selection has been made. ("selectedIndex" must be -1 for the hintText to show)'
           },
           {
             name: "onChange",
