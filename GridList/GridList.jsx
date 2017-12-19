@@ -9,7 +9,7 @@ const notEmptyString = val => val !== "";
  * @prop header-caption {boolean} - position <GridList.SecondaryTile> at top
  * @prop twoline-caption {boolean} - add spacing to <GridList.SecondaryTile> for <GridList.SupportTextTile>
  * @prop with-icon-align {"start"|"end"} - position <GridList.IconTile> at beginning or end of <GridList.SecondaryTile>
- * @prop aspect-ratio {"1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4"} - aspect ratio for <GridList.PrimaryTile>
+ * @prop tile-aspect {"1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4"} - aspect ratio for <GridList.PrimaryTile>
  */
 class GridList extends MaterialComponent {
   get validationValuesByKey() {

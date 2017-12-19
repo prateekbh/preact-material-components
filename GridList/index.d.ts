@@ -5,8 +5,8 @@ declare interface IGridListProps extends JSX.HTMLAttributes {
   'tile-gutter-1'?: boolean;
   'header-caption'?: boolean;
   'twoline-caption'?: boolean;
-  'with-icon-align': "start"|"end";
-  'aspect-ratio': "1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4";
+  'with-icon-align'?: "start"|"end";
+  'tile-aspect'?: "1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4";
 }
 export default class GridList extends MaterialComponent<IGridListProps, {}> {
   static Tiles: typeof Tiles;
