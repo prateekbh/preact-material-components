@@ -5,8 +5,8 @@ import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 import { Omit } from '../libs';
 
 declare interface IDialogProps extends JSX.HTMLAttributes {
-  onAccept?: () => void;
-  onCancel?: () => void;
+  onAccept?: (e: Event) => void;
+  onCancel?: (e: Event) => void;
 }
 export default class Dialog extends MaterialComponent<IDialogProps, {}> {
   static Header: typeof Header;
