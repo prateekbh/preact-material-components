@@ -5,7 +5,7 @@ import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 declare interface ILinearProgressProps extends JSX.HTMLAttributes {
   indeterminate?: boolean;
   reversed?: boolean;
-  accent?: boolean;
+  progress?: number;
 }
 export default class LinearProgress extends MaterialComponent<ILinearProgressProps, {}> {
   MDComponent: MDCLinearProgress;
