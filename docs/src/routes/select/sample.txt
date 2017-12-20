@@ -15,8 +15,8 @@ export default class SelectPage extends Component {
             this.setState({
               chosenIndex: e.selectedIndex
             });
-            //selected option
-            console.log(e.selectedOption);
+            //selected options
+            console.log(e.selectedOptions);
           }}>
             <Select.Item>opt1</Select.Item>
             <Select.Item>opt2</Select.Item>
