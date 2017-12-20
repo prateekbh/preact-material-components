@@ -3,8 +3,7 @@ import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 import { Omit } from '../libs';
 
-declare interface ISliderProps extends Omit<JSX.HTMLAttributes, 'value' | 'disabled' | 'min' | 'max' | 'step' | 'onInput' | 'onChange'> {
-  disabled?: boolean;
+declare interface ISliderProps extends Omit<JSX.HTMLAttributes, 'value' | 'min' | 'max' | 'step' | 'onInput' | 'onChange'> {
   discrete?: boolean;
   value?: number;
   min?: number;
