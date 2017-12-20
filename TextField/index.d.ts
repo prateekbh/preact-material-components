@@ -9,10 +9,16 @@ declare interface IHelperTextProps extends JSX.HTMLAttributes {
 declare class HelperText extends MaterialComponent<IHelperTextProps, {}> {}
 
 declare interface ITextFieldProps extends JSX.HTMLAttributes {
+  fullwidth?: boolean;
+  textarea?: boolean;
+  dense?: boolean;
+  box?: boolean;
   helperText?: string;
-  helperTextPersistent?: string;
-  helperTextValidationMsg?: string;
+  helperTextPersistent?: boolean;
+  helperTextValidationMsg?: boolean;
   cssLabel?: string;
+  leadingIcon?: string;
+  trailingIcon?: string;
 }
 declare interface ITextFieldState {
   showFloatingLabel: boolean;
