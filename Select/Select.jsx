@@ -75,9 +75,13 @@ class Select extends MaterialComponent {
           this.control = control;
         }}
       >
-        <span className="mdc-select__selected-text">{props.hintText}</span>
+        <div class="mdc-select__surface">
+          <div class="mdc-select__label">{props.hintText}</div>
+          <div class="mdc-select__selected-text" />
+          <div class="mdc-select__bottom-line" />
+        </div>
         <div className="mdc-simple-menu mdc-select__menu">
-          <ul className="mdc-list mdc-simple-menu__items ">{props.children}</ul>
+          <ul className="mdc-list mdc-simple-menu__items">{props.children}</ul>
         </div>
       </div>
     );
