@@ -2,7 +2,11 @@ import MaterialComponent from '../MaterialComponent';
 import { VNode } from 'preact';
 import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
 
-export default class Snackbar extends MaterialComponent<JSX.HTMLAttributes, {}> {
+declare interface ISnackbarProps extends JSX.HTMLAttributes {
+  dismissesOnAction?: boolean;
+}
+
+export default class Snackbar extends MaterialComponent<ISnackbarProps, {}> {
   MDComponent: MDCSnackbar;
 }
 
@@ -11,8 +15,8 @@ declare interface ISnackbarData {
   multiline?: boolean;
   actionOnBottom?: boolean;
   timeout?: number;
-  actionHandler: Function;
-  actionText: string;
+  actionHandler?: Function;
+  actionText?: string;
 }
 
 declare class MDCSnackbarFoundation extends MDCFoundation<MDCSnackbar> {

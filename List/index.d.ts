@@ -29,7 +29,7 @@ declare class ItemIcon extends MaterialComponent<IItemIconProps, {}> {
   getProxyClassName(props: IItemIconProps): string;
 }
 
-declare class ItemAvatar extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class ItemAvatar extends ItemIcon {}
 
 declare interface IDividerProps extends JSX.HTMLAttributes {
   inset?: boolean;

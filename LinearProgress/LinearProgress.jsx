@@ -5,7 +5,6 @@ import { MDCLinearProgress } from "@material/linear-progress";
 /**
  * @prop indeterminate = false
  * @prop reversed = false
- * @prop accent = false
  */
 export default class LinearProgress extends MaterialComponent {
   constructor() {

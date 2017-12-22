@@ -40,20 +40,26 @@ export default class TextFieldPage extends Component {
             description: "Use a dense font"
           },
           {
+            name: "box",
+            description:
+              "Enclose label and input in a transparent rectangular fill"
+          },
+          {
             name: "disabled",
             description: "Disables the input"
           },
           {
-            name: "helptext",
+            name: "helperText",
             description:
-              "Include an help text that is useful for providing supplemental information to users, as well for validation messages"
+              "Include an help text that is useful for providing supplemental information to users, as well for validation messages",
+            value: "help text"
           },
           {
-            name: "helptextPersistent",
+            name: "helperTextPersistent",
             description: "Makes the help text always visible"
           },
           {
-            name: "helptextValidationMsg",
+            name: "helperTextValidationMsg",
             description:
               "Provide styles for using the help text as a validation message"
           }

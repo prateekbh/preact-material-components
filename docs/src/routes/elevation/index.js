@@ -24,8 +24,8 @@ export default class ElevationPage extends Component {
         props: [
           {
             name: "z",
-            value: "1 to 25",
-            description: "Add z=(1 to 25) to get different elevations."
+            value: "0 to 24",
+            description: "Add z=(0 to 24) to get different elevations."
           }
         ]
       }
