@@ -282,9 +282,6 @@ export default class Home extends Component {
         <div>
           <Select
             hintText="Select an option"
-            ref={presel => {
-              this.presel = presel;
-            }}
             selectedIndex={this.state.chosenOption}
             onChange={e => {
               this.setState({

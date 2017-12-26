@@ -9,7 +9,6 @@ export default class SelectPage extends Component {
     return (
       <div>
         <Select hintText="Select an option"
-          ref={presel=>{this.presel = presel;}}
           selectedIndex={this.state.chosenIndex}
           onChange={(e)=>{
             this.setState({
