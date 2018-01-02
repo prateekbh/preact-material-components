@@ -38,21 +38,21 @@ class Menu extends MaterialComponent {
     this.MDComponent.unlisten("MDCSimpleMenu:cancel", this._cancel);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
-  _select() {
+  _select(e) {
     if (this.props.onSelect) {
-      this.props.onSelect();
+      this.props.onSelect(e);
     }
     this._menuClosed();
   }
-  _cancel() {
+  _cancel(e) {
     if (this.props.onCancel) {
-      this.props.onCancel();
+      this.props.onCancel(e);
     }
     this._menuClosed();
   }
-  _menuClosed() {
+  _menuClosed(e) {
     if (this.props.onMenuClosed) {
-      this.props.onMenuClosed();
+      this.props.onMenuClosed(e);
     }
   }
   componentWillUpdate(nextProps) {
