@@ -17,8 +17,8 @@ export default class Drawer {
 }
 
 declare interface IDrawerProps extends JSX.HTMLAttributes {
-  onOpen?: () => void;
-  onClose?: () => void;
+  onOpen?: (e: Event) => void;
+  onClose?: (e: Event) => void;
 }
 declare class TemporaryDrawer extends MaterialComponent<IDrawerProps, {}> {
   MDComponent: MDCTemporaryDrawer;

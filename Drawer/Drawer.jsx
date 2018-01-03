@@ -4,7 +4,7 @@ import { MDCTemporaryDrawer } from "@material/drawer/temporary";
 import { MDCPersistentDrawer } from "@material/drawer/persistent";
 import List from "../List";
 
-/*
+/**
  * Default props for drawers
  */
 const defaultProps = {
@@ -18,14 +18,14 @@ class TemporaryDrawer extends MaterialComponent {
     this._open = this._open.bind(this);
     this._close = this._close.bind(this);
   }
-  _open() {
+  _open(e) {
     if (this.props.onOpen) {
-      this.props.onOpen();
+      this.props.onOpen(e);
     }
   }
-  _close() {
+  _close(e) {
     if (this.props.onClose) {
-      this.props.onClose();
+      this.props.onClose(e);
     }
   }
   componentDidMount() {
@@ -155,14 +155,14 @@ class PersistentDrawer extends MaterialComponent {
     this._open = this._open.bind(this);
     this._close = this._close.bind(this);
   }
-  _open() {
+  _open(e) {
     if (this.props.onOpen) {
-      this.props.onOpen();
+      this.props.onOpen(e);
     }
   }
-  _close() {
+  _close(e) {
     if (this.props.onClose) {
-      this.props.onClose();
+      this.props.onClose(e);
     }
   }
   componentDidMount() {
@@ -240,7 +240,7 @@ class DrawerItem extends List.LinkItem {
   }
 }
 
-/*
+/**
  * Function to add declarative opening/closing to drawer
  */
 function toggleDrawer(oldprops, newprops, drawer) {

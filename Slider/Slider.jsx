@@ -13,27 +13,36 @@ export default class Slider extends MaterialComponent {
     this._onChange = this._onChange.bind(this);
     this._onInput = this._onInput.bind(this);
   }
-  _onChange() {
+
+  _onChange(e) {
     if (this.props.onChange) {
-      this.props.onChange(this.MDComponent.value);
+      this.props.onChange(e);
     }
   }
-  _onInput() {
+
+  _onInput(e) {
     if (this.props.onInput) {
-      this.props.onInput(this.MDComponent.value);
+      this.props.onInput(e);
     }
   }
+
   componentDidMount() {
     this.MDComponent = new MDCSlider(this.base);
     this.MDComponent.listen("MDCSlider:change", this._onChange);
     this.MDComponent.listen("MDCSlider:input", this._onInput);
     this.setValue(); // set initial value programatically because of error if min is greater than initial max
   }
+
   componentWillUnmount() {
     this.MDComponent.unlisten("MDCSlider:change", this._onChange);
     this.MDComponent.unlisten("MDCSlider:input", this._onInput);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
+
+  getValue() {
+    return this.MDComponent.value;
+  }
+
   setValue(props = this.props) {
     const { disabled = false, min = 0, max = 100, value, step } = props;
     if (this.MDComponent) {

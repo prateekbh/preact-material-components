@@ -9,13 +9,14 @@ declare interface ISliderProps extends Omit<JSX.HTMLAttributes, 'value' | 'min' 
   min?: number;
   max?: number;
   step?: number;
-  onInput?: (value: number) => void;
-  onChange?: (value: number) => void;
+  onInput?: (e: Event) => void;
+  onChange?: (e: Event) => void;
 }
 
 export default class Slider extends MaterialComponent<ISliderProps, {}> {
   MDComponent: MDCSlider;
   setValue(props: ISliderProps): void;
+  getValue(): number;
 }
 
 declare class MDCSliderFoundation extends MDCFoundation<MDCSlider> {
