@@ -48,7 +48,7 @@
     "@material/grid-list": "^0.27.0",
     "@material/icon-toggle": "^0.27.0",
     "@material/layout-grid": "^0.24.0",
-    "@material/linear-progress": "^0.27.0",
+    "@material/linear-progress": "^0.28.0",
     "@material/list": "^0.27.0",
     "@material/menu": "^0.27.0",
     "@material/radio": "^0.27.0",
