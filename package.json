@@ -52,7 +52,7 @@
     "@material/list": "^0.27.0",
     "@material/menu": "^0.27.0",
     "@material/radio": "^0.27.0",
-    "@material/ripple": "^0.27.0",
+    "@material/ripple": "^0.28.0",
     "@material/rtl": "^0.1.8",
     "@material/select": "^0.27.0",
     "@material/selection-control": "^0.27.0",
