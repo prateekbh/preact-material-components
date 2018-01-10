@@ -38,9 +38,6 @@ class Select extends MaterialComponent {
     ) {
       this.MDComponent.selectedIndex = this.props.selectedIndex;
     }
-  }
-  componentDidUpdate() {
-    this.updateSelection();
     if (this.MDComponent && this.MDComponent.foundation_) {
       this.MDComponent.foundation_.resize();
       if (
@@ -52,6 +49,9 @@ class Select extends MaterialComponent {
         );
       }
     }
+  }
+  componentDidUpdate() {
+    this.updateSelection();
   }
   materialDom(props) {
     if (props.basic) {
