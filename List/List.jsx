@@ -163,7 +163,7 @@ class ListPrimaryText extends ListTextContainer {
 class ListSecondaryText extends ListTextContainer {
   constructor() {
     super();
-    this.componentName = "list-item__text__secondary-text";
+    this.componentName = "list-item__secondary-text";
   }
 }
 
