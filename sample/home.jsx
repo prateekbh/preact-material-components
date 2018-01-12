@@ -28,7 +28,7 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      chosenOption: 2,
+      chosenOption: -1,
       fabExited: false,
       drawerOpen: false,
       menuOpened: false,

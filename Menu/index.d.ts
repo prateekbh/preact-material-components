@@ -9,9 +9,9 @@ declare interface IMenuProps extends JSX.HTMLAttributes {
   'open-from-top-right'?: boolean;
   'open-from-bottom-left'?: boolean;
   'open-from-bottom-right'?: boolean;
-  onSelect?: () => void;
-  onCancel?: () => void;
-  onMenuClosed?: () => void;
+  onSelect?: (e: Event) => void;
+  onCancel?: (e: Event) => void;
+  onMenuClosed?: (e: Event) => void;
 }
 
 export default class Menu extends MaterialComponent<IMenuProps, {}> {
