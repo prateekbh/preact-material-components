@@ -68,7 +68,7 @@ class PermanentDrawer extends MaterialComponent {
   materialDom(props) {
     return (
       <nav className="mdc-typography mdc-drawer" {...props}>
-        {props.spacer && `<div className="mdc-drawer__toolbar-spacer" />`}
+        {props.spacer && <div className="mdc-drawer__toolbar-spacer" />}
         <div className="mdc-drawer__content">
           <nav className="mdc-list">{props.children}</nav>
         </div>
