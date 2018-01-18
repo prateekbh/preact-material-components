@@ -109,10 +109,6 @@ export default class Home extends Component {
           Open Dialog
         </Button>
 
-        <Button accent raised>
-          Testing accent prop
-        </Button>
-
         <div>
           <Fab
             mini={true}
