@@ -45,55 +45,14 @@ class TemporaryDrawer extends MaterialComponent {
   materialDom(props) {
     return (
       <aside
-        className="mdc-typography"
+        className="mdc-typography mdc-drawer"
         ref={control => {
           this.control = control;
         }}
         {...props}
       >
-        <nav className="mdc-temporary-drawer__drawer">{props.children}</nav>
+        <nav className="mdc-drawer__drawer">{props.children}</nav>
       </aside>
-    );
-  }
-}
-
-class TemporaryDrawerHeader extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = "temporary-drawer__header";
-  }
-  materialDom(props) {
-    return (
-      <header
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
-        <div className="mdc-temporary-drawer__header-content">
-          {props.children}
-        </div>
-      </header>
-    );
-  }
-}
-
-class TemporaryDrawerContent extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = "temporary-drawer__content";
-  }
-  materialDom(props) {
-    return (
-      <nav
-        className="mdc-list"
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
-        {props.children}
-      </nav>
     );
   }
 }
@@ -104,15 +63,13 @@ class TemporaryDrawerContent extends MaterialComponent {
 class PermanentDrawer extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "permanent-drawer";
+    this.componentName = "drawer--permanent";
   }
   materialDom(props) {
     return (
-      <nav className="mdc-typography" {...props}>
-        {props.spacer && (
-          <div className="mdc-permanent-drawer__toolbar-spacer" />
-        )}
-        <div className="mdc-permanent-drawer__content">
+      <nav className="mdc-typography mdc-drawer" {...props}>
+        {props.spacer && <div className="mdc-drawer__toolbar-spacer" />}
+        <div className="mdc-drawer__content">
           <nav className="mdc-list">{props.children}</nav>
         </div>
       </nav>
@@ -120,38 +77,10 @@ class PermanentDrawer extends MaterialComponent {
   }
 }
 
-class PermanentDrawerHeader extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = "permanent-drawer__header";
-  }
-  materialDom(props) {
-    return (
-      <header
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
-        <div className="mdc-permanent-drawer__header-content">
-          {props.children}
-        </div>
-      </header>
-    );
-  }
-}
-
-class PermanentDrawerContent extends TemporaryDrawerContent {
-  constructor() {
-    super();
-    this.componentName = "permanent-drawer__content";
-  }
-}
-
 class PersistentDrawer extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "persistent-drawer";
+    this.componentName = "drawer--persistent";
     this._open = this._open.bind(this);
     this._close = this._close.bind(this);
   }
@@ -182,22 +111,22 @@ class PersistentDrawer extends MaterialComponent {
   materialDom(props) {
     return (
       <aside
-        className="mdc-typography"
+        className="mdc-typography mdc-drawer"
         ref={control => {
           this.control = control;
         }}
         {...props}
       >
-        <nav className="mdc-persistent-drawer__drawer">{props.children}</nav>
+        <nav className="mdc-drawer__drawer">{props.children}</nav>
       </aside>
     );
   }
 }
 
-class PersistentDrawerHeader extends MaterialComponent {
+class DrawerHeader extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "persistent-drawer__header";
+    this.componentName = "drawer__header";
   }
   materialDom(props) {
     return (
@@ -207,18 +136,29 @@ class PersistentDrawerHeader extends MaterialComponent {
         }}
         {...props}
       >
-        <div className="mdc-persistent-drawer__header-content">
-          {props.children}
-        </div>
+        <div className="mdc-drawer__header-content">{props.children}</div>
       </header>
     );
   }
 }
 
-class PersistentDrawerContent extends TemporaryDrawerContent {
+class DrawerContent extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "persistent-drawer__content";
+    this.componentName = "drawer__content";
+  }
+  materialDom(props) {
+    return (
+      <nav
+        className="mdc-list"
+        ref={control => {
+          this.control = control;
+        }}
+        {...props}
+      >
+        {props.children}
+      </nav>
+    );
   }
 }
 
@@ -233,8 +173,7 @@ class DrawerItem extends List.LinkItem {
     const returnedNode = super.materialDom(props);
     /* Logic to add selected class */
     if (props.selected) {
-      returnedNode.attributes["className"] =
-        "mdc-temporary-drawer--selected mdc-permanent-drawer--selected";
+      returnedNode.attributes["className"] = "mdc-list-item--activated";
     }
     return returnedNode;
   }
@@ -257,13 +196,9 @@ let Drawer = {};
 
 Drawer.DrawerItem = DrawerItem;
 Drawer.TemporaryDrawer = TemporaryDrawer;
-Drawer.TemporaryDrawerHeader = TemporaryDrawerHeader;
-Drawer.TemporaryDrawerContent = TemporaryDrawerContent;
+Drawer.DrawerHeader = DrawerHeader;
+Drawer.DrawerContent = DrawerContent;
 Drawer.PermanentDrawer = PermanentDrawer;
-Drawer.PermanentDrawerHeader = PermanentDrawerHeader;
-Drawer.PermanentDrawerContent = PermanentDrawerContent;
 Drawer.PersistentDrawer = PersistentDrawer;
-Drawer.PersistentDrawerHeader = PersistentDrawerHeader;
-Drawer.PersistentDrawerContent = PersistentDrawerContent;
 
 export default Drawer;
