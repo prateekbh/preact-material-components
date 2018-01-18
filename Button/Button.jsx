@@ -1,7 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Icon from "../Icon/";
-import generateThemeClass from "../utils/generateThemeClass";
+import generateThemeClass from "../themeUtils/generateThemeClass";
 
 /**
  *  @prop dense = false
