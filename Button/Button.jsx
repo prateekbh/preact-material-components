@@ -15,15 +15,21 @@ class Button extends MaterialComponent {
     super();
     this.componentName = "button";
     this._mdcProps = ["dense", "raised", "compact", "unelevated", "stroked"];
+    this.themeProps = ["primary", "secondary", "accent"];
   }
   componentDidMount() {
     super.attachRipple();
   }
   materialDom(props) {
     const ButtonElement = props.href ? "a" : "button";
+    let className = "";
+    this.themeProps.forEach(themeProp => {
+      if (themeProp in props) className += _generateThemeClass(themeProp);
+    });
 
     return (
       <ButtonElement
+        className={className}
         ref={control => {
           this.control = control;
         }}
@@ -41,6 +47,15 @@ class ButtonIcon extends Icon {
     this.componentName = "button__icon";
   }
 }
+
+const _generateThemeClass = prop => {
+  const mappings = {
+    primary: "primary",
+    secondary: "secondary",
+    accent: "secondary"
+  };
+  return `mdc-theme--${mappings[prop]}-bg `;
+};
 
 Button.Icon = ButtonIcon;
 export default Button;

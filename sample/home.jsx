@@ -86,9 +86,9 @@ export default class Home extends Component {
         </Drawer.TemporaryDrawer>
 
         <Button
-          raised={true}
-          accent={true}
-          ripple={true}
+          primary
+          raised
+          ripple
           onClick={e => {
             this.drawer.MDComponent.open = true;
           }}
@@ -97,9 +97,9 @@ export default class Home extends Component {
         </Button>
 
         <Button
-          raised={true}
-          accent={true}
-          ripple={true}
+          secondary
+          raised
+          ripple
           onClick={e => {
             console.log(this.dlg.MDComponent);
             this.dlg.MDComponent.show();
@@ -107,6 +107,10 @@ export default class Home extends Component {
         >
           <Button.Icon>favorite_border</Button.Icon>
           Open Dialog
+        </Button>
+
+        <Button accent raised>
+          Testing accent prop
         </Button>
 
         <div>
