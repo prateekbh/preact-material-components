@@ -22,8 +22,8 @@ declare class Item extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 declare class LinkItem<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
 
 declare interface IItemIconProps extends JSX.HTMLAttributes {
-  'start-detail'?: boolean;
-  'end-detail'?: boolean;
+  'graphic'?: boolean;
+  'meta'?: boolean;
 }
 declare class ItemIcon extends MaterialComponent<IItemIconProps, {}> {
   getProxyClassName(props: IItemIconProps): string;
