@@ -14,4 +14,4 @@ declare interface IButtonProps {
 export default class Button<PropsType = JSX.HTMLAttributes, StateType = {}> extends MaterialComponent<PropsType & IButtonProps, StateType> {
   static Icon: typeof Icon;
 }
-declare class Icon extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+declare class Icon extends MaterialComponent<JSX.HTMLAttributes, {}> { }

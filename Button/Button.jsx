@@ -1,6 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Icon from "../Icon/";
+import generateThemeClass from "../themeUtils/generateThemeClass";
 
 /**
  *  @prop dense = false
@@ -15,15 +16,22 @@ class Button extends MaterialComponent {
     super();
     this.componentName = "button";
     this._mdcProps = ["dense", "raised", "compact", "unelevated", "stroked"];
+    this.themeProps = ["primary", "secondary"];
   }
   componentDidMount() {
     super.attachRipple();
   }
   materialDom(props) {
     const ButtonElement = props.href ? "a" : "button";
+    let className = "";
+    this.themeProps.forEach(themeProp => {
+      if (themeProp in props && props[themeProp] !== false)
+        className += generateThemeClass(themeProp) + " ";
+    });
 
     return (
       <ButtonElement
+        className={className}
         ref={control => {
           this.control = control;
         }}
