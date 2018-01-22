@@ -26,7 +26,7 @@ class Button extends MaterialComponent {
     let className = "";
     this.themeProps.forEach(themeProp => {
       if (themeProp in props && props[themeProp] !== false)
-        className += generateThemeClass(themeProp);
+        className += generateThemeClass(themeProp) + " ";
     });
 
     return (

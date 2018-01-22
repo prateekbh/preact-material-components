@@ -1,1 +1,1 @@
-export default prop => `mdc-theme--${prop}-bg `;
+export default prop => `mdc-theme--${prop}-bg`;
