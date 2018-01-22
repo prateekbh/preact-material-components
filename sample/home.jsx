@@ -78,11 +78,11 @@ export default class Home extends Component {
             console.log("Closed");
           }}
         >
-          <Drawer.TemporaryDrawerHeader>
-            Hello Header
-          </Drawer.TemporaryDrawerHeader>
-          <Drawer.DrawerItem>Item1</Drawer.DrawerItem>
-          <Drawer.DrawerItem selected={true}>Item2</Drawer.DrawerItem>
+          <Drawer.DrawerHeader>Hello Header</Drawer.DrawerHeader>
+          <Drawer.DrawerContent>
+            <Drawer.DrawerItem>Item1</Drawer.DrawerItem>
+            <Drawer.DrawerItem selected={true}>Item2</Drawer.DrawerItem>
+          </Drawer.DrawerContent>
         </Drawer.TemporaryDrawer>
 
         <Button

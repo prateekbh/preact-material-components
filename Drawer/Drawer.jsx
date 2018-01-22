@@ -14,7 +14,7 @@ const defaultProps = {
 class TemporaryDrawer extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "temporary-drawer";
+    this.componentName = "drawer--temporary";
     this._open = this._open.bind(this);
     this._close = this._close.bind(this);
   }
