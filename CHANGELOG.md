@@ -13,4 +13,6 @@
 </Drawer.TemporaryDrawer>
 ```
 - ListItemIcon has renamed props, `start-detail` => `graphic` and `end-detail` => `meta`.
-- Button has `primary`/ `secondary` props to button.
+- Button has `primary`/ `secondary` props for setting the theme color.
+
+__P.S.__ For all styling props be sure to add mdc.theme.css/ mdc.theme.min.css
