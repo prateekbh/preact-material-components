@@ -61,8 +61,8 @@ class LinkItem extends MaterialComponent {
 }
 
 /**
- * @prop start-detail = true
- * @prop end-detail = false
+ * @prop graphic = true
+ * @prop meta = false
  */
 class ListItemIcon extends MaterialComponent {
   constructor() {
@@ -73,13 +73,13 @@ class ListItemIcon extends MaterialComponent {
     let classNames = [];
 
     // default behavior
-    props["start-detail"] = props["start-detail"] || true;
+    props["graphic"] = props["graphic"] || true;
 
     // setting class names mutually exclusive
-    if (props["end-detail"]) {
-      classNames.push("mdc-list-item__end-detail");
-    } else if (props["start-detail"]) {
-      classNames.push("mdc-list-item__start-detail");
+    if (props["meta"]) {
+      classNames.push("mdc-list-item__meta");
+    } else if (props["graphic"]) {
+      classNames.push("mdc-list-item__graphic");
     }
     return classNames.join(" ");
   }
@@ -99,8 +99,8 @@ class ListItemIcon extends MaterialComponent {
 }
 
 /**
- * @prop start-detail = true
- * @prop end-detail = false
+ * @prop graphic = true
+ * @prop meta = false
  */
 class ListItemAvatar extends ListItemIcon {
   constructor() {
