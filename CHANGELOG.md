@@ -1,6 +1,6 @@
 # Changelog
 
-## 24 Jan 2018
+## 1.3.5
 - Updated to mdc 0.29.0.
 - All types of drawers now share same DrawerHeader, DrawerContent.
 ```
