@@ -29,11 +29,11 @@ export default class DrawerPage extends Component {
         props: []
       },
       {
-        component: "Drawer.TemporaryDrawerHeader",
+        component: "Drawer.DrawerHeader",
         props: []
       },
       {
-        component: "Drawer.TemporaryDrawerContent",
+        component: "Drawer.DrawerContent",
         props: []
       },
       {
@@ -47,6 +47,16 @@ export default class DrawerPage extends Component {
       },
       {
         component: "Drawer.PermanentDrawer",
+        props: [
+          {
+            name: "spacer",
+            description:
+              "Teels if the tollbar height equivalent spacer is required."
+          }
+        ]
+      },
+      {
+        component: "Drawer.PersistentDrawer",
         props: [
           {
             name: "spacer",
@@ -83,9 +93,8 @@ export default class DrawerPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates <span className="strong">
-            mdc-drawer
-          </span>, you can refer to its documentation
+          This component encapsulates <span className="strong">mdc-drawer</span>,
+          you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer">
             {" "}
             here
@@ -113,17 +122,17 @@ export default class DrawerPage extends Component {
               });
             }}
           >
-            <Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
+            <Drawer.DrawerHeader className="mdc-theme--primary-bg">
               Components
-            </Drawer.TemporaryDrawerHeader>
-            <Drawer.TemporaryDrawerContent>
+            </Drawer.DrawerHeader>
+            <Drawer.DrawerContent>
               <List>
                 <List.LinkItem>
                   <List.ItemIcon>home</List.ItemIcon>
                   Home
                 </List.LinkItem>
               </List>
-            </Drawer.TemporaryDrawerContent>
+            </Drawer.DrawerContent>
           </Drawer.TemporaryDrawer>
         </div>
       </div>
