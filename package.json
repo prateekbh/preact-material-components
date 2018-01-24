@@ -93,12 +93,12 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "lint-staged": {
-    "./index.js": [
-      "prettier --write",
+    "index.js": [
+      "npm run prettier:write",
       "git add"
     ],
     "**/*.jsx": [
-      "prettier --write",
+      "npm run prettier:write",
       "git add"
     ]
   },
