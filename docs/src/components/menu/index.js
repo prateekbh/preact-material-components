@@ -62,17 +62,17 @@ export default class Menu extends Component {
   render({ items }) {
     return (
       <Drawer.TemporaryDrawer ref={drawer => (this.drawer = drawer)}>
-        <Drawer.TemporaryDrawerHeader className="mdc-theme--primary-bg">
+        <Drawer.DrawerHeader className="mdc-theme--primary-bg">
           Components @ (v{json.devDependencies["preact-material-components"]})
-        </Drawer.TemporaryDrawerHeader>
-        <Drawer.TemporaryDrawerContent>
+        </Drawer.DrawerHeader>
+        <Drawer.DrawerContent>
           {items.map(({ icon, link, text }) => (
             <Drawer.DrawerItem href={link} onClick={this._onClick}>
               <List.ItemIcon>{icon || "code"}</List.ItemIcon>
               {text}
             </Drawer.DrawerItem>
           ))}
-        </Drawer.TemporaryDrawerContent>
+        </Drawer.DrawerContent>
       </Drawer.TemporaryDrawer>
     );
   }

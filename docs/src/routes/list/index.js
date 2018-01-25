@@ -40,11 +40,11 @@ export default class ListPage extends Component {
         component: "List.LinkItem",
         props: [
           {
-            name: "align-start",
+            name: "graphic",
             description: "Makes the Icon align to start."
           },
           {
-            name: "align-end",
+            name: "meta",
             description: "Makes the Icon align to end."
           }
         ]
