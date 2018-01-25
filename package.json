@@ -10,8 +10,8 @@
     "test": "npm run build && npm run prettier",
     "lint": "eslint index.js */*.jsx",
     "lint-staged": "lint-staged",
-    "prettier": "prettier -l *.js */*.jsx sample/webpack.config.js",
-    "prettier:write": "prettier --write *.js */*.jsx sample/webpack.config.js",
+    "prettier": "prettier -l --print-width 80  *.js */*.jsx sample/webpack.config.js",
+    "prettier:write": "prettier --write --print-width 80  *.js */*.jsx sample/webpack.config.js",
     "sample": "http-server ./sample"
   },
   "repository": {

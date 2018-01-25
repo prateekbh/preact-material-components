@@ -19,8 +19,9 @@ export default ({ children, ...props }) => {
     isHighlight = child && child.nodeName === "code";
   if (isHighlight) {
     let text = child.children[0].replace(/(^\s+|\s+$)/g, ""),
-      lang = (child.attributes.class && child.attributes.class)
-        .match(/lang-([a-z]+)/)[1],
+      lang = (child.attributes.class && child.attributes.class).match(
+        /lang-([a-z]+)/
+      )[1],
       highlighted = hljs.highlightAuto(text, lang ? [lang] : null),
       hLang = highlighted.language;
     return (

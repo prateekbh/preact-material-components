@@ -10,8 +10,8 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "test": "npm run prettier",
-    "prettier": "prettier -l 'src/**/*.js'",
-    "prettier:write": "prettier --write 'src/**/*.js'"
+    "prettier": "prettier -l --print-width 80 'src/**/*.js'",
+    "prettier:write": "prettier --write --print-width 80 'src/**/*.js'"
   },
   "repository": {
     "type": "git",
