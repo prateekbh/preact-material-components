@@ -49,6 +49,14 @@ export default class ButtonPage extends Component {
           {
             name: "stroked",
             description: "Adds stroked effect to the button"
+          },
+          {
+            name: "primary ",
+            description: "(Theming Prop) Adds primary color to button"
+          },
+          {
+            name: "secondary",
+            description: "(Theming Prop) Adds secondary color to button"
           }
         ]
       }
@@ -58,7 +66,7 @@ export default class ButtonPage extends Component {
     return (
       <div className="page-buttons">
         <ComponentTable data={this.propsTable} />
-
+        <div>* Theming props needs theming.css to be included</div>
         <div className="mdc-typography--display1">Sample code </div>
         <CodeBlock>
           <code class="lang-js">{sample}</code>
@@ -134,26 +142,26 @@ export default class ButtonPage extends Component {
         </div>
 
         <div>
-          <Button raised className="mdc-theme--primary-bg">
+          <Button raised primary>
             Primary Raised button{" "}
           </Button>
           <CodeBlock>
             <code class="lang-html">
               {`
-									<Button raised className="mdc-theme--primary-bg">Primary Raised button{" "}</Button>
+									<Button raised primary>Primary Raised button{" "}</Button>
 								`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          <Button raised className="mdc-theme--secondary-bg">
+          <Button raised secondary>
             Secondary Raised button{" "}
           </Button>
           <CodeBlock>
             <code class="lang-html">
               {`
-								<Button raised className="mdc-theme--secondary-bg">Secondary Raised button{" "}</Button>
+								<Button raised secondary>Secondary Raised button{" "}</Button>
 							`}
             </code>
           </CodeBlock>
