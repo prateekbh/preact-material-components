@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const config = {
   entry: {
-    app: "./app.jsx",
+    app: path.join(__dirname, "./app.jsx"),
     vendor: ["preact"]
   },
   output: {
