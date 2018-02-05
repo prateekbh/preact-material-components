@@ -31,23 +31,22 @@ class Select extends MaterialComponent {
     }
   }
   updateSelection() {
-    if (
-      "selectedIndex" in this.props &&
-      this.props.selectedIndex != null &&
-      this.MDComponent
-    ) {
-      this.MDComponent.selectedIndex = this.props.selectedIndex;
+    if (!this.MDComponent) return;
+
+    if ("selectedIndex" in this.props) {
+      const selectedIndex =
+        typeof this.props.selectedIndex === "number"
+          ? this.props.selectedIndex
+          : -1;
+
+      this.MDComponent.selectedIndex = selectedIndex;
     }
-    if (this.MDComponent && this.MDComponent.foundation_) {
-      this.MDComponent.foundation_.resize();
-      if (
-        this.props.selectedIndex === null ||
-        this.props.selectedIndex === -1
-      ) {
-        this.MDComponent.foundation_.adapter_.setSelectedTextContent(
-          this.props.hintText
-        );
-      }
+
+    const selectedIndex = this.MDComponent.selectedIndex;
+    if (selectedIndex === -1) {
+      this._labelRef.classList.remove("mdc-select__label--float-above");
+    } else {
+      this._labelRef.classList.add("mdc-select__label--float-above");
     }
   }
   componentDidUpdate() {
@@ -75,19 +74,53 @@ class Select extends MaterialComponent {
           this.control = control;
         }}
       >
-        <div class="mdc-select__surface">
-          <div class="mdc-select__label">{props.hintText}</div>
+        <div class="mdc-select__surface" tabindex="0">
+          <div
+            class="mdc-select__label"
+            ref={ref => {
+              this._labelRef = ref;
+            }}
+          >
+            {props.hintText}
+          </div>
           <div class="mdc-select__selected-text" />
           <div class="mdc-select__bottom-line" />
         </div>
-        <div className="mdc-simple-menu mdc-select__menu">
-          <ul className="mdc-list mdc-simple-menu__items">{props.children}</ul>
+        <div class="mdc-simple-menu mdc-select__menu">
+          <ul class="mdc-list mdc-simple-menu__items">{props.children}</ul>
         </div>
       </div>
     );
   }
 }
 
-Select.Item = List.Item;
+class SelectOption extends List.Item {
+  materialDom(props) {
+    const disabled = "disabled" in props && !!props["disabled"];
+    const selected = "selected" in props && !!props["selected"];
+
+    const baseProps = {
+      tabindex: disabled ? "-1" : "0"
+    };
+    if (disabled) {
+      baseProps["aria-disabled"] = "true";
+    }
+    if (selected) {
+      baseProps["aria-selected"] = "true";
+    }
+
+    props = Object.assign(baseProps, props);
+    if ("disabled" in props) {
+      delete props["disabled"];
+    }
+    if ("selected" in props) {
+      delete props["selected"];
+    }
+
+    return super.materialDom(props);
+  }
+}
+
+Select.Item = SelectOption;
 
 export default Select;
