@@ -282,18 +282,41 @@ export default class Home extends Component {
         </Button>
         <div>
           <Select
-            hintText="Select an option"
-            selectedIndex={this.state.chosenOption}
+            hintText="Pick a Food Group"
+            selectedIndex={4}
             onChange={e => {
               this.setState({
                 chosenOption: e.selectedIndex
               });
             }}
           >
-            <Select.Item>opt1</Select.Item>
-            <Select.Item>opt2</Select.Item>
-            <Select.Item>opt3</Select.Item>
-            <Select.Item>opt4</Select.Item>
+            <Select.Item>Bread, Cereal, Rice, and Pasta</Select.Item>
+            <Select.Item disabled>Vegetables</Select.Item>
+            <Select.Item>Fruit</Select.Item>
+            <Select.Item>Milk, Yogurt, and Cheese</Select.Item>
+            <Select.Item>
+              Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
+            </Select.Item>
+            <Select.Item>Fats, Oils, and Sweets</Select.Item>
+          </Select>
+        </div>
+        <div>
+          <Select
+            hintText="Pick a Food Group"
+            onChange={e => {
+              this.setState({
+                chosenOption: e.selectedIndex
+              });
+            }}
+          >
+            <Select.Item>Bread, Cereal, Rice, and Pasta</Select.Item>
+            <Select.Item disabled>Vegetables</Select.Item>
+            <Select.Item>Fruit</Select.Item>
+            <Select.Item selected>Milk, Yogurt, and Cheese</Select.Item>
+            <Select.Item>
+              Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
+            </Select.Item>
+            <Select.Item>Fats, Oils, and Sweets</Select.Item>
           </Select>
         </div>
 
