@@ -29,6 +29,11 @@ export default class SelectPage extends Component {
             description: "Makes the select box CSS only."
           },
           {
+            name: "selectedIndex",
+            value: "number",
+            description: "The option to be set as selected."
+          },
+          {
             name: "hintText",
             value: "string",
             description:
@@ -44,7 +49,17 @@ export default class SelectPage extends Component {
       },
       {
         component: "Select.Item",
-        props: []
+        props: [
+          {
+            name: "disabled",
+            description: "Disables the option."
+          },
+          {
+            name: "selected",
+            description:
+              'Set the option as selected. Mostly the same as "selectedIndex", but it allows selection of multiple options.'
+          }
+        ]
       }
     ];
     this.eventsTable = [
@@ -108,6 +123,14 @@ export default class SelectPage extends Component {
           <Select.Item>Option 1</Select.Item>
           <Select.Item>Option 2</Select.Item>
           <Select.Item>Option 3</Select.Item>
+          <Select.Item>Option 4</Select.Item>
+        </Select>
+
+        <div className="mdc-typography--title">Disabled option </div>
+        <Select hintText="Select">
+          <Select.Item>Option 1</Select.Item>
+          <Select.Item disabled>Option 2</Select.Item>
+          <Select.Item selected>Option 3</Select.Item>
           <Select.Item>Option 4</Select.Item>
         </Select>
 
