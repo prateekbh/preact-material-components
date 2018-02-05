@@ -18,11 +18,13 @@ class Fab extends MaterialComponent {
     super.attachRipple();
   }
   materialDom(props) {
-    let className = props.class || props.className || "";
+    let classNames = [];
     this.themeProps.forEach(themeProp => {
       if (themeProp in props && props[themeProp] !== false)
-        className += generateThemeClass(themeProp) + " ";
+        classNames.push(generateThemeClass(themeProp));
     });
+    let className = classNames.join(" ");
+
     return (
       <button
         ref={control => (this.control = control)}
