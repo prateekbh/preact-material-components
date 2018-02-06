@@ -23,7 +23,7 @@ class Button extends MaterialComponent {
   }
   materialDom(props) {
     const ButtonElement = props.href ? "a" : "button";
-    let className = "";
+    let className = props.class || props.className || "";
     this.themeProps.forEach(themeProp => {
       if (themeProp in props && props[themeProp] !== false)
         className += generateThemeClass(themeProp) + " ";
@@ -31,11 +31,11 @@ class Button extends MaterialComponent {
 
     return (
       <ButtonElement
-        className={className}
         ref={control => {
           this.control = control;
         }}
         {...props}
+        className={className}
       >
         {this.props.children}
       </ButtonElement>

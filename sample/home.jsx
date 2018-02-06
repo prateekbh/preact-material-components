@@ -111,6 +111,8 @@ export default class Home extends Component {
 
         <div>
           <Fab
+            className="test"
+            primary
             mini={true}
             onClick={() => {
               this.setState({

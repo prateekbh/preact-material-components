@@ -1,6 +1,7 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import Icon from "../Icon/";
+import generateThemeClass from "../themeUtils/generateThemeClass";
 
 /**
  * @prop mini = false
@@ -11,13 +12,25 @@ class Fab extends MaterialComponent {
     super();
     this.componentName = "fab";
     this._mdcProps = ["mini", "exited"];
+    this.themeProps = ["primary", "secondary"];
   }
   componentDidMount() {
     super.attachRipple();
   }
   materialDom(props) {
+    let classNames = [];
+    this.themeProps.forEach(themeProp => {
+      if (themeProp in props && props[themeProp] !== false)
+        classNames.push(generateThemeClass(themeProp));
+    });
+    let className = classNames.join(" ");
+
     return (
-      <button {...props} ref={control => (this.control = control)}>
+      <button
+        ref={control => (this.control = control)}
+        {...props}
+        class={className}
+      >
         {props.children}
       </button>
     );
