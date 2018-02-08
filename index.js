@@ -21,6 +21,7 @@ import GridList from "./GridList";
 import Menu from "./Menu";
 import Tabs from "./Tabs";
 import Slider from "./Slider";
+import Chips from "./Chips";
 
 export {
   Button,
@@ -45,5 +46,6 @@ export {
   LayoutGrid,
   GridList,
   Tabs,
-  Slider
+  Slider,
+  Chips
 };
