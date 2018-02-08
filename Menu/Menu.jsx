@@ -1,6 +1,6 @@
 import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
-import { MDCSimpleMenu } from "@material/menu";
+import { MDCMenu } from "@material/menu";
 import List from "../List";
 
 /*
@@ -16,7 +16,7 @@ const defaultProps = {
 class Menu extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "simple-menu";
+    this.componentName = "menu";
     this._mdcProps = [
       "open",
       "open-from-top-left",
@@ -28,14 +28,14 @@ class Menu extends MaterialComponent {
     this._cancel = this._cancel.bind(this);
   }
   componentDidMount() {
-    this.MDComponent = new MDCSimpleMenu(this.control);
-    this.MDComponent.listen("MDCSimpleMenu:selected", this._select);
-    this.MDComponent.listen("MDCSimpleMenu:cancel", this._cancel);
+    this.MDComponent = new MDCMenu(this.control);
+    this.MDComponent.listen("MDCMenu:selected", this._select);
+    this.MDComponent.listen("MDCMenu:cancel", this._cancel);
     toggleMenu(defaultProps, this.props, this.MDComponent);
   }
   componentWillUnmount() {
-    this.MDComponent.unlisten("MDCSimpleMenu:selected", this._select);
-    this.MDComponent.unlisten("MDCSimpleMenu:cancel", this._cancel);
+    this.MDComponent.unlisten("MDCMenu:selected", this._select);
+    this.MDComponent.unlisten("MDCMenu:cancel", this._cancel);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   _select(e) {
@@ -61,13 +61,9 @@ class Menu extends MaterialComponent {
   materialDom(props) {
     return (
       <div tabindex="-1" {...props} ref={control => (this.control = control)}>
-        <ul
-          class="mdc-simple-menu__items mdc-list"
-          role="menu"
-          aria-hidden="true"
-        >
+        <List className="mdc-menu__items" role="menu" aria-hidden="true">
           {props.children}
-        </ul>
+        </List>
       </div>
     );
   }

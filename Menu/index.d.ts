@@ -18,16 +18,16 @@ export default class Menu extends MaterialComponent<IMenuProps, {}> {
   static Anchor: typeof Anchor;
   static Item: typeof List.Item;
 
-  MDComponent: MDCSimpleMenu;
+  MDComponent: MDCMenu;
 }
 
 declare class Anchor extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-declare class MDCSimpleMenuFoundation extends MDCFoundation<MDCSimpleMenu> {
+declare class MDCMenuFoundation extends MDCFoundation<MDCMenu> {
   open(options?: { focusIndex?: number }): void;
   close(evt?: Event): void;
 }
-declare class MDCSimpleMenu extends MDCComponent<MDCSimpleMenuFoundation> {
+declare class MDCMenu extends MDCComponent<MDCMenuFoundation> {
   open: boolean;
   show(options?: { focusIndex?: number }): void;
   hide(): void;
