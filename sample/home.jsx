@@ -21,7 +21,8 @@ import {
   Menu,
   Tabs,
   Slider,
-  GridList
+  GridList,
+  Chips
 } from "../";
 
 export default class Home extends Component {
@@ -419,6 +420,31 @@ export default class Home extends Component {
           onChange={v => console.log("change:", v)}
           onInput={v => console.log("input:", v)}
         />
+
+        <div>
+          <Chips>
+            <Chips.Chip>
+              <Chips.Text>Test</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>More testing</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>home</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>blue</Chips.Text>
+            </Chips.Chip>
+          </Chips>
+        </div>
+        <div>
+          <Chips.Chip>
+            <Chips.Text>home</Chips.Text>
+          </Chips.Chip>
+          <Chips.Chip>
+            <Chips.Text>blue</Chips.Text>
+          </Chips.Chip>
+        </div>
       </div>
     );
   }
