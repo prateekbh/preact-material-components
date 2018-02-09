@@ -6,7 +6,7 @@ import { Omit } from '../libs';
 
 declare interface ISelectProps extends Omit<JSX.HTMLAttributes, 'onChange' | 'disabled'> {
   disabled?: boolean;
-  basic?: boolean;
+  box?: boolean;
   hintText?: string;
   selectedIndex?: number;
   onChange?: (e: { selectedIndex: number, selectedOptions: NodeListOf<Element> }) => void;

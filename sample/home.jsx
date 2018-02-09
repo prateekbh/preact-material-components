@@ -36,7 +36,7 @@ export default class Home extends Component {
       progress: 0.2
     };
   }
-  render() {
+  render({}, state) {
     const toggleOnIcon = {
       content: "favorite",
       label: "Remove From Favorites"
@@ -282,11 +282,13 @@ export default class Home extends Component {
         <Button raised onClick={() => this.setState({ chosenOption: -1 })}>
           Clear Select
         </Button>
+        <div>Selected index: {state.chosenOption}</div>
         <div>
           <Select
             hintText="Pick a Food Group"
-            selectedIndex={4}
+            selectedIndex={state.chosenOption}
             onChange={e => {
+              console.log(e.selectedIndex);
               this.setState({
                 chosenOption: e.selectedIndex
               });
@@ -303,14 +305,7 @@ export default class Home extends Component {
           </Select>
         </div>
         <div>
-          <Select
-            hintText="Pick a Food Group"
-            onChange={e => {
-              this.setState({
-                chosenOption: e.selectedIndex
-              });
-            }}
-          >
+          <Select hintText="Pick a Food Group">
             <Select.Item>Bread, Cereal, Rice, and Pasta</Select.Item>
             <Select.Item disabled>Vegetables</Select.Item>
             <Select.Item>Fruit</Select.Item>
