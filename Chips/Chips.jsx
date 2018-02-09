@@ -36,16 +36,24 @@ class Chip extends MaterialComponent {
   }
 
   materialDom(props) {
-    return (
-      <div>
-        <div class="mdc-chip__text">{props.children}</div>
-      </div>
-    );
+    return <div>{props.children}</div>;
+  }
+}
+
+class ChipText extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "chip__text";
+  }
+
+  materialDom(props) {
+    return <div>{props.children}</div>;
   }
 }
 
 const chips = ChipSet;
 
 chips.Chip = Chip;
+chips.Text = ChipText;
 
 export default chips;

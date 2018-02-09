@@ -1,8 +1,15 @@
 import { MDCFoundation, MDCComponent, MDCRipple } from '../MaterialComponentsWeb';
 import MaterialComponent from '../MaterialComponent';
 
-declare class Chip extends MaterialComponent<{}, {}> {
+declare interface IChipProps extends JSX.HTMLAttributes {
+  children?: ChipText[];
+}
+
+declare class Chip extends MaterialComponent<IChipProps, {}> {
   MDComponent: MDCChip;
+}
+
+declare class ChipText extends MaterialComponent<{}, {}> {
 }
 
 declare interface IChipSetProps extends JSX.HTMLAttributes {
@@ -11,6 +18,7 @@ declare interface IChipSetProps extends JSX.HTMLAttributes {
 
 export default class ChipSet extends MaterialComponent<IChipSetProps, {}> {
   static Chip: typeof Chip;
+  static Text: typeof ChipText;
 
   MDComponent: MDCChipSet;
 }

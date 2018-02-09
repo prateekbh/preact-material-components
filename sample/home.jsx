@@ -428,23 +428,27 @@ export default class Home extends Component {
 
         <div>
           <Chips>
-            <Chips.Chip>Test</Chips.Chip>
-            <Chips.Chip>More testing</Chips.Chip>
-            <Chips.Chip>home</Chips.Chip>
-            <Chips.Chip>blue</Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>Test</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>More testing</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>home</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>blue</Chips.Text>
+            </Chips.Chip>
           </Chips>
         </div>
         <div>
-          <Chips>
-            <Chips.Chip>Test</Chips.Chip>
-            <Chips.Chip>More testing</Chips.Chip>
-            <Chips.Chip>home</Chips.Chip>
-            <Chips.Chip>blue</Chips.Chip>
-          </Chips>
-        </div>
-        <div>
-          <Chips.Chip>home</Chips.Chip>
-          <Chips.Chip>blue</Chips.Chip>
+          <Chips.Chip>
+            <Chips.Text>home</Chips.Text>
+          </Chips.Chip>
+          <Chips.Chip>
+            <Chips.Text>blue</Chips.Text>
+          </Chips.Chip>
         </div>
       </div>
     );
