@@ -1,7 +1,8 @@
-import { h, Component } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import { MDCTextField } from "@material/textfield";
+import { Component, h } from "preact";
+
 import Icon from "../Icon";
+import { MDCTextField } from "@material/textfield";
+import MaterialComponent from "../MaterialComponent";
 
 /**
  * @prop persistent = false
@@ -115,7 +116,7 @@ class TextFieldInput extends MaterialComponent {
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
-        {props.textarea ? "" : <div class="mdc-text-field__bottom-line" />}
+        {props.textarea ? "" : <div class="mdc-line-ripple" />}
       </div>
     );
   }
