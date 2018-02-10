@@ -2,6 +2,7 @@ const bundleMapping = {
   Button: "button",
   Card: "card",
   Checkbox: "checkbox",
+  Chips: "chips",
   Dialog: "dialog",
   Drawer: "drawer",
   Elevation: "elevation",

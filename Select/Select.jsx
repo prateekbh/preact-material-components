@@ -2,11 +2,12 @@ import { h } from "preact";
 import MaterialComponent from "../MaterialComponent";
 import { MDCSelect } from "@material/select/";
 import List from "../List";
+import Menu from "../Menu";
 class Select extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "select";
-    this._mdcProps = ["disabled"];
+    this._mdcProps = ["disabled", "box"];
     this._changed = this._changed.bind(this);
   }
   _changed(e) {
@@ -18,21 +19,15 @@ class Select extends MaterialComponent {
     }
   }
   componentDidMount() {
-    if (!this.props.basic) {
-      this.MDComponent = new MDCSelect(this.control);
-      this.MDComponent.listen("MDCSelect:change", this._changed);
-      this.updateSelection();
-    }
+    this.MDComponent = new MDCSelect(this.base);
+    this.MDComponent.listen("MDCSelect:change", this._changed);
+    this.updateSelection();
   }
   componentWillUnmount() {
-    if (!this.props.basic) {
-      this.MDComponent.unlisten("MDCSelect:change", this._changed);
-      this.MDComponent.destroy && this.MDComponent.destroy();
-    }
+    this.MDComponent.unlisten("MDCSelect:change", this._changed);
+    this.MDComponent.destroy && this.MDComponent.destroy();
   }
   updateSelection() {
-    if (!this.MDComponent) return;
-
     if ("selectedIndex" in this.props) {
       const selectedIndex =
         typeof this.props.selectedIndex === "number"
@@ -53,27 +48,8 @@ class Select extends MaterialComponent {
     this.updateSelection();
   }
   materialDom(props) {
-    if (props.basic) {
-      return (
-        <select
-          {...props}
-          ref={control => {
-            this.control = control;
-          }}
-        >
-          {props.children}
-        </select>
-      );
-    }
-
     return (
-      <div
-        role="listbox"
-        {...props}
-        ref={control => {
-          this.control = control;
-        }}
-      >
+      <div role="listbox" {...props}>
         <div class="mdc-select__surface" tabindex="0">
           <div
             class="mdc-select__label"
@@ -86,9 +62,7 @@ class Select extends MaterialComponent {
           <div class="mdc-select__selected-text" />
           <div class="mdc-select__bottom-line" />
         </div>
-        <div class="mdc-simple-menu mdc-select__menu">
-          <ul class="mdc-list mdc-simple-menu__items">{props.children}</ul>
-        </div>
+        <Menu className="mdc-select__menu">{props.children}</Menu>
       </div>
     );
   }
