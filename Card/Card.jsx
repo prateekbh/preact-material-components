@@ -67,7 +67,6 @@ class CardMediaContent extends MaterialComponent {
   }
 }
 
-Card.SupportingText = CardSupportingText;
 Card.Actions = CardActions;
 Card.ActionButton = CardActionButton;
 Card.ActionIcon = CardActionIcon;
