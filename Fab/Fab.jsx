@@ -1,7 +1,7 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
 import Icon from "../Icon/";
+import MaterialComponent from "../MaterialComponent";
 import generateThemeClass from "../themeUtils/generateThemeClass";
+import { h } from "preact";
 
 /**
  * @prop mini = false
@@ -29,7 +29,7 @@ class Fab extends MaterialComponent {
       <button
         ref={control => (this.control = control)}
         {...props}
-        class={className}
+        className={className}
       >
         {props.children}
       </button>

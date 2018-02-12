@@ -1,55 +1,33 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
 import Button from "../Button";
+import Icon from "../Icon";
+import MaterialComponent from "../MaterialComponent";
+import { h } from "preact";
 
 class Card extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "card";
-    this._mdcProps = ["theme-dark"];
+    this._mdcProps = ["stroked"];
   }
 }
 
-class CardSection extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = "";
-  }
-  materialDom(props) {
-    return <section {...props}>{props.children}</section>;
-  }
-}
-
-class CardPrimary extends CardSection {
-  constructor() {
-    super();
-    this.componentName = "card__primary";
-  }
-}
-
-class CardSupportingText extends CardSection {
-  constructor() {
-    super();
-    this.componentName = "card__supporting-text";
-  }
-}
-
-class CardActions extends CardSection {
+class CardActions extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "card__actions";
-    this._mdcProps = ["vertical"];
+    this._mdcProps = ["full-bleed"];
   }
 }
 
-class CardMedia extends CardSection {
+class CardMedia extends MaterialComponent {
   constructor() {
     super();
     this.componentName = "card__media";
+    this._mdcProps = ["square", "16-9"];
   }
 }
 
-class CardAction extends Button {
+class CardActionButton extends Button {
   constructor() {
     super();
     this.componentName = "card__action";
@@ -57,7 +35,7 @@ class CardAction extends Button {
   materialDom(props) {
     return (
       <button
-        className="mdc-button mdc-button--compact"
+        className="mdc-button mdc-card__action--button"
         {...props}
         ref={control => {
           this.control = control;
@@ -69,57 +47,31 @@ class CardAction extends Button {
   }
 }
 
-class CardTitle extends MaterialComponent {
+class CardActionIcon extends Icon {
   constructor() {
     super();
-    this.componentName = "card__title";
-    this._mdcProps = ["large"];
+    this.componentName = "card__action";
   }
   materialDom(props) {
-    return <h1 {...props}>{props.children}</h1>;
+    props.className = props.className
+      ? props.className + " mdc-card__action--icon"
+      : props.className;
+    return super.materialDom(props);
   }
 }
 
-class CardSubtitle extends MaterialComponent {
+class CardMediaContent extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "card__subtitle";
-  }
-  materialDom(props) {
-    return <h2 {...props}>{props.children}</h2>;
+    this.componentName = "card__media-content";
   }
 }
 
-class CardHorizontalBlock extends CardSection {
-  constructor() {
-    super();
-    this.componentName = "card__horizontal-block";
-  }
-}
-
-class CardMediaItem extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = "card__media-item";
-    this._mdcProps = [];
-  }
-  materialDom(props) {
-    let className = "";
-    if (props.x) {
-      className = "mdc-card__media-item--" + props.x + "x";
-    }
-    return <img className={className} {...props} />;
-  }
-}
-
-Card.Primary = CardPrimary;
 Card.SupportingText = CardSupportingText;
 Card.Actions = CardActions;
-Card.Action = CardAction;
+Card.ActionButton = CardActionButton;
+Card.ActionIcon = CardActionIcon;
 Card.Media = CardMedia;
-Card.Title = CardTitle;
-Card.Subtitle = CardSubtitle;
-Card.HorizontalBlock = CardHorizontalBlock;
-Card.MediaItem = CardMediaItem;
+Card.CardMediaContent = CardCardMediaContent;
 
 export default Card;
