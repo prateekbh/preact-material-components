@@ -71,6 +71,6 @@ Card.Actions = CardActions;
 Card.ActionButton = CardActionButton;
 Card.ActionIcon = CardActionIcon;
 Card.Media = CardMedia;
-Card.CardMediaContent = CardCardMediaContent;
+Card.CardMediaContent = CardMediaContent;
 
 export default Card;
