@@ -1,6 +1,14 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
 import { MDCTabBar, MDCTabBarScroller } from "@material/tabs";
+
+import MaterialComponent from "../MaterialComponent";
+import { h } from "preact";
+
+/*
+ * Default props for tabs
+ */
+const defaultProps = {
+  activeTabIndex: 1
+};
 
 /**
  * @prop indicator-accent = false
@@ -21,9 +29,13 @@ class Tabs extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = new MDCTabBar(this.control);
+    setActiveTabIndex(defaultProps, this.props, this.MDComponent);
   }
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    setActiveTabIndex(this.props, nextProps, this.MDComponent);
   }
   materialDom(allprops) {
     let { className, ...props } = allprops;
@@ -115,6 +127,19 @@ class TabIconLabel extends MaterialComponent {
         {props.children}
       </span>
     );
+  }
+}
+
+/*
+ * Function to add declarative opening/closing to drawer
+ */
+function setActiveTabIndex(oldprops, newprops, tabs) {
+  if (
+    "activeTabIndex" in oldprops &&
+    "activeTabIndex" in newprops &&
+    oldprops.activeTabIndex !== newprops.activeTabIndex
+  ) {
+    tabs.activeTabIndex = newprops.activeTabIndex;
   }
 }
 
