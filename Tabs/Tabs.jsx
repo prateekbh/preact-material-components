@@ -7,7 +7,7 @@ import { h } from "preact";
  * Default props for tabs
  */
 const defaultProps = {
-  activeTabIndex: 1
+  activeTabIndex: 0
 };
 
 /**

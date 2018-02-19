@@ -1,29 +1,29 @@
-import { h, Component } from "preact";
 import {
   Button,
+  Card,
+  Checkbox,
+  Chips,
+  Dialog,
+  Drawer,
+  Elevation,
   Fab,
+  GridList,
   Icon,
   IconToggle,
-  Switch,
-  Snackbar,
-  Checkbox,
-  Radio,
-  TextField,
-  Card,
-  Select,
-  Elevation,
-  Dialog,
+  LayoutGrid,
   LinearProgress,
   List,
-  Drawer,
-  Toolbar,
-  LayoutGrid,
   Menu,
-  Tabs,
+  Radio,
+  Select,
   Slider,
-  GridList,
-  Chips
+  Snackbar,
+  Switch,
+  Tabs,
+  TextField,
+  Toolbar
 } from "../";
+import { Component, h } from "preact";
 
 export default class Home extends Component {
   constructor() {
@@ -33,7 +33,8 @@ export default class Home extends Component {
       fabExited: false,
       drawerOpen: false,
       menuOpened: false,
-      progress: 0.2
+      progress: 0.2,
+      activeTabIndex: 1
     };
   }
   render({}, state) {
@@ -318,11 +319,23 @@ export default class Home extends Component {
         </div>
 
         <div>
-          <Tabs indicator-accent={true}>
+          <Tabs
+            activeTabIndex={this.state.activeTabIndex}
+            indicator-accent={true}
+          >
             <Tabs.Tab>tab1</Tabs.Tab>
-            <Tabs.Tab active={true}>tab2</Tabs.Tab>
+            <Tabs.Tab>tab2</Tabs.Tab>
             <Tabs.Tab>tab3</Tabs.Tab>
           </Tabs>
+          <Button
+            onClick={() => {
+              this.setState({
+                activeTabIndex: this.state.activeTabIndex + 1
+              });
+            }}
+          >
+            Increase index
+          </Button>
         </div>
         <div style="margin: 32px 0">
           <Tabs.TabBarScroller>
