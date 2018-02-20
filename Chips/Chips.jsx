@@ -40,6 +40,18 @@ class Chip extends MaterialComponent {
   }
 }
 
+class ChipIcon extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "chip__icon";
+    this._mdcProps = ["leading", "trailing"];
+  }
+
+  materialDom() {
+    return <i>{props.children}</i>;
+  }
+}
+
 class ChipText extends MaterialComponent {
   constructor() {
     super();
@@ -54,6 +66,7 @@ class ChipText extends MaterialComponent {
 const chips = ChipSet;
 
 chips.Chip = Chip;
+chips.Icon = ChipIcon;
 chips.Text = ChipText;
 
 export default chips;
