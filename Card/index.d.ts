@@ -27,3 +27,4 @@ declare interface IMediaProps extends JSX.HTMLAttributes {
   x?: "square"|"16-9";
 }
 declare class Media extends MaterialComponent<IMediaProps, {}> {}
+
