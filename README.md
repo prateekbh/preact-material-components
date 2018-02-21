@@ -59,12 +59,6 @@ Smaller bundles FTW!!!
 
 - 👍 toolbar
 
-## Using preact-material-components?
-- [HopOn](https://hopon-a72e9.firebaseapp.com). A progressive web game built with #preact, #babylonJs #preact-material-components
-
-- [Documentation](https://material.preactjs.com/). Documentation and demo site for `preact-material-components`.
-
-Let us know if you're using `preact-material-components` and love them. Send us a PR and add your projects and link right here.
 
 ## FAQ
 ### Error while using preact-material-components with **less**
@@ -76,6 +70,15 @@ If you are using less-loader you have to set **strictMath: true** option in your
 }
 ```
 
+### Primary and Secondary props not working
+To use theming props like primary/secondary, you'll need to include Theme's css
+```
+import 'preact-material-components/Theme/style.css
+```
 
 ## Docs and Demos
 https://material.preactjs.com/
+
+
+---
+__P.S.:__ Let us know if you're using `preact-material-components` we would love to hear your experiences.

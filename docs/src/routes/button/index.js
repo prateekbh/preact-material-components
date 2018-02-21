@@ -49,6 +49,14 @@ export default class ButtonPage extends Component {
           {
             name: "stroked",
             description: "Adds stroked effect to the button"
+          },
+          {
+            name: "primary",
+            description: "Adds primary color to button"
+          },
+          {
+            name: "secondary",
+            description: "Adds secondary color to button"
           }
         ]
       }

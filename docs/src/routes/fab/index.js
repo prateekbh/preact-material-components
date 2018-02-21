@@ -36,6 +36,14 @@ export default class FabPage extends Component {
           {
             name: "mini",
             description: "Shrinks the size of the fab."
+          },
+          {
+            name: "primary",
+            description: "Adds primary color to button"
+          },
+          {
+            name: "secondary",
+            description: "Adds secondary color to button"
           }
         ]
       }
