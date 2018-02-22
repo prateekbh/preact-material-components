@@ -71,6 +71,7 @@
     "preact": "*"
   },
   "devDependencies": {
+    "@material/chips": "^0.31.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
     "babel-loader": "^7.1.2",
