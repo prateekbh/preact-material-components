@@ -19,6 +19,8 @@ Smaller bundles FTW!!!
 
 - 👍 card
 
+- 👍 chips
+
 - 👍 checkbox
 
 - 👍 dialog
@@ -34,6 +36,8 @@ Smaller bundles FTW!!!
 - 👍 icon-toggle
 
 - 👍 layout-grid
+
+- 👍 line-ripple
 
 - 👍 linear-progress
 
@@ -59,6 +63,8 @@ Smaller bundles FTW!!!
 
 - 👍 toolbar
 
+
+Let us know if you're using `preact-material-components`. We'd love to hear your experience.
 
 ## FAQ
 ### Error while using preact-material-components with **less**

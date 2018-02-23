@@ -8,7 +8,6 @@ class LineRipple extends MaterialComponent {
     this.componentName = "line-ripple";
   }
   componentDidMount() {
-    super.attachRipple();
     this.MDComponent = new MDCLineRipple(this.control);
   }
   materialDom(props) {
