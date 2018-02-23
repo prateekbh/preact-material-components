@@ -19,6 +19,8 @@ Smaller bundles FTW!!!
 
 - 👍 card
 
+- 👍 chips
+
 - 👍 checkbox
 
 - 👍 dialog
@@ -34,6 +36,8 @@ Smaller bundles FTW!!!
 - 👍 icon-toggle
 
 - 👍 layout-grid
+
+- 👍 line-ripple
 
 - 👍 linear-progress
 
@@ -59,10 +63,6 @@ Smaller bundles FTW!!!
 
 - 👍 toolbar
 
-## Using preact-material-components?
-- [HopOn](https://hopon-a72e9.firebaseapp.com). A progressive web game built with #preact, #babylonJs #preact-material-components
-
-- [Documentation](https://material.preactjs.com/). Documentation and demo site for `preact-material-components`.
 
 Let us know if you're using `preact-material-components` and love them. Send us a PR and add your projects and link right here.
 

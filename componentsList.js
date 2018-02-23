@@ -13,6 +13,7 @@ const bundleMapping = {
   IconToggle: "icon-toggle",
   LayoutGrid: "layout-grid",
   LinearProgress: "linear-progress",
+  LineRipple: "line-ripple",
   List: "list",
   Menu: "menu",
   Tabs: "tabs",
