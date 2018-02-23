@@ -10,11 +10,11 @@ declare class MDCLineRippleFoundation extends MDCFoundation<MDCLineRipple> {
   activate(): void;
   deactivate(): void;
   setRippleCenter(xCoordinate: number): void;
+  handleTransitionEnd(e: Event): void;
 }
 
 declare class MDCLineRipple extends MDCComponent<MDCLineRippleFoundation> {
   activate(): void;
   deactivate(): void;
   setRippleCenter(xCoordinate: number): void;
-  handleTransitionEnd(e: Event): void;
 }
