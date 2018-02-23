@@ -40,6 +40,7 @@
     "@material/button": "^0.31.0",
     "@material/card": "^0.31.0",
     "@material/checkbox": "^0.31.0",
+    "@material/chips": "^0.31.0",
     "@material/dialog": "^0.31.0",
     "@material/drawer": "^0.30.0",
     "@material/elevation": "^0.28.0",
@@ -71,7 +72,6 @@
     "preact": "*"
   },
   "devDependencies": {
-    "@material/chips": "^0.31.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
     "babel-loader": "^7.1.2",
