@@ -13,7 +13,7 @@ declare class MDCCheckboxFoundation extends MDCFoundation<MDCCheckbox> {
   isChecked(): boolean;
   setChecked(checked: boolean): void;
   isIndeterminate(): boolean;
-  setIndeterminate(indeterminate: boolean);
+  setIndeterminate(indeterminate: boolean): void;
   isDisabled(): boolean;
   setDisabled(disabled: boolean): void;
   getValue(): string|undefined|null;
