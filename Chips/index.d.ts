@@ -9,6 +9,14 @@ declare class Chip extends MaterialComponent<IChipProps, {}> {
   MDComponent: MDCChip;
 }
 
+declare interface IChipIconProps extends JSX.HTMLAttributes {
+  leading?: boolean;
+  trailing?: boolean;
+}
+
+declare class ChipIcon extends MaterialComponent<IChipIconProps, {}> {
+}
+
 declare class ChipText extends MaterialComponent<{}, {}> {
 }
 
@@ -18,6 +26,7 @@ declare interface IChipSetProps extends JSX.HTMLAttributes {
 
 export default class ChipSet extends MaterialComponent<IChipSetProps, {}> {
   static Chip: typeof Chip;
+  static Icon: typeof ChipIcon;
   static Text: typeof ChipText;
 
   MDComponent: MDCChipSet;
