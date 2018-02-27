@@ -36,17 +36,16 @@ export default class TabsPage extends Component {
           {
             name: "scroller",
             description: "Makes the tabs scrollable"
+          },
+          {
+            name: "activeTabIndex",
+            description: "Sets the index of current active tab"
           }
         ]
       },
       {
         component: "Tab",
-        props: [
-          {
-            name: "active",
-            description: "Makes the current tab active."
-          }
-        ]
+        props: []
       }
     ];
   }
