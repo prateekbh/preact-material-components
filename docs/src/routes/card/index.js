@@ -77,10 +77,10 @@ export default class CardPage extends Component {
 
         <div className="mdc-typography--display1">Demo</div>
         <Card>
-          <Card.Media>
+          <div class="card-header">
             <h2 class=" mdc-typography--title">Hi</h2>
             <div class=" mdc-typography--caption">Let me subtitle</div>
-          </Card.Media>
+          </div>
           <Card.Media className="card-media" />
           <Card.Actions>
             <Card.ActionButton>OKAY</Card.ActionButton>
@@ -89,10 +89,10 @@ export default class CardPage extends Component {
 
         <div className="mdc-typography--display1">Demo</div>
         <Card>
-          <Card.Media>
+          <div class="card-header">
             <h2 class=" mdc-typography--title">Hi</h2>
             <div class=" mdc-typography--caption">Let me subtitle</div>
-          </Card.Media>
+          </div>
           <Card.Media className="card-media" />
           <Card.Actions full-bleed>
             <Card.ActionButton>OKAY</Card.ActionButton>
