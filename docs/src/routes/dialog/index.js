@@ -2,9 +2,9 @@
 import { h, Component } from "preact";
 
 // Material Components
-import Dialog from "preact-material-components/Dialog";
-import Button from "preact-material-components/Button";
-import List from "preact-material-components/List";
+import Dialog from "../../../../Dialog";
+import Button from "../../../../Button";
+import List from "../../../../List";
 
 // Components
 import ComponentTable from "../../components/component-table";

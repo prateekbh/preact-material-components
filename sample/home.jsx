@@ -240,16 +240,10 @@ export default class Home extends Component {
         <LayoutGrid>
           <LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
             <Card>
-              <Card.Primary>
-                <Card.Title>Card title</Card.Title>
-                <Card.Subtitle>Subtitle</Card.Subtitle>
-              </Card.Primary>
-              <Card.SupportingText>
-                This card is displayed within a layout grid.
-              </Card.SupportingText>
-              <Card.Actions>
-                <Card.Action>Action</Card.Action>
-              </Card.Actions>
+              <div>Card header</div>
+              <Card.ActionIcons>
+                <Card.ActionIcon>favorite</Card.ActionIcon>
+              </Card.ActionIcons>
             </Card>
           </LayoutGrid.Cell>
         </LayoutGrid>

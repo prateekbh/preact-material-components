@@ -2,7 +2,7 @@
 import { h, Component } from "preact";
 
 // Material Components
-import Slider from "preact-material-components/Slider";
+import Slider from "../../../../Slider";
 
 // Components
 import ComponentTable from "../../components/component-table";

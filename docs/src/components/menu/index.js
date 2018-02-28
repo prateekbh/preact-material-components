@@ -3,9 +3,9 @@ import { h, Component } from "preact";
 import { route } from "preact-router";
 
 // Material Components
-import Drawer from "preact-material-components/Drawer";
-import List from "preact-material-components/List";
-const json = require("../../../package.json");
+import Drawer from "../../../../Drawer";
+import List from "../../../../List";
+const json = require("../../../../package.json");
 
 // Class
 export default class Menu extends Component {
@@ -63,7 +63,7 @@ export default class Menu extends Component {
     return (
       <Drawer.TemporaryDrawer ref={drawer => (this.drawer = drawer)}>
         <Drawer.DrawerHeader className="mdc-theme--primary-bg">
-          Components @ (v{json.devDependencies["preact-material-components"]})
+          Components @ (v{json["version"]})
         </Drawer.DrawerHeader>
         <Drawer.DrawerContent>
           {items.map(({ icon, link, text }) => (
