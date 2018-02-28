@@ -1,5 +1,5 @@
 import { h } from "preact";
-import Icon from "../Icon/";
+import Icon from "../Icon";
 import MaterialComponent from "../MaterialComponent";
 import { MDCChip, MDCChipSet } from "@material/chips";
 
@@ -45,7 +45,7 @@ class Chip extends MaterialComponent {
   }
 }
 
-class ChipIcon extends MaterialComponent {
+class ChipIcon extends Icon {
   constructor() {
     super();
     this.componentName = "chip__icon";
@@ -56,14 +56,6 @@ class ChipIcon extends MaterialComponent {
     const { className, ...props } = allprops;
 
     return <i className={className}>{props.children}</i>;
-  }
-}
-
-class ChipIcon extends Icon {
-  constructor() {
-    super();
-    this.componentName = "chip__icon";
-    this._mdcProps = ["leading", "trailing"];
   }
 }
 

@@ -1,5 +1,6 @@
 import { MDCFoundation, MDCComponent, MDCRipple } from '../MaterialComponentsWeb';
 import MaterialComponent from '../MaterialComponent';
+import Icon from '../Icon';
 
 declare interface IChipProps extends JSX.HTMLAttributes {
   children?: ChipText[];
@@ -14,7 +15,7 @@ declare interface IChipIconProps extends JSX.HTMLAttributes {
   trailing?: boolean;
 }
 
-declare class ChipIcon extends MaterialComponent<IChipIconProps, {}> {
+declare class ChipIcon extends Icon<IChipIconProps, {}> {
 }
 
 declare class ChipText extends MaterialComponent<{}, {}> {
