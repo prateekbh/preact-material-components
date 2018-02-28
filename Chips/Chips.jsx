@@ -16,8 +16,10 @@ class ChipSet extends MaterialComponent {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
 
-  materialDom(props) {
-    return <div>{props.children}</div>;
+  materialDom(allprops) {
+    const { className, ...props } = allprops;
+
+    return <div className={className}>{props.children}</div>;
   }
 }
 
@@ -35,8 +37,10 @@ class Chip extends MaterialComponent {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
 
-  materialDom(props) {
-    return <div>{props.children}</div>;
+  materialDom(allprops) {
+    const { className, ...props } = allprops;
+
+    return <div className={className}>{props.children}</div>;
   }
 }
 
@@ -47,8 +51,10 @@ class ChipIcon extends MaterialComponent {
     this._mdcProps = ["leading", "trailing"];
   }
 
-  materialDom() {
-    return <i>{props.children}</i>;
+  materialDom(allprops) {
+    const { className, ...props } = allprops;
+
+    return <i className={className}>{props.children}</i>;
   }
 }
 
@@ -58,8 +64,10 @@ class ChipText extends MaterialComponent {
     this.componentName = "chip__text";
   }
 
-  materialDom(props) {
-    return <div>{props.children}</div>;
+  materialDom(allprops) {
+    const { className, ...props } = allprops;
+
+    return <div className={className}>{props.children}</div>;
   }
 }
 

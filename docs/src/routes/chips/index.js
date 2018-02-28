@@ -21,29 +21,28 @@ export default class ButtonPage extends Component {
     this.propsTable = [
       {
         component: "Chips",
+        props: []
+      },
+      {
+        component: "Chips.Chip",
+        props: []
+      },
+      {
+        component: "Chips.Icon",
         props: [
           {
-            component: "Chip",
-            props: []
+            name: "leading",
+            description: "Optional. Indicates that it's a leading icon"
           },
           {
-            component: "Icon",
-            props: [
-              {
-                name: "leading",
-                description: "Optional. Indicates a leading icon in the chip"
-              },
-              {
-                name: "trailing",
-                description: "Optional. Indicates a trailing icon in the chip"
-              }
-            ]
-          },
-          {
-            component: "Text",
-            props: []
+            name: "trailing",
+            description: "Optional. Indicates that it's a trailing icon"
           }
         ]
+      },
+      {
+        component: "Chips.Text",
+        props: []
       }
     ];
   }
@@ -67,7 +66,7 @@ export default class ButtonPage extends Component {
           </a>.
         </div>
 
-        <div className="mdc-typography--display1">Demo </div>
+        <div className="mdc-typography--display1">Demo</div>
         <div>
           <Chips>
             <Chips.Chip>
@@ -103,25 +102,18 @@ export default class ButtonPage extends Component {
           </CodeBlock>
         </div>
 
+        <div className="mdc-typography--display1">Entry Chips</div>
         <div>
           <Chips>
             <Chips.Chip>
-              <Chips.Icon className="material-icons" leading>
-                face
-              </Chips.Icon>
+              <Chips.Icon className="material-icons" leading>face</Chips.Icon>
               <Chips.Text>Jane Smith</Chips.Text>
-              <Chips.Icon className="material-icons" trailing>
-                more_vert
-              </Chips.Icon>
+              <Chips.Icon className="material-icons" trailing tabindex="0" role="button" title="More options">more_vert</Chips.Icon>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Icon className="material-icons" leading>
-                face
-              </Chips.Icon>
+              <Chips.Icon className="material-icons" leading>face</Chips.Icon>
               <Chips.Text>John Doe</Chips.Text>
-              <Chips.Icon className="material-icons" trailing>
-                more_vert
-              </Chips.Icon>
+              <Chips.Icon className="material-icons" trailing tabindex="0" role="button" title="More options">more_vert</Chips.Icon>
             </Chips.Chip>
           </Chips>
           <CodeBlock>
@@ -130,12 +122,142 @@ export default class ButtonPage extends Component {
   <Chips.Chip>
     <Chips.Icon className="material-icons" leading>face</Chips.Icon>
     <Chips.Text>Jane Smith</Chips.Text>
-    <Chips.Icon className="material-icons" trailing>more_vert</Chips.Icon>
+    <Chips.Icon className="material-icons" trailing tabindex="0" role="button" title="More options">more_vert</Chips.Icon>
   </Chips.Chip>
   <Chips.Chip>
-  <Chips.Icon className="material-icons" leading>face</Chips.Icon>
+    <Chips.Icon className="material-icons" leading>face</Chips.Icon>
     <Chips.Text>John Doe</Chips.Text>
-    <Chips.Icon className="material-icons" trailing>more_vert</Chips.Icon>
+    <Chips.Icon className="material-icons" trailing tabindex="0" role="button" title="More options">more_vert</Chips.Icon>
+  </Chips.Chip>
+</Chips>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div className="mdc-typography--display1">Choice Chips</div>
+        <div>
+          <Chips>
+            <Chips.Chip>
+              <Chips.Text>Extra Small</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>Small</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>Medium</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>Large</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>Extra Large</Chips.Text>
+            </Chips.Chip>
+          </Chips>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Chips>
+  <Chips.Chip>
+    <Chips.Text>Extra Small</Chips.Text>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Text>Small</Chips.Text>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Text>Medium</Chips.Text>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Text>Large</Chips.Text>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Text>Extra Large</Chips.Text>
+  </Chips.Chip>
+</Chips>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div className="mdc-typography--display1">Filter Chips</div>
+        <div>
+          <Chips>
+            <Chips.Chip>
+              <Chips.Text>Tops</Chips.Text>
+              <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>Bottoms</Chips.Text>
+              <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>Shoes</Chips.Text>
+              <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Text>Accessories</Chips.Text>
+              <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+            </Chips.Chip>
+          </Chips>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Chips>
+  <Chips.Chip>
+    <Chips.Text>Tops</Chips.Text>
+    <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Text>Bottoms</Chips.Text>
+    <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Text>Shoes</Chips.Text>
+    <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Text>Accessories</Chips.Text>
+    <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+  </Chips.Chip>
+</Chips>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div className="mdc-typography--display1">Action Chips</div>
+        <div>
+          <Chips>
+            <Chips.Chip>
+              <Chips.Icon className="material-icons" leading>wb_sunny</Chips.Icon>
+              <Chips.Text>Turn on lights</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Icon className="material-icons" leading>bookmark</Chips.Icon>
+              <Chips.Text>Bookmark</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Icon className="material-icons" leading>alarm</Chips.Icon>
+              <Chips.Text>Set alarm</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Icon className="material-icons" leading>directions</Chips.Icon>
+              <Chips.Text>Get directions</Chips.Text>
+            </Chips.Chip>
+          </Chips>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Chips>
+  <Chips.Chip>
+    <Chips.Icon className="material-icons" leading>wb_sunny</Chips.Icon>
+    <Chips.Text>Turn on lights</Chips.Text>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Icon className="material-icons" leading>bookmark</Chips.Icon>
+    <Chips.Text>Bookmark</Chips.Text>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Icon className="material-icons" leading>alarm</Chips.Icon>
+    <Chips.Text>Set alarm</Chips.Text>
+  </Chips.Chip>
+  <Chips.Chip>
+    <Chips.Icon className="material-icons" leading>directions</Chips.Icon>
+    <Chips.Text>Get directions</Chips.Text>
   </Chips.Chip>
 </Chips>`}
             </code>
