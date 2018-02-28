@@ -7,26 +7,14 @@ export default class CardsPage extends Component {
   render(){
     return (
       <div>
-        <Card>
-          <Card.Primary>
-            <Card.Title>Hi</Card.Title>
-            <Card.Subtitle>Let me subtitle</Card.Subtitle>
-          </Card.Primary>
-          <Card.Media className='card-media'></Card.Media>
+       <Card>
+          <div>
+            <h2 class=" mdc-typography--title">Hi</h2>
+            <div class=" mdc-typography--caption">Let me subtitle</div>
+          </div>
+          <Card.Media className="card-media" />
           <Card.Actions>
-            <Card.Action>OKAY</Card.Action>
-          </Card.Actions>
-        </Card>
-        <Card>
-          <Card.HorizontalBlock>
-            <Card.Primary>
-              <Card.Title large>Hi</Card.Title>
-              <Card.Subtitle>Let me subtitle</Card.Subtitle>
-            </Card.Primary>
-            <Card.MediaItem src="some-picture.jpg" x="1dot5" />
-          </Card.HorizontalBlock>
-          <Card.Actions>
-            <Card.Action>OKAY</Card.Action>
+            <Card.ActionButton>OKAY</Card.ActionButton>
           </Card.Actions>
         </Card>
       </div>
