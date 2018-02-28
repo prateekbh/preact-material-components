@@ -4,7 +4,7 @@
   "description": "preact material component's site",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
+    "build": "preact build --no-prerender",
     "build:prod": "preact build --template template.html --no-prerender && npm run copyAssets",
     "copyAssets": "cp -R images *.png *.json build/",
     "serve": "preact build && preact serve",
