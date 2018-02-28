@@ -24,55 +24,33 @@ export default class CardPage extends Component {
         props: []
       },
       {
-        component: "Card.Primary",
-        props: []
-      },
-      {
-        component: "Card.SupportingText",
-        props: []
-      },
-      {
         component: "Card.Actions",
         props: [
           {
-            name: "vertical",
-            description: "This arranges the actions vertically"
+            name: "full-bleed",
+            description: "This makes the action button end to end"
           }
         ]
       },
       {
-        component: "Card.Action",
+        component: "Card.ActionButton",
         props: []
       },
       {
         component: "Card.Media",
-        props: []
-      },
-      {
-        component: "Card.MediaItem",
         props: [
           {
-            name: "x",
-            value: "1dot5, 2, 3",
-            description: "Changes the size of the image"
+            name: "square",
+            description: "Makes Media aspect ratio 1:1"
+          },
+          {
+            name: "16-9",
+            description: "Makes Media aspect ratio 16:9"
           }
         ]
       },
       {
-        component: "Card.Title",
-        props: [
-          {
-            name: "large",
-            description: "This enlarges the title size"
-          }
-        ]
-      },
-      {
-        component: "Card.Subtitle",
-        props: []
-      },
-      {
-        component: "Card.HorizontalBlock",
+        component: "Card.CardMediaContent",
         props: []
       }
     ];
@@ -99,42 +77,25 @@ export default class CardPage extends Component {
 
         <div className="mdc-typography--display1">Demo</div>
         <Card>
-          <Card.Primary>
-            <Card.Title>Hi</Card.Title>
-            <Card.Subtitle>Let me subtitle</Card.Subtitle>
-          </Card.Primary>
+          <div class="card-header">
+            <h2 class=" mdc-typography--title">Hi</h2>
+            <div class=" mdc-typography--caption">Let me subtitle</div>
+          </div>
           <Card.Media className="card-media" />
           <Card.Actions>
-            <Card.Action>OKAY</Card.Action>
+            <Card.ActionButton>OKAY</Card.ActionButton>
           </Card.Actions>
         </Card>
+
+        <div className="mdc-typography--display1">Demo</div>
         <Card>
-          <Card.Primary>
-            <Card.Title>Hi</Card.Title>
-            <Card.Subtitle>Let me subtitle</Card.Subtitle>
-          </Card.Primary>
-          <Card.SupportingText>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt.
-          </Card.SupportingText>
-          <Card.Actions>
-            <Card.Action>OKAY</Card.Action>
-          </Card.Actions>
-        </Card>
-        <Card>
-          <Card.HorizontalBlock>
-            <Card.Primary>
-              <Card.Title large>Hi</Card.Title>
-              <Card.Subtitle>Let me subtitle</Card.Subtitle>
-            </Card.Primary>
-            <Card.MediaItem src="favicon.png" x="1dot5" />
-          </Card.HorizontalBlock>
-          <Card.Actions>
-            <Card.Action>OKAY</Card.Action>
+          <div class="card-header">
+            <h2 class=" mdc-typography--title">Hi</h2>
+            <div class=" mdc-typography--caption">Let me subtitle</div>
+          </div>
+          <Card.Media className="card-media" />
+          <Card.Actions full-bleed>
+            <Card.ActionButton>OKAY</Card.ActionButton>
           </Card.Actions>
         </Card>
       </div>

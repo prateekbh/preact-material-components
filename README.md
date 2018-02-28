@@ -64,8 +64,6 @@ Smaller bundles FTW!!!
 - 👍 toolbar
 
 
-Let us know if you're using `preact-material-components` and love them. Send us a PR and add your projects and link right here.
-
 ## FAQ
 ### Error while using preact-material-components with **less**
 If you are using less-loader you have to set **strictMath: true** option in your webpack config
@@ -76,6 +74,15 @@ If you are using less-loader you have to set **strictMath: true** option in your
 }
 ```
 
+### Primary and Secondary props not working
+To use theming props like primary/secondary, you'll need to include Theme's css
+```
+import 'preact-material-components/Theme/style.css
+```
 
 ## Docs and Demos
 https://material.preactjs.com/
+
+
+---
+__P.S.:__ Let us know if you're using `preact-material-components` we would love to hear your experiences.

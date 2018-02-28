@@ -4,8 +4,8 @@
   "description": "preact material component's site",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
-    "build:prod": "preact build --template template.html && npm run copyAssets",
+    "build": "preact build --no-prerender",
+    "build:prod": "preact build --template template.html --no-prerender && npm run copyAssets",
     "copyAssets": "cp -R images *.png *.json build/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
@@ -42,7 +42,7 @@
     "if-env": "^1.0.0",
     "node-sass": "^4.5.3",
     "preact-cli": "^2.0.2",
-    "preact-material-components": "1.3.5",
+    "preact-material-components": "1.3.6",
     "prettier": "^1.10.2",
     "sass-loader": "^6.0.6",
     "webpack": "^3.8.1"
