@@ -18,9 +18,9 @@ class ChipSet extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    const { className, ...props } = allprops;
+    const { children, ...props } = allprops;
 
-    return <div className={className}>{props.children}</div>;
+    return <div {...props}>{children}</div>;
   }
 }
 
@@ -39,9 +39,9 @@ class Chip extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    const { className, ...props } = allprops;
+    const { children, ...props } = allprops;
 
-    return <div className={className}>{props.children}</div>;
+    return <div {...props}>{children}</div>;
   }
 }
 
@@ -53,9 +53,9 @@ class ChipIcon extends Icon {
   }
 
   materialDom(allprops) {
-    const { className, ...props } = allprops;
+    const { children, ...props } = allprops;
 
-    return <i className={className}>{props.children}</i>;
+    return <i {...props}>{children}</i>;
   }
 }
 
@@ -66,9 +66,9 @@ class ChipText extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    const { className, ...props } = allprops;
+    const { children, ...props } = allprops;
 
-    return <div className={className}>{props.children}</div>;
+    return <div {...props}>{children}</div>;
   }
 }
 
