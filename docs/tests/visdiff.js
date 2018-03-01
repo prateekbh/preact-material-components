@@ -29,15 +29,6 @@ describe("docs site", () => {
     server.close();
   });
 
-  // // This is ran before every test. It's where you start a clean browser.
-  // beforeEach(async function() {
-  //   browser = await puppeteer.launch();
-  //   page = await browser.newPage();
-  // });
-
-  // This is ran after every test; clean up after your browser.
-  //afterEach(() => browser.close());
-
   describe("desktop screen", async () => {
     beforeEach(async function() {
       return page.setViewport({
@@ -157,7 +148,7 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
 
   // Start the browser, go to that page, and take a screenshot.
   await page.goto(`http://localhost:8080/${route}`, {
-    waitUntil: route === "component/card" ? "networkidle0" : "load"
+    waitUntil: route === "component/card" ? "networkidle0" : "load" //card has images to load
   });
   await page.screenshot({path: `${testDir}/${fileName}.png`});
   // Test to see if it's right.
