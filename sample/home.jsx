@@ -437,25 +437,49 @@ export default class Home extends Component {
         <div>
           <Chips>
             <Chips.Chip>
-              <Chips.Text>Test</Chips.Text>
+              <Chips.Text>Chip One</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Text>More testing</Chips.Text>
+              <Chips.Text>Chip Two</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Text>home</Chips.Text>
+              <Chips.Text>Chip Three</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Text>blue</Chips.Text>
+              <Chips.Text>Chip Four</Chips.Text>
             </Chips.Chip>
           </Chips>
         </div>
         <div>
           <Chips.Chip>
-            <Chips.Text>home</Chips.Text>
+            <Chips.Icon leading className="material-icons">
+              face
+            </Chips.Icon>
+            <Chips.Text>Jane Smith</Chips.Text>
+            <Chips.Icon
+              trailing
+              className="material-icons"
+              tabindex="0"
+              role="button"
+              title="More options"
+            >
+              more_vert
+            </Chips.Icon>
           </Chips.Chip>
           <Chips.Chip>
-            <Chips.Text>blue</Chips.Text>
+            <Chips.Icon leading className="material-icons">
+              face
+            </Chips.Icon>
+            <Chips.Text>John Doe</Chips.Text>
+            <Chips.Icon
+              trailing
+              className="material-icons"
+              tabindex="0"
+              role="button"
+              title="More options"
+            >
+              more_vert
+            </Chips.Icon>
           </Chips.Chip>
         </div>
       </div>
