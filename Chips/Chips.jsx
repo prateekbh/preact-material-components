@@ -1,5 +1,5 @@
 import { h } from "preact";
-import Icon from "../Icon/";
+import Icon from "../Icon";
 import MaterialComponent from "../MaterialComponent";
 import { MDCChip, MDCChipSet } from "@material/chips";
 
@@ -17,8 +17,10 @@ class ChipSet extends MaterialComponent {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
 
-  materialDom(props) {
-    return <div>{props.children}</div>;
+  materialDom(allprops) {
+    const { children, ...props } = allprops;
+
+    return <div {...props}>{children}</div>;
   }
 }
 
@@ -36,8 +38,10 @@ class Chip extends MaterialComponent {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
 
-  materialDom(props) {
-    return <div>{props.children}</div>;
+  materialDom(allprops) {
+    const { children, ...props } = allprops;
+
+    return <div {...props}>{children}</div>;
   }
 }
 
@@ -47,6 +51,12 @@ class ChipIcon extends Icon {
     this.componentName = "chip__icon";
     this._mdcProps = ["leading", "trailing"];
   }
+
+  materialDom(allprops) {
+    const { children, ...props } = allprops;
+
+    return <i {...props}>{children}</i>;
+  }
 }
 
 class ChipText extends MaterialComponent {
@@ -55,8 +65,10 @@ class ChipText extends MaterialComponent {
     this.componentName = "chip__text";
   }
 
-  materialDom(props) {
-    return <div>{props.children}</div>;
+  materialDom(allprops) {
+    const { children, ...props } = allprops;
+
+    return <div {...props}>{children}</div>;
   }
 }
 

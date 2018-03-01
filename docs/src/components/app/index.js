@@ -11,6 +11,7 @@ import Toolbar from "../../../../Toolbar";
 // Routes
 import ButtonPage from "../../routes/button";
 import CardPage from "../../routes/card";
+import ChipsPage from "../../routes/chips";
 import CheckboxPage from "../../routes/checkbox";
 import DialogPage from "../../routes/dialog";
 import DrawerPage from "../../routes/drawer";
@@ -65,6 +66,11 @@ export default class Home extends Component {
         text: "Card",
         link: "/component/card",
         component: CardPage
+      },
+      {
+        text: "Chips",
+        link: "/component/chips",
+        component: ChipsPage
       },
       {
         text: "Checkbox",
