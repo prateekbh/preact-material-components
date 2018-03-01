@@ -31,3 +31,7 @@ deploy:
 branches:
   except:
     - gh-pages
+
+sudo: required
+addons:
+ chrome: stable

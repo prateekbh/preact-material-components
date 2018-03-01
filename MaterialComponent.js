@@ -26,7 +26,7 @@ export default class MaterialComponent extends Component {
     }
   }
   // Build the className based on component names and mdc props
-  buildClassName(props) {
+  buildClassName() {
     // Class name based on component name
     this.classText = "mdc-" + this.componentName;
 
@@ -69,12 +69,11 @@ export default class MaterialComponent extends Component {
     const componentProps = this.props;
     const userDefinedClasses =
       componentProps.className || componentProps.class || "";
-    if (componentProps.class) {
-      // We delete class props and add them later in the final
-      // step so every component does not need to handle user specified classes.
-      delete componentProps.className;
-      delete componentProps.class;
-    }
+    // We delete class props and add them later in the final
+    // step so every component does not need to handle user specified classes.
+    if (componentProps.class) delete componentProps.class;
+    if (componentProps.className) delete componentProps.className;
+
     const element = this.materialDom(componentProps);
     element.attributes = element.attributes || {};
 
