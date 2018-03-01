@@ -3,12 +3,15 @@ const expect = require("chai").expect;
 const path = require("path");
 const httpServer = require("http-server");
 const fs = require("fs");
+const PNG = require("pngjs").PNG;
+const pixelmatch = require("pixelmatch");
 
 const testDir = "tests";
+const goldenDir = "tests/golden";
 
 describe("docs site", () => {
-  let server;
-  before(() => {
+  let server, browser, page;
+  before(async () => {
     server = httpServer.createServer({
       root: "./build"
     });
@@ -18,20 +21,22 @@ describe("docs site", () => {
     if (!fs.existsSync(`${testDir}/wide/component`)) {
       fs.mkdirSync(`${testDir}/wide/component`);
     }
+    browser = await puppeteer.launch();
+    page = await browser.newPage();
   });
 
   after(() => {
     server.close();
   });
 
-  // This is ran before every test. It's where you start a clean browser.
-  beforeEach(async function() {
-    browser = await puppeteer.launch();
-    page = await browser.newPage();
-  });
+  // // This is ran before every test. It's where you start a clean browser.
+  // beforeEach(async function() {
+  //   browser = await puppeteer.launch();
+  //   page = await browser.newPage();
+  // });
 
   // This is ran after every test; clean up after your browser.
-  afterEach(() => browser.close());
+  //afterEach(() => browser.close());
 
   describe("desktop screen", async () => {
     beforeEach(async function() {
@@ -55,6 +60,10 @@ describe("docs site", () => {
 
     it("should match Checkbox page against golden directory", () => {
       return takeAndCompareScreenshot(page, "component/checkbox", "wide");
+    });
+
+    it("should match Chips page against golden directory", () => {
+      return takeAndCompareScreenshot(page, "component/chips", "wide");
     });
 
     it("should match Dialog page against golden directory", () => {
@@ -89,7 +98,7 @@ describe("docs site", () => {
       return takeAndCompareScreenshot(page, "component/layout-grid", "wide");
     });
 
-    it("should match LinearProgress page against golden directory", () => {
+    it.skip("should match LinearProgress page against golden directory", () => {
       return takeAndCompareScreenshot(page, "component/linear-progress", "wide");
     });
 
@@ -147,10 +156,12 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   let fileName = filePrefix + '/' + (route ? route : 'index');
 
   // Start the browser, go to that page, and take a screenshot.
-  await page.goto(`http://localhost:8080/${route}`);
+  await page.goto(`http://localhost:8080/${route}`, {
+    waitUntil: route === "component/card" ? "networkidle0" : "load"
+  });
   await page.screenshot({path: `${testDir}/${fileName}.png`});
   // Test to see if it's right.
-  //return compareScreenshots(fileName);
+  return compareScreenshots(fileName);
 }
 
 function compareScreenshots(fileName) {

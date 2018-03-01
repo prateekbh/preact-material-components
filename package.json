@@ -91,6 +91,7 @@
     "mkdirp": "^0.5.1",
     "mocha": "^5.0.1",
     "pixelmatch": "^4.0.2",
+    "pngjs": "^3.3.2",
     "pre-commit": "^1.2.2",
     "preact": "^8.2.7",
     "prettier": "^1.10.2",

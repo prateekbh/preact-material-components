@@ -2,14 +2,11 @@
 import { h, Component } from "preact";
 
 // Material Components
-import Chips from "preact-material-components/Chips";
+import Chips from "../../../../Chips";
 
 // Components
 import ComponentTable from "../../components/component-table";
 import CodeBlock from "../../components/code-block";
-
-// Styles
-import style from "./style";
 
 // Samples
 import sample from "./sample.txt";
