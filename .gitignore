@@ -47,3 +47,6 @@ jspm_packages
 # Ignores all index.js files for all components since they are auto-generated.
 **/index.js
 !/index.js
+
+# Ignore generated test screenshots
+docs/tests/wide/**/*.png

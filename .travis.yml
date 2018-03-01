@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - "7"
   - "8"
 
 env:
@@ -24,7 +23,7 @@ deploy:
   domain: material.preactjs.com
   skip_cleanup: true
   on:
-    branch: master
+    branch: release
     condition: $(./scripts/has-changes.sh docs) = "yes" && $TEST_DIR = "docs"
     node: "8"
 

@@ -4,12 +4,12 @@
   "description": "preact material component's site",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build --no-prerender",
-    "build:prod": "preact build --template template.html --no-prerender && npm run copyAssets",
+    "build": "preact build",
+    "build:prod": "preact build --template template.html && npm run copyAssets",
     "copyAssets": "cp -R images *.png *.json build/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "npm run prettier",
+    "test": "npm run build && ../node_modules/.bin/mocha ./tests/visdiff.js",
     "prettier": "prettier -l --print-width 80 'src/**/*.js'",
     "prettier:write": "prettier --write --print-width 80 'src/**/*.js'"
   },
@@ -39,10 +39,12 @@
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-prettier": "^2.2.0",
     "highlight.js": "^9.12.0",
+    "http-server": "^0.11.1",
     "if-env": "^1.0.0",
     "node-sass": "^4.5.3",
     "preact-cli": "^2.0.2",
     "prettier": "^1.10.2",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "webpack": "^3.8.1"
   },

@@ -67,7 +67,8 @@ export default class MaterialComponent extends Component {
     this.buildClassName();
     // Fetch a VNode
     const componentProps = this.props;
-    const userDefinedClasses = componentProps.className || componentProps.class || '';
+    const userDefinedClasses =
+      componentProps.className || componentProps.class || "";
     if (componentProps.class) {
       // We delete class props and add them later in the final
       // step so every component does not need to handle user specified classes.
@@ -77,7 +78,9 @@ export default class MaterialComponent extends Component {
     const element = this.materialDom(componentProps);
     element.attributes = element.attributes || {};
 
-    element.attributes.className = `${userDefinedClasses} ${this.getClassName(element)}`;
+    element.attributes.className = `${userDefinedClasses} ${this.getClassName(
+      element
+    )}`;
     // Clean this shit of proxy attributes
     this._mdcProps.forEach(prop => {
       delete element.attributes[prop];
