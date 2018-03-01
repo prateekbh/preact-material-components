@@ -13,7 +13,7 @@ describe("docs site", () => {
   let server, browser, page;
   before(async () => {
     server = httpServer.createServer({
-      root: "./build"
+      root: "../build"
     });
     server.listen(8080, () => {});
     // And its wide screen/small screen subdirectories.
