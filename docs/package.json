@@ -9,7 +9,7 @@
     "copyAssets": "cp -R images *.png *.json build/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "npm run build && ../node_modules/.bin/mocha ./tests/visdiff.js --timeout 5000 --exit",
+    "test": "../node_modules/.bin/mocha ./tests/visdiff.js --timeout 5000 --exit",
     "prettier": "prettier -l --print-width 80 'src/**/*.js'",
     "prettier:write": "prettier --write --print-width 80 'src/**/*.js'"
   },

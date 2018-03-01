@@ -6,8 +6,6 @@ env:
   - TEST_DIR=
   - TEST_DIR=docs
 
-os: osx
-
 # Skip npm install because our script takes care of that
 install: true
 script: ./scripts/travis.sh $TEST_DIR
