@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 const expect = require("chai").expect;
 const path = require("path");
-const httpServer = require("http-server");
+const serve = require('serve');
 const fs = require("fs");
 const PNG = require("pngjs").PNG;
 const pixelmatch = require("pixelmatch");
@@ -12,10 +12,11 @@ const goldenDir = "tests/golden";
 describe("docs site", () => {
   let server, browser, page;
   before(async () => {
-    server = httpServer.createServer({
-      root: "../build"
+    const serveDir = path.join(__dirname, "../build");
+    server = serve(serveDir, {
+      port: 8080,
+      ignore: ["node_modules"]
     });
-    server.listen(8080, () => {});
     // And its wide screen/small screen subdirectories.
     if (!fs.existsSync(`${testDir}/wide`)) fs.mkdirSync(`${testDir}/wide`);
     if (!fs.existsSync(`${testDir}/wide/component`)) {
@@ -26,7 +27,7 @@ describe("docs site", () => {
   });
 
   after(() => {
-    server.close();
+    server.stop();
   });
 
   describe("desktop screen", async () => {
