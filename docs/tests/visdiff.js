@@ -5,32 +5,35 @@ const serve = require("serve");
 const fs = require("fs");
 const PNG = require("pngjs").PNG;
 const pixelmatch = require("pixelmatch");
+const mkdirp = require("mkdirp");
 
-const testDir = "tests";
+const testDir = "tests/generated";
 const goldenDir = "tests/golden";
 
 describe("docs site", () => {
   let server, browser, page;
+
   before(async () => {
     const serveDir = path.join(__dirname, "../build");
     server = serve(serveDir, {
       port: 8080,
       ignore: ["node_modules"]
     });
-    // Create dirs
-    if (!fs.existsSync(`${testDir}/wide`)) fs.mkdirSync(`${testDir}/wide`);
-    if (!fs.existsSync(`${testDir}/wide/component`)) {
-      fs.mkdirSync(`${testDir}/wide/component`);
-    }
+
+    // And its wide screen/small screen subdirectories.
+    mkdirp.sync(`${testDir}/wide/component`);
+
     // Artificial wait as serve takes time to boot sometimes
     await new Promise(resolve => {
       setTimeout(() => resolve(), 2000);
     });
+
     browser = await puppeteer.launch();
     page = await browser.newPage();
   });
 
   after(() => {
+    browser.close();
     server.stop();
     browser.close();
   });
@@ -168,11 +171,12 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
 
 function compareScreenshots(fileName) {
   return new Promise((resolve, reject) => {
-    const img1 = fs.createReadStream(`${testDir}/${fileName}.png`)
+    const img1 = fs
+      .createReadStream(`${testDir}/${fileName}.png`)
       .pipe(new PNG())
       .on("parsed", doneReading);
-
-    const img2 = fs.createReadStream(`${goldenDir}/${fileName}.png`)
+    const img2 = fs
+      .createReadStream(`${goldenDir}/${fileName}.png`)
       .pipe(new PNG())
       .on("parsed", doneReading);
 
@@ -187,7 +191,6 @@ function compareScreenshots(fileName) {
 
       // Do the visual diff.
       const diff = new PNG({ width: img1.width, height: img2.height });
-
       const numDiffPixels = pixelmatch(
         img1.data,
         img2.data,

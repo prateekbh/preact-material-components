@@ -8,7 +8,15 @@ function test {
     npm install
     npm run build
     cd $TRAVIS_BUILD_DIR/$SUBFOLDER
+    npm install
     npm test
+    
+    if npm run | grep test:travis > /dev/null
+    then
+        npm run test:travis
+    else
+        npm test
+    fi
     exit
 }
 
