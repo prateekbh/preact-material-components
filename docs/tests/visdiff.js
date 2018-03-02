@@ -171,8 +171,9 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
 
 function compareScreenshots(fileName) {
   return new Promise((resolve, reject) => {
+    const filePath = `${testDir}/${fileName}.png`;
     const img1 = fs
-      .createReadStream(`${testDir}/${fileName}.png`)
+      .createReadStream(filePath)
       .pipe(new PNG())
       .on("parsed", doneReading);
     const img2 = fs
@@ -204,6 +205,7 @@ function compareScreenshots(fileName) {
 
       // The files should look the same.
       expect(numDiffPixels, "number of different pixels").equal(0);
+      fs.unlinkSync(filePath);
       resolve();
     }
   });
