@@ -8,7 +8,6 @@ function test {
     npm install
     npm run build
     cd $TRAVIS_BUILD_DIR/$SUBFOLDER
-    npm install
     npm test
     exit
 }

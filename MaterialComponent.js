@@ -71,8 +71,8 @@ export default class MaterialComponent extends Component {
       componentProps.className || componentProps.class || "";
     // We delete class props and add them later in the final
     // step so every component does not need to handle user specified classes.
-    if (componentProps.class) delete componentProps.class;
-    if (componentProps.className) delete componentProps.className;
+    if (componentProps["class"]) delete componentProps["class"];
+    if (componentProps["className"]) delete componentProps["className"];
 
     const element = this.materialDom(componentProps);
     element.attributes = element.attributes || {};
