@@ -79,7 +79,12 @@ export default class MaterialComponent extends Component {
 
     element.attributes.className = `${userDefinedClasses} ${this.getClassName(
       element
-    )}`;
+    )}`
+      .split(" ")
+      .filter(
+        (value, index, self) => self.indexOf(value) === index && value !== ""
+      ) // Unique + exclude empty class names
+      .join(" ");
     // Clean this shit of proxy attributes
     this._mdcProps.forEach(prop => {
       delete element.attributes[prop];
