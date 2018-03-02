@@ -5,6 +5,7 @@ const serve = require("serve");
 const fs = require("fs");
 const PNG = require("pngjs").PNG;
 const pixelmatch = require("pixelmatch");
+const base64Img = require('base64-img');
 
 const testDir = "tests";
 const goldenDir = "tests/golden";
@@ -161,6 +162,9 @@ function compareScreenshots(fileName) {
     const img1 = fs.createReadStream(`${testDir}/${fileName}.png`).pipe(new PNG()).on('parsed', doneReading);
     const img2 = fs.createReadStream(`${goldenDir}/${fileName}.png`).pipe(new PNG()).on('parsed', doneReading);
 
+    console.log(base64Img.base64Sync(`${testDir}/${fileName}.png`));
+    console.log("______________________");
+    console.log(base64Img.base64Sync(`${goldenDir}/${fileName}.png`));
     let filesRead = 0;
     function doneReading() {
       // Wait until both files are read.

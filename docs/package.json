@@ -34,6 +34,7 @@
   "homepage": "https://github.com/prateekbh/preact-material-components#readme",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "base64-img": "^1.0.4",
     "classnames": "^2.2.5",
     "eslint": "^4.6.1",
     "eslint-config-prettier": "^2.4.0",
