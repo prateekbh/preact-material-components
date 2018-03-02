@@ -9,7 +9,6 @@ function test {
     npm run build
     cd $TRAVIS_BUILD_DIR/$SUBFOLDER
     npm install
-    pwd
     npm test
     exit
 }

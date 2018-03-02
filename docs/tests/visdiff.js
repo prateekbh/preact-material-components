@@ -5,7 +5,7 @@ const serve = require("serve");
 const fs = require("fs");
 const PNG = require("pngjs").PNG;
 const pixelmatch = require("pixelmatch");
-const base64Img = require('base64-img');
+const base64Img = require("base64-img");
 
 const testDir = "tests";
 const goldenDir = "tests/golden";
@@ -18,24 +18,30 @@ describe("docs site", () => {
       port: 8080,
       ignore: ["node_modules"]
     });
-    // And its wide screen/small screen subdirectories.
+    // Create dirs
     if (!fs.existsSync(`${testDir}/wide`)) fs.mkdirSync(`${testDir}/wide`);
     if (!fs.existsSync(`${testDir}/wide/component`)) {
       fs.mkdirSync(`${testDir}/wide/component`);
     }
+    // Artificial wait as serve takes time to boot sometimes
+    await new Promise(resolve => {
+      setTimeout(() => resolve(), 2000);
+    });
     browser = await puppeteer.launch();
     page = await browser.newPage();
   });
 
   after(() => {
     server.stop();
+    browser.close();
   });
 
   describe("desktop screen", async () => {
     beforeEach(async function() {
       return page.setViewport({
         width: 1024,
-        height: 4000
+        height: 4000,
+        deviceScaleFactor: 2
       });
     });
 
@@ -92,7 +98,11 @@ describe("docs site", () => {
     });
 
     it.skip("should match LinearProgress page against golden directory", () => {
-      return takeAndCompareScreenshot(page, "component/linear-progress", "wide");
+      return takeAndCompareScreenshot(
+        page,
+        "component/linear-progress",
+        "wide"
+      );
     });
 
     it("should match List page against golden directory", () => {
@@ -146,42 +156,52 @@ describe("docs site", () => {
 // - filePrefix is either "wide" or "narrow", since I'm automatically testing both.
 async function takeAndCompareScreenshot(page, route, filePrefix) {
   // If you didn't specify a file, use the name of the route.
-  let fileName = filePrefix + '/' + (route ? route : 'index');
+  let fileName = filePrefix + "/" + (route ? route : "index");
 
   // Start the browser, go to that page, and take a screenshot.
   await page.goto(`http://localhost:8080/${route}`, {
     waitUntil: route === "component/card" ? "networkidle0" : "load" //card has images to load
   });
-  await page.screenshot({path: `${testDir}/${fileName}.png`});
+  await page.screenshot({ path: `${testDir}/${fileName}.png` });
   // Test to see if it's right.
   return compareScreenshots(fileName);
 }
 
 function compareScreenshots(fileName) {
   return new Promise((resolve, reject) => {
-    const img1 = fs.createReadStream(`${testDir}/${fileName}.png`).pipe(new PNG()).on('parsed', doneReading);
-    const img2 = fs.createReadStream(`${goldenDir}/${fileName}.png`).pipe(new PNG()).on('parsed', doneReading);
+    const img1 = fs.createReadStream(`${testDir}/${fileName}.png`)
+      .pipe(new PNG())
+      .on("parsed", doneReading);
 
-    console.log(base64Img.base64Sync(`${testDir}/${fileName}.png`));
-    console.log("______________________");
-    console.log(base64Img.base64Sync(`${goldenDir}/${fileName}.png`));
+    const img2 = fs.createReadStream(`${goldenDir}/${fileName}.png`)
+      .pipe(new PNG())
+      .on("parsed", doneReading);
+
     let filesRead = 0;
     function doneReading() {
       // Wait until both files are read.
       if (++filesRead < 2) return;
 
       // The files should be the same size.
-      expect(img1.width, 'image widths are the same').equal(img2.width);
-      expect(img1.height, 'image heights are the same').equal(img2.height);
+      expect(img1.width, "image widths are the same").equal(img2.width);
+      expect(img1.height, "image heights are the same").equal(img2.height);
 
       // Do the visual diff.
-      const diff = new PNG({width: img1.width, height: img2.height});
+      const diff = new PNG({ width: img1.width, height: img2.height });
+
       const numDiffPixels = pixelmatch(
-          img1.data, img2.data, diff.data, img1.width, img1.height,
-          {threshold: 0.1});
+        img1.data,
+        img2.data,
+        diff.data,
+        img1.width,
+        img1.height,
+        {
+          threshold: 0.1
+        }
+      );
 
       // The files should look the same.
-      expect(numDiffPixels, 'number of different pixels').equal(0);
+      expect(numDiffPixels, "number of different pixels").equal(0);
       resolve();
     }
   });
