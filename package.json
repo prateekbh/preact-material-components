@@ -91,7 +91,7 @@
     "pre-commit": "^1.2.2",
     "preact": "^8.2.7",
     "prettier": "^1.10.2",
-    "webpack": "^3.10.0",
+    "webpack": "^4.0.0",
     "webpack-shell-plugin": "^0.5.0"
   },
   "lint-staged": {
