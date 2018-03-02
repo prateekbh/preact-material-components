@@ -103,14 +103,34 @@ export default class ButtonPage extends Component {
         <div>
           <Chips>
             <Chips.Chip>
-              <Chips.Icon className="material-icons" leading>face</Chips.Icon>
+              <Chips.Icon className="material-icons" leading>
+                face
+              </Chips.Icon>
               <Chips.Text>Jane Smith</Chips.Text>
-              <Chips.Icon className="material-icons" trailing tabindex="0" role="button" title="More options">more_vert</Chips.Icon>
+              <Chips.Icon
+                className="material-icons"
+                trailing
+                tabindex="0"
+                role="button"
+                title="More options"
+              >
+                more_vert
+              </Chips.Icon>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Icon className="material-icons" leading>face</Chips.Icon>
+              <Chips.Icon className="material-icons" leading>
+                face
+              </Chips.Icon>
               <Chips.Text>John Doe</Chips.Text>
-              <Chips.Icon className="material-icons" trailing tabindex="0" role="button" title="More options">more_vert</Chips.Icon>
+              <Chips.Icon
+                className="material-icons"
+                trailing
+                tabindex="0"
+                role="button"
+                title="More options"
+              >
+                more_vert
+              </Chips.Icon>
             </Chips.Chip>
           </Chips>
           <CodeBlock>
@@ -178,19 +198,47 @@ export default class ButtonPage extends Component {
           <Chips>
             <Chips.Chip>
               <Chips.Text>Tops</Chips.Text>
-              <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+              <Chips.Icon
+                className="material-icons"
+                trailing
+                tabindex="0"
+                role="button"
+              >
+                cancel
+              </Chips.Icon>
             </Chips.Chip>
             <Chips.Chip>
               <Chips.Text>Bottoms</Chips.Text>
-              <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+              <Chips.Icon
+                className="material-icons"
+                trailing
+                tabindex="0"
+                role="button"
+              >
+                cancel
+              </Chips.Icon>
             </Chips.Chip>
             <Chips.Chip>
               <Chips.Text>Shoes</Chips.Text>
-              <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+              <Chips.Icon
+                className="material-icons"
+                trailing
+                tabindex="0"
+                role="button"
+              >
+                cancel
+              </Chips.Icon>
             </Chips.Chip>
             <Chips.Chip>
               <Chips.Text>Accessories</Chips.Text>
-              <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
+              <Chips.Icon
+                className="material-icons"
+                trailing
+                tabindex="0"
+                role="button"
+              >
+                cancel
+              </Chips.Icon>
             </Chips.Chip>
           </Chips>
           <CodeBlock>
@@ -221,19 +269,27 @@ export default class ButtonPage extends Component {
         <div>
           <Chips>
             <Chips.Chip>
-              <Chips.Icon className="material-icons" leading>wb_sunny</Chips.Icon>
+              <Chips.Icon className="material-icons" leading>
+                wb_sunny
+              </Chips.Icon>
               <Chips.Text>Turn on lights</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Icon className="material-icons" leading>bookmark</Chips.Icon>
+              <Chips.Icon className="material-icons" leading>
+                bookmark
+              </Chips.Icon>
               <Chips.Text>Bookmark</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Icon className="material-icons" leading>alarm</Chips.Icon>
+              <Chips.Icon className="material-icons" leading>
+                alarm
+              </Chips.Icon>
               <Chips.Text>Set alarm</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Icon className="material-icons" leading>directions</Chips.Icon>
+              <Chips.Icon className="material-icons" leading>
+                directions
+              </Chips.Icon>
               <Chips.Text>Get directions</Chips.Text>
             </Chips.Chip>
           </Chips>
