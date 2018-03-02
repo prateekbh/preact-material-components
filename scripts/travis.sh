@@ -9,7 +9,6 @@ function test {
     npm run build
     cd $TRAVIS_BUILD_DIR/$SUBFOLDER
     npm install
-    npm test
     
     if npm run | grep test:travis > /dev/null
     then
