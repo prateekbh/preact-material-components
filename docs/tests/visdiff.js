@@ -41,9 +41,7 @@ describe("docs site", () => {
   describe("desktop screen", async () => {
     beforeEach(async function() {
       return page.setViewport({
-        width: 1024,
-        height: 4000,
-        deviceScaleFactor: 2
+        width: 1024
       });
     });
 
@@ -99,7 +97,7 @@ describe("docs site", () => {
       return takeAndCompareScreenshot(page, "component/layout-grid", "wide");
     });
 
-    it.skip("should match LinearProgress page against golden directory", () => {
+    it("should match LinearProgress page against golden directory", () => {
       return takeAndCompareScreenshot(
         page,
         "component/linear-progress",
@@ -164,7 +162,7 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   await page.goto(`http://localhost:8080/${route}`, {
     waitUntil: route === "component/card" ? "networkidle0" : "load" //card has images to load
   });
-  await page.screenshot({ path: `${testDir}/${fileName}.png` });
+  await page.screenshot({ path: `${testDir}/${fileName}.png`, fullpage: true });
   // Test to see if it's right.
   return compareScreenshots(fileName);
 }
