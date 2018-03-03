@@ -97,7 +97,7 @@ describe("docs site", () => {
       return takeAndCompareScreenshot(page, "component/layout-grid", "wide");
     });
 
-    it("should match LinearProgress page against golden directory", () => {
+    it.skip("should match LinearProgress page against golden directory", () => {
       return takeAndCompareScreenshot(
         page,
         "component/linear-progress",
