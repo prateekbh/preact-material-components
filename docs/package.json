@@ -9,11 +9,10 @@
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "npm run prettier && npm run build:prod && npm run test:run",
-    "test:run": "mocha ./tests/visdiff.js --timeout 5000",
-    "test:travis": "npm run prettier && node ./scripts/test-travis.js",
-    "prettier": "prettier -l --print-width 80 'src/**/*.js'",
-    "prettier:write": "prettier --write --print-width 80 'src/**/*.js'"
+    "test": "npm run prettier && npm run build:prod && mocha ./tests/visdiff.js --timeout 5000",
+    "test:travis": "node ./scripts/test-travis.js",
+    "prettier": "prettier -l --print-width 80 \"src/**/*.js\"",
+    "prettier:write": "prettier --write --print-width 80 \"src/**/*.js\""
   },
   "repository": {
     "type": "git",
