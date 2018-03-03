@@ -23,7 +23,7 @@ runTests.on("close", code => {
     zlib: { level: 9 }
   });
 
-  output.on("close", function() {
+  output.on("close", () => {
     request.post(
       {
         url: "https://file.io",
@@ -32,6 +32,11 @@ runTests.on("close", code => {
         }
       },
       (err, httpResponse, body) => {
+        if (err) {
+          console.error("Couldn't upload pictures");
+          process.exit(-1);
+        }
+
         const result = JSON.parse(body);
         console.log(`Failed pictures: ${result.link}`);
         process.exit(-1);
