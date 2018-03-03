@@ -69,12 +69,7 @@ runTests.on("close", code => {
         return gist.read();
       })
       .then(result => {
-        const link = url.parse(result.data.html_url);
-        link.pathname = `${result.data.owner.login}${
-          link.pathname
-        }/raw/failed-pictures.zip`;
-
-        return url.format(link);
+        return result.data.files["failed-pictures.zip"].raw_url;
       })
       .then(link => {
         // Post comment to PR
