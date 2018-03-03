@@ -40,7 +40,8 @@ describe("docs site", () => {
   describe("desktop screen", async () => {
     beforeEach(async function() {
       return page.setViewport({
-        width: 1024
+        width: 1280,
+        height: 720
       });
     });
 
