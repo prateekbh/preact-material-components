@@ -2,9 +2,9 @@
 import { h, Component } from "preact";
 
 // Material Components
-import Checkbox from "preact-material-components/Checkbox";
-import Button from "preact-material-components/Button";
-import Formfield from "preact-material-components/FormField";
+import Checkbox from "../../../../Checkbox";
+import Button from "../../../../Button";
+import Formfield from "../../../../FormField";
 
 // Components
 import ComponentTable from "../../components/component-table";

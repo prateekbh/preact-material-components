@@ -2,8 +2,8 @@
 import { h, Component } from "preact";
 
 // Material Components
-import Tabs from "preact-material-components/Tabs";
-import Icon from "preact-material-components/Icon";
+import Tabs from "../../../../Tabs";
+import Icon from "../../../../Icon";
 
 // Components
 import ComponentTable from "../../components/component-table";

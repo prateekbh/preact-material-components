@@ -2,7 +2,7 @@
 import { h, Component } from "preact";
 
 // Material Components
-import Toolbar from "preact-material-components/Toolbar";
+import Toolbar from "../../../../Toolbar";
 
 // Components
 import ComponentTable from "../../components/component-table";

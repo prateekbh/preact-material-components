@@ -2,7 +2,7 @@
 import { h, Component } from "preact";
 
 // Material Components
-import GridList from "preact-material-components/GridList";
+import GridList from "../../../../GridList";
 
 // Components
 import ComponentTable from "../../components/component-table";

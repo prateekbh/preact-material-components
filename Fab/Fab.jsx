@@ -23,13 +23,13 @@ class Fab extends MaterialComponent {
       if (themeProp in props && props[themeProp] !== false)
         classNames.push(generateThemeClass(themeProp));
     });
-    let className = classNames.join(" ");
+    let classNameString = classNames.join(" ");
 
     return (
       <button
         ref={control => (this.control = control)}
         {...props}
-        className={className}
+        className={classNameString}
       >
         {props.children}
       </button>

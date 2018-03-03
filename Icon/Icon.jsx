@@ -11,9 +11,8 @@ export default class Icon extends MaterialComponent {
   }
   materialDom(props) {
     let classes = ["material-icons"];
-    if (props.className) {
-      classes.push(props.className);
-    }
+    // CardActionIcon sends className
+    props.className && classes.push(props.className);
     return (
       <i {...props} className={classes.join(" ")}>
         {props.children}

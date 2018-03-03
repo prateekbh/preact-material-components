@@ -2,8 +2,8 @@
 import App from "./components/app";
 
 // Material Components
-import "preact-material-components/Typography/style.css";
-import "preact-material-components/Theme/style.css";
+import "../../Typography/style.css";
+import "../../Theme/style.css";
 
 // Styles
 import "./style";

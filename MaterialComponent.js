@@ -25,9 +25,12 @@ export default class MaterialComponent extends Component {
       MDCRipple.attachTo(this.control);
     }
   }
-  // Build the className
-  buildClassName(props) {
+  // Build the className based on component names and mdc props
+  buildClassName() {
+    // Class name based on component name
     this.classText = "mdc-" + this.componentName;
+
+    // Loop over mdcProps to turn them into classNames
     for (let propKey in this.props) {
       if (this.props.hasOwnProperty(propKey)) {
         const prop = this.props[propKey];
@@ -39,6 +42,7 @@ export default class MaterialComponent extends Component {
       }
     }
   }
+
   getClassName(element) {
     if (!element) {
       return "";
@@ -53,23 +57,34 @@ export default class MaterialComponent extends Component {
     }
     return classText;
   }
+
   // Components must implement this method for their specific DOM structure
   materialDom(props) {
     return h("div", Object.assign({}, props), props.children);
   }
+
   render() {
     this.buildClassName();
     // Fetch a VNode
     const componentProps = this.props;
-    if (componentProps.class) {
-      // We delete class prop here so that any sub node's class doesn't get over-ridden from this
-      delete componentProps.class;
-    }
+    const userDefinedClasses =
+      componentProps.className || componentProps.class || "";
+    // We delete class props and add them later in the final
+    // step so every component does not need to handle user specified classes.
+    if (componentProps["class"]) delete componentProps["class"];
+    if (componentProps["className"]) delete componentProps["className"];
+
     const element = this.materialDom(componentProps);
     element.attributes = element.attributes || {};
-    // Fix for className
-    element.attributes.class = this.getClassName(element);
-    // element.attributes.className = this.getClassName(element);
+
+    element.attributes.className = `${userDefinedClasses} ${this.getClassName(
+      element
+    )}`
+      .split(" ")
+      .filter(
+        (value, index, self) => self.indexOf(value) === index && value !== ""
+      ) // Unique + exclude empty class names
+      .join(" ");
     // Clean this shit of proxy attributes
     this._mdcProps.forEach(prop => {
       delete element.attributes[prop];
