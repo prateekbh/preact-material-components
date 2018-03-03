@@ -42,6 +42,7 @@
     "eslint": "^4.6.1",
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-prettier": "^2.2.0",
+    "github-api": "^3.0.0",
     "highlight.js": "^9.12.0",
     "if-env": "^1.0.0",
     "mocha": "^5.0.1",

@@ -10,7 +10,9 @@ os: osx
 
 # Skip npm install because our script takes care of that
 install: true
-script: ./scripts/travis.sh $TEST_DIR
+script:
+  - env
+  - ./scripts/travis.sh $TEST_DIR
 
 cache:
   directories:
