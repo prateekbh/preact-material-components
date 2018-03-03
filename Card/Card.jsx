@@ -47,15 +47,20 @@ class CardActionButton extends Button {
   }
 }
 
+class CardActionIcons extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "card__action-icons";
+  }
+}
+
 class CardActionIcon extends Icon {
   constructor() {
     super();
     this.componentName = "card__action";
   }
   materialDom(props) {
-    props.className = props.className
-      ? props.className + " mdc-card__action--icon"
-      : props.className;
+    props.className = "mdc-card__action--icon";
     return super.materialDom(props);
   }
 }
@@ -69,6 +74,7 @@ class CardMediaContent extends MaterialComponent {
 
 Card.Actions = CardActions;
 Card.ActionButton = CardActionButton;
+Card.ActionIcons = CardActionIcons;
 Card.ActionIcon = CardActionIcon;
 Card.Media = CardMedia;
 Card.CardMediaContent = CardMediaContent;

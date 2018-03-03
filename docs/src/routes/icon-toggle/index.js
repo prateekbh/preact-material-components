@@ -2,7 +2,7 @@
 import { h, Component } from "preact";
 
 // Material Components
-import IconToggle from "preact-material-components/IconToggle";
+import IconToggle from "../../../../IconToggle";
 
 // Components
 import ComponentTable from "../../components/component-table";

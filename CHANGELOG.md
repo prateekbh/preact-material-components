@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.7
+- Fix className bug in SSR
+- Added CardActionIcons
+- Added Puppeteer visual diff tests
+
 ## 1.3.6
 - Updated to mdc 0.31.0
 - New Component: `Chips, Line Ripple`.

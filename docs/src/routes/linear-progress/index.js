@@ -2,7 +2,7 @@
 import { h, Component } from "preact";
 
 // Material Components
-import LinearProgress from "preact-material-components/LinearProgress";
+import LinearProgress from "../../../../LinearProgress";
 
 // Components
 import ComponentTable from "../../components/component-table";

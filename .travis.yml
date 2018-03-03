@@ -1,11 +1,12 @@
 language: node_js
 node_js:
-  - "7"
   - "8"
 
 env:
   - TEST_DIR=
   - TEST_DIR=docs
+
+os: osx
 
 # Skip npm install because our script takes care of that
 install: true
@@ -24,7 +25,7 @@ deploy:
   domain: material.preactjs.com
   skip_cleanup: true
   on:
-    branch: master
+    branch: release
     condition: $(./scripts/has-changes.sh docs) = "yes" && $TEST_DIR = "docs"
     node: "8"
 
@@ -32,3 +33,7 @@ deploy:
 branches:
   except:
     - gh-pages
+
+sudo: required
+addons:
+ chrome: stable

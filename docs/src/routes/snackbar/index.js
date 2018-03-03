@@ -2,8 +2,8 @@
 import { h, Component } from "preact";
 
 // Material Components
-import Snackbar from "preact-material-components/Snackbar";
-import Button from "preact-material-components/Button";
+import Snackbar from "../../../../Snackbar";
+import Button from "../../../../Button";
 
 // Components
 import ComponentTable from "../../components/component-table";

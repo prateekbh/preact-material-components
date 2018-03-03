@@ -94,10 +94,6 @@ class LayoutGridCell extends MaterialComponent {
       classes.push(baseClass + "align-" + props[this._propsDict.align]);
     }
 
-    if (props.className) {
-      classes.push(props.className);
-    }
-
     return classes.join(" ");
   }
   materialDom(props) {

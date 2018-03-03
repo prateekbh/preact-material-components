@@ -32,7 +32,7 @@ export default class IconToggle extends MaterialComponent {
     return (
       <i
         {...props}
-        className={"material-icons " + props.className || ""}
+        className="material-icons"
         ref={control => {
           this.control = control;
         }}

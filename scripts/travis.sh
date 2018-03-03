@@ -5,8 +5,9 @@ SUBFOLDER=$1
 
 function test {
     set -ev
-    cd $TRAVIS_BUILD_DIR/$SUBFOLDER
     npm install
+    npm run build
+    cd $TRAVIS_BUILD_DIR/$SUBFOLDER
     npm test
     exit
 }
