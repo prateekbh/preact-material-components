@@ -49,4 +49,4 @@ jspm_packages
 !/index.js
 
 # Ignore generated test screenshots
-docs/tests/wide/**/*.png
+/docs/tests/generated
