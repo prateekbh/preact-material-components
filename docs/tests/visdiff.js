@@ -162,7 +162,7 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   await page.goto(`http://localhost:8080/${route}`, {
     waitUntil: route === "component/card" ? "networkidle0" : "load" //card has images to load
   });
-  await page.screenshot({ path: `${testDir}/${fileName}.png`, fullpage: true });
+  await page.screenshot({ path: `${testDir}/${fileName}.png`, fullPage: true });
   // Test to see if it's right.
   return compareScreenshots(fileName);
 }
