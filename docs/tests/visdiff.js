@@ -35,7 +35,6 @@ describe("docs site", () => {
   after(() => {
     browser.close();
     server.stop();
-    browser.close();
   });
 
   describe("desktop screen", async () => {
