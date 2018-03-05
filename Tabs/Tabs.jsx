@@ -49,7 +49,7 @@ class Tabs extends MaterialComponent {
         className={className}
         role="tablist"
         {...props}
-        ref={control => (this.control = control)}
+        ref={this.setControlRef}
       >
         {props.children}
         <span class="mdc-tab-bar__indicator" />
@@ -71,7 +71,7 @@ class TabBarScroller extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <div {...props} ref={control => (this.control = control)}>
+      <div {...props} ref={this.setControlRef}>
         <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
           <a
             className="mdc-tab-bar-scroller__indicator__inner material-icons"
@@ -109,7 +109,7 @@ class Tab extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <a role="tab" {...props} ref={control => (this.control = control)}>
+      <a role="tab" {...props} ref={this.setControlRef}>
         {props.children}
       </a>
     );
@@ -123,7 +123,7 @@ class TabIconLabel extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <span {...props} ref={control => (this.control = control)}>
+      <span {...props} ref={this.setControlRef}>
         {props.children}
       </span>
     );

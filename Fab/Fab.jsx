@@ -26,11 +26,7 @@ class Fab extends MaterialComponent {
     let classNameString = classNames.join(" ");
 
     return (
-      <button
-        ref={control => (this.control = control)}
-        {...props}
-        className={classNameString}
-      >
+      <button ref={this.setControlRef} {...props} className={classNameString}>
         {props.children}
       </button>
     );

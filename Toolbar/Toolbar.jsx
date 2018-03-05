@@ -36,12 +36,7 @@ class Toolbar extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <header
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
+      <header ref={this.setControlRef} {...props}>
         {props.children}
       </header>
     );
