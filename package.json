@@ -57,7 +57,7 @@
     "@material/ripple": "^0.31.0",
     "@material/rtl": "^0.30.0",
     "@material/select": "^0.31.0",
-    "@material/selection-control": "^0.31.0",
+    "@material/selection-control": "^0.32.0",
     "@material/slider": "^0.30.0",
     "@material/snackbar": "^0.30.0",
     "@material/switch": "^0.31.0",
