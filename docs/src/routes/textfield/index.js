@@ -10,6 +10,14 @@ import CodeBlock from "../../components/code-block";
 
 // Samples
 import sample from "./sample.txt";
+import defaultSample from "./default-sample.txt";
+import controlledSample from "./controlled-sample.txt";
+import denseSample from "./dense-sample.txt";
+import disabledSample from "./disabled-sample.txt";
+import helpTextSample from "./help-text-sample.txt";
+import passwordSample from "./password-sample.txt";
+import persistentHelpTextSample from "./persistent-help-text-sample.txt";
+import textareaSample from "./textarea-sample.txt";
 
 // Class
 export default class TextFieldPage extends Component {
@@ -86,7 +94,7 @@ export default class TextFieldPage extends Component {
           </a>.
         </div>
         <div className="mdc-typography--display1">Demo</div>
-        <div className="mdc-typography--headline">Default</div>
+        <div className="mdc-typography--title">Default</div>
         <TextField
           label="Your name"
           onKeyUp={e => {
@@ -96,31 +104,53 @@ export default class TextFieldPage extends Component {
           }}
         />{" "}
         Hi - {this.state.name}
-        <div className="mdc-typography--headline">Textarea</div>
+        <CodeBlock>
+          <code class="lang-html">{defaultSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Textarea</div>
         <TextField textarea={true} label="Textarea tag" />
-        <div className="mdc-typography--headline">Password</div>
+        <CodeBlock>
+          <code class="lang-html">{textareaSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Password</div>
         <TextField type="password" label="Enter a password" />
-        <div className="mdc-typography--headline">With help text</div>
+        <CodeBlock>
+          <code class="lang-html">{passwordSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">With help text</div>
         <TextField label="Help text" helptext="This is the helptext" />
-        <div className="mdc-typography--headline">
-          With persistent help text
-        </div>
+        <CodeBlock>
+          <code class="lang-html">{helpTextSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">With persistent help text</div>
         <TextField
           label="Persistent help text"
           helptext="This is the helptext"
           helptextPersistent
         />
-        <div className="mdc-typography--headline">Dense</div>
+        <CodeBlock>
+          <code class="lang-html">{persistentHelpTextSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Dense</div>
         <TextField label="Dense" dense />
-        <div className="mdc-typography--headline">Disabled</div>
+        <CodeBlock>
+          <code class="lang-html">{denseSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Disabled</div>
         <TextField label="Disabled" disabled />
-        <div className="mdc-typography--headline">Link state</div>
+        <CodeBlock>
+          <code class="lang-html">{disabledSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Controlled</div>
         <TextField
           label="State"
           value={this.state.value}
           onInput={e => this.setState({ value: e.target.value })}
         />
         State: {this.state.value}
+        <CodeBlock>
+          <code class="lang-html">{controlledSample}</code>
+        </CodeBlock>
       </div>
     );
   }
