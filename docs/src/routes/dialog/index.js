@@ -16,6 +16,8 @@ import "./style";
 
 // Samples
 import sample from "./sample.txt";
+import defaultSample from "./default-sample.txt";
+import scrollableSample from "./scrollable-sample.txt";
 
 // Class
 export default class DialogPage extends Component {
@@ -90,6 +92,7 @@ export default class DialogPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
+        <div className="mdc-typography--title">Default Dialog</div>
         <Button
           primary={true}
           raised={true}
@@ -99,6 +102,10 @@ export default class DialogPage extends Component {
         >
           Show Dialog
         </Button>
+        <CodeBlock>
+          <code class="lang-html">{defaultSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Scrollable Dialog</div>
         <Button
           primary={true}
           raised={true}
@@ -108,6 +115,9 @@ export default class DialogPage extends Component {
         >
           Show Scrollable Dialog
         </Button>
+        <CodeBlock>
+          <code class="lang-html">{scrollableSample}</code>
+        </CodeBlock>
         <Dialog
           ref={normalDlg => {
             this.normalDlg = normalDlg;
