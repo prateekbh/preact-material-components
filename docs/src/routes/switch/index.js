@@ -13,6 +13,8 @@ import "./style";
 
 // Samples
 import sample from "./sample.txt";
+import defaultSample from "./default-sample.txt";
+import disabledSample from "./disabled-sample.txt";
 
 // Class
 export default class SwitchPage extends Component {
@@ -53,8 +55,14 @@ export default class SwitchPage extends Component {
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default </div>
         <Switch />
+        <CodeBlock>
+          <code class="lang-html">{defaultSample}</code>
+        </CodeBlock>
         <div className="mdc-typography--title">Disabled </div>
         <Switch disabled={true} />
+        <CodeBlock>
+          <code class="lang-html">{disabledSample}</code>
+        </CodeBlock>
       </div>
     );
   }
