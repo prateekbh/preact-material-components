@@ -1,0 +1,14 @@
+<Tabs className="demo-tabs" icons-with-text={true}>
+  <Tabs.Tab>
+    <Icon>favorite</Icon>
+    <Tabs.TabIconLabel>Heart</Tabs.TabIconLabel>
+  </Tabs.Tab>
+  <Tabs.Tab active={true}>
+    <Icon>done</Icon>
+    <Tabs.TabIconLabel>Done</Tabs.TabIconLabel>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Icon>info</Icon>
+    <Tabs.TabIconLabel>Info</Tabs.TabIconLabel>
+  </Tabs.Tab>
+</Tabs>

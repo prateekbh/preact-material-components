@@ -11,7 +11,11 @@ import CodeBlock from "../../components/code-block";
 
 // Samples
 import sample from "./sample.txt";
-import scrollerSample from "./scroller-sample.txt";
+import defaultSample from "./default-sample.txt";
+import accentSample from "./accent-sample.txt";
+import iconTabsSample from "./icon-tabs-sample.txt";
+import textTabsSample from "./text-tabs-sample.txt";
+import scrollableSample from "./scrollable-sample.txt";
 
 // Class
 export default class TabsPage extends Component {
@@ -59,13 +63,6 @@ export default class TabsPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <div className="mdc-typography--display1">
-          Scrollable Tabs Sample code{" "}
-        </div>
-        <CodeBlock>
-          <code class="lang-js">{scrollerSample}</code>
-        </CodeBlock>
-
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
           This component encapsulates <span className="strong">mdc-tabs</span>,
@@ -83,12 +80,18 @@ export default class TabsPage extends Component {
           <Tabs.Tab>Tab2</Tabs.Tab>
           <Tabs.Tab>Tab3</Tabs.Tab>
         </Tabs>
+        <CodeBlock>
+          <code class="lang-js">{defaultSample}</code>
+        </CodeBlock>
         <div className="mdc-typography--title">With indicator accent </div>
         <Tabs className="demo-tabs" indicator-accent={true}>
           <Tabs.Tab>Tab1</Tabs.Tab>
           <Tabs.Tab>Tab2</Tabs.Tab>
           <Tabs.Tab>Tab3</Tabs.Tab>
         </Tabs>
+        <CodeBlock>
+          <code class="lang-js">{accentSample}</code>
+        </CodeBlock>
         <div className="mdc-typography--title">Icons tabs bar </div>
         <Tabs className="demo-tabs" icon-tab-bar={true}>
           <Tabs.Tab>
@@ -101,7 +104,10 @@ export default class TabsPage extends Component {
             <Icon>info</Icon>
           </Tabs.Tab>
         </Tabs>
-        <div className="mdc-typography--title">Icons with test tabs bar </div>
+        <CodeBlock>
+          <code class="lang-js">{iconTabsSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Icons with text tabs bar </div>
         <Tabs className="demo-tabs" icons-with-text={true}>
           <Tabs.Tab>
             <Icon>favorite</Icon>
@@ -116,6 +122,9 @@ export default class TabsPage extends Component {
             <Tabs.TabIconLabel>Info</Tabs.TabIconLabel>
           </Tabs.Tab>
         </Tabs>
+        <CodeBlock>
+          <code class="lang-js">{textTabsSample}</code>
+        </CodeBlock>
         <div className="mdc-typography--title">Scrollable tabs </div>
         <Tabs.TabBarScroller>
           <Tabs scroller={true}>
@@ -132,6 +141,9 @@ export default class TabsPage extends Component {
             <Tabs.Tab>tab11</Tabs.Tab>
           </Tabs>
         </Tabs.TabBarScroller>
+        <CodeBlock>
+          <code class="lang-js">{scrollableSample}</code>
+        </CodeBlock>
       </div>
     );
   }
