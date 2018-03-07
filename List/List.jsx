@@ -1,5 +1,6 @@
-import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import { h } from "preact";
+import MaterialComponent from "../MaterialComponent";
+import Icon from "../Icon";
 
 /**
  * @prop dense = false
@@ -9,8 +10,8 @@ import MaterialComponent from '../MaterialComponent';
 class List extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = 'list';
-    this._mdcProps = ['dense', 'two-line'];
+    this.componentName = "list";
+    this._mdcProps = ["dense", "two-line", "avatar-list"];
   }
   materialDom(props) {
     if (props.interactive) {
@@ -60,64 +61,24 @@ class LinkItem extends MaterialComponent {
   }
 }
 
-/**
- * @prop graphic = true
- * @prop meta = false
- */
-class ListItemIcon extends MaterialComponent {
+class ListItemGraphic extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = 'mdc-list-item__icon';
-  }
-  getProxyClassName(props) {
-    let classNames = [];
-
-    // default behavior
-    props['graphic'] = props['graphic'] || true;
-
-    // setting class names mutually exclusive
-    if (props['meta']) {
-      classNames.push('mdc-list-item__meta');
-    } else if (props['graphic']) {
-      classNames.push('mdc-list-item__graphic');
-    }
-    return classNames.join(' ');
+    this.componentName = "list-item__graphic";
   }
   materialDom(props) {
-    const className = 'material-icons ' + this.getProxyClassName(props);
     return (
-      <i
-        className={className}
-        aria-hidden="true"
-        {...props}
-        ref={this.setControlRef}>
-        {props.children}
-      </i>
+      <span {...props} ref={this.setControlRef} role="presentation">
+        <Icon aria-hidden="true">{props.children}</Icon>
+      </span>
     );
   }
 }
 
-/**
- * @prop graphic = true
- * @prop meta = false
- */
-class ListItemAvatar extends ListItemIcon {
+class ListItemMeta extends ListItemGraphic {
   constructor() {
     super();
-    this.componentName = 'mdc-list-item__avatar';
-  }
-  materialDom(props) {
-    return (
-      <img
-        {...props}
-        className={super.getProxyClassName(props)}
-        {...props}
-        ref={this.setControlRef}
-        width={props.width || '56'}
-        height={props.height || '56'}
-        alt={props.alt || ''}
-      />
-    );
+    this.componentName = "list-item__meta";
   }
 }
 
@@ -160,13 +121,36 @@ class ListSecondaryText extends ListTextContainer {
   }
 }
 
+class ListGroup extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "list-group";
+  }
+}
+
+class ListGroupHeader extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = "list-group__subheader";
+  }
+  materialDom(props) {
+    return (
+      <h3 {...props} ref={this.setControlRef}>
+        {props.children}
+      </h3>
+    );
+  }
+}
+
 List.Item = ListItem;
 List.LinkItem = LinkItem;
-List.ItemIcon = ListItemIcon;
-List.ItemAvatar = ListItemAvatar;
+List.ItemGraphic = ListItemGraphic;
+List.ItemMeta = ListItemMeta;
 List.Divider = ListDivider;
 List.TextContainer = ListTextContainer;
 List.PrimaryText = ListPrimaryText;
 List.SecondaryText = ListSecondaryText;
+List.Group = ListGroup;
+List.GroupHeader = ListGroupHeader;
 
 export default List;

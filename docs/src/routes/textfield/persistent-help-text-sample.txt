@@ -1,5 +1,5 @@
 <TextField
   label="Persistent help text"
-  helptext="This is the helptext"
-  helptextPersistent
+  helperText="This is the helperText"
+  helperTextPersistent
 />
