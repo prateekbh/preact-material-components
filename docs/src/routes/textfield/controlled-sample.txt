@@ -1,0 +1,6 @@
+<TextField
+  label="State"
+  value={this.state.value}
+  onInput={e => this.setState({ value: e.target.value })}
+/>
+State: {this.state.value}
