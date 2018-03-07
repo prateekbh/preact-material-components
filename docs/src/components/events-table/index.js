@@ -1,5 +1,5 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Class
 export default class EventsTable extends Component {

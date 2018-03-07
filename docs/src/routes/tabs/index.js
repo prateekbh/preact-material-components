@@ -1,21 +1,21 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Tabs from "../../../../Tabs";
-import Icon from "../../../../Icon";
+import Tabs from '../../../../Tabs';
+import Icon from '../../../../Icon';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import sample from "./sample.txt";
-import defaultSample from "./default-sample.txt";
-import accentSample from "./accent-sample.txt";
-import iconTabsSample from "./icon-tabs-sample.txt";
-import textTabsSample from "./text-tabs-sample.txt";
-import scrollableSample from "./scrollable-sample.txt";
+import sample from './sample.txt';
+import defaultSample from './default-sample.txt';
+import accentSample from './accent-sample.txt';
+import iconTabsSample from './icon-tabs-sample.txt';
+import textTabsSample from './text-tabs-sample.txt';
+import scrollableSample from './scrollable-sample.txt';
 
 // Class
 export default class TabsPage extends Component {
@@ -23,32 +23,32 @@ export default class TabsPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Tabs",
+        component: 'Tabs',
         props: [
           {
-            name: "indicator-accent",
-            description: "Makes the indicator accented."
+            name: 'indicator-accent',
+            description: 'Makes the indicator accented.'
           },
           {
-            name: "icon-tab-bar",
-            description: "Makes the tab bar accomodate icons."
+            name: 'icon-tab-bar',
+            description: 'Makes the tab bar accomodate icons.'
           },
           {
-            name: "icons-with-text",
-            description: "Makes the tab bar accomodate icons and label."
+            name: 'icons-with-text',
+            description: 'Makes the tab bar accomodate icons and label.'
           },
           {
-            name: "scroller",
-            description: "Makes the tabs scrollable"
+            name: 'scroller',
+            description: 'Makes the tabs scrollable'
           },
           {
-            name: "activeTabIndex",
-            description: "Sets the index of current active tab"
+            name: 'activeTabIndex',
+            description: 'Sets the index of current active tab'
           }
         ]
       },
       {
-        component: "Tab",
+        component: 'Tab',
         props: []
       }
     ];
@@ -68,7 +68,7 @@ export default class TabsPage extends Component {
           This component encapsulates <span className="strong">mdc-tabs</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-tabs">
-            {" "}
+            {' '}
             here
           </a>.
         </div>

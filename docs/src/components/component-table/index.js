@@ -1,5 +1,5 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Class
 export default class ComponentTable extends Component {
@@ -24,10 +24,10 @@ export default class ComponentTable extends Component {
                           <div>
                             <div>
                               <span className="mdc-typography--title">
-                                {prop.name}{" "}
+                                {prop.name}{' '}
                               </span>
                               <span className="mdc-typography--body2">
-                                {prop.value || "true/false"}
+                                {prop.value || 'true/false'}
                               </span>
                             </div>
                             <div className="mdc-typography--caption">

@@ -1,16 +1,16 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Menu from "../../../../Menu";
-import Button from "../../../../Button";
+import Menu from '../../../../Menu';
+import Button from '../../../../Button';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class MenuPage extends Component {
@@ -18,20 +18,20 @@ export default class MenuPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Menu",
+        component: 'Menu',
         props: [
           {
-            name: "Open",
-            description: "Auto opens the menu."
+            name: 'Open',
+            description: 'Auto opens the menu.'
           }
         ]
       },
       {
-        component: "Item",
+        component: 'Item',
         props: []
       },
       {
-        component: "MenuAnchor",
+        component: 'MenuAnchor',
         props: []
       }
     ];
@@ -51,7 +51,7 @@ export default class MenuPage extends Component {
           This component encapsulates <span className="strong">mdc-menu</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-menu">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -61,15 +61,13 @@ export default class MenuPage extends Component {
           <Button
             onClick={e => {
               this.menu.MDComponent.open = !this.menu.MDComponent.open;
-            }}
-          >
+            }}>
             Click for menu
           </Button>
           <Menu
             ref={menu => {
               this.menu = menu;
-            }}
-          >
+            }}>
             <Menu.Item>Hello1</Menu.Item>
             <Menu.Item>Hello2</Menu.Item>
             <Menu.Item>Hello3</Menu.Item>

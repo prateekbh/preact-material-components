@@ -1,15 +1,15 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import GridList from "../../../../GridList";
+import GridList from '../../../../GridList';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class GridListPage extends Component {
@@ -17,31 +17,31 @@ export default class GridListPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "GridList",
+        component: 'GridList',
         props: [
           {
-            name: "tile-gutter-1",
-            description: "use 1px gutter (default is 4px)"
+            name: 'tile-gutter-1',
+            description: 'use 1px gutter (default is 4px)'
           },
           {
-            name: "header-caption",
-            description: "position <GridList.SecondaryTile> at top"
+            name: 'header-caption',
+            description: 'position <GridList.SecondaryTile> at top'
           },
           {
-            name: "twoline-caption",
+            name: 'twoline-caption',
             description:
-              "add spacing to <GridList.SecondaryTile> for <GridList.SupportTextTile>"
+              'add spacing to <GridList.SecondaryTile> for <GridList.SupportTextTile>'
           },
           {
-            name: "with-icon-align",
-            value: "start, end",
+            name: 'with-icon-align',
+            value: 'start, end',
             description:
-              "position <GridList.IconTile> at beginning or end of <GridList.SecondaryTile>"
+              'position <GridList.IconTile> at beginning or end of <GridList.SecondaryTile>'
           },
           {
-            name: "tile-aspect",
-            value: "1x1, 16x9, 2x3, 3x2, 4x3, 3x4",
-            description: "aspect ratio for <GridList.PrimaryTile>"
+            name: 'tile-aspect',
+            value: '1x1, 16x9, 2x3, 3x2, 4x3, 3x4',
+            description: 'aspect ratio for <GridList.PrimaryTile>'
           }
         ]
       }
@@ -60,11 +60,11 @@ export default class GridListPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates{" "}
+          This component encapsulates{' '}
           <span className="strong">mdc-grid-list</span>, you can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-grid-list">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -75,15 +75,14 @@ export default class GridListPage extends Component {
           with-icon-align="end"
           twoline-caption={true}
           tile-gutter-1={true}
-          tile-aspect-ratio="16x9"
-        >
+          tile-aspect-ratio="16x9">
           <GridList.Tiles>
             <GridList.Tile>
               <GridList.PrimaryTile>
                 <GridList.PrimaryContentTile src="../../../images/GridListTileSample.png" />
               </GridList.PrimaryTile>
               <GridList.SecondaryTile>
-                <GridList.IconTile onClick={() => console.log("Edit Tile")}>
+                <GridList.IconTile onClick={() => console.log('Edit Tile')}>
                   edit
                 </GridList.IconTile>
                 <GridList.TitleTile>Tile One</GridList.TitleTile>
@@ -97,7 +96,7 @@ export default class GridListPage extends Component {
                 <GridList.PrimaryContentTile src="../../../images/GridListTileSample.png" />
               </GridList.PrimaryTile>
               <GridList.SecondaryTile>
-                <GridList.IconTile onClick={() => console.log("Edit Tile")}>
+                <GridList.IconTile onClick={() => console.log('Edit Tile')}>
                   edit
                 </GridList.IconTile>
                 <GridList.TitleTile>Tile Two</GridList.TitleTile>

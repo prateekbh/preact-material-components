@@ -1,6 +1,6 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import { MDCToolbar } from "@material/toolbar";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import {MDCToolbar} from '@material/toolbar';
 /**
  * @prop fixed = false
  * @prop fixed-lastrow-only = false
@@ -11,13 +11,13 @@ import { MDCToolbar } from "@material/toolbar";
 class Toolbar extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "toolbar";
+    this.componentName = 'toolbar';
     this._mdcProps = [
-      "fixed",
-      "fixed-lastrow-only",
-      "waterfall",
-      "flexible",
-      "flexible-default-behavior"
+      'fixed',
+      'fixed-lastrow-only',
+      'waterfall',
+      'flexible',
+      'flexible-default-behavior'
     ];
     this._onChange = this._onChange.bind(this);
   }
@@ -28,10 +28,10 @@ class Toolbar extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = new MDCToolbar(this.control);
-    this.MDComponent.listen("MDCToolbar:change", this._onChange);
+    this.MDComponent.listen('MDCToolbar:change', this._onChange);
   }
   componentWillUnmount() {
-    this.MDComponent.unlisten("MDCToolbar:change", this._onChange);
+    this.MDComponent.unlisten('MDCToolbar:change', this._onChange);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
@@ -46,7 +46,7 @@ class Toolbar extends MaterialComponent {
 class ToolbarRow extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "toolbar__row";
+    this.componentName = 'toolbar__row';
   }
 }
 
@@ -58,8 +58,8 @@ class ToolbarRow extends MaterialComponent {
 class ToolbarSection extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "toolbar__section";
-    this._mdcProps = ["align-start", "align-end", "shrink-to-fit"];
+    this.componentName = 'toolbar__section';
+    this._mdcProps = ['align-start', 'align-end', 'shrink-to-fit'];
   }
   materialDom(props) {
     return <section {...props}>{props.children}</section>;
@@ -72,15 +72,15 @@ class ToolbarSection extends MaterialComponent {
 class ToolbarIcon extends MaterialComponent {
   constructor(props) {
     super();
-    this.componentName = "toolbar__icon";
+    this.componentName = 'toolbar__icon';
     if (props.menu) {
-      this.componentName = "toolbar__menu-icon";
+      this.componentName = 'toolbar__menu-icon';
     }
   }
   materialDom(props) {
     return (
       <a className="material-icons" {...props}>
-        {props.children || "menu"}
+        {props.children || 'menu'}
       </a>
     );
   }
@@ -92,7 +92,7 @@ class ToolbarIcon extends MaterialComponent {
 class ToolbarTitle extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "toolbar__title";
+    this.componentName = 'toolbar__title';
   }
   materialDom(props) {
     return <span {...props}>{props.children}</span>;

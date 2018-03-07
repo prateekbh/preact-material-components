@@ -1,18 +1,18 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Fab from "../../../../Fab";
+import Fab from '../../../../Fab';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Styles
-import "./style";
+import './style';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class FabPage extends Component {
@@ -23,27 +23,27 @@ export default class FabPage extends Component {
     };
     this.propsTable = [
       {
-        component: "Fab",
+        component: 'Fab',
         props: [
           {
-            name: "ripple",
-            description: "Adds riple effect to the fab."
+            name: 'ripple',
+            description: 'Adds riple effect to the fab.'
           },
           {
-            name: "exited",
-            description: "Adds exited animated effect to fab."
+            name: 'exited',
+            description: 'Adds exited animated effect to fab.'
           },
           {
-            name: "mini",
-            description: "Shrinks the size of the fab."
+            name: 'mini',
+            description: 'Shrinks the size of the fab.'
           },
           {
-            name: "primary",
-            description: "Adds primary color to button"
+            name: 'primary',
+            description: 'Adds primary color to button'
           },
           {
-            name: "secondary",
-            description: "Adds secondary color to button"
+            name: 'secondary',
+            description: 'Adds secondary color to button'
           }
         ]
       }
@@ -64,7 +64,7 @@ export default class FabPage extends Component {
           This component encapsulates <span className="strong">mdc-fab</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-fab">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -111,8 +111,7 @@ export default class FabPage extends Component {
             this.setState({
               fabShowing: false
             });
-          }}
-        >
+          }}>
           <Fab.Icon>directions_run</Fab.Icon>
         </Fab>
 
