@@ -1,0 +1,11 @@
+<Tabs className="demo-tabs" icon-tab-bar={true}>
+  <Tabs.Tab>
+    <Icon>favorite</Icon>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Icon>done</Icon>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Icon>info</Icon>
+  </Tabs.Tab>
+</Tabs>
