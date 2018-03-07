@@ -1,9 +1,9 @@
-import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
+import MaterialComponent from "../MaterialComponent";
+import { VNode } from "preact";
 
 declare interface IListProps extends JSX.HTMLAttributes {
   dense?: boolean;
-  'two-line'?: boolean;
+  "two-line"?: boolean;
   interactive?: boolean;
 }
 export default class List extends MaterialComponent<IListProps, {}> {
@@ -19,11 +19,14 @@ export default class List extends MaterialComponent<IListProps, {}> {
 
 declare class Item extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-declare class LinkItem<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
+declare class LinkItem<
+  PropsType = {},
+  StateType = {}
+> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
 
 declare interface IItemIconProps extends JSX.HTMLAttributes {
-  'graphic'?: boolean;
-  'meta'?: boolean;
+  graphic?: boolean;
+  meta?: boolean;
 }
 declare class ItemIcon extends MaterialComponent<IItemIconProps, {}> {
   getProxyClassName(props: IItemIconProps): string;

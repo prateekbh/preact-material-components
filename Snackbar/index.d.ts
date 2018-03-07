@@ -1,6 +1,6 @@
-import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
-import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
+import MaterialComponent from "../MaterialComponent";
+import { VNode } from "preact";
+import { MDCFoundation, MDCComponent } from "../MaterialComponentsWeb";
 
 declare interface ISnackbarProps extends JSX.HTMLAttributes {
   dismissesOnAction?: boolean;

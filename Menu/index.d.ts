@@ -1,14 +1,14 @@
-import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
-import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
-import List from '../List';
+import MaterialComponent from "../MaterialComponent";
+import { VNode } from "preact";
+import { MDCFoundation, MDCComponent } from "../MaterialComponentsWeb";
+import List from "../List";
 
 declare interface IMenuProps extends JSX.HTMLAttributes {
   open?: boolean;
-  'open-from-top-left'?: boolean;
-  'open-from-top-right'?: boolean;
-  'open-from-bottom-left'?: boolean;
-  'open-from-bottom-right'?: boolean;
+  "open-from-top-left"?: boolean;
+  "open-from-top-right"?: boolean;
+  "open-from-bottom-left"?: boolean;
+  "open-from-bottom-right"?: boolean;
   onSelect?: (e: Event) => void;
   onCancel?: (e: Event) => void;
   onMenuClosed?: (e: Event) => void;
