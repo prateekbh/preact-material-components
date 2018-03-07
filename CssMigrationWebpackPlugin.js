@@ -50,6 +50,38 @@ class CssMigrationWebpackPlugin {
     //copy new file
     cp.sync(sourceCssPath, destCssFilePath);
     globCopy.sync(sourceScssPath, destScssFilePath);
+
+    //get nested folders with .scss files
+    const isDirectory = source => fs.lstatSync(source).isDirectory();
+    const getSubDirectories = source => {
+        if (isDirectory(source)){
+          return fs.readdirSync(source)
+            .filter(fd => isDirectory(path.join(source, fd)) && fd !== "dist");
+        }
+        return [];
+    }
+    const hasScss = source => {
+      if (isDirectory(source)){
+        return fs.readdirSync(source)
+          .filter(fd => fd.match(/.*\.scss/ig)).length > 0;
+      }
+      return false;
+    }
+
+    const subDirectoriesWithScss =
+      getSubDirectories(sourcePath)
+        .filter(dir => hasScss(path.join(sourcePath, dir)));
+    if (!subDirectoriesWithScss.length)
+      return;
+
+    //create new directories in dest and copy over files
+    subDirectoriesWithScss.forEach(subdir => {
+      const destSubFolder = path.join(destFolder, subdir);
+      const srcSubPath = path.join(sourcePath, subdir, "*.scss");
+      if (!fs.existsSync(destSubFolder))
+        fs.mkdirSync(destSubFolder);
+      globCopy.sync(srcSubPath, destSubFolder);
+    });
   }
   apply(compiler) {
     compiler.plugin("after-emit", (compilation, callback) => {
