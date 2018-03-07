@@ -11,7 +11,7 @@ class LineRipple extends MaterialComponent {
     this.MDComponent = new MDCLineRipple(this.control);
   }
   materialDom(props) {
-    return <div {...props} ref={control => (this.control = control)} />;
+    return <div {...props} ref={this.setControlRef} />;
   }
 }
 
