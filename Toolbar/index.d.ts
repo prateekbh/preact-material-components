@@ -1,12 +1,12 @@
-import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
+import MaterialComponent from "../MaterialComponent";
+import { VNode } from "preact";
 
 declare interface IToolbarProps extends JSX.HTMLAttributes {
   fixed?: boolean;
-  'fixed-lastrow-only'?: boolean;
+  "fixed-lastrow-only"?: boolean;
   waterfall?: boolean;
   flexible?: boolean;
-  'flexible-default-behavior'?: boolean;
+  "flexible-default-behavior"?: boolean;
 }
 export default class Toolbar extends MaterialComponent<IToolbarProps, {}> {
   static Section: typeof Section;
@@ -18,9 +18,9 @@ export default class Toolbar extends MaterialComponent<IToolbarProps, {}> {
 declare class Row extends MaterialComponent<{}, {}> {}
 
 declare interface ISectionProps extends JSX.HTMLAttributes {
-  'align-start'?: boolean;
-  'align-end'?: boolean;
-  'shrink-to-fit'?: boolean;
+  "align-start"?: boolean;
+  "align-end"?: boolean;
+  "shrink-to-fit"?: boolean;
 }
 declare class Section extends MaterialComponent<ISectionProps, {}> {}
 

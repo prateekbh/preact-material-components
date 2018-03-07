@@ -1,10 +1,14 @@
-import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
-import { MDCFoundation, MDCComponent, MDCRipple } from '../MaterialComponentsWeb';
+import MaterialComponent from "../MaterialComponent";
+import { VNode } from "preact";
+import {
+  MDCFoundation,
+  MDCComponent,
+  MDCRipple
+} from "../MaterialComponentsWeb";
 
 declare interface IHelperTextProps extends JSX.HTMLAttributes {
   persistent?: boolean;
-  'validation-msg'?: boolean;
+  "validation-msg"?: boolean;
 }
 declare class HelperText extends MaterialComponent<IHelperTextProps, {}> {}
 
@@ -23,7 +27,10 @@ declare interface ITextFieldProps extends JSX.HTMLAttributes {
 declare interface ITextFieldState {
   showFloatingLabel: boolean;
 }
-export default class TextField extends MaterialComponent<ITextFieldProps, ITextFieldState> {
+export default class TextField extends MaterialComponent<
+  ITextFieldProps,
+  ITextFieldState
+> {
   static HelperText: typeof HelperText;
 
   static uid(): number;
@@ -43,7 +50,7 @@ declare class MDCTextFieldFoundation extends MDCFoundation<MDCTextField> {
   setValid(isValid: boolean): void;
 }
 declare class MDCTextField extends MDCComponent<MDCTextFieldFoundation> {
-  helperTextElement: Element|null|undefined;
+  helperTextElement: Element | null | undefined;
   ripple: MDCRipple;
   disabled: boolean;
   valid: boolean;

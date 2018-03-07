@@ -6,10 +6,12 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "build:prod": "preact build --template template.html && npm run copyAssets",
-    "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
+    "copyAssets":
+      "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "npm run prettier && npm run build:prod && mocha ./tests/visdiff.js --timeout 15000",
+    "test":
+      "npm run prettier && npm run build:prod && mocha ./tests/visdiff.js --timeout 15000",
     "test:travis": "node ./scripts/test-travis.js",
     "prettier": "prettier -l --print-width 80 \"src/**/*.js\"",
     "prettier:write": "prettier --write --print-width 80 \"src/**/*.js\""

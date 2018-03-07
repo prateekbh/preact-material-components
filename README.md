@@ -1,4 +1,5 @@
 # preact-material-components
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/prateekbh/preact-material-components.svg)](https://greenkeeper.io/)
 [![Dependencies badge](https://david-dm.org/prateekbh/preact-material-components.svg)](https://david-dm.org/)
 [![build](https://api.travis-ci.org/prateekbh/preact-material-components.svg?branch=master)](https://api.travis-ci.org/prateekbh/preact-material-components.svg?branch=master)
@@ -6,6 +7,7 @@
 preact components for [material-components-web](https://github.com/material-components/material-components-web)
 
 ---
+
 These components bring material components in an a-la-carté fashion.
 You can use `n` number of components without taking the weight of any extra code of the components you do not use.
 
@@ -13,60 +15,62 @@ You can use `n` number of components without taking the weight of any extra code
 
 Smaller bundles FTW!!!
 
-
 ## Components List
-- 👍 button
 
-- 👍 card
+* 👍 button
 
-- 👍 chips
+* 👍 card
 
-- 👍 checkbox
+* 👍 chips
 
-- 👍 dialog
+* 👍 checkbox
 
-- 👍 drawer
+* 👍 dialog
 
-- 👍 elevation
+* 👍 drawer
 
-- 👍 fab
+* 👍 elevation
 
-- 👍 form-field
+* 👍 fab
 
-- 👍 icon-toggle
+* 👍 form-field
 
-- 👍 layout-grid
+* 👍 icon-toggle
 
-- 👍 line-ripple
+* 👍 layout-grid
 
-- 👍 linear-progress
+* 👍 line-ripple
 
-- 👍 list
+* 👍 linear-progress
 
-- 👍 menu
+* 👍 list
 
-- 👍 radio
+* 👍 menu
 
-- 👍 select
+* 👍 radio
 
-- 👍 slider
+* 👍 select
 
-- 👍 snackbar
+* 👍 slider
 
-- 👍 switch
+* 👍 snackbar
 
-- 👍 tabs
+* 👍 switch
 
-- 👍 textfield
+* 👍 tabs
 
-- 👍 theme
+* 👍 textfield
 
-- 👍 toolbar
+* 👍 theme
 
+* 👍 toolbar
 
 ## FAQ
+
 ### Error while using preact-material-components with **less**
+
 If you are using less-loader you have to set **strictMath: true** option in your webpack config
+
 ```
 {
 	loader: 'less-loader',
@@ -75,14 +79,17 @@ If you are using less-loader you have to set **strictMath: true** option in your
 ```
 
 ### Primary and Secondary props not working
+
 To use theming props like primary/secondary, you'll need to include Theme's css
+
 ```
 import 'preact-material-components/Theme/style.css
 ```
 
 ## Docs and Demos
+
 https://material.preactjs.com/
 
-
 ---
-__P.S.:__ Let us know if you're using `preact-material-components` we would love to hear your experiences.
+
+**P.S.:** Let us know if you're using `preact-material-components` we would love to hear your experiences.
