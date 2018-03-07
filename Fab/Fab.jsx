@@ -1,7 +1,7 @@
-import Icon from "../Icon/";
-import MaterialComponent from "../MaterialComponent";
-import generateThemeClass from "../themeUtils/generateThemeClass";
-import { h } from "preact";
+import Icon from '../Icon/';
+import MaterialComponent from '../MaterialComponent';
+import generateThemeClass from '../themeUtils/generateThemeClass';
+import {h} from 'preact';
 
 /**
  * @prop mini = false
@@ -10,9 +10,9 @@ import { h } from "preact";
 class Fab extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "fab";
-    this._mdcProps = ["mini", "exited"];
-    this.themeProps = ["primary", "secondary"];
+    this.componentName = 'fab';
+    this._mdcProps = ['mini', 'exited'];
+    this.themeProps = ['primary', 'secondary'];
   }
   componentDidMount() {
     super.attachRipple();
@@ -23,7 +23,7 @@ class Fab extends MaterialComponent {
       if (themeProp in props && props[themeProp] !== false)
         classNames.push(generateThemeClass(themeProp));
     });
-    let classNameString = classNames.join(" ");
+    let classNameString = classNames.join(' ');
 
     return (
       <button ref={this.setControlRef} {...props} className={classNameString}>
@@ -36,7 +36,7 @@ class Fab extends MaterialComponent {
 class FabIcon extends Icon {
   constructor() {
     super();
-    this.componentName = "fab__icon";
+    this.componentName = 'fab__icon';
   }
 }
 

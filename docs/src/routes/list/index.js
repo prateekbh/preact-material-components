@@ -1,18 +1,18 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import List from "../../../../List";
+import List from '../../../../List';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Styles
-import "./style";
+import './style';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class ListPage extends Component {
@@ -20,55 +20,55 @@ export default class ListPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "List",
+        component: 'List',
         props: [
           {
-            name: "dense",
-            description: "Makes the list with lesser padding."
+            name: 'dense',
+            description: 'Makes the list with lesser padding.'
           },
           {
-            name: "two-line",
-            description: "Makes container for two line list item."
+            name: 'two-line',
+            description: 'Makes container for two line list item.'
           }
         ]
       },
       {
-        component: "List.Item",
+        component: 'List.Item',
         props: []
       },
       {
-        component: "List.LinkItem",
+        component: 'List.LinkItem',
         props: [
           {
-            name: "graphic",
-            description: "Makes the Icon align to start."
+            name: 'graphic',
+            description: 'Makes the Icon align to start.'
           },
           {
-            name: "meta",
-            description: "Makes the Icon align to end."
+            name: 'meta',
+            description: 'Makes the Icon align to end.'
           }
         ]
       },
       {
-        component: "List.ItemAvatar",
+        component: 'List.ItemAvatar',
         props: [
           {
-            name: "src",
-            value: "path of avatar image",
-            description: "path of avatar image"
+            name: 'src',
+            value: 'path of avatar image',
+            description: 'path of avatar image'
           }
         ]
       },
       {
-        component: "List.TextContainer",
+        component: 'List.TextContainer',
         props: []
       },
       {
-        component: "List.PrimaryText",
+        component: 'List.PrimaryText',
         props: []
       },
       {
-        component: "List.SecondaryText",
+        component: 'List.SecondaryText',
         props: []
       }
     ];
@@ -88,7 +88,7 @@ export default class ListPage extends Component {
           This component encapsulates <span className="strong">mdc-list</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-list">
-            {" "}
+            {' '}
             here
           </a>.
         </div>

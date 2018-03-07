@@ -1,19 +1,19 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Snackbar from "../../../../Snackbar";
-import Button from "../../../../Button";
+import Snackbar from '../../../../Snackbar';
+import Button from '../../../../Button';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Styles
-import "./style";
+import './style';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class SnackbarPage extends Component {
@@ -21,12 +21,12 @@ export default class SnackbarPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Snackbar",
+        component: 'Snackbar',
         props: [
           {
-            name: "dismissesOnAction",
+            name: 'dismissesOnAction',
             description:
-              "tells whether or not snackbar auto dismisses upon clicking the action button"
+              'tells whether or not snackbar auto dismisses upon clicking the action button'
           }
         ]
       }
@@ -44,11 +44,11 @@ export default class SnackbarPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates{" "}
+          This component encapsulates{' '}
           <span className="strong">mdc-snackbar</span>, you can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-snackbar">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -59,10 +59,9 @@ export default class SnackbarPage extends Component {
           primary={true}
           onClick={() => {
             this.bar.MDComponent.show({
-              message: "Hello Snack!"
+              message: 'Hello Snack!'
             });
-          }}
-        >
+          }}>
           Show snack
         </Button>
         <Snackbar

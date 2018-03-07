@@ -1,16 +1,16 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Select from "../../../../Select";
+import Select from '../../../../Select';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
-import EventsTable from "../../components/events-table";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
+import EventsTable from '../../components/events-table';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class SelectPage extends Component {
@@ -18,44 +18,44 @@ export default class SelectPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Select",
+        component: 'Select',
         props: [
           {
-            name: "disabled",
-            description: "Makes the select box disabled."
+            name: 'disabled',
+            description: 'Makes the select box disabled.'
           },
           {
-            name: "basic",
-            description: "Makes the select box CSS only."
+            name: 'basic',
+            description: 'Makes the select box CSS only.'
           },
           {
-            name: "selectedIndex",
-            value: "number",
-            description: "The option to be set as selected."
+            name: 'selectedIndex',
+            value: 'number',
+            description: 'The option to be set as selected.'
           },
           {
-            name: "hintText",
-            value: "string",
+            name: 'hintText',
+            value: 'string',
             description:
               'Helpful text to display when no selection has been made. ("selectedIndex" must be -1 for the hintText to show)'
           },
           {
-            name: "onChange",
-            value: "function",
+            name: 'onChange',
+            value: 'function',
             description:
               'Function that returns an event with an updated "selectedIndex" property anytime the selection changes.'
           }
         ]
       },
       {
-        component: "Select.Item",
+        component: 'Select.Item',
         props: [
           {
-            name: "disabled",
-            description: "Disables the option."
+            name: 'disabled',
+            description: 'Disables the option.'
           },
           {
-            name: "selected",
+            name: 'selected',
             description:
               'Set the option as selected. Mostly the same as "selectedIndex", but it allows selection of multiple options.'
           }
@@ -64,8 +64,8 @@ export default class SelectPage extends Component {
     ];
     this.eventsTable = [
       {
-        name: "onChange",
-        description: "Fired when the selection changes on Select box"
+        name: 'onChange',
+        description: 'Fired when the selection changes on Select box'
       }
     ];
   }
@@ -85,7 +85,7 @@ export default class SelectPage extends Component {
           This component encapsulates <span className="strong">mdc-select</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-select">
-            {" "}
+            {' '}
             here
           </a>.
         </div>

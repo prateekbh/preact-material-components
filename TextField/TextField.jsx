@@ -1,8 +1,8 @@
-import { Component, h } from "preact";
+import {Component, h} from 'preact';
 
-import Icon from "../Icon";
-import { MDCTextField } from "@material/textfield";
-import MaterialComponent from "../MaterialComponent";
+import Icon from '../Icon';
+import {MDCTextField} from '@material/textfield';
+import MaterialComponent from '../MaterialComponent';
 
 /**
  * @prop persistent = false
@@ -11,8 +11,8 @@ import MaterialComponent from "../MaterialComponent";
 class HelperText extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "text-field-helper-text";
-    this._mdcProps = ["persistent", "validation-msg"];
+    this.componentName = 'text-field-helper-text';
+    this._mdcProps = ['persistent', 'validation-msg'];
   }
   materialDom(props) {
     return (
@@ -26,7 +26,7 @@ class HelperText extends MaterialComponent {
 class Label extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "text-field__label";
+    this.componentName = 'text-field__label';
   }
   materialDom(props) {
     return <label {...props}>{props.children}</label>;
@@ -50,8 +50,8 @@ const defaultProps = {
 class TextFieldInput extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "text-field";
-    this._mdcProps = ["fullwidth", "textarea", "dense", "disabled", "box"];
+    this.componentName = 'text-field';
+    this._mdcProps = ['fullwidth', 'textarea', 'dense', 'disabled', 'box'];
     this.state = {
       showFloatingLabel: false
     };
@@ -75,19 +75,19 @@ class TextFieldInput extends MaterialComponent {
     this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(allprops) {
-    let { className, ...props } = allprops;
-    className = className || "";
+    let {className, ...props} = allprops;
+    className = className || '';
 
-    if ("leadingIcon" in props) {
-      className += " mdc-text-field--box mdc-text-field--with-leading-icon";
+    if ('leadingIcon' in props) {
+      className += ' mdc-text-field--box mdc-text-field--with-leading-icon';
     }
 
-    if ("trailingIcon" in props) {
-      className += " mdc-text-field--box mdc-text-field--with-trailing-icon";
+    if ('trailingIcon' in props) {
+      className += ' mdc-text-field--box mdc-text-field--with-trailing-icon';
     }
 
-    if ("value" in props && this.state.showFloatingLabel) {
-      className = [className, "mdc-text-field--upgraded"].join(" ");
+    if ('value' in props && this.state.showFloatingLabel) {
+      className = [className, 'mdc-text-field--upgraded'].join(' ');
     }
     if (props.label && props.fullwidth) {
       console.log(
@@ -104,7 +104,7 @@ class TextFieldInput extends MaterialComponent {
           <textarea className="mdc-text-field__input" {...props} />
         ) : (
           <input
-            type={props.type || "text"}
+            type={props.type || 'text'}
             className="mdc-text-field__input"
             {...props}
           />
@@ -116,7 +116,7 @@ class TextFieldInput extends MaterialComponent {
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
-        {props.textarea ? "" : <div class="mdc-line-ripple" />}
+        {props.textarea ? '' : <div class="mdc-line-ripple" />}
       </div>
     );
   }
@@ -157,7 +157,7 @@ class TextField extends Component {
     return ++this.uidCounter;
   }
 
-  render(allprops, { showFloatingLabel }) {
+  render(allprops, {showFloatingLabel}) {
     const {
       className,
       helperTextPersistent,
@@ -167,13 +167,13 @@ class TextField extends Component {
     const showDiv = props.helperText || (props.label && !showFloatingLabel);
 
     if (showDiv && !props.id) {
-      props.id = "tf-" + this.id;
+      props.id = 'tf-' + this.id;
     }
 
     // Helper text
     const helperTextProps = {
       persistent: helperTextPersistent,
-      "validation-msg": helperTextValidationMsg
+      'validation-msg': helperTextValidationMsg
     };
 
     return showDiv ? (
@@ -187,10 +187,10 @@ class TextField extends Component {
           onInit={MDComponent => {
             this.MDComponent = MDComponent;
           }}
-          aria-controls={props.helperText && props.id + "-helper-text"}
+          aria-controls={props.helperText && props.id + '-helper-text'}
         />
         {props.helperText && (
-          <HelperText id={props.id + "-helper-text"} {...helperTextProps}>
+          <HelperText id={props.id + '-helper-text'} {...helperTextProps}>
             {props.helperText}
           </HelperText>
         )}
@@ -209,8 +209,8 @@ class TextField extends Component {
 
 function setValid(oldprops, newprops, textfield) {
   if (
-    "valid" in oldprops &&
-    "valid" in newprops &&
+    'valid' in oldprops &&
+    'valid' in newprops &&
     oldprops.valid !== newprops.valid
   ) {
     textfield.valid = newprops.valid;

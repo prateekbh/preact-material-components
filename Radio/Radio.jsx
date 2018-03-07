@@ -1,6 +1,6 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import { MDCRadio } from "@material/radio/";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import {MDCRadio} from '@material/radio/';
 
 /*
  * Default props for check box
@@ -16,7 +16,7 @@ const defaultProps = {
 export default class Radio extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "radio";
+    this.componentName = 'radio';
   }
   componentDidMount() {
     this.MDComponent = MDCRadio.attachTo(this.control);
@@ -29,7 +29,7 @@ export default class Radio extends MaterialComponent {
     toggleRadio(this.props, nextProps, this.MDComponent);
   }
   materialDom(allprops) {
-    const { className, ...props } = allprops;
+    const {className, ...props} = allprops;
     return (
       <div className={className} ref={this.setControlRef}>
         <input className="mdc-radio__native-control" type="radio" {...props} />
@@ -47,8 +47,8 @@ export default class Radio extends MaterialComponent {
  */
 function toggleRadio(oldprops, newprops, radio) {
   if (
-    "checked" in oldprops &&
-    "checked" in newprops &&
+    'checked' in oldprops &&
+    'checked' in newprops &&
     oldprops.checked !== newprops.checked
   ) {
     radio.checked = newprops.checked;

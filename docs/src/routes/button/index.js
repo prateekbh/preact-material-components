@@ -1,18 +1,18 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Button from "../../../../Button/";
+import Button from '../../../../Button/';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Styles
-import style from "./style";
+import style from './style';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class ButtonPage extends Component {
@@ -20,43 +20,43 @@ export default class ButtonPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Button",
+        component: 'Button',
         props: [
           {
-            name: "ripple",
-            description: "Adds riple effect to the button"
+            name: 'ripple',
+            description: 'Adds riple effect to the button'
           },
           {
-            name: "dense",
-            description: "Adds dense padding to the button"
+            name: 'dense',
+            description: 'Adds dense padding to the button'
           },
           {
-            name: "compact",
-            description: "Adds compact padding to the button"
+            name: 'compact',
+            description: 'Adds compact padding to the button'
           },
           {
-            name: "raised",
-            description: "Adds raised effect to the button"
+            name: 'raised',
+            description: 'Adds raised effect to the button'
           },
           {
-            name: "disabled",
-            description: "Disables the button"
+            name: 'disabled',
+            description: 'Disables the button'
           },
           {
-            name: "unelevated",
-            description: "Adds unelevated effect to the button"
+            name: 'unelevated',
+            description: 'Adds unelevated effect to the button'
           },
           {
-            name: "stroked",
-            description: "Adds stroked effect to the button"
+            name: 'stroked',
+            description: 'Adds stroked effect to the button'
           },
           {
-            name: "primary",
-            description: "Adds primary color to button"
+            name: 'primary',
+            description: 'Adds primary color to button'
           },
           {
-            name: "secondary",
-            description: "Adds secondary color to button"
+            name: 'secondary',
+            description: 'Adds secondary color to button'
           }
         ]
       }
@@ -77,7 +77,7 @@ export default class ButtonPage extends Component {
           This component encapsulates <span className="strong">mdc-button</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-button">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -87,7 +87,7 @@ export default class ButtonPage extends Component {
           <Button>Default Flat button without ripple</Button>
           <CodeBlock>
             <code class="lang-html">
-              {"<Button>Default Flat button without ripple</Button>"}
+              {'<Button>Default Flat button without ripple</Button>'}
             </code>
           </CodeBlock>
         </div>
@@ -96,7 +96,7 @@ export default class ButtonPage extends Component {
           <Button raised>Default Raised button</Button>
           <CodeBlock>
             <code class="lang-html">
-              {"<Button raised>Default Raised button</Button>"}
+              {'<Button raised>Default Raised button</Button>'}
             </code>
           </CodeBlock>
         </div>
@@ -105,7 +105,7 @@ export default class ButtonPage extends Component {
           <Button unelevated>Default Unelevated button</Button>
           <CodeBlock>
             <code class="lang-html">
-              {"<Button unelevated>Default Unelevated button</Button>"}
+              {'<Button unelevated>Default Unelevated button</Button>'}
             </code>
           </CodeBlock>
         </div>
@@ -114,7 +114,7 @@ export default class ButtonPage extends Component {
           <Button stroked>Default Stroked button</Button>
           <CodeBlock>
             <code class="lang-html">
-              {"<Button stroked>Default Stroked button</Button>"}
+              {'<Button stroked>Default Stroked button</Button>'}
             </code>
           </CodeBlock>
         </div>
@@ -125,7 +125,7 @@ export default class ButtonPage extends Component {
           </Button>
           <CodeBlock>
             <code class="lang-html">
-              {"<Button raised disabled>Disabled Raised button</Button>"}
+              {'<Button raised disabled>Disabled Raised button</Button>'}
             </code>
           </CodeBlock>
         </div>
@@ -136,14 +136,14 @@ export default class ButtonPage extends Component {
           </Button>
           <CodeBlock>
             <code class="lang-html">
-              {"<Button raised ripple>Raised button with ripple</Button>"}
+              {'<Button raised ripple>Raised button with ripple</Button>'}
             </code>
           </CodeBlock>
         </div>
 
         <div>
           <Button raised className="mdc-theme--primary-bg">
-            Primary Raised button{" "}
+            Primary Raised button{' '}
           </Button>
           <CodeBlock>
             <code class="lang-html">
@@ -156,7 +156,7 @@ export default class ButtonPage extends Component {
 
         <div>
           <Button raised className="mdc-theme--secondary-bg">
-            Secondary Raised button{" "}
+            Secondary Raised button{' '}
           </Button>
           <CodeBlock>
             <code class="lang-html">
@@ -169,7 +169,7 @@ export default class ButtonPage extends Component {
 
         <div>
           <Button raised dense>
-            Dense Raised button{" "}
+            Dense Raised button{' '}
           </Button>
           <CodeBlock>
             <code class="lang-html">
@@ -180,7 +180,7 @@ export default class ButtonPage extends Component {
 
         <div>
           <Button raised compact>
-            Compact Raised button{" "}
+            Compact Raised button{' '}
           </Button>
           <CodeBlock>
             <code class="lang-html">

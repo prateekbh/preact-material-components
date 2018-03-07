@@ -1,12 +1,12 @@
 // Components
-import App from "./components/app";
+import App from './components/app';
 
 // Material Components
-import "../../Typography/style.css";
-import "../../Theme/style.css";
+import '../../Typography/style.css';
+import '../../Theme/style.css';
 
 // Styles
-import "./style";
+import './style';
 
 // Export
 export default App;
