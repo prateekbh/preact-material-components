@@ -8,12 +8,7 @@ class LayoutGrid extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <div
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
+      <div ref={this.setControlRef} {...props}>
         {props.children}
       </div>
     );
@@ -27,12 +22,7 @@ class LayoutGridInner extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <div
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
+      <div ref={this.setControlRef} {...props}>
         {props.children}
       </div>
     );
@@ -101,9 +91,7 @@ class LayoutGridCell extends MaterialComponent {
       <div
         {...props}
         className={this.createClassName(props)}
-        ref={control => {
-          this.control = control;
-        }}
+        ref={this.setControlRef}
       >
         {props.children}
       </div>

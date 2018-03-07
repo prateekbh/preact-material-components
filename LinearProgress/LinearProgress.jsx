@@ -24,11 +24,7 @@ export default class LinearProgress extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <div
-        role="progressbar"
-        {...props}
-        ref={control => (this.control = control)}
-      >
+      <div role="progressbar" {...props} ref={this.setControlRef}>
         <div className="mdc-linear-progress__buffering-dots" />
         <div className="mdc-linear-progress__buffer" />
         <div className="mdc-linear-progress__bar mdc-linear-progress__primary-bar">

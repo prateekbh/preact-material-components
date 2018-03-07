@@ -19,6 +19,10 @@ export default class MaterialComponent extends Component {
     this.componentName = "";
     // The final class name given to the dom
     this.classText = "";
+    // Shared setter for the root element ref
+    this.setControlRef = control => {
+      this.control = control;
+    };
   }
   attachRipple() {
     if (this.props.ripple && this.control) {

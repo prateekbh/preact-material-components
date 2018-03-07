@@ -37,9 +37,7 @@ class CardActionButton extends Button {
       <button
         className="mdc-button mdc-card__action--button"
         {...props}
-        ref={control => {
-          this.control = control;
-        }}
+        ref={this.setControlRef}
       >
         {props.children}
       </button>

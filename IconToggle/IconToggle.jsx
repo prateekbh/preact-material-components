@@ -30,13 +30,7 @@ export default class IconToggle extends MaterialComponent {
     if (props["data-toggle-off"])
       props["data-toggle-off"] = JSON.stringify(props["data-toggle-off"]);
     return (
-      <i
-        {...props}
-        className="material-icons"
-        ref={control => {
-          this.control = control;
-        }}
-      >
+      <i {...props} className="material-icons" ref={this.setControlRef}>
         {props.children}
       </i>
     );

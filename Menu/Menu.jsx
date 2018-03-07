@@ -60,7 +60,7 @@ class Menu extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <div tabindex="-1" {...props} ref={control => (this.control = control)}>
+      <div tabindex="-1" {...props} ref={this.setControlRef}>
         <List className="mdc-menu__items" role="menu" aria-hidden="true">
           {props.children}
         </List>

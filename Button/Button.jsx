@@ -30,13 +30,7 @@ class Button extends MaterialComponent {
     });
 
     return (
-      <ButtonElement
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-        className={className}
-      >
+      <ButtonElement ref={this.setControlRef} {...props} className={className}>
         {this.props.children}
       </ButtonElement>
     );

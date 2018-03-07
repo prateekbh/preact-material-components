@@ -15,14 +15,14 @@ class List extends MaterialComponent {
   materialDom(props) {
     if (props.interactive) {
       return (
-        <nav ref={control => (this.control = control)} {...props}>
+        <nav ref={this.setControlRef} {...props}>
           {props.children}
         </nav>
       );
     }
 
     return (
-      <ul {...props} ref={control => (this.control = control)}>
+      <ul {...props} ref={this.setControlRef}>
         {props.children}
       </ul>
     );
@@ -36,7 +36,7 @@ class ListItem extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <li role="option" {...props} ref={control => (this.control = control)}>
+      <li role="option" {...props} ref={this.setControlRef}>
         {props.children}
       </li>
     );
@@ -53,7 +53,7 @@ class LinkItem extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <a role="option" {...props} ref={control => (this.control = control)}>
+      <a role="option" {...props} ref={this.setControlRef}>
         {props.children}
       </a>
     );
@@ -90,7 +90,7 @@ class ListItemIcon extends MaterialComponent {
         className={className}
         aria-hidden="true"
         {...props}
-        ref={control => (this.control = control)}
+        ref={this.setControlRef}
       >
         {props.children}
       </i>
@@ -113,7 +113,7 @@ class ListItemAvatar extends ListItemIcon {
         {...props}
         className={super.getProxyClassName(props)}
         {...props}
-        ref={control => (this.control = control)}
+        ref={this.setControlRef}
         width={props.width || "56"}
         height={props.height || "56"}
         alt={props.alt || ""}
@@ -129,13 +129,7 @@ class ListDivider extends MaterialComponent {
     this._mdcProps = ["inset"];
   }
   materialDom(props) {
-    return (
-      <li
-        role="separator"
-        {...props}
-        ref={control => (this.control = control)}
-      />
-    );
+    return <li role="separator" {...props} ref={this.setControlRef} />;
   }
 }
 
@@ -146,7 +140,7 @@ class ListTextContainer extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <span {...props} ref={control => (this.control = control)}>
+      <span {...props} ref={this.setControlRef}>
         {props.children}
       </span>
     );

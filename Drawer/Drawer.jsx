@@ -46,9 +46,7 @@ class TemporaryDrawer extends MaterialComponent {
     return (
       <aside
         className="mdc-typography mdc-drawer"
-        ref={control => {
-          this.control = control;
-        }}
+        ref={this.setControlRef}
         {...props}
       >
         <nav className="mdc-drawer__drawer">{props.children}</nav>
@@ -112,9 +110,7 @@ class PersistentDrawer extends MaterialComponent {
     return (
       <aside
         className="mdc-typography mdc-drawer"
-        ref={control => {
-          this.control = control;
-        }}
+        ref={this.setControlRef}
         {...props}
       >
         <nav className="mdc-drawer__drawer">{props.children}</nav>
@@ -130,12 +126,7 @@ class DrawerHeader extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <header
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
+      <header ref={this.setControlRef} {...props}>
         <div className="mdc-drawer__header-content">{props.children}</div>
       </header>
     );
@@ -149,13 +140,7 @@ class DrawerContent extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <nav
-        className="mdc-list"
-        ref={control => {
-          this.control = control;
-        }}
-        {...props}
-      >
+      <nav className="mdc-list" ref={this.setControlRef} {...props}>
         {props.children}
       </nav>
     );
