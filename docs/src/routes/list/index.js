@@ -38,26 +38,15 @@ export default class ListPage extends Component {
       },
       {
         component: "List.LinkItem",
-        props: [
-          {
-            name: "graphic",
-            description: "Makes the Icon align to start."
-          },
-          {
-            name: "meta",
-            description: "Makes the Icon align to end."
-          }
-        ]
+        props: []
       },
       {
-        component: "List.ItemAvatar",
-        props: [
-          {
-            name: "src",
-            value: "path of avatar image",
-            description: "path of avatar image"
-          }
-        ]
+        component: "List.ItemGraphic",
+        props: []
+      },
+      {
+        component: "List.ItemMeta",
+        props: []
       },
       {
         component: "List.TextContainer",
@@ -147,6 +136,48 @@ export default class ListPage extends Component {
               </List.SecondaryText>
             </List.TextContainer>
           </List.Item>
+        </List>
+        <div className="mdc-typography--title">Avatar </div>
+        <List two-line={true}>
+          <List.Group>
+            <List.GroupHeader>Work</List.GroupHeader>
+            <List.Item>
+              <List.ItemGraphic>folder</List.ItemGraphic>
+              <List.TextContainer>
+                <List.PrimaryText>Photos</List.PrimaryText>
+                <List.SecondaryText>Jan 9, 2014</List.SecondaryText>
+              </List.TextContainer>
+              <List.ItemMeta>info</List.ItemMeta>
+            </List.Item>
+            <List.Item>
+              <List.ItemGraphic>folder</List.ItemGraphic>
+              <List.TextContainer>
+                <List.PrimaryText>Work</List.PrimaryText>
+                <List.SecondaryText>Jan 28, 2014</List.SecondaryText>
+              </List.TextContainer>
+              <List.ItemMeta>info</List.ItemMeta>
+            </List.Item>
+          </List.Group>
+          <List.Divider />
+          <List.Group>
+            <List.GroupHeader>Vacation</List.GroupHeader>
+            <List.Item>
+              <List.ItemGraphic>folder</List.ItemGraphic>
+              <List.TextContainer>
+                <List.PrimaryText>Hawai</List.PrimaryText>
+                <List.SecondaryText>Feb 9, 2014</List.SecondaryText>
+              </List.TextContainer>
+              <List.ItemMeta>info</List.ItemMeta>
+            </List.Item>
+            <List.Item>
+              <List.ItemGraphic>folder</List.ItemGraphic>
+              <List.TextContainer>
+                <List.PrimaryText>India</List.PrimaryText>
+                <List.SecondaryText>Mar 28, 2014</List.SecondaryText>
+              </List.TextContainer>
+              <List.ItemMeta>info</List.ItemMeta>
+            </List.Item>
+          </List.Group>
         </List>
       </div>
     );

@@ -118,15 +118,15 @@ export default class TextFieldPage extends Component {
           <code class="lang-html">{passwordSample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">With help text</div>
-        <TextField label="Help text" helptext="This is the helptext" />
+        <TextField label="Help text" helperText="This is the helptext" />
         <CodeBlock>
           <code class="lang-html">{helpTextSample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">With persistent help text</div>
         <TextField
           label="Persistent help text"
-          helptext="This is the helptext"
-          helptextPersistent
+          helperText="This is the helptext"
+          helperTextPersistent
         />
         <CodeBlock>
           <code class="lang-html">{persistentHelpTextSample}</code>

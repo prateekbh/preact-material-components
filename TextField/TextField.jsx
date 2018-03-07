@@ -26,7 +26,7 @@ class HelperText extends MaterialComponent {
 class Label extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "text-field__label";
+    this.componentName = "floating-label";
   }
   materialDom(props) {
     return <label {...props}>{props.children}</label>;
@@ -96,7 +96,7 @@ class TextFieldInput extends MaterialComponent {
     }
 
     return (
-      <div className={className} ref={this.setControlRef}>
+      <div className={className} ref={control => (this.control = control)}>
         {props.leadingIcon ? (
           <Icon className="mdc-text-field__icon">{props.leadingIcon}</Icon>
         ) : null}
