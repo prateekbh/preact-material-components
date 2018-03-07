@@ -11,8 +11,8 @@
     "dev": "preact watch",
     "test": "npm run prettier && npm run build:prod && mocha ./tests/visdiff.js --timeout 15000",
     "test:travis": "node ./scripts/test-travis.js",
-    "prettier": "prettier -l --print-width 80 \"src/**/*.js\"",
-    "prettier:write": "prettier --write --print-width 80 \"src/**/*.js\""
+    "prettier": "prettier -l \"src/**/*.js\"",
+    "prettier:write": "prettier --write \"src/**/*.js\""
   },
   "repository": {
     "type": "git",

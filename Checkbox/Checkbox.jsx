@@ -1,6 +1,6 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import { MDCCheckbox } from "@material/checkbox/";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import {MDCCheckbox} from '@material/checkbox/';
 
 /*
  * Default props for check box
@@ -15,8 +15,8 @@ const defaultProps = {
 export default class Checkbox extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "checkbox";
-    this._mdcProps = ["disabled"];
+    this.componentName = 'checkbox';
+    this._mdcProps = ['disabled'];
   }
   componentDidMount() {
     this.MDComponent = new MDCCheckbox(this.control);
@@ -29,9 +29,9 @@ export default class Checkbox extends MaterialComponent {
     toggleCheckbox(this.props, nextProps, this.MDComponent);
   }
   materialDom(allprops) {
-    const { className, ...props } = allprops;
+    const {className, ...props} = allprops;
     return (
-      <div className={"mdc-checkbox " + className} ref={this.setControlRef}>
+      <div className={'mdc-checkbox ' + className} ref={this.setControlRef}>
         <input
           type="checkbox"
           className="mdc-checkbox__native-control"
@@ -42,8 +42,7 @@ export default class Checkbox extends MaterialComponent {
             version="1.1"
             className="mdc-checkbox__checkmark"
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
+            viewBox="0 0 24 24">
             <path
               className="mdc-checkbox__checkmark-path"
               fill="none"
@@ -63,16 +62,16 @@ export default class Checkbox extends MaterialComponent {
  */
 function toggleCheckbox(oldprops, newprops, cbox) {
   if (
-    "checked" in oldprops &&
-    "checked" in newprops &&
+    'checked' in oldprops &&
+    'checked' in newprops &&
     oldprops.checked !== newprops.checked
   ) {
     cbox.checked = newprops.checked;
   }
 
   if (
-    "indeterminate" in oldprops &&
-    "indeterminate" in newprops &&
+    'indeterminate' in oldprops &&
+    'indeterminate' in newprops &&
     oldprops.indeterminate !== newprops.indeterminate
   ) {
     cbox.indeterminate = newprops.indeterminate;

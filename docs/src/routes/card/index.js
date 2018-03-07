@@ -1,18 +1,18 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Card from "../../../../Card";
+import Card from '../../../../Card';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Style
-import "./style";
+import './style';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class CardPage extends Component {
@@ -20,37 +20,37 @@ export default class CardPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Card",
+        component: 'Card',
         props: []
       },
       {
-        component: "Card.Actions",
+        component: 'Card.Actions',
         props: [
           {
-            name: "full-bleed",
-            description: "This makes the action button end to end"
+            name: 'full-bleed',
+            description: 'This makes the action button end to end'
           }
         ]
       },
       {
-        component: "Card.ActionButton",
+        component: 'Card.ActionButton',
         props: []
       },
       {
-        component: "Card.Media",
+        component: 'Card.Media',
         props: [
           {
-            name: "square",
-            description: "Makes Media aspect ratio 1:1"
+            name: 'square',
+            description: 'Makes Media aspect ratio 1:1'
           },
           {
-            name: "16-9",
-            description: "Makes Media aspect ratio 16:9"
+            name: '16-9',
+            description: 'Makes Media aspect ratio 16:9'
           }
         ]
       },
       {
-        component: "Card.CardMediaContent",
+        component: 'Card.CardMediaContent',
         props: []
       }
     ];
@@ -70,7 +70,7 @@ export default class CardPage extends Component {
           This component encapsulates <span className="strong">mdc-card</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-card">
-            {" "}
+            {' '}
             here
           </a>.
         </div>

@@ -1,5 +1,5 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
 
 /**
  * @prop dense = false
@@ -9,8 +9,8 @@ import MaterialComponent from "../MaterialComponent";
 class List extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list";
-    this._mdcProps = ["dense", "two-line"];
+    this.componentName = 'list';
+    this._mdcProps = ['dense', 'two-line'];
   }
   materialDom(props) {
     if (props.interactive) {
@@ -32,7 +32,7 @@ class List extends MaterialComponent {
 class ListItem extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-item";
+    this.componentName = 'list-item';
   }
   materialDom(props) {
     return (
@@ -46,7 +46,7 @@ class ListItem extends MaterialComponent {
 class LinkItem extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-item";
+    this.componentName = 'list-item';
   }
   componentDidMount() {
     super.attachRipple();
@@ -67,31 +67,30 @@ class LinkItem extends MaterialComponent {
 class ListItemIcon extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "mdc-list-item__icon";
+    this.componentName = 'mdc-list-item__icon';
   }
   getProxyClassName(props) {
     let classNames = [];
 
     // default behavior
-    props["graphic"] = props["graphic"] || true;
+    props['graphic'] = props['graphic'] || true;
 
     // setting class names mutually exclusive
-    if (props["meta"]) {
-      classNames.push("mdc-list-item__meta");
-    } else if (props["graphic"]) {
-      classNames.push("mdc-list-item__graphic");
+    if (props['meta']) {
+      classNames.push('mdc-list-item__meta');
+    } else if (props['graphic']) {
+      classNames.push('mdc-list-item__graphic');
     }
-    return classNames.join(" ");
+    return classNames.join(' ');
   }
   materialDom(props) {
-    const className = "material-icons " + this.getProxyClassName(props);
+    const className = 'material-icons ' + this.getProxyClassName(props);
     return (
       <i
         className={className}
         aria-hidden="true"
         {...props}
-        ref={this.setControlRef}
-      >
+        ref={this.setControlRef}>
         {props.children}
       </i>
     );
@@ -105,7 +104,7 @@ class ListItemIcon extends MaterialComponent {
 class ListItemAvatar extends ListItemIcon {
   constructor() {
     super();
-    this.componentName = "mdc-list-item__avatar";
+    this.componentName = 'mdc-list-item__avatar';
   }
   materialDom(props) {
     return (
@@ -114,9 +113,9 @@ class ListItemAvatar extends ListItemIcon {
         className={super.getProxyClassName(props)}
         {...props}
         ref={this.setControlRef}
-        width={props.width || "56"}
-        height={props.height || "56"}
-        alt={props.alt || ""}
+        width={props.width || '56'}
+        height={props.height || '56'}
+        alt={props.alt || ''}
       />
     );
   }
@@ -125,8 +124,8 @@ class ListItemAvatar extends ListItemIcon {
 class ListDivider extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-divider";
-    this._mdcProps = ["inset"];
+    this.componentName = 'list-divider';
+    this._mdcProps = ['inset'];
   }
   materialDom(props) {
     return <li role="separator" {...props} ref={this.setControlRef} />;
@@ -136,7 +135,7 @@ class ListDivider extends MaterialComponent {
 class ListTextContainer extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-item__text";
+    this.componentName = 'list-item__text';
   }
   materialDom(props) {
     return (
@@ -150,14 +149,14 @@ class ListTextContainer extends MaterialComponent {
 class ListPrimaryText extends ListTextContainer {
   constructor() {
     super();
-    this.componentName = "list-item__text__primary";
+    this.componentName = 'list-item__text__primary';
   }
 }
 
 class ListSecondaryText extends ListTextContainer {
   constructor() {
     super();
-    this.componentName = "list-item__secondary-text";
+    this.componentName = 'list-item__secondary-text';
   }
 }
 
