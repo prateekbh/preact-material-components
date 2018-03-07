@@ -1,75 +1,75 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import TextField from "../../../../TextField";
+import TextField from '../../../../TextField';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import sample from "./sample.txt";
-import defaultSample from "./default-sample.txt";
-import controlledSample from "./controlled-sample.txt";
-import denseSample from "./dense-sample.txt";
-import disabledSample from "./disabled-sample.txt";
-import helpTextSample from "./help-text-sample.txt";
-import passwordSample from "./password-sample.txt";
-import persistentHelpTextSample from "./persistent-help-text-sample.txt";
-import textareaSample from "./textarea-sample.txt";
+import sample from './sample.txt';
+import defaultSample from './default-sample.txt';
+import controlledSample from './controlled-sample.txt';
+import denseSample from './dense-sample.txt';
+import disabledSample from './disabled-sample.txt';
+import helpTextSample from './help-text-sample.txt';
+import passwordSample from './password-sample.txt';
+import persistentHelpTextSample from './persistent-help-text-sample.txt';
+import textareaSample from './textarea-sample.txt';
 
 // Class
 export default class TextFieldPage extends Component {
   constructor() {
     super();
     this.state = {
-      value: ""
+      value: ''
     };
     this.propsTable = [
       {
-        component: "TextField",
+        component: 'TextField',
         props: [
           {
-            name: "fullwidth",
-            description: "Makes the textfield full width."
+            name: 'fullwidth',
+            description: 'Makes the textfield full width.'
           },
           {
-            name: "textarea",
-            description: "Toggles between TextArea and TextField."
+            name: 'textarea',
+            description: 'Toggles between TextArea and TextField.'
           },
           {
-            name: "type",
+            name: 'type',
             description: "Type of HTML textfield (defaults to 'text')",
-            value: "text, password, date, time, etc."
+            value: 'text, password, date, time, etc.'
           },
           {
-            name: "dense",
-            description: "Use a dense font"
+            name: 'dense',
+            description: 'Use a dense font'
           },
           {
-            name: "box",
+            name: 'box',
             description:
-              "Enclose label and input in a transparent rectangular fill"
+              'Enclose label and input in a transparent rectangular fill'
           },
           {
-            name: "disabled",
-            description: "Disables the input"
+            name: 'disabled',
+            description: 'Disables the input'
           },
           {
-            name: "helperText",
+            name: 'helperText',
             description:
-              "Include an help text that is useful for providing supplemental information to users, as well for validation messages",
-            value: "help text"
+              'Include an help text that is useful for providing supplemental information to users, as well for validation messages',
+            value: 'help text'
           },
           {
-            name: "helperTextPersistent",
-            description: "Makes the help text always visible"
+            name: 'helperTextPersistent',
+            description: 'Makes the help text always visible'
           },
           {
-            name: "helperTextValidationMsg",
+            name: 'helperTextValidationMsg',
             description:
-              "Provide styles for using the help text as a validation message"
+              'Provide styles for using the help text as a validation message'
           }
         ]
       }
@@ -85,11 +85,11 @@ export default class TextFieldPage extends Component {
         </CodeBlock>
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates{" "}
+          This component encapsulates{' '}
           <span className="strong">mdc-text-field</span>. You can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-text-field">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -102,7 +102,7 @@ export default class TextFieldPage extends Component {
               name: e.target.value
             });
           }}
-        />{" "}
+        />{' '}
         Hi - {this.state.name}
         <CodeBlock>
           <code class="lang-html">{defaultSample}</code>
@@ -145,7 +145,7 @@ export default class TextFieldPage extends Component {
         <TextField
           label="State"
           value={this.state.value}
-          onInput={e => this.setState({ value: e.target.value })}
+          onInput={e => this.setState({value: e.target.value})}
         />
         State: {this.state.value}
         <CodeBlock>

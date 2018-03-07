@@ -1,24 +1,24 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import { MDCDialog } from "@material/dialog/";
-import Button from "../Button";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import {MDCDialog} from '@material/dialog/';
+import Button from '../Button';
 /**
  */
 class Dialog extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "dialog";
+    this.componentName = 'dialog';
     this._onAccept = this._onAccept.bind(this);
     this._onCancel = this._onCancel.bind(this);
   }
   componentDidMount() {
     this.MDComponent = new MDCDialog(this.control);
-    this.MDComponent.listen("MDCDialog:accept", this._onAccept);
-    this.MDComponent.listen("MDCDialog:cancel", this._onCancel);
+    this.MDComponent.listen('MDCDialog:accept', this._onAccept);
+    this.MDComponent.listen('MDCDialog:cancel', this._onCancel);
   }
   componentWillUnmount() {
-    this.MDComponent.unlisten("MDCDialog:accept", this._onAccept);
-    this.MDComponent.unlisten("MDCDialog:cancel", this._onCancel);
+    this.MDComponent.unlisten('MDCDialog:accept', this._onAccept);
+    this.MDComponent.unlisten('MDCDialog:cancel', this._onCancel);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   _onAccept(e) {
@@ -44,7 +44,7 @@ class Dialog extends MaterialComponent {
 class DialogHeader extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "dialog__header";
+    this.componentName = 'dialog__header';
   }
   materialDom(props) {
     return (
@@ -61,8 +61,8 @@ class DialogHeader extends MaterialComponent {
 class DialogBody extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "dialog__body";
-    this._mdcProps = ["scrollable"];
+    this.componentName = 'dialog__body';
+    this._mdcProps = ['scrollable'];
   }
   materialDom(props) {
     return <section {...props}>{props.children}</section>;
@@ -72,7 +72,7 @@ class DialogBody extends MaterialComponent {
 class DialogFooter extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "dialog__footer";
+    this.componentName = 'dialog__footer';
   }
   materialDom(props) {
     return <footer {...props}>{props.children}</footer>;
@@ -86,8 +86,8 @@ class DialogFooter extends MaterialComponent {
 class DialogFooterButton extends Button {
   constructor() {
     super();
-    this.componentName = "dialog__footer__button";
-    this._mdcProps = ["cancel", "accept"];
+    this.componentName = 'dialog__footer__button';
+    this._mdcProps = ['cancel', 'accept'];
   }
   materialDom(props) {
     return (

@@ -1,5 +1,5 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
 
 /**
  * @prop mini = false
@@ -8,7 +8,7 @@ import MaterialComponent from "../MaterialComponent";
 export default class Formfield extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "form-field";
-    this._mdcProps = ["align-end"];
+    this.componentName = 'form-field';
+    this._mdcProps = ['align-end'];
   }
 }

@@ -1,16 +1,16 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Icon from "../../../../Icon";
+import Icon from '../../../../Icon';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import linktag from "./linktag.txt";
-import sample from "./sample.txt";
+import linktag from './linktag.txt';
+import sample from './sample.txt';
 
 // Class
 export default class IconPage extends Component {
@@ -18,7 +18,7 @@ export default class IconPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Icon",
+        component: 'Icon',
         props: []
       }
     ];
@@ -44,7 +44,7 @@ export default class IconPage extends Component {
         <div className="mdc-typography--title">Note </div>
         <div className="mdc-typography--caption">
           <div>
-            In order to use these you will need to import respective font icons{" "}
+            In order to use these you will need to import respective font icons{' '}
           </div>
           <div>
             <CodeBlock>

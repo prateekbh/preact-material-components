@@ -1,0 +1,16 @@
+<Dialog>
+  <Dialog.Header>Scroll for me ;)</Dialog.Header>
+  <Dialog.Body scrollable={true}>
+    <List>
+      <List.Item>Item 1</List.Item>
+      <List.Item>Item 2</List.Item>
+      <List.Item>Item 3</List.Item>
+      <List.Item>Item 4</List.Item>
+      <List.Item>Item 5</List.Item>
+    </List>
+  </Dialog.Body>
+  <Dialog.Footer>
+    <Dialog.FooterButton cancel={true}>Decline</Dialog.FooterButton>
+    <Dialog.FooterButton accept={true}>Accept</Dialog.FooterButton>
+  </Dialog.Footer>
+</Dialog>

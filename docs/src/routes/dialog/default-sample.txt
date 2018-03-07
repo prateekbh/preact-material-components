@@ -1,0 +1,11 @@
+<Dialog>
+  <Dialog.Header>Use Google's location service?</Dialog.Header>
+  <Dialog.Body>
+    Let Google help apps determine location. This means sending
+    anonymous location data to Google, even when no apps are running.
+  </Dialog.Body>
+  <Dialog.Footer>
+    <Dialog.FooterButton cancel={true}>Decline</Dialog.FooterButton>
+    <Dialog.FooterButton accept={true}>Accept</Dialog.FooterButton>
+  </Dialog.Footer>
+</Dialog>

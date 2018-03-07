@@ -1,8 +1,8 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import Icon from "../Icon";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import Icon from '../Icon';
 
-const notEmptyString = val => val !== "";
+const notEmptyString = val => val !== '';
 
 /**
  * @prop tile-gutter-1 {boolean} - use 1px gutter (default is 4px)
@@ -14,8 +14,8 @@ const notEmptyString = val => val !== "";
 class GridList extends MaterialComponent {
   get validationValuesByKey() {
     return {
-      "with-icon-align": ["start", "end"],
-      "tile-aspect": ["1x1", "16x9", "2x3", "3x2", "4x3", "3x4"]
+      'with-icon-align': ['start', 'end'],
+      'tile-aspect': ['1x1', '16x9', '2x3', '3x2', '4x3', '3x4']
     };
   }
 
@@ -28,8 +28,8 @@ class GridList extends MaterialComponent {
 
   constructor() {
     super();
-    this.componentName = "grid-list";
-    this._mdcProps = ["header-caption", "twoline-caption", "tile-gutter-1"];
+    this.componentName = 'grid-list';
+    this._mdcProps = ['header-caption', 'twoline-caption', 'tile-gutter-1'];
   }
   mapClassName(propKey, props) {
     const propValue = props[propKey];
@@ -37,7 +37,7 @@ class GridList extends MaterialComponent {
 
     return this.isValidValue(validationValues, propValue)
       ? `mdc-${this.componentName}--${propKey}-${propValue}`
-      : "";
+      : '';
   }
   materialDom(props) {
     const className = Object.keys(this.validationValuesByKey)
@@ -45,7 +45,7 @@ class GridList extends MaterialComponent {
         return this.mapClassName(key, props);
       })
       .filter(notEmptyString)
-      .join(" ");
+      .join(' ');
 
     return (
       <div {...props} className={className}>
@@ -58,7 +58,7 @@ class GridList extends MaterialComponent {
 class GridListTiles extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "grid-list__tiles";
+    this.componentName = 'grid-list__tiles';
   }
   materialDom(props) {
     return <ul {...props}>{props.children}</ul>;
@@ -68,7 +68,7 @@ class GridListTiles extends MaterialComponent {
 class GridListTile extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "grid-tile";
+    this.componentName = 'grid-tile';
   }
   materialDom(props) {
     return <li {...props}>{props.children}</li>;
@@ -78,7 +78,7 @@ class GridListTile extends MaterialComponent {
 class GridListPrimaryTile extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "grid-tile__primary";
+    this.componentName = 'grid-tile__primary';
   }
   materialDom(props) {
     return <div {...props}>{props.children}</div>;
@@ -88,7 +88,7 @@ class GridListPrimaryTile extends MaterialComponent {
 class GridListPrimaryContentTile extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "grid-tile__primary-content";
+    this.componentName = 'grid-tile__primary-content';
   }
   materialDom(props) {
     return <img {...props} />;
@@ -98,7 +98,7 @@ class GridListPrimaryContentTile extends MaterialComponent {
 class GridListSecondaryTile extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "grid-tile__secondary";
+    this.componentName = 'grid-tile__secondary';
   }
   materialDom(props) {
     return <span {...props}>{props.children}</span>;
@@ -108,7 +108,7 @@ class GridListSecondaryTile extends MaterialComponent {
 class GridListTitleTile extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "grid-tile__title";
+    this.componentName = 'grid-tile__title';
   }
   materialDom(props) {
     return <span {...props}>{props.children}</span>;
@@ -118,7 +118,7 @@ class GridListTitleTile extends MaterialComponent {
 class GridListSupportTextTile extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "grid-tile__support-text";
+    this.componentName = 'grid-tile__support-text';
   }
   materialDom(props) {
     return <span {...props}>{props.children}</span>;
@@ -128,7 +128,7 @@ class GridListSupportTextTile extends MaterialComponent {
 class GridListIconTile extends Icon {
   constructor() {
     super();
-    this.componentName = "grid-tile__icon";
+    this.componentName = 'grid-tile__icon';
   }
 }
 

@@ -1,20 +1,20 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Radio from "../../../../Radio";
-import Formfield from "../../../../FormField";
+import Radio from '../../../../Radio';
+import Formfield from '../../../../FormField';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import sample from "./sample.txt";
-import basicExample from "./basic-example.txt";
-import disabledExample from "./disabled-example.txt";
-import controlledExample from "./controlled-example.txt";
-import advancedControlledExample from "./advanced-controlled-example.txt";
+import sample from './sample.txt';
+import basicExample from './basic-example.txt';
+import disabledExample from './disabled-example.txt';
+import controlledExample from './controlled-example.txt';
+import advancedControlledExample from './advanced-controlled-example.txt';
 
 // Class
 export default class RadioPage extends Component {
@@ -22,15 +22,15 @@ export default class RadioPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Radio",
+        component: 'Radio',
         props: [
           {
-            name: "checked",
-            description: "This makes the Radio button checked."
+            name: 'checked',
+            description: 'This makes the Radio button checked.'
           },
           {
-            name: "disabled",
-            description: "This makes the Radio button disabled."
+            name: 'disabled',
+            description: 'This makes the Radio button disabled.'
           }
         ]
       }
@@ -49,7 +49,7 @@ export default class RadioPage extends Component {
           This component encapsulates <span className="strong">mdc-radio</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio">
-            {" "}
+            {' '}
             here
           </a>.
         </div>

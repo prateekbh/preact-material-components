@@ -1,21 +1,23 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Dialog from "../../../../Dialog";
-import Button from "../../../../Button";
-import List from "../../../../List";
+import Dialog from '../../../../Dialog';
+import Button from '../../../../Button';
+import List from '../../../../List';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
-import EventsTable from "../../components/events-table";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
+import EventsTable from '../../components/events-table';
 
 // Styles
-import "./style";
+import './style';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
+import defaultSample from './default-sample.txt';
+import scrollableSample from './scrollable-sample.txt';
 
 // Class
 export default class DialogPage extends Component {
@@ -23,47 +25,47 @@ export default class DialogPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Dialog",
+        component: 'Dialog',
         props: []
       },
       {
-        component: "Dialog.Header",
+        component: 'Dialog.Header',
         props: []
       },
       {
-        component: "Dialog.Body",
+        component: 'Dialog.Body',
         props: [
           {
-            name: "scrollable",
-            description: "Adds vertical scroll for content."
+            name: 'scrollable',
+            description: 'Adds vertical scroll for content.'
           }
         ]
       },
       {
-        component: "Dialog.Footer",
+        component: 'Dialog.Footer',
         props: []
       },
       {
-        component: "Dialog.FooterButton",
+        component: 'Dialog.FooterButton',
         props: [
           {
-            name: "accept",
-            description: "Makes the button, default button."
+            name: 'accept',
+            description: 'Makes the button, default button.'
           },
           {
-            name: "cancel",
-            description: "Makes the button, cancel button."
+            name: 'cancel',
+            description: 'Makes the button, cancel button.'
           }
         ]
       }
     ];
     this.eventsTable = [
       {
-        name: "onAccept",
+        name: 'onAccept',
         description: "Fired when the dialog's accept button is clicked."
       },
       {
-        name: "onCancel",
+        name: 'onCancel',
         description: "Fired when the dialog's cancel button is clicked."
       }
     ];
@@ -84,35 +86,40 @@ export default class DialogPage extends Component {
           This component encapsulates <span className="strong">mdc-dialog</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
+        <div className="mdc-typography--title">Default Dialog</div>
         <Button
           primary={true}
           raised={true}
           onClick={() => {
             this.normalDlg.MDComponent.show();
-          }}
-        >
+          }}>
           Show Dialog
         </Button>
+        <CodeBlock>
+          <code class="lang-html">{defaultSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Scrollable Dialog</div>
         <Button
           primary={true}
           raised={true}
           onClick={() => {
             this.scrollingDlg.MDComponent.show();
-          }}
-        >
+          }}>
           Show Scrollable Dialog
         </Button>
+        <CodeBlock>
+          <code class="lang-html">{scrollableSample}</code>
+        </CodeBlock>
         <Dialog
           ref={normalDlg => {
             this.normalDlg = normalDlg;
-          }}
-        >
+          }}>
           <Dialog.Header>Use Google's location service?</Dialog.Header>
           <Dialog.Body>
             Let Google help apps determine location. This means sending
@@ -126,8 +133,7 @@ export default class DialogPage extends Component {
         <Dialog
           ref={scrollingDlg => {
             this.scrollingDlg = scrollingDlg;
-          }}
-        >
+          }}>
           <Dialog.Header>Scroll for me ;)</Dialog.Header>
           <Dialog.Body scrollable={true}>
             <List>

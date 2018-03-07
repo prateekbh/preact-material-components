@@ -33,7 +33,7 @@ class List extends MaterialComponent {
 class ListItem extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-item";
+    this.componentName = 'list-item';
   }
   materialDom(props) {
     return (
@@ -47,7 +47,7 @@ class ListItem extends MaterialComponent {
 class LinkItem extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-item";
+    this.componentName = 'list-item';
   }
   componentDidMount() {
     super.attachRipple();
@@ -85,8 +85,8 @@ class ListItemMeta extends ListItemGraphic {
 class ListDivider extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-divider";
-    this._mdcProps = ["inset"];
+    this.componentName = 'list-divider';
+    this._mdcProps = ['inset'];
   }
   materialDom(props) {
     return <li role="separator" {...props} ref={this.setControlRef} />;
@@ -96,7 +96,7 @@ class ListDivider extends MaterialComponent {
 class ListTextContainer extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-item__text";
+    this.componentName = 'list-item__text';
   }
   materialDom(props) {
     return (
@@ -110,14 +110,14 @@ class ListTextContainer extends MaterialComponent {
 class ListPrimaryText extends ListTextContainer {
   constructor() {
     super();
-    this.componentName = "list-item__text__primary";
+    this.componentName = 'list-item__text__primary';
   }
 }
 
 class ListSecondaryText extends ListTextContainer {
   constructor() {
     super();
-    this.componentName = "list-item__secondary-text";
+    this.componentName = 'list-item__secondary-text';
   }
 }
 

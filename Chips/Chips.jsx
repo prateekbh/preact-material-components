@@ -1,7 +1,7 @@
-import { h } from "preact";
-import Icon from "../Icon";
-import MaterialComponent from "../MaterialComponent";
-import { MDCChip, MDCChipSet } from "@material/chips";
+import {h} from 'preact';
+import Icon from '../Icon';
+import MaterialComponent from '../MaterialComponent';
+import {MDCChip, MDCChipSet} from '@material/chips';
 
 class ChipSet extends MaterialComponent {
   constructor() {
@@ -19,7 +19,7 @@ class ChipSet extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    const { children, ...props } = allprops;
+    const {children, ...props} = allprops;
 
     return (
       <div {...props} ref={this.setControlRef}>
@@ -32,7 +32,7 @@ class ChipSet extends MaterialComponent {
 class Chip extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "chip";
+    this.componentName = 'chip';
   }
 
   componentDidMount() {
@@ -44,7 +44,7 @@ class Chip extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    const { children, ...props } = allprops;
+    const {children, ...props} = allprops;
 
     return (
       <div {...props} ref={this.setControlRef}>
@@ -57,12 +57,12 @@ class Chip extends MaterialComponent {
 class ChipIcon extends Icon {
   constructor() {
     super();
-    this.componentName = "chip__icon";
-    this._mdcProps = ["leading", "trailing"];
+    this.componentName = 'chip__icon';
+    this._mdcProps = ['leading', 'trailing'];
   }
 
   materialDom(allprops) {
-    const { children, ...props } = allprops;
+    const {children, ...props} = allprops;
 
     return <i {...props}>{children}</i>;
   }
@@ -71,11 +71,11 @@ class ChipIcon extends Icon {
 class ChipText extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "chip__text";
+    this.componentName = 'chip__text';
   }
 
   materialDom(allprops) {
-    const { children, ...props } = allprops;
+    const {children, ...props} = allprops;
 
     return <div {...props}>{children}</div>;
   }

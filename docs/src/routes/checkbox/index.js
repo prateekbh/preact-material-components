@@ -1,23 +1,23 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Checkbox from "../../../../Checkbox";
-import Button from "../../../../Button";
-import Formfield from "../../../../FormField";
+import Checkbox from '../../../../Checkbox';
+import Button from '../../../../Button';
+import Formfield from '../../../../FormField';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Styles
-import "./style";
+import './style';
 
 // Samples
-import sample from "./sample.txt";
-import basicExample from "./basic-example.txt";
-import indeterminateExample from "./indeterminate-example.txt";
-import controlledExample from "./controlled-example.txt";
+import sample from './sample.txt';
+import basicExample from './basic-example.txt';
+import indeterminateExample from './indeterminate-example.txt';
+import controlledExample from './controlled-example.txt';
 
 // Class
 export default class CheckboxPage extends Component {
@@ -25,19 +25,19 @@ export default class CheckboxPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Checkbox",
+        component: 'Checkbox',
         props: [
           {
-            name: "disabled",
-            description: "This makes the checkbox disabled"
+            name: 'disabled',
+            description: 'This makes the checkbox disabled'
           },
           {
-            name: "checked",
-            description: "This makes the checkbox checked"
+            name: 'checked',
+            description: 'This makes the checkbox checked'
           },
           {
-            name: "indeterminate",
-            description: "This makes the checkbox indeterminate"
+            name: 'indeterminate',
+            description: 'This makes the checkbox indeterminate'
           }
         ]
       }
@@ -55,11 +55,11 @@ export default class CheckboxPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates{" "}
+          This component encapsulates{' '}
           <span className="strong">mdc-checkbox</span>, you can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-checkbox">
-            {" "}
+            {' '}
             here
           </a>.
         </div>

@@ -1,6 +1,6 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import { MDCSlider } from "@material/slider";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import {MDCSlider} from '@material/slider';
 
 /**
  * @prop disabled = false
@@ -8,8 +8,8 @@ import { MDCSlider } from "@material/slider";
 export default class Slider extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "slider";
-    this._mdcProps = ["discrete"];
+    this.componentName = 'slider';
+    this._mdcProps = ['discrete'];
     this._onChange = this._onChange.bind(this);
     this._onInput = this._onInput.bind(this);
   }
@@ -28,14 +28,14 @@ export default class Slider extends MaterialComponent {
 
   componentDidMount() {
     this.MDComponent = new MDCSlider(this.base);
-    this.MDComponent.listen("MDCSlider:change", this._onChange);
-    this.MDComponent.listen("MDCSlider:input", this._onInput);
+    this.MDComponent.listen('MDCSlider:change', this._onChange);
+    this.MDComponent.listen('MDCSlider:input', this._onInput);
     this.setValue(); // set initial value programatically because of error if min is greater than initial max
   }
 
   componentWillUnmount() {
-    this.MDComponent.unlisten("MDCSlider:change", this._onChange);
-    this.MDComponent.unlisten("MDCSlider:input", this._onInput);
+    this.MDComponent.unlisten('MDCSlider:change', this._onChange);
+    this.MDComponent.unlisten('MDCSlider:input', this._onInput);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
 
@@ -44,7 +44,7 @@ export default class Slider extends MaterialComponent {
   }
 
   setValue(props = this.props) {
-    const { disabled = false, min = 0, max = 100, value, step } = props;
+    const {disabled = false, min = 0, max = 100, value, step} = props;
     if (this.MDComponent) {
       if (min > this.MDComponent.max) {
         this.MDComponent.max = max;
@@ -61,7 +61,7 @@ export default class Slider extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    const { tabindex = 0, ...props } = allprops;
+    const {tabindex = 0, ...props} = allprops;
 
     this.setValue(allprops);
     return (
@@ -69,8 +69,7 @@ export default class Slider extends MaterialComponent {
         tabindex={tabindex}
         role="slider"
         aria-label="Select Value"
-        {...props}
-      >
+        {...props}>
         <div class="mdc-slider__track-container">
           <div class="mdc-slider__track" />
         </div>
