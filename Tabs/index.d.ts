@@ -1,12 +1,12 @@
 import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
-import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
+import {VNode} from 'preact';
+import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
 
 declare interface ITabsProps extends JSX.HTMLAttributes {
   'indicator-accent'?: boolean;
   'icon-tab-bar'?: boolean;
   'icons-with-text'?: boolean;
-  'scroller'?: boolean;
+  scroller?: boolean;
 }
 export default class Tabs extends MaterialComponent<ITabsProps, {}> {
   static TabBarScroller: typeof TabBarScroller;
@@ -56,13 +56,17 @@ declare class MDCTabBar extends MDCComponent<MDCTabBarFoundation> {
   layout(): void;
 }
 
-declare class MDCTabBarScrollerFoundation extends MDCFoundation<MDCTabBarScroller> {
+declare class MDCTabBarScrollerFoundation extends MDCFoundation<
+  MDCTabBarScroller
+> {
   scrollBack(evt?: Event): void;
   scrollForward(evt?: Event): void;
   layout(): void;
   scrollToTabAtIndex(index: number): void;
 }
-declare class MDCTabBarScroller extends MDCComponent<MDCTabBarScrollerFoundation> {
+declare class MDCTabBarScroller extends MDCComponent<
+  MDCTabBarScrollerFoundation
+> {
   tabBar: MDCTabBar;
   layout(): void;
 }

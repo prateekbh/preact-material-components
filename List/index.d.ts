@@ -1,5 +1,5 @@
 import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
+import {VNode} from 'preact';
 
 declare interface IListProps extends JSX.HTMLAttributes {
   dense?: boolean;
@@ -21,7 +21,10 @@ export default class List extends MaterialComponent<IListProps, {}> {
 
 declare class Item extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-declare class LinkItem<PropsType = {}, StateType = {}> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
+declare class LinkItem<
+  PropsType = {},
+  StateType = {}
+> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
 
 declare class ItemGraphic extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 

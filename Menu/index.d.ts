@@ -1,6 +1,6 @@
 import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
-import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
+import {VNode} from 'preact';
+import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
 import List from '../List';
 
 declare interface IMenuProps extends JSX.HTMLAttributes {
@@ -24,12 +24,12 @@ export default class Menu extends MaterialComponent<IMenuProps, {}> {
 declare class Anchor extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
 declare class MDCMenuFoundation extends MDCFoundation<MDCMenu> {
-  open(options?: { focusIndex?: number }): void;
+  open(options?: {focusIndex?: number}): void;
   close(evt?: Event): void;
 }
 declare class MDCMenu extends MDCComponent<MDCMenuFoundation> {
   open: boolean;
-  show(options?: { focusIndex?: number }): void;
+  show(options?: {focusIndex?: number}): void;
   hide(): void;
   items: Element[];
 }

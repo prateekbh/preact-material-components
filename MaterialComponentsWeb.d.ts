@@ -16,9 +16,15 @@ export declare class MDCComponent<F> {
   getDefaultFoundation(): F;
   initialSyncWithDOM(): void;
   destroy(): void;
-  listen<K extends keyof ElementEventMap>(type: K, listener: (this: Element, ev: ElementEventMap[K]) => any): void;
+  listen<K extends keyof ElementEventMap>(
+    type: K,
+    listener: (this: Element, ev: ElementEventMap[K]) => any
+  ): void;
   listen(type: string, listener: EventListenerOrEventListenerObject): void;
-  unlisten<K extends keyof ElementEventMap>(type: K, listener: (this: Element, ev: ElementEventMap[K]) => any): void;
+  unlisten<K extends keyof ElementEventMap>(
+    type: K,
+    listener: (this: Element, ev: ElementEventMap[K]) => any
+  ): void;
   unlisten(type: string, listener: EventListenerOrEventListenerObject): void;
   emit(evtType: string, evtData: Object, shouldBubble?: boolean): void;
 }
