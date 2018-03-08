@@ -179,7 +179,7 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
+              {`<Chips choice>
   <Chips.Chip>
     <Chips.Text>Extra Small</Chips.Text>
   </Chips.Chip>
@@ -246,7 +246,7 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
+              {`<Chips filter>
   <Chips.Chip>
     <Chips.Text>Tops</Chips.Text>
     <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
