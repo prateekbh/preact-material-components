@@ -1,11 +1,11 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import { MDCTopAppBar } from "@material/top-app-bar";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import {MDCTopAppBar} from '@material/top-app-bar';
 class TopAppBar extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "top-app-bar";
-    this._mdcProps = ["short", "short-collapsed"];
+    this.componentName = 'top-app-bar';
+    this._mdcProps = ['short', 'short-collapsed'];
     this._onNav = this._onNav.bind(this);
   }
   _onNav(e) {
@@ -15,10 +15,10 @@ class TopAppBar extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = new MDCTopAppBar(this.control);
-    this.MDComponent.listen("MDCTopAppBar:nav", this._onNav);
+    this.MDComponent.listen('MDCTopAppBar:nav', this._onNav);
   }
   componentWillUnmount() {
-    this.MDComponent.unlisten("MDCTopAppBar:nav", this._onNav);
+    this.MDComponent.unlisten('MDCTopAppBar:nav', this._onNav);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   materialDom(props) {
@@ -33,7 +33,7 @@ class TopAppBar extends MaterialComponent {
 class TopAppBarRow extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "top-app-bar__row";
+    this.componentName = 'top-app-bar__row';
   }
 }
 
@@ -45,8 +45,8 @@ class TopAppBarRow extends MaterialComponent {
 class TopAppBarSection extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "top-app-bar__section";
-    this._mdcProps = ["align-start", "align-end"];
+    this.componentName = 'top-app-bar__section';
+    this._mdcProps = ['align-start', 'align-end'];
   }
   materialDom(props) {
     return <section {...props}>{props.children}</section>;
@@ -59,7 +59,7 @@ class TopAppBarSection extends MaterialComponent {
 class TopAppBarIcon extends MaterialComponent {
   constructor(props) {
     super();
-    this.componentName = "top-app-bar__icon";
+    this.componentName = 'top-app-bar__icon';
   }
   materialDom(props) {
     return (
@@ -76,7 +76,7 @@ class TopAppBarIcon extends MaterialComponent {
 class TopAppBarTitle extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "top-app-bar__title";
+    this.componentName = 'top-app-bar__title';
   }
   materialDom(props) {
     return <span {...props}>{props.children}</span>;

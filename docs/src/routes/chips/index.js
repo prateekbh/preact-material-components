@@ -17,15 +17,15 @@ export default class ButtonPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Chips",
+        component: 'Chips',
         props: [
           {
-            name: "choice",
-            description: "Makes chips selectable"
+            name: 'choice',
+            description: 'Makes chips selectable'
           },
           {
-            name: "filter",
-            description: "Makes chips multi-selectable"
+            name: 'filter',
+            description: 'Makes chips multi-selectable'
           }
         ]
       },
