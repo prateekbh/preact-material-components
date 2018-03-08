@@ -1,8 +1,8 @@
 import MaterialComponent from '../MaterialComponent';
-import { VNode, PreactHTMLAttributes } from 'preact';
+import {VNode, PreactHTMLAttributes} from 'preact';
 import Button from '../Button';
-import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
-import { Omit } from '../libs';
+import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
+import {Omit} from '../libs';
 
 declare interface IDialogProps extends JSX.HTMLAttributes {
   onAccept?: (e: Event) => void;
@@ -26,7 +26,8 @@ declare class Body extends MaterialComponent<IBodyProps, {}> {}
 
 declare class Footer extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-declare interface IFooterButtonProps extends Omit<JSX.HTMLAttributes, 'accept'> {
+declare interface IFooterButtonProps
+  extends Omit<JSX.HTMLAttributes, 'accept'> {
   accept?: boolean;
   cancel?: boolean;
 }

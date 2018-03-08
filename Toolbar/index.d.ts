@@ -1,5 +1,5 @@
 import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
+import {VNode} from 'preact';
 
 declare interface IToolbarProps extends JSX.HTMLAttributes {
   fixed?: boolean;
