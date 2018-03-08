@@ -1,15 +1,18 @@
 import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
-import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
+import {VNode} from 'preact';
+import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
 import List from '../List';
-import { Omit } from '../libs';
+import {Omit} from '../libs';
 
-declare interface ISelectProps extends Omit<JSX.HTMLAttributes, 'onChange' | 'disabled'> {
+declare interface ISelectProps
+  extends Omit<JSX.HTMLAttributes, 'onChange' | 'disabled'> {
   disabled?: boolean;
   box?: boolean;
   hintText?: string;
   selectedIndex?: number;
-  onChange?: (e: { selectedIndex: number, selectedOptions: NodeListOf<Element> }) => void;
+  onChange?: (
+    e: {selectedIndex: number; selectedOptions: NodeListOf<Element>}
+  ) => void;
 }
 
 export default class Select extends MaterialComponent<ISelectProps, {}> {
@@ -34,6 +37,6 @@ declare class MDCSelect extends MDCComponent<MDCSelectFoundation> {
   selectedOptions: NodeListOf<Element>;
   selectedIndex: number;
   disabled: boolean;
-  item(index: number): Element|null;
-  nameditem(key: string): Element|null;
+  item(index: number): Element | null;
+  nameditem(key: string): Element | null;
 }

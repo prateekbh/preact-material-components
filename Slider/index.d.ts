@@ -1,9 +1,13 @@
 import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
-import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
-import { Omit } from '../libs';
+import {VNode} from 'preact';
+import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
+import {Omit} from '../libs';
 
-declare interface ISliderProps extends Omit<JSX.HTMLAttributes, 'value' | 'min' | 'max' | 'step' | 'onInput' | 'onChange'> {
+declare interface ISliderProps
+  extends Omit<
+      JSX.HTMLAttributes,
+      'value' | 'min' | 'max' | 'step' | 'onInput' | 'onChange'
+    > {
   discrete?: boolean;
   value?: number;
   min?: number;

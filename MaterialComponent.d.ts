@@ -1,4 +1,4 @@
-import { Component, VNode } from 'preact';
+import {Component, VNode} from 'preact';
 
 declare interface IMaterialComponentProps {
   ripple?: boolean;
@@ -6,11 +6,14 @@ declare interface IMaterialComponentProps {
 
 /**
  * Base class for every Material component in this package
- * 
+ *
  * NOTE: every component should add a ref by the name of `control` to its root
  * dom for autoInit Properties
  */
-export default class MaterialComponent<PropsType, StateType> extends Component<PropsType & IMaterialComponentProps, StateType> {
+export default class MaterialComponent<PropsType, StateType> extends Component<
+  PropsType & IMaterialComponentProps,
+  StateType
+> {
   /** Attach the ripple effect */
   attachRipple(): void;
 
