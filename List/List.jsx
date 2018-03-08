@@ -124,7 +124,7 @@ class ListItemAvatar extends ListItemIcon {
 class ListDivider extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = 'list-divider';
+    this.componentName = "list-divider";
     this._mdcProps = ['inset'];
   }
   materialDom(props) {
