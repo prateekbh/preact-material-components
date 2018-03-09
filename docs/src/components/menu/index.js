@@ -68,7 +68,7 @@ export default class Menu extends Component {
         <Drawer.DrawerContent>
           {items.map(({icon, link, text}) => (
             <Drawer.DrawerItem href={link} onClick={this._onClick}>
-              <List.ItemIcon>{icon || 'code'}</List.ItemIcon>
+              <List.ItemGraphic>{icon || 'code'}</List.ItemGraphic>
               {text}
             </Drawer.DrawerItem>
           ))}
