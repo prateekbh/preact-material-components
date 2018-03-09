@@ -96,7 +96,7 @@ class TextFieldInput extends MaterialComponent {
     }
 
     return (
-      <div className={className} ref={control => (this.control = control)}>
+      <div className={className} ref={this.setControlRef}>
         {props.leadingIcon ? (
           <Icon className="mdc-text-field__icon">{props.leadingIcon}</Icon>
         ) : null}
