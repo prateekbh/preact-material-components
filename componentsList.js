@@ -24,7 +24,7 @@ const bundleMapping = {
   Switch: 'switch',
   TextField: 'textfield',
   Toolbar: 'toolbar',
-  TopAppBar: 'topappbar',
+  TopAppBar: 'top-app-bar',
   Theme: 'theme',
   Typography: 'typography'
 };

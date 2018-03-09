@@ -62,8 +62,9 @@ class TopAppBarIcon extends MaterialComponent {
     this.componentName = "top-app-bar__icon";
   }
   materialDom(props) {
+    const className = props.navigation ? "material-icons mdc-top-app-bar__navigation-icon" : "material-icons"
     return (
-      <a className="material-icons" {...props}>
+      <a className={className} {...props}>
         {props.children}
       </a>
     );

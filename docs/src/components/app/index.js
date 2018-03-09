@@ -35,6 +35,7 @@ import TabsPage from '../../routes/tabs';
 import TextfieldPage from '../../routes/textfield';
 import ThemePage from '../../routes/theme';
 import ToolbarPage from '../../routes/toolbar';
+import TopAppBar from '../../routes/top-app-bar';
 
 // Components
 import Menu from '../menu';
@@ -181,6 +182,11 @@ export default class Home extends Component {
         text: 'Toolbar',
         link: '/component/toolbar',
         component: ToolbarPage
+      },
+      {
+        text: 'TopAppBar',
+        link: '/component/top-app-bar',
+        component: TopAppBar
       }
     ];
     this._handleRoute = this._handleRoute.bind(this);
