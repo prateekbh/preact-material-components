@@ -6,8 +6,8 @@ import {MDCChip, MDCChipSet} from '@material/chips';
 class ChipSet extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "chip-set";
-    this._mdcProps = ["choice", "filter"];
+    this.componentName = 'chip-set';
+    this._mdcProps = ['choice', 'filter'];
   }
 
   componentDidMount() {

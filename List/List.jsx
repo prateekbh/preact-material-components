@@ -1,6 +1,6 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import Icon from "../Icon";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import Icon from '../Icon';
 
 /**
  * @prop dense = false
@@ -10,8 +10,8 @@ import Icon from "../Icon";
 class List extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list";
-    this._mdcProps = ["dense", "two-line", "avatar-list"];
+    this.componentName = 'list';
+    this._mdcProps = ['dense', 'two-line', 'avatar-list'];
   }
   materialDom(props) {
     if (props.interactive) {
@@ -64,7 +64,7 @@ class LinkItem extends MaterialComponent {
 class ListItemGraphic extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-item__graphic";
+    this.componentName = 'list-item__graphic';
   }
   materialDom(props) {
     return (
@@ -78,7 +78,7 @@ class ListItemGraphic extends MaterialComponent {
 class ListItemMeta extends ListItemGraphic {
   constructor() {
     super();
-    this.componentName = "list-item__meta";
+    this.componentName = 'list-item__meta';
   }
 }
 
@@ -124,14 +124,14 @@ class ListSecondaryText extends ListTextContainer {
 class ListGroup extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-group";
+    this.componentName = 'list-group';
   }
 }
 
 class ListGroupHeader extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "list-group__subheader";
+    this.componentName = 'list-group__subheader';
   }
   materialDom(props) {
     return (

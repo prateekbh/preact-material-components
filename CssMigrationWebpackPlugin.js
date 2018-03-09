@@ -57,7 +57,7 @@ class CssMigrationWebpackPlugin {
       if (isDirectory(source)) {
         return fs
           .readdirSync(source)
-          .filter(fd => isDirectory(path.join(source, fd)) && fd !== "dist");
+          .filter(fd => isDirectory(path.join(source, fd)) && fd !== 'dist');
       }
       return [];
     };
@@ -78,7 +78,7 @@ class CssMigrationWebpackPlugin {
     //create new directories in dest and copy over files
     subDirectoriesWithScss.forEach(subdir => {
       const destSubFolder = path.join(destFolder, subdir);
-      const srcSubPath = path.join(sourcePath, subdir, "*.scss");
+      const srcSubPath = path.join(sourcePath, subdir, '*.scss');
       if (!fs.existsSync(destSubFolder)) fs.mkdirSync(destSubFolder);
       globCopy.sync(srcSubPath, destSubFolder);
     });

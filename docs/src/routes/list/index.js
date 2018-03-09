@@ -37,15 +37,15 @@ export default class ListPage extends Component {
         props: []
       },
       {
-        component: "List.LinkItem",
+        component: 'List.LinkItem',
         props: []
       },
       {
-        component: "List.ItemGraphic",
+        component: 'List.ItemGraphic',
         props: []
       },
       {
-        component: "List.ItemMeta",
+        component: 'List.ItemMeta',
         props: []
       },
       {
