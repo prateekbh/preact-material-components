@@ -38,7 +38,7 @@ export default class TopAppBarPage extends Component {
           {
             name: 'align-end',
             description: 'Aligns the section to end of the toolbar row'
-          },
+          }
         ]
       },
       {
@@ -53,7 +53,7 @@ export default class TopAppBarPage extends Component {
     this.eventsTable = [
       {
         name: 'onNav',
-        description: "Emits when the navigation icon is clicked."
+        description: 'Emits when the navigation icon is clicked.'
       }
     ];
   }
