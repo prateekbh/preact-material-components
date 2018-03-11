@@ -17,6 +17,10 @@ runTests.on('close', code => {
     return;
   }
 
+  if (process.env.TRAVIS_PULL_REQUEST === 'false') {
+    process.exit(-1);
+  }
+
   const archivePath = __dirname + '/failed-pictures.zip';
   const output = fs.createWriteStream(archivePath);
   const archive = archiver('zip', {
@@ -26,19 +30,22 @@ runTests.on('close', code => {
   output.on('close', () => {
     request.post(
       {
-        url: 'https://file.io',
+        url: `https://artipost.io/travis/artifacts/${process.env.TRAVIS_BUILD_ID}`,
         formData: {
-          file: fs.createReadStream(archivePath)
+          file: {
+            value: fs.createReadStream(archivePath),
+            options: {
+              filename: 'failed-pictures.zip',
+              contentType: 'application/zip'
+            }
+          },
+          comment: 'Failed pictures: [failed-pictures.zip]'
         }
       },
       (err, httpResponse, body) => {
         if (err) {
           console.error("Couldn't upload pictures");
-          process.exit(-1);
         }
-
-        const result = JSON.parse(body);
-        console.log(`Failed pictures: ${result.link}`);
         process.exit(-1);
       }
     );
