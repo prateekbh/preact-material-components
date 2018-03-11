@@ -30,7 +30,9 @@ runTests.on('close', code => {
   output.on('close', () => {
     request.post(
       {
-        url: `https://artipost.io/travis/artifacts/${process.env.TRAVIS_BUILD_ID}`,
+        url: `https://artipost.io/travis/artifacts/${
+          process.env.TRAVIS_BUILD_ID
+        }`,
         formData: {
           file: {
             value: fs.createReadStream(archivePath),
