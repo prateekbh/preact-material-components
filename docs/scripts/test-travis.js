@@ -41,7 +41,9 @@ runTests.on('close', code => {
               contentType: 'application/zip'
             }
           },
-          comment: 'Failed pictures: [failed-pictures.zip]'
+          comment: `Failed pictures (${
+            shell.ls('**/*.png').length
+          }): [failed-pictures.zip]`
         }
       },
       (err, httpResponse, body) => {
