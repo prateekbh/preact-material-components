@@ -14,7 +14,13 @@ runTests.on('error', console.error);
 
 runTests.on('close', code => {
   if (!code) {
+    console.log('Tests succeeded');
     return;
+  }
+
+  if (process.env.TRAVIS_PULL_REQUEST === 'false') {
+    console.log("Not uploading pictures because it's not a pull request");
+    process.exit(-1);
   }
 
   const archivePath = __dirname + '/failed-pictures.zip';
@@ -24,26 +30,37 @@ runTests.on('close', code => {
   });
 
   output.on('close', () => {
+    console.log('Archive done, uploading...');
     request.post(
       {
-        url: 'https://file.io',
+        url: `https://artipost.io/travis/artifacts/${
+          process.env.TRAVIS_BUILD_ID
+        }`,
         formData: {
-          file: fs.createReadStream(archivePath)
+          file: {
+            value: fs.createReadStream(archivePath),
+            options: {
+              filename: 'failed-pictures.zip',
+              contentType: 'application/zip'
+            }
+          },
+          comment: `Failed pictures (${
+            shell.ls('**/*.png').length
+          }): [failed-pictures.zip]`
         }
       },
       (err, httpResponse, body) => {
-        if (err) {
-          console.error("Couldn't upload pictures");
-          process.exit(-1);
-        }
-
-        const result = JSON.parse(body);
-        console.log(`Failed pictures: ${result.link}`);
+        console.error(
+          err
+            ? `Couldn't upload pictures: ${err}`
+            : 'Pictures uploaded successfully'
+        );
         process.exit(-1);
       }
     );
   });
 
+  console.log('Creating archive');
   shell.cd('tests/generated');
   archive.pipe(output);
   archive.glob('**/*.png');
