@@ -36,4 +36,10 @@ branches:
 
 sudo: required
 addons:
- chrome: stable
+  chrome: stable
+
+notifications:
+  webhooks:
+    urls:
+      - https://artipost.io/travis/hook
+    on_start: always
