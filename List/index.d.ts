@@ -15,8 +15,8 @@ export default class List extends MaterialComponent<IListProps, {}> {
   static TextContainer: typeof TextContainer;
   static PrimaryText: typeof PrimaryText;
   static SecondaryText: typeof SecondaryText;
-  static Group: typeof SecondaryText;
-  static GroupHeader: typeof SecondaryText;
+  static Group: typeof Group;
+  static GroupHeader: typeof GroupHeader;
 }
 
 declare class Item extends MaterialComponent<JSX.HTMLAttributes, {}> {}

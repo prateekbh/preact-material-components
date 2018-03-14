@@ -21,11 +21,8 @@ declare interface ISectionProps extends JSX.HTMLAttributes {
 declare class Section extends MaterialComponent<ISectionProps, {}> {}
 
 declare interface IIconProps extends JSX.HTMLAttributes {
-  menu?: boolean;
+  navigation?: boolean;
 }
 declare class Icon extends MaterialComponent<IIconProps, {}> {}
 
-declare interface ITitleProps extends JSX.HTMLAttributes {
-  title?: string;
-}
-declare class Title extends MaterialComponent<ITitleProps, {}> {}
+declare class Title extends MaterialComponent<JSX.HTMLAttributes, {}> {}
