@@ -4,7 +4,7 @@ import {VNode} from 'preact';
 declare interface IListProps extends JSX.HTMLAttributes {
   dense?: boolean;
   'two-line'?: boolean;
-  avatar?: boolean;
+  'avatar-list'?: boolean;
 }
 export default class List extends MaterialComponent<IListProps, {}> {
   static Item: typeof Item;

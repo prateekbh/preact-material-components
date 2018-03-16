@@ -19,7 +19,7 @@ class TopAppBar extends MaterialComponent {
   }
   componentWillUnmount() {
     this.MDComponent.unlisten('MDCTopAppBar:nav', this._onNav);
-    this.MDComponent.destroy && this.MDComponent.destroy();
+    this.MDComponent.destroy();
   }
   materialDom(props) {
     return (
