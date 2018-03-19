@@ -89,7 +89,7 @@
     "pngjs": "^3.3.2",
     "preact": "^8.2.7",
     "puppeteer": "^1.1.1",
-    "webpack": "^4.1.1",
+    "webpack": "^3.10.0",
     "webpack-shell-plugin": "^0.5.0"
   }
 }
