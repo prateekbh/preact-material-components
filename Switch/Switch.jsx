@@ -1,5 +1,5 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
 
 /**
  * @prop disabled = false
@@ -7,11 +7,11 @@ import MaterialComponent from "../MaterialComponent";
 export default class Switch extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "switch";
-    this._mdcProps = ["disabled"];
+    this.componentName = 'switch';
+    this._mdcProps = ['disabled'];
   }
   materialDom(allprops) {
-    const { className, ...props } = allprops;
+    const {className, ...props} = allprops;
     return (
       <div className={className}>
         <input

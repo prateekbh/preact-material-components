@@ -22,8 +22,8 @@ import {
   Tabs,
   TextField,
   Toolbar
-} from "../";
-import { Component, h } from "preact";
+} from '../';
+import {Component, h} from 'preact';
 
 export default class Home extends Component {
   constructor() {
@@ -39,12 +39,12 @@ export default class Home extends Component {
   }
   render({}, state) {
     const toggleOnIcon = {
-      content: "favorite",
-      label: "Remove From Favorites"
+      content: 'favorite',
+      label: 'Remove From Favorites'
     };
     const toggleOffIcon = {
-      content: "favorite_border",
-      label: "Add to Favorites"
+      content: 'favorite_border',
+      label: 'Add to Favorites'
     };
     return (
       <div>
@@ -56,8 +56,7 @@ export default class Home extends Component {
                   this.setState({
                     drawerOpen: !this.state.drawerOpen
                   });
-                }}
-              >
+                }}>
                 menu
               </Toolbar.Icon>
               <Toolbar.Title>Hi</Toolbar.Title>
@@ -71,15 +70,14 @@ export default class Home extends Component {
           }}
           open={this.state.drawerOpen}
           onOpen={() => {
-            console.log("open");
+            console.log('open');
           }}
           onClose={() => {
             this.setState({
               drawerOpen: false
             });
-            console.log("Closed");
-          }}
-        >
+            console.log('Closed');
+          }}>
           <Drawer.DrawerHeader>Hello Header</Drawer.DrawerHeader>
           <Drawer.DrawerContent>
             <Drawer.DrawerItem>Item1</Drawer.DrawerItem>
@@ -93,8 +91,7 @@ export default class Home extends Component {
           ripple
           onClick={e => {
             this.drawer.MDComponent.open = true;
-          }}
-        >
+          }}>
           hi
         </Button>
 
@@ -105,8 +102,7 @@ export default class Home extends Component {
           onClick={e => {
             console.log(this.dlg.MDComponent);
             this.dlg.MDComponent.show();
-          }}
-        >
+          }}>
           <Button.Icon>favorite_border</Button.Icon>
           Open Dialog
         </Button>
@@ -120,8 +116,7 @@ export default class Home extends Component {
               this.setState({
                 fabExited: true
               });
-            }}
-          >
+            }}>
             <Fab.Icon>share</Fab.Icon>
           </Fab>
           <Fab exited={this.state.fabExited} ripple={true}>
@@ -137,8 +132,7 @@ export default class Home extends Component {
             aria-pressed="false"
             aria-label="Add to favorites"
             data-toggle-on={toggleOnIcon}
-            data-toggle-off={toggleOffIcon}
-          >
+            data-toggle-off={toggleOffIcon}>
             favorite_border
           </IconToggle>
         </div>
@@ -156,14 +150,13 @@ export default class Home extends Component {
                 this.setState({
                   checkIt: true
                 });
-              }}
-            >
+              }}>
               Check
             </Button>
             <Checkbox
               checked={this.state.checkIt || false}
               onChange={e => {
-                console.log("changed", e);
+                console.log('changed', e);
               }}
               ref={inp => {
                 this.inp = inp;
@@ -179,7 +172,7 @@ export default class Home extends Component {
         </div>
 
         <div className="mdc-form-field">
-          <Radio id="rd" ref={radio => (this.radio = radio)} />{" "}
+          <Radio id="rd" ref={radio => (this.radio = radio)} />{' '}
           <label for="rd">Radio Box</label>
         </div>
 
@@ -189,7 +182,7 @@ export default class Home extends Component {
             name="rbox"
             checked={true}
             ref={radio => (this.radio = radio)}
-          />{" "}
+          />{' '}
           <label for="rd1">Radio Box2</label>
         </div>
 
@@ -199,7 +192,7 @@ export default class Home extends Component {
             name="rbox"
             checked={true}
             ref={radio => (this.radio = radio)}
-          />{" "}
+          />{' '}
           <label for="rd2">Radio Box3</label>
         </div>
 
@@ -253,8 +246,7 @@ export default class Home extends Component {
         <Dialog
           ref={dlg => {
             this.dlg = dlg;
-          }}
-        >
+          }}>
           <Dialog.Header>Hello Dialog</Dialog.Header>
           <Dialog.Body>What is this Dialog stuff??</Dialog.Body>
           <Dialog.Footer>
@@ -268,13 +260,12 @@ export default class Home extends Component {
             this.setState({
               progress: 0.5
             });
-          }}
-        >
+          }}>
           Set half progress
         </Button>
         <LinearProgress progress={this.state.progress} accent={true} />
 
-        <Button raised onClick={() => this.setState({ chosenOption: -1 })}>
+        <Button raised onClick={() => this.setState({chosenOption: -1})}>
           Clear Select
         </Button>
         <div>Selected index: {state.chosenOption}</div>
@@ -287,8 +278,7 @@ export default class Home extends Component {
               this.setState({
                 chosenOption: e.selectedIndex
               });
-            }}
-          >
+            }}>
             <Select.Item>Bread, Cereal, Rice, and Pasta</Select.Item>
             <Select.Item disabled>Vegetables</Select.Item>
             <Select.Item>Fruit</Select.Item>
@@ -315,8 +305,7 @@ export default class Home extends Component {
         <div>
           <Tabs
             activeTabIndex={this.state.activeTabIndex}
-            indicator-accent={true}
-          >
+            indicator-accent={true}>
             <Tabs.Tab>tab1</Tabs.Tab>
             <Tabs.Tab>tab2</Tabs.Tab>
             <Tabs.Tab>tab3</Tabs.Tab>
@@ -326,8 +315,7 @@ export default class Home extends Component {
               this.setState({
                 activeTabIndex: this.state.activeTabIndex + 1
               });
-            }}
-          >
+            }}>
             Increase index
           </Button>
         </div>
@@ -400,8 +388,7 @@ export default class Home extends Component {
               this.setState({
                 menuOpened: true
               });
-            }}
-          >
+            }}>
             Click for menu
           </Button>
           <Menu
@@ -410,8 +397,7 @@ export default class Home extends Component {
               this.setState({
                 menuOpened: false
               });
-            }}
-          >
+            }}>
             <Menu.Item>Hello1</Menu.Item>
             <Menu.Item>Hello2</Menu.Item>
             <Menu.Item>Hello3</Menu.Item>
@@ -424,8 +410,8 @@ export default class Home extends Component {
           min={0}
           max={100}
           value={1}
-          onChange={v => console.log("change:", v)}
-          onInput={v => console.log("input:", v)}
+          onChange={v => console.log('change:', v)}
+          onInput={v => console.log('input:', v)}
         />
 
         <div>
@@ -455,8 +441,7 @@ export default class Home extends Component {
               className="material-icons"
               tabindex="0"
               role="button"
-              title="More options"
-            >
+              title="More options">
               more_vert
             </Chips.Icon>
           </Chips.Chip>
@@ -470,8 +455,7 @@ export default class Home extends Component {
               className="material-icons"
               tabindex="0"
               role="button"
-              title="More options"
-            >
+              title="More options">
               more_vert
             </Chips.Icon>
           </Chips.Chip>

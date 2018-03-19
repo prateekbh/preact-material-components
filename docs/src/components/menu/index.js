@@ -1,11 +1,11 @@
 // Dependencies
-import { h, Component } from "preact";
-import { route } from "preact-router";
+import {h, Component} from 'preact';
+import {route} from 'preact-router';
 
 // Material Components
-import Drawer from "../../../../Drawer";
-import List from "../../../../List";
-const json = require("../../../../package.json");
+import Drawer from '../../../../Drawer';
+import List from '../../../../List';
+const json = require('../../../../package.json');
 
 // Class
 export default class Menu extends Component {
@@ -18,8 +18,8 @@ export default class Menu extends Component {
     // only valid elements
     if (!node || !node.getAttribute) return;
 
-    let href = node.getAttribute("href"),
-      target = node.getAttribute("target");
+    let href = node.getAttribute('href'),
+      target = node.getAttribute('target');
 
     // ignore links with targets and non-path URLs
     if (!href || !href.match(/^\//g) || (target && !target.match(/^_?self$/i)))
@@ -59,16 +59,16 @@ export default class Menu extends Component {
     this.drawer.MDComponent.open = true;
   }
 
-  render({ items }) {
+  render({items}) {
     return (
       <Drawer.TemporaryDrawer ref={drawer => (this.drawer = drawer)}>
         <Drawer.DrawerHeader className="mdc-theme--primary-bg">
-          Components @ (v{json["version"]})
+          Components @ (v{json['version']})
         </Drawer.DrawerHeader>
         <Drawer.DrawerContent>
-          {items.map(({ icon, link, text }) => (
+          {items.map(({icon, link, text}) => (
             <Drawer.DrawerItem href={link} onClick={this._onClick}>
-              <List.ItemIcon>{icon || "code"}</List.ItemIcon>
+              <List.ItemGraphic>{icon || 'code'}</List.ItemGraphic>
               {text}
             </Drawer.DrawerItem>
           ))}

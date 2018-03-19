@@ -1,15 +1,15 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Chips from "../../../../Chips";
+import Chips from '../../../../Chips';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class ButtonPage extends Component {
@@ -17,28 +17,37 @@ export default class ButtonPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Chips",
-        props: []
-      },
-      {
-        component: "Chips.Chip",
-        props: []
-      },
-      {
-        component: "Chips.Icon",
+        component: 'Chips',
         props: [
           {
-            name: "leading",
+            name: 'choice',
+            description: 'Makes chips selectable'
+          },
+          {
+            name: 'filter',
+            description: 'Makes chips multi-selectable'
+          }
+        ]
+      },
+      {
+        component: 'Chips.Chip',
+        props: []
+      },
+      {
+        component: 'Chips.Icon',
+        props: [
+          {
+            name: 'leading',
             description: "Optional. Indicates that it's a leading icon"
           },
           {
-            name: "trailing",
+            name: 'trailing',
             description: "Optional. Indicates that it's a trailing icon"
           }
         ]
       },
       {
-        component: "Chips.Text",
+        component: 'Chips.Text',
         props: []
       }
     ];
@@ -58,7 +67,7 @@ export default class ButtonPage extends Component {
           This component encapsulates <span className="strong">mdc-chips</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -112,8 +121,7 @@ export default class ButtonPage extends Component {
                 trailing
                 tabindex="0"
                 role="button"
-                title="More options"
-              >
+                title="More options">
                 more_vert
               </Chips.Icon>
             </Chips.Chip>
@@ -127,8 +135,7 @@ export default class ButtonPage extends Component {
                 trailing
                 tabindex="0"
                 role="button"
-                title="More options"
-              >
+                title="More options">
                 more_vert
               </Chips.Icon>
             </Chips.Chip>
@@ -153,7 +160,7 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Choice Chips</div>
         <div>
-          <Chips>
+          <Chips choice>
             <Chips.Chip>
               <Chips.Text>Extra Small</Chips.Text>
             </Chips.Chip>
@@ -172,7 +179,7 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
+              {`<Chips choice>
   <Chips.Chip>
     <Chips.Text>Extra Small</Chips.Text>
   </Chips.Chip>
@@ -195,15 +202,14 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Filter Chips</div>
         <div>
-          <Chips>
+          <Chips filter>
             <Chips.Chip>
               <Chips.Text>Tops</Chips.Text>
               <Chips.Icon
                 className="material-icons"
                 trailing
                 tabindex="0"
-                role="button"
-              >
+                role="button">
                 cancel
               </Chips.Icon>
             </Chips.Chip>
@@ -213,8 +219,7 @@ export default class ButtonPage extends Component {
                 className="material-icons"
                 trailing
                 tabindex="0"
-                role="button"
-              >
+                role="button">
                 cancel
               </Chips.Icon>
             </Chips.Chip>
@@ -224,8 +229,7 @@ export default class ButtonPage extends Component {
                 className="material-icons"
                 trailing
                 tabindex="0"
-                role="button"
-              >
+                role="button">
                 cancel
               </Chips.Icon>
             </Chips.Chip>
@@ -235,15 +239,14 @@ export default class ButtonPage extends Component {
                 className="material-icons"
                 trailing
                 tabindex="0"
-                role="button"
-              >
+                role="button">
                 cancel
               </Chips.Icon>
             </Chips.Chip>
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
+              {`<Chips filter>
   <Chips.Chip>
     <Chips.Text>Tops</Chips.Text>
     <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>

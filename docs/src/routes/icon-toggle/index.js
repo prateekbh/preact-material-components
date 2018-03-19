@@ -1,15 +1,15 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import IconToggle from "../../../../IconToggle";
+import IconToggle from '../../../../IconToggle';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class IconTogglePage extends Component {
@@ -17,19 +17,19 @@ export default class IconTogglePage extends Component {
     super();
     this.propsTable = [
       {
-        component: "IconToggle",
+        component: 'IconToggle',
         props: [
           {
-            name: "disabled",
-            description: "Is the icon disabled"
+            name: 'disabled',
+            description: 'Is the icon disabled'
           },
           {
-            name: "data-toggle-on",
-            description: "JSON object for toggle on icon"
+            name: 'data-toggle-on',
+            description: 'JSON object for toggle on icon'
           },
           {
-            name: "data-toggle-off",
-            description: "JSON object for toggle off icon"
+            name: 'data-toggle-off',
+            description: 'JSON object for toggle off icon'
           }
         ]
       }
@@ -37,12 +37,12 @@ export default class IconTogglePage extends Component {
   }
   render() {
     const toggleOnIcon = {
-      content: "favorite",
-      label: "Remove From Favorites"
+      content: 'favorite',
+      label: 'Remove From Favorites'
     };
     const toggleOffIcon = {
-      content: "favorite_border",
-      label: "Add to Favorites"
+      content: 'favorite_border',
+      label: 'Add to Favorites'
     };
     return (
       <div>
@@ -55,11 +55,11 @@ export default class IconTogglePage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates{" "}
+          This component encapsulates{' '}
           <span className="strong">mdc-icon-toggle</span>, you can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-icon-toggle">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -71,8 +71,7 @@ export default class IconTogglePage extends Component {
           aria-pressed="false"
           aria-label="Add to favorites"
           data-toggle-on={toggleOnIcon}
-          data-toggle-off={toggleOffIcon}
-        >
+          data-toggle-off={toggleOffIcon}>
           favorite_border
         </IconToggle>
       </div>

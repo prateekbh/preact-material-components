@@ -1,67 +1,75 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import TextField from "../../../../TextField";
+import TextField from '../../../../TextField';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
+import defaultSample from './default-sample.txt';
+import controlledSample from './controlled-sample.txt';
+import denseSample from './dense-sample.txt';
+import disabledSample from './disabled-sample.txt';
+import helpTextSample from './help-text-sample.txt';
+import passwordSample from './password-sample.txt';
+import persistentHelpTextSample from './persistent-help-text-sample.txt';
+import textareaSample from './textarea-sample.txt';
 
 // Class
 export default class TextFieldPage extends Component {
   constructor() {
     super();
     this.state = {
-      value: ""
+      value: ''
     };
     this.propsTable = [
       {
-        component: "TextField",
+        component: 'TextField',
         props: [
           {
-            name: "fullwidth",
-            description: "Makes the textfield full width."
+            name: 'fullwidth',
+            description: 'Makes the textfield full width.'
           },
           {
-            name: "textarea",
-            description: "Toggles between TextArea and TextField."
+            name: 'textarea',
+            description: 'Toggles between TextArea and TextField.'
           },
           {
-            name: "type",
+            name: 'type',
             description: "Type of HTML textfield (defaults to 'text')",
-            value: "text, password, date, time, etc."
+            value: 'text, password, date, time, etc.'
           },
           {
-            name: "dense",
-            description: "Use a dense font"
+            name: 'dense',
+            description: 'Use a dense font'
           },
           {
-            name: "box",
+            name: 'box',
             description:
-              "Enclose label and input in a transparent rectangular fill"
+              'Enclose label and input in a transparent rectangular fill'
           },
           {
-            name: "disabled",
-            description: "Disables the input"
+            name: 'disabled',
+            description: 'Disables the input'
           },
           {
-            name: "helperText",
+            name: 'helperText',
             description:
-              "Include an help text that is useful for providing supplemental information to users, as well for validation messages",
-            value: "help text"
+              'Include an help text that is useful for providing supplemental information to users, as well for validation messages',
+            value: 'help text'
           },
           {
-            name: "helperTextPersistent",
-            description: "Makes the help text always visible"
+            name: 'helperTextPersistent',
+            description: 'Makes the help text always visible'
           },
           {
-            name: "helperTextValidationMsg",
+            name: 'helperTextValidationMsg',
             description:
-              "Provide styles for using the help text as a validation message"
+              'Provide styles for using the help text as a validation message'
           }
         ]
       }
@@ -77,16 +85,16 @@ export default class TextFieldPage extends Component {
         </CodeBlock>
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates{" "}
+          This component encapsulates{' '}
           <span className="strong">mdc-text-field</span>. You can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-text-field">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
         <div className="mdc-typography--display1">Demo</div>
-        <div className="mdc-typography--headline">Default</div>
+        <div className="mdc-typography--title">Default</div>
         <TextField
           label="Your name"
           onKeyUp={e => {
@@ -94,33 +102,55 @@ export default class TextFieldPage extends Component {
               name: e.target.value
             });
           }}
-        />{" "}
+        />{' '}
         Hi - {this.state.name}
-        <div className="mdc-typography--headline">Textarea</div>
+        <CodeBlock>
+          <code class="lang-html">{defaultSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Textarea</div>
         <TextField textarea={true} label="Textarea tag" />
-        <div className="mdc-typography--headline">Password</div>
+        <CodeBlock>
+          <code class="lang-html">{textareaSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Password</div>
         <TextField type="password" label="Enter a password" />
-        <div className="mdc-typography--headline">With help text</div>
-        <TextField label="Help text" helptext="This is the helptext" />
-        <div className="mdc-typography--headline">
-          With persistent help text
-        </div>
+        <CodeBlock>
+          <code class="lang-html">{passwordSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">With help text</div>
+        <TextField label="Help text" helperText="This is the helptext" />
+        <CodeBlock>
+          <code class="lang-html">{helpTextSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">With persistent help text</div>
         <TextField
           label="Persistent help text"
-          helptext="This is the helptext"
-          helptextPersistent
+          helperText="This is the helptext"
+          helperTextPersistent
         />
-        <div className="mdc-typography--headline">Dense</div>
+        <CodeBlock>
+          <code class="lang-html">{persistentHelpTextSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Dense</div>
         <TextField label="Dense" dense />
-        <div className="mdc-typography--headline">Disabled</div>
+        <CodeBlock>
+          <code class="lang-html">{denseSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Disabled</div>
         <TextField label="Disabled" disabled />
-        <div className="mdc-typography--headline">Link state</div>
+        <CodeBlock>
+          <code class="lang-html">{disabledSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Controlled</div>
         <TextField
           label="State"
           value={this.state.value}
-          onInput={e => this.setState({ value: e.target.value })}
+          onInput={e => this.setState({value: e.target.value})}
         />
         State: {this.state.value}
+        <CodeBlock>
+          <code class="lang-html">{controlledSample}</code>
+        </CodeBlock>
       </div>
     );
   }

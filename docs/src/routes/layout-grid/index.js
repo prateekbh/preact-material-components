@@ -1,18 +1,18 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import LayoutGrid from "../../../../LayoutGrid";
+import LayoutGrid from '../../../../LayoutGrid';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Styles
-import "./style";
+import './style';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class LayoutGridPage extends Component {
@@ -20,45 +20,45 @@ export default class LayoutGridPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "LayoutGrid",
+        component: 'LayoutGrid',
         props: []
       },
       {
-        component: "LayoutGrid.Inner",
+        component: 'LayoutGrid.Inner',
         props: []
       },
       {
-        component: "LayoutGrid.Cell",
+        component: 'LayoutGrid.Cell',
         props: [
           {
-            name: "cols",
-            description: "Column width of cell (general).",
-            value: "[1..12]"
+            name: 'cols',
+            description: 'Column width of cell (general).',
+            value: '[1..12]'
           },
           {
-            name: "desktopCols",
-            description: "Column width of cell (desktop breakpoint).",
-            value: "[1..12]"
+            name: 'desktopCols',
+            description: 'Column width of cell (desktop breakpoint).',
+            value: '[1..12]'
           },
           {
-            name: "tabletCols",
-            description: "Column width of cell (tablet breakpoint).",
-            value: "[1..8]"
+            name: 'tabletCols',
+            description: 'Column width of cell (tablet breakpoint).',
+            value: '[1..8]'
           },
           {
-            name: "phoneCols",
-            description: "Column width of cell (phone breakpoint).",
-            value: "[1..4]"
+            name: 'phoneCols',
+            description: 'Column width of cell (phone breakpoint).',
+            value: '[1..4]'
           },
           {
-            name: "order",
-            description: "Allows reordering of items in grid.",
-            value: "[1..12]"
+            name: 'order',
+            description: 'Allows reordering of items in grid.',
+            value: '[1..12]'
           },
           {
-            name: "align",
-            description: "Vertical alignment of cell within row.",
-            value: "[top|middle|bottom]"
+            name: 'align',
+            description: 'Vertical alignment of cell within row.',
+            value: '[top|middle|bottom]'
           }
         ]
       }
@@ -76,11 +76,11 @@ export default class LayoutGridPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates{" "}
+          This component encapsulates{' '}
           <span className="strong">mdc-layout-grid</span>. You can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-layout-grid">
-            {" "}
+            {' '}
             here
           </a>.
         </div>
@@ -159,8 +159,7 @@ export default class LayoutGridPage extends Component {
               phoneCols="1"
               tabletCols="2"
               cols="3"
-              align="bottom"
-            >
+              align="bottom">
               bottom
             </LayoutGrid.Cell>
             <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" align="top">
@@ -170,8 +169,7 @@ export default class LayoutGridPage extends Component {
               cols="3"
               tabletCols="2"
               phoneCols="1"
-              align="middle"
-            >
+              align="middle">
               middle
             </LayoutGrid.Cell>
           </LayoutGrid.Inner>

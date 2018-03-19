@@ -1,18 +1,18 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Radio from "../../../../Radio";
-import Formfield from "../../../../FormField";
+import Radio from '../../../../Radio';
+import Formfield from '../../../../FormField';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Samples
-import invidualComponentSample from "./invidual-component-sample.txt";
-import jsSample from "./js-sample.txt";
-import cssSample from "./css-sample.txt";
+import invidualComponentSample from './invidual-component-sample.txt';
+import jsSample from './js-sample.txt';
+import cssSample from './css-sample.txt';
 
 // Class
 export default class FormFieldPage extends Component {
@@ -20,7 +20,7 @@ export default class FormFieldPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Formfield",
+        component: 'Formfield',
         props: []
       }
     ];
@@ -33,8 +33,8 @@ export default class FormFieldPage extends Component {
           <div>
             <a href="https://github.com/prateekbh/preact-material-components">
               <span className="grey">preact-material-components</span>
-            </a>{" "}
-            is a thin opinionless wrapper around{" "}
+            </a>{' '}
+            is a thin opinionless wrapper around{' '}
             <a href="https://github.com/material-components/material-components-web">
               material-components-web
             </a>. Use these components to add material components to your web
@@ -43,7 +43,7 @@ export default class FormFieldPage extends Component {
           </div>
           <div className="mdc-typography--display1">How to use</div>
           <div>
-            All the components of{" "}
+            All the components of{' '}
             <span className="grey">preact-material-components</span> are built
             to work independently. So there are couple of ways to use them.
           </div>

@@ -6,13 +6,12 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "build:prod": "preact build --template template.html && npm run copyAssets",
-    "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
+    "copyAssets":
+      "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "npm run prettier && npm run build:prod && mocha ./tests/visdiff.js --timeout 15000",
-    "test:travis": "node ./scripts/test-travis.js",
-    "prettier": "prettier -l --print-width 80 \"src/**/*.js\"",
-    "prettier:write": "prettier --write --print-width 80 \"src/**/*.js\""
+    "test": "npm run build:prod && mocha ./tests/visdiff.js --timeout 15000",
+    "test:travis": "node ./scripts/test-travis.js"
   },
   "repository": {
     "type": "git",
@@ -40,14 +39,11 @@
     "classnames": "^2.2.5",
     "cpx": "^1.5.0",
     "eslint": "^4.6.1",
-    "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-prettier": "^2.2.0",
     "highlight.js": "^9.12.0",
     "if-env": "^1.0.0",
     "mocha": "^5.0.1",
     "node-sass": "^4.5.3",
     "preact-cli": "^2.0.2",
-    "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "serve": "^6.5.1",

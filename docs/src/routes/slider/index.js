@@ -1,16 +1,16 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Slider from "../../../../Slider";
+import Slider from '../../../../Slider';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
-import EventsTable from "../../components/events-table";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
+import EventsTable from '../../components/events-table';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class SliderPage extends Component {
@@ -18,49 +18,49 @@ export default class SliderPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Slider",
+        component: 'Slider',
         props: [
           {
-            name: "disabled",
-            description: "Tells if the slider is disabled."
+            name: 'disabled',
+            description: 'Tells if the slider is disabled.'
           },
           {
-            name: "min",
-            value: "number",
-            description: "Tells minimum value of the slider."
+            name: 'min',
+            value: 'number',
+            description: 'Tells minimum value of the slider.'
           },
           {
-            name: "max",
-            value: "number",
-            description: "Tells maximum value of the slider."
+            name: 'max',
+            value: 'number',
+            description: 'Tells maximum value of the slider.'
           },
           {
-            name: "step",
-            value: "number",
-            description: "Tells step/jump of the slider."
+            name: 'step',
+            value: 'number',
+            description: 'Tells step/jump of the slider.'
           },
           {
-            name: "value",
-            value: "number",
-            description: "Tells current value of the slider."
+            name: 'value',
+            value: 'number',
+            description: 'Tells current value of the slider.'
           },
           {
-            name: "discrete",
-            description: "Tells if the slider is discrete."
+            name: 'discrete',
+            description: 'Tells if the slider is discrete.'
           }
         ]
       }
     ];
     this.eventsTable = [
       {
-        name: "onInput",
+        name: 'onInput',
         description:
-          "Fired when a user is dragging the slider or changing the value using the arrow keys."
+          'Fired when a user is dragging the slider or changing the value using the arrow keys.'
       },
       {
-        name: "onChange",
+        name: 'onChange',
         description:
-          "Fired when a user stops dragging the slider or changes the value using the arrow keys.."
+          'Fired when a user stops dragging the slider or changes the value using the arrow keys..'
       }
     ];
   }
@@ -80,7 +80,7 @@ export default class SliderPage extends Component {
           This component encapsulates <span className="strong">mdc-slider</span>,
           you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-slider">
-            {" "}
+            {' '}
             here
           </a>.
         </div>

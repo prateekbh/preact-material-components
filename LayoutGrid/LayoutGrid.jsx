@@ -1,10 +1,10 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
 
 class LayoutGrid extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "layout-grid";
+    this.componentName = 'layout-grid';
   }
   materialDom(props) {
     return (
@@ -18,7 +18,7 @@ class LayoutGrid extends MaterialComponent {
 class LayoutGridInner extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "layout-grid__inner";
+    this.componentName = 'layout-grid__inner';
   }
   materialDom(props) {
     return (
@@ -40,59 +40,58 @@ class LayoutGridInner extends MaterialComponent {
 class LayoutGridCell extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "layout-grid__cell";
+    this.componentName = 'layout-grid__cell';
     this._propsDict = {
-      cols: "cols",
-      desktop: "desktopCols",
-      tablet: "tabletCols",
-      phone: "phoneCols",
-      order: "order",
-      align: "align"
+      cols: 'cols',
+      desktop: 'desktopCols',
+      tablet: 'tabletCols',
+      phone: 'phoneCols',
+      order: 'order',
+      align: 'align'
     };
   }
   createClassName(props) {
-    const baseClass = "mdc-layout-grid__cell--";
+    const baseClass = 'mdc-layout-grid__cell--';
     const classes = [];
 
     if (props[this._propsDict.cols]) {
-      classes.push(baseClass + "span-" + props[this._propsDict.cols]);
+      classes.push(baseClass + 'span-' + props[this._propsDict.cols]);
     }
 
     if (props[this._propsDict.desktop]) {
       classes.push(
-        baseClass + "span-" + props[this._propsDict.desktop] + "-desktop"
+        baseClass + 'span-' + props[this._propsDict.desktop] + '-desktop'
       );
     }
 
     if (props[this._propsDict.tablet]) {
       classes.push(
-        baseClass + "span-" + props[this._propsDict.tablet] + "-tablet"
+        baseClass + 'span-' + props[this._propsDict.tablet] + '-tablet'
       );
     }
 
     if (props[this._propsDict.phone]) {
       classes.push(
-        baseClass + "span-" + props[this._propsDict.phone] + "-phone"
+        baseClass + 'span-' + props[this._propsDict.phone] + '-phone'
       );
     }
 
     if (props[this._propsDict.order]) {
-      classes.push(baseClass + "order-" + props[this._propsDict.order]);
+      classes.push(baseClass + 'order-' + props[this._propsDict.order]);
     }
 
     if (props[this._propsDict.align]) {
-      classes.push(baseClass + "align-" + props[this._propsDict.align]);
+      classes.push(baseClass + 'align-' + props[this._propsDict.align]);
     }
 
-    return classes.join(" ");
+    return classes.join(' ');
   }
   materialDom(props) {
     return (
       <div
         {...props}
         className={this.createClassName(props)}
-        ref={this.setControlRef}
-      >
+        ref={this.setControlRef}>
         {props.children}
       </div>
     );

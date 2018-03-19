@@ -1,0 +1,5 @@
+<TextField
+  label="Persistent help text"
+  helperText="This is the helperText"
+  helperTextPersistent
+/>

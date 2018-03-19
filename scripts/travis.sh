@@ -51,4 +51,10 @@ then
     test
 fi
 
+# always run tests for docs
+if [ $1 == "docs" ]
+then
+    test
+fi
+
 echo "Nothing has changed, no need to run tests."

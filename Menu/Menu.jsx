@@ -1,7 +1,7 @@
-import { h } from "preact";
-import MaterialComponent from "../MaterialComponent";
-import { MDCMenu } from "@material/menu";
-import List from "../List";
+import {h} from 'preact';
+import MaterialComponent from '../MaterialComponent';
+import {MDCMenu} from '@material/menu';
+import List from '../List';
 
 /*
  * Default props for menu
@@ -16,26 +16,26 @@ const defaultProps = {
 class Menu extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "menu";
+    this.componentName = 'menu';
     this._mdcProps = [
-      "open",
-      "open-from-top-left",
-      "open-from-top-right",
-      "open-from-bottom-left",
-      "open-from-bottom-right"
+      'open',
+      'open-from-top-left',
+      'open-from-top-right',
+      'open-from-bottom-left',
+      'open-from-bottom-right'
     ];
     this._select = this._select.bind(this);
     this._cancel = this._cancel.bind(this);
   }
   componentDidMount() {
     this.MDComponent = new MDCMenu(this.control);
-    this.MDComponent.listen("MDCMenu:selected", this._select);
-    this.MDComponent.listen("MDCMenu:cancel", this._cancel);
+    this.MDComponent.listen('MDCMenu:selected', this._select);
+    this.MDComponent.listen('MDCMenu:cancel', this._cancel);
     toggleMenu(defaultProps, this.props, this.MDComponent);
   }
   componentWillUnmount() {
-    this.MDComponent.unlisten("MDCMenu:selected", this._select);
-    this.MDComponent.unlisten("MDCMenu:cancel", this._cancel);
+    this.MDComponent.unlisten('MDCMenu:selected', this._select);
+    this.MDComponent.unlisten('MDCMenu:cancel', this._cancel);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
   _select(e) {
@@ -72,7 +72,7 @@ class Menu extends MaterialComponent {
 class MenuAnchor extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = "menu-anchor";
+    this.componentName = 'menu-anchor';
   }
 }
 
@@ -81,8 +81,8 @@ class MenuAnchor extends MaterialComponent {
  */
 function toggleMenu(oldprops, newprops, menu) {
   if (
-    "open" in oldprops &&
-    "open" in newprops &&
+    'open' in oldprops &&
+    'open' in newprops &&
     oldprops.open !== newprops.open
   ) {
     menu.open = newprops.open;

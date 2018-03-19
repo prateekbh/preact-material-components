@@ -1,0 +1,25 @@
+import {h, Component} from 'preact';
+import Toolbar from 'preact-material-components/Toolbar';
+import 'preact-material-components/Toolbar/style.css';
+
+export default class ToolbarPage extends Component {
+  render(){
+    return (
+      <div>
+        <TopAppBar className="topappbar">
+            <TopAppBar.Row>
+              <TopAppBar.Section align-start>
+                <TopAppBar.Icon navigation>menu</TopAppBar.Icon>
+                <TopAppBar.Title>
+                  My App
+                </TopAppBar.Title>
+              </TopAppBar.Section>
+              <TopAppBar.Section align-end>
+                <TopAppBar.Icon>more_vert</TopAppBar.Icon>
+              </TopAppBar.Section>
+            </TopAppBar.Row>
+          </TopAppBar>
+      </div>
+    );
+  }
+}

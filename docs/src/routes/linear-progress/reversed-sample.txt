@@ -1,0 +1,1 @@
+<LinearProgress reversed={true} indeterminate={true} />

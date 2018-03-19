@@ -1,18 +1,18 @@
 // Dependencies
-import { h, Component } from "preact";
+import {h, Component} from 'preact';
 
 // Material Components
-import Elevation from "../../../../Elevation";
+import Elevation from '../../../../Elevation';
 
 // Components
-import ComponentTable from "../../components/component-table";
-import CodeBlock from "../../components/code-block";
+import ComponentTable from '../../components/component-table';
+import CodeBlock from '../../components/code-block';
 
 // Styles
-import "./style";
+import './style';
 
 // Samples
-import sample from "./sample.txt";
+import sample from './sample.txt';
 
 // Class
 export default class ElevationPage extends Component {
@@ -20,12 +20,12 @@ export default class ElevationPage extends Component {
     super();
     this.propsTable = [
       {
-        component: "Elevation",
+        component: 'Elevation',
         props: [
           {
-            name: "z",
-            value: "0 to 24",
-            description: "Add z=(0 to 24) to get different elevations."
+            name: 'z',
+            value: '0 to 24',
+            description: 'Add z=(0 to 24) to get different elevations.'
           }
         ]
       }
@@ -43,11 +43,11 @@ export default class ElevationPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates{" "}
+          This component encapsulates{' '}
           <span className="strong">mdc-elevation</span>, you can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-elevation">
-            {" "}
+            {' '}
             here
           </a>.
         </div>

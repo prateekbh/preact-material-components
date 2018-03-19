@@ -1,47 +1,48 @@
 // Dependencies
-import { h, Component } from "preact";
-import Router from "preact-router";
+import {h, Component} from 'preact';
+import Router from 'preact-router';
 
 // Material Components
-import Formfield from "../../../../FormField";
-import LayoutGrid from "../../../../LayoutGrid";
-import Switch from "../../../../Switch";
-import Toolbar from "../../../../Toolbar";
+import Formfield from '../../../../FormField';
+import LayoutGrid from '../../../../LayoutGrid';
+import Switch from '../../../../Switch';
+import Toolbar from '../../../../Toolbar';
 
 // Routes
-import ButtonPage from "../../routes/button";
-import CardPage from "../../routes/card";
-import ChipsPage from "../../routes/chips";
-import CheckboxPage from "../../routes/checkbox";
-import DialogPage from "../../routes/dialog";
-import DrawerPage from "../../routes/drawer";
-import ElevationPage from "../../routes/elevation";
-import FabPage from "../../routes/fab";
-import FormFieldPage from "../../routes/form-field";
-import GridListPage from "../../routes/grid-list";
-import HomePage from "../../routes/home";
-import IconPage from "../../routes/icon";
-import IconTogglePage from "../../routes/icon-toggle";
-import LayoutGridPage from "../../routes/layout-grid";
-import LinearProgressPage from "../../routes/linear-progress";
-import ListPage from "../../routes/list";
-import MenuPage from "../../routes/menu";
-import RadioPage from "../../routes/radio";
-import SelectPage from "../../routes/select";
-import SliderPage from "../../routes/slider";
-import SnackbarPage from "../../routes/snackbar";
-import SwitchPage from "../../routes/switch";
-import TabsPage from "../../routes/tabs";
-import TextfieldPage from "../../routes/textfield";
-import ThemePage from "../../routes/theme";
-import ToolbarPage from "../../routes/toolbar";
+import ButtonPage from '../../routes/button';
+import CardPage from '../../routes/card';
+import ChipsPage from '../../routes/chips';
+import CheckboxPage from '../../routes/checkbox';
+import DialogPage from '../../routes/dialog';
+import DrawerPage from '../../routes/drawer';
+import ElevationPage from '../../routes/elevation';
+import FabPage from '../../routes/fab';
+import FormFieldPage from '../../routes/form-field';
+import GridListPage from '../../routes/grid-list';
+import HomePage from '../../routes/home';
+import IconPage from '../../routes/icon';
+import IconTogglePage from '../../routes/icon-toggle';
+import LayoutGridPage from '../../routes/layout-grid';
+import LinearProgressPage from '../../routes/linear-progress';
+import ListPage from '../../routes/list';
+import MenuPage from '../../routes/menu';
+import RadioPage from '../../routes/radio';
+import SelectPage from '../../routes/select';
+import SliderPage from '../../routes/slider';
+import SnackbarPage from '../../routes/snackbar';
+import SwitchPage from '../../routes/switch';
+import TabsPage from '../../routes/tabs';
+import TextfieldPage from '../../routes/textfield';
+import ThemePage from '../../routes/theme';
+import ToolbarPage from '../../routes/toolbar';
+import TopAppBar from '../../routes/top-app-bar';
 
 // Components
-import Menu from "../menu";
+import Menu from '../menu';
 
 // Styles
-import "../../../../style.css";
-import "./style";
+import '../../../../style.css';
+import './style';
 
 // Class
 export default class Home extends Component {
@@ -52,135 +53,140 @@ export default class Home extends Component {
     };
     this.menuItems = [
       {
-        text: "Home",
-        icon: "home",
-        link: "/",
+        text: 'Home',
+        icon: 'home',
+        link: '/',
         component: HomePage
       },
       {
-        text: "Button",
-        link: "/component/button",
+        text: 'Button',
+        link: '/component/button',
         component: ButtonPage
       },
       {
-        text: "Card",
-        link: "/component/card",
+        text: 'Card',
+        link: '/component/card',
         component: CardPage
       },
       {
-        text: "Chips",
-        link: "/component/chips",
+        text: 'Chips',
+        link: '/component/chips',
         component: ChipsPage
       },
       {
-        text: "Checkbox",
-        link: "/component/checkbox",
+        text: 'Checkbox',
+        link: '/component/checkbox',
         component: CheckboxPage
       },
       {
-        text: "Dialog",
-        link: "/component/dialog",
+        text: 'Dialog',
+        link: '/component/dialog',
         component: DialogPage
       },
       {
-        text: "Drawer",
-        link: "/component/drawer",
+        text: 'Drawer',
+        link: '/component/drawer',
         component: DrawerPage
       },
       {
-        text: "Elevation",
-        link: "/component/elevation",
+        text: 'Elevation',
+        link: '/component/elevation',
         component: ElevationPage
       },
       {
-        text: "Fab",
-        link: "/component/fab",
+        text: 'Fab',
+        link: '/component/fab',
         component: FabPage
       },
       {
-        text: "FormField",
-        link: "/component/form-field",
+        text: 'FormField',
+        link: '/component/form-field',
         component: FormFieldPage
       },
       {
-        text: "GridList",
-        link: "/component/grid-list",
+        text: 'GridList',
+        link: '/component/grid-list',
         component: GridListPage
       },
       {
-        text: "Icon",
-        link: "/component/icon",
+        text: 'Icon',
+        link: '/component/icon',
         component: IconPage
       },
       {
-        text: "IconToggle",
-        link: "/component/icon-toggle",
+        text: 'IconToggle',
+        link: '/component/icon-toggle',
         component: IconTogglePage
       },
       {
-        text: "LayoutGrid",
-        link: "/component/layout-grid",
+        text: 'LayoutGrid',
+        link: '/component/layout-grid',
         component: LayoutGridPage
       },
       {
-        text: "LinearProgress",
-        link: "/component/linear-progress",
+        text: 'LinearProgress',
+        link: '/component/linear-progress',
         component: LinearProgressPage
       },
       {
-        text: "List",
-        link: "/component/list",
+        text: 'List',
+        link: '/component/list',
         component: ListPage
       },
       {
-        text: "Menu",
-        link: "/component/menu",
+        text: 'Menu',
+        link: '/component/menu',
         component: MenuPage
       },
       {
-        text: "Radio",
-        link: "/component/radio",
+        text: 'Radio',
+        link: '/component/radio',
         component: RadioPage
       },
       {
-        text: "Select",
-        link: "/component/select",
+        text: 'Select',
+        link: '/component/select',
         component: SelectPage
       },
       {
-        text: "Slider",
-        link: "/component/slider",
+        text: 'Slider',
+        link: '/component/slider',
         component: SliderPage
       },
       {
-        text: "Snackbar",
-        link: "/component/snackbar",
+        text: 'Snackbar',
+        link: '/component/snackbar',
         component: SnackbarPage
       },
       {
-        text: "Switch",
-        link: "/component/switch",
+        text: 'Switch',
+        link: '/component/switch',
         component: SwitchPage
       },
       {
-        text: "Tabs",
-        link: "/component/tabs",
+        text: 'Tabs',
+        link: '/component/tabs',
         component: TabsPage
       },
       {
-        text: "TextField",
-        link: "/component/textfield",
+        text: 'TextField',
+        link: '/component/textfield',
         component: TextfieldPage
       },
       {
-        text: "Theme",
-        link: "/component/theme",
+        text: 'Theme',
+        link: '/component/theme',
         component: ThemePage
       },
       {
-        text: "Toolbar",
-        link: "/component/toolbar",
+        text: 'Toolbar',
+        link: '/component/toolbar',
         component: ToolbarPage
+      },
+      {
+        text: 'TopAppBar',
+        link: '/component/top-app-bar',
+        component: TopAppBar
       }
     ];
     this._handleRoute = this._handleRoute.bind(this);
@@ -195,16 +201,16 @@ export default class Home extends Component {
       darkMode: !this.state.darkMode
     });
     if (this.state.darkMode) {
-      document.body.classList.add("mdc-theme--dark");
+      document.body.classList.add('mdc-theme--dark');
     } else {
-      document.body.classList.remove("mdc-theme--dark");
+      document.body.classList.remove('mdc-theme--dark');
     }
   }
 
   _handleRoute(e) {
     this.setState({
       toolbarTitle:
-        e.url === "/"
+        e.url === '/'
           ? null
           : (this.menuItems.find(item => item.link === e.url) || {}).text
     });
@@ -217,7 +223,7 @@ export default class Home extends Component {
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
-        <div className={this.state.toolbarTitle ? "hero collapsed" : "hero"}>
+        <div className={this.state.toolbarTitle ? 'hero collapsed' : 'hero'}>
           <Toolbar className="mdc-theme--dark">
             <Toolbar.Row>
               <Toolbar.Section align-start={true}>
@@ -227,8 +233,7 @@ export default class Home extends Component {
                   onClick={e => {
                     e.preventDefault();
                     this.menu.open();
-                  }}
-                >
+                  }}>
                   menu
                 </Toolbar.Icon>
                 <Toolbar.Title>{this.state.toolbarTitle}</Toolbar.Title>
@@ -250,8 +255,7 @@ export default class Home extends Component {
             width="200"
             height="200"
             xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMinYMid"
-          >
+            preserveAspectRatio="xMinYMid">
             <g>
               <title>background</title>
               <rect
@@ -348,7 +352,7 @@ export default class Home extends Component {
           <LayoutGrid.Inner>
             <LayoutGrid.Cell cols="12">
               <Router onChange={this._handleRoute}>
-                {this.menuItems.map(({ component: Element, link }) => (
+                {this.menuItems.map(({component: Element, link}) => (
                   <Element path={link} />
                 ))}
                 <HomePage default />
