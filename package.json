@@ -59,7 +59,7 @@
     "@material/switch": "^0.32.0",
     "@material/tabs": "^0.32.0",
     "@material/textfield": "^0.32.0",
-    "@material/theme": "^0.30.0",
+    "@material/theme": "^0.33.0",
     "@material/toolbar": "^0.32.0",
     "@material/top-app-bar": "^0.32.0",
     "@material/typography": "^0.28.0",
