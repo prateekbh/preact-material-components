@@ -18,7 +18,16 @@ export default class ButtonPage extends Component {
     this.propsTable = [
       {
         component: 'Chips',
-        props: []
+        props: [
+          {
+            name: 'choice',
+            description: 'Makes chips selectable'
+          },
+          {
+            name: 'filter',
+            description: 'Makes chips multi-selectable'
+          }
+        ]
       },
       {
         component: 'Chips.Chip',
@@ -151,7 +160,7 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Choice Chips</div>
         <div>
-          <Chips>
+          <Chips choice>
             <Chips.Chip>
               <Chips.Text>Extra Small</Chips.Text>
             </Chips.Chip>
@@ -170,7 +179,7 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
+              {`<Chips choice>
   <Chips.Chip>
     <Chips.Text>Extra Small</Chips.Text>
   </Chips.Chip>
@@ -193,7 +202,7 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Filter Chips</div>
         <div>
-          <Chips>
+          <Chips filter>
             <Chips.Chip>
               <Chips.Text>Tops</Chips.Text>
               <Chips.Icon
@@ -237,7 +246,7 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
+              {`<Chips filter>
   <Chips.Chip>
     <Chips.Text>Tops</Chips.Text>
     <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>

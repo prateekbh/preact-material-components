@@ -4,17 +4,19 @@ import {VNode} from 'preact';
 declare interface IListProps extends JSX.HTMLAttributes {
   dense?: boolean;
   'two-line'?: boolean;
-  interactive?: boolean;
+  'avatar-list'?: boolean;
 }
 export default class List extends MaterialComponent<IListProps, {}> {
   static Item: typeof Item;
   static LinkItem: typeof LinkItem;
-  static ItemIcon: typeof ItemIcon;
-  static ItemAvatar: typeof ItemAvatar;
+  static ItemGraphic: typeof ItemGraphic;
+  static ItemMeta: typeof ItemMeta;
   static Divider: typeof Divider;
   static TextContainer: typeof TextContainer;
   static PrimaryText: typeof PrimaryText;
   static SecondaryText: typeof SecondaryText;
+  static Group: typeof Group;
+  static GroupHeader: typeof GroupHeader;
 }
 
 declare class Item extends MaterialComponent<JSX.HTMLAttributes, {}> {}
@@ -24,15 +26,9 @@ declare class LinkItem<
   StateType = {}
 > extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
 
-declare interface IItemIconProps extends JSX.HTMLAttributes {
-  graphic?: boolean;
-  meta?: boolean;
-}
-declare class ItemIcon extends MaterialComponent<IItemIconProps, {}> {
-  getProxyClassName(props: IItemIconProps): string;
-}
+declare class ItemGraphic extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
-declare class ItemAvatar extends ItemIcon {}
+declare class ItemMeta extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
 declare interface IDividerProps extends JSX.HTMLAttributes {
   inset?: boolean;
@@ -44,3 +40,7 @@ declare class TextContainer extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 declare class PrimaryText extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
 declare class SecondaryText extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+
+declare class Group extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+
+declare class GroupHeader extends MaterialComponent<JSX.HTMLAttributes, {}> {}

@@ -7,10 +7,11 @@ class ChipSet extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'chip-set';
+    this._mdcProps = ['choice', 'filter'];
   }
 
   componentDidMount() {
-    this.MDComponent = new MDCChipSet(this.base);
+    this.MDComponent = new MDCChipSet(this.control);
   }
 
   componentWillUnmount() {
@@ -20,7 +21,11 @@ class ChipSet extends MaterialComponent {
   materialDom(allprops) {
     const {children, ...props} = allprops;
 
-    return <div {...props}>{children}</div>;
+    return (
+      <div {...props} ref={this.setControlRef}>
+        {children}
+      </div>
+    );
   }
 }
 
@@ -31,7 +36,7 @@ class Chip extends MaterialComponent {
   }
 
   componentDidMount() {
-    this.MDComponent = new MDCChip(this.base);
+    this.MDComponent = new MDCChip(this.control);
   }
 
   componentWillUnmount() {
@@ -41,7 +46,11 @@ class Chip extends MaterialComponent {
   materialDom(allprops) {
     const {children, ...props} = allprops;
 
-    return <div {...props}>{children}</div>;
+    return (
+      <div {...props} ref={this.setControlRef}>
+        {children}
+      </div>
+    );
   }
 }
 

@@ -26,7 +26,7 @@ class HelperText extends MaterialComponent {
 class Label extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = 'text-field__label';
+    this.componentName = 'floating-label';
   }
   materialDom(props) {
     return <label {...props}>{props.children}</label>;

@@ -4,6 +4,8 @@ import Icon from '../Icon';
 
 declare interface IChipProps extends JSX.HTMLAttributes {
   children?: ChipText[];
+  choice?: boolean;
+  filter?: boolean;
 }
 
 declare class Chip extends MaterialComponent<IChipProps, {}> {
