@@ -35,10 +35,6 @@ class Chip extends MaterialComponent {
     this.componentName = 'chip';
   }
 
-  componentDidMount() {
-    this.MDComponent = new MDCChip(this.control);
-  }
-
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
@@ -60,11 +56,26 @@ class ChipIcon extends Icon {
     this.componentName = 'chip__icon';
     this._mdcProps = ['leading', 'trailing'];
   }
-
   materialDom(allprops) {
     const {children, ...props} = allprops;
+    return <Icon {...props}>{children}</Icon>;
+  }
+}
 
-    return <i {...props}>{children}</i>;
+class ChipCheckmark extends Icon {
+  constructor() {
+    super();
+    this.componentName = 'chip__checkmark';
+  }
+  materialDom(props) {
+    return (
+      <div>
+        <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+          <path class="mdc-chip__checkmark-path" fill="none" stroke="black"
+                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+        </svg>
+      </div>
+    );
   }
 }
 
@@ -86,5 +97,5 @@ const chips = ChipSet;
 chips.Chip = Chip;
 chips.Icon = ChipIcon;
 chips.Text = ChipText;
-
+chips.Checkmark = ChipCheckmark;
 export default chips;

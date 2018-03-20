@@ -11,6 +11,7 @@ const bundleMapping = {
   GridList: 'grid-list',
   Icon: 'icon-toggle',
   IconToggle: 'icon-toggle',
+  ImageList: 'image-list',
   LayoutGrid: 'layout-grid',
   LinearProgress: 'linear-progress',
   LineRipple: 'line-ripple',

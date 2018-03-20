@@ -10,6 +10,10 @@ import CodeBlock from '../../components/code-block';
 
 // Samples
 import sample from './sample.txt';
+import filterSample from './filter-chips.txt';
+import choiceSample from './choice-chips.txt';
+import actionSample from './action-chips.txt';
+import entrySample from './entry-chips.txt';
 
 // Class
 export default class ButtonPage extends Component {
@@ -90,20 +94,7 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
-  <Chips.Chip>
-    <Chips.Text>Chip One</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Chip Two</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Chip Three</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Chip Four</Chips.Text>
-  </Chips.Chip>
-</Chips>`}
+              {sample}
             </code>
           </CodeBlock>
         </div>
@@ -142,24 +133,13 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
-  <Chips.Chip>
-    <Chips.Icon className="material-icons" leading>face</Chips.Icon>
-    <Chips.Text>Jane Smith</Chips.Text>
-    <Chips.Icon className="material-icons" trailing tabindex="0" role="button" title="More options">more_vert</Chips.Icon>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Icon className="material-icons" leading>face</Chips.Icon>
-    <Chips.Text>John Doe</Chips.Text>
-    <Chips.Icon className="material-icons" trailing tabindex="0" role="button" title="More options">more_vert</Chips.Icon>
-  </Chips.Chip>
-</Chips>`}
+              {entrySample}
             </code>
           </CodeBlock>
         </div>
 
         <div className="mdc-typography--display1">Choice Chips</div>
-        <div>
+        <section>
           <Chips choice>
             <Chips.Chip>
               <Chips.Text>Extra Small</Chips.Text>
@@ -179,94 +159,43 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips choice>
-  <Chips.Chip>
-    <Chips.Text>Extra Small</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Small</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Medium</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Large</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Extra Large</Chips.Text>
-  </Chips.Chip>
-</Chips>`}
+              {choiceSample}
             </code>
           </CodeBlock>
-        </div>
+        </section>
 
         <div className="mdc-typography--display1">Filter Chips</div>
-        <div>
+        <section>
           <Chips filter>
             <Chips.Chip>
+              <Chips.Checkmark/>
               <Chips.Text>Tops</Chips.Text>
-              <Chips.Icon
-                className="material-icons"
-                trailing
-                tabindex="0"
-                role="button">
-                cancel
-              </Chips.Icon>
             </Chips.Chip>
             <Chips.Chip>
+              <Chips.Checkmark/>
               <Chips.Text>Bottoms</Chips.Text>
-              <Chips.Icon
-                className="material-icons"
-                trailing
-                tabindex="0"
-                role="button">
-                cancel
-              </Chips.Icon>
             </Chips.Chip>
             <Chips.Chip>
+              <Chips.Checkmark/>
               <Chips.Text>Shoes</Chips.Text>
-              <Chips.Icon
-                className="material-icons"
-                trailing
-                tabindex="0"
-                role="button">
-                cancel
-              </Chips.Icon>
             </Chips.Chip>
             <Chips.Chip>
+              <Chips.Checkmark/>
+              <Chips.Icon leading>favorite</Chips.Icon>
+              <Chips.Text>Home</Chips.Text>
+            </Chips.Chip>
+            <Chips.Chip>
+              <Chips.Checkmark/>
               <Chips.Text>Accessories</Chips.Text>
-              <Chips.Icon
-                className="material-icons"
-                trailing
-                tabindex="0"
-                role="button">
-                cancel
-              </Chips.Icon>
             </Chips.Chip>
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips filter>
-  <Chips.Chip>
-    <Chips.Text>Tops</Chips.Text>
-    <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Bottoms</Chips.Text>
-    <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Shoes</Chips.Text>
-    <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Text>Accessories</Chips.Text>
-    <Chips.Icon className="material-icons" trailing tabindex="0" role="button">cancel</Chips.Icon>
-  </Chips.Chip>
-</Chips>`}
+              {filterSample}
             </code>
           </CodeBlock>
-        </div>
+        </section>
+
 
         <div className="mdc-typography--display1">Action Chips</div>
         <div>
@@ -298,24 +227,7 @@ export default class ButtonPage extends Component {
           </Chips>
           <CodeBlock>
             <code class="lang-html">
-              {`<Chips>
-  <Chips.Chip>
-    <Chips.Icon className="material-icons" leading>wb_sunny</Chips.Icon>
-    <Chips.Text>Turn on lights</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Icon className="material-icons" leading>bookmark</Chips.Icon>
-    <Chips.Text>Bookmark</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Icon className="material-icons" leading>alarm</Chips.Icon>
-    <Chips.Text>Set alarm</Chips.Text>
-  </Chips.Chip>
-  <Chips.Chip>
-    <Chips.Icon className="material-icons" leading>directions</Chips.Icon>
-    <Chips.Text>Get directions</Chips.Text>
-  </Chips.Chip>
-</Chips>`}
+              {actionSample}
             </code>
           </CodeBlock>
         </div>
