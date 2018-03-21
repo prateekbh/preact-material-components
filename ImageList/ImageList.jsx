@@ -5,7 +5,7 @@ class ImageList extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'image-list';
-    this._mdcProps = ['masonry'];
+    this._mdcProps = ['masonry', 'with-text-protection'];
   }
   materialDom(props) {
     return (
@@ -13,6 +13,13 @@ class ImageList extends MaterialComponent {
         {props.children}
       </ul>
     );
+  }
+}
+
+class ImageListAspectContainer extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = 'image-list__image-aspect-container';
   }
 }
 
@@ -65,9 +72,10 @@ class ImageListLabel extends MaterialComponent {
   }
 }
 
-ImageList.ListItem = ImageListItem
-ImageList.ListImage = ImageListImage
-ImageList.ListSupporting = ImageListSupporting
-Image.ListLabel = ImageListLabel
+ImageList.Item = ImageListItem
+ImageList.AspectContainer = ImageListAspectContainer
+ImageList.Image = ImageListImage
+ImageList.Supporting = ImageListSupporting
+ImageList.Label = ImageListLabel
 
 export default ImageList;
