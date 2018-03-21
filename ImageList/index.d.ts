@@ -14,8 +14,14 @@ export default class ImageList extends MaterialComponent<IImageListProps, {}> {
   static Aspectcontainer: typeof ImageListAspectcontainer;
 }
 
-export class ImageListAspectcontainer extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+export class ImageListAspectcontainer extends MaterialComponent<
+  JSX.HTMLAttributes,
+  {}
+> {}
 export class ImageListLabel extends MaterialComponent<JSX.HTMLAttributes, {}> {}
-export class ImageListSupporting extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+export class ImageListSupporting extends MaterialComponent<
+  JSX.HTMLAttributes,
+  {}
+> {}
 export class ImageListImage extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 export class ImageListItem extends MaterialComponent<JSX.HTMLAttributes, {}> {}

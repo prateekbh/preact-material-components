@@ -72,10 +72,10 @@ class ImageListLabel extends MaterialComponent {
   }
 }
 
-ImageList.Item = ImageListItem
-ImageList.AspectContainer = ImageListAspectContainer
-ImageList.Image = ImageListImage
-ImageList.Supporting = ImageListSupporting
-ImageList.Label = ImageListLabel
+ImageList.Item = ImageListItem;
+ImageList.AspectContainer = ImageListAspectContainer;
+ImageList.Image = ImageListImage;
+ImageList.Supporting = ImageListSupporting;
+ImageList.Label = ImageListLabel;
 
 export default ImageList;
