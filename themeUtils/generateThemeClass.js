@@ -1,1 +1,3 @@
-export default function(prop){return 'mdc-theme--'+prop+'-bg'};
+export default function(prop) {
+  return 'mdc-theme--' + prop + '-bg';
+}
