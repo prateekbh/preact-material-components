@@ -93,9 +93,7 @@ export default class ButtonPage extends Component {
             </Chips.Chip>
           </Chips>
           <CodeBlock>
-            <code class="lang-html">
-              {sample}
-            </code>
+            <code class="lang-html">{sample}</code>
           </CodeBlock>
         </div>
 
@@ -132,9 +130,7 @@ export default class ButtonPage extends Component {
             </Chips.Chip>
           </Chips>
           <CodeBlock>
-            <code class="lang-html">
-              {entrySample}
-            </code>
+            <code class="lang-html">{entrySample}</code>
           </CodeBlock>
         </div>
 
@@ -158,9 +154,7 @@ export default class ButtonPage extends Component {
             </Chips.Chip>
           </Chips>
           <CodeBlock>
-            <code class="lang-html">
-              {choiceSample}
-            </code>
+            <code class="lang-html">{choiceSample}</code>
           </CodeBlock>
         </section>
 
@@ -168,34 +162,31 @@ export default class ButtonPage extends Component {
         <section>
           <Chips filter>
             <Chips.Chip>
-              <Chips.Checkmark/>
+              <Chips.Checkmark />
               <Chips.Text>Tops</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Checkmark/>
+              <Chips.Checkmark />
               <Chips.Text>Bottoms</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Checkmark/>
+              <Chips.Checkmark />
               <Chips.Text>Shoes</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Checkmark/>
+              <Chips.Checkmark />
               <Chips.Icon leading>favorite</Chips.Icon>
               <Chips.Text>Home</Chips.Text>
             </Chips.Chip>
             <Chips.Chip>
-              <Chips.Checkmark/>
+              <Chips.Checkmark />
               <Chips.Text>Accessories</Chips.Text>
             </Chips.Chip>
           </Chips>
           <CodeBlock>
-            <code class="lang-html">
-              {filterSample}
-            </code>
+            <code class="lang-html">{filterSample}</code>
           </CodeBlock>
         </section>
-
 
         <div className="mdc-typography--display1">Action Chips</div>
         <div>
@@ -226,9 +217,7 @@ export default class ButtonPage extends Component {
             </Chips.Chip>
           </Chips>
           <CodeBlock>
-            <code class="lang-html">
-              {actionSample}
-            </code>
+            <code class="lang-html">{actionSample}</code>
           </CodeBlock>
         </div>
       </div>
