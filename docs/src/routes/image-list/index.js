@@ -9,7 +9,7 @@ import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
 
 // Styles
-import './style';
+import './style.scss';
 
 // Samples
 import sample from './sample.txt';
