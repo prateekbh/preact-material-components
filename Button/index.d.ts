@@ -4,7 +4,6 @@ import {VNode} from 'preact';
 declare interface IButtonProps {
   dense?: boolean;
   raised?: boolean;
-  compact?: boolean;
   disabled?: boolean;
   unelevated?: boolean;
   stroked?: boolean;

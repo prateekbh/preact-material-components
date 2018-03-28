@@ -22,6 +22,7 @@ import GridListPage from '../../routes/grid-list';
 import HomePage from '../../routes/home';
 import IconPage from '../../routes/icon';
 import IconTogglePage from '../../routes/icon-toggle';
+import ImageListPage from '../../routes/image-list';
 import LayoutGridPage from '../../routes/layout-grid';
 import LinearProgressPage from '../../routes/linear-progress';
 import ListPage from '../../routes/list';
@@ -117,6 +118,11 @@ export default class Home extends Component {
         text: 'IconToggle',
         link: '/component/icon-toggle',
         component: IconTogglePage
+      },
+      {
+        text: 'ImageList',
+        link: '/component/image-list',
+        component: ImageListPage
       },
       {
         text: 'LayoutGrid',

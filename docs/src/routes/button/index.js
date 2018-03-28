@@ -31,10 +31,6 @@ export default class ButtonPage extends Component {
             description: 'Adds dense padding to the button'
           },
           {
-            name: 'compact',
-            description: 'Adds compact padding to the button'
-          },
-          {
             name: 'raised',
             description: 'Adds raised effect to the button'
           },
@@ -174,17 +170,6 @@ export default class ButtonPage extends Component {
           <CodeBlock>
             <code class="lang-html">
               {`<Button raised dense>Dense Raised button{" "}</Button>`}
-            </code>
-          </CodeBlock>
-        </div>
-
-        <div>
-          <Button raised compact>
-            Compact Raised button{' '}
-          </Button>
-          <CodeBlock>
-            <code class="lang-html">
-              {'<Button raised compact>Compact Raised button{" "}</Button>'}
             </code>
           </CodeBlock>
         </div>
