@@ -1,0 +1,62 @@
+import {h, Component} from 'preact';
+import ImageList from '../../../../ImageList';
+import 'preact-material-components/ImageList/style.css';
+
+export default class ImageListPage extends Component {
+  render(){
+    return (
+      <div>
+        <ImageList mdc-image-list--with-text-protection>
+          <ImageList.Item>
+            <ImageList.AspectContainer>
+              <ImageList.Image src='https://material-components-web.appspot.com/images/photos/3x2/1.jpg'/>
+              <ImageList.Supporting>
+                <ImageList.Label>Text Label</ImageList.Label>
+              </ImageList.Supporting>
+            </ImageList.AspectContainer>
+          </ImageList.Item>
+          <ImageList.Item>
+            <ImageList.AspectContainer>
+              <ImageList.Image src='https://material-components-web.appspot.com/images/photos/3x2/6.jpg'/>
+              <ImageList.Supporting>
+                <ImageList.Label>Text Label</ImageList.Label>
+              </ImageList.Supporting>
+            </ImageList.AspectContainer>
+          </ImageList.Item>
+          <ImageList.Item>
+            <ImageList.AspectContainer>
+              <ImageList.Image src='https://material-components-web.appspot.com/images/photos/3x2/2.jpg'/>
+              <ImageList.Supporting>
+                <ImageList.Label>Text Label</ImageList.Label>
+              </ImageList.Supporting>
+            </ImageList.AspectContainer>
+          </ImageList.Item>
+          <ImageList.Item>
+            <ImageList.AspectContainer>
+              <ImageList.Image src='https://material-components-web.appspot.com/images/photos/3x2/3.jpg'/>
+              <ImageList.Supporting>
+                <ImageList.Label>Text Label</ImageList.Label>
+              </ImageList.Supporting>
+            </ImageList.AspectContainer>
+          </ImageList.Item>
+          <ImageList.Item>
+            <ImageList.AspectContainer>
+              <ImageList.Image src='https://material-components-web.appspot.com/images/photos/3x2/4.jpg'/>
+              <ImageList.Supporting>
+                <ImageList.Label>Text Label</ImageList.Label>
+              </ImageList.Supporting>
+            </ImageList.AspectContainer>
+          </ImageList.Item>
+          <ImageList.Item>
+            <ImageList.AspectContainer>
+              <ImageList.Image src='https://material-components-web.appspot.com/images/photos/3x2/5.jpg'/>
+              <ImageList.Supporting>
+                <ImageList.Label>Text Label</ImageList.Label>
+              </ImageList.Supporting>
+            </ImageList.AspectContainer>
+          </ImageList.Item>
+        </ImageList>
+      </div>
+    );
+  }
+}

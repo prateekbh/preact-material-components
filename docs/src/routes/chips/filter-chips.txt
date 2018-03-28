@@ -1,0 +1,30 @@
+import {h, Component} from 'preact';
+import Chips from 'preact-material-components/Chips';
+import 'preact-material-components/Chips/style.css';
+
+export default class ChipsPage extends Component {
+  render(){
+    return (
+      <div>
+        <Chips filter>
+          <Chips.Chip>
+            <Chips.Checkmark/>
+            <Chips.Text>Tops</Chips.Text>
+          </Chips.Chip>
+          <Chips.Chip>
+            <Chips.Checkmark/>
+            <Chips.Text>Bottoms</Chips.Text>
+          </Chips.Chip>
+          <Chips.Chip>
+            <Chips.Checkmark/>
+            <Chips.Text>Shoes</Chips.Text>
+          </Chips.Chip>
+          <Chips.Chip>
+            <Chips.Checkmark/>
+            <Chips.Text>Accessories</Chips.Text>
+          </Chips.Chip>
+        </Chips>
+      </div>
+    )
+  }
+}

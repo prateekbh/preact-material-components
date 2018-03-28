@@ -21,6 +21,8 @@ declare class ChipIcon extends Icon<IChipIconProps, {}> {}
 
 declare class ChipText extends MaterialComponent<{}, {}> {}
 
+declare class ChipCheckmark extends MaterialComponent<{}, {}> {}
+
 declare interface IChipSetProps extends JSX.HTMLAttributes {
   children?: Chip[];
 }
@@ -29,7 +31,7 @@ export default class ChipSet extends MaterialComponent<IChipSetProps, {}> {
   static Chip: typeof Chip;
   static Icon: typeof ChipIcon;
   static Text: typeof ChipText;
-
+  static Checkmark: typeof ChipCheckmark;
   MDComponent: MDCChipSet;
 }
 
