@@ -1,0 +1,10 @@
+:global .page-image-list {
+  .mdc-image-list {
+    width: 50%;
+    margin: 0;
+  }
+  .mdc-image-list__item {
+    width: calc(100%/3 - 4px);
+    margin: 2px;
+  }
+}

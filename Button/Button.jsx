@@ -15,7 +15,7 @@ class Button extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'button';
-    this._mdcProps = ['dense', 'raised', 'compact', 'unelevated', 'stroked'];
+    this._mdcProps = ['dense', 'raised', 'unelevated', 'stroked'];
     this.themeProps = ['primary', 'secondary'];
   }
   componentDidMount() {
