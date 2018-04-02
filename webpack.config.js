@@ -17,12 +17,15 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/proptypes|scripts\/sw.js/,
         options: {
-          "presets": [
-            ["@babel/preset-env", {
-              "targets": {
-                "esmodules": true
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  esmodules: true
+                }
               }
-            }]
+            ]
           ],
           plugins: [
             ['transform-react-jsx', {pragma: 'h'}],
