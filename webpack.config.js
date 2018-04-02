@@ -35,7 +35,7 @@ module.exports = {
   plugins: [
     new CssMigrationWebpackPlugin(),
     new WebpackShellPlugin({
-      onBuildStart: ['node compileComponents.js']
+      onBuildStart: ['node ./compileComponents.js']
     })
   ]
 };
