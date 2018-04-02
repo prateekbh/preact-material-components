@@ -17,10 +17,16 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/proptypes|scripts\/sw.js/,
         options: {
-          presets: [['es2015', {modules: false}]],
+          "presets": [
+            ["@babel/preset-env", {
+              "targets": {
+                "esmodules": true
+              }
+            }]
+          ],
           plugins: [
             ['transform-react-jsx', {pragma: 'h'}],
-            'transform-object-rest-spread'
+            '@babel/plugin-proposal-object-rest-spread'
           ]
         }
       }
@@ -29,7 +35,7 @@ module.exports = {
   plugins: [
     new CssMigrationWebpackPlugin(),
     new WebpackShellPlugin({
-      onBuildEnd: ['node compileComponents.js']
+      onBuildStart: ['node compileComponents.js']
     })
   ]
 };
