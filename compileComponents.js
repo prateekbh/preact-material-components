@@ -9,12 +9,15 @@ for (let component in bundleMapping) {
   const destFilePath = path.join(__dirname, component, 'index.js');
   if (fs.existsSync(filePath)) {
     const transformedCode = babel.transformFileSync(filePath, {
-      "presets": [
-        ["@babel/preset-env", {
-          "targets": {
-            "esmodules": true
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: {
+              esmodules: true
+            }
           }
-        }]
+        ]
       ],
       plugins: [
         ['transform-react-jsx', {pragma: 'h'}],
@@ -22,5 +25,6 @@ for (let component in bundleMapping) {
       ]
     });
     fs.writeFileSync(destFilePath, transformedCode.code);
+    console.log('Transpiled: ', destFilePath);
   }
 }
