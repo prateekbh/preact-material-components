@@ -57,8 +57,8 @@ export default class FormFieldPage extends Component {
               Using the JS of the component
             </div>
             <div>
-              You can also use the components individually, as none of the tree shaking currently removes unused
-              classes.
+              You can also use the components individually, as none of the tree
+              shaking currently removes unused classes.
               <CodeBlock>
                 <code class="lang-js">{jsSample}</code>
               </CodeBlock>
