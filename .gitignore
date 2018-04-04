@@ -52,4 +52,4 @@ jspm_packages
 # Ignore generated test screenshots
 /docs/tests/generated
 
-.DS_store
+.DS_Store
