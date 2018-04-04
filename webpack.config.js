@@ -22,7 +22,7 @@ module.exports = {
               '@babel/preset-env',
               {
                 targets: {
-                  esmodules: true
+                  "browsers": ["last 2 versions", "safari >= 7"]
                 }
               }
             ]
