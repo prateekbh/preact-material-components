@@ -32,13 +32,13 @@ class Select extends MaterialComponent {
       const selectedIndex =
         typeof this.props.selectedIndex === 'number'
           ? this.props.selectedIndex
-          : -1;
+          : 0;
 
       this.MDComponent.selectedIndex = selectedIndex;
     }
 
     const selectedIndex = this.MDComponent.selectedIndex;
-    if (selectedIndex === -1) {
+    if (selectedIndex === 0) {
       this._labelRef.classList.remove('mdc-select__label--float-above');
     } else {
       this._labelRef.classList.add('mdc-select__label--float-above');
@@ -49,19 +49,19 @@ class Select extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <div role="listbox" {...props}>
-        <div class="mdc-select__surface" tabindex="0">
-          <div
-            class="mdc-select__label"
-            ref={ref => {
-              this._labelRef = ref;
-            }}>
-            {props.hintText}
-          </div>
-          <div class="mdc-select__selected-text" />
-          <div class="mdc-select__bottom-line" />
-        </div>
-        <Menu className="mdc-select__menu">{props.children}</Menu>
+      <div {...props}>
+        <select class="mdc-select__native-control">
+          {props.hintText && <option value="" disabled selected></option>}
+          {props.children}
+        </select>
+        {props.hintText && <div
+          class="mdc-select__label"
+          ref={ref => {
+            this._labelRef = ref;
+          }}>
+          {props.hintText}
+        </div>}
+        <div class="mdc-select__bottom-line" />
       </div>
     );
   }
@@ -69,28 +69,11 @@ class Select extends MaterialComponent {
 
 class SelectOption extends List.Item {
   materialDom(props) {
-    const disabled = 'disabled' in props && !!props['disabled'];
-    const selected = 'selected' in props && !!props['selected'];
-
-    const baseProps = {
-      tabindex: disabled ? '-1' : '0'
-    };
-    if (disabled) {
-      baseProps['aria-disabled'] = 'true';
-    }
-    if (selected) {
-      baseProps['aria-selected'] = 'true';
-    }
-
-    props = Object.assign(baseProps, props);
-    if ('disabled' in props) {
-      delete props['disabled'];
-    }
-    if ('selected' in props) {
-      delete props['selected'];
-    }
-
-    return super.materialDom(props);
+    return (
+      <option value="grains">
+        {props.children}
+      </option>
+    );
   }
 }
 
