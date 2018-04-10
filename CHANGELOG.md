@@ -3,6 +3,7 @@
 ## 1.4.2
 * Update to mdc 0.34.1.
 * Select has now moved to native `select` control.
+* Textfield has top level `value` method
 
 ## 1.4.1
 * Bug fixes to chip module.
