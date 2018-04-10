@@ -1,20 +1,24 @@
 # Changelog
 
 ## 1.4.2
+
 * Update to mdc 0.34.1.
 * Select has now moved to native `select` control.
 
 ## 1.4.1
+
 * Bug fixes to chip module.
 * Individual components moved to es5.
 
 ## 1.4.0
+
 * Updated to mdc 0.33.0.
 * Added Image List.
 * Added TopAppBar.
 * Removes Button's compact prop.
 
 ## 1.3.9 & 1.3.8
+
 * Bug fixes
 
 ## 1.3.7

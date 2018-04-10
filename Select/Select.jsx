@@ -51,16 +51,18 @@ class Select extends MaterialComponent {
     return (
       <div {...props}>
         <select class="mdc-select__native-control">
-          {props.hintText && <option value="" disabled selected></option>}
+          {props.hintText && <option value="" disabled selected />}
           {props.children}
         </select>
-        {props.hintText && <div
-          class="mdc-select__label"
-          ref={ref => {
-            this._labelRef = ref;
-          }}>
-          {props.hintText}
-        </div>}
+        {props.hintText && (
+          <div
+            class="mdc-select__label"
+            ref={ref => {
+              this._labelRef = ref;
+            }}>
+            {props.hintText}
+          </div>
+        )}
         <div class="mdc-select__bottom-line" />
       </div>
     );
@@ -69,11 +71,7 @@ class Select extends MaterialComponent {
 
 class SelectOption extends List.Item {
   materialDom(props) {
-    return (
-      <option value="grains">
-        {props.children}
-      </option>
-    );
+    return <option value="grains">{props.children}</option>;
   }
 }
 
