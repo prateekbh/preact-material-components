@@ -74,7 +74,7 @@ class TextFieldInput extends MaterialComponent {
   componentWillUnmount() {
     this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
   }
-  value() {
+  getValue() {
     return this.MDComponent?this.MDComponent.value:null;
   }
   materialDom(allprops) {
