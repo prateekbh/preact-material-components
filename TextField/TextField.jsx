@@ -85,6 +85,10 @@ class TextFieldInput extends MaterialComponent {
     if ('trailingIcon' in props) {
       className += ' mdc-text-field--box mdc-text-field--with-trailing-icon';
     }
+    
+    if ('disabled' in props && props.disabled) {
+      className += ' mdc-text-field--disabled';
+    }
 
     if ('value' in props && this.state.showFloatingLabel) {
       className = [className, 'mdc-text-field--upgraded'].join(' ');
