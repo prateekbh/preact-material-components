@@ -71,7 +71,7 @@ class Select extends MaterialComponent {
 
 class SelectOption extends List.Item {
   materialDom(props) {
-    return <option value="grains">{props.children}</option>;
+    return <option {...props}>{props.children}</option>;
   }
 }
 
