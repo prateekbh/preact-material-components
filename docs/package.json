@@ -43,15 +43,15 @@
     "if-env": "^1.0.0",
     "mocha": "^5.0.1",
     "node-sass": "^4.5.3",
-    "preact-cli": "^2.0.2",
     "rimraf": "^2.6.2",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^6.0.7",
     "serve": "^6.5.1",
     "shelljs": "^0.8.1",
     "webpack": "^3.8.1"
   },
   "dependencies": {
     "preact": "^8.2.1",
+    "preact-cli": "^2.2.1",
     "preact-router": "^2.5.5"
   }
 }

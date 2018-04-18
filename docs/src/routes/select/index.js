@@ -99,6 +99,14 @@ export default class SelectPage extends Component {
           <Select.Item>Option 4</Select.Item>
         </Select>
 
+        <div className="mdc-typography--title">Preselected </div>
+        <Select hintText="Select" selectedIndex={2}>
+          <Select.Item>Option 1</Select.Item>
+          <Select.Item>Option 2</Select.Item>
+          <Select.Item>Option 3</Select.Item>
+          <Select.Item>Option 4</Select.Item>
+        </Select>
+
         <div className="mdc-typography--title">Disabled </div>
         <Select hintText="Select" disabled={true}>
           <Select.Item>Option 1</Select.Item>
@@ -107,8 +115,8 @@ export default class SelectPage extends Component {
           <Select.Item>Option 4</Select.Item>
         </Select>
 
-        <div className="mdc-typography--title">Disabled option </div>
-        <Select hintText="Select">
+        <div className="mdc-typography--title">Box option </div>
+        <Select hintText="Select" box>
           <Select.Item>Option 1</Select.Item>
           <Select.Item disabled>Option 2</Select.Item>
           <Select.Item selected>Option 3</Select.Item>
