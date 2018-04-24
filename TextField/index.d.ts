@@ -30,6 +30,7 @@ export default class TextField extends MaterialComponent<
   static HelperText: typeof HelperText;
 
   static uid(): number;
+  getValue(): string;
   MDComponent: MDCTextField;
 }
 
