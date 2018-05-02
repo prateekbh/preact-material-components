@@ -1,6 +1,7 @@
 # Changelog
 
 ## 1.4.3
+
 * Update to mdc 0.35.0.
 * Changed stroked prop to outlined in Button.
 * Changed stroked prop to outlined in Card.

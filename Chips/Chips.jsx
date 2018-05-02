@@ -63,7 +63,11 @@ class ChipIcon extends Icon {
       otherprops['tabindex'] = 0;
       otherprops['role'] = 'button';
     }
-    return <Icon {...props} {...otherprops}>{children}</Icon>;
+    return (
+      <Icon {...props} {...otherprops}>
+        {children}
+      </Icon>
+    );
   }
 }
 
