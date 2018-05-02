@@ -4,6 +4,7 @@ import {VNode} from 'preact';
 declare interface ITopAppBarProps extends JSX.HTMLAttributes {
   short?: boolean;
   'short-collapsed'?: boolean;
+  'fixed'?: boolean;
 }
 export default class TopAppBar extends MaterialComponent<ITopAppBarProps, {}> {
   static Section: typeof Section;

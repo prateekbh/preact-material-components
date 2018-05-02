@@ -6,6 +6,7 @@ declare interface IChipProps extends JSX.HTMLAttributes {
   children?: ChipText[];
   choice?: boolean;
   filter?: boolean;
+  entry?: boolean;
 }
 
 declare class Chip extends MaterialComponent<IChipProps, {}> {

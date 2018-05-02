@@ -7,7 +7,7 @@ class ChipSet extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'chip-set';
-    this._mdcProps = ['choice', 'filter'];
+    this._mdcProps = ['choice', 'filter', 'input'];
   }
 
   componentDidMount() {
@@ -58,7 +58,12 @@ class ChipIcon extends Icon {
   }
   materialDom(allprops) {
     const {children, ...props} = allprops;
-    return <Icon {...props}>{children}</Icon>;
+    const otherprops = {};
+    if (props.trailing) {
+      otherprops['tabindex'] = 0;
+      otherprops['role'] = 'button';
+    }
+    return <Icon {...props} {...otherprops}>{children}</Icon>;
   }
 }
 
