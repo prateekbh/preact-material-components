@@ -150,7 +150,7 @@ describe('docs site', () => {
     });
 
     it('should match Topappbar page against golden directory', () => {
-      return takeAndCompareScreenshot(page, 'component/topappbar', 'wide');
+      return takeAndCompareScreenshot(page, 'component/top-app-bar', 'wide');
     });
 
     it('should match Typography page against golden directory', () => {
