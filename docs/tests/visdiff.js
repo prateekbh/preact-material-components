@@ -148,6 +148,14 @@ describe('docs site', () => {
     it('should match Toolbar page against golden directory', () => {
       return takeAndCompareScreenshot(page, 'component/toolbar', 'wide');
     });
+
+    it('should match Topappbar page against golden directory', () => {
+      return takeAndCompareScreenshot(page, 'component/topappbar', 'wide');
+    });
+
+    it('should match Typography page against golden directory', () => {
+      return takeAndCompareScreenshot(page, 'component/typography', 'wide');
+    });
   });
 });
 

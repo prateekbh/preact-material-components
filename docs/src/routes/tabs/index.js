@@ -43,7 +43,8 @@ export default class TabsPage extends Component {
           },
           {
             name: 'activeTabIndex',
-            description: 'Sets the bottom bar of active tab, also please use `active` prop on tab.'
+            description:
+              'Sets the bottom bar of active tab, also please use `active` prop on tab.'
           }
         ]
       },
