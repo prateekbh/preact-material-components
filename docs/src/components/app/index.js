@@ -37,6 +37,7 @@ import TextfieldPage from '../../routes/textfield';
 import ThemePage from '../../routes/theme';
 import ToolbarPage from '../../routes/toolbar';
 import TopAppBar from '../../routes/top-app-bar';
+import Typography from '../../routes/typography';
 
 // Components
 import Menu from '../menu';
@@ -193,6 +194,11 @@ export default class Home extends Component {
         text: 'TopAppBar',
         link: '/component/top-app-bar',
         component: TopAppBar
+      },
+      {
+        text: 'Typography',
+        link: '/component/typography',
+        component: Typography
       }
     ];
     this._handleRoute = this._handleRoute.bind(this);

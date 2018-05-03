@@ -21,14 +21,19 @@ export default class CardPage extends Component {
     this.propsTable = [
       {
         component: 'Card',
-        props: []
+        props: [
+          {
+            name: 'outlined',
+            description: 'This makes the card outlined.'
+          }
+        ]
       },
       {
         component: 'Card.Actions',
         props: [
           {
             name: 'full-bleed',
-            description: 'This makes the action button end to end'
+            description: 'This makes the action button end to end.'
           }
         ]
       },
@@ -41,11 +46,11 @@ export default class CardPage extends Component {
         props: [
           {
             name: 'square',
-            description: 'Makes Media aspect ratio 1:1'
+            description: 'Makes Media aspect ratio 1:1.'
           },
           {
             name: '16-9',
-            description: 'Makes Media aspect ratio 16:9'
+            description: 'Makes Media aspect ratio 16:9.'
           }
         ]
       },

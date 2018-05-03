@@ -6,7 +6,7 @@ declare interface IButtonProps {
   raised?: boolean;
   disabled?: boolean;
   unelevated?: boolean;
-  stroked?: boolean;
+  outlined?: boolean;
   primary?: boolean;
   secondary?: boolean;
 }

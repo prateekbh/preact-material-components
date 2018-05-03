@@ -43,8 +43,8 @@ export default class ButtonPage extends Component {
             description: 'Adds unelevated effect to the button'
           },
           {
-            name: 'stroked',
-            description: 'Adds stroked effect to the button'
+            name: 'outlined',
+            description: 'Adds outlined effect to the button'
           },
           {
             name: 'primary',
@@ -107,10 +107,10 @@ export default class ButtonPage extends Component {
         </div>
 
         <div>
-          <Button stroked>Default Stroked button</Button>
+          <Button outlined>Default outlined button</Button>
           <CodeBlock>
             <code class="lang-html">
-              {'<Button stroked>Default Stroked button</Button>'}
+              {'<Button outlined>Default outlined button</Button>'}
             </code>
           </CodeBlock>
         </div>

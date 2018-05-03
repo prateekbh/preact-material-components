@@ -35,10 +35,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new CssMigrationWebpackPlugin(),
-    new WebpackShellPlugin({
-      onBuildEnd: ['node compileComponents.js']
-    })
-  ]
+  plugins: [new CssMigrationWebpackPlugin()]
 };
