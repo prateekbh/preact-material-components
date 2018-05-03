@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.3
+
+* Update to mdc 0.35.0.
+* Addded Typography component.
+* Changed stroked prop to outlined in Button.
+* Changed stroked prop to outlined in Card.
+* Added entry chips.
+* Fixed TopAppBar docs.
+* Fixed Tabs docs.
+
 ## 1.4.2
 
 * Update to mdc 0.34.1.
