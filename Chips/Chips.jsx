@@ -36,10 +36,6 @@ class Chip extends MaterialComponent {
     this._mdcProps = ['selected'];
   }
 
-  componentWillUnmount() {
-    this.MDComponent.destroy && this.MDComponent.destroy();
-  }
-
   materialDom(allprops) {
     const {children, ...props} = allprops;
 
