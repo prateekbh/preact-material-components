@@ -10,5 +10,7 @@ declare interface ITypographyProps {
   primary?: boolean;
   secondary?: boolean;
 }
-export default class Typography extends MaterialComponent<ITypographyProps, {}> {
-}
+export default class Typography extends MaterialComponent<
+  ITypographyProps,
+  {}
+> {}
