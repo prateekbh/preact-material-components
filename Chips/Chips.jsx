@@ -35,10 +35,6 @@ class Chip extends MaterialComponent {
     this.componentName = 'chip';
   }
 
-  componentWillUnmount() {
-    this.MDComponent.destroy && this.MDComponent.destroy();
-  }
-
   materialDom(allprops) {
     const {children, ...props} = allprops;
 
