@@ -97,9 +97,9 @@ export default class ButtonPage extends Component {
           </CodeBlock>
         </div>
 
-        <div className="mdc-typography--display1">Entry Chips</div>
+        <div className="mdc-typography--display1">Input Chips</div>
         <div>
-          <Chips>
+          <Chips input>
             <Chips.Chip>
               <Chips.Icon className="material-icons" leading>
                 face

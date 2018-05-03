@@ -4,7 +4,7 @@ import MaterialComponent from '../MaterialComponent';
 import {VNode} from 'preact';
 
 declare interface ICardProps extends JSX.HTMLAttributes {
-  stroked?: boolean;
+  outlined?: boolean;
 }
 export default class Card extends MaterialComponent<ICardProps, {}> {
   static Actions: typeof Actions;

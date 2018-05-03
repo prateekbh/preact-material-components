@@ -12,6 +12,9 @@ import EventsTable from '../../components/events-table';
 // Samples
 import sample from './sample.txt';
 
+// CSS
+import './style.scss';
+
 // Class
 export default class TopAppBarPage extends Component {
   constructor() {
@@ -56,7 +59,7 @@ export default class TopAppBarPage extends Component {
   }
   render() {
     return (
-      <div className="page-toolbar">
+      <div className="page-topappbar">
         <ComponentTable data={this.propsTable} />
         <EventsTable data={this.eventsTable} />
 
@@ -78,7 +81,7 @@ export default class TopAppBarPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default </div>
-        <TopAppBar className="topappbar">
+        <TopAppBar>
           <TopAppBar.Row>
             <TopAppBar.Section align-start>
               <TopAppBar.Icon navigation>menu</TopAppBar.Icon>

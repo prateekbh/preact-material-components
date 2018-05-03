@@ -1,0 +1,20 @@
+import {h, Component} from 'preact';
+import Typography from 'preact-material-components/Typography';
+import 'preact-material-components/Typography/style.css';
+
+export default class FabPage extends Component {
+  render(){
+    return (
+      <div>
+        <div><Typography headline6>Headline6</Typography></div>
+        <div><Typography headline5>Headline5</Typography></div>
+        <div><Typography headline4>Headline4</Typography></div>
+        <div><Typography headline3>Headline3</Typography></div>
+        <div><Typography headline2>Headline2</Typography></div>
+        <div><Typography headline1>Headline1</Typography></div>
+        <div><Typography body1>Body1</Typography></div>
+        <div><Typography body2>Body2</Typography></div>
+      </div>
+    );
+  }
+}
