@@ -35,7 +35,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new CssMigrationWebpackPlugin(),
-  ]
+  plugins: [new CssMigrationWebpackPlugin()]
 };

@@ -22,7 +22,7 @@ export default class Typography extends MaterialComponent {
       'body2',
       'button',
       'caption',
-      'overline',
+      'overline'
     ];
   }
   materialDom(props) {
