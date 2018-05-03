@@ -5,7 +5,7 @@ class TopAppBar extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'top-app-bar';
-    this._mdcProps = ['short', 'short-collapsed', 'fixed'];
+    this._mdcProps = ['short', 'short-collapsed', 'fixed', 'prominent'];
     this._onNav = this._onNav.bind(this);
   }
   _onNav(e) {

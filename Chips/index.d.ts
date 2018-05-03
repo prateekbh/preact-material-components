@@ -4,9 +4,7 @@ import Icon from '../Icon';
 
 declare interface IChipProps extends JSX.HTMLAttributes {
   children?: ChipText[];
-  choice?: boolean;
-  filter?: boolean;
-  entry?: boolean;
+  selected?: boolean;
 }
 
 declare class Chip extends MaterialComponent<IChipProps, {}> {
@@ -26,6 +24,9 @@ declare class ChipCheckmark extends MaterialComponent<{}, {}> {}
 
 declare interface IChipSetProps extends JSX.HTMLAttributes {
   children?: Chip[];
+  choice?: boolean;
+  filter?: boolean;
+  input?: boolean;
 }
 
 export default class ChipSet extends MaterialComponent<IChipSetProps, {}> {

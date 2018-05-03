@@ -33,6 +33,7 @@ class Chip extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'chip';
+    this._mdcProps = ['selected'];
   }
 
   componentWillUnmount() {
