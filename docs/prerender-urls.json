@@ -98,5 +98,13 @@
   {
     "title": "Toolbar",
     "url": "/component/toolbar"
+  },
+  {
+    "title": "TopAppBar",
+    "url": "/component/top-app-bar"
+  },
+  {
+    "title": "Typography",
+    "url": "/component/typography"
   }
 ]
