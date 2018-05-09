@@ -15,21 +15,21 @@ import './style.scss';
 import sample from './sample.txt';
 
 const images = [
-  "images/photos/3x2/1.jpg",
-  "images/photos/3x2/2.jpg",
-  "images/photos/3x2/3.jpg",
-  "images/photos/3x2/4.jpg",
-  "images/photos/3x2/5.jpg",
-  "images/photos/3x2/6.jpg",
-  "images/photos/3x2/7.jpg",
-  "images/photos/3x2/8.jpg",
-  "images/photos/3x2/9.jpg",
-  "images/photos/3x2/10.jpg",
-  "images/photos/3x2/11.jpg",
-  "images/photos/3x2/12.jpg",
-  "images/photos/3x2/13.jpg",
-  "images/photos/3x2/14.jpg",
-  "images/photos/3x2/15.jpg",
+  'images/photos/3x2/1.jpg',
+  'images/photos/3x2/2.jpg',
+  'images/photos/3x2/3.jpg',
+  'images/photos/3x2/4.jpg',
+  'images/photos/3x2/5.jpg',
+  'images/photos/3x2/6.jpg',
+  'images/photos/3x2/7.jpg',
+  'images/photos/3x2/8.jpg',
+  'images/photos/3x2/9.jpg',
+  'images/photos/3x2/10.jpg',
+  'images/photos/3x2/11.jpg',
+  'images/photos/3x2/12.jpg',
+  'images/photos/3x2/13.jpg',
+  'images/photos/3x2/14.jpg',
+  'images/photos/3x2/15.jpg'
 ];
 
 // Class
@@ -100,19 +100,18 @@ export default class ImageListPage extends Component {
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Normal </div>
         <ImageList with-text-protection>
-          {
-            images.map(image => (
-              <ImageList.Item>
-                <ImageList.AspectContainer>
-                  <ImageList.Image src={`https://material-components-web.appspot.com/${image}`} />
-                </ImageList.AspectContainer>
-                <ImageList.Supporting>
-                  <ImageList.Label>Text Label</ImageList.Label>
-                </ImageList.Supporting>
-              </ImageList.Item>
-            ))
-          }
-
+          {images.map(image => (
+            <ImageList.Item>
+              <ImageList.AspectContainer>
+                <ImageList.Image
+                  src={`https://material-components-web.appspot.com/${image}`}
+                />
+              </ImageList.AspectContainer>
+              <ImageList.Supporting>
+                <ImageList.Label>Text Label</ImageList.Label>
+              </ImageList.Supporting>
+            </ImageList.Item>
+          ))}
         </ImageList>
       </div>
     );
