@@ -39,9 +39,9 @@ class Select extends MaterialComponent {
 
     const selectedIndex = this.MDComponent.selectedIndex;
     if (selectedIndex === 0) {
-      this._labelRef.classList.remove('mdc-floating-label--float-above');
+      this._labelRef && this._labelRef.classList.remove('mdc-floating-label--float-above');
     } else {
-      this._labelRef.classList.add('mdc-floating-label--float-above');
+      this._labelRef && this._labelRef.classList.add('mdc-floating-label--float-above');
     }
   }
   componentDidUpdate() {
