@@ -303,9 +303,7 @@ export default class Home extends Component {
         </div>
 
         <div>
-          <Tabs
-            activeTabIndex={this.state.activeTabIndex}
-            indicator-accent={true}>
+          <Tabs activeTabIndex={this.state.activeTabIndex}>
             <Tabs.Tab>tab1</Tabs.Tab>
             <Tabs.Tab>tab2</Tabs.Tab>
             <Tabs.Tab>tab3</Tabs.Tab>

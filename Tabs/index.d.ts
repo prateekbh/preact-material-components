@@ -3,7 +3,6 @@ import {VNode} from 'preact';
 import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
 
 declare interface ITabsProps extends JSX.HTMLAttributes {
-  'indicator-accent'?: boolean;
   'icon-tab-bar'?: boolean;
   'icons-with-text'?: boolean;
   scroller?: boolean;

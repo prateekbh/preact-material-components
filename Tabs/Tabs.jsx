@@ -11,7 +11,6 @@ const defaultProps = {
 };
 
 /**
- * @prop indicator-accent = false
  * @prop icon-tab-bar = false
  * @prop icons-with-text = false
  * @prop scroller = false
@@ -20,12 +19,7 @@ class Tabs extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'tab-bar';
-    this._mdcProps = [
-      'indicator-accent',
-      'icon-tab-bar',
-      'icons-with-text',
-      'scroller'
-    ];
+    this._mdcProps = ['icon-tab-bar', 'icons-with-text', 'scroller'];
   }
   componentDidMount() {
     this.MDComponent = new MDCTabBar(this.control);
