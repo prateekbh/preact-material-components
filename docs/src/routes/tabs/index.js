@@ -33,10 +33,6 @@ export default class TabsPage extends Component {
             description: 'Makes the tab bar accomodate icons and label.'
           },
           {
-            name: 'scroller',
-            description: 'Makes the tabs scrollable.'
-          },
-          {
             name: 'activeTabIndex',
             description:
               'Sets the bottom bar of active tab, also please use `active` prop on tab.'
@@ -49,6 +45,29 @@ export default class TabsPage extends Component {
           {
             name: 'active',
             description: 'Sets the tab active along with `activeTabIndex` prop.'
+          }
+        ]
+      },
+      {
+        component: 'TabBarScroller',
+        props: [
+          {
+            name: 'activeTabIndex',
+            description:
+              'Sets the bottom bar of active tab, also please use `active` prop on tab.'
+          }
+        ]
+      },
+      {
+        component: 'TabBarScrollerTabs',
+        props: [
+          {
+            name: 'icon-tab-bar',
+            description: 'Makes the tab bar accomodate icons.'
+          },
+          {
+            name: 'icons-with-text',
+            description: 'Makes the tab bar accomodate icons and label.'
           }
         ]
       }
@@ -119,7 +138,7 @@ export default class TabsPage extends Component {
         </CodeBlock>
         <div className="mdc-typography--title">Scrollable tabs </div>
         <Tabs.TabBarScroller>
-          <Tabs scroller={true}>
+          <Tabs.TabBarScrollerTabs>
             <Tabs.Tab>tab1</Tabs.Tab>
             <Tabs.Tab active={true}>tab2</Tabs.Tab>
             <Tabs.Tab>tab3</Tabs.Tab>
@@ -131,7 +150,7 @@ export default class TabsPage extends Component {
             <Tabs.Tab>tab9</Tabs.Tab>
             <Tabs.Tab>tab10</Tabs.Tab>
             <Tabs.Tab>tab11</Tabs.Tab>
-          </Tabs>
+          </Tabs.TabBarScrollerTabs>
         </Tabs.TabBarScroller>
         <CodeBlock>
           <code class="lang-js">{scrollableSample}</code>

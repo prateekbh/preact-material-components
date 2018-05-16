@@ -319,7 +319,7 @@ export default class Home extends Component {
         </div>
         <div style="margin: 32px 0">
           <Tabs.TabBarScroller>
-            <Tabs scroller={true}>
+            <Tabs.TabBarScrollerTabs>
               <Tabs.Tab>tab1</Tabs.Tab>
               <Tabs.Tab active={true}>tab2</Tabs.Tab>
               <Tabs.Tab>tab3</Tabs.Tab>
@@ -331,7 +331,7 @@ export default class Home extends Component {
               <Tabs.Tab>tab9</Tabs.Tab>
               <Tabs.Tab>tab10</Tabs.Tab>
               <Tabs.Tab>tab11</Tabs.Tab>
-            </Tabs>
+            </Tabs.TabBarScrollerTabs>
           </Tabs.TabBarScroller>
         </div>
         <div>
