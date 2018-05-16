@@ -1,6 +1,6 @@
 import MaterialComponent from '../MaterialComponent';
-import { VNode } from 'preact';
-import { MDCFoundation, MDCComponent } from '../MaterialComponentsWeb';
+import {VNode} from 'preact';
+import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
 
 declare interface ITabsProps extends JSX.HTMLAttributes {
   'icon-tab-bar'?: boolean;
@@ -19,7 +19,10 @@ export default class Tabs extends MaterialComponent<ITabsProps, {}> {
 declare interface ITabBarScrollerProps extends JSX.HTMLAttributes {
   activeTabIndex?: number;
 }
-declare class TabBarScroller extends MaterialComponent<ITabBarScrollerProps, {}> {
+declare class TabBarScroller extends MaterialComponent<
+  ITabBarScrollerProps,
+  {}
+> {
   MDComponent: MDCTabBarScroller;
 }
 
@@ -27,14 +30,17 @@ declare interface ITabBarScrollerTabsProps extends JSX.HTMLAttributes {
   'icon-tab-bar'?: boolean;
   'icons-with-text'?: boolean;
 }
-declare class TabBarScrollerTabs extends MaterialComponent<ITabBarScrollerTabsProps, {}> { }
+declare class TabBarScrollerTabs extends MaterialComponent<
+  ITabBarScrollerTabsProps,
+  {}
+> {}
 
 interface ITabProps extends JSX.HTMLAttributes {
   active?: boolean;
 }
-declare class Tab extends MaterialComponent<ITabProps, {}> { }
+declare class Tab extends MaterialComponent<ITabProps, {}> {}
 
-declare class TabIconLabel extends MaterialComponent<JSX.HTMLAttributes, {}> { }
+declare class TabIconLabel extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
 declare class MDCTabFoundation extends MDCFoundation<MDCTab> {
   getComputedWidth(): number;
@@ -67,7 +73,7 @@ declare class MDCTabBar extends MDCComponent<MDCTabBarFoundation> {
 
 declare class MDCTabBarScrollerFoundation extends MDCFoundation<
   MDCTabBarScroller
-  > {
+> {
   scrollBack(evt?: Event): void;
   scrollForward(evt?: Event): void;
   layout(): void;
@@ -75,7 +81,7 @@ declare class MDCTabBarScrollerFoundation extends MDCFoundation<
 }
 declare class MDCTabBarScroller extends MDCComponent<
   MDCTabBarScrollerFoundation
-  > {
+> {
   tabBar: MDCTabBar;
   layout(): void;
 }
