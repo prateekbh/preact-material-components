@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.5
+
+* Fixed typings for `Typography`.
+
 ## 1.4.3
 
 * Update to mdc 0.35.0.
