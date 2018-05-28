@@ -1,4 +1,4 @@
-<Tabs className="demo-tabs" indicator-accent={true}>
+<Tabs className="demo-tabs">
   <Tabs.Tab>Tab1</Tabs.Tab>
   <Tabs.Tab>Tab2</Tabs.Tab>
   <Tabs.Tab>Tab3</Tabs.Tab>
