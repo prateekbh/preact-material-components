@@ -1,12 +1,14 @@
 {
   "name": "preact-material-components",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
     "build": "node ./compileComponents.js && webpack --mode production",
     "prepublishOnly": "npm run build && npm run test",
+    "prettier:fix":
+      "prettier --config ./prettier.config.js {,**/*.jsx} --write",
     "test": "npm run build",
     "sample": "http-server ./sample"
   },

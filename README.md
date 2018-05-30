@@ -83,7 +83,7 @@ If you are using less-loader you have to set **strictMath: true** option in your
 To use theming props like primary/secondary, you'll need to include Theme's css
 
 ```
-import 'preact-material-components/Theme/style.css
+import 'preact-material-components/Theme/style.css';
 ```
 
 ## Docs and Demos

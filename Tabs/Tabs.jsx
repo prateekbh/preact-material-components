@@ -11,21 +11,14 @@ const defaultProps = {
 };
 
 /**
- * @prop indicator-accent = false
  * @prop icon-tab-bar = false
  * @prop icons-with-text = false
- * @prop scroller = false
  */
 class Tabs extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'tab-bar';
-    this._mdcProps = [
-      'indicator-accent',
-      'icon-tab-bar',
-      'icons-with-text',
-      'scroller'
-    ];
+    this._mdcProps = ['icon-tab-bar', 'icons-with-text'];
   }
   componentDidMount() {
     this.MDComponent = new MDCTabBar(this.control);
@@ -37,19 +30,9 @@ class Tabs extends MaterialComponent {
   componentWillUpdate(nextProps) {
     setActiveTabIndex(this.props, nextProps, this.MDComponent);
   }
-  materialDom(allprops) {
-    let {className, ...props} = allprops;
-    if (props.scroller) {
-      className = 'mdc-tab-bar-scroller__scroll-frame__tabs';
-    } else {
-      className = '';
-    }
+  materialDom(props) {
     return (
-      <nav
-        className={className}
-        role="tablist"
-        {...props}
-        ref={this.setControlRef}>
+      <nav role="tablist" {...props} ref={this.setControlRef}>
         {props.children}
         <span class="mdc-tab-bar__indicator" />
       </nav>
@@ -64,9 +47,13 @@ class TabBarScroller extends MaterialComponent {
   }
   componentDidMount() {
     this.MDComponent = new MDCTabBarScroller(this.control);
+    setActiveTabIndex(defaultProps, this.props, this.MDComponent.tabBar);
   }
   componentWillUnmount() {
     this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    setActiveTabIndex(this.props, nextProps, this.MDComponent.tabBar);
   }
   materialDom(props) {
     return (
@@ -91,6 +78,30 @@ class TabBarScroller extends MaterialComponent {
           </a>
         </div>
       </div>
+    );
+  }
+}
+
+/**
+ * @prop icon-tab-bar = false
+ * @prop icons-with-text = false
+ */
+class TabBarScrollerTabs extends MaterialComponent {
+  constructor() {
+    super();
+    this.componentName = 'tab-bar';
+    this._mdcProps = ['icon-tab-bar', 'icons-with-text'];
+  }
+  materialDom({className, ...props}) {
+    return (
+      <nav
+        role="tablist"
+        className="mdc-tab-bar-scroller__scroll-frame__tabs"
+        {...props}
+        ref={this.setControlRef}>
+        {props.children}
+        <span class="mdc-tab-bar__indicator" />
+      </nav>
     );
   }
 }
@@ -141,6 +152,7 @@ function setActiveTabIndex(oldprops, newprops, tabs) {
 }
 
 Tabs.TabBarScroller = TabBarScroller;
+Tabs.TabBarScrollerTabs = TabBarScrollerTabs;
 Tabs.Tab = Tab;
 Tabs.TabIconLabel = TabIconLabel;
 export default Tabs;
