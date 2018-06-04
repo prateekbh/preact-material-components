@@ -60,7 +60,7 @@
     "@material/slider": "^0.35.0",
     "@material/snackbar": "^0.35.0",
     "@material/switch": "^0.35.0",
-    "@material/tabs": "^0.35.0",
+    "@material/tabs": "^0.36.0",
     "@material/textfield": "^0.35.0",
     "@material/theme": "^0.35.0",
     "@material/toolbar": "^0.35.0",
