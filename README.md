@@ -17,53 +17,53 @@ Smaller bundles FTW!!!
 
 ## Components List
 
-* 👍 button
+- 👍 button
 
-* 👍 card
+- 👍 card
 
-* 👍 chips
+- 👍 chips
 
-* 👍 checkbox
+- 👍 checkbox
 
-* 👍 dialog
+- 👍 dialog
 
-* 👍 drawer
+- 👍 drawer
 
-* 👍 elevation
+- 👍 elevation
 
-* 👍 fab
+- 👍 fab
 
-* 👍 form-field
+- 👍 form-field
 
-* 👍 icon-toggle
+- 👍 icon-toggle
 
-* 👍 layout-grid
+- 👍 layout-grid
 
-* 👍 line-ripple
+- 👍 line-ripple
 
-* 👍 linear-progress
+- 👍 linear-progress
 
-* 👍 list
+- 👍 list
 
-* 👍 menu
+- 👍 menu
 
-* 👍 radio
+- 👍 radio
 
-* 👍 select
+- 👍 select
 
-* 👍 slider
+- 👍 slider
 
-* 👍 snackbar
+- 👍 snackbar
 
-* 👍 switch
+- 👍 switch
 
-* 👍 tabs
+- 👍 tabs
 
-* 👍 textfield
+- 👍 textfield
 
-* 👍 theme
+- 👍 theme
 
-* 👍 toolbar
+- 👍 toolbar
 
 ## FAQ
 
