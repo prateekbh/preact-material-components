@@ -7,8 +7,7 @@
   "scripts": {
     "build": "node ./compileComponents.js && webpack --mode production",
     "prepublishOnly": "npm run build && npm run test",
-    "prettier:fix":
-      "prettier --config ./prettier.config.js {,**/*.jsx} --write",
+    "prettier:fix": "prettier --config ./prettier.config.js {,**/*.jsx} --write",
     "test": "npm run build",
     "sample": "http-server ./sample"
   },
