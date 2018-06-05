@@ -10,6 +10,9 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'umd'
   },
+  externals: {
+    preact: 'preact'
+  },
   module: {
     rules: [
       {
