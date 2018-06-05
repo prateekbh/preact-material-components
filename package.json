@@ -7,8 +7,7 @@
   "scripts": {
     "build": "node ./compileComponents.js && webpack --mode production",
     "prepublishOnly": "npm run build && npm run test",
-    "prettier:fix":
-      "prettier --config ./prettier.config.js {,**/*.jsx} --write",
+    "prettier:fix": "prettier --config ./prettier.config.js {,**/*.jsx} --write",
     "test": "npm run build",
     "sample": "http-server ./sample"
   },
@@ -54,7 +53,7 @@
     "@material/notched-outline": "^0.35.0",
     "@material/radio": "^0.35.0",
     "@material/ripple": "^0.35.0",
-    "@material/rtl": "^0.35.0",
+    "@material/rtl": "^0.36.0",
     "@material/select": "^0.35.0",
     "@material/selection-control": "^0.35.0",
     "@material/slider": "^0.35.0",
