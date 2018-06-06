@@ -15,6 +15,9 @@ import Dialog from './Dialog';
 import List from './List';
 import Drawer from './Drawer';
 import Toolbar from './Toolbar';
+import TopAppBar from './TopAppBar';
+import Typography from './Typography';
+import ImageList from './ImageList';
 import LinearProgress from './LinearProgress';
 import LayoutGrid from './LayoutGrid';
 import GridList from './GridList';
@@ -47,5 +50,8 @@ export {
   GridList,
   Tabs,
   Slider,
-  Chips
+  Chips,
+  TopAppBar,
+  Typography,
+  ImageList
 };
