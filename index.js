@@ -2,6 +2,7 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import Fab from './Fab';
 import Icon from './Icon';
+import IconButton from './IconButton';
 import IconToggle from './IconToggle';
 import Switch from './Switch';
 import Snackbar from './Snackbar';
@@ -33,6 +34,7 @@ export {
   Switch,
   Snackbar,
   Icon,
+  IconButton,
   IconToggle,
   Radio,
   TextField,
