@@ -1,9 +1,7 @@
 import MaterialComponent from '../MaterialComponent';
 import {VNode} from 'preact';
 
-declare interface IButtonProps {
-
-}
+declare interface IButtonProps {}
 export default class IconButton<
   PropsType = JSX.HTMLAttributes,
   StateType = {}
