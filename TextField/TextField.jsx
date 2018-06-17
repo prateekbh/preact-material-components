@@ -169,7 +169,7 @@ class TextField extends Component {
     } = allprops;
     const showDiv = props.helperText || (props.label && !showFloatingLabel);
 
-    if (showDiv && !props.id) {
+    if (!props.id) {
       props.id = 'tf-' + this.id;
     }
 
