@@ -2,13 +2,15 @@ import {h} from 'preact';
 import MaterialComponent from '../MaterialComponent';
 import {MDCIconButtonToggle} from '@material/icon-button';
 /**
- *  @prop dense = false
- *  @prop raised = false
+ *  @prop data-toggle-on-content="favorite"
+ *  @prop data-toggle-on-label="Remove from favorites"
+ *  @prop data-toggle-off-content="favorite_border"
+ *  @prop data-toggle-off-label="Add to favorites"
  */
 class IconButton extends MaterialComponent {
   constructor() {
     super();
-    this.componentName = 'button';
+    this.componentName = 'icon-button';
   }
   componentDidMount() {
     this.MDComponent = new MDCIconButtonToggle(this.control);
@@ -20,7 +22,7 @@ class IconButton extends MaterialComponent {
   }
   materialDom(props) {
     return (
-      <button ref={this.setControlRef} {...props}>
+      <button className="material-icons" ref={this.setControlRef} {...props}>
         {this.props.children}
       </button>
     );
