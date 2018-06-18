@@ -40,7 +40,7 @@
     "@material/chips": "^0.36.0",
     "@material/dialog": "^0.36.0",
     "@material/drawer": "^0.36.0",
-    "@material/elevation": "^0.35.0",
+    "@material/elevation": "^0.36.1",
     "@material/fab": "^0.36.0",
     "@material/form-field": "^0.36.0",
     "@material/grid-list": "^0.36.0",
