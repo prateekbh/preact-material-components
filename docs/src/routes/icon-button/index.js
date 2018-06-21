@@ -76,8 +76,8 @@ export default class IconButtonPage extends Component {
           tabindex="0"
           aria-pressed="false"
           aria-label="Add to favorites"
-          data-toggle-on-content='favorite'
-          data-toggle-off-content='favorite_border'>
+          data-toggle-on-content="favorite"
+          data-toggle-off-content="favorite_border">
           favorite_border
         </IconButton>
       </div>
