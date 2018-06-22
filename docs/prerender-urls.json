@@ -48,6 +48,10 @@
     "url": "/component/icon-toggle"
   },
   {
+    "title": "IconButton",
+    "url": "/component/icon-button"
+  },
+  {
     "title": "LayoutGrid",
     "url": "/component/layout-grid"
   },
