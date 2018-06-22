@@ -10,6 +10,7 @@ const bundleMapping = {
   FormField: 'form-field',
   GridList: 'grid-list',
   Icon: 'icon-toggle',
+  IconButton: 'icon-button',
   IconToggle: 'icon-toggle',
   ImageList: 'image-list',
   LayoutGrid: 'layout-grid',
