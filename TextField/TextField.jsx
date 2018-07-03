@@ -164,9 +164,6 @@ class TextFieldInput extends MaterialComponent {
  * @prop helperTextValidationMsg = false
  */
 class TextField extends Component {
-  static defaultProps = {
-    outerStyle: {}
-  };
   constructor() {
     super();
     this.id = TextField.uid();
@@ -238,6 +235,9 @@ class TextField extends Component {
     );
   }
 }
+TextField.defaultProps = {
+  outerStyle: {}
+};
 
 function setValid(oldprops, newprops, textfield) {
   if (
