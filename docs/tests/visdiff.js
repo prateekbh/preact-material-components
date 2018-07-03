@@ -93,6 +93,10 @@ describe('docs site', () => {
       return takeAndCompareScreenshot(page, 'component/icon-toggle', 'wide');
     });
 
+    it('should match IconButton page against golden directory', () => {
+      return takeAndCompareScreenshot(page, 'component/icon-button', 'wide');
+    });
+
     it('should match LayoutGrid page against golden directory', () => {
       return takeAndCompareScreenshot(page, 'component/layout-grid', 'wide');
     });

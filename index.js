@@ -2,6 +2,7 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import Fab from './Fab';
 import Icon from './Icon';
+import IconButton from './IconButton';
 import IconToggle from './IconToggle';
 import Switch from './Switch';
 import Snackbar from './Snackbar';
@@ -15,6 +16,9 @@ import Dialog from './Dialog';
 import List from './List';
 import Drawer from './Drawer';
 import Toolbar from './Toolbar';
+import TopAppBar from './TopAppBar';
+import Typography from './Typography';
+import ImageList from './ImageList';
 import LinearProgress from './LinearProgress';
 import LayoutGrid from './LayoutGrid';
 import GridList from './GridList';
@@ -30,6 +34,7 @@ export {
   Switch,
   Snackbar,
   Icon,
+  IconButton,
   IconToggle,
   Radio,
   TextField,
@@ -47,5 +52,8 @@ export {
   GridList,
   Tabs,
   Slider,
-  Chips
+  Chips,
+  TopAppBar,
+  Typography,
+  ImageList
 };
