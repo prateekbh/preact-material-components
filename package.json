@@ -38,7 +38,7 @@
     "@material/card": "^0.36.0",
     "@material/checkbox": "^0.36.0",
     "@material/chips": "^0.36.0",
-    "@material/dialog": "^0.36.0",
+    "@material/dialog": "^0.37.0",
     "@material/drawer": "^0.36.0",
     "@material/elevation": "^0.36.1",
     "@material/fab": "^0.36.0",
