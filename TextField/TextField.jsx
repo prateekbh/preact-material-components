@@ -14,6 +14,7 @@ class HelperText extends MaterialComponent {
     this.componentName = 'text-field-helper-text';
     this._mdcProps = ['persistent', 'validation-msg'];
   }
+
   materialDom(props) {
     return (
       <p {...props} aria-hidden="true">
@@ -28,6 +29,7 @@ class Label extends MaterialComponent {
     super();
     this.componentName = 'floating-label';
   }
+
   materialDom(props) {
     return <label {...props}>{props.children}</label>;
   }
@@ -42,6 +44,7 @@ const defaultProps = {
  * @prop textarea = false
  * @prop dense = false
  * @prop disabled = false
+ * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
  * @prop value = ''
@@ -51,11 +54,19 @@ class TextFieldInput extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'text-field';
-    this._mdcProps = ['fullwidth', 'textarea', 'dense', 'disabled', 'box'];
+    this._mdcProps = [
+      'fullwidth',
+      'textarea',
+      'dense',
+      'disabled',
+      'box',
+      'outlined'
+    ];
     this.state = {
       showFloatingLabel: false
     };
   }
+
   componentDidMount() {
     this.setState(
       {
@@ -68,15 +79,19 @@ class TextFieldInput extends MaterialComponent {
       }
     );
   }
+
   componentWillUpdate(nextProps) {
     setValid(this.props, nextProps, this.MDComponent);
   }
+
   componentWillUnmount() {
     this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
   }
+
   getValue() {
     return this.MDComponent ? this.MDComponent.value : null;
   }
+
   materialDom(allprops) {
     let {className, ...props} = allprops;
     className = className || '';
@@ -120,6 +135,14 @@ class TextFieldInput extends MaterialComponent {
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
         {props.textarea ? '' : <div class="mdc-line-ripple" />}
+        {props.outlined ? (
+          <div class="mdc-notched-outline">
+            <svg>
+              <path className="mdc-notched-outline__path" />
+            </svg>
+          </div>
+        ) : null}
+        {props.outlined ? <div className="mdc-notched-outline__idle" /> : null}
       </div>
     );
   }
@@ -130,6 +153,7 @@ class TextFieldInput extends MaterialComponent {
  * @prop textarea = false
  * @prop dense = false
  * @prop disabled = false
+ * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
  * @prop value = ''

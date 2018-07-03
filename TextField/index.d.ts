@@ -13,6 +13,7 @@ declare interface ITextFieldProps extends JSX.HTMLAttributes {
   textarea?: boolean;
   dense?: boolean;
   box?: boolean;
+  outlined?: boolean;
   helperText?: string;
   helperTextPersistent?: boolean;
   helperTextValidationMsg?: boolean;
