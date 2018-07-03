@@ -13,6 +13,7 @@ import sample from './sample.txt';
 import defaultSample from './default-sample.txt';
 import controlledSample from './controlled-sample.txt';
 import denseSample from './dense-sample.txt';
+import outlinedSample from './outlined-sample.txt';
 import disabledSample from './disabled-sample.txt';
 import helpTextSample from './help-text-sample.txt';
 import passwordSample from './password-sample.txt';
@@ -148,7 +149,7 @@ export default class TextFieldPage extends Component {
         <div className="mdc-typography--title">Outlined</div>
         <TextField label="Outlined" outlined />
         <CodeBlock>
-          <code class="lang-html">{denseSample}</code>
+          <code class="lang-html">{outlinedSample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">Disabled</div>
         <TextField label="Disabled" disabled />
