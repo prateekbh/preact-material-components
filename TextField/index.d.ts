@@ -20,6 +20,7 @@ declare interface ITextFieldProps extends JSX.HTMLAttributes {
   cssLabel?: string;
   leadingIcon?: string;
   trailingIcon?: string;
+  outerStyle?: {[key: string]: string}
 }
 declare interface ITextFieldState {
   showFloatingLabel: boolean;

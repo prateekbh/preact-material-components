@@ -156,6 +156,7 @@ class TextFieldInput extends MaterialComponent {
  * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
+ * @prop outerStyle = {[key: string]: string}
  * @prop value = ''
  * @prop label = ''
  * @prop helperText = ''
@@ -163,6 +164,9 @@ class TextFieldInput extends MaterialComponent {
  * @prop helperTextValidationMsg = false
  */
 class TextField extends Component {
+  static defaultProps = {
+    outerStyle: {}
+  };
   constructor() {
     super();
     this.id = TextField.uid();
@@ -187,6 +191,7 @@ class TextField extends Component {
   render(allprops, {showFloatingLabel}) {
     const {
       className,
+      outerStyle,
       helperTextPersistent,
       helperTextValidationMsg,
       ...props
@@ -204,7 +209,7 @@ class TextField extends Component {
     };
 
     return showDiv ? (
-      <div className={className}>
+      <div className={className} style={outerStyle}>
         {props.label &&
           !showFloatingLabel && (
             <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
