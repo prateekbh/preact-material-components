@@ -13,6 +13,7 @@ import sample from './sample.txt';
 import defaultSample from './default-sample.txt';
 import controlledSample from './controlled-sample.txt';
 import denseSample from './dense-sample.txt';
+import outlinedSample from './outlined-sample.txt';
 import disabledSample from './disabled-sample.txt';
 import helpTextSample from './help-text-sample.txt';
 import passwordSample from './password-sample.txt';
@@ -57,6 +58,10 @@ export default class TextFieldPage extends Component {
             description: 'Disables the input'
           },
           {
+            name: 'outlined',
+            description: 'Adds an outline around the TextField'
+          },
+          {
             name: 'helperText',
             description:
               'Include an help text that is useful for providing supplemental information to users, as well for validation messages',
@@ -70,6 +75,11 @@ export default class TextFieldPage extends Component {
             name: 'helperTextValidationMsg',
             description:
               'Provide styles for using the help text as a validation message'
+          },
+          {
+            name: 'outerStyles',
+            description:
+              "Applies styles to the outer <div> element, works like (p)react's style prop"
           }
         ]
       }
@@ -88,7 +98,7 @@ export default class TextFieldPage extends Component {
           This component encapsulates{' '}
           <span className="strong">mdc-text-field</span>. You can refer to its
           documentation
-          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-text-field">
+          <a href="https://material.io/develop/web/components/input-controls/text-field/">
             {' '}
             here
           </a>.
@@ -135,6 +145,11 @@ export default class TextFieldPage extends Component {
         <TextField label="Dense" dense />
         <CodeBlock>
           <code class="lang-html">{denseSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Outlined</div>
+        <TextField label="Outlined" outlined />
+        <CodeBlock>
+          <code class="lang-html">{outlinedSample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">Disabled</div>
         <TextField label="Disabled" disabled />

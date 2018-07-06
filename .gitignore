@@ -53,3 +53,4 @@ jspm_packages
 /docs/tests/generated
 
 .DS_Store
+.idea/
