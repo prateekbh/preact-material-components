@@ -47,6 +47,7 @@ const defaultProps = {
  * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
+ * @prop outerStyle = {[key: string]: string}
  * @prop value = ''
  * @prop label = ''
  */
@@ -93,7 +94,7 @@ class TextFieldInput extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    let {className, ...props} = allprops;
+    let {className, outerStyle, ...props} = allprops;
     className = className || '';
 
     if ('leadingIcon' in props) {
@@ -114,7 +115,7 @@ class TextFieldInput extends MaterialComponent {
     }
 
     return (
-      <div className={className} ref={this.setControlRef}>
+      <div className={className} ref={this.setControlRef} style={outerStyle}>
         {props.leadingIcon ? (
           <Icon className="mdc-text-field__icon">{props.leadingIcon}</Icon>
         ) : null}
@@ -151,6 +152,9 @@ class TextFieldInput extends MaterialComponent {
     );
   }
 }
+TextFieldInput.defaultProps = {
+  outerStyle: {}
+};
 
 /**
  * @prop fullwidth = false
