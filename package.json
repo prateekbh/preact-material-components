@@ -1,6 +1,6 @@
 {
   "name": "preact-material-components",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist/index.js",

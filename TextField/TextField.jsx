@@ -134,7 +134,11 @@ class TextFieldInput extends MaterialComponent {
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
-        {props.textarea ? '' : <div class="mdc-line-ripple" />}
+        {props.textarea || props.outlined ? (
+          ''
+        ) : (
+          <div class="mdc-line-ripple" />
+        )}
         {props.outlined ? (
           <div class="mdc-notched-outline">
             <svg>
