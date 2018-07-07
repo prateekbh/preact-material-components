@@ -236,6 +236,7 @@ class TextField extends Component {
       <TextFieldInput
         {...props}
         className={className}
+        outerStyle={outerStyle}
         onInit={MDComponent => {
           this.MDComponent = MDComponent;
         }}
