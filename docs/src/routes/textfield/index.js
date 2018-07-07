@@ -19,6 +19,7 @@ import helpTextSample from './help-text-sample.txt';
 import passwordSample from './password-sample.txt';
 import persistentHelpTextSample from './persistent-help-text-sample.txt';
 import textareaSample from './textarea-sample.txt';
+import outerStyleSample from './outerStyle-sample.txt';
 
 // Class
 export default class TextFieldPage extends Component {
@@ -79,7 +80,7 @@ export default class TextFieldPage extends Component {
           {
             name: 'outerStyles',
             description:
-              "Applies styles to the outer <div> element, works like (p)react's style prop"
+              "Applies styles to the whole element, works like (p)react's style prop"
           }
         ]
       }
@@ -165,6 +166,14 @@ export default class TextFieldPage extends Component {
         State: {this.state.value}
         <CodeBlock>
           <code class="lang-html">{controlledSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">outerStyle</div>
+        <TextField
+          label="outerStyle"
+          outerStyle={{transform: 'rotate(5deg)', margin: '2rem 0'}}
+        />
+        <CodeBlock>
+          <code class="lang-html">{outerStyleSample}</code>
         </CodeBlock>
       </div>
     );
