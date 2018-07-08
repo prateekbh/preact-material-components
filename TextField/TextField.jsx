@@ -251,7 +251,8 @@ class TextField extends Component {
   }
 }
 TextField.defaultProps = {
-  outerStyle: {}
+  outerStyle: {},
+  intermediateStyle: null
 };
 
 function setValid(oldprops, newprops, textfield) {
