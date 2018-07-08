@@ -79,8 +79,14 @@ export default class TextFieldPage extends Component {
           },
           {
             name: 'outerStyles',
+            description: 'Applies styles to the whole element',
+            value: "like (p)react's style prop"
+          },
+          {
+            name: 'helperTextOuterStyle',
             description:
-              "Applies styles to the whole element, works like (p)react's style prop"
+              'Applies styles to the wrapper around text field and helper text',
+            value: "like (p)react's style prop"
           }
         ]
       }
