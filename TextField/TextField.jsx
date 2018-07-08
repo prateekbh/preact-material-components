@@ -94,7 +94,7 @@ class TextFieldInput extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    let {className, outerStyle, ...props} = allprops;
+    let {className, outerStyle, outlined, ...props} = allprops;
     className = className || '';
 
     if ('leadingIcon' in props) {
@@ -135,19 +135,15 @@ class TextFieldInput extends MaterialComponent {
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
-        {props.textarea || props.outlined ? (
-          ''
-        ) : (
-          <div class="mdc-line-ripple" />
-        )}
-        {props.outlined ? (
+        {props.textarea || outlined ? null : <div class="mdc-line-ripple" />}
+        {outlined ? (
           <div class="mdc-notched-outline">
             <svg>
               <path className="mdc-notched-outline__path" />
             </svg>
           </div>
         ) : null}
-        {props.outlined ? <div className="mdc-notched-outline__idle" /> : null}
+        {outlined ? <div className="mdc-notched-outline__idle" /> : null}
       </div>
     );
   }
