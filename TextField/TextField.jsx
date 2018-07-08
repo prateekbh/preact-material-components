@@ -164,7 +164,7 @@ TextFieldInput.defaultProps = {
  * @prop value = ''
  * @prop label = ''
  * @prop helperText = ''
- * @prop helperTextOuterStyle = {}
+ * @prop intermediateStyle = {}
  * @prop helperTextPersistent = false
  * @prop helperTextValidationMsg = false
  */
@@ -196,7 +196,7 @@ class TextField extends Component {
       outerStyle,
       helperTextPersistent,
       helperTextValidationMsg,
-      helperTextOuterStyle,
+      intermediateStyle: intermediateStyleUDef,
       ...props
     } = allprops;
     const showDiv = props.helperText || (props.label && !showFloatingLabel);
@@ -205,6 +205,13 @@ class TextField extends Component {
       props.id = 'tf-' + this.id;
     }
 
+    const intermediateStyle = Object.assign(
+      {
+        width: '100%'
+      },
+      intermediateStyleUDef
+    );
+
     // Helper text
     const helperTextProps = {
       persistent: helperTextPersistent,
@@ -212,13 +219,13 @@ class TextField extends Component {
     };
 
     return showDiv ? (
-      <div className={className} style={helperTextOuterStyle}>
+      <div className={className} style={outerStyle}>
         {props.label &&
           !showFloatingLabel && (
             <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
           )}
         <TextFieldInput
-          outerStyle={outerStyle}
+          outerStyle={intermediateStyle}
           {...props}
           onInit={MDComponent => {
             this.MDComponent = MDComponent;
