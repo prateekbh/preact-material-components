@@ -164,7 +164,6 @@ TextFieldInput.defaultProps = {
  * @prop value = ''
  * @prop label = ''
  * @prop helperText = ''
- * @prop intermediateStyle = {}
  * @prop helperTextPersistent = false
  * @prop helperTextValidationMsg = false
  */
@@ -196,7 +195,6 @@ class TextField extends Component {
       outerStyle,
       helperTextPersistent,
       helperTextValidationMsg,
-      intermediateStyle: intermediateStyleUDef,
       ...props
     } = allprops;
     const showDiv = props.helperText || (props.label && !showFloatingLabel);
@@ -205,12 +203,9 @@ class TextField extends Component {
       props.id = 'tf-' + this.id;
     }
 
-    const intermediateStyle = Object.assign(
-      {
-        width: '100%'
-      },
-      intermediateStyleUDef
-    );
+    const intermediateStyle = {
+      width: '100%'
+    };
 
     // Helper text
     const helperTextProps = {
