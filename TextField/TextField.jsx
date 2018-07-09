@@ -148,9 +148,6 @@ class TextFieldInput extends MaterialComponent {
     );
   }
 }
-TextFieldInput.defaultProps = {
-  outerStyle: {}
-};
 
 /**
  * @prop fullwidth = false
@@ -246,8 +243,7 @@ class TextField extends Component {
   }
 }
 TextField.defaultProps = {
-  outerStyle: {},
-  intermediateStyle: null
+  outerStyle: {}
 };
 
 function setValid(oldprops, newprops, textfield) {
