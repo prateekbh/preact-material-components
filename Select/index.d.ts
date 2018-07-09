@@ -8,6 +8,7 @@ declare interface ISelectProps
   extends Omit<JSX.HTMLAttributes, 'onChange' | 'disabled'> {
   disabled?: boolean;
   box?: boolean;
+  outlined?: boolean;
   hintText?: string;
   selectedIndex?: number;
   onChange?: (
