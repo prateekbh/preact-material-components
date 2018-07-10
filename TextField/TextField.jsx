@@ -200,10 +200,6 @@ class TextField extends Component {
       props.id = 'tf-' + this.id;
     }
 
-    const intermediateStyle = {
-      width: '100%'
-    };
-
     // Helper text
     const helperTextProps = {
       persistent: helperTextPersistent,
@@ -217,7 +213,6 @@ class TextField extends Component {
             <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
           )}
         <TextFieldInput
-          outerStyle={intermediateStyle}
           {...props}
           onInit={MDComponent => {
             this.MDComponent = MDComponent;
