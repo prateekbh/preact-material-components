@@ -25,8 +25,12 @@ export default class SelectPage extends Component {
             description: 'Makes the select box disabled.'
           },
           {
-            name: 'basic',
-            description: 'Makes the select box CSS only.'
+            name: 'box',
+            description: 'Makes the select with `box` appearence.'
+          },
+          {
+            name: 'outlined',
+            description: 'Makes the select with `outlined` appearence.'
           },
           {
             name: 'selectedIndex',
@@ -117,6 +121,14 @@ export default class SelectPage extends Component {
 
         <div className="mdc-typography--title">Box option </div>
         <Select hintText="Select" box>
+          <Select.Item>Option 1</Select.Item>
+          <Select.Item disabled>Option 2</Select.Item>
+          <Select.Item selected>Option 3</Select.Item>
+          <Select.Item>Option 4</Select.Item>
+        </Select>
+
+        <div className="mdc-typography--title">Outlined option </div>
+        <Select hintText="Select" outlined>
           <Select.Item>Option 1</Select.Item>
           <Select.Item disabled>Option 2</Select.Item>
           <Select.Item selected>Option 3</Select.Item>
