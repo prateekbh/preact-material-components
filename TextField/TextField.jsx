@@ -47,6 +47,7 @@ const defaultProps = {
  * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
+ * @prop outerStyle = {[key: string]: string}
  * @prop value = ''
  * @prop label = ''
  */
@@ -93,7 +94,7 @@ class TextFieldInput extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    let {className, ...props} = allprops;
+    let {className, outerStyle, outlined, ...props} = allprops;
     className = className || '';
 
     if ('leadingIcon' in props) {
@@ -114,7 +115,7 @@ class TextFieldInput extends MaterialComponent {
     }
 
     return (
-      <div className={className} ref={this.setControlRef}>
+      <div className={className} ref={this.setControlRef} style={outerStyle}>
         {props.leadingIcon ? (
           <Icon className="mdc-text-field__icon">{props.leadingIcon}</Icon>
         ) : null}
@@ -134,15 +135,15 @@ class TextFieldInput extends MaterialComponent {
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
-        {props.textarea ? '' : <div class="mdc-line-ripple" />}
-        {props.outlined ? (
+        {props.textarea || outlined ? null : <div class="mdc-line-ripple" />}
+        {outlined ? (
           <div class="mdc-notched-outline">
             <svg>
               <path className="mdc-notched-outline__path" />
             </svg>
           </div>
         ) : null}
-        {props.outlined ? <div className="mdc-notched-outline__idle" /> : null}
+        {outlined ? <div className="mdc-notched-outline__idle" /> : null}
       </div>
     );
   }
@@ -156,7 +157,7 @@ class TextFieldInput extends MaterialComponent {
  * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
- * @prop outerStyle = {[key: string]: string}
+ * @prop outerStyle = {}
  * @prop value = ''
  * @prop label = ''
  * @prop helperText = ''
@@ -228,6 +229,7 @@ class TextField extends Component {
       <TextFieldInput
         {...props}
         className={className}
+        outerStyle={outerStyle}
         onInit={MDComponent => {
           this.MDComponent = MDComponent;
         }}
