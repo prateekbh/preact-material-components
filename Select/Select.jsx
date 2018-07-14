@@ -7,7 +7,7 @@ class Select extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'select';
-    this._mdcProps = ['disabled', 'box'];
+    this._mdcProps = ['disabled', 'box', 'outlined'];
     this._changed = this._changed.bind(this);
   }
   _changed(e) {
@@ -51,7 +51,8 @@ class Select extends MaterialComponent {
   componentDidUpdate() {
     this.updateSelection();
   }
-  materialDom(props) {
+  materialDom(allprops) {
+    const {outlined, ...props} = allprops;
     return (
       <div {...props}>
         <select class="mdc-select__native-control">
@@ -67,7 +68,15 @@ class Select extends MaterialComponent {
             {props.hintText}
           </div>
         )}
-        <div class="mdc-line-ripple" />
+        {!outlined && <div class="mdc-line-ripple" />}
+        {outlined && (
+          <div class="mdc-notched-outline">
+            <svg>
+              <path class="mdc-notched-outline__path" />
+            </svg>
+          </div>
+        )}
+        {outlined && <div class="mdc-notched-outline__idle" />}
       </div>
     );
   }

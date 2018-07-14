@@ -14,6 +14,7 @@ class HelperText extends MaterialComponent {
     this.componentName = 'text-field-helper-text';
     this._mdcProps = ['persistent', 'validation-msg'];
   }
+
   materialDom(props) {
     return (
       <p {...props} aria-hidden="true">
@@ -28,6 +29,7 @@ class Label extends MaterialComponent {
     super();
     this.componentName = 'floating-label';
   }
+
   materialDom(props) {
     return <label {...props}>{props.children}</label>;
   }
@@ -42,8 +44,10 @@ const defaultProps = {
  * @prop textarea = false
  * @prop dense = false
  * @prop disabled = false
+ * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
+ * @prop outerStyle = {[key: string]: string}
  * @prop value = ''
  * @prop label = ''
  */
@@ -51,11 +55,19 @@ class TextFieldInput extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'text-field';
-    this._mdcProps = ['fullwidth', 'textarea', 'dense', 'disabled', 'box'];
+    this._mdcProps = [
+      'fullwidth',
+      'textarea',
+      'dense',
+      'disabled',
+      'box',
+      'outlined'
+    ];
     this.state = {
       showFloatingLabel: false
     };
   }
+
   componentDidMount() {
     this.setState(
       {
@@ -68,17 +80,21 @@ class TextFieldInput extends MaterialComponent {
       }
     );
   }
+
   componentWillUpdate(nextProps) {
     setValid(this.props, nextProps, this.MDComponent);
   }
+
   componentWillUnmount() {
     this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
   }
+
   getValue() {
     return this.MDComponent ? this.MDComponent.value : null;
   }
+
   materialDom(allprops) {
-    let {className, ...props} = allprops;
+    let {className, outerStyle, outlined, ...props} = allprops;
     className = className || '';
 
     if ('leadingIcon' in props) {
@@ -99,7 +115,7 @@ class TextFieldInput extends MaterialComponent {
     }
 
     return (
-      <div className={className} ref={this.setControlRef}>
+      <div className={className} ref={this.setControlRef} style={outerStyle}>
         {props.leadingIcon ? (
           <Icon className="mdc-text-field__icon">{props.leadingIcon}</Icon>
         ) : null}
@@ -119,7 +135,15 @@ class TextFieldInput extends MaterialComponent {
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
-        {props.textarea ? '' : <div class="mdc-line-ripple" />}
+        {props.textarea || outlined ? null : <div class="mdc-line-ripple" />}
+        {outlined ? (
+          <div class="mdc-notched-outline">
+            <svg>
+              <path className="mdc-notched-outline__path" />
+            </svg>
+          </div>
+        ) : null}
+        {outlined ? <div className="mdc-notched-outline__idle" /> : null}
       </div>
     );
   }
@@ -130,8 +154,10 @@ class TextFieldInput extends MaterialComponent {
  * @prop textarea = false
  * @prop dense = false
  * @prop disabled = false
+ * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
+ * @prop outerStyle = {}
  * @prop value = ''
  * @prop label = ''
  * @prop helperText = ''
@@ -163,6 +189,7 @@ class TextField extends Component {
   render(allprops, {showFloatingLabel}) {
     const {
       className,
+      outerStyle,
       helperTextPersistent,
       helperTextValidationMsg,
       ...props
@@ -180,7 +207,7 @@ class TextField extends Component {
     };
 
     return showDiv ? (
-      <div className={className}>
+      <div className={className} style={outerStyle}>
         {props.label &&
           !showFloatingLabel && (
             <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
@@ -202,6 +229,7 @@ class TextField extends Component {
       <TextFieldInput
         {...props}
         className={className}
+        outerStyle={outerStyle}
         onInit={MDComponent => {
           this.MDComponent = MDComponent;
         }}
@@ -209,6 +237,9 @@ class TextField extends Component {
     );
   }
 }
+TextField.defaultProps = {
+  outerStyle: {}
+};
 
 function setValid(oldprops, newprops, textfield) {
   if (

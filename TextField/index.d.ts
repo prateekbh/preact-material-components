@@ -13,12 +13,14 @@ declare interface ITextFieldProps extends JSX.HTMLAttributes {
   textarea?: boolean;
   dense?: boolean;
   box?: boolean;
+  outlined?: boolean;
   helperText?: string;
   helperTextPersistent?: boolean;
   helperTextValidationMsg?: boolean;
   cssLabel?: string;
   leadingIcon?: string;
   trailingIcon?: string;
+  outerStyle?: {[key: string]: string};
 }
 declare interface ITextFieldState {
   showFloatingLabel: boolean;
