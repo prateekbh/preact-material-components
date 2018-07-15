@@ -11,7 +11,7 @@ export default class ImageList extends MaterialComponent<IImageListProps, {}> {
   static Image: typeof ImageListImage;
   static Supporting: typeof ImageListSupporting;
   static Label: typeof ImageListLabel;
-  static Aspectcontainer: typeof ImageListAspectcontainer;
+  static AspectContainer: typeof ImageListAspectcontainer;
 }
 
 export class ImageListAspectcontainer extends MaterialComponent<
