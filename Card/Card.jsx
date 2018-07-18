@@ -23,7 +23,7 @@ class CardMedia extends MaterialComponent {
   constructor() {
     super();
     this.componentName = 'card__media';
-    this._mdcProps = ['square', '16-9'];
+    this._mdcProps = ['square', 'sixteenByNine'];
   }
 }
 
