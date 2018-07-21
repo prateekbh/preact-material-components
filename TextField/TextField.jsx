@@ -163,6 +163,7 @@ class TextFieldInput extends MaterialComponent {
  * @prop helperText = ''
  * @prop helperTextPersistent = false
  * @prop helperTextValidationMsg = false
+ * @prop valid = true
  */
 class TextField extends Component {
   constructor() {

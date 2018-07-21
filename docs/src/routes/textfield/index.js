@@ -63,6 +63,10 @@ export default class TextFieldPage extends Component {
             description: 'Adds an outline around the TextField'
           },
           {
+            name: 'valid',
+            description: 'Sets textfield valid or invalid'
+          },
+          {
             name: 'helperText',
             description:
               'Include an help text that is useful for providing supplemental information to users, as well for validation messages',
