@@ -1,13 +1,3 @@
-import MaterialComponent from '../MaterialComponent';
-import {VNode} from 'preact';
+import IconButton from './IconButton';
 
-declare interface IIconButtonProps {
-  'data-toggle-on'?: string;
-  'data-toggle-off'?: string;
-}
-export default class IconButton<
-  PropsType = JSX.HTMLAttributes,
-  StateType = {}
-> extends MaterialComponent<PropsType & IIconButtonProps, StateType> {
-  static Icon: typeof Icon;
-}
+export default IconButton;

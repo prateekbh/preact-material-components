@@ -1,4 +1,3 @@
-import MaterialComponent from '../MaterialComponent';
-import {VNode} from 'preact';
+import Switch from './Switch';
 
-export default class Switch extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+export default Switch;
