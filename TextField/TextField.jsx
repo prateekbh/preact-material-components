@@ -128,27 +128,25 @@ class TextFieldInput extends MaterialComponent {
     }
 
     if (validate) {
-      const validation_function = async event => {
-        let ret = await this.props.validate(
-          event.target.value,
-          event.target,
-          event
-        );
-
-        if (typeof ret === 'boolean') {
-          ret = {valid: ret};
-        }
-
-        if (ret) {
-          if (typeof ret.valid === 'boolean' && ret.message) {
-            event.target.setCustomValidity(ret.message);
-          } else {
-            event.target.setCustomValidity('');
+      const validation_function = event => {
+        return new Promise(resolve => {
+          resolve(this.props.validate(event.target.value, event.target, event));
+        }).then(ret => {
+          if (typeof ret === 'boolean') {
+            ret = {valid: ret};
           }
-          if (typeof ret.valid === 'boolean') {
-            this.MDComponent.valid = ret.valid;
+
+          if (ret) {
+            if (typeof ret.valid === 'boolean' && ret.message) {
+              event.target.setCustomValidity(ret.message);
+            } else {
+              event.target.setCustomValidity('');
+            }
+            if (typeof ret.valid === 'boolean') {
+              this.MDComponent.valid = ret.valid;
+            }
           }
-        }
+        });
       };
       if (props.onChange) {
         const oldOnChange = props.onChange;
