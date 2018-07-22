@@ -75,7 +75,8 @@ export default class TextFieldPage extends Component {
           },
           {
             name: 'validateOnKeys',
-            description: 'Validate by listening on key presses (check while typing)'
+            description:
+              'Validate by listening on key presses (check while typing)'
           },
           {
             name: 'helperText',
