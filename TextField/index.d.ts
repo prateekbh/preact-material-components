@@ -8,6 +8,13 @@ declare interface IHelperTextProps extends JSX.HTMLAttributes {
 }
 declare class HelperText extends MaterialComponent<IHelperTextProps, {}> {}
 
+interface InputEvent<T extends HTMLElement> {
+  target: T;
+  type: string;
+  bubbles: boolean;
+  cancelable: boolean;
+}
+
 declare interface ITextFieldProps extends JSX.HTMLAttributes {
   fullwidth?: boolean;
   textarea?: boolean;
@@ -21,6 +28,17 @@ declare interface ITextFieldProps extends JSX.HTMLAttributes {
   leadingIcon?: string;
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
+  valid?: boolean;
+  validate?: (
+    value: string,
+    element: HTMLInputElement,
+    event: InputEvent<HTMLInputElement>
+  ) =>
+    | {value: boolean; message?: string}
+    | boolean
+    | null
+    | Promise<{value: boolean; message?: string} | boolean>;
+  validateOnKeys?: boolean;
 }
 declare interface ITextFieldState {
   showFloatingLabel: boolean;

@@ -20,6 +20,7 @@ import passwordSample from './password-sample.txt';
 import persistentHelpTextSample from './persistent-help-text-sample.txt';
 import textareaSample from './textarea-sample.txt';
 import outerStyleSample from './outerStyle-sample.txt';
+import validateSample from './validate-sample.txt';
 
 // Class
 export default class TextFieldPage extends Component {
@@ -61,6 +62,21 @@ export default class TextFieldPage extends Component {
           {
             name: 'outlined',
             description: 'Adds an outline around the TextField'
+          },
+          {
+            name: 'valid',
+            description: 'Sets textfield valid or invalid'
+          },
+          {
+            name: 'validate',
+            description: 'Adds a custom validation function',
+            value:
+              '(value: string, element: HTMLInputElement, event: InputEvent) => {value: boolean; message?: string} | boolean | null | Promise<{value: boolean; message?: string} | boolean>'
+          },
+          {
+            name: 'validateOnKeys',
+            description:
+              'Validate by listening on key presses (check while typing)'
           },
           {
             name: 'helperText',
@@ -174,6 +190,21 @@ export default class TextFieldPage extends Component {
         />
         <CodeBlock>
           <code class="lang-html">{outerStyleSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Custom validation</div>
+        <TextField
+          label="Look for the tooltip"
+          validate={(value, element) => {
+            if (value === 'valid') {
+              return true;
+            } else {
+              return {valid: false, message: 'Only "valid" is valid'};
+            }
+          }}
+          validateOnKeys
+        />
+        <CodeBlock>
+          <code class="lang-html">{validateSample}</code>
         </CodeBlock>
       </div>
     );
