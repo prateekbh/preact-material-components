@@ -38,7 +38,7 @@ declare interface ITextFieldProps extends JSX.HTMLAttributes {
     | boolean
     | null
     | Promise<{value: boolean; message?: string} | boolean>;
-  validateOnKeys?: boolean
+  validateOnKeys?: boolean;
 }
 declare interface ITextFieldState {
   showFloatingLabel: boolean;
