@@ -35,10 +35,6 @@ class Label extends MaterialComponent {
   }
 }
 
-const defaultProps = {
-  valid: true
-};
-
 /**
  * @prop fullwidth = false
  * @prop textarea = false
@@ -47,9 +43,12 @@ const defaultProps = {
  * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
- * @prop outerStyle = {[key: string]: string}
+ * @prop outerStyle = {}
  * @prop value = ''
  * @prop label = ''
+ * @prop valid = true
+ * @prop validate = null
+ * @prop validateOnKeys = false
  */
 class TextFieldInput extends MaterialComponent {
   constructor() {
@@ -76,7 +75,7 @@ class TextFieldInput extends MaterialComponent {
       () => {
         this.MDComponent = new MDCTextField(this.control);
         this.props.onInit && this.props.onInit(this.MDComponent);
-        setValid(defaultProps, this.props, this.MDComponent);
+        setValid({}, this.props, this.MDComponent);
       }
     );
   }
@@ -94,7 +93,7 @@ class TextFieldInput extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    let {className, outerStyle, outlined, ...props} = allprops;
+    let {className, outerStyle, outlined, validate, validateOnKeys, valid, ...props} = allprops;
     className = className || '';
 
     if ('leadingIcon' in props) {
@@ -112,6 +111,40 @@ class TextFieldInput extends MaterialComponent {
       console.log(
         'Passing a "label" prop is not supported when using a "fullwidth" text field.'
       );
+    }
+
+    if (typeof valid === 'boolean' && validate) {
+      console.error(
+        'Passing a "valid" prop is not supported when using a "validate" text field. "valid" will be overwritten!'
+      );
+    }
+
+    if (validate) {
+      props.onChange = async event => {
+        let ret = await this.props.validate(
+          event.target.value,
+          event.target,
+          event
+        );
+
+        if (typeof ret === 'boolean') {
+          ret = {valid: ret};
+        }
+
+        if (ret) {
+          if (typeof ret.valid === 'boolean' && ret.message) {
+            event.target.setCustomValidity(ret.message);
+          } else {
+            event.target.setCustomValidity('');
+          }
+          if (typeof ret.valid === 'boolean') {
+            this.MDComponent.valid = ret.valid;
+          }
+        }
+      };
+      if (validateOnKeys) {
+        props.onKeyUp = props.onChange;
+      }
     }
 
     return (
@@ -164,6 +197,8 @@ class TextFieldInput extends MaterialComponent {
  * @prop helperTextPersistent = false
  * @prop helperTextValidationMsg = false
  * @prop valid = true
+ * @prop validate = null
+ * @prop validateOnKeys = false
  */
 class TextField extends Component {
   constructor() {

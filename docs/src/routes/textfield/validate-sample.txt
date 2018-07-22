@@ -1,0 +1,11 @@
+<TextField
+  label="Look for the tooltip"
+  validate={(value, element) => {
+    if (value === 'valid') {
+      return true;
+    } else {
+      return {valid: false, message: 'Only "valid" is valid'};
+    }
+  }}
+  validateOnKeys
+/>
