@@ -93,7 +93,15 @@ class TextFieldInput extends MaterialComponent {
   }
 
   materialDom(allprops) {
-    let {className, outerStyle, outlined, validate, validateOnKeys, valid, ...props} = allprops;
+    let {
+      className,
+      outerStyle,
+      outlined,
+      validate,
+      validateOnKeys,
+      valid,
+      ...props
+    } = allprops;
     className = className || '';
 
     if ('leadingIcon' in props) {
@@ -120,7 +128,7 @@ class TextFieldInput extends MaterialComponent {
     }
 
     if (validate) {
-      props.onChange = async event => {
+      const validation_function = async event => {
         let ret = await this.props.validate(
           event.target.value,
           event.target,
@@ -142,8 +150,27 @@ class TextFieldInput extends MaterialComponent {
           }
         }
       };
+      if (props.onChange) {
+        const oldOnChange = props.onChange;
+        props.onChange = event => {
+          // noinspection JSIgnoredPromiseFromCall
+          validation_function(event);
+          oldOnChange(event);
+        };
+      } else {
+        props.onChange = validation_function;
+      }
       if (validateOnKeys) {
-        props.onKeyUp = props.onChange;
+        if (props.onKeyUp) {
+          const olOnKeyUp = props.onKeyUp;
+          props.onKeyUp = event => {
+            // noinspection JSIgnoredPromiseFromCall
+            validation_function(event);
+            olOnKeyUp(event);
+          };
+        } else {
+          props.onKeyUp = props.onChange;
+        }
       }
     }
 
