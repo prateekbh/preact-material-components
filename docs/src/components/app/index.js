@@ -227,20 +227,28 @@ export default class Home extends Component {
 
   componentDidMount() {
     this.setState({
-      toolbarTitle: window.location.pathname === '/'
-      ? null
-      : (menuItems.find(item => item.link === window.location.pathname) || {}).text
-    })
+      toolbarTitle:
+        window.location.pathname === '/'
+          ? null
+          : (
+              menuItems.find(item => item.link === window.location.pathname) ||
+              {}
+            ).text
+    });
   }
 
-  _handleRoute = (e) => {
-    setTimeout(() => this.setState({
-        toolbarTitle:
-          e.url === '/'
-            ? null
-            : (menuItems.find(item => item.link === e.url) || {}).text
-      }), 100)
-  }
+  _handleRoute = e => {
+    setTimeout(
+      () =>
+        this.setState({
+          toolbarTitle:
+            e.url === '/'
+              ? null
+              : (menuItems.find(item => item.link === e.url) || {}).text
+        }),
+      100
+    );
+  };
 
   render() {
     return (
