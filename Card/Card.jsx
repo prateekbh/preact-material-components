@@ -1,5 +1,5 @@
-import Button from '../Button';
-import Icon from '../Icon';
+import Button from '../Button/Button';
+import Icon from '../Icon/Icon';
 import MaterialComponent from '../MaterialComponent';
 import {h} from 'preact';
 

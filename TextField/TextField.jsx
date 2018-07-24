@@ -1,6 +1,6 @@
 import {Component, h} from 'preact';
 
-import Icon from '../Icon';
+import Icon from '../Icon/Icon';
 import {MDCTextField} from '@material/textfield';
 import MaterialComponent from '../MaterialComponent';
 

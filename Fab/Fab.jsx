@@ -1,4 +1,4 @@
-import Icon from '../Icon/';
+import Icon from '../Icon/Icon';
 import MaterialComponent from '../MaterialComponent';
 import generateThemeClass from '../themeUtils/generateThemeClass';
 import {h} from 'preact';

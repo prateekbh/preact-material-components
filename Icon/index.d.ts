@@ -1,7 +1,3 @@
-import MaterialComponent from '../MaterialComponent';
-import {VNode} from 'preact';
+import Icon from './Icon';
 
-export default class Icon<
-  PropsType = {},
-  StateType = {}
-> extends MaterialComponent<PropsType & JSX.HTMLAttributes, StateType> {}
+export default Icon;
