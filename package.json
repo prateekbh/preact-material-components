@@ -5,7 +5,7 @@
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
-    "build": "node ./compileComponents.js && webpack --mode production",
+    "build": "node $NODE_DEBUG_OPTION ./compileComponents.js && webpack --mode production",
     "prepublishOnly": "npm run build && npm run test",
     "prettier:fix": "prettier --config ./prettier.config.js {,**/*.jsx} --write",
     "test": "npm run build",
