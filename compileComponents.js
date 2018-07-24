@@ -24,7 +24,7 @@ for (let component in bundleMapping) {
     const with_rewritten_imports = raw_code.replace(
       import_regex,
       substring =>
-        `${substring.substring(0, (substring.length - 11) / 2 + 9)}")`
+        `${substring.substring(0, (substring.length - 11) / 2 + 9)}';`
     );
 
     const transformedCode = babel.transform(with_rewritten_imports, {
