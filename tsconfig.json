@@ -9,14 +9,9 @@
     "jsx": "preserve",
     "reactNamespace": "h",
     "allowJs": true,
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "rootDir": "./ts/"
   },
-  "include": [
-    "./ts/**/*"
-  ]
+  "include": ["./ts/**/*"]
 }
