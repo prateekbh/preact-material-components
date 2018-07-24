@@ -5,9 +5,9 @@
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
-    "build": "node ./compileComponents.js && webpack --mode production",
+    "build": "tsc --pretty",
     "prepublishOnly": "npm run build && npm run test",
-    "prettier:fix": "prettier --config ./prettier.config.js {,**/*.jsx} --write",
+    "prettier:fix": "prettier --config ./prettier.config.js {,ts/**/*.tsx} --write",
     "test": "npm run build",
     "sample": "http-server ./sample"
   },
@@ -123,6 +123,7 @@
     "preact": "^8.2.7",
     "prettier": "^1.13.7",
     "puppeteer": "^1.5.0",
+    "typescript": "^2.9.2",
     "webpack": "^4.14.0",
     "webpack-cli": "^3.0.0",
     "webpack-shell-plugin": "^0.5.0"

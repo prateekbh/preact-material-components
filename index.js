@@ -4,7 +4,7 @@ import Fab from './Fab';
 import Icon from './Icon';
 import IconButton from './IconButton';
 import IconToggle from './IconToggle';
-import Switch from './Switch';
+import Switch from './ts/Switch/index';
 import Snackbar from './Snackbar';
 import Radio from './Radio';
 import TextField from './TextField';

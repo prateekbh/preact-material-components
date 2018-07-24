@@ -55,3 +55,6 @@ jspm_packages
 .DS_Store
 .idea/
 yarn.lock
+
+# Exclude build artifacts
+esm

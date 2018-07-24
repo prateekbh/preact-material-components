@@ -5,7 +5,7 @@ import Router from 'preact-router';
 // Material Components
 import Formfield from '../../../../FormField';
 import LayoutGrid from '../../../../LayoutGrid';
-import Switch from '../../../../Switch';
+import Switch from '../../../../esm/Switch';
 import Toolbar from '../../../../Toolbar';
 
 // Routes

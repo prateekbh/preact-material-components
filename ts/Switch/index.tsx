@@ -1,15 +1,17 @@
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../../MaterialComponent';
 
-/**
- * @prop disabled = false
- */
-export default class Switch extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = 'switch';
-    this._mdcProps = ['disabled'];
-  }
+export interface ISwitchProps extends JSX.HTMLAttributes {}
+
+export interface ISwitchState {}
+
+export default class Switch extends MaterialComponent<
+  ISwitchProps,
+  ISwitchState
+> {
+  protected componentName = 'switch';
+  protected mdcProps = ['disabled'];
+
   materialDom(allprops) {
     const {className, ...props} = allprops;
     return (

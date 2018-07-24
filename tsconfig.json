@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./esm",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "jsx": "preserve",
+    "reactNamespace": "h",
+    "allowJs": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "rootDir": "./ts/"
+  },
+  "include": [
+    "./ts/**/*"
+  ]
+}
