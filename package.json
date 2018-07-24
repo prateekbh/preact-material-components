@@ -5,7 +5,7 @@
   "module": "index.js",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc --pretty && webpack --mode production",
+    "build": "tsc --pretty",
     "prepublishOnly": "npm run build && npm run test",
     "prettier:fix": "prettier --config ./prettier.config.js {,ts/**/*.tsx} --write",
     "test": "npm run build",
