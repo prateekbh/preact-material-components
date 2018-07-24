@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import Icon from '../Icon';
+import Icon from '../Icon/Icon';
 import MaterialComponent from '../MaterialComponent';
 import {MDCChip, MDCChipSet} from '@material/chips';
 

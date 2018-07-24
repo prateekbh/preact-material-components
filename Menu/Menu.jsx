@@ -1,7 +1,7 @@
 import {h} from 'preact';
 import MaterialComponent from '../MaterialComponent';
 import {MDCMenu} from '@material/menu';
-import List from '../List';
+import List from '../List/List';
 
 /*
  * Default props for menu
