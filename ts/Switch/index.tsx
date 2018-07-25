@@ -1,4 +1,4 @@
-import {} from 'preact';
+import {h} from 'preact';
 import MaterialComponent from '../MaterialComponent';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {}

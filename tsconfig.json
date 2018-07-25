@@ -6,12 +6,15 @@
     "module": "es6",
     "moduleResolution": "node",
     "target": "es2015",
-    "jsx": "preserve",
-    "reactNamespace": "h",
-    "allowJs": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "allowJs": false,
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
-    "rootDir": "./ts/"
+    "rootDir": "./ts/",
+    "declaration": true,
+    "noEmitHelpers": true,
+    "esModuleInterop": false
   },
   "include": ["./ts/**/*"]
 }
