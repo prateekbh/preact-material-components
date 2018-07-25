@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import IconButton from '../../../../IconButton';
+import IconButton from '../../../../ts/IconButton';
 
 // Components
 import ComponentTable from '../../components/component-table';

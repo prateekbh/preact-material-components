@@ -69,6 +69,7 @@
     "@material/toolbar": "^0.37.0",
     "@material/top-app-bar": "^0.37.0",
     "@material/typography": "^0.37.1",
+    "@types/material-components-web": "^0.35.0",
     "material-components-web": "^0.37.0"
   },
   "peerDependencies": {

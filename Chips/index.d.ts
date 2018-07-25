@@ -1,6 +1,6 @@
 import {MDCFoundation, MDCComponent, MDCRipple} from '../MaterialComponentsWeb';
 import MaterialComponent from '../ts/MaterialComponent';
-import Icon from '../Icon';
+import Icon from '../ts/Icon';
 
 declare interface IChipProps extends JSX.HTMLAttributes {
   children?: ChipText[];

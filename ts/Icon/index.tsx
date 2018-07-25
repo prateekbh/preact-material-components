@@ -1,0 +1,30 @@
+import {h} from 'preact';
+import MaterialComponent from '../Base/MaterialComponent';
+
+export interface IIconProps {}
+
+export interface IIconState {}
+
+/**
+ * @prop disabled = false
+ */
+export default class Icon<
+  PropsType = {},
+  StateType = {}
+> extends MaterialComponent<IIconProps & PropsType, IIconState & StateType> {
+  protected componentName = 'icon';
+  protected mdcProps = [];
+
+  protected materialDom(props) {
+    const classes = ['material-icons'];
+    // CardActionIcon sends className
+    if (props.className) {
+      classes.push(props.className);
+    }
+    return (
+      <i {...props} className={classes.join(' ')}>
+        {props.children}
+      </i>
+    );
+  }
+}

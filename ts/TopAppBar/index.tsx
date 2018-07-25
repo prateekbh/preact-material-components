@@ -1,6 +1,6 @@
 import {MDCTopAppBar} from '@material/top-app-bar';
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../Base/MaterialComponent';
 
 export interface IRowProps {}
 

@@ -1,20 +1,6 @@
-import MaterialComponent from '../MaterialComponent';
-import {h} from 'preact';
 import {MDCLineRipple} from '@material/line-ripple';
-import {MDCComponent, MDCFoundation} from '../../MaterialComponentsWeb';
-
-declare class MDCLineRippleFoundation extends MDCFoundation<MDCLineRipple> {
-  public activate(): void;
-  public deactivate(): void;
-  public setRippleCenter(xCoordinate: number): void;
-  public handleTransitionEnd(e: Event): void;
-}
-
-declare class MDCLineRipple extends MDCComponent<MDCLineRippleFoundation> {
-  public activate(): void;
-  public deactivate(): void;
-  public setRippleCenter(xCoordinate: number): void;
-}
+import {h} from 'preact';
+import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ILineRippleProps {}
 

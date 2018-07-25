@@ -1,14 +1,13 @@
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../Base/MaterialComponent';
 
-export interface ISwitchProps extends JSX.HTMLAttributes {}
+export interface ISwitchProps extends JSX.HTMLAttributes {
+  disabled?: boolean;
+}
 
 export interface ISwitchState {}
 
-export default class Switch extends MaterialComponent<
-  ISwitchProps,
-  ISwitchState
-> {
+export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
   protected componentName = 'switch';
   protected mdcProps = ['disabled'];
 
@@ -28,3 +27,5 @@ export default class Switch extends MaterialComponent<
     );
   }
 }
+
+export default Switch;

@@ -1,6 +1,6 @@
 import {MDCToolbar} from '@material/toolbar';
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../Base/MaterialComponent';
 
 export interface IRowProps {}
 

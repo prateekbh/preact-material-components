@@ -1,28 +1,6 @@
 import {MDCLinearProgress} from '@material/linear-progress';
 import {h} from 'preact';
-import {MDCComponent, MDCFoundation} from '../../MaterialComponentsWeb';
-import MaterialComponent from '../MaterialComponent';
-
-declare class MDCLinearProgressFoundation extends MDCFoundation<
-  MDCLinearProgress
-> {
-  public setDeterminate(isDeterminate: boolean): void;
-  public setProgress(value: number): void;
-  public setBuffer(value: number): void;
-  public setReverse(isReversed: boolean): void;
-  public open(): void;
-  public close(): void;
-}
-declare class MDCLinearProgress extends MDCComponent<
-  MDCLinearProgressFoundation
-> {
-  public determinate: boolean;
-  public progress: number;
-  public buffer: number;
-  public reverse: boolean;
-  public open(): void;
-  public close(): void;
-}
+import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ILinearProgressProps extends JSX.HTMLAttributes {
   indeterminate?: boolean;

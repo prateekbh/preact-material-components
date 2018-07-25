@@ -3,7 +3,7 @@ import {h, Component} from 'preact';
 
 // Material Components
 import Tabs from '../../../../Tabs';
-import Icon from '../../../../Icon';
+import Icon from '../../../../ts/Icon';
 
 // Components
 import ComponentTable from '../../components/component-table';

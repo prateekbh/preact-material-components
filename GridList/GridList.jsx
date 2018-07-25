@@ -1,6 +1,6 @@
 import {h} from 'preact';
 import MaterialComponent from '../ts/MaterialComponent';
-import Icon from '../Icon';
+import Icon from '../ts/Icon';
 
 const notEmptyString = val => val !== '';
 

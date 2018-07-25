@@ -1,5 +1,5 @@
 import Button from '../Button';
-import Icon from '../Icon';
+import Icon from '../ts/Icon';
 import MaterialComponent from '../ts/MaterialComponent';
 import {VNode} from 'preact';
 

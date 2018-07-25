@@ -1,34 +1,7 @@
 import {MDCSlider} from '@material/slider';
 import {h} from 'preact';
-import {MDCComponent, MDCFoundation} from '../../MaterialComponentsWeb';
-import MaterialComponent from '../MaterialComponent';
-import {Omit} from '../types';
-
-declare class MDCSliderFoundation extends MDCFoundation<MDCSlider> {
-  public setupTrackMarker(): void;
-  public layout(): void;
-  public getValue(): number;
-  public setValue(value: number): void;
-  public getMax(): number;
-  public setMax(max: number): void;
-  public getMin(): number;
-  public setMin(min: number): void;
-  public getStep(): number;
-  public setStep(step: number): void;
-  public isDisabled(): boolean;
-  public setDisabled(disabled): void;
-}
-
-declare class MDCSlider extends MDCComponent<MDCSliderFoundation> {
-  public value: number;
-  public min: number;
-  public max: number;
-  public step: number;
-  public disabled: boolean;
-  public layout(): void;
-  public stepUp(amount?: number): void;
-  public stepDown(amount?: number): void;
-}
+import MaterialComponent from '../Base/MaterialComponent';
+import {Omit} from '../Base/types';
 
 export interface ISliderProps
   extends Omit<

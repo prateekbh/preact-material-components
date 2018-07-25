@@ -1,26 +1,6 @@
 import {MDCRadio} from '@material/radio/';
 import {h} from 'preact';
-import {
-  MDCComponent,
-  MDCFoundation,
-  MDCRipple
-} from '../../MaterialComponentsWeb';
-import MaterialComponent from '../MaterialComponent';
-
-declare class MDCRadioFoundation extends MDCFoundation<MDCRadio> {
-  public isChecked(): boolean;
-  public setChecked(checked: boolean): void;
-  public isDisabled(): boolean;
-  public setDisabled(disabled: boolean): void;
-  public getValue(): string | null | undefined;
-  public setValue(value: string | null | undefined): void;
-}
-declare class MDCRadio extends MDCComponent<MDCRadioFoundation> {
-  public checked: boolean;
-  public disabled: boolean;
-  public value: string | null | undefined;
-  public ripple: MDCRipple;
-}
+import MaterialComponent from '../Base/MaterialComponent';
 
 export interface IRadioProps {}
 

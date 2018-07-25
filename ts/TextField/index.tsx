@@ -1,34 +1,8 @@
 import {Component, h} from 'preact';
 
 import {MDCTextField} from '@material/textfield';
-import Icon from '../../Icon/index';
-import {
-  MDCComponent,
-  MDCFoundation,
-  MDCRipple
-} from '../../MaterialComponentsWeb';
-import MaterialComponent from '../MaterialComponent';
-
-declare class MDCTextFieldFoundation extends MDCFoundation<MDCTextField> {
-  public handleTextFieldInteraction(evt: Event): void;
-  public activateFocus(): void;
-  public setBottomLineTransformOrigin(evt: Event): void;
-  public autoCompleteFocus(): void;
-  public handleBottomLineAnimationEnd(): void;
-  public deactivateFocus(): void;
-  public isDisabled(): boolean;
-  public setDisabled(disabled: boolean): void;
-  public setHelperTextContent(content: string): void;
-  public setValid(isValid: boolean): void;
-}
-declare class MDCTextField extends MDCComponent<MDCTextFieldFoundation> {
-  public helperTextElement: Element | null | undefined;
-  public ripple: MDCRipple;
-  public disabled: boolean;
-  public valid: boolean;
-  public helperTextContent: string;
-  public value: string;
-}
+import Icon from '../Icon/index';
+import MaterialComponent from '../Base/MaterialComponent';
 
 export interface IHelperTextProps extends JSX.HTMLAttributes {
   persistent?: boolean;

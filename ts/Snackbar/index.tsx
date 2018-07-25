@@ -1,28 +1,6 @@
 import {MDCSnackbar} from '@material/snackbar/';
 import {h} from 'preact';
-import {MDCComponent, MDCFoundation} from '../../MaterialComponentsWeb';
-import MaterialComponent from '../MaterialComponent';
-
-interface ISnackbarData {
-  message: string;
-  multiline?: boolean;
-  actionOnBottom?: boolean;
-  timeout?: number;
-  actionHandler?: () => void;
-  actionText?: string;
-}
-
-declare class MDCSnackbarFoundation extends MDCFoundation<MDCSnackbar> {
-  public active: boolean;
-  public dismissesOnAction(): boolean;
-  public setDismissOnAction(dismissOnAction: boolean): void;
-  public show(data: ISnackbarData): void;
-}
-
-declare class MDCSnackbar extends MDCComponent<MDCSnackbarFoundation> {
-  public dismissesOnAction: boolean;
-  public show(data: ISnackbarData): void;
-}
+import MaterialComponent from '../Base/MaterialComponent';
 
 function shallowDiffers(a, b) {
   for (const i in a) {

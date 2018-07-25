@@ -83,7 +83,7 @@ fabric.properties
 .LSOverride
 
 # Icon must end with two \r
-Icon
+ts/Icon
 
 # Thumbnails
 ._*

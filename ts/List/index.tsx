@@ -1,6 +1,6 @@
 import {h} from 'preact';
-import Icon from '../../Icon/index';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../Base/MaterialComponent';
+import Icon from '../Icon';
 
 export interface IListItemProps {}
 

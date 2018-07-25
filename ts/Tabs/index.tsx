@@ -1,52 +1,6 @@
 import {MDCTabBar, MDCTabBarScroller} from '@material/tabs';
-
 import {h} from 'preact';
-import {MDCComponent, MDCFoundation} from '../../MaterialComponentsWeb';
-import MaterialComponent from '../MaterialComponent';
-
-declare class MDCTabFoundation extends MDCFoundation<MDCTab> {
-  public getComputedWidth(): number;
-  public getComputedLeft(): number;
-  public isActive(): boolean;
-  public setActive(isActive: boolean): void;
-  public preventsDefaultOnClick(): boolean;
-  public setPreventDefaultOnClick(preventDefaultOnClick: boolean): void;
-  public measureSelf(): void;
-}
-declare class MDCTab extends MDCComponent<MDCTabFoundation> {
-  public computedWidth: number;
-  public computedLeft: number;
-  public isActive: boolean;
-  public preventDefaultOnClick: boolean;
-  public measureSelf(): void;
-}
-
-declare class MDCTabBarFoundation extends MDCFoundation<MDCTabBar> {
-  public layout(): void;
-  public switchToTabAtIndex(index: number, shouldNotify?: boolean): void;
-  public getActiveTabIndex(): number;
-}
-declare class MDCTabBar extends MDCComponent<MDCTabBarFoundation> {
-  public tabs: MDCTab[];
-  public activeTab: MDCTab;
-  public activeTabIndex: number;
-  public layout(): void;
-}
-
-declare class MDCTabBarScrollerFoundation extends MDCFoundation<
-  MDCTabBarScroller
-> {
-  public scrollBack(evt?: Event): void;
-  public scrollForward(evt?: Event): void;
-  public layout(): void;
-  public scrollToTabAtIndex(index: number): void;
-}
-declare class MDCTabBarScroller extends MDCComponent<
-  MDCTabBarScrollerFoundation
-> {
-  public tabBar: MDCTabBar;
-  public layout(): void;
-}
+import MaterialComponent from '../Base/MaterialComponent';
 
 /*
  * Default props for tabs

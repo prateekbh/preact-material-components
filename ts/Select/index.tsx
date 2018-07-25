@@ -1,27 +1,8 @@
 import {MDCSelect} from '@material/select/';
 import {h} from 'preact';
-import {MDCComponent, MDCFoundation} from '../../MaterialComponentsWeb';
-import {IListItemProps, IListItemState, ListItem} from '../List/index';
-import MaterialComponent from '../MaterialComponent';
-import {Omit} from '../types';
-
-declare class MDCSelectFoundation extends MDCFoundation<MDCSelect> {
-  public getValue(): string;
-  public getSelectedIndex(): number;
-  public setSelectedIndex(index: number): void;
-  public isDisabled(): boolean;
-  public setDisabled(disabled: boolean): void;
-  public resize(): void;
-}
-declare class MDCSelect extends MDCComponent<MDCSelectFoundation> {
-  public value: string;
-  public options: Element[];
-  public selectedOptions: NodeListOf<Element>;
-  public selectedIndex: number;
-  public disabled: boolean;
-  public item(index: number): Element | null;
-  public nameditem(key: string): Element | null;
-}
+import MaterialComponent from '../Base/MaterialComponent';
+import {Omit} from '../Base/types';
+import {ListItem} from '../List';
 
 export class SelectOption extends ListItem {
   protected materialDom() {
@@ -36,9 +17,7 @@ export interface ISelectProps
   outlined?: boolean;
   hintText?: string;
   selectedIndex?: number;
-  onChange?: (
-    e: {selectedIndex: number; selectedOptions: NodeListOf<Element>}
-  ) => void;
+  onChange?: (e: {selectedIndex: number}) => void;
 }
 
 export interface ISelectState {}
@@ -69,7 +48,6 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   protected changed(e) {
     e = e || {};
     e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
-    e.selectedOptions = e.selectedOptions || this.MDComponent.selectedOptions;
     if (this.props.onChange) {
       this.props.onChange(e);
     }

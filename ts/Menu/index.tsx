@@ -1,20 +1,7 @@
 import {MDCMenu} from '@material/menu';
 import {h} from 'preact';
-import List, {ListItem, IListItemProps, IListItemState} from '../List';
-import {MDCComponent, MDCFoundation} from '../../MaterialComponentsWeb';
-import MaterialComponent from '../MaterialComponent';
-
-declare class MDCMenuFoundation extends MDCFoundation<MDCMenu> {
-  public open(options?: {focusIndex?: number}): void;
-  public close(evt?: Event): void;
-}
-
-declare class MDCMenu extends MDCComponent<MDCMenuFoundation> {
-  public open: boolean;
-  public items: Element[];
-  public show(options?: {focusIndex?: number}): void;
-  public hide(): void;
-}
+import MaterialComponent from '../Base/MaterialComponent';
+import List, {IListItemProps, IListItemState, ListItem} from '../List';
 
 export interface IMenuAnchorProps {}
 

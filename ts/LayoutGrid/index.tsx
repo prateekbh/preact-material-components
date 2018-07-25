@@ -1,5 +1,5 @@
 import {h, VNode} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ILayoutGridInnerProps {}
 
