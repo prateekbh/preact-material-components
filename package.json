@@ -5,8 +5,8 @@
   "module": "index.js",
   "main": "dist",
   "scripts": {
-    "build": "tsc --pretty && babel esm --out-dir .",
-    "babel-watch": "babel esm --out-dir . --watch",
+    "build": "tsc --pretty --listEmittedFiles && babel esm --out-dir . -s",
+    "babel-watch": "babel esm --out-dir . --watch -s",
     "ts-watch": "tsc --pretty --watch",
     "prepublishOnly": "npm run build && npm run test",
     "prettier:fix": "prettier --config ./prettier.config.js {,ts/**/*.tsx} --write",

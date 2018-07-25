@@ -180,6 +180,12 @@ typings/
 # next.js build output
 .next
 
+# Exclude build artifacts
 esm
+*/index.js
+*/index.js.map
+MaterialComponent.js
+MaterialComponent.js.map
+
 package-lock.json
 yarn.lock

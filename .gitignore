@@ -59,6 +59,6 @@ yarn.lock
 # Exclude build artifacts
 esm
 */index.js
-*/index.d.ts
 */index.js.map
 MaterialComponent.js
+MaterialComponent.js.map

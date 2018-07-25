@@ -1,7 +1,22 @@
 {
   "presets": [
     [
-      "@babel/preset-env"
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 chrome versions",
+            "last 2 firefox versions",
+            "last 2 safari versions",
+            "last 2 ios versions",
+            "last 2 edge versions",
+            "Firefox ESR",
+            "ie 11",
+            "not dead"
+          ]
+        }
+      }
     ]
-  ]
+  ],
+  "sourceMaps": "inline"
 }
