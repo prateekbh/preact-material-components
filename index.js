@@ -15,7 +15,7 @@ import FormField from './FormField';
 import Dialog from './Dialog';
 import List from './List';
 import Drawer from './Drawer';
-import Toolbar from './Toolbar';
+import Toolbar from './ts/Toolbar';
 import TopAppBar from './ts/TopAppBar';
 import Typography from './ts/Typography';
 import ImageList from './ImageList';

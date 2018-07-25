@@ -6,6 +6,7 @@
   "main": "dist",
   "scripts": {
     "build": "tsc --pretty --listEmittedFiles && babel esm --out-dir . -s",
+    "watch": "tsc --pretty --watch & babel esm --out-dir . --watch -s",
     "babel-watch": "babel esm --out-dir . --watch -s",
     "ts-watch": "tsc --pretty --watch",
     "prepublishOnly": "npm run build && npm run test",

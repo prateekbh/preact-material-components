@@ -6,7 +6,7 @@ import Router from 'preact-router';
 import Formfield from '../../../../FormField';
 import LayoutGrid from '../../../../LayoutGrid';
 import Switch from '../../../../esm/Switch';
-import Toolbar from '../../../../Toolbar';
+import Toolbar from '../../../../ts/Toolbar';
 
 // Routes
 import ButtonPage from '../../routes/button';
