@@ -1,7 +1,7 @@
-import Icon from '../Icon/index';
-import MaterialComponent from '../Base/MaterialComponent';
-import generateThemeClass from '../themeUtils/generateThemeClass';
 import {h} from 'preact';
+import MaterialComponent from '../Base/MaterialComponent';
+import Icon from '../Icon/index';
+import generateThemeClass from '../themeUtils/generateThemeClass';
 
 export class FabIcon extends Icon {
   protected componentName = 'fab__icon';
@@ -21,6 +21,7 @@ export interface IFabState {}
  * @prop exited = false
  */
 export class Fab extends MaterialComponent<IFabProps, IFabState> {
+  public static readonly Icon = FabIcon;
   protected componentName = 'fab';
   protected mdcProps = ['mini', 'exited'];
   protected themeProps = ['primary', 'secondary'];
@@ -46,8 +47,6 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
       </button>
     );
   }
-
-  public static readonly Icon = FabIcon;
 }
 
 export default Fab;

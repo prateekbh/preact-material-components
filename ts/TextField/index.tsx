@@ -1,8 +1,7 @@
-import {Component, h} from 'preact';
-
 import {MDCTextField} from '@material/textfield';
-import Icon from '../Icon/index';
+import {Component, h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import Icon from '../Icon/index';
 
 export interface IHelperTextProps extends JSX.HTMLAttributes {
   persistent?: boolean;

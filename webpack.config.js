@@ -1,7 +1,5 @@
 /* globals module, require, __dirname */
-const webpack = require('webpack');
 const CssMigrationWebpackPlugin = require('./CssMigrationWebpackPlugin');
-const WebpackShellPlugin = require('webpack-shell-plugin');
 
 module.exports = {
   entry: './index.js',
@@ -20,6 +18,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules\/proptypes|scripts\/sw.js/,
         options: {
+          babelrc: false,
           presets: [
             [
               '@babel/preset-env',

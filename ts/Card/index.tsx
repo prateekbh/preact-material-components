@@ -1,6 +1,6 @@
 import {h} from 'preact';
-import Button from '../Button/index';
 import MaterialComponent from '../Base/MaterialComponent';
+import Button from '../Button/index';
 import Icon from '../Icon/index';
 
 interface IActionsProps {

@@ -1,8 +1,8 @@
 import {MDCDialog} from '@material/dialog/';
 import {h} from 'preact';
-import Button from '../Button/index';
 import MaterialComponent from '../Base/MaterialComponent';
 import {Omit} from '../Base/types';
+import Button from '../Button/index';
 
 export interface IDialogHeaderProps {}
 

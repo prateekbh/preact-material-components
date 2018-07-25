@@ -1,6 +1,6 @@
+import {MDCCheckbox} from '@material/checkbox/';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import {MDCCheckbox} from '@material/checkbox/';
 
 /*
  * Default props for check box

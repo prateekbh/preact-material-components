@@ -28,7 +28,9 @@ export class LinearProgress extends MaterialComponent<
   }
 
   public componentWillUnmount() {
-    this.MDComponent.destroy && this.MDComponent.destroy();
+    if (this.MDComponent.destroy) {
+      this.MDComponent.destroy();
+    }
   }
 
   public componentWillUpdate(nextProps) {
