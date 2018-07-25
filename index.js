@@ -23,7 +23,7 @@ import LinearProgress from './LinearProgress';
 import LayoutGrid from './LayoutGrid';
 import GridList from './GridList';
 import Menu from './Menu';
-import Tabs from './Tabs';
+import Tabs from './ts/Tabs';
 import Slider from './Slider';
 import Chips from './Chips';
 

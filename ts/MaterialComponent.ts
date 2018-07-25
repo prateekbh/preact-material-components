@@ -15,7 +15,10 @@ export interface IMaterialComponentState {}
  * @class MaterialComponent
  * @extends {Component}
  */
-export abstract class MaterialComponent<PropsType, StateType> extends Component<
+export abstract class MaterialComponent<
+  PropsType extends {[prop: string]: any},
+  StateType extends {[prop: string]: any}
+> extends Component<
   PropsType & IMaterialComponentProps,
   StateType & IMaterialComponentState
 > {
@@ -23,7 +26,7 @@ export abstract class MaterialComponent<PropsType, StateType> extends Component<
    * Attributes inside this array will be check for boolean value true
    * and will be converted to mdc classes
    */
-  protected abstract mdcProps: string[];
+  protected abstract mdcProps: Array<string>;
   /** This will again be used to add apt classname to the component */
   protected abstract componentName: string;
 
