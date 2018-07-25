@@ -2,8 +2,8 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Dialog from '../../../../Dialog';
-import Button from '../../../../Button';
+import Dialog from '../../../../ts/Dialog';
+import Button from '../../../../ts/Button';
 import List from '../../../../ts/List';
 
 // Components

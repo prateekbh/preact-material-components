@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Chips from '../../../../Chips';
+import Chips from '../../../../ts/Chips';
 
 // Components
 import ComponentTable from '../../components/component-table';

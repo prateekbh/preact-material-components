@@ -2,8 +2,8 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Drawer from '../../../../Drawer';
-import Button from '../../../../Button';
+import Drawer from '../../../../ts/Drawer';
+import Button from '../../../../ts/Button';
 import List from '../../../../ts/List';
 
 import './style';

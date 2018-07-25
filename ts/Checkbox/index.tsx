@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import MaterialComponent from '../ts/MaterialComponent';
+import MaterialComponent from '../Base/MaterialComponent';
 import {MDCCheckbox} from '@material/checkbox/';
 
 /*
@@ -10,25 +10,36 @@ const defaultProps = {
   indeterminate: false
 };
 
-/**
- */
-export default class Checkbox extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = 'checkbox';
-    this._mdcProps = ['disabled'];
-  }
-  componentDidMount() {
+export interface ICheckboxProps {
+  indeterminate?: boolean;
+}
+
+export interface ICheckboxState {}
+
+export class Checkbox extends MaterialComponent<
+  ICheckboxProps,
+  ICheckboxState
+> {
+  protected componentName = 'checkbox';
+  protected mdcProps = ['disabled'];
+  protected MDComponent: MDCCheckbox;
+
+  public componentDidMount() {
     this.MDComponent = new MDCCheckbox(this.control);
     toggleCheckbox(defaultProps, this.props, this.MDComponent);
   }
-  componentWillUnmount() {
-    this.MDComponent.destroy && this.MDComponent.destroy();
+
+  public componentWillUnmount() {
+    if (this.MDComponent.destroy) {
+      this.MDComponent.destroy();
+    }
   }
-  componentWillUpdate(nextProps) {
+
+  public componentWillUpdate(nextProps) {
     toggleCheckbox(this.props, nextProps, this.MDComponent);
   }
-  materialDom(allprops) {
+
+  protected materialDom(allprops) {
     const {className, ...props} = allprops;
     return (
       <div className={'mdc-checkbox ' + className} ref={this.setControlRef}>
@@ -77,3 +88,5 @@ function toggleCheckbox(oldprops, newprops, cbox) {
     cbox.indeterminate = newprops.indeterminate;
   }
 }
+
+export default Checkbox;

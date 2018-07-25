@@ -1,19 +1,4 @@
-import MaterialComponent from '../ts/MaterialComponent';
-import {VNode} from 'preact';
+import Button from '../ts/Button';
 
-declare interface IButtonProps {
-  dense?: boolean;
-  raised?: boolean;
-  disabled?: boolean;
-  unelevated?: boolean;
-  outlined?: boolean;
-  primary?: boolean;
-  secondary?: boolean;
-}
-export default class Button<
-  PropsType = JSX.HTMLAttributes,
-  StateType = {}
-> extends MaterialComponent<PropsType & IButtonProps, StateType> {
-  static Icon: typeof Icon;
-}
-declare class Icon extends MaterialComponent<JSX.HTMLAttributes, {}> {}
+export default Button;
+export * from '../ts/Button';

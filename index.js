@@ -1,5 +1,5 @@
-import Button from './Button';
-import Checkbox from './Checkbox';
+import Button from './ts/Button';
+import Checkbox from './ts/Checkbox';
 import Fab from './ts/Fab';
 import Icon from './ts/Icon';
 import IconButton from './ts/IconButton';
@@ -9,12 +9,12 @@ import Snackbar from './ts/Snackbar';
 import Radio from './ts/Radio';
 import TextField from './TextField';
 import Select from './ts/Select';
-import Card from './Card';
+import Card from './ts/Card';
 import Elevation from './ts/Elevation';
 import FormField from './ts/FormField';
-import Dialog from './Dialog';
+import Dialog from './ts/Dialog';
 import List from './ts/List';
-import Drawer from './Drawer';
+import Drawer from './ts/Drawer';
 import Toolbar from './Toolbar';
 import TopAppBar from './TopAppBar';
 import Typography from './Typography';
@@ -25,7 +25,7 @@ import GridList from './ts/GridList';
 import Menu from './ts/Menu';
 import Tabs from './Tabs';
 import Slider from './ts/Slider';
-import Chips from './Chips';
+import Chips from './ts/Chips';
 
 export {
   Button,
