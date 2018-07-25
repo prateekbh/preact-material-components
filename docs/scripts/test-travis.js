@@ -23,7 +23,13 @@ runTests.on('close', code => {
     process.exit(-1);
   }
 
-  if (!fs.statSync('tests/generated').isDirectory()) {
+  try {
+    fs.accessSync('tests/generated');
+    if (!fs.statSync('tests/generated').isDirectory()) {
+      // noinspection ExceptionCaughtLocallyJS
+      throw new ErrorEvent('');
+    }
+  } catch (e) {
     console.error("Can't upload failed Pictures! Did the compile fail?");
     process.exit(-2);
   }
