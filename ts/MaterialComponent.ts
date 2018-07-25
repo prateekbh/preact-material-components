@@ -26,7 +26,7 @@ export abstract class MaterialComponent<
    * Attributes inside this array will be check for boolean value true
    * and will be converted to mdc classes
    */
-  protected abstract mdcProps: Array<string>;
+  protected abstract mdcProps: string[];
   /** This will again be used to add apt classname to the component */
   protected abstract componentName: string;
 

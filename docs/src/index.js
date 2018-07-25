@@ -2,7 +2,7 @@
 import App from './components/app';
 
 // Material Components
-import '../../ts/Typography/style.css';
+import '../../Typography/style.css';
 import '../../Theme/style.css';
 
 // Styles

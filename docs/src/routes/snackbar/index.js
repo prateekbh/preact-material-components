@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Snackbar from '../../../../Snackbar';
+import Snackbar from '../../../../ts/Snackbar';
 import Button from '../../../../Button';
 
 // Components
