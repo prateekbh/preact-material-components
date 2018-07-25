@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {MDCTemporaryDrawer} from '@material/drawer/temporary';
 import {MDCPersistentDrawer} from '@material/drawer/persistent';
 import List from '../List';

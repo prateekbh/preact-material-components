@@ -1,6 +1,6 @@
 import Button from '../Button';
 import Icon from '../Icon';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {VNode} from 'preact';
 
 declare interface ICardProps extends JSX.HTMLAttributes {

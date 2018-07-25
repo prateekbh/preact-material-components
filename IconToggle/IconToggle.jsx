@@ -1,6 +1,6 @@
 import {h} from 'preact';
 import {MDCIconToggle} from '@material/icon-toggle/';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 
 /**
  * @prop disabled = false

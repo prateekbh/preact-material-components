@@ -1,5 +1,5 @@
 import {MDCFoundation, MDCComponent, MDCRipple} from '../MaterialComponentsWeb';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import Icon from '../Icon';
 
 declare interface IChipProps extends JSX.HTMLAttributes {

@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {MDCCheckbox} from '@material/checkbox/';
 
 /*

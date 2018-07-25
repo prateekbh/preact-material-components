@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {MDCSnackbar} from '@material/snackbar/';
 
 function shallowDiffers(a, b) {

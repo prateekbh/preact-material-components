@@ -1,6 +1,6 @@
 import {h} from 'preact';
 import Icon from '../Icon';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {MDCChip, MDCChipSet} from '@material/chips';
 
 class ChipSet extends MaterialComponent {

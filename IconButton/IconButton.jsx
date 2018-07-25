@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {MDCIconButtonToggle} from '@material/icon-button';
 /**
  *  @prop data-toggle-on-content="favorite"

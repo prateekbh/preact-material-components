@@ -2,7 +2,7 @@ import {Component, h} from 'preact';
 
 import Icon from '../Icon';
 import {MDCTextField} from '@material/textfield';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 
 /**
  * @prop persistent = false

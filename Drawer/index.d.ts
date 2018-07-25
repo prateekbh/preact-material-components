@@ -1,4 +1,4 @@
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {VNode} from 'preact';
 import List from '../List';
 import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';

@@ -1,4 +1,4 @@
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {h} from 'preact';
 import {MDCLineRipple} from '@material/line-ripple';
 

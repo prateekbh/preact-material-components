@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {MDCTopAppBar} from '@material/top-app-bar';
 class TopAppBar extends MaterialComponent {
   constructor() {

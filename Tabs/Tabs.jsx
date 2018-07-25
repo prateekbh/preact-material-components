@@ -1,6 +1,6 @@
 import {MDCTabBar, MDCTabBarScroller} from '@material/tabs';
 
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {h} from 'preact';
 
 /*

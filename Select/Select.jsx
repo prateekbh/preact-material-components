@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {MDCSelect} from '@material/select/';
 import List from '../List';
 import Menu from '../Menu';

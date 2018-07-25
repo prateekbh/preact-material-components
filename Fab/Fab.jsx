@@ -1,5 +1,5 @@
 import Icon from '../Icon/';
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import generateThemeClass from '../themeUtils/generateThemeClass';
 import {h} from 'preact';
 

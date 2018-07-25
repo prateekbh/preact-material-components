@@ -1,4 +1,4 @@
-import MaterialComponent from '../MaterialComponent';
+import MaterialComponent from '../ts/MaterialComponent';
 import {VNode, PreactHTMLAttributes} from 'preact';
 import Button from '../Button';
 import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
