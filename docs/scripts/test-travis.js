@@ -5,6 +5,7 @@ const shell = require('shelljs');
 const request = require('request');
 const path = require('path');
 const archiver = require('archiver');
+const chalk = require('chalk');
 
 const runTests = spawn('npm', ['test'], {shell: true});
 
@@ -30,7 +31,9 @@ runTests.on('close', code => {
       throw new ErrorEvent('');
     }
   } catch (e) {
-    console.error("Can't upload failed Pictures! Did the compile fail?");
+    console.error(
+      chalk.red("Can't upload failed Pictures! Did the compile fail?")
+    );
     process.exit(-2);
   }
 

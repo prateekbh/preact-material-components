@@ -17,7 +17,7 @@ import List from './List';
 import Drawer from './Drawer';
 import Toolbar from './Toolbar';
 import TopAppBar from './TopAppBar';
-import Typography from './Typography';
+import Typography from './ts/Typography';
 import ImageList from './ImageList';
 import LinearProgress from './LinearProgress';
 import LayoutGrid from './LayoutGrid';
