@@ -23,6 +23,11 @@ runTests.on('close', code => {
     process.exit(-1);
   }
 
+  if (!fs.statSync('tests/generated').isDirectory()) {
+    console.error("Can't upload failed Pictures! Did the compile fail?");
+    process.exit(-2);
+  }
+
   const archivePath = __dirname + '/failed-pictures.zip';
   const output = fs.createWriteStream(archivePath);
   const archive = archiver('zip', {
@@ -59,11 +64,7 @@ runTests.on('close', code => {
       }
     );
   });
-
   console.log('Creating archive');
-  if (!fs.statSync('tests/generated').isDirectory()) {
-    process.exit(-2);
-  }
   shell.cd('tests/generated');
   archive.pipe(output);
   archive.glob('**/*.png');
