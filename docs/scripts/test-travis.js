@@ -61,6 +61,9 @@ runTests.on('close', code => {
   });
 
   console.log('Creating archive');
+  if (!fs.statSync('tests/generated').isDirectory()) {
+    process.exit(-2);
+  }
   shell.cd('tests/generated');
   archive.pipe(output);
   archive.glob('**/*.png');
