@@ -46,3 +46,4 @@ copy-css.js
 *.yml
 .eslintrc
 sample
+tslint.json
