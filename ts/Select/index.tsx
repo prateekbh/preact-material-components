@@ -26,7 +26,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   protected componentName = 'select';
   protected mdcProps = ['disabled', 'box', 'outlined'];
   protected MDComponent: MDCSelect;
-  protected labelRef: HTMLDivElement;
+  protected labelRef: Element;
 
   public componentDidMount() {
     this.MDComponent = new MDCSelect(this.base);
