@@ -186,6 +186,8 @@ esm
 */index.js.map
 MaterialComponent.js
 MaterialComponent.js.map
+/themeUtils/generateThemeClass.js
+/themeUtils/generateThemeClass.js.map
 
 package-lock.json
 yarn.lock

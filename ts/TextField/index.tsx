@@ -1,21 +1,54 @@
 import {Component, h} from 'preact';
 
-import Icon from '../Icon';
 import {MDCTextField} from '@material/textfield';
-import MaterialComponent from '../ts/MaterialComponent';
+import Icon from '../../Icon/index';
+import {
+  MDCComponent,
+  MDCFoundation,
+  MDCRipple
+} from '../../MaterialComponentsWeb';
+import MaterialComponent from '../MaterialComponent';
+
+declare class MDCTextFieldFoundation extends MDCFoundation<MDCTextField> {
+  public handleTextFieldInteraction(evt: Event): void;
+  public activateFocus(): void;
+  public setBottomLineTransformOrigin(evt: Event): void;
+  public autoCompleteFocus(): void;
+  public handleBottomLineAnimationEnd(): void;
+  public deactivateFocus(): void;
+  public isDisabled(): boolean;
+  public setDisabled(disabled: boolean): void;
+  public setHelperTextContent(content: string): void;
+  public setValid(isValid: boolean): void;
+}
+declare class MDCTextField extends MDCComponent<MDCTextFieldFoundation> {
+  public helperTextElement: Element | null | undefined;
+  public ripple: MDCRipple;
+  public disabled: boolean;
+  public valid: boolean;
+  public helperTextContent: string;
+  public value: string;
+}
+
+export interface IHelperTextProps extends JSX.HTMLAttributes {
+  persistent?: boolean;
+  'validation-msg'?: boolean;
+}
+
+export interface IHelperTextState {}
 
 /**
  * @prop persistent = false
  * @prop validation-msg = false
  */
-class HelperText extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = 'text-field-helper-text';
-    this._mdcProps = ['persistent', 'validation-msg'];
-  }
+export class HelperText extends MaterialComponent<
+  IHelperTextProps,
+  IHelperTextState
+> {
+  protected componentName = 'text-field-helper-text';
+  protected mdcProps = ['persistent', 'validation-msg'];
 
-  materialDom(props) {
+  protected materialDom(props) {
     return (
       <p {...props} aria-hidden="true">
         {props.children}
@@ -24,20 +57,35 @@ class HelperText extends MaterialComponent {
   }
 }
 
-class Label extends MaterialComponent {
-  constructor() {
-    super();
-    this.componentName = 'floating-label';
-  }
+interface ILabelProps {}
 
-  materialDom(props) {
+interface ILabelState {}
+
+class Label extends MaterialComponent<ILabelProps, ILabelState> {
+  protected componentName = 'floating-label';
+  protected mdcProps = [];
+
+  protected materialDom(props) {
     return <label {...props}>{props.children}</label>;
   }
 }
 
-const defaultProps = {
-  valid: true
-};
+interface ITextFieldInputProps extends JSX.HTMLAttributes {
+  fullwidth?: boolean;
+  textarea?: boolean;
+  dense?: boolean;
+  box?: boolean;
+  outlined?: boolean;
+  cssLabel?: string;
+  leadingIcon?: string;
+  trailingIcon?: string;
+  outerStyle?: {[key: string]: string};
+  onInit: (c: MDCTextField) => void;
+}
+
+interface ITextFieldInputState {
+  showFloatingLabel: boolean;
+}
 
 /**
  * @prop fullwidth = false
@@ -47,53 +95,66 @@ const defaultProps = {
  * @prop outlined = false
  * @prop box = false
  * @prop type = 'text'
- * @prop outerStyle = {[key: string]: string}
+ * @prop outerStyle = {}
  * @prop value = ''
  * @prop label = ''
  */
-class TextFieldInput extends MaterialComponent {
+class TextFieldInput extends MaterialComponent<
+  ITextFieldInputProps,
+  ITextFieldInputState
+> {
+  public static readonly defaultProps = {
+    valid: true
+  };
+  protected MDComponent: MDCTextField;
+
+  protected componentName = 'text-field';
+  protected mdcProps = [
+    'fullwidth',
+    'textarea',
+    'dense',
+    'disabled',
+    'box',
+    'outlined'
+  ];
+
   constructor() {
     super();
-    this.componentName = 'text-field';
-    this._mdcProps = [
-      'fullwidth',
-      'textarea',
-      'dense',
-      'disabled',
-      'box',
-      'outlined'
-    ];
     this.state = {
       showFloatingLabel: false
     };
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     this.setState(
       {
         showFloatingLabel: true
       },
       () => {
         this.MDComponent = new MDCTextField(this.control);
-        this.props.onInit && this.props.onInit(this.MDComponent);
-        setValid(defaultProps, this.props, this.MDComponent);
+        if (this.props.onInit) {
+          this.props.onInit(this.MDComponent);
+        }
+        setValid({valid: true}, this.props, this.MDComponent);
       }
     );
   }
 
-  componentWillUpdate(nextProps) {
+  public componentWillUpdate(nextProps) {
     setValid(this.props, nextProps, this.MDComponent);
   }
 
-  componentWillUnmount() {
-    this.MDComponent && this.MDComponent.destroy && this.MDComponent.destroy();
+  public componentWillUnmount() {
+    if (this.MDComponent && this.MDComponent.destroy) {
+      this.MDComponent.destroy();
+    }
   }
 
-  getValue() {
+  public getValue() {
     return this.MDComponent ? this.MDComponent.value : null;
   }
 
-  materialDom(allprops) {
+  protected materialDom(allprops) {
     let {className, outerStyle, outlined, ...props} = allprops;
     className = className || '';
 
@@ -114,6 +175,7 @@ class TextFieldInput extends MaterialComponent {
       );
     }
 
+    // noinspection RequiredAttributes
     return (
       <div className={className} ref={this.setControlRef} style={outerStyle}>
         {props.leadingIcon ? (
@@ -149,6 +211,25 @@ class TextFieldInput extends MaterialComponent {
   }
 }
 
+export interface ITextFieldProps extends JSX.HTMLAttributes {
+  fullwidth?: boolean;
+  textarea?: boolean;
+  dense?: boolean;
+  box?: boolean;
+  outlined?: boolean;
+  helperText?: string;
+  helperTextPersistent?: boolean;
+  helperTextValidationMsg?: boolean;
+  cssLabel?: string;
+  leadingIcon?: string;
+  trailingIcon?: string;
+  outerStyle?: {[key: string]: string};
+}
+
+export interface ITextFieldState {
+  showFloatingLabel: boolean;
+}
+
 /**
  * @prop fullwidth = false
  * @prop textarea = false
@@ -164,29 +245,35 @@ class TextFieldInput extends MaterialComponent {
  * @prop helperTextPersistent = false
  * @prop helperTextValidationMsg = false
  */
-class TextField extends Component {
+class TextField extends Component<ITextFieldProps, ITextFieldState> {
+  public static readonly defaultProps = {
+    outerStyle: {}
+  };
+
+  public static readonly HelperText = HelperText;
+  protected static uidCounter = 0;
+
+  protected static uid() {
+    return ++this.uidCounter;
+  }
+
+  protected readonly id = TextField.uid();
+  protected MDComponent?: MDCTextField;
+
   constructor() {
     super();
-    this.id = TextField.uid();
     this.state = {
       showFloatingLabel: false
     };
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     this.setState({
       showFloatingLabel: true
     });
   }
 
-  static uid() {
-    if (!this.uidCounter) {
-      this.uidCounter = 0;
-    }
-    return ++this.uidCounter;
-  }
-
-  render(allprops, {showFloatingLabel}) {
+  public render(allprops, {showFloatingLabel}) {
     const {
       className,
       outerStyle,
@@ -197,7 +284,7 @@ class TextField extends Component {
     const showDiv = props.helperText || (props.label && !showFloatingLabel);
 
     if ((props.helperText || props.label) && !props.id) {
-      props.id = 'tf-' + this.id;
+      props.id = `tf-${this.id}`;
     }
 
     // Helper text
@@ -217,10 +304,10 @@ class TextField extends Component {
           onInit={MDComponent => {
             this.MDComponent = MDComponent;
           }}
-          aria-controls={props.helperText && props.id + '-helper-text'}
+          aria-controls={props.helperText && `${props.id}-helper-text`}
         />
         {props.helperText && (
-          <HelperText id={props.id + '-helper-text'} {...helperTextProps}>
+          <HelperText id={`${props.id}-helper-text`} {...helperTextProps}>
             {props.helperText}
           </HelperText>
         )}
@@ -237,9 +324,6 @@ class TextField extends Component {
     );
   }
 }
-TextField.defaultProps = {
-  outerStyle: {}
-};
 
 function setValid(oldprops, newprops, textfield) {
   if (
@@ -250,7 +334,5 @@ function setValid(oldprops, newprops, textfield) {
     textfield.valid = newprops.valid;
   }
 }
-
-TextField.Helptext = HelperText;
 
 export default TextField;

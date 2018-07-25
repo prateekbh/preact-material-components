@@ -35,7 +35,8 @@
     "jsx-wrap-multiline": false,
     "jsx-curly-spacing": false,
     "no-misused-new": false,
-    "prettier": true
+    "prettier": true,
+    "jsx-no-lambda": false
   },
   "rulesDirectory": ["tslint-plugin-prettier"]
 }

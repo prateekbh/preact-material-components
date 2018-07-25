@@ -7,7 +7,7 @@ import IconToggle from './IconToggle';
 import Switch from './ts/Switch/index';
 import Snackbar from './Snackbar';
 import Radio from './Radio';
-import TextField from './TextField';
+import TextField from './ts/TextField';
 import Select from './Select';
 import Card from './Card';
 import Elevation from './Elevation';

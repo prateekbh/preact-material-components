@@ -1,6 +1,6 @@
 import Icon from '../Icon/';
 import MaterialComponent from '../ts/MaterialComponent';
-import generateThemeClass from '../themeUtils/generateThemeClass';
+import generateThemeClass from '../ts/themeUtils/generateThemeClass';
 import {h} from 'preact';
 
 /**
