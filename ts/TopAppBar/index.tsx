@@ -27,7 +27,10 @@ export interface ISectionState {}
  * @prop align-start = false
  * @prop shrink-to-fit = false TODO: Is this sill there?
  */
-export class TopAppBarSection extends MaterialComponent<ISectionProps, ISectionState> {
+export class TopAppBarSection extends MaterialComponent<
+  ISectionProps,
+  ISectionState
+> {
   protected componentName = 'top-app-bar__section';
   protected mdcProps = ['align-start', 'align-end'];
 
