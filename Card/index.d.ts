@@ -24,6 +24,6 @@ declare class ActionIcon extends Icon<JSX.HTMLAttributes, {}> {}
 declare class CardMediaContent extends MaterialComponent<IActionsProps, {}> {}
 
 declare interface IMediaProps extends JSX.HTMLAttributes {
-  x?: 'square' | '16-9';
+  x?: 'square' | 'sixteenByNine';
 }
 declare class Media extends MaterialComponent<IMediaProps, {}> {}
