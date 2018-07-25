@@ -47,6 +47,160 @@ import Menu from '../menu';
 import '../../../../style.css';
 import './style';
 
+const menuItems = [
+  {
+    text: 'Home',
+    icon: 'home',
+    link: '/',
+    component: HomePage
+  },
+  {
+    text: 'Button',
+    link: '/component/button/',
+    component: ButtonPage
+  },
+  {
+    text: 'Card',
+    link: '/component/card/',
+    component: CardPage
+  },
+  {
+    text: 'Chips',
+    link: '/component/chips/',
+    component: ChipsPage
+  },
+  {
+    text: 'Checkbox',
+    link: '/component/checkbox/',
+    component: CheckboxPage
+  },
+  {
+    text: 'Dialog',
+    link: '/component/dialog/',
+    component: DialogPage
+  },
+  {
+    text: 'Drawer',
+    link: '/component/drawer/',
+    component: DrawerPage
+  },
+  {
+    text: 'Elevation',
+    link: '/component/elevation/',
+    component: ElevationPage
+  },
+  {
+    text: 'Fab',
+    link: '/component/fab/',
+    component: FabPage
+  },
+  {
+    text: 'FormField',
+    link: '/component/form-field/',
+    component: FormFieldPage
+  },
+  {
+    text: 'GridList',
+    link: '/component/grid-list/',
+    component: GridListPage
+  },
+  {
+    text: 'Icon',
+    link: '/component/icon/',
+    component: IconPage
+  },
+  {
+    text: 'IconButton',
+    link: '/component/icon-button/',
+    component: IconButtonPage
+  },
+  {
+    text: 'IconToggle',
+    link: '/component/icon-toggle/',
+    component: IconTogglePage
+  },
+  {
+    text: 'ImageList',
+    link: '/component/image-list/',
+    component: ImageListPage
+  },
+  {
+    text: 'LayoutGrid',
+    link: '/component/layout-grid/',
+    component: LayoutGridPage
+  },
+  {
+    text: 'LinearProgress',
+    link: '/component/linear-progress/',
+    component: LinearProgressPage
+  },
+  {
+    text: 'List',
+    link: '/component/list/',
+    component: ListPage
+  },
+  {
+    text: 'Menu',
+    link: '/component/menu/',
+    component: MenuPage
+  },
+  {
+    text: 'Radio',
+    link: '/component/radio/',
+    component: RadioPage
+  },
+  {
+    text: 'Select',
+    link: '/component/select/',
+    component: SelectPage
+  },
+  {
+    text: 'Slider',
+    link: '/component/slider/',
+    component: SliderPage
+  },
+  {
+    text: 'Snackbar',
+    link: '/component/snackbar/',
+    component: SnackbarPage
+  },
+  {
+    text: 'Switch',
+    link: '/component/switch/',
+    component: SwitchPage
+  },
+  {
+    text: 'Tabs',
+    link: '/component/tabs/',
+    component: TabsPage
+  },
+  {
+    text: 'TextField',
+    link: '/component/textfield/',
+    component: TextfieldPage
+  },
+  {
+    text: 'Theme',
+    link: '/component/theme/',
+    component: ThemePage
+  },
+  {
+    text: 'Toolbar',
+    link: '/component/toolbar/',
+    component: ToolbarPage
+  },
+  {
+    text: 'TopAppBar',
+    link: '/component/top-app-bar/',
+    component: TopAppBar
+  },
+  {
+    text: 'Typography',
+    link: '/component/typography/',
+    component: Typography
+  }
+];
+
 // Class
 export default class Home extends Component {
   constructor() {
@@ -54,160 +208,6 @@ export default class Home extends Component {
     this.state = {
       darkMode: false
     };
-    this.menuItems = [
-      {
-        text: 'Home',
-        icon: 'home',
-        link: '/',
-        component: HomePage
-      },
-      {
-        text: 'Button',
-        link: '/component/button',
-        component: ButtonPage
-      },
-      {
-        text: 'Card',
-        link: '/component/card',
-        component: CardPage
-      },
-      {
-        text: 'Chips',
-        link: '/component/chips',
-        component: ChipsPage
-      },
-      {
-        text: 'Checkbox',
-        link: '/component/checkbox',
-        component: CheckboxPage
-      },
-      {
-        text: 'Dialog',
-        link: '/component/dialog',
-        component: DialogPage
-      },
-      {
-        text: 'Drawer',
-        link: '/component/drawer',
-        component: DrawerPage
-      },
-      {
-        text: 'Elevation',
-        link: '/component/elevation',
-        component: ElevationPage
-      },
-      {
-        text: 'Fab',
-        link: '/component/fab',
-        component: FabPage
-      },
-      {
-        text: 'FormField',
-        link: '/component/form-field',
-        component: FormFieldPage
-      },
-      {
-        text: 'GridList',
-        link: '/component/grid-list',
-        component: GridListPage
-      },
-      {
-        text: 'Icon',
-        link: '/component/icon',
-        component: IconPage
-      },
-      {
-        text: 'IconButton',
-        link: '/component/icon-button',
-        component: IconButtonPage
-      },
-      {
-        text: 'IconToggle',
-        link: '/component/icon-toggle',
-        component: IconTogglePage
-      },
-      {
-        text: 'ImageList',
-        link: '/component/image-list',
-        component: ImageListPage
-      },
-      {
-        text: 'LayoutGrid',
-        link: '/component/layout-grid',
-        component: LayoutGridPage
-      },
-      {
-        text: 'LinearProgress',
-        link: '/component/linear-progress',
-        component: LinearProgressPage
-      },
-      {
-        text: 'List',
-        link: '/component/list',
-        component: ListPage
-      },
-      {
-        text: 'Menu',
-        link: '/component/menu',
-        component: MenuPage
-      },
-      {
-        text: 'Radio',
-        link: '/component/radio',
-        component: RadioPage
-      },
-      {
-        text: 'Select',
-        link: '/component/select',
-        component: SelectPage
-      },
-      {
-        text: 'Slider',
-        link: '/component/slider',
-        component: SliderPage
-      },
-      {
-        text: 'Snackbar',
-        link: '/component/snackbar',
-        component: SnackbarPage
-      },
-      {
-        text: 'Switch',
-        link: '/component/switch',
-        component: SwitchPage
-      },
-      {
-        text: 'Tabs',
-        link: '/component/tabs',
-        component: TabsPage
-      },
-      {
-        text: 'TextField',
-        link: '/component/textfield',
-        component: TextfieldPage
-      },
-      {
-        text: 'Theme',
-        link: '/component/theme',
-        component: ThemePage
-      },
-      {
-        text: 'Toolbar',
-        link: '/component/toolbar',
-        component: ToolbarPage
-      },
-      {
-        text: 'TopAppBar',
-        link: '/component/top-app-bar',
-        component: TopAppBar
-      },
-      {
-        text: 'Typography',
-        link: '/component/typography',
-        component: Typography
-      }
-    ];
-    this._handleRoute = this._handleRoute.bind(this);
   }
 
   closeDrawer() {
@@ -225,14 +225,30 @@ export default class Home extends Component {
     }
   }
 
-  _handleRoute(e) {
+  componentDidMount() {
     this.setState({
       toolbarTitle:
-        e.url === '/'
+        window.location.pathname === '/'
           ? null
-          : (this.menuItems.find(item => item.link === e.url) || {}).text
+          : (
+              menuItems.find(item => item.link === window.location.pathname) ||
+              {}
+            ).text
     });
   }
+
+  _handleRoute = e => {
+    setTimeout(
+      () =>
+        this.setState({
+          toolbarTitle:
+            e.url === '/'
+              ? null
+              : (menuItems.find(item => item.link === e.url) || {}).text
+        }),
+      100
+    );
+  };
 
   render() {
     return (
@@ -365,12 +381,12 @@ export default class Home extends Component {
             preact-material-components
           </div>
         </div>
-        <Menu items={this.menuItems} ref={menu => (this.menu = menu)} />
+        <Menu items={menuItems} ref={menu => (this.menu = menu)} />
         <LayoutGrid className="content">
           <LayoutGrid.Inner>
             <LayoutGrid.Cell cols="12">
               <Router onChange={this._handleRoute}>
-                {this.menuItems.map(({component: Element, link}) => (
+                {menuItems.map(({component: Element, link}) => (
                   <Element path={link} />
                 ))}
                 <HomePage default />
