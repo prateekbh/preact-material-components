@@ -8,7 +8,7 @@ import Switch from './Switch/index';
 import Snackbar from './ts/Snackbar';
 import Radio from './Radio';
 import TextField from './TextField';
-import Select from './Select';
+import Select from './ts/Select';
 import Card from './Card';
 import Elevation from './Elevation';
 import FormField from './FormField';
