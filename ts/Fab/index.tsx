@@ -38,7 +38,10 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
     });
 
     return (
-      <button ref={this.setControlRef} {...props} className={classNames.join(' ')}>
+      <button
+        ref={this.setControlRef}
+        {...props}
+        className={classNames.join(' ')}>
         {props.children}
       </button>
     );
