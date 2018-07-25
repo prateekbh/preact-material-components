@@ -49,7 +49,7 @@ export default class CardPage extends Component {
             description: 'Makes Media aspect ratio 1:1.'
           },
           {
-            name: '16-9',
+            name: 'sixteenByNine',
             description: 'Makes Media aspect ratio 16:9.'
           }
         ]
