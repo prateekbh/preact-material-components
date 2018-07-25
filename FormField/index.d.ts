@@ -1,8 +1,4 @@
-import MaterialComponent from '../ts/MaterialComponent';
-import {VNode} from 'preact';
+import Formfield from '../ts/FormField';
 
-declare interface IFormfieldProps extends JSX.HTMLAttributes {
-  'align-end'?: boolean;
-}
-
-export default class Formfield extends MaterialComponent<IFormfieldProps, {}> {}
+export default Formfield;
+export * from '../ts/FormField';

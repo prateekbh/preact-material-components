@@ -28,13 +28,15 @@ export class IconButton extends MaterialComponent<
 
   protected MDComponent: MDCIconButtonToggle;
 
+  protected onChange(e: any) {} // TODO: Implement this method
+
   public componentDidMount() {
     this.MDComponent = new MDCIconButtonToggle(this.control);
-    this.MDComponent.listen('MDCIconButtonToggle:change', this._onChange);
+    this.MDComponent.listen('MDCIconButtonToggle:change', this.onChange);
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCIconButtonToggle:change', this._onChange);
+    this.MDComponent.unlisten('MDCIconButtonToggle:change', this.onChange);
     this.MDComponent.destroy && this.MDComponent.destroy();
   }
 

@@ -4,7 +4,7 @@ import {h, Component} from 'preact';
 // Material Components
 import Checkbox from '../../../../Checkbox';
 import Button from '../../../../Button';
-import Formfield from '../../../../FormField';
+import Formfield from '../../../../ts/FormField';
 
 // Components
 import ComponentTable from '../../components/component-table';
