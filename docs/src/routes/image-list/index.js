@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import ImageList from '../../../../ts/ImageList';
+import ImageList from '../../../../ImageList';
 
 // Components
 import ComponentTable from '../../components/component-table';

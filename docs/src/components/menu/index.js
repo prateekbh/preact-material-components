@@ -3,8 +3,8 @@ import {h, Component} from 'preact';
 import {route} from 'preact-router';
 
 // Material Components
-import Drawer from '../../../../ts/Drawer';
-import List from '../../../../ts/List';
+import Drawer from '../../../../Drawer';
+import List from '../../../../List';
 const json = require('../../../../package.json');
 
 // Class

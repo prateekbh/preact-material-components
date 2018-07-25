@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Select from '../../../../ts/Select';
+import Select from '../../../../Select';
 
 // Components
 import ComponentTable from '../../components/component-table';
