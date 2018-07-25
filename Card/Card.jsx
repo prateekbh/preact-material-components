@@ -25,6 +25,12 @@ class CardMedia extends MaterialComponent {
     this.componentName = 'card__media';
     this._mdcProps = ['square', '16-9'];
   }
+  materialDom(props) {
+    if (props.sixteenByNine) {
+      props.className = 'mdc-card__media--16-9';
+    }
+    return super.materialDom(props);
+  }
 }
 
 class CardActionButton extends Button {
