@@ -5,8 +5,9 @@
   "module": "index.js",
   "main": "dist",
   "scripts": {
-    "build": "tsc --pretty",
-    "dev": "tsc --pretty --watch",
+    "build": "tsc --pretty && babel esm --out-dir .",
+    "babel-watch": "babel esm --out-dir . --watch",
+    "ts-watch": "tsc --pretty --watch",
     "prepublishOnly": "npm run build && npm run test",
     "prettier:fix": "prettier --config ./prettier.config.js {,ts/**/*.tsx} --write",
     "test": "npm run build",
@@ -72,6 +73,7 @@
     "preact": "*"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.54",
     "@babel/core": "^7.0.0-beta.42",
     "@babel/plugin-proposal-async-generator-functions": "^7.0.0-beta.42",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.42",

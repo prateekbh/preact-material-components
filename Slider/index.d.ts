@@ -1,7 +1,7 @@
 import MaterialComponent from '../ts/MaterialComponent';
 import {VNode} from 'preact';
 import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
-import {Omit} from '../libs';
+import {Omit} from '../ts/libs';
 
 declare interface ISliderProps
   extends Omit<

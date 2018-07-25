@@ -2,7 +2,7 @@ import MaterialComponent from '../ts/MaterialComponent';
 import {VNode, PreactHTMLAttributes} from 'preact';
 import Button from '../Button';
 import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
-import {Omit} from '../libs';
+import {Omit} from '../ts/libs';
 
 declare interface IDialogProps extends JSX.HTMLAttributes {
   onAccept?: (e: Event) => void;
