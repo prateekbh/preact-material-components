@@ -51,6 +51,6 @@
   "dependencies": {
     "preact": "^8.2.1",
     "preact-cli": "^2.2.1",
-    "preact-router": "^2.5.5"
+    "preact-router": "^2.6.1"
   }
 }
