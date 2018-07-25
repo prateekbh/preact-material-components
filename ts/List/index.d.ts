@@ -1,7 +1,6 @@
 import MaterialComponent from '../MaterialComponent';
 import {VNode} from 'preact';
 
-
 declare class Item extends MaterialComponent<JSX.HTMLAttributes, {}> {}
 
 declare class LinkItem<
