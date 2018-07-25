@@ -1,6 +1,6 @@
 import MaterialComponent from '../ts/MaterialComponent';
 import {VNode} from 'preact';
-import List from '../List';
+import List from '../ts/List';
 import {MDCFoundation, MDCComponent} from '../MaterialComponentsWeb';
 
 export default class Drawer {

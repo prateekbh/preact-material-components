@@ -4,7 +4,7 @@ import {route} from 'preact-router';
 
 // Material Components
 import Drawer from '../../../../Drawer';
-import List from '../../../../List';
+import List from '../../../../ts/List';
 const json = require('../../../../package.json');
 
 // Class

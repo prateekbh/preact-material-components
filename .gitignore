@@ -58,9 +58,8 @@ yarn.lock
 
 # Exclude build artifacts
 esm
-*/index.js
-*/index.js.map
+*/*.js
+*/*.js.map
 MaterialComponent.js
 MaterialComponent.js.map
-/themeUtils/generateThemeClass.js
-/themeUtils/generateThemeClass.js.map
+!/docs/prettier.config.js

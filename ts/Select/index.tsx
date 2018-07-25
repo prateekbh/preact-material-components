@@ -1,7 +1,7 @@
 import {MDCSelect} from '@material/select/';
 import {h} from 'preact';
-import {Item} from '../../List/index';
 import {MDCComponent, MDCFoundation} from '../../MaterialComponentsWeb';
+import {IListItemProps, IListItemState, ListItem} from '../List/index';
 import MaterialComponent from '../MaterialComponent';
 import {Omit} from '../types';
 
@@ -23,12 +23,7 @@ declare class MDCSelect extends MDCComponent<MDCSelectFoundation> {
   public nameditem(key: string): Element | null;
 }
 
-// TODO: Fill in when List is migrated
-export type ISelectOptionProps = null;
-
-export type ISelectOptionState = null;
-
-export class SelectOption extends Item {
+export class SelectOption extends ListItem {
   protected materialDom() {
     return <option {...this.props}>{this.props.children}</option>;
   }
