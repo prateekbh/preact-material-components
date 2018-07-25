@@ -16,7 +16,7 @@ import Dialog from './Dialog';
 import List from './List';
 import Drawer from './Drawer';
 import Toolbar from './Toolbar';
-import TopAppBar from './TopAppBar';
+import TopAppBar from './ts/TopAppBar';
 import Typography from './ts/Typography';
 import ImageList from './ImageList';
 import LinearProgress from './LinearProgress';

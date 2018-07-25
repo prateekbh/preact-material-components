@@ -36,6 +36,7 @@
     "async": "^2.6.0",
     "babel-eslint": "^7.2.3",
     "classnames": "^2.2.5",
+    "chalk": "^2.4.1",
     "cpx": "^1.5.0",
     "eslint": "^4.6.1",
     "highlight.js": "^9.12.0",

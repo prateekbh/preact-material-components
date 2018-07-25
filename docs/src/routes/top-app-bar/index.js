@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import TopAppBar from '../../../../TopAppBar';
+import TopAppBar from '../../../../ts/TopAppBar';
 
 // Components
 import ComponentTable from '../../components/component-table';
