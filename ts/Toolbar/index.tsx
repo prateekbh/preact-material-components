@@ -1,4 +1,5 @@
 import {MDCToolbar} from '@material/toolbar';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -6,12 +7,13 @@ export interface IRowProps {}
 
 export interface IRowState {}
 
-class ToolbarRow extends MaterialComponent<IRowProps, IRowState> {
+export class ToolbarRow extends MaterialComponent<IRowProps, IRowState> {
   protected componentName = 'toolbar__row';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom() {
-    return <div />;
+    return <div>{this.props.children}</div>;
   }
 }
 
@@ -28,14 +30,19 @@ export interface ISectionState {}
  * @prop align-start = false
  * @prop shrink-to-fit = false
  */
-class ToolbarSection extends MaterialComponent<ISectionProps, ISectionState> {
+export class ToolbarSection extends MaterialComponent<
+  ISectionProps,
+  ISectionState
+> {
   protected componentName = 'toolbar__section';
   protected mdcProps = ['align-start', 'align-end', 'shrink-to-fit'];
 
+  @autobind
   protected materialDom(props) {
     return <section {...props}>{props.children}</section>;
   }
 }
+
 export interface IIconProps extends JSX.HTMLAttributes {
   menu?: boolean;
 }
@@ -45,7 +52,7 @@ export interface IIconState {}
 /**
  * @prop menu = false
  */
-class ToolbarIcon extends MaterialComponent<IIconProps, IIconState> {
+export class ToolbarIcon extends MaterialComponent<IIconProps, IIconState> {
   protected componentName = 'toolbar__icon';
   protected mdcProps = [];
 
@@ -56,6 +63,7 @@ class ToolbarIcon extends MaterialComponent<IIconProps, IIconState> {
     }
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <a className="material-icons" {...props}>
@@ -74,10 +82,11 @@ export interface ITitleState {}
 /**
  * @prop title = ''
  */
-class ToolbarTitle extends MaterialComponent<ITitleProps, IToolbarState> {
+export class ToolbarTitle extends MaterialComponent<ITitleProps, ITitleState> {
   protected componentName = 'toolbar__title';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return <span {...props}>{props.children}</span>;
   }
@@ -128,12 +137,14 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
     }
   }
 
+  @autobind
   protected onChange(e) {
     if (this.props.onChange) {
       this.props.onChange(e);
     }
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <header ref={this.setControlRef} {...props}>

@@ -1,10 +1,12 @@
 import {MDCSelect} from '@material/select/';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import {Omit} from '../Base/types';
 import {ListItem} from '../List';
 
 export class SelectOption extends ListItem {
+  @autobind
   protected materialDom() {
     return <option {...this.props}>{this.props.children}</option>;
   }
@@ -45,6 +47,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
     this.updateSelection();
   }
 
+  @autobind
   protected changed(e) {
     e = e || {};
     e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
@@ -53,6 +56,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
     }
   }
 
+  @autobind
   protected updateSelection() {
     if ('selectedIndex' in this.props) {
       this.MDComponent.selectedIndex =
@@ -73,6 +77,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
     }
   }
 
+  @autobind
   protected materialDom(allprops) {
     const {outlined, ...props} = allprops;
     // noinspection RequiredAttributes

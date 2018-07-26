@@ -1,5 +1,6 @@
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import autobind from 'autobind-decorator';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {
   disabled?: boolean;
@@ -11,6 +12,7 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
   protected componentName = 'switch';
   protected mdcProps = ['disabled'];
 
+  @autobind
   protected materialDom(allprops) {
     const {className, ...props} = allprops;
     return (

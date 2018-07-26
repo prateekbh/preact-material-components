@@ -1,4 +1,5 @@
 import {MDCIconButtonToggle} from '@material/icon-button';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
@@ -10,13 +11,6 @@ export interface IIconButtonProps {
 
 export interface IIconButtonState {}
 
-/**
- * TODO: Are these up-to-date?
- * @prop data-toggle-on-content="favorite"
- * @prop data-toggle-on-label="Remove from favorites"
- * @prop data-toggle-off-content="favorite_border"
- * @prop data-toggle-off-label="Add to favorites"
- */
 export class IconButton extends MaterialComponent<
   IIconButtonProps,
   IIconButtonState
@@ -40,8 +34,10 @@ export class IconButton extends MaterialComponent<
     }
   }
 
+  @autobind
   protected onChange(e: any) {} // TODO: Implement this method
 
+  @autobind
   protected materialDom(props) {
     return (
       <button className="material-icons" ref={this.setControlRef} {...props}>

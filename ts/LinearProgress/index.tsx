@@ -1,4 +1,5 @@
 import {MDCLinearProgress} from '@material/linear-progress';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -37,6 +38,7 @@ export class LinearProgress extends MaterialComponent<
     updateProgress(nextProps, this.MDComponent);
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <div role="progressbar" {...props} ref={this.setControlRef}>

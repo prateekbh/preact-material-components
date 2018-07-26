@@ -1,3 +1,4 @@
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -19,11 +20,7 @@ export interface ITypographyProps {
 
 export interface ITypographyState {}
 
-/**
- * @prop mini = false
- * @prop plain = false
- */
-export default class Typography extends MaterialComponent<
+export class Typography extends MaterialComponent<
   ITypographyProps,
   ITypographyState
 > {
@@ -44,6 +41,7 @@ export default class Typography extends MaterialComponent<
     'overline'
   ];
 
+  @autobind
   protected materialDom(props) {
     return (
       <span {...props} ref={this.setControlRef}>
@@ -52,3 +50,5 @@ export default class Typography extends MaterialComponent<
     );
   }
 }
+
+export default Typography;

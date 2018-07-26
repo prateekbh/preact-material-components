@@ -32,21 +32,15 @@ export abstract class MaterialComponent<
   protected abstract componentName: string;
 
   /** The final class name given to the dom */
-  protected classText = this.buildClassName();
+  protected classText: string;
 
   // TODO: find out correct type
   protected control?: any;
 
-  /** Attach the ripple effect */
-  @autobind
-  public attachRipple() {
-    if (this.props.ripple && this.control) {
-      MDCRipple.attachTo(this.control);
-    }
-  }
-
   public render(props: PropsType & IMaterialComponentProps): VNode {
-    this.buildClassName();
+    if (!this.classText) {
+      this.classText = this.buildClassName();
+    }
     // Fetch a VNode
     const componentProps = props;
     const userDefinedClasses =
@@ -77,6 +71,14 @@ export abstract class MaterialComponent<
       delete element.attributes[prop];
     });
     return element;
+  }
+
+  /** Attach the ripple effect */
+  @autobind
+  protected attachRipple() {
+    if (this.props.ripple && this.control) {
+      MDCRipple.attachTo(this.control);
+    }
   }
 
   // Shared setter for the root element ref

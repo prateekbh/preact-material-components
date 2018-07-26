@@ -1,3 +1,4 @@
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -8,13 +9,14 @@ export interface IIconState {}
 /**
  * @prop disabled = false
  */
-export default class Icon<
-  PropsType = {},
-  StateType = {}
-> extends MaterialComponent<IIconProps & PropsType, IIconState & StateType> {
+export class Icon<PropsType = {}, StateType = {}> extends MaterialComponent<
+  IIconProps & PropsType,
+  IIconState & StateType
+> {
   protected componentName = 'icon';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     const classes = ['material-icons'];
     // CardActionIcon sends className
@@ -28,3 +30,5 @@ export default class Icon<
     );
   }
 }
+
+export default Icon;

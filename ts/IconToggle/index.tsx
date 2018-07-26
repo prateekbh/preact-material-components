@@ -1,4 +1,5 @@
 import {MDCIconToggle} from '@material/icon-toggle/';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -11,6 +12,7 @@ interface IconToggleData {
 export interface IIconToggleProps {
   'data-toggle-on'?: IconToggleData;
   'data-toggle-off'?: IconToggleData;
+  disabled?: boolean;
 }
 
 export interface IIconToggleState {}
@@ -38,12 +40,14 @@ export class IconToggle extends MaterialComponent<
     }
   }
 
+  @autobind
   protected onChange(e) {
     if (this.props.onChange) {
       this.props.onChange(e);
     }
   }
 
+  @autobind
   protected materialDom(props) {
     if (props['data-toggle-on']) {
       props['data-toggle-on'] = JSON.stringify(props['data-toggle-on']);

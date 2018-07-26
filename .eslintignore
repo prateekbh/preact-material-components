@@ -182,10 +182,12 @@ typings/
 
 # Exclude build artifacts
 esm
-*/index.js
-*/index.js.map
-MaterialComponent.js
-MaterialComponent.js.map
+*/*.js
+*/*.js.map
+*/*.d.ts
+!/docs/prettier.config.js
+!/sample/webpack.config.js
 
 package-lock.json
 yarn.lock
+!/sample/webpack.config.js

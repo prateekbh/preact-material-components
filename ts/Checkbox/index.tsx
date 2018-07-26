@@ -1,4 +1,5 @@
 import {MDCCheckbox} from '@material/checkbox/';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -39,6 +40,7 @@ export class Checkbox extends MaterialComponent<
     toggleCheckbox(this.props, nextProps, this.MDComponent);
   }
 
+  @autobind
   protected materialDom(allprops) {
     const {className, ...props} = allprops;
     return (

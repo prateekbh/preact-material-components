@@ -2,6 +2,7 @@ import {MDCMenu} from '@material/menu';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import List, {IListItemProps, IListItemState, ListItem} from '../List';
+import autobind from 'autobind-decorator';
 
 export interface IMenuAnchorProps {}
 
@@ -14,8 +15,9 @@ export class MenuAnchor extends MaterialComponent<
   protected componentName = 'menu-anchor';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom() {
-    return <div />;
+    return <div>{this.props.children}</div>;
   }
 }
 
@@ -25,7 +27,7 @@ export interface IMenuItemState extends IListItemState {}
 
 export class MenuItem extends ListItem {}
 
-export interface IMenuProps extends JSX.HTMLAttributes {
+export interface IMenuProps {
   open?: boolean;
   'open-from-top-left'?: boolean;
   'open-from-top-right'?: boolean;
@@ -78,6 +80,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     toggleMenu(this.props, nextProps, this.MDComponent);
   }
 
+  @autobind
   protected select(e) {
     if (this.props.onSelect) {
       this.props.onSelect(e);
@@ -85,6 +88,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     this.menuClosed(e);
   }
 
+  @autobind
   protected cancel(e) {
     if (this.props.onCancel) {
       this.props.onCancel(e);
@@ -92,12 +96,14 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     this.menuClosed(e);
   }
 
+  @autobind
   protected menuClosed(e) {
     if (this.props.onMenuClosed) {
       this.props.onMenuClosed(e);
     }
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <div tabindex="-1" {...props} ref={this.setControlRef}>

@@ -1,4 +1,5 @@
 import {MDCTopAppBar} from '@material/top-app-bar';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -10,8 +11,9 @@ export class TopAppBarRow extends MaterialComponent<IRowProps, IRowState> {
   protected componentName = 'top-app-bar__row';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom() {
-    return <div />;
+    return <div>{this.props.children}</div>;
   }
 }
 
@@ -34,6 +36,7 @@ export class TopAppBarSection extends MaterialComponent<
   protected componentName = 'top-app-bar__section';
   protected mdcProps = ['align-start', 'align-end'];
 
+  @autobind
   protected materialDom(props) {
     return <section {...props}>{props.children}</section>;
   }
@@ -52,6 +55,7 @@ export class TopAppBarIcon extends MaterialComponent<IIconProps, IIconState> {
   protected componentName = 'top-app-bar__icon';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     const className = props.navigation
       ? 'material-icons mdc-top-app-bar__navigation-icon'
@@ -68,9 +72,6 @@ export interface ITitleProps {}
 
 export interface ITitleState {}
 
-/**
- * @prop title = '' TODO: Is this sill there?
- */
 export class TopAppBarTitle extends MaterialComponent<
   ITitleProps,
   ITitleState
@@ -78,6 +79,7 @@ export class TopAppBarTitle extends MaterialComponent<
   protected componentName = 'top-app-bar__title';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return <span {...props}>{props.children}</span>;
   }
@@ -117,12 +119,14 @@ export class TopAppBar extends MaterialComponent<
     this.MDComponent.destroy();
   }
 
+  @autobind
   protected onNav(e) {
     if (this.props.onNav) {
       this.props.onNav(e);
     }
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <header ref={this.setControlRef} {...props}>

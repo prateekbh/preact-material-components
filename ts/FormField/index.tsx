@@ -1,3 +1,4 @@
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -18,8 +19,9 @@ export class Formfield extends MaterialComponent<
   protected componentName = 'form-field';
   protected mdcProps = ['align-end'];
 
+  @autobind
   protected materialDom() {
-    return <div />;
+    return <div>{this.props.children}</div>;
   }
 }
 

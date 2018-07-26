@@ -1,4 +1,5 @@
 import {MDCRadio} from '@material/radio/';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -14,6 +15,7 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
   public static readonly defaultProps = {
     checked: false
   };
+
   protected componentName = 'radio';
   protected mdcProps = [];
   protected MDComponent: MDCRadio;
@@ -33,6 +35,7 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
     toggleRadio(this.props, nextProps, this.MDComponent);
   }
 
+  @autobind
   protected materialDom(allprops) {
     const {className, ...props} = allprops;
     return (

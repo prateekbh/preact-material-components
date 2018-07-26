@@ -1,4 +1,5 @@
 import {MDCTabBar, MDCTabBarScroller} from '@material/tabs';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -14,7 +15,10 @@ export interface IScrollerProps extends JSX.HTMLAttributes {
 
 export interface IScrollerState {}
 
-class TabBarScroller extends MaterialComponent<IScrollerProps, IScrollerState> {
+export class TabBarScroller extends MaterialComponent<
+  IScrollerProps,
+  IScrollerState
+> {
   protected componentName = 'tab-bar-scroller';
   protected mdcProps = [];
 
@@ -35,6 +39,7 @@ class TabBarScroller extends MaterialComponent<IScrollerProps, IScrollerState> {
     setActiveTabIndex(this.props, nextProps, this.MDComponent.tabBar);
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <div {...props} ref={this.setControlRef}>
@@ -80,6 +85,7 @@ export class TabBarScrollerTabs extends MaterialComponent<
   protected componentName = 'tab-bar';
   protected mdcProps = ['icon-tab-bar', 'icons-with-text'];
 
+  @autobind
   protected materialDom({className, ...props}) {
     return (
       <nav
@@ -103,10 +109,11 @@ export interface ITabState {}
 /**
  * @prop active = false
  */
-class Tab extends MaterialComponent<ITabProps, ITabState> {
+export class Tab extends MaterialComponent<ITabProps, ITabState> {
   protected componentName = 'tab';
   protected mdcProps = ['active'];
 
+  @autobind
   protected materialDom(props) {
     return (
       <a role="tab" {...props} ref={this.setControlRef}>
@@ -120,10 +127,14 @@ export interface IIconLabelProps {}
 
 export interface IIconLabelState {}
 
-class TabIconLabel extends MaterialComponent<IIconLabelProps, IIconLabelState> {
+export class TabIconLabel extends MaterialComponent<
+  IIconLabelProps,
+  IIconLabelState
+> {
   protected componentName = 'tab__icon-text';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <span {...props} ref={this.setControlRef}>
@@ -158,11 +169,12 @@ export interface ITabsState {}
  * @prop icon-tab-bar = false
  * @prop icons-with-text = false
  */
-class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
+export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   public static readonly TabBarScroller = TabBarScroller;
   public static readonly TabBarScrollerTabs = TabBarScrollerTabs;
   public static readonly Tab = Tab;
   public static readonly TabIconLabel = TabIconLabel;
+
   protected componentName = 'tab-bar';
   protected mdcProps = ['icon-tab-bar', 'icons-with-text'];
   protected MDComponent: MDCTabBar;
@@ -182,6 +194,7 @@ class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
     setActiveTabIndex(this.props, nextProps, this.MDComponent);
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <nav role={'tablist'} {...props} ref={this.setControlRef}>

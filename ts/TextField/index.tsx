@@ -1,4 +1,5 @@
 import {MDCTextField} from '@material/textfield';
+import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon/index';
@@ -21,6 +22,7 @@ export class HelperText extends MaterialComponent<
   protected componentName = 'text-field-helper-text';
   protected mdcProps = ['persistent', 'validation-msg'];
 
+  @autobind
   protected materialDom(props) {
     return (
       <p {...props} aria-hidden="true">
@@ -30,20 +32,21 @@ export class HelperText extends MaterialComponent<
   }
 }
 
-interface ILabelProps {}
+export interface ILabelProps {}
 
-interface ILabelState {}
+export interface ILabelState {}
 
-class Label extends MaterialComponent<ILabelProps, ILabelState> {
+export class Label extends MaterialComponent<ILabelProps, ILabelState> {
   protected componentName = 'floating-label';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return <label {...props}>{props.children}</label>;
   }
 }
 
-interface ITextFieldInputProps extends JSX.HTMLAttributes {
+export interface ITextFieldInputProps {
   fullwidth?: boolean;
   textarea?: boolean;
   dense?: boolean;
@@ -56,7 +59,7 @@ interface ITextFieldInputProps extends JSX.HTMLAttributes {
   onInit: (c: MDCTextField) => void;
 }
 
-interface ITextFieldInputState {
+export interface ITextFieldInputState {
   showFloatingLabel: boolean;
 }
 
@@ -72,12 +75,16 @@ interface ITextFieldInputState {
  * @prop value = ''
  * @prop label = ''
  */
-class TextFieldInput extends MaterialComponent<
+export class TextFieldInput extends MaterialComponent<
   ITextFieldInputProps,
   ITextFieldInputState
 > {
   public static readonly defaultProps = {
     valid: true
+  };
+
+  public state = {
+    showFloatingLabel: false
   };
   protected MDComponent: MDCTextField;
 
@@ -90,13 +97,6 @@ class TextFieldInput extends MaterialComponent<
     'box',
     'outlined'
   ];
-
-  constructor() {
-    super();
-    this.state = {
-      showFloatingLabel: false
-    };
-  }
 
   public componentDidMount() {
     this.setState(
@@ -123,10 +123,12 @@ class TextFieldInput extends MaterialComponent<
     }
   }
 
+  @autobind
   public getValue() {
     return this.MDComponent ? this.MDComponent.value : null;
   }
 
+  @autobind
   protected materialDom(allprops) {
     let {className, outerStyle, outlined, ...props} = allprops;
     className = className || '';
@@ -218,7 +220,7 @@ export interface ITextFieldState {
  * @prop helperTextPersistent = false
  * @prop helperTextValidationMsg = false
  */
-class TextField extends Component<ITextFieldProps, ITextFieldState> {
+export class TextField extends Component<ITextFieldProps, ITextFieldState> {
   public static readonly defaultProps = {
     outerStyle: {}
   };
@@ -230,15 +232,12 @@ class TextField extends Component<ITextFieldProps, ITextFieldState> {
     return ++this.uidCounter;
   }
 
+  public state = {
+    showFloatingLabel: false
+  };
+
   protected readonly id = TextField.uid();
   protected MDComponent?: MDCTextField;
-
-  constructor() {
-    super();
-    this.state = {
-      showFloatingLabel: false
-    };
-  }
 
   public componentDidMount() {
     this.setState({

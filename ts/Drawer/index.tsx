@@ -1,5 +1,6 @@
 import {MDCPersistentDrawer} from '@material/drawer/persistent';
 import {MDCTemporaryDrawer} from '@material/drawer/temporary';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import {LinkItem} from '../List';
@@ -45,18 +46,21 @@ export class TemporaryDrawer extends MaterialComponent<
     toggleDrawer(this.props, nextProps, this.MDComponent);
   }
 
+  @autobind
   protected open(e) {
     if (this.props.onOpen) {
       this.props.onOpen(e);
     }
   }
 
+  @autobind
   protected close(e) {
     if (this.props.onClose) {
       this.props.onClose(e);
     }
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <aside
@@ -85,6 +89,7 @@ export class PermanentDrawer extends MaterialComponent<
   protected componentName = 'drawer--permanent';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <nav className="mdc-typography mdc-drawer" {...props}>
@@ -128,18 +133,21 @@ export class PersistentDrawer extends MaterialComponent<
     toggleDrawer(this.props, nextProps, this.MDComponent);
   }
 
+  @autobind
   protected open(e) {
     if (this.props.onOpen) {
       this.props.onOpen(e);
     }
   }
 
+  @autobind
   protected close(e) {
     if (this.props.onClose) {
       this.props.onClose(e);
     }
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <aside
@@ -163,6 +171,7 @@ export class DrawerHeader extends MaterialComponent<
   protected componentName = 'drawer__header';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <header ref={this.setControlRef} {...props}>
@@ -186,6 +195,7 @@ export class DrawerContent<
   protected componentName = 'drawer__content';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <nav className="mdc-list" ref={this.setControlRef} {...props}>
@@ -205,6 +215,7 @@ export interface IDrawerItemState {}
  * @prop selected = false
  */
 export class DrawerItem extends LinkItem<IDrawerItemProps, IDrawerItemState> {
+  @autobind
   protected materialDom(props) {
     const returnedNode = super.materialDom(props);
     /* Logic to add selected class */

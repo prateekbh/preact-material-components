@@ -1,4 +1,5 @@
 import {MDCDialog} from '@material/dialog/';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import {Omit} from '../Base/types';
@@ -15,6 +16,7 @@ class DialogHeader extends MaterialComponent<
   protected componentName = 'dialog__header';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <header {...props}>
@@ -37,6 +39,7 @@ class DialogBody extends MaterialComponent<IDialogBodyProps, IDialogBodyState> {
   protected componentName = 'dialog__body';
   protected mdcProps = ['scrollable'];
 
+  @autobind
   protected materialDom(props) {
     return <section {...props}>{props.children}</section>;
   }
@@ -53,6 +56,7 @@ class DialogFooter extends MaterialComponent<
   protected componentName = 'dialog__footer';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return <footer {...props}>{props.children}</footer>;
   }
@@ -77,6 +81,7 @@ class DialogFooterButton extends Button<
   protected componentName = 'dialog__footer__button';
   protected mdcProps = ['cancel', 'accept'];
 
+  @autobind
   protected materialDom(props) {
     return (
       <button {...props} className="mdc-button" ref={this.setControlRef}>
@@ -98,10 +103,12 @@ class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   public static readonly Body = DialogBody;
   public static readonly Footer = DialogFooter;
   public static readonly FooterButton = DialogFooterButton;
+
   protected componentName = 'dialog';
   protected mdcProps = [];
   protected MDComponent: MDCDialog;
 
+  @autobind
   public componentDidMount() {
     this.MDComponent = new MDCDialog(this.control);
     this.MDComponent.listen('MDCDialog:accept', this.onAccept);
@@ -116,18 +123,21 @@ class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
     }
   }
 
+  @autobind
   protected onAccept(e) {
     if (this.props.onAccept) {
       this.props.onAccept(e);
     }
   }
 
+  @autobind
   protected onCancel(e) {
     if (this.props.onCancel) {
       this.props.onCancel(e);
     }
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <aside role={'alertdialog'} ref={this.setControlRef} {...props}>

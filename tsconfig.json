@@ -13,7 +13,6 @@
     "skipLibCheck": true,
     "rootDir": "./ts/",
     "declaration": true,
-    "noEmitHelpers": true,
     "esModuleInterop": false,
     "experimentalDecorators": true
   },

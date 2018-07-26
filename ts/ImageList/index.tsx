@@ -1,3 +1,4 @@
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -5,15 +6,16 @@ export interface IImageListAspectContainerProps {}
 
 export interface IImageListAspectContainerState {}
 
-class ImageListAspectContainer extends MaterialComponent<
+export class ImageListAspectContainer extends MaterialComponent<
   IImageListAspectContainerProps,
   IImageListAspectContainerState
 > {
   protected componentName = 'image-list__image-aspect-container';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom() {
-    return <div />;
+    return <div>{this.props.children}</div>;
   }
 }
 
@@ -28,6 +30,7 @@ export class ImageListItem extends MaterialComponent<
   protected componentName = 'image-list__item';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <li {...props} ref={this.setControlRef}>
@@ -50,6 +53,7 @@ export class ImageListImage extends MaterialComponent<
   protected componentName = 'image-list__image';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom() {
     const {src, ...props} = this.props;
     return (
@@ -71,8 +75,9 @@ export class ImageListSupporting extends MaterialComponent<
   protected componentName = 'image-list__supporting';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom() {
-    return <div />;
+    return <div>{this.props.children}</div>;
   }
 }
 
@@ -87,6 +92,7 @@ export class ImageListLabel extends MaterialComponent<
   protected componentName = 'image-list__label';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <span {...props} ref={this.setControlRef}>
@@ -103,15 +109,20 @@ export interface IImageListProps extends JSX.HTMLAttributes {
 
 export interface IImageListState {}
 
-class ImageList extends MaterialComponent<IImageListProps, IImageListState> {
+export class ImageList extends MaterialComponent<
+  IImageListProps,
+  IImageListState
+> {
   public static readonly Item = ImageListItem;
   public static readonly AspectContainer = ImageListAspectContainer;
   public static readonly Image = ImageListImage;
   public static readonly Supporting = ImageListSupporting;
   public static readonly Label = ImageListLabel;
+
   protected componentName = 'image-list';
   protected mdcProps = ['masonry', 'with-text-protection'];
 
+  @autobind
   protected materialDom(props) {
     return (
       <ul {...props} ref={this.setControlRef}>

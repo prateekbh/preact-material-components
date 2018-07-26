@@ -1,3 +1,4 @@
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon/index';
@@ -22,6 +23,7 @@ export interface IFabState {}
  */
 export class Fab extends MaterialComponent<IFabProps, IFabState> {
   public static readonly Icon = FabIcon;
+
   protected componentName = 'fab';
   protected mdcProps = ['mini', 'exited'];
   protected themeProps = ['primary', 'secondary'];
@@ -30,6 +32,7 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
     super.attachRipple();
   }
 
+  @autobind
   protected materialDom(props) {
     const classNames = [];
     this.themeProps.forEach(themeProp => {

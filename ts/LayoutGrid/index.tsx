@@ -1,3 +1,4 @@
+import autobind from 'autobind-decorator';
 import {h, VNode} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -12,6 +13,7 @@ class LayoutGridInner extends MaterialComponent<
   protected componentName = 'layout-grid__inner';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <div ref={this.setControlRef} {...props}>
@@ -25,7 +27,7 @@ type PhoneCols = 1 | 2 | 3 | 4;
 type TabletCols = PhoneCols | 5 | 6 | 7 | 8;
 type LayoutCols = TabletCols | 9 | 10 | 11 | 12;
 
-export interface ILayoutGridCellProps extends JSX.HTMLAttributes {
+export interface ILayoutGridCellProps {
   cols?: LayoutCols;
   desktopCols?: LayoutCols;
   tabletCols?: TabletCols;
@@ -57,6 +59,7 @@ class LayoutGridCell extends MaterialComponent<
     tablet: 'tabletCols'
   };
 
+  @autobind
   protected static createClassName(props) {
     const baseClass = 'mdc-layout-grid__cell--';
     const classes = [];
@@ -110,6 +113,7 @@ class LayoutGridCell extends MaterialComponent<
     return element;
   }
 
+  @autobind
   protected materialDom(props) {
     return (
       <div
@@ -132,9 +136,11 @@ export class LayoutGrid extends MaterialComponent<
 > {
   public static readonly Cell = LayoutGridCell;
   public static readonly Inner = LayoutGridInner;
+
   protected componentName = 'layout-grid';
   protected mdcProps = [];
 
+  @autobind
   protected materialDom(props) {
     return (
       <div ref={this.setControlRef} {...props}>
