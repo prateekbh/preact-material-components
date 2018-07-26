@@ -1,6 +1,6 @@
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import autobind from 'autobind-decorator';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {
   disabled?: boolean;

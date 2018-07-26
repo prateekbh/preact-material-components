@@ -1,8 +1,8 @@
 import {MDCMenu} from '@material/menu';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import List, {IListItemProps, IListItemState, ListItem} from '../List';
-import autobind from 'autobind-decorator';
 
 export interface IMenuAnchorProps {}
 

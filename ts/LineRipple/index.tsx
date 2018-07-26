@@ -1,7 +1,7 @@
 import {MDCLineRipple} from '@material/line-ripple';
+import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import autobind from 'autobind-decorator';
 
 export interface ILineRippleProps {}
 
