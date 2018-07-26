@@ -1,4 +1,5 @@
 import {MDCRipple} from '@material/ripple';
+import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
 
 export interface IMaterialComponentProps extends JSX.HTMLAttributes {
@@ -37,6 +38,7 @@ export abstract class MaterialComponent<
   protected control?: any;
 
   /** Attach the ripple effect */
+  @autobind
   public attachRipple() {
     if (this.props.ripple && this.control) {
       MDCRipple.attachTo(this.control);
@@ -78,11 +80,13 @@ export abstract class MaterialComponent<
   }
 
   // Shared setter for the root element ref
+  @autobind
   protected setControlRef(control: Element) {
     this.control = control;
   }
 
   /** Build the className based on component names and mdc props */
+  @autobind
   protected buildClassName() {
     // Class name based on component name
     let classText = 'mdc-' + this.componentName;
@@ -103,6 +107,7 @@ export abstract class MaterialComponent<
   }
 
   /** Returns the class name for element */
+  @autobind
   protected getClassName(element: VNode) {
     if (!element) {
       return '';
