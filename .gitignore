@@ -60,6 +60,5 @@ yarn.lock
 esm
 */*.js
 */*.js.map
-MaterialComponent.js
-MaterialComponent.js.map
+*/*.d.ts
 !/docs/prettier.config.js
