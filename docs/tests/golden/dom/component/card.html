@@ -220,6 +220,115 @@
                 </div>
               </div>
             </div>
+            <div class="page-card">
+              <div>
+                <div class="mdc-typography--display1">Components and their props</div>
+                <ul>
+                  <li>
+                    <div class="mdc-typography--headline">Card</div>
+                    <ul>
+                      <li>
+                        <div>
+                          <div><span class="mdc-typography--title">outlined </span><span class="mdc-typography--body2">true/false</span></div>
+                          <div class="mdc-typography--caption">This makes the card outlined.</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mdc-typography--headline">Card.Actions</div>
+                    <ul>
+                      <li>
+                        <div>
+                          <div><span class="mdc-typography--title">full-bleed </span><span class="mdc-typography--body2">true/false</span></div>
+                          <div class="mdc-typography--caption">This makes the action button end to end.</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mdc-typography--headline">Card.ActionButton</div>
+                    <ul>
+                      <li>
+                        <div class="mdc-typography--caption">no specific props</div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mdc-typography--headline">Card.Media</div>
+                    <ul>
+                      <li>
+                        <div>
+                          <div><span class="mdc-typography--title">square </span><span class="mdc-typography--body2">true/false</span></div>
+                          <div class="mdc-typography--caption">Makes Media aspect ratio 1:1.</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <div><span class="mdc-typography--title">sixteenByNine </span><span class="mdc-typography--body2">true/false</span></div>
+                          <div class="mdc-typography--caption">Makes Media aspect ratio 16:9.</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mdc-typography--headline">Card.CardMediaContent</div>
+                    <ul>
+                      <li>
+                        <div class="mdc-typography--caption">no specific props</div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="mdc-typography--display1">Sample code</div><pre class="highlight highlight-js"><code class="hljs lang-js"><span class="hljs-keyword">import</span> {h, Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>;
+<span class="hljs-keyword">import</span> Card <span class="hljs-keyword">from</span> <span class="hljs-string">'preact-material-components/Card'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'preact-material-components/Card/style.css'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'preact-material-components/Button/style.css'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardsPage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render(){
+    <span class="hljs-keyword">return</span> (
+      &lt;div&gt;
+       &lt;Card&gt;
+          &lt;div&gt;
+            &lt;h2 class=" mdc-typography--title"&gt;Hi&lt;/h2&gt;
+            &lt;div class=" mdc-typography--caption"&gt;Let me subtitle&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;Card.Media className="card-media" /&gt;
+          &lt;Card.Actions&gt;
+            &lt;Card.ActionButton&gt;OKAY&lt;/Card.ActionButton&gt;
+          &lt;/Card.Actions&gt;
+        &lt;/Card&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+              <div class="mdc-typography--display1">Original documentation</div>
+              <div class="mdc-typography--body">This component encapsulates <span class="strong">mdc-card</span>, you can refer to its documentation
+                <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-card"> here</a>.</div>
+              <div class="mdc-typography--display1">Demo</div>
+              <div class="mdc-card">
+                <div class="card-header">
+                  <h2 class=" mdc-typography--title">Hi</h2>
+                  <div class=" mdc-typography--caption">Let me subtitle</div>
+                </div>
+                <div class="card-media mdc-card__media"></div>
+                <div class="mdc-card__actions">
+                  <button class="mdc-card__action mdc-button mdc-card__action--button">OKAY</button>
+                </div>
+              </div>
+              <div class="mdc-typography--display1">Demo</div>
+              <div class="mdc-card">
+                <div class="card-header">
+                  <h2 class=" mdc-typography--title">Hi</h2>
+                  <div class=" mdc-typography--caption">Let me subtitle</div>
+                </div>
+                <div class="card-media mdc-card__media"></div>
+                <div class="mdc-card__actions mdc-card__actions--full-bleed">
+                  <button class="mdc-card__action mdc-button mdc-card__action--button">OKAY</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

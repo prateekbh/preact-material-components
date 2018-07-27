@@ -7,18 +7,20 @@ const {join} = require('path');
 const mkdirp = require('mkdirp');
 const serve = require('serve');
 const pretty = require('pretty');
-const {writeFileSync, readFileSync} = require('fs');
-const {assert, expect} = require('chai');
+const {writeFileSync, readFileSync, unlinkSync} = require('fs');
+const {expect} = require('chai');
 
 const goldenDir = 'golden';
 const testDir = 'generated';
 
-process.env.PATH = `${join(__dirname, 'bin')}:${process.env.PATH}`;
+const os = 'linux';
+
+process.env.PATH = `${join(__dirname, 'bin', os)}:${process.env.PATH}`;
 
 describe('docs site dom diff', async function() {
   this.timeout(30000);
 
-  let server;
+  let server, drivers;
 
   before(async function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
@@ -30,27 +32,36 @@ describe('docs site dom diff', async function() {
       ignore: ['node_modules']
     });
 
+    const ffoptions = new firefox.Options().headless();
+    const choptions = new chrome.Options().headless();
+
+    const ffdriver = {
+      driver: new Builder()
+        .forBrowser('firefox')
+        .setFirefoxOptions(ffoptions)
+        .build(),
+      name: 'firefox'
+    };
+    const chdriver = {
+      driver: new Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(choptions)
+        .build(),
+      name: 'chrome'
+    };
+
+    drivers = [ffdriver, chdriver];
+
     // And its wide screen/small screen subdirectories.
-    mkdirp.sync(join(__dirname, testDir, 'dom/component'));
+    for (const dd of drivers) {
+      mkdirp.sync(join(__dirname, testDir, 'dom', dd.name, 'component'));
+    }
 
     // Artificial wait as serve takes time to boot sometimes
     await new Promise(resolve => {
       setTimeout(() => resolve(), 2000);
     });
   });
-
-  const ffoptions = new firefox.Options().headless();
-  const choptions = new chrome.Options().headless();
-
-  const ffdriver = new Builder()
-    .forBrowser('firefox')
-    .setFirefoxOptions(ffoptions)
-    .build();
-  const chdriver = new Builder()
-    .forBrowser('firefox')
-    .setChromeOptions(choptions)
-    .build();
-  const drivers = [ffdriver, chdriver];
 
   after(() => {
     server.stop();
@@ -66,16 +77,20 @@ describe('docs site dom diff', async function() {
 });
 
 async function compare_doms(drivers, page) {
-  for (const driver of drivers) {
+  for (const driver_desc of drivers) {
+    const {driver, name} = driver_desc;
     await driver.get(`http://localhost:8080/${page}`);
     await driver.sleep(2000);
     const current_dom = pretty(await driver.getPageSource(), {ocd: true});
-    writeFileSync(join(__dirname, testDir, 'dom', `${page}.html`), current_dom);
+    const gen_fn = join(__dirname, testDir, 'dom', name, `${page}.html`);
+    writeFileSync(gen_fn, current_dom);
     const expected_dom = readFileSync(
-      join(__dirname, goldenDir, 'dom', `${page}.html`),
+      join(__dirname, goldenDir, 'dom', name, `${page}.html`),
       'utf8'
     );
 
     expect(current_dom, 'DOMs should be the same').equals(expected_dom);
+
+    unlinkSync(gen_fn);
   }
 }
