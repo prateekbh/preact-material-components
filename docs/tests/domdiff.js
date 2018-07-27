@@ -65,8 +65,9 @@ describe('docs site dom diff', async function() {
 
   after(() => {
     server.stop();
-    ffdriver.quit();
-    chdriver.quit();
+    for (const dd of drivers) {
+      dd.driver.quit();
+    }
   });
 
   this.slow(20000);
