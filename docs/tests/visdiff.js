@@ -10,7 +10,7 @@ const mkdirp = require('mkdirp');
 const testDir = 'tests/generated';
 const goldenDir = 'tests/golden';
 
-describe('docs site', () => {
+describe('docs site visual diff', () => {
   let server, browser, page;
 
   before(async () => {
