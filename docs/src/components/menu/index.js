@@ -26,6 +26,7 @@ export default class Menu extends Component {
       return;
 
     // attempt to route, if no match simply cede control to browser
+    this.props.onSelect && this.props.onSelect(href);
     return route(href);
   }
 
