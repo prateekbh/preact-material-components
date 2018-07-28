@@ -9,6 +9,8 @@ const serve = require('serve');
 const pretty = require('pretty');
 const {writeFileSync, readFileSync, unlinkSync} = require('fs');
 const {expect} = require('chai');
+require('geckodriver');
+require('chromedriver');
 
 const goldenDir = 'golden';
 const testDir = 'generated';
@@ -20,7 +22,8 @@ process.env.PATH = `${join(__dirname, 'bin', os)}:${process.env.PATH}`;
 describe('docs site dom diff', async function() {
   this.timeout(30000);
 
-  let server, drivers;
+  let server,
+    drivers = [];
 
   before(async function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
@@ -35,22 +38,20 @@ describe('docs site dom diff', async function() {
     const ffoptions = new firefox.Options().headless();
     const choptions = new chrome.Options().headless();
 
-    const ffdriver = {
+    drivers.push({
       driver: new Builder()
         .forBrowser('firefox')
         .setFirefoxOptions(ffoptions)
         .build(),
       name: 'firefox'
-    };
-    const chdriver = {
+    });
+    drivers.push({
       driver: new Builder()
         .forBrowser('chrome')
         .setChromeOptions(choptions)
         .build(),
       name: 'chrome'
-    };
-
-    drivers = [ffdriver, chdriver];
+    });
 
     // And its wide screen/small screen subdirectories.
     for (const dd of drivers) {
@@ -79,6 +80,7 @@ describe('docs site dom diff', async function() {
 
 async function compare_doms(drivers, page) {
   for (const driver_desc of drivers) {
+    console.log(`Testing ${page} using ${driver_desc.name}`);
     const {driver, name} = driver_desc;
     await driver.get(`http://localhost:8080/${page}`);
     await driver.sleep(2000);
