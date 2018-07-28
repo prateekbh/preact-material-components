@@ -75,21 +75,36 @@ describe('docs site dom diff', async function() {
 });
 
 async function compare_doms(drivers, page) {
+  const generated = [];
   for (const driver_desc of drivers) {
     console.log(`Testing ${page} using ${driver_desc.name}`);
     const {driver, name} = driver_desc;
     await driver.get(`http://localhost:8080/${page}`);
     await driver.sleep(2000);
-    const current_dom = pretty(await driver.getPageSource(), {ocd: true});
+    const gen_dom = pretty(await driver.getPageSource(), {
+      ocd: true
+    })
+      .replace(
+        new RegExp('src="/(bundle|polyfills)[.][a-zA-Z0-9.]+[.]js"'),
+        'src="<dynamic generated>.js"'
+      )
+      .replace(
+        new RegExp('href="/(style)[.][a-zA-Z0-9.]+[.]css"'),
+        'href="<dynamic generated>.css"'
+      );
     const gen_fn = join(__dirname, testDir, 'dom', name, `${page}.html`);
-    writeFileSync(gen_fn, current_dom);
-    const expected_dom = readFileSync(
-      join(__dirname, goldenDir, 'dom', name, `${page}.html`),
-      'utf8'
-    );
-
-    expect(current_dom, 'DOMs should be the same').equals(expected_dom);
+    writeFileSync(gen_fn, gen_dom);
 
     unlinkSync(gen_fn);
+    generated.push({browser: driver_desc.name, dom: gen_dom});
+  }
+
+  for (const result of generated) {
+    expect(result.dom, `DOMs should be the same (${result.browser})`).equals(
+      readFileSync(
+        join(__dirname, goldenDir, 'dom', result.browser, `${page}.html`),
+        'utf8'
+      )
+    );
   }
 }
