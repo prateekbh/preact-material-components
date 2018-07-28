@@ -9,8 +9,8 @@
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "domdiff": "mocha ./tests/domdiff.js --timeout 15000",
-    "test": "npm run build:prod && mocha ./tests/domdiff.js --timeout 15000 && mocha ./tests/visdiff.js --timeout 15000",
+    "domdiff": "mocha ./tests/domdiff.js --timeout 15000 --colors",
+    "test": "npm run build:prod && mocha ./tests/domdiff.js --timeout 15000 --colors && mocha ./tests/visdiff.js --timeout 15000 --colors",
     "test:travis": "node ./scripts/test-travis.js"
   },
   "repository": {

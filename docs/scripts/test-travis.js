@@ -25,7 +25,7 @@ runTests.on('close', code => {
 
   shell.cd('tests/generated');
   let type, glob;
-  if (shell.ls('**/*.png').length > 0) {
+  if (shell.ls('dom/**/*.html').length > 0) {
     type = 'DOMs';
     glob = 'dom/**/*.html';
   } else {
