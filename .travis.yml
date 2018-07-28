@@ -37,6 +37,7 @@ branches:
 sudo: required
 addons:
   chrome: stable
+  firefox: "latest"
 
 notifications:
   webhooks:
