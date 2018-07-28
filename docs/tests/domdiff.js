@@ -85,26 +85,35 @@ async function compare_doms(drivers, page) {
       ocd: true
     })
       .replace(
-        new RegExp('src="/(bundle|polyfills)[.][a-zA-Z0-9.]+[.]js"'),
+        new RegExp('src="/(bundle|polyfills)([.]|-)[.a-zA-Z0-9]+[.]js"'),
         'src="<dynamic generated>.js"'
       )
       .replace(
-        new RegExp('href="/(style)[.][a-zA-Z0-9.]+[.]css"'),
+        new RegExp('href="/(style)[.][.a-zA-Z01-9]+[.]css"'),
         'href="<dynamic generated>.css"'
       );
     const gen_fn = join(__dirname, testDir, 'dom', name, `${page}.html`);
     writeFileSync(gen_fn, gen_dom);
 
-    unlinkSync(gen_fn);
-    generated.push({browser: driver_desc.name, dom: gen_dom});
+    const expected = readFileSync(
+      join(__dirname, goldenDir, 'dom', driver_desc.name, `${page}.html`),
+      'utf8'
+    );
+
+    if (gen_dom === expected) {
+      unlinkSync(gen_fn);
+    }
+
+    generated.push({
+      browser: driver_desc.name,
+      dom: gen_dom,
+      expected: expected
+    });
   }
 
   for (const result of generated) {
     expect(result.dom, `DOMs should be the same (${result.browser})`).equals(
-      readFileSync(
-        join(__dirname, goldenDir, 'dom', result.browser, `${page}.html`),
-        'utf8'
-      )
+      result.expected
     );
   }
 }
