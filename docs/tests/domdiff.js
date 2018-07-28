@@ -15,10 +15,6 @@ require('chromedriver');
 const goldenDir = 'golden';
 const testDir = 'generated';
 
-const os = 'linux';
-
-process.env.PATH = `${join(__dirname, 'bin', os)}:${process.env.PATH}`;
-
 describe('docs site dom diff', async function() {
   this.timeout(30000);
 

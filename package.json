@@ -65,7 +65,9 @@
     "@material/toolbar": "^0.37.0",
     "@material/top-app-bar": "^0.37.0",
     "@material/typography": "^0.37.1",
-    "material-components-web": "^0.37.0"
+    "material-components-web": "^0.37.0",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2"
   },
   "peerDependencies": {
     "preact": "*"
