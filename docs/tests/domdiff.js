@@ -184,35 +184,50 @@ describe('docs site dom diff', async function() {
   });
 });
 
+function replace_dynamic(capture_group) {
+  return function() {
+    return arguments[0].replace(
+      arguments[capture_group],
+      '[dynamic generated]'
+    );
+  };
+}
+
 const dynamic_js = ['bundle', 'polyfills', 'route'];
 const dynamic_css = ['style'];
 const dynamic_svg_path = ['mdc-notched-outline__path'];
+
+const html_attr_regex = '.*(?!(" */?>))';
 
 // everything that can change should be replaced here
 function transform_dynamic(dom) {
   return dom
     .replace(
       new RegExp(
-        `src="/(${dynamic_js.join('|')})([.]|-)[.a-zA-Z0-9]+[.]js`,
-        'g'
-      ),
-      'src="<dynamic generated>.js"'
-    )
-    .replace(
-      new RegExp(
-        `href="/(${dynamic_css.join('|')})([.]|-)[.a-zA-Z01-9]+[.]css`,
-        'g'
-      ),
-      'href="<dynamic generated>.css"'
-    )
-    .replace(
-      new RegExp(
-        `<path class="${dynamic_svg_path.join(
+        `<script${html_attr_regex}src="(/(${dynamic_js.join(
           '|'
-        )}"([A-Za-z0-9,."= ]|-)+d="([A-Za-z0-9,. ]|-)+">`,
+        )})([.]|-)[.a-zA-Z0-9]+)[.]js"`,
         'g'
       ),
-      '<path class="mdc-notched-outline__path" d="<dynamic path>">'
+      replace_dynamic(2)
+    )
+    .replace(
+      new RegExp(
+        `<link${html_attr_regex}href="(/(${dynamic_css.join(
+          '|'
+        )})([.]|-)[.a-zA-Z01-9]+)[.]css"`,
+        'g'
+      ),
+      replace_dynamic(2)
+    )
+    .replace(
+      new RegExp(
+        `<path class="(${dynamic_svg_path.join(
+          '|'
+        )})"${html_attr_regex}+d="([A-Za-z0-9,. ]|-)+"`,
+        'g'
+      ),
+      replace_dynamic(3)
     );
 }
 
@@ -266,9 +281,8 @@ async function compare_doms(drivers, page) {
   }
 
   for (const result of generated) {
-    expect(
-      result.expected,
-      `DOMs should be the same (${result.browser})`
-    ).equals(result.dom);
+    expect(result.dom, `DOMs should be the same (${result.browser})`).equals(
+      result.expected
+    );
   }
 }
