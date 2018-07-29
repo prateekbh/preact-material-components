@@ -186,6 +186,35 @@ describe('docs site dom diff', async function() {
 
 const dynamic_js = ['bundle', 'polyfills', 'route'];
 const dynamic_css = ['style'];
+const dynamic_svg_path = ['mdc-notched-outline__path'];
+
+// everything that can change should be replaced here
+function transform_dynamic(dom) {
+  return dom
+    .replace(
+      new RegExp(
+        `src="/(${dynamic_js.join('|')})([.]|-)[.a-zA-Z0-9]+[.]js`,
+        'g'
+      ),
+      'src="<dynamic generated>.js"'
+    )
+    .replace(
+      new RegExp(
+        `href="/(${dynamic_css.join('|')})([.]|-)[.a-zA-Z01-9]+[.]css`,
+        'g'
+      ),
+      'href="<dynamic generated>.css"'
+    )
+    .replace(
+      new RegExp(
+        `<path class="${dynamic_svg_path.join(
+          '|'
+        )}"([A-Za-z0-9,."= ]|-)+d="([A-Za-z0-9,. ]|-)+">`,
+        'g'
+      ),
+      '<path class="mdc-notched-outline__path" d="<dynamic path>">'
+    );
+}
 
 async function compare_doms(drivers, page) {
   const generated = [];
@@ -193,23 +222,12 @@ async function compare_doms(drivers, page) {
     const {driver, name} = driver_desc;
     await driver.get(`http://localhost:8080/${page}`);
     await driver.sleep(500);
-    const gen_dom = pretty(await driver.getPageSource(), {
-      ocd: true
-    })
-      .replace(
-        new RegExp(
-          `src="/(${dynamic_js.join('|')})([.]|-)[.a-zA-Z0-9]+[.]js`,
-          'g'
-        ),
-        'src="<dynamic generated>.js"'
-      )
-      .replace(
-        new RegExp(
-          `href="/(${dynamic_css.join('|')})([.]|-)[.a-zA-Z01-9]+[.]css`,
-          'g'
-        ),
-        'href="<dynamic generated>.css"'
-      );
+    const gen_dom = transform_dynamic(
+      pretty(await driver.getPageSource(), {
+        ocd: true
+      })
+    );
+
     let formatted_page;
     if (page.endsWith('/')) {
       formatted_page = `${page}index`;
