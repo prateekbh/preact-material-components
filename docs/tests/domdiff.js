@@ -215,11 +215,23 @@ async function compare_doms(drivers, page) {
     } else {
       formatted_page = page;
     }
-    const gen_fn = join(__dirname, testDir, 'dom', name, `${formatted_page}.html`);
+    const gen_fn = join(
+      __dirname,
+      testDir,
+      'dom',
+      name,
+      `${formatted_page}.html`
+    );
     writeFileSync(gen_fn, gen_dom);
 
     const expected = readFileSync(
-      join(__dirname, goldenDir, 'dom', driver_desc.name, `${formatted_page}.html`),
+      join(
+        __dirname,
+        goldenDir,
+        'dom',
+        driver_desc.name,
+        `${formatted_page}.html`
+      ),
       'utf8'
     );
 
