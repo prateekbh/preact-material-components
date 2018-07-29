@@ -69,8 +69,116 @@ describe('docs site dom diff', async function() {
 
   this.slow(20000);
 
+  it("should match the Home page's dom against the golden directory", function() {
+    return compare_doms(drivers, '/');
+  });
+
   it("should match the Card page's dom against the golden directory", function() {
     return compare_doms(drivers, 'component/card');
+  });
+
+  it("should match the Chips page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/chips');
+  });
+
+  it("should match the Checkbox page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/checkbox');
+  });
+
+  it("should match the Dialog page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/dialog');
+  });
+
+  it("should match the Drawer page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/drawer');
+  });
+
+  it("should match the Elevation page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/elevation');
+  });
+
+  it("should match the Fab page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/fab');
+  });
+
+  it("should match the FormField page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/form-field');
+  });
+
+  it("should match the GridList page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/grid-list');
+  });
+
+  it("should match the Icon page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/icon');
+  });
+
+  it("should match the IconButton page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/icon-button');
+  });
+
+  it("should match the IconToggle page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/icon-toggle');
+  });
+
+  it("should match the ImageList page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/image-list');
+  });
+
+  it("should match the LayoutGrid page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/layout-grid');
+  });
+
+  it("should match the LinearProgress page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/linear-progress');
+  });
+
+  it("should match the Menu page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/menu');
+  });
+
+  it("should match the Radio page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/radio');
+  });
+
+  it("should match the Select page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/select');
+  });
+
+  it("should match the Slider page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/slider');
+  });
+
+  it("should match the Snackbar page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/snackbar');
+  });
+
+  it("should match the Switch page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/switch');
+  });
+
+  it("should match the Tabs page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/tabs');
+  });
+
+  it("should match the TextField page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/textfield');
+  });
+
+  it("should match the Theme page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/theme');
+  });
+
+  it("should match the Toolbar page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/toolbar');
+  });
+
+  it("should match the TopAppBar page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/top-app-bar');
+  });
+
+  it("should match the Typography page's dom against the golden directory", function() {
+    return compare_doms(drivers, 'component/typography');
   });
 });
 
@@ -101,11 +209,17 @@ async function compare_doms(drivers, page) {
         ),
         'href="<dynamic generated>.css"'
       );
-    const gen_fn = join(__dirname, testDir, 'dom', name, `${page}.html`);
+    let formatted_page;
+    if (page.endsWith('/')) {
+      formatted_page = `${page}index`;
+    } else {
+      formatted_page = page;
+    }
+    const gen_fn = join(__dirname, testDir, 'dom', name, `${formatted_page}.html`);
     writeFileSync(gen_fn, gen_dom);
 
     const expected = readFileSync(
-      join(__dirname, goldenDir, 'dom', driver_desc.name, `${page}.html`),
+      join(__dirname, goldenDir, 'dom', driver_desc.name, `${formatted_page}.html`),
       'utf8'
     );
 
