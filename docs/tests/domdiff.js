@@ -31,8 +31,10 @@ describe('docs site dom diff', async function() {
       ignore: ['node_modules']
     });
 
-    const ffoptions = new firefox.Options().headless();
-    const choptions = new chrome.Options().headless();
+    const window_size = {height: 1080, width: 1920};
+
+    const ffoptions = new firefox.Options().headless().windowSize(window_size);
+    const choptions = new chrome.Options().headless().windowSize(window_size);
 
     drivers.push({
       driver: new Builder()
