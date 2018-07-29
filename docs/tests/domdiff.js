@@ -192,7 +192,7 @@ async function compare_doms(drivers, page) {
   for (const driver_desc of drivers) {
     const {driver, name} = driver_desc;
     await driver.get(`http://localhost:8080/${page}`);
-    await driver.sleep(2000);
+    await driver.sleep(500);
     const gen_dom = pretty(await driver.getPageSource(), {
       ocd: true
     })
