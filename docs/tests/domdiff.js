@@ -36,27 +36,21 @@ describe('Docs site dom diff', async function() {
     const ffoptions = new firefox.Options().headless().windowSize(window_size);
     const choptions = new chrome.Options().headless().windowSize(window_size);
 
-    const ffdriver = new Builder()
-      .forBrowser('firefox')
-      .setFirefoxOptions(ffoptions)
-      .build();
-    await ffdriver.get('about:about');
-
     drivers.push({
-      driver: ffdriver,
+      driver: new Builder()
+        .forBrowser('firefox')
+        .setFirefoxOptions(ffoptions)
+        .build(),
       name: 'firefox'
     });
-    const chdriver = new Builder()
-      .forBrowser('chrome')
-      .setChromeOptions(choptions)
-      .build();
-    await chdriver.get('chrome://version/');
     drivers.push({
-      driver: chdriver,
+      driver: new Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(choptions)
+        .build(),
       name: 'chrome'
     });
 
-    // And its wide screen/small screen subdirectories.
     for (const dd of drivers) {
       mkdirp.sync(join(__dirname, testDir, 'dom', dd.name, 'component'));
     }
@@ -65,6 +59,10 @@ describe('Docs site dom diff', async function() {
     await new Promise(resolve => {
       setTimeout(() => resolve(), 2000);
     });
+
+    for (const dd of drivers) {
+      await dd.driver.get('http://localhost:8080/');
+    }
   });
 
   after(() => {
@@ -74,7 +72,7 @@ describe('Docs site dom diff', async function() {
     }
   });
 
-  this.slow(20000);
+  this.slow(5000);
 
   it("should match the Home page's dom against the golden directory", function() {
     return compare_doms(drivers, '/');
@@ -237,53 +235,58 @@ function transform_dynamic(dom) {
 }
 
 async function compare_doms(drivers, page) {
-  const generated = [];
+  const promises = [];
   for (const driver_desc of drivers) {
-    const {driver, name} = driver_desc;
-    await driver.get(`http://localhost:8080/${page}`);
-    await driver.sleep(500);
-    const gen_dom = transform_dynamic(
-      pretty(await driver.getPageSource(), {
-        ocd: true
-      })
+    promises.push(
+      (async () => {
+        const {driver, name} = driver_desc;
+        await driver.get(`http://localhost:8080/${page}`);
+        await driver.sleep(500);
+        const gen_dom = transform_dynamic(
+          pretty(await driver.getPageSource(), {
+            ocd: true
+          })
+        );
+
+        let formatted_page;
+        if (page.endsWith('/')) {
+          formatted_page = `${page}index`;
+        } else {
+          formatted_page = page;
+        }
+        const gen_fn = join(
+          __dirname,
+          testDir,
+          'dom',
+          name,
+          `${formatted_page}.html`
+        );
+        writeFileSync(gen_fn, gen_dom);
+
+        const expected = readFileSync(
+          join(
+            __dirname,
+            goldenDir,
+            'dom',
+            driver_desc.name,
+            `${formatted_page}.html`
+          ),
+          'utf8'
+        );
+
+        if (gen_dom === expected) {
+          unlinkSync(gen_fn);
+        }
+
+        return {
+          browser: driver_desc.name,
+          dom: gen_dom,
+          expected: expected
+        };
+      })()
     );
-
-    let formatted_page;
-    if (page.endsWith('/')) {
-      formatted_page = `${page}index`;
-    } else {
-      formatted_page = page;
-    }
-    const gen_fn = join(
-      __dirname,
-      testDir,
-      'dom',
-      name,
-      `${formatted_page}.html`
-    );
-    writeFileSync(gen_fn, gen_dom);
-
-    const expected = readFileSync(
-      join(
-        __dirname,
-        goldenDir,
-        'dom',
-        driver_desc.name,
-        `${formatted_page}.html`
-      ),
-      'utf8'
-    );
-
-    if (gen_dom === expected) {
-      unlinkSync(gen_fn);
-    }
-
-    generated.push({
-      browser: driver_desc.name,
-      dom: gen_dom,
-      expected: expected
-    });
   }
+  const generated = await Promise.all(promises);
 
   for (const result of generated) {
     expect(result.dom, `DOMs should be the same (${result.browser})`).equals(
