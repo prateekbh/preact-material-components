@@ -15,7 +15,7 @@ require('chromedriver');
 const goldenDir = 'golden';
 const testDir = 'generated';
 
-describe('docs site dom diff', async function() {
+describe('Docs site dom diff', async function() {
   this.timeout(30000);
 
   let server,
@@ -36,18 +36,23 @@ describe('docs site dom diff', async function() {
     const ffoptions = new firefox.Options().headless().windowSize(window_size);
     const choptions = new chrome.Options().headless().windowSize(window_size);
 
+    const ffdriver = new Builder()
+      .forBrowser('firefox')
+      .setFirefoxOptions(ffoptions)
+      .build();
+    await ffdriver.get('about:about');
+
     drivers.push({
-      driver: new Builder()
-        .forBrowser('firefox')
-        .setFirefoxOptions(ffoptions)
-        .build(),
+      driver: ffdriver,
       name: 'firefox'
     });
+    const chdriver = new Builder()
+      .forBrowser('chrome')
+      .setChromeOptions(choptions)
+      .build();
+    await chdriver.get('chrome://version/');
     drivers.push({
-      driver: new Builder()
-        .forBrowser('chrome')
-        .setChromeOptions(choptions)
-        .build(),
+      driver: chdriver,
       name: 'chrome'
     });
 
@@ -197,7 +202,7 @@ const dynamic_js = ['bundle', 'polyfills', 'route'];
 const dynamic_css = ['style'];
 const dynamic_svg_path = ['mdc-notched-outline__path'];
 
-const html_attr_regex = '.*(?!(" */?>))';
+const html_attr_regex = '(.(?!(" */?>)))+';
 
 // everything that can change should be replaced here
 function transform_dynamic(dom) {
@@ -209,7 +214,7 @@ function transform_dynamic(dom) {
         )})([.]|-)[.a-zA-Z0-9]+)[.]js"`,
         'g'
       ),
-      replace_dynamic(2)
+      replace_dynamic(3)
     )
     .replace(
       new RegExp(
@@ -218,16 +223,16 @@ function transform_dynamic(dom) {
         )})([.]|-)[.a-zA-Z01-9]+)[.]css"`,
         'g'
       ),
-      replace_dynamic(2)
+      replace_dynamic(3)
     )
     .replace(
       new RegExp(
         `<path class="(${dynamic_svg_path.join(
           '|'
-        )})"${html_attr_regex}+d="([A-Za-z0-9,. ]|-)+"`,
+        )})"${html_attr_regex}d="(([A-Za-z0-9,. ]|-)+)"`,
         'g'
       ),
-      replace_dynamic(3)
+      replace_dynamic(4)
     );
 }
 
