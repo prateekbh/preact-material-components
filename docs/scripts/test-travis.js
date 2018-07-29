@@ -55,7 +55,7 @@ runTests.on('close', code => {
             }
           },
           comment: `Failed ${type} (${
-            shell.ls('**/*.png').length
+            shell.ls(glob).length
           }): [failed-${type.toLowerCase()}.zip]`
         }
       },

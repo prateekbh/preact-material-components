@@ -74,6 +74,9 @@ describe('docs site dom diff', async function() {
   });
 });
 
+const dynamic_js = ['bundle', 'polyfills', 'route'];
+const dynamic_css = ['style'];
+
 async function compare_doms(drivers, page) {
   const generated = [];
   for (const driver_desc of drivers) {
@@ -85,11 +88,17 @@ async function compare_doms(drivers, page) {
       ocd: true
     })
       .replace(
-        new RegExp('src="/(bundle|polyfills)([.]|-)[.a-zA-Z0-9]+[.]js"'),
+        new RegExp(
+          `src="/(${dynamic_js.join('|')})([.]|-)[.a-zA-Z0-9]+[.]js`,
+          'g'
+        ),
         'src="<dynamic generated>.js"'
       )
       .replace(
-        new RegExp('href="/(style)[.][.a-zA-Z01-9]+[.]css"'),
+        new RegExp(
+          `href="/(${dynamic_css.join('|')})([.]|-)[.a-zA-Z01-9]+[.]css`,
+          'g'
+        ),
         'href="<dynamic generated>.css"'
       );
     const gen_fn = join(__dirname, testDir, 'dom', name, `${page}.html`);
@@ -112,8 +121,9 @@ async function compare_doms(drivers, page) {
   }
 
   for (const result of generated) {
-    expect(result.dom, `DOMs should be the same (${result.browser})`).equals(
-      result.expected
-    );
+    expect(
+      result.expected,
+      `DOMs should be the same (${result.browser})`
+    ).equals(result.dom);
   }
 }
