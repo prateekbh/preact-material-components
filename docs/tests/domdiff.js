@@ -65,10 +65,10 @@ describe('Docs site dom diff', async function() {
     }
   });
 
-  after(() => {
+  after(async () => {
     server.stop();
     for (const dd of drivers) {
-      dd.driver.quit();
+      await dd.driver.quit();
     }
   });
 
