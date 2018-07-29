@@ -188,7 +188,6 @@ const dynamic_css = ['style'];
 async function compare_doms(drivers, page) {
   const generated = [];
   for (const driver_desc of drivers) {
-    console.log(`Testing ${page} using ${driver_desc.name}`);
     const {driver, name} = driver_desc;
     await driver.get(`http://localhost:8080/${page}`);
     await driver.sleep(2000);
