@@ -21,7 +21,7 @@ export class CardActions extends MaterialComponent<
 
   @autobind
   protected materialDom() {
-    return <div>{this.props.children}</div>;
+    return <div {...this.props}>{this.props.children}</div>;
   }
 }
 
@@ -43,7 +43,7 @@ export class CardMedia extends MaterialComponent<
     if (props.sixteenByNine) {
       props.className = 'mdc-card__media--16-9';
     }
-    return <div {...props} />;
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 
@@ -77,7 +77,7 @@ export class CardActionIcons extends MaterialComponent<
 
   @autobind
   protected materialDom() {
-    return <div>{this.props.children}</div>;
+    return <div {...this.props}>{this.props.children}</div>;
   }
 }
 
@@ -109,7 +109,7 @@ export class CardMediaContent extends MaterialComponent<
 
   @autobind
   protected materialDom() {
-    return <div>{this.props.children}</div>;
+    return <div {...this.props}>{this.props.children}</div>;
   }
 }
 
@@ -132,7 +132,7 @@ export class Card extends MaterialComponent<ICardProps, ICardState> {
 
   @autobind
   protected materialDom() {
-    return <div>{this.props.children}</div>;
+    return <div {...this.props}>{this.props.children}</div>;
   }
 }
 
