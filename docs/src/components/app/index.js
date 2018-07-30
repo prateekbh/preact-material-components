@@ -208,11 +208,14 @@ export default class Home extends Component {
     this.state = {
       darkMode: false
     };
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       this.state.toolbarTitle =
         window.location.pathname === '/'
-        ? null
-        : (menuItems.find(item => item.link === window.location.pathname) ||{}).text;
+          ? null
+          : (
+              menuItems.find(item => item.link === window.location.pathname) ||
+              {}
+            ).text;
     }
   }
 
@@ -371,7 +374,11 @@ export default class Home extends Component {
             preact-material-components
           </div>
         </div>
-        <Menu items={menuItems} ref={menu => (this.menu = menu)} onSelect={this.handleRoute_} />
+        <Menu
+          items={menuItems}
+          ref={menu => (this.menu = menu)}
+          onSelect={this.handleRoute_}
+        />
         <LayoutGrid className="content">
           <LayoutGrid.Inner>
             <LayoutGrid.Cell cols="12">
