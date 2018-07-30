@@ -58,7 +58,7 @@
     "@material/selection-control": "^0.37.0",
     "@material/slider": "^0.36.0",
     "@material/snackbar": "^0.37.1",
-    "@material/switch": "^0.36.0",
+    "@material/switch": "^0.38.0",
     "@material/tabs": "^0.37.0",
     "@material/textfield": "^0.37.0",
     "@material/theme": "^0.35.0",
