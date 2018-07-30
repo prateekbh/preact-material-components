@@ -42,7 +42,7 @@
     "@material/drawer": "^0.37.1",
     "@material/elevation": "^0.36.1",
     "@material/fab": "^0.37.0",
-    "@material/form-field": "^0.37.0",
+    "@material/form-field": "^0.38.0",
     "@material/grid-list": "^0.37.1",
     "@material/icon-toggle": "^0.37.0",
     "@material/layout-grid": "^0.34.0",
