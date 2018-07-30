@@ -208,6 +208,15 @@ export default class Home extends Component {
     this.state = {
       darkMode: false
     };
+    if (typeof window !== 'undefined') {
+      this.state.toolbarTitle =
+        window.location.pathname === '/'
+          ? null
+          : (
+              menuItems.find(item => item.link === window.location.pathname) ||
+              {}
+            ).text;
+    }
   }
 
   closeDrawer() {
@@ -225,29 +234,13 @@ export default class Home extends Component {
     }
   }
 
-  componentDidMount() {
+  handleRoute_ = url => {
     this.setState({
       toolbarTitle:
-        window.location.pathname === '/'
+        url === '/'
           ? null
-          : (
-              menuItems.find(item => item.link === window.location.pathname) ||
-              {}
-            ).text
+          : (menuItems.find(item => item.link === url) || {}).text
     });
-  }
-
-  _handleRoute = e => {
-    setTimeout(
-      () =>
-        this.setState({
-          toolbarTitle:
-            e.url === '/'
-              ? null
-              : (menuItems.find(item => item.link === e.url) || {}).text
-        }),
-      100
-    );
   };
 
   render() {
@@ -381,15 +374,18 @@ export default class Home extends Component {
             preact-material-components
           </div>
         </div>
-        <Menu items={menuItems} ref={menu => (this.menu = menu)} />
+        <Menu
+          items={menuItems}
+          ref={menu => (this.menu = menu)}
+          onSelect={this.handleRoute_}
+        />
         <LayoutGrid className="content">
           <LayoutGrid.Inner>
             <LayoutGrid.Cell cols="12">
-              <Router onChange={this._handleRoute}>
+              <Router>
                 {menuItems.map(({component: Element, link}) => (
                   <Element path={link} />
                 ))}
-                <HomePage default />
               </Router>
             </LayoutGrid.Cell>
           </LayoutGrid.Inner>
