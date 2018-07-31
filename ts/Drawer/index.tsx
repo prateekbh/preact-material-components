@@ -218,7 +218,10 @@ export interface IDrawerItemState {}
 /**
  * @prop selected = false
  */
-export class DrawerItem extends ListLinkItem<IDrawerItemProps, IDrawerItemState> {
+export class DrawerItem extends ListLinkItem<
+  IDrawerItemProps,
+  IDrawerItemState
+> {
   @autobind
   protected materialDom(props) {
     const returnedNode = super.materialDom(props);
