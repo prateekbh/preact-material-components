@@ -99,6 +99,7 @@ export class TextFieldInput extends MaterialComponent<
   ];
 
   public componentDidMount() {
+    super.componentDidMount();
     this.setState(
       {
         showFloatingLabel: true
@@ -120,6 +121,7 @@ export class TextFieldInput extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }

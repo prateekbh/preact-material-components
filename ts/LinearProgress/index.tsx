@@ -24,6 +24,7 @@ export class LinearProgress extends MaterialComponent<
   protected MDComponent?: MDCLinearProgress;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCLinearProgress(this.control);
       updateProgress(this.props, this.MDComponent);
@@ -31,6 +32,7 @@ export class LinearProgress extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }

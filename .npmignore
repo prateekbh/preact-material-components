@@ -45,5 +45,5 @@ webpack.config.js
 copy-css.js
 *.yml
 .eslintrc
-sample
+ts/sample
 tslint.json

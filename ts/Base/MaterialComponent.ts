@@ -1,12 +1,21 @@
 import {MDCRipple} from '@material/ripple';
 import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
+import {OmitAttrs} from './types';
 
-export interface IMaterialComponentProps extends JSX.HTMLAttributes {
+export interface IMaterialComponentOwnProps {
   ripple?: boolean;
+  primary?: boolean;
+  secondary?: boolean;
 }
 
-export interface IMaterialComponentState {}
+export interface IMaterialComponentOwnState {}
+
+type MaterialComponentProps<PropType> = PropType &
+  IMaterialComponentOwnProps &
+  OmitAttrs<JSX.HTMLAttributes, PropType>;
+
+type MaterialComponentState<StateType> = StateType & IMaterialComponentOwnState;
 
 /**
  * Base class for every Material component in this package
@@ -17,11 +26,11 @@ export interface IMaterialComponentState {}
  * @extends {Component}
  */
 export abstract class MaterialComponent<
-  PropsType extends {[prop: string]: any},
+  PropType extends {[prop: string]: any},
   StateType extends {[prop: string]: any}
 > extends Component<
-  PropsType & IMaterialComponentProps,
-  StateType & IMaterialComponentState
+  MaterialComponentProps<PropType>,
+  MaterialComponentState<StateType>
 > {
   /**
    * Attributes inside this array will be check for boolean value true
@@ -37,7 +46,7 @@ export abstract class MaterialComponent<
 
   protected control?: Element;
 
-  public render(props: PropsType & IMaterialComponentProps): VNode {
+  public render(props): VNode {
     if (!this.classText) {
       this.classText = this.buildClassName();
     }
@@ -73,18 +82,16 @@ export abstract class MaterialComponent<
     return element;
   }
 
-  public componentWillUnmount() {
-    if (this.ripple) {
-      this.ripple.destroy();
-      this.ripple = null;
+  /** Attach the ripple effect */
+  public componentDidMount() {
+    if (this.props.ripple && this.control) {
+      this.ripple = new MDCRipple(this.control);
     }
   }
 
-  /** Attach the ripple effect */
-  @autobind
-  protected attachRipple() {
-    if (this.props.ripple && this.control) {
-      this.ripple = new MDCRipple(this.control);
+  public componentWillUnmount() {
+    if (this.ripple) {
+      this.ripple.destroy();
     }
   }
 
@@ -134,7 +141,7 @@ export abstract class MaterialComponent<
 
   /** Components must implement this method for their specific DOM structure */
   protected abstract materialDom(
-    props: PropsType & IMaterialComponentProps
+    props: MaterialComponentProps<PropType>
   ): VNode;
 }
 

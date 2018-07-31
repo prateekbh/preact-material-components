@@ -126,6 +126,7 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
   protected MDComponent?: MDCToolbar;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCToolbar(this.control);
       this.MDComponent.listen('MDCToolbar:change', this.onChange);
@@ -133,6 +134,7 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCToolbar:change', this.onChange);
       this.MDComponent.destroy();

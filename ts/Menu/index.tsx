@@ -62,6 +62,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   protected MDComponent?: MDCMenu;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCMenu(this.control);
       this.MDComponent.listen('MDCMenu:selected', this.select);
@@ -71,6 +72,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCMenu:selected', this.select);
       this.MDComponent.unlisten('MDCMenu:cancel', this.cancel);

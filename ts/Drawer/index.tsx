@@ -28,6 +28,7 @@ export class TemporaryDrawer extends MaterialComponent<
   protected MDComponent?: MDCTemporaryDrawer;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCTemporaryDrawer(this.control);
       this.MDComponent.listen('MDCTemporaryDrawer:open', this.open);
@@ -37,6 +38,7 @@ export class TemporaryDrawer extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCTemporaryDrawer:close', this.close);
       this.MDComponent.unlisten('MDCTemporaryDrawer:open', this.open);
@@ -117,6 +119,7 @@ export class PersistentDrawer extends MaterialComponent<
   protected MDComponent?: MDCPersistentDrawer;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCPersistentDrawer(this.control);
       this.MDComponent.listen('MDCPersistentDrawer:open', this.open);
@@ -126,6 +129,7 @@ export class PersistentDrawer extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCPersistentDrawer:close', this.close);
       this.MDComponent.unlisten('MDCPersistentDrawer:open', this.open);
@@ -218,7 +222,10 @@ export interface IDrawerItemState {}
 /**
  * @prop selected = false
  */
-export class DrawerItem extends ListLinkItem<IDrawerItemProps, IDrawerItemState> {
+export class DrawerItem extends ListLinkItem<
+  IDrawerItemProps,
+  IDrawerItemState
+> {
   @autobind
   protected materialDom(props) {
     const returnedNode = super.materialDom(props);

@@ -37,6 +37,7 @@ export class Snackbar extends MaterialComponent<
   protected MDComponent?: MDCSnackbar;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCSnackbar(this.control);
       if (
@@ -51,6 +52,7 @@ export class Snackbar extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }

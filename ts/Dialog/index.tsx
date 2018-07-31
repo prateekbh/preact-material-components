@@ -2,7 +2,6 @@ import {MDCDialog} from '@material/dialog/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import {Omit} from '../Base/types';
 import Button from '../Button/index';
 
 export interface IDialogHeaderProps {}
@@ -65,8 +64,7 @@ export class DialogFooter extends MaterialComponent<
   }
 }
 
-export interface IDialogFooterButtonProps
-  extends Omit<JSX.HTMLAttributes, 'accept'> {
+export interface IDialogFooterButtonProps {
   accept?: boolean;
   cancel?: boolean;
 }
@@ -113,6 +111,7 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
 
   @autobind
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCDialog(this.control);
       this.MDComponent.listen('MDCDialog:accept', this.onAccept);
@@ -121,6 +120,7 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCDialog:accept', this.onAccept);
       this.MDComponent.unlisten('MDCDialog:cancel', this.onCancel);

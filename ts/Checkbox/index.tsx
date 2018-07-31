@@ -13,6 +13,7 @@ const defaultProps = {
 
 export interface ICheckboxProps {
   indeterminate?: boolean;
+  onChange?: JSX.GenericEventHandler;
 }
 
 export interface ICheckboxState {}
@@ -26,6 +27,7 @@ export class Checkbox extends MaterialComponent<
   protected MDComponent?: MDCCheckbox;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCCheckbox(this.control);
       toggleCheckbox(defaultProps, this.props, this.MDComponent);
@@ -33,6 +35,7 @@ export class Checkbox extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }

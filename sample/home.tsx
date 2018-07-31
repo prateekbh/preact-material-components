@@ -1,43 +1,68 @@
-import {
-  Button,
-  Card,
-  Checkbox,
-  Chips,
-  Dialog,
-  Drawer,
-  Elevation,
-  Fab,
-  GridList,
-  Icon,
-  IconToggle,
-  LayoutGrid,
-  LinearProgress,
-  List,
-  Menu,
-  Radio,
-  Select,
-  Slider,
-  Snackbar,
-  Switch,
-  Tabs,
-  TextField,
-  Toolbar
-} from '../';
 import {Component, h} from 'preact';
 
-export default class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      chosenOption: -1,
-      fabExited: false,
-      drawerOpen: false,
-      menuOpened: false,
-      progress: 0.2,
-      activeTabIndex: 1
-    };
-  }
-  render({}, state) {
+import {MDCDialog} from '@material/dialog';
+import {MDCTemporaryDrawer} from '@material/drawer';
+import Button, {ButtonIcon} from '../ts/Button';
+import Card, {CardActionIcon, CardActionIcons} from '../ts/Card';
+import Checkbox from '../ts/Checkbox';
+import ChipSet, {Chip, ChipIcon, ChipText} from '../ts/Chips';
+import Dialog, {
+  DialogBody,
+  DialogFooter,
+  DialogFooterButton,
+  DialogHeader
+} from '../ts/Dialog';
+import {
+  DrawerContent,
+  DrawerHeader,
+  DrawerItem,
+  TemporaryDrawer
+} from '../ts/Drawer';
+import Elevation from '../ts/Elevation';
+import Fab, {FabIcon} from '../ts/Fab';
+import Icon from '../ts/Icon';
+import IconToggle from '../ts/IconToggle';
+import LayoutGrid, {LayoutGridCell} from '../ts/LayoutGrid';
+import LinearProgress from '../ts/LinearProgress';
+import List, {
+  ListDivider,
+  ListItem,
+  ListItemGraphic,
+  ListLinkItem
+} from '../ts/List';
+import Menu, {MenuAnchor, MenuItem} from '../ts/Menu';
+import Radio from '../ts/Radio';
+import Select, {SelectOption} from '../ts/Select';
+import Slider from '../ts/Slider';
+import Snackbar from '../ts/Snackbar';
+import Switch from '../ts/Switch';
+import Tabs, {Tab, TabBarScroller, TabBarScrollerTabs} from '../ts/Tabs';
+import TextField from '../ts/TextField';
+import Toolbar, {
+  ToolbarIcon,
+  ToolbarRow,
+  ToolbarSection,
+  ToolbarTitle
+} from '../ts/Toolbar';
+
+export default class Home extends Component<{}, {}> {
+  public state = {
+    activeTabIndex: 1,
+    checkIt: false,
+    chosenOption: -1,
+    drawerOpen: false,
+    fabExited: false,
+    menuOpened: false,
+    progress: 0.2
+  };
+
+  protected drawer?: Element & {MDComponent: MDCTemporaryDrawer};
+  protected bar: Element;
+  protected dlg: Element & {MDComponent: MDCDialog};
+  protected radio: Element;
+  protected inp: Element;
+
+  public render({}, state) {
     const toggleOnIcon = {
       content: 'favorite',
       label: 'Remove From Favorites'
@@ -49,22 +74,22 @@ export default class Home extends Component {
     return (
       <div>
         <Toolbar>
-          <Toolbar.Row>
-            <Toolbar.Section align-start={true}>
-              <Toolbar.Icon
+          <ToolbarRow>
+            <ToolbarSection align-start>
+              <ToolbarIcon
                 onClick={() => {
                   this.setState({
                     drawerOpen: !this.state.drawerOpen
                   });
                 }}>
                 menu
-              </Toolbar.Icon>
-              <Toolbar.Title>Hi</Toolbar.Title>
-            </Toolbar.Section>
-          </Toolbar.Row>
+              </ToolbarIcon>
+              <ToolbarTitle>Hi</ToolbarTitle>
+            </ToolbarSection>
+          </ToolbarRow>
         </Toolbar>
 
-        <Drawer.TemporaryDrawer
+        <TemporaryDrawer
           ref={drawer => {
             this.drawer = drawer;
           }}
@@ -78,18 +103,18 @@ export default class Home extends Component {
             });
             console.log('Closed');
           }}>
-          <Drawer.DrawerHeader>Hello Header</Drawer.DrawerHeader>
-          <Drawer.DrawerContent>
-            <Drawer.DrawerItem>Item1</Drawer.DrawerItem>
-            <Drawer.DrawerItem selected={true}>Item2</Drawer.DrawerItem>
-          </Drawer.DrawerContent>
-        </Drawer.TemporaryDrawer>
+          <DrawerHeader>Hello Header</DrawerHeader>
+          <DrawerContent>
+            <DrawerItem>Item1</DrawerItem>
+            <DrawerItem selected>Item2</DrawerItem>
+          </DrawerContent>
+        </TemporaryDrawer>
 
         <Button
           primary
           raised
           ripple
-          onClick={e => {
+          onClick={() => {
             this.drawer.MDComponent.open = true;
           }}>
           hi
@@ -99,11 +124,10 @@ export default class Home extends Component {
           secondary
           raised
           ripple
-          onClick={e => {
-            console.log(this.dlg.MDComponent);
+          onClick={() => {
             this.dlg.MDComponent.show();
           }}>
-          <Button.Icon>favorite_border</Button.Icon>
+          <ButtonIcon>favorite_border</ButtonIcon>
           Open Dialog
         </Button>
 
@@ -111,16 +135,16 @@ export default class Home extends Component {
           <Fab
             className="test"
             primary
-            mini={true}
+            mini
             onClick={() => {
               this.setState({
                 fabExited: true
               });
             }}>
-            <Fab.Icon>share</Fab.Icon>
+            <FabIcon>share</FabIcon>
           </Fab>
-          <Fab exited={this.state.fabExited} ripple={true}>
-            <Fab.Icon>share</Fab.Icon>
+          <Fab exited={this.state.fabExited} ripple>
+            <FabIcon>share</FabIcon>
           </Fab>
           <Switch />
         </div>
@@ -128,7 +152,6 @@ export default class Home extends Component {
         <div>
           <IconToggle
             role="button"
-            tabindex="0"
             aria-pressed="false"
             aria-label="Add to favorites"
             data-toggle-on={toggleOnIcon}
@@ -154,7 +177,7 @@ export default class Home extends Component {
               Check
             </Button>
             <Checkbox
-              checked={this.state.checkIt || false}
+              checked={this.state.checkIt}
               onChange={e => {
                 console.log('changed', e);
               }}
@@ -163,7 +186,7 @@ export default class Home extends Component {
               }}
             />
             <Checkbox
-              disabled={true}
+              disabled
               ref={inp => {
                 this.inp = inp;
               }}
@@ -180,7 +203,7 @@ export default class Home extends Component {
           <Radio
             id="rd1"
             name="rbox"
-            checked={true}
+            checked
             ref={radio => (this.radio = radio)}
           />{' '}
           <label for="rd1">Radio Box2</label>
@@ -190,7 +213,7 @@ export default class Home extends Component {
           <Radio
             id="rd2"
             name="rbox"
-            checked={true}
+            checked
             ref={radio => (this.radio = radio)}
           />{' '}
           <label for="rd2">Radio Box3</label>
@@ -231,28 +254,28 @@ export default class Home extends Component {
         </div>
 
         <LayoutGrid>
-          <LayoutGrid.Cell cols={6} tabletCols={8} phoneCols={12}>
+          <LayoutGridCell cols={12} tabletCols={8} phoneCols={4}>
             <Card>
               <div>Card header</div>
-              <Card.ActionIcons>
-                <Card.ActionIcon>favorite</Card.ActionIcon>
-              </Card.ActionIcons>
+              <CardActionIcons>
+                <CardActionIcon>favorite</CardActionIcon>
+              </CardActionIcons>
             </Card>
-          </LayoutGrid.Cell>
+          </LayoutGridCell>
         </LayoutGrid>
 
-        <Elevation z="9">hi</Elevation>
+        <Elevation z={9}>hi</Elevation>
 
         <Dialog
           ref={dlg => {
             this.dlg = dlg;
           }}>
-          <Dialog.Header>Hello Dialog</Dialog.Header>
-          <Dialog.Body>What is this Dialog stuff??</Dialog.Body>
-          <Dialog.Footer>
-            <Dialog.FooterButton>No</Dialog.FooterButton>
-            <Dialog.FooterButton accept={true}>Yes</Dialog.FooterButton>
-          </Dialog.Footer>
+          <DialogHeader>Hello Dialog</DialogHeader>
+          <DialogBody>What is this Dialog stuff??</DialogBody>
+          <DialogFooter>
+            <DialogFooterButton>No</DialogFooterButton>
+            <DialogFooterButton accept>Yes</DialogFooterButton>
+          </DialogFooter>
         </Dialog>
 
         <Button
@@ -263,7 +286,7 @@ export default class Home extends Component {
           }}>
           Set half progress
         </Button>
-        <LinearProgress progress={this.state.progress} accent={true} />
+        <LinearProgress progress={this.state.progress} secondary />
 
         <Button raised onClick={() => this.setState({chosenOption: -1})}>
           Clear Select
@@ -279,34 +302,34 @@ export default class Home extends Component {
                 chosenOption: e.selectedIndex
               });
             }}>
-            <SelectOption>Bread, Cereal, Rice, and Pasta</Select.Item>
-            <Select.Item disabled>Vegetables</Select.Item>
-            <Select.Item>Fruit</Select.Item>
-            <Select.Item>Milk, Yogurt, and Cheese</Select.Item>
-            <Select.Item>
+            <SelectOption>Bread, Cereal, Rice, and Pasta</SelectOption>
+            <SelectOption disabled>Vegetables</SelectOption>
+            <SelectOption>Fruit</SelectOption>
+            <SelectOption>Milk, Yogurt, and Cheese</SelectOption>
+            <SelectOption>
               Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
-            </Select.Item>
-            <Select.Item>Fats, Oils, and Sweets</Select.Item>
+            </SelectOption>
+            <SelectOption>Fats, Oils, and Sweets</SelectOption>
           </Select>
         </div>
         <div>
           <Select hintText="Pick a Food Group">
-            <Select.Item>Bread, Cereal, Rice, and Pasta</Select.Item>
-            <Select.Item disabled>Vegetables</Select.Item>
-            <Select.Item>Fruit</Select.Item>
-            <Select.Item selected>Milk, Yogurt, and Cheese</Select.Item>
-            <Select.Item>
+            <SelectOption>Bread, Cereal, Rice, and Pasta</SelectOption>
+            <SelectOption disabled>Vegetables</SelectOption>
+            <SelectOption>Fruit</SelectOption>
+            <SelectOption selected>Milk, Yogurt, and Cheese</SelectOption>
+            <SelectOption>
               Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
-            </Select.Item>
-            <Select.Item>Fats, Oils, and Sweets</Select.Item>
+            </SelectOption>
+            <SelectOption>Fats, Oils, and Sweets</SelectOption>
           </Select>
         </div>
 
         <div>
           <Tabs activeTabIndex={this.state.activeTabIndex}>
-            <Tabs.Tab>tab1</Tabs.Tab>
-            <Tabs.Tab>tab2</Tabs.Tab>
-            <Tabs.Tab>tab3</Tabs.Tab>
+            <Tab>tab1</Tab>
+            <Tab>tab2</Tab>
+            <Tab>tab3</Tab>
           </Tabs>
           <Button
             onClick={() => {
@@ -318,24 +341,24 @@ export default class Home extends Component {
           </Button>
         </div>
         <div style="margin: 32px 0">
-          <Tabs.TabBarScroller>
-            <Tabs.TabBarScrollerTabs>
-              <Tabs.Tab>tab1</Tabs.Tab>
-              <Tabs.Tab active={true}>tab2</Tabs.Tab>
-              <Tabs.Tab>tab3</Tabs.Tab>
-              <Tabs.Tab>tab4</Tabs.Tab>
-              <Tabs.Tab>tab5</Tabs.Tab>
-              <Tabs.Tab>tab6</Tabs.Tab>
-              <Tabs.Tab>tab7</Tabs.Tab>
-              <Tabs.Tab>tab7</Tabs.Tab>
-              <Tabs.Tab>tab9</Tabs.Tab>
-              <Tabs.Tab>tab10</Tabs.Tab>
-              <Tabs.Tab>tab11</Tabs.Tab>
-            </Tabs.TabBarScrollerTabs>
-          </Tabs.TabBarScroller>
+          <TabBarScroller>
+            <TabBarScrollerTabs>
+              <Tab>tab1</Tab>
+              <Tab active>tab2</Tab>
+              <Tab>tab3</Tab>
+              <Tab>tab4</Tab>
+              <Tab>tab5</Tab>
+              <Tab>tab6</Tab>
+              <Tab>tab7</Tab>
+              <Tab>tab7</Tab>
+              <Tab>tab9</Tab>
+              <Tab>tab10</Tab>
+              <Tab>tab11</Tab>
+            </TabBarScrollerTabs>
+          </TabBarScroller>
         </div>
         <div>
-          <Select basic={true}>
+          <Select>
             <option value="" default selected>
               Pick a food
             </option>
@@ -355,34 +378,34 @@ export default class Home extends Component {
         </div>
 
         <List>
-          <List.Item>Item1</List.Item>
-          <List.Item>Item2</List.Item>
-          <List.Item>Item3</List.Item>
+          <ListItem>Item1</ListItem>
+          <ListItem>Item2</ListItem>
+          <ListItem>Item3</ListItem>
         </List>
 
         <hr />
 
-        <List interactive={true}>
-          <List.LinkItem ripple={true} href="#">
-            <List.ItemIcon>menu</List.ItemIcon>
+        <List ripple>
+          <ListLinkItem ripple href="#">
+            <ListItemGraphic>menu</ListItemGraphic>
             Item1
-          </List.LinkItem>
-          <List.LinkItem ripple={true} href="#">
-            <List.ItemAvatar
+          </ListLinkItem>
+          <ListLinkItem ripple href="#">
+            <img
               src="https://material-components-web.appspot.com/images/animal1.svg"
               height="25"
               width="25"
             />
             Item2
-          </List.LinkItem>
-          <List.Divider />
-          <List.LinkItem ripple={true} href="#">
+          </ListLinkItem>
+          <ListDivider />
+          <ListLinkItem ripple href="#">
             Item3
-          </List.LinkItem>
+          </ListLinkItem>
         </List>
-        <Menu.Anchor>
+        <MenuAnchor>
           <Button
-            onClick={e => {
+            onClick={() => {
               this.setState({
                 menuOpened: true
               });
@@ -396,11 +419,11 @@ export default class Home extends Component {
                 menuOpened: false
               });
             }}>
-            <Menu.Item>Hello1</Menu.Item>
-            <Menu.Item>Hello2</Menu.Item>
-            <Menu.Item>Hello3</Menu.Item>
+            <MenuItem>Hello1</MenuItem>
+            <MenuItem>Hello2</MenuItem>
+            <MenuItem>Hello3</MenuItem>
           </Menu>
-        </Menu.Anchor>
+        </MenuAnchor>
 
         <Slider
           discrete
@@ -413,50 +436,48 @@ export default class Home extends Component {
         />
 
         <div>
-          <Chips>
-            <Chips.Chip>
-              <Chips.Text>Chip One</Chips.Text>
-            </Chips.Chip>
-            <Chips.Chip>
-              <Chips.Text>Chip Two</Chips.Text>
-            </Chips.Chip>
-            <Chips.Chip>
-              <Chips.Text>Chip Three</Chips.Text>
-            </Chips.Chip>
-            <Chips.Chip>
-              <Chips.Text>Chip Four</Chips.Text>
-            </Chips.Chip>
-          </Chips>
+          <ChipSet>
+            <Chip>
+              <ChipText>Chip One</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Two</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Three</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Four</ChipText>
+            </Chip>
+          </ChipSet>
         </div>
         <div>
-          <Chips.Chip>
-            <Chips.Icon leading className="material-icons">
+          <ChipSet>
+            <ChipIcon leading className="material-icons">
               face
-            </Chips.Icon>
-            <Chips.Text>Jane Smith</Chips.Text>
-            <Chips.Icon
+            </ChipIcon>
+            <ChipText>Jane Smith</ChipText>
+            <ChipIcon
               trailing
               className="material-icons"
-              tabindex="0"
               role="button"
               title="More options">
               more_vert
-            </Chips.Icon>
-          </Chips.Chip>
-          <Chips.Chip>
-            <Chips.Icon leading className="material-icons">
+            </ChipIcon>
+          </ChipSet>
+          <Chip>
+            <ChipIcon leading className="material-icons">
               face
-            </Chips.Icon>
-            <Chips.Text>John Doe</Chips.Text>
-            <Chips.Icon
+            </ChipIcon>
+            <ChipText>John Doe</ChipText>
+            <ChipIcon
               trailing
               className="material-icons"
-              tabindex="0"
               role="button"
               title="More options">
               more_vert
-            </Chips.Icon>
-          </Chips.Chip>
+            </ChipIcon>
+          </Chip>
         </div>
       </div>
     );

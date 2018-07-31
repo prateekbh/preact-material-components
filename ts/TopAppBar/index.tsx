@@ -110,6 +110,7 @@ export class TopAppBar extends MaterialComponent<
   protected MDComponent?: MDCTopAppBar;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       const comp = new MDCTopAppBar(this.control);
       comp.listen('MDCTopAppBar:nav', this.onNav);
@@ -118,6 +119,7 @@ export class TopAppBar extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCTopAppBar:nav', this.onNav);
       this.MDComponent.destroy();

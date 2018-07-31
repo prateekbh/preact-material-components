@@ -29,6 +29,7 @@ export class IconToggle extends MaterialComponent<
   protected MDComponent?: MDCIconToggle;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCIconToggle(this.control);
       this.MDComponent.listen('MDCIconToggle:change', this.onChange);
@@ -36,6 +37,7 @@ export class IconToggle extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCIconToggle:change', this.onChange);
       this.MDComponent.destroy();

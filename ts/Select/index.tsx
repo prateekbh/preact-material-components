@@ -12,8 +12,7 @@ export class SelectOption extends ListItem {
   }
 }
 
-export interface ISelectProps
-  extends Omit<JSX.HTMLAttributes, 'onChange' | 'disabled'> {
+export interface ISelectProps {
   disabled?: boolean;
   box?: boolean;
   outlined?: boolean;
@@ -33,12 +32,14 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   protected labelRef?: Element;
 
   public componentDidMount() {
+    super.componentDidMount();
     this.MDComponent = new MDCSelect(this.base);
     this.MDComponent.listen('MDCSelect:change', this.changed);
     this.updateSelection();
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCSelect:change', this.changed);
       this.MDComponent.destroy();

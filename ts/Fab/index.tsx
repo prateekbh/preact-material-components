@@ -28,10 +28,6 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
   protected mdcProps = ['mini', 'exited'];
   protected themeProps = ['primary', 'secondary'];
 
-  public componentDidMount() {
-    super.attachRipple();
-  }
-
   @autobind
   protected materialDom(props) {
     const classNames: string[] = [];

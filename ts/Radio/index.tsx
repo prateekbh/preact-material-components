@@ -17,6 +17,7 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
   protected MDComponent?: MDCRadio;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCRadio(this.control);
       toggleRadio(
@@ -30,6 +31,7 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }

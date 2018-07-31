@@ -2,13 +2,8 @@ import {MDCSlider} from '@material/slider';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import {Omit} from '../Base/types';
 
-export interface ISliderProps
-  extends Omit<
-      JSX.HTMLAttributes,
-      'value' | 'min' | 'max' | 'step' | 'onInput' | 'onChange'
-    > {
+export interface ISliderProps {
   discrete?: boolean;
   value?: number;
   min?: number;
@@ -29,6 +24,7 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
   protected MDComponent?: MDCSlider;
 
   public componentDidMount() {
+    super.componentDidMount();
     this.MDComponent = new MDCSlider(this.base);
     this.MDComponent.listen('MDCSlider:change', this.onChange);
     this.MDComponent.listen('MDCSlider:input', this.onInput);
@@ -36,6 +32,7 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCSlider:change', this.onChange);
       this.MDComponent.unlisten('MDCSlider:input', this.onInput);

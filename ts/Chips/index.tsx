@@ -114,12 +114,14 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
   protected MDComponent?: MDCChipSet;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCChipSet(this.control);
     }
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }

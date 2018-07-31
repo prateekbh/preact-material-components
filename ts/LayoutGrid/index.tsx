@@ -6,7 +6,7 @@ export interface ILayoutGridInnerProps {}
 
 export interface ILayoutGridInnerState {}
 
-class LayoutGridInner extends MaterialComponent<
+export class LayoutGridInner extends MaterialComponent<
   ILayoutGridInnerProps,
   ILayoutGridInnerState
 > {
@@ -46,7 +46,7 @@ export interface ILayoutGridCellState {}
  * @prop order = 0
  * @prop align = ''
  */
-class LayoutGridCell extends MaterialComponent<
+export class LayoutGridCell extends MaterialComponent<
   ILayoutGridCellProps,
   ILayoutGridCellState
 > {

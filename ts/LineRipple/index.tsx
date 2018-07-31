@@ -16,12 +16,14 @@ export class LineRipple extends MaterialComponent<
   protected MDComponent?: MDCLineRipple;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCLineRipple(this.control);
     }
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }

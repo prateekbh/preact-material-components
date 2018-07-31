@@ -40,10 +40,6 @@ export class Button<
   protected mdcProps = ['dense', 'raised', 'unelevated', 'outlined'];
   protected themeProps = ['primary', 'secondary'];
 
-  public componentDidMount() {
-    super.attachRipple();
-  }
-
   @autobind
   protected materialDom(props) {
     const ButtonElement = props.href ? 'a' : 'button';

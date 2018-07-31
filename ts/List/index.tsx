@@ -31,10 +31,6 @@ export class ListLinkItem<
   protected componentName = 'list-item';
   protected mdcProps = [];
 
-  public componentDidMount() {
-    super.attachRipple();
-  }
-
   @autobind
   protected materialDom(props) {
     return (
@@ -180,6 +176,7 @@ export class List extends MaterialComponent<IListProps, IListState> {
   public static readonly SecondaryText = ListSecondaryText;
   public static readonly Group = ListGroup;
   public static readonly GroupHeader = ListGroupHeader;
+
   protected componentName = 'list';
   protected mdcProps = ['dense', 'two-line', 'avatar-list'];
 

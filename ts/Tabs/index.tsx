@@ -26,6 +26,7 @@ export class TabBarScroller extends MaterialComponent<
   protected MDComponent?: MDCTabBarScroller;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCTabBarScroller(this.control);
       setActiveTabIndex(defaultProps, this.props, this.MDComponent.tabBar);
@@ -33,6 +34,7 @@ export class TabBarScroller extends MaterialComponent<
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }
@@ -189,6 +191,7 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   protected MDComponent?: MDCTabBar;
 
   public componentDidMount() {
+    super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCTabBar(this.control);
       setActiveTabIndex(defaultProps, this.props, this.MDComponent);
@@ -196,6 +199,7 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   }
 
   public componentWillUnmount() {
+    super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }
