@@ -21,15 +21,17 @@ export class LinearProgress extends MaterialComponent<
 > {
   protected componentName = 'linear-progress';
   protected mdcProps = ['indeterminate', 'reversed'];
-  protected MDComponent: MDCLinearProgress;
+  protected MDComponent?: MDCLinearProgress;
 
   public componentDidMount() {
-    this.MDComponent = new MDCLinearProgress(this.control);
-    updateProgress(this.props, this.MDComponent);
+    if (this.control) {
+      this.MDComponent = new MDCLinearProgress(this.control);
+      updateProgress(this.props, this.MDComponent);
+    }
   }
 
   public componentWillUnmount() {
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }

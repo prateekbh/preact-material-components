@@ -23,15 +23,17 @@ export class Checkbox extends MaterialComponent<
 > {
   protected componentName = 'checkbox';
   protected mdcProps = ['disabled'];
-  protected MDComponent: MDCCheckbox;
+  protected MDComponent?: MDCCheckbox;
 
   public componentDidMount() {
-    this.MDComponent = new MDCCheckbox(this.control);
-    toggleCheckbox(defaultProps, this.props, this.MDComponent);
+    if (this.control) {
+      this.MDComponent = new MDCCheckbox(this.control);
+      toggleCheckbox(defaultProps, this.props, this.MDComponent);
+    }
   }
 
   public componentWillUnmount() {
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }

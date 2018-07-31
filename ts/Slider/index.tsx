@@ -26,7 +26,7 @@ export interface ISliderState {}
 export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
   protected componentName = 'slider';
   protected mdcProps = ['discrete'];
-  protected MDComponent: MDCSlider;
+  protected MDComponent?: MDCSlider;
 
   public componentDidMount() {
     this.MDComponent = new MDCSlider(this.base);
@@ -36,20 +36,22 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCSlider:change', this.onChange);
-    this.MDComponent.unlisten('MDCSlider:input', this.onInput);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCSlider:change', this.onChange);
+      this.MDComponent.unlisten('MDCSlider:input', this.onInput);
       this.MDComponent.destroy();
     }
   }
 
   @autobind
   public getValue() {
-    return this.MDComponent.value;
+    if (this.MDComponent) {
+      return this.MDComponent.value;
+    }
   }
 
   @autobind
-  public setValue(value: number) {
+  public setValue(value?: number) {
     const {disabled = false, min = 0, max = 100, step} = this.props;
     if (this.MDComponent) {
       if (min > this.MDComponent.max) {
@@ -60,9 +62,13 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
         this.MDComponent.max = max;
       }
 
-      this.MDComponent.value = value;
+      if (value) {
+        this.MDComponent.value = value;
+      }
       this.MDComponent.disabled = disabled;
-      this.MDComponent.step = step;
+      if (step) {
+        this.MDComponent.step = step;
+      }
     }
   }
 

@@ -27,8 +27,8 @@ export interface ISelectState {}
 export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   protected componentName = 'select';
   protected mdcProps = ['disabled', 'box', 'outlined'];
-  protected MDComponent: MDCSelect;
-  protected labelRef: Element;
+  protected MDComponent?: MDCSelect;
+  protected labelRef?: Element;
 
   public componentDidMount() {
     this.MDComponent = new MDCSelect(this.base);
@@ -37,8 +37,8 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCSelect:change', this.changed);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCSelect:change', this.changed);
       this.MDComponent.destroy();
     }
   }
@@ -49,30 +49,34 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
 
   @autobind
   protected changed(e) {
-    e = e || {};
-    e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
-    if (this.props.onChange) {
-      this.props.onChange(e);
+    if (this.MDComponent) {
+      e = e || {};
+      e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
+      if (this.props.onChange) {
+        this.props.onChange(e);
+      }
     }
   }
 
   @autobind
   protected updateSelection() {
-    if ('selectedIndex' in this.props) {
-      this.MDComponent.selectedIndex =
-        typeof this.props.selectedIndex === 'number'
-          ? this.props.selectedIndex
-          : 0;
-    }
-
-    const selectedIndex = this.MDComponent.selectedIndex;
-    if (selectedIndex === 0) {
-      if (this.labelRef) {
-        this.labelRef.classList.remove('mdc-floating-label--float-above');
+    if (this.MDComponent) {
+      if (this.props.selectedIndex) {
+        this.MDComponent.selectedIndex =
+          typeof this.props.selectedIndex === 'number'
+            ? this.props.selectedIndex
+            : 0;
       }
-    } else {
-      if (this.labelRef) {
-        this.labelRef.classList.add('mdc-floating-label--float-above');
+
+      const selectedIndex = this.MDComponent.selectedIndex;
+      if (selectedIndex === 0) {
+        if (this.labelRef) {
+          this.labelRef.classList.remove('mdc-floating-label--float-above');
+        }
+      } else {
+        if (this.labelRef) {
+          this.labelRef.classList.add('mdc-floating-label--float-above');
+        }
       }
     }
   }

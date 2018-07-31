@@ -14,7 +14,7 @@ export class Icon<PropsType = {}, StateType = {}> extends MaterialComponent<
   IIconState & StateType
 > {
   protected componentName = 'icon';
-  protected mdcProps = [];
+  protected mdcProps: string[] = [];
 
   @autobind
   protected materialDom(props) {

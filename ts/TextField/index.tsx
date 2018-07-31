@@ -86,7 +86,7 @@ export class TextFieldInput extends MaterialComponent<
   public state = {
     showFloatingLabel: false
   };
-  protected MDComponent: MDCTextField;
+  protected MDComponent?: MDCTextField;
 
   protected componentName = 'text-field';
   protected mdcProps = [
@@ -104,11 +104,13 @@ export class TextFieldInput extends MaterialComponent<
         showFloatingLabel: true
       },
       () => {
-        this.MDComponent = new MDCTextField(this.control);
-        if (this.props.onInit) {
-          this.props.onInit(this.MDComponent);
+        if (this.control) {
+          this.MDComponent = new MDCTextField(this.control);
+          if (this.props.onInit) {
+            this.props.onInit(this.MDComponent);
+          }
+          setValid({valid: true}, this.props, this.MDComponent);
         }
-        setValid({valid: true}, this.props, this.MDComponent);
       }
     );
   }
@@ -118,7 +120,7 @@ export class TextFieldInput extends MaterialComponent<
   }
 
   public componentWillUnmount() {
-    if (this.MDComponent && this.MDComponent.destroy) {
+    if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }

@@ -32,7 +32,7 @@ export interface IElevationProps extends JSX.HTMLAttributes {
 
 export interface IElevationState {}
 
-const generatedProps = [];
+const generatedProps: string[] = [];
 for (let elevationIndex = 0; elevationIndex < 25; elevationIndex++) {
   generatedProps.push('z' + elevationIndex);
 }
@@ -50,7 +50,7 @@ export class Elevation extends MaterialComponent<
 
   @autobind
   protected materialDom(props) {
-    let className = '';
+    let className;
     if (props.z) {
       className = 'mdc-elevation--z' + props.z;
     }

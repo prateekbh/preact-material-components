@@ -111,14 +111,16 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
 
   protected componentName = 'chip-set';
   protected mdcProps = ['choice', 'filter', 'input'];
-  protected MDComponent: MDCChipSet;
+  protected MDComponent?: MDCChipSet;
 
   public componentDidMount() {
-    this.MDComponent = new MDCChipSet(this.control);
+    if (this.control) {
+      this.MDComponent = new MDCChipSet(this.control);
+    }
   }
 
   public componentWillUnmount() {
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }

@@ -9,7 +9,7 @@ export interface IDialogHeaderProps {}
 
 export interface IDialogHeaderState {}
 
-class DialogHeader extends MaterialComponent<
+export class DialogHeader extends MaterialComponent<
   IDialogHeaderProps,
   IDialogHeaderState
 > {
@@ -35,7 +35,10 @@ export interface IDialogBodyState {}
 /**
  * @prop scrollable = false
  */
-class DialogBody extends MaterialComponent<IDialogBodyProps, IDialogBodyState> {
+export class DialogBody extends MaterialComponent<
+  IDialogBodyProps,
+  IDialogBodyState
+> {
   protected componentName = 'dialog__body';
   protected mdcProps = ['scrollable'];
 
@@ -49,7 +52,7 @@ export interface IDialogFooterProps {}
 
 export interface IDialogFooterState {}
 
-class DialogFooter extends MaterialComponent<
+export class DialogFooter extends MaterialComponent<
   IDialogFooterProps,
   IDialogFooterState
 > {
@@ -74,7 +77,7 @@ export interface IDialogFooterButtonState {}
  * @prop cancel = false
  * @prop accept = false
  */
-class DialogFooterButton extends Button<
+export class DialogFooterButton extends Button<
   IDialogFooterButtonProps,
   IDialogFooterButtonState
 > {
@@ -98,7 +101,7 @@ export interface IDialogProps extends JSX.HTMLAttributes {
 
 export interface IDialogState {}
 
-class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
+export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   public static readonly Header = DialogHeader;
   public static readonly Body = DialogBody;
   public static readonly Footer = DialogFooter;
@@ -106,19 +109,21 @@ class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
 
   protected componentName = 'dialog';
   protected mdcProps = [];
-  protected MDComponent: MDCDialog;
+  protected MDComponent?: MDCDialog;
 
   @autobind
   public componentDidMount() {
-    this.MDComponent = new MDCDialog(this.control);
-    this.MDComponent.listen('MDCDialog:accept', this.onAccept);
-    this.MDComponent.listen('MDCDialog:cancel', this.onCancel);
+    if (this.control) {
+      this.MDComponent = new MDCDialog(this.control);
+      this.MDComponent.listen('MDCDialog:accept', this.onAccept);
+      this.MDComponent.listen('MDCDialog:cancel', this.onCancel);
+    }
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCDialog:accept', this.onAccept);
-    this.MDComponent.unlisten('MDCDialog:cancel', this.onCancel);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCDialog:accept', this.onAccept);
+      this.MDComponent.unlisten('MDCDialog:cancel', this.onCancel);
       this.MDComponent.destroy();
     }
   }

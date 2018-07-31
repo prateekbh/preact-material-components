@@ -34,22 +34,24 @@ export class Snackbar extends MaterialComponent<
   public readonly isPureReactComponent = true;
   protected componentName = 'snackbar';
   protected mdcProps = [];
-  protected MDComponent: MDCSnackbar;
+  protected MDComponent?: MDCSnackbar;
 
   public componentDidMount() {
-    this.MDComponent = new MDCSnackbar(this.control);
-    if (
-      this.props.dismissesOnAction === undefined ||
-      this.props.dismissesOnAction === null
-    ) {
-      this.MDComponent.dismissesOnAction = true;
-    } else {
-      this.MDComponent.dismissesOnAction = this.props.dismissesOnAction;
+    if (this.control) {
+      this.MDComponent = new MDCSnackbar(this.control);
+      if (
+        this.props.dismissesOnAction === undefined ||
+        this.props.dismissesOnAction === null
+      ) {
+        this.MDComponent.dismissesOnAction = true;
+      } else {
+        this.MDComponent.dismissesOnAction = this.props.dismissesOnAction;
+      }
     }
   }
 
   public componentWillUnmount() {
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }

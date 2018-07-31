@@ -12,21 +12,25 @@ export interface IRadioState {}
  * @prop plain = false
  */
 export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
-  public static readonly defaultProps = {
-    checked: false
-  };
-
   protected componentName = 'radio';
   protected mdcProps = [];
-  protected MDComponent: MDCRadio;
+  protected MDComponent?: MDCRadio;
 
   public componentDidMount() {
-    this.MDComponent = new MDCRadio(this.control);
-    toggleRadio(Radio.defaultProps, this.props, this.MDComponent);
+    if (this.control) {
+      this.MDComponent = new MDCRadio(this.control);
+      toggleRadio(
+        {
+          checked: false
+        },
+        this.props,
+        this.MDComponent
+      );
+    }
   }
 
   public componentWillUnmount() {
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }

@@ -26,16 +26,18 @@ export class IconToggle extends MaterialComponent<
 > {
   protected componentName = 'icon-toggle';
   protected mdcProps = [];
-  protected MDComponent: MDCIconToggle;
+  protected MDComponent?: MDCIconToggle;
 
   public componentDidMount() {
-    this.MDComponent = new MDCIconToggle(this.control);
-    this.MDComponent.listen('MDCIconToggle:change', this.onChange);
+    if (this.control) {
+      this.MDComponent = new MDCIconToggle(this.control);
+      this.MDComponent.listen('MDCIconToggle:change', this.onChange);
+    }
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCIconToggle:change', this.onChange);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCIconToggle:change', this.onChange);
       this.MDComponent.destroy();
     }
   }

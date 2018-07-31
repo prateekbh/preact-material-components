@@ -59,19 +59,21 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     'open-from-bottom-left',
     'open-from-bottom-right'
   ];
-  protected MDComponent: MDCMenu;
+  protected MDComponent?: MDCMenu;
 
   public componentDidMount() {
-    this.MDComponent = new MDCMenu(this.control);
-    this.MDComponent.listen('MDCMenu:selected', this.select);
-    this.MDComponent.listen('MDCMenu:cancel', this.cancel);
-    toggleMenu(Menu.defaultProps, this.props, this.MDComponent);
+    if (this.control) {
+      this.MDComponent = new MDCMenu(this.control);
+      this.MDComponent.listen('MDCMenu:selected', this.select);
+      this.MDComponent.listen('MDCMenu:cancel', this.cancel);
+      toggleMenu(Menu.defaultProps, this.props, this.MDComponent);
+    }
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCMenu:selected', this.select);
-    this.MDComponent.unlisten('MDCMenu:cancel', this.cancel);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCMenu:selected', this.select);
+      this.MDComponent.unlisten('MDCMenu:cancel', this.cancel);
       this.MDComponent.destroy();
     }
   }

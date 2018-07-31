@@ -32,10 +32,10 @@ export abstract class MaterialComponent<
   protected abstract componentName: string;
 
   /** The final class name given to the dom */
-  protected classText: string;
+  protected classText?: string | null;
+  protected ripple?: MDCRipple | null;
 
-  // TODO: find out correct type
-  protected control?: any;
+  protected control?: Element;
 
   public render(props: PropsType & IMaterialComponentProps): VNode {
     if (!this.classText) {
@@ -73,17 +73,24 @@ export abstract class MaterialComponent<
     return element;
   }
 
+  public componentWillUnmount() {
+    if (this.ripple) {
+      this.ripple.destroy();
+      this.ripple = null;
+    }
+  }
+
   /** Attach the ripple effect */
   @autobind
   protected attachRipple() {
     if (this.props.ripple && this.control) {
-      MDCRipple.attachTo(this.control);
+      this.ripple = new MDCRipple(this.control);
     }
   }
 
   // Shared setter for the root element ref
   @autobind
-  protected setControlRef(control: Element) {
+  protected setControlRef(control: Element | undefined) {
     this.control = control;
   }
 

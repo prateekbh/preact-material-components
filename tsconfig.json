@@ -14,7 +14,8 @@
     "rootDir": "./ts/",
     "declaration": true,
     "esModuleInterop": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "strict": true
   },
   "include": ["./ts/**/*"]
 }

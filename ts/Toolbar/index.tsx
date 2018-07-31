@@ -123,16 +123,18 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
     'flexible',
     'flexible-default-behavior'
   ];
-  protected MDComponent: MDCToolbar;
+  protected MDComponent?: MDCToolbar;
 
   public componentDidMount() {
-    this.MDComponent = new MDCToolbar(this.control);
-    this.MDComponent.listen('MDCToolbar:change', this.onChange);
+    if (this.control) {
+      this.MDComponent = new MDCToolbar(this.control);
+      this.MDComponent.listen('MDCToolbar:change', this.onChange);
+    }
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCToolbar:change', this.onChange);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCToolbar:change', this.onChange);
       this.MDComponent.destroy();
     }
   }

@@ -62,7 +62,7 @@ class LayoutGridCell extends MaterialComponent<
   @autobind
   protected static createClassName(props) {
     const baseClass = 'mdc-layout-grid__cell--';
-    const classes = [];
+    const classes: string[] = [];
 
     if (props[LayoutGridCell.propsDict.cols]) {
       classes.push(`${baseClass}span-${props[LayoutGridCell.propsDict.cols]}`);

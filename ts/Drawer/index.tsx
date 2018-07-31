@@ -25,19 +25,21 @@ export class TemporaryDrawer extends MaterialComponent<
 > {
   protected componentName = 'drawer--temporary';
   protected mdcProps = [];
-  protected MDComponent: MDCTemporaryDrawer;
+  protected MDComponent?: MDCTemporaryDrawer;
 
   public componentDidMount() {
-    this.MDComponent = MDCTemporaryDrawer.attachTo(this.control);
-    this.MDComponent.listen('MDCTemporaryDrawer:open', this.open);
-    this.MDComponent.listen('MDCTemporaryDrawer:close', this.close);
-    toggleDrawer(defaultProps, this.props, this.MDComponent);
+    if (this.control) {
+      this.MDComponent = new MDCTemporaryDrawer(this.control);
+      this.MDComponent.listen('MDCTemporaryDrawer:open', this.open);
+      this.MDComponent.listen('MDCTemporaryDrawer:close', this.close);
+      toggleDrawer(defaultProps, this.props, this.MDComponent);
+    }
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCTemporaryDrawer:close', this.close);
-    this.MDComponent.unlisten('MDCTemporaryDrawer:open', this.open);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCTemporaryDrawer:close', this.close);
+      this.MDComponent.unlisten('MDCTemporaryDrawer:open', this.open);
       this.MDComponent.destroy();
     }
   }
@@ -112,19 +114,21 @@ export class PersistentDrawer extends MaterialComponent<
 > {
   protected componentName = 'drawer--persistent';
   protected mdcProps = [];
-  protected MDComponent: MDCPersistentDrawer;
+  protected MDComponent?: MDCPersistentDrawer;
 
   public componentDidMount() {
-    this.MDComponent = MDCPersistentDrawer.attachTo(this.control);
-    this.MDComponent.listen('MDCPersistentDrawer:open', this.open);
-    this.MDComponent.listen('MDCPersistentDrawer:close', this.close);
-    toggleDrawer(defaultProps, this.props, this.MDComponent);
+    if (this.control) {
+      this.MDComponent = new MDCPersistentDrawer(this.control);
+      this.MDComponent.listen('MDCPersistentDrawer:open', this.open);
+      this.MDComponent.listen('MDCPersistentDrawer:close', this.close);
+      toggleDrawer(defaultProps, this.props, this.MDComponent);
+    }
   }
 
   public componentWillUnmount() {
-    this.MDComponent.unlisten('MDCPersistentDrawer:close', this.close);
-    this.MDComponent.unlisten('MDCPersistentDrawer:open', this.open);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCPersistentDrawer:close', this.close);
+      this.MDComponent.unlisten('MDCPersistentDrawer:open', this.open);
       this.MDComponent.destroy();
     }
   }

@@ -13,10 +13,18 @@ export class LineRipple extends MaterialComponent<
 > {
   protected componentName = 'line-ripple';
   protected mdcProps = [];
-  protected MDComponent: MDCLineRipple;
+  protected MDComponent?: MDCLineRipple;
 
   public componentDidMount() {
-    this.MDComponent = new MDCLineRipple(this.control);
+    if (this.control) {
+      this.MDComponent = new MDCLineRipple(this.control);
+    }
+  }
+
+  public componentWillUnmount() {
+    if (this.MDComponent) {
+      this.MDComponent.destroy();
+    }
   }
 
   @autobind

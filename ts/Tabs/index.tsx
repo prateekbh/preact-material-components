@@ -9,6 +9,7 @@ import MaterialComponent from '../Base/MaterialComponent';
 const defaultProps = {
   activeTabIndex: 0
 };
+
 export interface IScrollerProps extends JSX.HTMLAttributes {
   activeTabIndex?: number;
 }
@@ -22,21 +23,25 @@ export class TabBarScroller extends MaterialComponent<
   protected componentName = 'tab-bar-scroller';
   protected mdcProps = [];
 
-  protected MDComponent: MDCTabBarScroller;
+  protected MDComponent?: MDCTabBarScroller;
 
   public componentDidMount() {
-    this.MDComponent = new MDCTabBarScroller(this.control);
-    setActiveTabIndex(defaultProps, this.props, this.MDComponent.tabBar);
+    if (this.control) {
+      this.MDComponent = new MDCTabBarScroller(this.control);
+      setActiveTabIndex(defaultProps, this.props, this.MDComponent.tabBar);
+    }
   }
 
   public componentWillUnmount() {
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }
 
   public componentWillUpdate(nextProps) {
-    setActiveTabIndex(this.props, nextProps, this.MDComponent.tabBar);
+    if (this.MDComponent) {
+      setActiveTabIndex(this.props, nextProps, this.MDComponent.tabBar);
+    }
   }
 
   @autobind
@@ -144,19 +149,6 @@ export class TabIconLabel extends MaterialComponent<
   }
 }
 
-/*
- * Function to add declarative opening/closing to drawer
- */
-function setActiveTabIndex(oldprops, newprops, tabs) {
-  if (
-    'activeTabIndex' in oldprops &&
-    'activeTabIndex' in newprops &&
-    oldprops.activeTabIndex !== newprops.activeTabIndex
-  ) {
-    tabs.activeTabIndex = newprops.activeTabIndex;
-  }
-}
-
 export interface ITabsProps extends JSX.HTMLAttributes {
   'icon-tab-bar'?: boolean;
   'icons-with-text'?: boolean;
@@ -164,6 +156,23 @@ export interface ITabsProps extends JSX.HTMLAttributes {
 }
 
 export interface ITabsState {}
+
+/*
+ * Function to add declarative opening/closing to drawer
+ */
+function setActiveTabIndex(
+  oldprops: ITabsProps,
+  newprops: ITabsProps,
+  tabs: MDCTabBar
+) {
+  if (
+    oldprops.activeTabIndex &&
+    newprops.activeTabIndex &&
+    oldprops.activeTabIndex !== newprops.activeTabIndex
+  ) {
+    tabs.activeTabIndex = newprops.activeTabIndex;
+  }
+}
 
 /**
  * @prop icon-tab-bar = false
@@ -177,21 +186,25 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
 
   protected componentName = 'tab-bar';
   protected mdcProps = ['icon-tab-bar', 'icons-with-text'];
-  protected MDComponent: MDCTabBar;
+  protected MDComponent?: MDCTabBar;
 
   public componentDidMount() {
-    this.MDComponent = new MDCTabBar(this.control);
-    setActiveTabIndex(defaultProps, this.props, this.MDComponent);
+    if (this.control) {
+      this.MDComponent = new MDCTabBar(this.control);
+      setActiveTabIndex(defaultProps, this.props, this.MDComponent);
+    }
   }
 
   public componentWillUnmount() {
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }
 
   public componentWillUpdate(nextProps) {
-    setActiveTabIndex(this.props, nextProps, this.MDComponent);
+    if (this.MDComponent) {
+      setActiveTabIndex(this.props, nextProps, this.MDComponent);
+    }
   }
 
   @autobind
