@@ -279,7 +279,7 @@ export default class Home extends Component {
                 chosenOption: e.selectedIndex
               });
             }}>
-            <Select.Item>Bread, Cereal, Rice, and Pasta</Select.Item>
+            <SelectOption>Bread, Cereal, Rice, and Pasta</Select.Item>
             <Select.Item disabled>Vegetables</Select.Item>
             <Select.Item>Fruit</Select.Item>
             <Select.Item>Milk, Yogurt, and Cheese</Select.Item>

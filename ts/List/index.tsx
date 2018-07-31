@@ -24,7 +24,7 @@ export class ListItem extends MaterialComponent<
   }
 }
 
-export class LinkItem<
+export class ListLinkItem<
   PropTypes = {},
   StateTypes = {}
 > extends MaterialComponent<PropTypes, StateTypes> {
@@ -171,7 +171,7 @@ export interface IListState {}
  */
 export class List extends MaterialComponent<IListProps, IListState> {
   public static readonly Item = ListItem;
-  public static readonly LinkItem = LinkItem;
+  public static readonly LinkItem = ListLinkItem;
   public static readonly ItemGraphic = ListItemGraphic;
   public static readonly ItemMeta = ListItemMeta;
   public static readonly Divider = ListDivider;

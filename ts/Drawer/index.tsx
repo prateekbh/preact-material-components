@@ -3,7 +3,7 @@ import {MDCTemporaryDrawer} from '@material/drawer/temporary';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import {LinkItem} from '../List';
+import {ListLinkItem} from '../List';
 
 export interface IDrawerProps {
   onOpen?: (e: Event) => void;
@@ -218,7 +218,7 @@ export interface IDrawerItemState {}
 /**
  * @prop selected = false
  */
-export class DrawerItem extends LinkItem<IDrawerItemProps, IDrawerItemState> {
+export class DrawerItem extends ListLinkItem<IDrawerItemProps, IDrawerItemState> {
   @autobind
   protected materialDom(props) {
     const returnedNode = super.materialDom(props);

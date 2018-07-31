@@ -16,6 +16,7 @@ export interface ITypographyProps {
   overline?: boolean;
   subtitle1?: boolean;
   subtitle2?: boolean;
+  title?: boolean;
 }
 
 export interface ITypographyState {}
@@ -38,7 +39,8 @@ export class Typography extends MaterialComponent<
     'body2',
     'button',
     'caption',
-    'overline'
+    'overline',
+    'title'
   ];
 
   @autobind

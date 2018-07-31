@@ -25,6 +25,8 @@ export interface ISelectProps
 export interface ISelectState {}
 
 export class Select extends MaterialComponent<ISelectProps, ISelectState> {
+  public static readonly Item = SelectOption;
+
   protected componentName = 'select';
   protected mdcProps = ['disabled', 'box', 'outlined'];
   protected MDComponent?: MDCSelect;
