@@ -5,7 +5,7 @@ import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon/index';
 
 export interface IChipProps {
-  children?: ChipText[];
+  children?: Array<ChipText | ChipIcon | ChipCheckmark>;
   selected?: boolean;
 }
 
