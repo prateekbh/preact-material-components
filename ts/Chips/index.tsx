@@ -61,7 +61,7 @@ export class ChipCheckmark extends Icon {
   @autobind
   protected materialDom(props) {
     return (
-      <div>
+      <div {...props}>
         <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
           <path
             class="mdc-chip__checkmark-path"

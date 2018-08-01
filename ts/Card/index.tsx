@@ -20,8 +20,8 @@ export class CardActions extends MaterialComponent<
   protected mdcProps = ['full-bleed'];
 
   @autobind
-  protected materialDom() {
-    return <div {...this.props}>{this.props.children}</div>;
+  protected materialDom(props) {
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 
@@ -76,8 +76,8 @@ export class CardActionIcons extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom() {
-    return <div {...this.props}>{this.props.children}</div>;
+  protected materialDom(props) {
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 
@@ -108,8 +108,8 @@ export class CardMediaContent extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom() {
-    return <div {...this.props}>{this.props.children}</div>;
+  protected materialDom(props) {
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 
@@ -131,8 +131,8 @@ export class Card extends MaterialComponent<ICardProps, ICardState> {
   protected mdcProps = ['outlined'];
 
   @autobind
-  protected materialDom() {
-    return <div {...this.props}>{this.props.children}</div>;
+  protected materialDom(props) {
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 

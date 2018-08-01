@@ -20,8 +20,8 @@ export class Formfield extends MaterialComponent<
   protected mdcProps = ['align-end'];
 
   @autobind
-  protected materialDom() {
-    return <div {...this.props}>{this.props.children}</div>;
+  protected materialDom(props) {
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 

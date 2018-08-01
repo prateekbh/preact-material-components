@@ -14,8 +14,8 @@ export class ImageListAspectContainer extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom() {
-    return <div {...this.props}>{this.props.children}</div>;
+  protected materialDom(props) {
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 
@@ -54,8 +54,8 @@ export class ImageListImage extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom() {
-    const {src, ...props} = this.props;
+  protected materialDom(allprops) {
+    const {src, ...props} = allprops;
     return (
       <img src={src} {...props} ref={this.setControlRef}>
         {props.children}
@@ -76,8 +76,8 @@ export class ImageListSupporting extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom() {
-    return <div {...this.props}>{this.props.children}</div>;
+  protected materialDom(props) {
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 

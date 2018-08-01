@@ -12,8 +12,8 @@ export class ToolbarRow extends MaterialComponent<IRowProps, IRowState> {
   protected mdcProps = [];
 
   @autobind
-  protected materialDom() {
-    return <div {...this.props}>{this.props.children}</div>;
+  protected materialDom(props) {
+    return <div {...props}>{this.props.children}</div>;
   }
 }
 

@@ -70,8 +70,8 @@ export class GridListPrimaryContentTile extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom() {
-    const {src, ...props} = this.props;
+  protected materialDom(allprops) {
+    const {src, ...props} = allprops;
     return <img src={src} {...props} />;
   }
 }
