@@ -28,11 +28,8 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
 
   @autobind
   protected materialDom(props) {
-
     return (
-      <button
-        ref={this.setControlRef}
-        {...props}>
+      <button ref={this.setControlRef} {...props}>
         {props.children}
       </button>
     );
