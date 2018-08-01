@@ -119,12 +119,6 @@ export abstract class MaterialComponent<
       }
     }
 
-    ['primary', 'secondary'].forEach(themeProp => {
-      if (themeProp in this.props && this.props[themeProp] !== false) {
-        classText += ` mdc-theme--${themeProp}-bg`;
-      }
-    });
-
     return classText;
   }
 

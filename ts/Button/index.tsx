@@ -2,6 +2,7 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon/index';
+import generateThemeClass from '../themeUtils/generateThemeClass';
 
 export class ButtonIcon extends Icon {
   protected componentName = 'button__icon';
@@ -37,13 +38,20 @@ export class Button<
 
   protected componentName = 'button';
   protected mdcProps = ['dense', 'raised', 'unelevated', 'outlined'];
+  protected themeProps = ['primary', 'secondary'];
 
   @autobind
   protected materialDom(props) {
     const ButtonElement = props.href ? 'a' : 'button';
+    let className = '';
+    this.themeProps.forEach(themeProp => {
+      if (themeProp in props && props[themeProp] !== false) {
+        className += generateThemeClass(themeProp) + ' ';
+      }
+    });
 
     return (
-      <ButtonElement ref={this.setControlRef} {...props}>
+      <ButtonElement ref={this.setControlRef} {...props} className={className}>
         {this.props.children}
       </ButtonElement>
     );
