@@ -20,7 +20,7 @@ export class IconButton extends MaterialComponent<
   protected componentName = 'icon-button';
   protected mdcProps = [];
 
-  protected MDComponent: MDCIconButtonToggle;
+  protected MDComponent?: MDCIconButtonToggle;
 
   public componentDidMount() {
     super.componentDidMount();
@@ -30,8 +30,8 @@ export class IconButton extends MaterialComponent<
 
   public componentWillUnmount() {
     super.componentWillUnmount();
-    this.MDComponent.unlisten('MDCIconButtonToggle:change', this.onChange);
-    if (this.MDComponent.destroy) {
+    if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCIconButtonToggle:change', this.onChange);
       this.MDComponent.destroy();
     }
   }
