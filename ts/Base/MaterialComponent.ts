@@ -5,8 +5,6 @@ import {OmitAttrs} from './types';
 
 export interface IMaterialComponentOwnProps {
   ripple?: boolean;
-  primary?: boolean;
-  secondary?: boolean;
 }
 
 export interface IMaterialComponentOwnState {}

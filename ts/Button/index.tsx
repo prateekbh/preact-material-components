@@ -15,6 +15,7 @@ export interface IButtonProps {
   unelevated?: boolean;
   outlined?: boolean;
   primary?: boolean;
+  secondary?: boolean;
 }
 
 export interface IButtonState {}
