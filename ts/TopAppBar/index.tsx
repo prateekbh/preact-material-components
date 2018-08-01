@@ -27,7 +27,6 @@ export interface ISectionState {}
 /**
  * @prop align-end = false
  * @prop align-start = false
- * @prop shrink-to-fit = false TODO: Is this sill there?
  */
 export class TopAppBarSection extends MaterialComponent<
   ISectionProps,
@@ -48,9 +47,6 @@ export interface IIconProps extends JSX.HTMLAttributes {
 
 export interface IIconState {}
 
-/**
- * @prop menu = false TODO: Is this sill there?
- */
 export class TopAppBarIcon extends MaterialComponent<IIconProps, IIconState> {
   protected componentName = 'top-app-bar__icon';
   protected mdcProps = [];
@@ -90,7 +86,7 @@ export interface ITopAppBarProps extends JSX.HTMLAttributes {
   'short-collapsed'?: boolean;
   fixed?: boolean;
   prominent?: boolean;
-  onNav: (e: any /* TODO: Determine correct type */) => void;
+  onNav: JSX.GenericEventHandler;
 }
 
 export interface ITopAppBarState {}
