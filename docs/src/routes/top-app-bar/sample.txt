@@ -1,6 +1,6 @@
 import {h, Component} from 'preact';
-import Toolbar from 'preact-material-components/Toolbar';
-import 'preact-material-components/Toolbar/style.css';
+import TopAppBar from 'preact-material-components/TopAppBar';
+import 'preact-material-components/TopAppBar/style.css';
 
 export default class ToolbarPage extends Component {
   render(){
