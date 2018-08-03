@@ -1,1 +1,1 @@
-<LinearProgress progress={0.8} accent={true} />
+<LinearProgress progress={0.8} secondary />
