@@ -2,7 +2,7 @@ import {MDCChipSet} from '@material/chips';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import Icon from '../Icon/index';
+import Icon from '../Icon';
 
 export interface IChipProps {
   children?: Array<ChipText | ChipIcon | ChipCheckmark>;

@@ -7,20 +7,19 @@ export interface ILinearProgressProps extends JSX.HTMLAttributes {
   indeterminate?: boolean;
   reversed?: boolean;
   progress?: number;
+  primary?: boolean;
+  secondary?: boolean;
 }
 
 export interface ILinearProgressState {}
 
-/**
- * @prop indeterminate = false
- * @prop reversed = false
- */
 export class LinearProgress extends MaterialComponent<
   ILinearProgressProps,
   ILinearProgressState
 > {
   protected componentName = 'linear-progress';
   protected mdcProps = ['indeterminate', 'reversed'];
+  protected themeProps = ['primary', 'secondary'];
   protected MDComponent?: MDCLinearProgress;
 
   public componentDidMount() {
@@ -44,6 +43,7 @@ export class LinearProgress extends MaterialComponent<
 
   @autobind
   protected materialDom(props) {
+    // TODO: Fix theme props
     return (
       <div role="progressbar" {...props} ref={this.setControlRef}>
         <div className="mdc-linear-progress__buffering-dots" />

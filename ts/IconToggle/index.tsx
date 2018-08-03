@@ -17,15 +17,12 @@ export interface IIconToggleProps {
 
 export interface IIconToggleState {}
 
-/**
- * @prop disabled = false
- */
 export class IconToggle extends MaterialComponent<
   IIconToggleProps,
   IIconToggleState
 > {
   protected componentName = 'icon-toggle';
-  protected mdcProps = [];
+  protected mdcProps = ['disabled'];
   protected MDComponent?: MDCIconToggle;
 
   public componentDidMount() {

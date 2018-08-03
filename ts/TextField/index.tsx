@@ -2,7 +2,7 @@ import {MDCTextField} from '@material/textfield';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import Icon from '../Icon/index';
+import Icon from '../Icon';
 
 export interface IHelperTextProps extends JSX.HTMLAttributes {
   persistent?: boolean;

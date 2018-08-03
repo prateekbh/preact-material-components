@@ -1,8 +1,8 @@
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import Button from '../Button/index';
-import Icon from '../Icon/index';
+import Button from '../Button';
+import Icon from '../Icon';
 
 interface IActionsProps {
   'full-bleed'?: boolean;

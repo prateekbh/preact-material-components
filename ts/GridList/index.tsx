@@ -1,7 +1,7 @@
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import Icon from '../Icon/index';
+import Icon from '../Icon';
 
 const notEmptyString = val => val !== '';
 

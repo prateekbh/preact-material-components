@@ -2,7 +2,7 @@ import {MDCDialog} from '@material/dialog/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import Button from '../Button/index';
+import Button from '../Button';
 
 export interface IDialogHeaderProps {}
 
