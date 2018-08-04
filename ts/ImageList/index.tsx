@@ -103,8 +103,8 @@ export class ImageListLabel extends MaterialComponent<
 }
 
 export interface IImageListProps {
-  masonry?: string;
-  'with-text-protection'?: string;
+  masonry?: boolean;
+  'with-text-protection'?: boolean;
 }
 
 export interface IImageListState {}

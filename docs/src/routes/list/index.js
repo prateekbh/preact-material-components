@@ -29,6 +29,10 @@ export default class ListPage extends Component {
           {
             name: 'two-line',
             description: 'Makes container for two line list item.'
+          },
+          {
+            name: 'avatar-list',
+            description: 'Makes the list capable of containing an avatar.'
           }
         ]
       },

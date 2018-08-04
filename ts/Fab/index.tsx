@@ -9,6 +9,7 @@ export class FabIcon extends Icon {
 }
 
 export interface IFabProps {
+  ripple?: boolean;
   mini?: boolean;
   exited?: boolean;
   primary?: boolean;

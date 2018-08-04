@@ -47,6 +47,7 @@ export interface ITextFieldInputProps {
   textarea?: boolean;
   dense?: boolean;
   box?: boolean;
+  disabled?: boolean;
   outlined?: boolean;
   cssLabel?: string;
   leadingIcon?: string;

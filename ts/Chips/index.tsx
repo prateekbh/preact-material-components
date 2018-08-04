@@ -98,7 +98,7 @@ export interface IChipSetProps {
   children?: Chip[];
   choice?: boolean;
   filter?: boolean;
-  input?: boolean; // TODO: Add to docs / remove from here
+  input?: boolean;
 }
 
 export interface IChipSetState {}

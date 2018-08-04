@@ -26,7 +26,6 @@ export class CardActions extends MaterialComponent<
 export interface ICardMediaProps extends JSX.HTMLAttributes {
   square?: boolean;
   sixteenByNine?: boolean;
-  '16-9'?: boolean;
 }
 
 export interface ICardMediaState {}

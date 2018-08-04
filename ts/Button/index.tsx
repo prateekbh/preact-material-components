@@ -9,6 +9,7 @@ export class ButtonIcon extends Icon {
 }
 
 export interface IButtonProps {
+  ripple?: boolean;
   dense?: boolean;
   raised?: boolean;
   disabled?: boolean;
@@ -20,14 +21,6 @@ export interface IButtonProps {
 
 export interface IButtonState {}
 
-/**
- *  @prop dense = false
- *  @prop raised = false
- *  @prop compact = false
- *  @prop disabled = false
- *  @prop unelevated = false
- *  @prop stroked = false
- */
 export class Button<
   PropsType = JSX.HTMLAttributes,
   StateType = {}

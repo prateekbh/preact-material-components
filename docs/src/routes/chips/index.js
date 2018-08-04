@@ -30,6 +30,10 @@ export default class ButtonPage extends Component {
           {
             name: 'filter',
             description: 'Makes chips multi-selectable'
+          },
+          {
+            name: 'input',
+            description: 'Build input chips'
           }
         ]
       },
