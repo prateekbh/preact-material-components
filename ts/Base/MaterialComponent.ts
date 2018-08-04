@@ -95,7 +95,7 @@ export abstract class MaterialComponent<
 
   // Shared setter for the root element ref
   @autobind
-  protected setControlRef(control: Element | undefined) {
+  protected setControlRef(control?: Element) {
     this.control = control;
   }
 

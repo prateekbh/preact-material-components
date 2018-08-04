@@ -5,8 +5,10 @@ import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
 
 export interface IIconButtonProps {
-  'data-toggle-on'?: string;
-  'data-toggle-off'?: string;
+  'data-toggle-on-content'?: boolean;
+  'data-toggle-off-content'?: boolean;
+  'data-toggle-on-label'?: boolean;
+  'data-toggle-off-label'?: boolean;
 }
 
 export interface IIconButtonState {}
