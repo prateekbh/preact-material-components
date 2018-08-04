@@ -39,7 +39,7 @@ export class IconButton extends MaterialComponent<
   }
 
   @autobind
-  protected onChange(e: any) {} // TODO: Implement this method
+  protected onChange(e: Event) {} // TODO: Implement this method
 
   @autobind
   protected materialDom(props) {
