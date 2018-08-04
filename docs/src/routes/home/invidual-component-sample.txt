@@ -1,1 +1,1 @@
-import {Button, Fab, Snackbar} from 'preact-material-component';
+import {Button, Fab, Snackbar} from 'preact-material-components';
