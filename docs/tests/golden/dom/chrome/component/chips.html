@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chips</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+    <meta name="keywords" content="preact, material components, preact components" />
+    <meta name="description" content="preact-material-components is a thin opinionless wrapper around material-components-web. Use these components to add material components to your web app, without worrying about the extra code of the the components which you are not using."
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="[dynamic generated].css" rel="stylesheet" />
+    <script type="text/javascript" charset="utf-8" async="" src="[dynamic generated].js"></script>
+  </head>
+  <body>
+    <div class="home mdc-typography">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <div class="hero collapsed">
+        <header class="mdc-theme--dark mdc-toolbar mdc-toolbar--flexible-space-maximized">
+          <div class="mdc-toolbar__row">
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+              <a class="mdc-toolbar__menu-icon material-icons" menu="true" href="#">menu</a><span class="mdc-toolbar__title">Chips</span></section>
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+              <div class="field-darkmode mdc-form-field">Dark Mode
+                <div class="switch-darkmode mdc-switch">
+                  <input type="checkbox" class="mdc-switch__native-control" />
+                  <div class="mdc-switch__background">
+                    <div class="mdc-switch__knob"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </header>
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid">
+          <g>
+            <title>background</title>
+            <rect fill="none" id="canvas_background" height="202" width="202" y="-1" x="-1" />
+          </g>
+          <g>
+            <title>Layer 1</title>
+            <path stroke="#673ab8" id="svg_19" fill="#673ab8" d="m100,6.87844l83.36915,46.56078l0,93.12156l-83.36915,46.56078l-83.36914,-46.56078l0,-93.12156l83.36914,-46.56078z" />
+            <g id="svg_34">
+              <g stroke="null" id="svg_5">
+                <circle stroke="null" id="svg_1" r="56.999668" cy="99.999997" cx="99.333339" class="st0" />
+                <path stroke="null" id="svg_2" d="m59.433574,60.100231l79.799535,0l0,79.799535l-79.799535,0l0,-79.799535z" class="st1" />
+                <path stroke="null" id="svg_3" d="m139.233109,60.100231l-39.899768,79.799535l-39.899768,-79.799535l79.799535,0z" class="st2" />
+                <path stroke="null" id="svg_4" d="m42.333671,43.000329l113.999336,0l0,113.999336l-113.999336,0l0,-113.999336z" class="st3" />
+              </g>
+              <ellipse ry="1.999985" rx="1.999985" id="svg_25" cy="93.333385" cx="99.333336" stroke-width="null" stroke="null" fill="#673ab8" />
+            </g>
+            <g stroke="null" id="svg_36">
+              <ellipse stroke="#673ab8" transform="matrix(0.17321515449627276,0.17321515449627273,-0.17321515449627273,0.17321515449627276,63.46362017579341,27.139604895916065) " ry="20.957719" rx="75.190925" id="svg_32" cy="89.457308" cx="296.539126" fill-opacity="null"
+                stroke-width="5" fill="none" />
+              <ellipse stroke="#673ab8" transform="matrix(0.17321515449627276,-0.17321515449627273,0.17321515449627273,0.17321515449627276,28.182048694186207,62.16614021567621) " ry="20.957719" rx="75.190925" id="svg_35" cy="297.275314" cx="113.492909"
+                fill-opacity="null" stroke-width="5" fill="none" />
+            </g>
+          </g>
+        </svg>
+        <div class="mdc-typography--display2 name">preact-material-components</div>
+      </div>
+      <aside class="mdc-drawer--temporary mdc-typography mdc-drawer" style="--mdc-temporary-drawer-opacity:0;">
+        <nav class="mdc-drawer__drawer">
+          <header class="mdc-theme--primary-bg mdc-drawer__header">
+            <div class="mdc-drawer__header-content">Components @ (v1.5.0)</div>
+          </header>
+          <nav class="mdc-drawer__content mdc-list">
+            <a role="option" href="/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">home</i></span>Home</a>
+            <a role="option" href="/component/button/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Button</a>
+            <a role="option" href="/component/card/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Card</a>
+            <a role="option" href="/component/chips/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Chips</a>
+            <a role="option" href="/component/checkbox/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Checkbox</a>
+            <a role="option" href="/component/dialog/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Dialog</a>
+            <a role="option" href="/component/drawer/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Drawer</a>
+            <a role="option" href="/component/elevation/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Elevation</a>
+            <a role="option" href="/component/fab/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Fab</a>
+            <a role="option" href="/component/form-field/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>FormField</a>
+            <a role="option" href="/component/grid-list/" class="mdc-list-item" data-mdc-tabindex-handled="true"
+              tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>GridList</a>
+            <a role="option" href="/component/icon/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Icon</a>
+            <a role="option" href="/component/icon-button/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>IconButton</a>
+            <a role="option" href="/component/icon-toggle/" class="mdc-list-item" data-mdc-tabindex-handled="true"
+              tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>IconToggle</a>
+            <a role="option" href="/component/image-list/" class="mdc-list-item" data-mdc-tabindex-handled="true"
+              tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>ImageList</a>
+            <a role="option" href="/component/layout-grid/" class="mdc-list-item" data-mdc-tabindex-handled="true"
+              tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>LayoutGrid</a>
+            <a role="option" href="/component/linear-progress/" class="mdc-list-item" data-mdc-tabindex-handled="true"
+              tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>LinearProgress</a>
+            <a role="option" href="/component/list/" class="mdc-list-item" data-mdc-tabindex-handled="true"
+              tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>List</a>
+            <a role="option" href="/component/menu/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Menu</a>
+            <a role="option" href="/component/radio/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Radio</a>
+            <a role="option" href="/component/select/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Select</a>
+            <a role="option" href="/component/slider/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Slider</a>
+            <a role="option" href="/component/snackbar/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Snackbar</a>
+            <a role="option" href="/component/switch/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Switch</a>
+            <a role="option" href="/component/tabs/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Tabs</a>
+            <a role="option" href="/component/textfield/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>TextField</a>
+            <a role="option" href="/component/theme/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Theme</a>
+            <a role="option" href="/component/toolbar/" class="mdc-list-item" data-mdc-tabindex-handled="true" tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Toolbar</a>
+            <a role="option" href="/component/top-app-bar/" class="mdc-list-item" data-mdc-tabindex-handled="true"
+              tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>TopAppBar</a>
+            <a role="option" href="/component/typography/" class="mdc-list-item" data-mdc-tabindex-handled="true"
+              tabindex="-1"><span role="presentation" class="mdc-list-item__graphic"><i aria-hidden="true" class="mdc-icon material-icons">code</i></span>Typography</a>
+          </nav>
+        </nav>
+      </aside>
+      <div class="content mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            <div class="page-chips">
+              <div>
+                <div class="mdc-typography--display1">Components and their props</div>
+                <ul>
+                  <li>
+                    <div class="mdc-typography--headline">Chips</div>
+                    <ul>
+                      <li>
+                        <div>
+                          <div><span class="mdc-typography--title">choice </span><span class="mdc-typography--body2">true/false</span></div>
+                          <div class="mdc-typography--caption">Makes chips selectable</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <div><span class="mdc-typography--title">filter </span><span class="mdc-typography--body2">true/false</span></div>
+                          <div class="mdc-typography--caption">Makes chips multi-selectable</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mdc-typography--headline">Chips.Chip</div>
+                    <ul>
+                      <li>
+                        <div class="mdc-typography--caption">no specific props</div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mdc-typography--headline">Chips.Icon</div>
+                    <ul>
+                      <li>
+                        <div>
+                          <div><span class="mdc-typography--title">leading </span><span class="mdc-typography--body2">true/false</span></div>
+                          <div class="mdc-typography--caption">Optional. Indicates that it's a leading icon</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <div><span class="mdc-typography--title">trailing </span><span class="mdc-typography--body2">true/false</span></div>
+                          <div class="mdc-typography--caption">Optional. Indicates that it's a trailing icon</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="mdc-typography--headline">Chips.Text</div>
+                    <ul>
+                      <li>
+                        <div class="mdc-typography--caption">no specific props</div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="mdc-typography--display1">Sample code </div><pre class="highlight highlight-js"><code class="hljs lang-js"><span class="hljs-keyword">import</span> {h, Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>;
+<span class="hljs-keyword">import</span> Chips <span class="hljs-keyword">from</span> <span class="hljs-string">'preact-material-components/Chips'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'preact-material-components/Chips/style.css'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'preact-material-components/Theme/style.css'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChipsPage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render(){
+    <span class="hljs-keyword">return</span> (
+      &lt;div&gt;
+        &lt;Chips&gt;
+          &lt;Chips.Chip&gt;
+            &lt;Chips.Text&gt;Chip One&lt;/Chips.Text&gt;
+          &lt;/Chips.Chip&gt;
+          &lt;Chips.Chip&gt;
+            &lt;Chips.Text&gt;Chip Two&lt;/Chips.Text&gt;
+          &lt;/Chips.Chip&gt;
+          &lt;Chips.Chip&gt;
+            &lt;Chips.Text&gt;Chip Three&lt;/Chips.Text&gt;
+          &lt;/Chips.Chip&gt;
+          &lt;Chips.Chip&gt;
+            &lt;Chips.Text&gt;Chip Four&lt;/Chips.Text&gt;
+          &lt;/Chips.Chip&gt;
+        &lt;/Chips&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+              <div class="mdc-typography--display1">Original documentation</div>
+              <div class="mdc-typography--body">This component encapsulates <span class="strong">mdc-chips</span>, you can refer to its documentation
+                <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips"> here</a>.</div>
+              <div class="mdc-typography--display1">Demo</div>
+              <div>
+                <div class="mdc-chip-set">
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Chip One</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Chip Two</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Chip Three</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Chip Four</div>
+                  </div>
+                </div><pre class="highlight highlight-html"><code class="hljs lang-html">import {h, Component} from 'preact';
+import Chips from 'preact-material-components/Chips';
+import 'preact-material-components/Chips/style.css';
+import 'preact-material-components/Theme/style.css';
+export default class ChipsPage extends Component {
+  render(){
+    return (
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Chips</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Chip One<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Chip Two<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Chip Three<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Chip Four<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Chips</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    );
+  }
+}</code></pre></div>
+              <div class="mdc-typography--display1">Input Chips</div>
+              <div>
+                <div class="mdc-chip-set mdc-chip-set--input">
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <i class="material-icons mdc-chip__icon mdc-chip__icon--leading mdc-icon">face</i>
+                    <div class="mdc-chip__text">Jane Smith</div>
+                    <i tabindex="0" role="button" title="More options" class="material-icons mdc-chip__icon mdc-chip__icon--trailing mdc-icon">more_vert</i>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <i class="material-icons mdc-chip__icon mdc-chip__icon--leading mdc-icon">face</i>
+                    <div class="mdc-chip__text">John Doe</div>
+                    <i tabindex="0" role="button" title="More options" class="material-icons mdc-chip__icon mdc-chip__icon--trailing mdc-icon">more_vert</i>
+                  </div>
+                </div><pre class="highlight highlight-html"><code class="hljs lang-html">import {h, Component} from 'preact';
+import Chips from 'preact-material-components/Chips';
+import 'preact-material-components/Chips/style.css';
+export default class ChipsPage extends Component {
+  render(){
+    return (
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Chips</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Icon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span> <span class="hljs-attr">leading</span>&gt;</span>face<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Icon</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Jane Smith<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Icon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span> <span class="hljs-attr">trailing</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"More options"</span>&gt;</span>more_vert<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Icon</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Icon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span> <span class="hljs-attr">leading</span>&gt;</span>face<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Icon</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>John Doe<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Icon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span> <span class="hljs-attr">trailing</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"More options"</span>&gt;</span>more_vert<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Icon</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Chips</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    )
+  }
+}</code></pre></div>
+              <div class="mdc-typography--display1">Choice Chips</div>
+              <section>
+                <div class="mdc-chip-set mdc-chip-set--choice">
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Extra Small</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Small</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Medium</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Large</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__text">Extra Large</div>
+                  </div>
+                </div><pre class="highlight highlight-html"><code class="hljs lang-html">import {h, Component} from 'preact';
+import Chips from 'preact-material-components/Chips';
+import 'preact-material-components/Chips/style.css';
+export default class ChipsPage extends Component {
+  render(){
+    return (
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Chips</span> <span class="hljs-attr">choice</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Checkmark</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Tops<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Checkmark</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Bottoms<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Checkmark</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Shoes<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Checkmark</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Accessories<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Chips</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    )
+  }
+}</code></pre></section>
+              <div class="mdc-typography--display1">Filter Chips</div>
+              <section>
+                <div class="mdc-chip-set mdc-chip-set--filter">
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__checkmark">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                        <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                      </svg>
+                    </div>
+                    <div class="mdc-chip__text">Tops</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__checkmark">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                        <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                      </svg>
+                    </div>
+                    <div class="mdc-chip__text">Bottoms</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__checkmark">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                        <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                      </svg>
+                    </div>
+                    <div class="mdc-chip__text">Shoes</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__checkmark">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                        <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                      </svg>
+                    </div>
+                    <i class="mdc-chip__icon mdc-chip__icon--leading mdc-icon material-icons">favorite</i>
+                    <div class="mdc-chip__text">Home</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <div class="mdc-chip__checkmark">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                        <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                      </svg>
+                    </div>
+                    <div class="mdc-chip__text">Accessories</div>
+                  </div>
+                </div><pre class="highlight highlight-html"><code class="hljs lang-html">import {h, Component} from 'preact';
+import Chips from 'preact-material-components/Chips';
+import 'preact-material-components/Chips/style.css';
+export default class ChipsPage extends Component {
+  render(){
+    return (
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Chips</span> <span class="hljs-attr">filter</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Checkmark</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Tops<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Checkmark</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Bottoms<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Checkmark</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Shoes<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Checkmark</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Accessories<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Chips</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    )
+  }
+}</code></pre></section>
+              <div class="mdc-typography--display1">Action Chips</div>
+              <div>
+                <div class="mdc-chip-set">
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <i class="material-icons mdc-chip__icon mdc-chip__icon--leading mdc-icon">wb_sunny</i>
+                    <div class="mdc-chip__text">Turn on lights</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <i class="material-icons mdc-chip__icon mdc-chip__icon--leading mdc-icon">bookmark</i>
+                    <div class="mdc-chip__text">Bookmark</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <i class="material-icons mdc-chip__icon mdc-chip__icon--leading mdc-icon">alarm</i>
+                    <div class="mdc-chip__text">Set alarm</div>
+                  </div>
+                  <div class="mdc-chip mdc-ripple-upgraded">
+                    <i class="material-icons mdc-chip__icon mdc-chip__icon--leading mdc-icon">directions</i>
+                    <div class="mdc-chip__text">Get directions</div>
+                  </div>
+                </div><pre class="highlight highlight-html"><code class="hljs lang-html">import {h, Component} from 'preact';
+import Chips from 'preact-material-components/Chips';
+import 'preact-material-components/Chips/style.css';
+export default class ChipsPage extends Component {
+  render(){
+    return (
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Chips</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Icon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span> <span class="hljs-attr">leading</span>&gt;</span>wb_sunny<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Icon</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Turn on lights<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Icon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span> <span class="hljs-attr">leading</span>&gt;</span>bookmark<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Icon</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Bookmark<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Icon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span> <span class="hljs-attr">leading</span>&gt;</span>alarm<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Icon</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Set alarm<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Chip</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Icon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"material-icons"</span> <span class="hljs-attr">leading</span>&gt;</span>directions<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Icon</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Chips.Text</span>&gt;</span>Get directions<span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Chips.Chip</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Chips</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    )
+  }
+}</code></pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script defer="defer" src="[dynamic generated].js"></script>
+    <script>
+      window.fetch || document.write('&lt;script src="/polyfills.c38d7.js"&gt;&lt;\/script&gt;')
+    </script>
+  </body>
+</html>

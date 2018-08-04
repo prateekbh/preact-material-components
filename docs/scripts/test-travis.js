@@ -23,7 +23,17 @@ runTests.on('close', code => {
     process.exit(-1);
   }
 
-  const archivePath = __dirname + '/failed-pictures.zip';
+  shell.cd('tests/generated');
+  let type, glob;
+  if (shell.ls('dom/**/*.html').length > 0) {
+    type = 'DOMs';
+    glob = 'dom/**/*.html';
+  } else {
+    type = 'pictures';
+    glob = '**/*.png';
+  }
+
+  const archivePath = `${__dirname}/failed-${type.toLowerCase()}.zip`;
   const output = fs.createWriteStream(archivePath);
   const archive = archiver('zip', {
     zlib: {level: 9}
@@ -40,20 +50,20 @@ runTests.on('close', code => {
           file: {
             value: fs.createReadStream(archivePath),
             options: {
-              filename: 'failed-pictures.zip',
+              filename: `failed-${type.toLowerCase()}.zip`,
               contentType: 'application/zip'
             }
           },
-          comment: `Failed pictures (${
-            shell.ls('**/*.png').length
-          }): [failed-pictures.zip]`
+          comment: `Failed ${type} (${
+            shell.ls(glob).length
+          }): [failed-${type.toLowerCase()}.zip]`
         }
       },
       (err, httpResponse, body) => {
         console.error(
           err
-            ? `Couldn't upload pictures: ${err}`
-            : 'Pictures uploaded successfully'
+            ? `Couldn't upload ${type}: ${err}`
+            : `${type} uploaded successfully`
         );
         process.exit(-1);
       }
@@ -61,8 +71,7 @@ runTests.on('close', code => {
   });
 
   console.log('Creating archive');
-  shell.cd('tests/generated');
   archive.pipe(output);
-  archive.glob('**/*.png');
+  archive.glob(glob);
   archive.finalize();
 });
