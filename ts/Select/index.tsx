@@ -4,7 +4,18 @@ import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import {ListItem} from '../List';
 
-export class SelectOption extends ListItem {
+export interface ISelectOptionProps {
+  disabled?: boolean;
+  selected?: boolean;
+}
+
+export interface ISelectOptionState {}
+
+export class SelectOption extends ListItem<
+  ISelectOptionProps,
+  ISelectOptionState
+> {
+  protected mdcProps = super.mdcProps.concat(['disabled']);
   @autobind
   protected materialDom(props) {
     return <option {...props}>{this.props.children}</option>;
@@ -17,7 +28,8 @@ export interface ISelectProps {
   outlined?: boolean;
   hintText?: string;
   selectedIndex?: number;
-  onChange?: (e: {selectedIndex: number}) => void;
+
+  onChange?: (e: Event & {selectedIndex: number}) => void;
 }
 
 export interface ISelectState {}

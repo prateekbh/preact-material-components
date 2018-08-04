@@ -10,8 +10,8 @@ interface IconToggleData {
 }
 
 export interface IIconToggleProps {
-  'data-toggle-on'?: IconToggleData;
-  'data-toggle-off'?: IconToggleData;
+  'data-toggle-on'?: IconToggleData; // TODO: wrong docs?
+  'data-toggle-off'?: IconToggleData; // TODO: wrong docs?
   disabled?: boolean;
 }
 

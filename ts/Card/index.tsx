@@ -4,11 +4,9 @@ import MaterialComponent from '../Base/MaterialComponent';
 import Button from '../Button';
 import Icon from '../Icon';
 
-interface IActionsProps {
+interface ICardActionsProps {
   'full-bleed'?: boolean;
 }
-
-interface ICardActionsProps extends IActionsProps {}
 
 interface ICardActionsState {}
 
@@ -26,7 +24,9 @@ export class CardActions extends MaterialComponent<
 }
 
 export interface ICardMediaProps extends JSX.HTMLAttributes {
-  x?: 'square' | 'sixteenByNine';
+  square?: boolean;
+  sixteenByNine?: boolean;
+  '16-9'?: boolean;
 }
 
 export interface ICardMediaState {}
@@ -96,7 +96,7 @@ export class CardActionIcon extends Icon {
   }
 }
 
-export interface ICardMediaContentProps extends IActionsProps {}
+export interface ICardMediaContentProps {}
 
 export interface ICardMediaContentState {}
 

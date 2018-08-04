@@ -6,9 +6,6 @@ export interface IIconProps {}
 
 export interface IIconState {}
 
-/**
- * @prop disabled = false
- */
 export class Icon<PropsType = {}, StateType = {}> extends MaterialComponent<
   IIconProps & PropsType,
   IIconState & StateType

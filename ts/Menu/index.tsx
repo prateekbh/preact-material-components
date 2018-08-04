@@ -2,7 +2,7 @@ import {MDCMenu} from '@material/menu';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import List, {IListItemProps, IListItemState, ListItem} from '../List';
+import List, {ListItem} from '../List';
 
 export interface IMenuAnchorProps {}
 
@@ -21,18 +21,15 @@ export class MenuAnchor extends MaterialComponent<
   }
 }
 
-export interface IMenuItemProps extends IListItemProps {}
-
-export interface IMenuItemState extends IListItemState {}
-
 export class MenuItem extends ListItem {}
 
 export interface IMenuProps {
   open?: boolean;
-  'open-from-top-left'?: boolean;
-  'open-from-top-right'?: boolean;
-  'open-from-bottom-left'?: boolean;
-  'open-from-bottom-right'?: boolean;
+  'open-from-top-left'?: boolean; // TODO: Add to docs / remove from here
+  'open-from-top-right'?: boolean; // TODO: Add to docs / remove from here
+  'open-from-bottom-left'?: boolean; // TODO: Add to docs / remove from here
+  'open-from-bottom-right'?: boolean; // TODO: Add to docs / remove from here
+
   onSelect?: (e: Event) => void;
   onCancel?: (e: Event) => void;
   onMenuClosed?: (e: Event) => void;
@@ -40,9 +37,6 @@ export interface IMenuProps {
 
 export interface IMenuState {}
 
-/**
- * @prop open = false
- */
 export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   public static readonly defaultProps = {
     open: false
@@ -110,7 +104,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   @autobind
   protected materialDom(props) {
     return (
-      <div tabindex="-1" {...props} ref={this.setControlRef}>
+      <div tabIndex="-1" {...props} ref={this.setControlRef}>
         <List className="mdc-menu__items" role="menu" aria-hidden="true">
           {props.children}
         </List>

@@ -38,14 +38,6 @@ export interface ILayoutGridCellProps {
 
 export interface ILayoutGridCellState {}
 
-/**
- * @prop cols = 0
- * @prop desktopCols = 0
- * @prop tabletCols = 0
- * @prop phoneCols = 0
- * @prop order = 0
- * @prop align = ''
- */
 export class LayoutGridCell extends MaterialComponent<
   ILayoutGridCellProps,
   ILayoutGridCellState

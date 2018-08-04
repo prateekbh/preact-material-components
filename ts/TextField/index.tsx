@@ -4,17 +4,13 @@ import {Component, h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
 
-export interface IHelperTextProps extends JSX.HTMLAttributes {
+export interface IHelperTextProps {
   persistent?: boolean;
   'validation-msg'?: boolean;
 }
 
 export interface IHelperTextState {}
 
-/**
- * @prop persistent = false
- * @prop validation-msg = false
- */
 export class HelperText extends MaterialComponent<
   IHelperTextProps,
   IHelperTextState
@@ -56,25 +52,13 @@ export interface ITextFieldInputProps {
   leadingIcon?: string;
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
-  onInit: (c: MDCTextField) => void;
+  onInit: (c: MDCTextField) => any | void;
 }
 
 export interface ITextFieldInputState {
   showFloatingLabel: boolean;
 }
 
-/**
- * @prop fullwidth = false
- * @prop textarea = false
- * @prop dense = false
- * @prop disabled = false
- * @prop outlined = false
- * @prop box = false
- * @prop type = 'text'
- * @prop outerStyle = {}
- * @prop value = ''
- * @prop label = ''
- */
 export class TextFieldInput extends MaterialComponent<
   ITextFieldInputProps,
   ITextFieldInputState
@@ -190,18 +174,45 @@ export class TextFieldInput extends MaterialComponent<
   }
 }
 
-export interface ITextFieldProps extends JSX.HTMLAttributes {
+type input_type =
+  | 'button'
+  | 'checkbox'
+  | 'color'
+  | 'date'
+  | 'datetime'
+  | 'datetime-local'
+  | 'email'
+  | 'file'
+  | 'hidden'
+  | 'image'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'radio'
+  | 'range'
+  | 'reset'
+  | 'search'
+  | 'submit'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week';
+
+export interface ITextFieldProps {
   fullwidth?: boolean;
   textarea?: boolean;
+  type?: input_type;
   dense?: boolean;
   box?: boolean;
+  disabled?: boolean;
   outlined?: boolean;
   helperText?: string;
   helperTextPersistent?: boolean;
   helperTextValidationMsg?: boolean;
   cssLabel?: string;
-  leadingIcon?: string;
-  trailingIcon?: string;
+  leadingIcon?: string; // TODO: Add to docs
+  trailingIcon?: string; // TODO: Add to docs
   outerStyle?: {[key: string]: string};
 }
 
@@ -209,21 +220,6 @@ export interface ITextFieldState {
   showFloatingLabel: boolean;
 }
 
-/**
- * @prop fullwidth = false
- * @prop textarea = false
- * @prop dense = false
- * @prop disabled = false
- * @prop outlined = false
- * @prop box = false
- * @prop type = 'text'
- * @prop outerStyle = {}
- * @prop value = ''
- * @prop label = ''
- * @prop helperText = ''
- * @prop helperTextPersistent = false
- * @prop helperTextValidationMsg = false
- */
 export class TextField extends Component<ITextFieldProps, ITextFieldState> {
   public static readonly defaultProps = {
     outerStyle: {}

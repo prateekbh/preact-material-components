@@ -3,8 +3,11 @@ import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
 
-const notEmptyString = val => val !== '';
+function notEmptyString(val: string) {
+  return val !== '';
+}
 
+// TODO: Lacks documentation
 export interface IGridListTilesProps {}
 
 export interface IGridListTilesState {}
@@ -22,6 +25,7 @@ export class GridListTiles extends MaterialComponent<
   }
 }
 
+// TODO: Lacks documentation
 export interface IGridListTileProps {}
 
 export interface IGridListTileState {}
@@ -39,6 +43,7 @@ export class GridListTile extends MaterialComponent<
   }
 }
 
+// TODO: Lacks documentation
 export interface IGridListPrimaryTileProps {}
 
 export interface IGridListPrimaryTileState {}
@@ -56,6 +61,7 @@ export class GridListPrimaryTile extends MaterialComponent<
   }
 }
 
+// TODO: Lacks documentation
 export interface IGridListPrimaryContentTileProps {
   src: string;
 }
@@ -76,6 +82,7 @@ export class GridListPrimaryContentTile extends MaterialComponent<
   }
 }
 
+// TODO: Lacks documentation
 export interface IGridListSecondaryTileProps {}
 
 export interface IGridListSecondaryTileState {}
@@ -93,6 +100,7 @@ export class GridListSecondaryTile extends MaterialComponent<
   }
 }
 
+// TODO: Lacks documentation
 export interface IGridListTitleTileProps {}
 
 export interface IGridListTitleTileState {}
@@ -110,6 +118,7 @@ export class GridListTitleTile extends MaterialComponent<
   }
 }
 
+// TODO: Lacks documentation
 export interface IGridListSupportTextTileProps {}
 
 export interface IGridListSupportTextTileState {}
@@ -141,13 +150,6 @@ export interface IGridListProps {
 
 export interface IGridListState {}
 
-/**
- * @prop tile-gutter-1 {boolean} - use 1px gutter (default is 4px)
- * @prop header-caption {boolean} - position <GridList.SecondaryTile> at top
- * @prop twoline-caption {boolean} - add spacing to <GridList.SecondaryTile> for <GridList.SupportTextTile>
- * @prop with-icon-align {"start"|"end"} - position <GridList.IconTile> at beginning or end of <GridList.SecondaryTile>
- * @prop tile-aspect {"1x1"|"16x9"|"2x3"|"3x2"|"4x3"|"3x4"} - aspect ratio for <GridList.PrimaryTile>
- */
 export class GridList extends MaterialComponent<
   IGridListProps,
   IGridListState

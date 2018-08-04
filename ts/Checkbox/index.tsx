@@ -13,7 +13,9 @@ const defaultProps = {
 
 export interface ICheckboxProps {
   indeterminate?: boolean;
+  disabled?: boolean;
   onChange?: JSX.GenericEventHandler;
+  checked?: boolean;
 }
 
 export interface ICheckboxState {}
@@ -47,13 +49,12 @@ export class Checkbox extends MaterialComponent<
 
   @autobind
   protected materialDom(allprops) {
-    const {className, ...props} = allprops;
     return (
-      <div className={'mdc-checkbox ' + className} ref={this.setControlRef}>
+      <div ref={this.setControlRef}>
         <input
           type="checkbox"
           className="mdc-checkbox__native-control"
-          {...props}
+          {...allprops}
         />
         <div className="mdc-checkbox__background">
           <svg

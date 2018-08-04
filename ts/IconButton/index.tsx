@@ -9,6 +9,7 @@ export interface IIconButtonProps {
   'data-toggle-off-content'?: boolean;
   'data-toggle-on-label'?: boolean;
   'data-toggle-off-label'?: boolean;
+  disabled?: boolean;
 }
 
 export interface IIconButtonState {}

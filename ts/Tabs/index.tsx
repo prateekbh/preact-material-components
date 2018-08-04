@@ -10,15 +10,15 @@ const defaultProps = {
   activeTabIndex: 0
 };
 
-export interface IScrollerProps extends JSX.HTMLAttributes {
+export interface ITabBarScrollerProps {
   activeTabIndex?: number;
 }
 
-export interface IScrollerState {}
+export interface ITabBarScrollerState {}
 
 export class TabBarScroller extends MaterialComponent<
-  IScrollerProps,
-  IScrollerState
+  ITabBarScrollerProps,
+  ITabBarScrollerState
 > {
   protected componentName = 'tab-bar-scroller';
   protected mdcProps = [];
@@ -74,20 +74,16 @@ export class TabBarScroller extends MaterialComponent<
   }
 }
 
-export interface IScrollerTabsProps extends JSX.HTMLAttributes {
+export interface ITabBarScrollerTabsProps {
   'icon-tab-bar'?: boolean;
   'icons-with-text'?: boolean;
 }
 
-export interface IScrollerTabsState {}
+export interface ITabBarScrollerTabsState {}
 
-/**
- * @prop icon-tab-bar = false
- * @prop icons-with-text = false
- */
 export class TabBarScrollerTabs extends MaterialComponent<
-  IScrollerTabsProps,
-  IScrollerTabsState
+  ITabBarScrollerTabsProps,
+  ITabBarScrollerTabsState
 > {
   protected componentName = 'tab-bar';
   protected mdcProps = ['icon-tab-bar', 'icons-with-text'];
@@ -107,15 +103,12 @@ export class TabBarScrollerTabs extends MaterialComponent<
   }
 }
 
-export interface ITabProps extends JSX.HTMLAttributes {
+export interface ITabProps {
   active?: boolean;
 }
 
 export interface ITabState {}
 
-/**
- * @prop active = false
- */
 export class Tab extends MaterialComponent<ITabProps, ITabState> {
   protected componentName = 'tab';
   protected mdcProps = ['active'];
@@ -151,10 +144,10 @@ export class TabIconLabel extends MaterialComponent<
   }
 }
 
-export interface ITabsProps extends JSX.HTMLAttributes {
+export interface ITabsProps {
   'icon-tab-bar'?: boolean;
   'icons-with-text'?: boolean;
-  activeTabIndex?: number;
+  activeTabIndex?: number; // TODO: Fix type in docs
 }
 
 export interface ITabsState {}
@@ -176,10 +169,6 @@ function setActiveTabIndex(
   }
 }
 
-/**
- * @prop icon-tab-bar = false
- * @prop icons-with-text = false
- */
 export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   public static readonly TabBarScroller = TabBarScroller;
   public static readonly TabBarScrollerTabs = TabBarScrollerTabs;

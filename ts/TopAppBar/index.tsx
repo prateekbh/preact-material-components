@@ -3,11 +3,14 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-export interface IRowProps {}
+export interface ITopAppBarRowProps {}
 
-export interface IRowState {}
+export interface ITopAppBarRowState {}
 
-export class TopAppBarRow extends MaterialComponent<IRowProps, IRowState> {
+export class TopAppBarRow extends MaterialComponent<
+  ITopAppBarRowProps,
+  ITopAppBarRowState
+> {
   protected componentName = 'top-app-bar__row';
   protected mdcProps = [];
 
@@ -17,20 +20,16 @@ export class TopAppBarRow extends MaterialComponent<IRowProps, IRowState> {
   }
 }
 
-export interface ISectionProps extends JSX.HTMLAttributes {
+export interface ITopAppBarSectionProps {
   'align-start'?: boolean;
   'align-end'?: boolean;
 }
 
-export interface ISectionState {}
+export interface ITopAppBarSectionState {}
 
-/**
- * @prop align-end = false
- * @prop align-start = false
- */
 export class TopAppBarSection extends MaterialComponent<
-  ISectionProps,
-  ISectionState
+  ITopAppBarSectionProps,
+  ITopAppBarSectionState
 > {
   protected componentName = 'top-app-bar__section';
   protected mdcProps = ['align-start', 'align-end'];
@@ -41,13 +40,16 @@ export class TopAppBarSection extends MaterialComponent<
   }
 }
 
-export interface IIconProps extends JSX.HTMLAttributes {
-  navigation?: boolean;
+export interface ITopAppBarIconProps {
+  navigation?: boolean; // TODO: Add to docs / remove from here
 }
 
-export interface IIconState {}
+export interface ITopAppBarIconState {}
 
-export class TopAppBarIcon extends MaterialComponent<IIconProps, IIconState> {
+export class TopAppBarIcon extends MaterialComponent<
+  ITopAppBarIconProps,
+  ITopAppBarIconState
+> {
   protected componentName = 'top-app-bar__icon';
   protected mdcProps = [];
 
@@ -64,13 +66,13 @@ export class TopAppBarIcon extends MaterialComponent<IIconProps, IIconState> {
   }
 }
 
-export interface ITitleProps {}
+export interface ITopAppBarTitleProps {}
 
-export interface ITitleState {}
+export interface ITopAppBarTitleState {}
 
 export class TopAppBarTitle extends MaterialComponent<
-  ITitleProps,
-  ITitleState
+  ITopAppBarTitleProps,
+  ITopAppBarTitleState
 > {
   protected componentName = 'top-app-bar__title';
   protected mdcProps = [];
@@ -81,12 +83,12 @@ export class TopAppBarTitle extends MaterialComponent<
   }
 }
 
-export interface ITopAppBarProps extends JSX.HTMLAttributes {
-  short?: boolean;
-  'short-collapsed'?: boolean;
-  fixed?: boolean;
-  prominent?: boolean;
-  onNav: JSX.GenericEventHandler;
+export interface ITopAppBarProps {
+  short?: boolean; // TODO: Add to docs / remove from here
+  'short-collapsed'?: boolean; // TODO: Add to docs / remove from here
+  fixed?: boolean; // TODO: Add to docs / remove from here
+  prominent?: boolean; // TODO: Add to docs / remove from here
+  onNav: JSX.GenericEventHandler; // TODO: Add to docs / remove from here
 }
 
 export interface ITopAppBarState {}

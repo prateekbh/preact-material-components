@@ -41,7 +41,7 @@ export class ImageListItem extends MaterialComponent<
 }
 
 export interface IImageListImageProps {
-  src: string;
+  src: string; // TODO: add to docs
 }
 
 export interface IImageListImageState {}
@@ -102,7 +102,7 @@ export class ImageListLabel extends MaterialComponent<
   }
 }
 
-export interface IImageListProps extends JSX.HTMLAttributes {
+export interface IImageListProps {
   masonry?: string;
   'with-text-protection'?: string;
 }

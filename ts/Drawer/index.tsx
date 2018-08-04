@@ -12,6 +12,10 @@ export interface IDrawerProps {
 
 export interface IDrawerState {}
 
+export interface ITemporaryDrawerProps extends IDrawerProps {}
+
+export interface ITemporaryDrawerState extends IDrawerState {}
+
 /**
  * Default props for drawers
  */
@@ -20,8 +24,8 @@ const defaultProps = {
 };
 
 export class TemporaryDrawer extends MaterialComponent<
-  IDrawerProps,
-  IDrawerState
+  ITemporaryDrawerProps,
+  ITemporaryDrawerState
 > {
   protected componentName = 'drawer--temporary';
   protected mdcProps = [];
@@ -77,11 +81,11 @@ export class TemporaryDrawer extends MaterialComponent<
   }
 }
 
-export interface IPermanentDrawerProps {
+export interface IPermanentDrawerProps extends IDrawerProps {
   spacer?: boolean;
 }
 
-export interface IPermanentDrawerState {}
+export interface IPermanentDrawerState extends IDrawerState {}
 
 /**
  * @prop spacer = false
@@ -106,7 +110,9 @@ export class PermanentDrawer extends MaterialComponent<
   }
 }
 
-export interface IPersistentDrawerProps extends IDrawerProps {}
+export interface IPersistentDrawerProps extends IDrawerProps {
+  spacer?: boolean;
+}
 
 export interface IPersistentDrawerState extends IDrawerState {}
 
@@ -250,13 +256,13 @@ function toggleDrawer(oldprops, newprops, drawer) {
   }
 }
 
-export const Drawer = {
-  DrawerContent,
-  DrawerHeader,
-  DrawerItem,
-  PermanentDrawer,
-  PersistentDrawer,
-  TemporaryDrawer
-};
+export class Drawer {
+  public static readonly DrawerContent = DrawerContent;
+  public static readonly DrawerHeader = DrawerHeader;
+  public static readonly DrawerItem = DrawerItem;
+  public static readonly PermanentDrawer = PermanentDrawer;
+  public static readonly PersistentDrawer = PersistentDrawer;
+  public static readonly TemporaryDrawer = TemporaryDrawer;
+}
 
 export default Drawer;

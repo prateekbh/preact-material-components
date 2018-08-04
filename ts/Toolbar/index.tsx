@@ -3,11 +3,14 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-export interface IRowProps {}
+export interface IToolbarRowProps {}
 
-export interface IRowState {}
+export interface IToolbarRowState {}
 
-export class ToolbarRow extends MaterialComponent<IRowProps, IRowState> {
+export class ToolbarRow extends MaterialComponent<
+  IToolbarRowProps,
+  IToolbarRowState
+> {
   protected componentName = 'toolbar__row';
   protected mdcProps = [];
 
@@ -17,22 +20,17 @@ export class ToolbarRow extends MaterialComponent<IRowProps, IRowState> {
   }
 }
 
-export interface ISectionProps extends JSX.HTMLAttributes {
+export interface IToolbarSectionProps {
   'align-start'?: boolean;
   'align-end'?: boolean;
   'shrink-to-fit'?: boolean;
 }
 
-export interface ISectionState {}
+export interface IToolbarSectionState {}
 
-/**
- * @prop align-end = false
- * @prop align-start = false
- * @prop shrink-to-fit = false
- */
 export class ToolbarSection extends MaterialComponent<
-  ISectionProps,
-  ISectionState
+  IToolbarSectionProps,
+  IToolbarSectionState
 > {
   protected componentName = 'toolbar__section';
   protected mdcProps = ['align-start', 'align-end', 'shrink-to-fit'];
@@ -43,16 +41,16 @@ export class ToolbarSection extends MaterialComponent<
   }
 }
 
-export interface IIconProps extends JSX.HTMLAttributes {
+export interface IToolbarIconProps {
   menu?: boolean;
 }
 
-export interface IIconState {}
+export interface IToolbarIconState {}
 
-/**
- * @prop menu = false
- */
-export class ToolbarIcon extends MaterialComponent<IIconProps, IIconState> {
+export class ToolbarIcon extends MaterialComponent<
+  IToolbarIconProps,
+  IToolbarIconState
+> {
   protected componentName = 'toolbar__icon';
   protected mdcProps = [];
 
@@ -73,16 +71,16 @@ export class ToolbarIcon extends MaterialComponent<IIconProps, IIconState> {
   }
 }
 
-export interface ITitleProps extends JSX.HTMLAttributes {
-  title?: string;
+export interface IToolbarTitleProps {
+  title?: string; // TODO: Add to docs / remove from here
 }
 
-export interface ITitleState {}
+export interface IToolbarTitleState {}
 
-/**
- * @prop title = ''
- */
-export class ToolbarTitle extends MaterialComponent<ITitleProps, ITitleState> {
+export class ToolbarTitle extends MaterialComponent<
+  IToolbarTitleProps,
+  IToolbarTitleState
+> {
   protected componentName = 'toolbar__title';
   protected mdcProps = [];
 
@@ -92,7 +90,7 @@ export class ToolbarTitle extends MaterialComponent<ITitleProps, ITitleState> {
   }
 }
 
-export interface IToolbarProps extends JSX.HTMLAttributes {
+export interface IToolbarProps {
   fixed?: boolean;
   'fixed-lastrow-only'?: boolean;
   waterfall?: boolean;
@@ -102,13 +100,6 @@ export interface IToolbarProps extends JSX.HTMLAttributes {
 
 export interface IToolbarState {}
 
-/**
- * @prop fixed = false
- * @prop fixed-lastrow-only = false
- * @prop waterfall = false
- * @prop flexible = false
- * @prop flexible-default-behavior = false
- */
 export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
   public static readonly Section = ToolbarSection;
   public static readonly Icon = ToolbarIcon;

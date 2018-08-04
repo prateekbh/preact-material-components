@@ -18,15 +18,12 @@ function shallowDiffers(a, b) {
   return false;
 }
 
-export interface ISnackbarProps extends JSX.HTMLAttributes {
+export interface ISnackbarProps {
   dismissesOnAction?: boolean;
 }
 
 export interface ISnackbarState {}
 
-/**
- * dismissesOnAction = true
- */
 export class Snackbar extends MaterialComponent<
   ISnackbarProps,
   ISnackbarState

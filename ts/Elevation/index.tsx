@@ -2,7 +2,7 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-export interface IElevationProps extends JSX.HTMLAttributes {
+export interface IElevationProps {
   z?:
     | 0
     | 1
@@ -37,10 +37,6 @@ for (let elevationIndex = 0; elevationIndex < 25; elevationIndex++) {
   generatedProps.push('z' + elevationIndex);
 }
 
-/**
- * @prop mini = false
- * @prop plain = false
- */
 export class Elevation extends MaterialComponent<
   IElevationProps,
   IElevationState

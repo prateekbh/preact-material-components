@@ -8,7 +8,7 @@ export class FabIcon extends Icon {
   protected componentName = 'fab__icon';
 }
 
-export interface IFabProps extends JSX.HTMLAttributes {
+export interface IFabProps {
   mini?: boolean;
   exited?: boolean;
   primary?: boolean;
@@ -17,10 +17,6 @@ export interface IFabProps extends JSX.HTMLAttributes {
 
 export interface IFabState {}
 
-/**
- * @prop mini = false
- * @prop exited = false
- */
 export class Fab extends MaterialComponent<IFabProps, IFabState> {
   public static readonly Icon = FabIcon;
 

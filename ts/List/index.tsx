@@ -7,12 +7,15 @@ export interface IListItemProps {}
 
 export interface IListItemState {}
 
-export class ListItem extends MaterialComponent<
-  IListItemProps,
-  IListItemState
+export class ListItem<
+  PropTypes = {},
+  StateTypes = {}
+> extends MaterialComponent<
+  IListItemProps & PropTypes,
+  IListItemState & StateTypes
 > {
   protected componentName = 'list-item';
-  protected mdcProps = [];
+  protected mdcProps: string[] = [];
 
   @autobind
   protected materialDom(props) {
@@ -155,16 +158,11 @@ export class ListGroupHeader extends MaterialComponent<
 export interface IListProps {
   dense?: boolean;
   'two-line'?: boolean;
-  'avatar-list'?: boolean;
+  'avatar-list'?: boolean; // TODO: Add to docs / remove from here
 }
 
 export interface IListState {}
 
-/**
- * @prop dense = false
- * @prop two-line = false
- * @prop interactive = false
- */
 export class List extends MaterialComponent<IListProps, IListState> {
   public static readonly Item = ListItem;
   public static readonly LinkItem = ListLinkItem;

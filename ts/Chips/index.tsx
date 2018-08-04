@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 export interface IChipProps {
   children?: Array<ChipText | ChipIcon | ChipCheckmark>;
-  selected?: boolean;
+  selected?: boolean; // TODO: Add to docs / remove from here
 }
 
 export interface IChipState {}
@@ -98,7 +98,7 @@ export interface IChipSetProps {
   children?: Chip[];
   choice?: boolean;
   filter?: boolean;
-  input?: boolean;
+  input?: boolean; // TODO: Add to docs / remove from here
 }
 
 export interface IChipSetState {}

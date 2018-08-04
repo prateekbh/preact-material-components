@@ -4,20 +4,19 @@ import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ISliderProps {
+  disabled?: boolean;
   discrete?: boolean;
   value?: number;
   min?: number;
   max?: number;
   step?: number;
-  onInput?: (e: Event) => void;
-  onChange?: (e: Event) => void;
+
+  onInput?: JSX.GenericEventHandler;
+  onChange?: JSX.GenericEventHandler;
 }
 
 export interface ISliderState {}
 
-/**
- * @prop disabled = false
- */
 export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
   protected componentName = 'slider';
   protected mdcProps = ['discrete'];
@@ -85,12 +84,12 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
 
   @autobind
   protected materialDom(allprops) {
-    const {tabindex = 0, ...props} = allprops;
+    const {tabindex: tabIndex = 0, ...props} = allprops;
 
     this.setValue(allprops);
     return (
       <div
-        tabindex={tabindex}
+        tabIndex={tabIndex}
         role="slider"
         aria-label="Select Value"
         {...props}>

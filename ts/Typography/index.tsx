@@ -16,7 +16,7 @@ export interface ITypographyProps {
   overline?: boolean;
   subtitle1?: boolean;
   subtitle2?: boolean;
-  title?: boolean;
+  title?: boolean; // TODO: Add to docs / remove from here
 }
 
 export interface ITypographyState {}

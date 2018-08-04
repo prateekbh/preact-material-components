@@ -3,12 +3,10 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-export interface ILinearProgressProps extends JSX.HTMLAttributes {
+export interface ILinearProgressProps {
   indeterminate?: boolean;
   reversed?: boolean;
-  progress?: number;
-  primary?: boolean;
-  secondary?: boolean;
+  progress?: number; // TODO: fix type in docs
 }
 
 export interface ILinearProgressState {}

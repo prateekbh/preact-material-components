@@ -3,17 +3,16 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-export interface IRadioProps {}
+export interface IRadioProps {
+  checked?: boolean;
+  disabled?: boolean;
+}
 
 export interface IRadioState {}
 
-/**
- * @prop mini = false
- * @prop plain = false
- */
 export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
   protected componentName = 'radio';
-  protected mdcProps = [];
+  protected mdcProps = ['disabled'];
   protected MDComponent?: MDCRadio;
 
   public componentDidMount() {

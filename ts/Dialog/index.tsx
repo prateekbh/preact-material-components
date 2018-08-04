@@ -31,9 +31,6 @@ export interface IDialogBodyProps {
 
 export interface IDialogBodyState {}
 
-/**
- * @prop scrollable = false
- */
 export class DialogBody extends MaterialComponent<
   IDialogBodyProps,
   IDialogBodyState
@@ -71,10 +68,6 @@ export interface IDialogFooterButtonProps {
 
 export interface IDialogFooterButtonState {}
 
-/**
- * @prop cancel = false
- * @prop accept = false
- */
 export class DialogFooterButton extends Button<
   IDialogFooterButtonProps,
   IDialogFooterButtonState
@@ -93,8 +86,8 @@ export class DialogFooterButton extends Button<
 }
 
 export interface IDialogProps extends JSX.HTMLAttributes {
-  onAccept?: (e: Event) => void;
-  onCancel?: (e: Event) => void;
+  onAccept?: JSX.GenericEventHandler;
+  onCancel?: JSX.GenericEventHandler;
 }
 
 export interface IDialogState {}
