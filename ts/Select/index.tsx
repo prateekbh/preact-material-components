@@ -2,7 +2,6 @@ import {MDCSelect} from '@material/select/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import {ListItem} from '../List';
 
 export interface ISelectOptionProps {
   disabled?: boolean;
@@ -11,14 +10,16 @@ export interface ISelectOptionProps {
 
 export interface ISelectOptionState {}
 
-export class SelectOption extends ListItem<
+export class SelectOption extends MaterialComponent<
   ISelectOptionProps,
   ISelectOptionState
 > {
-  protected mdcProps = super.mdcProps.concat(['disabled']);
+  protected componentName = 'select-item';
+  protected mdcProps = [];
+
   @autobind
   protected materialDom(props) {
-    return <option {...props}>{this.props.children}</option>;
+    return <option {...props}>{props.children}</option>;
   }
 }
 
