@@ -16,9 +16,7 @@
     "tslint:fix": "tslint -p tsconfig.json --fix",
     "prepublishOnly": "npm run build && npm run test",
     "prettier:fix": "prettier --config ./prettier.config.js {,ts/**/*.tsx} --write",
-    "test": "npm run tslint && npm run build && npm run compile-sample",
-    "compile-sample": "tsc -p sample",
-    "sample": "npm run compile-sample && http-server ./sample"
+    "test": "npm run tslint && npm run build"
   },
   "repository": {
     "type": "git",
