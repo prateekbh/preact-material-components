@@ -200,7 +200,7 @@ type input_type =
   | 'url'
   | 'week';
 
-export interface ITextFieldProps {
+export interface ITextFieldProps extends JSX.HTMLAttributes {
   fullwidth?: boolean;
   textarea?: boolean;
   type?: input_type;
