@@ -11,31 +11,5 @@ module.exports = {
   externals: {
     preact: 'preact'
   },
-  module: {
-    rules: [
-      {
-        loader: 'babel-loader',
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules\/proptypes|scripts\/sw.js/,
-        options: {
-          babelrc: false,
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                targets: {
-                  browsers: ['last 2 versions', 'safari >= 7']
-                }
-              }
-            ]
-          ],
-          plugins: [
-            ['transform-react-jsx', {pragma: 'h'}],
-            '@babel/plugin-proposal-object-rest-spread'
-          ]
-        }
-      }
-    ]
-  },
   plugins: [new CssMigrationWebpackPlugin()]
 };
