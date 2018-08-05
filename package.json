@@ -1,6 +1,6 @@
 {
   "name": "preact-material-components",
-  "version": "1.5.1-alpha1",
+  "version": "1.5.1-alpha2",
   "description": "preact wrapper for \"Material Components for the web\"",
   "module": "index.js",
   "main": "dist",
@@ -112,6 +112,7 @@
     "@babel/plugin-transform-spread": "^7.0.0-beta.54",
     "@babel/plugin-transform-template-literals": "^7.0.0-beta.54",
     "@babel/preset-env": "^7.0.0-beta.54",
+    "awesome-typescript-loader": "^5.2.0",
     "babel-eslint": "^8.0.3",
     "babel-loader": "^8.0.0-beta.2",
     "babel-plugin-transform-react-jsx": "^6.24.1",

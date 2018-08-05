@@ -24,9 +24,11 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    this.MDComponent = new MDCSlider(this.base);
-    this.MDComponent.listen('MDCSlider:change', this.onChange);
-    this.MDComponent.listen('MDCSlider:input', this.onInput);
+    if (this.control) {
+      this.MDComponent = new MDCSlider(this.control);
+      this.MDComponent.listen('MDCSlider:change', this.onChange);
+      this.MDComponent.listen('MDCSlider:input', this.onInput);
+    }
     this.setValue(this.props.value); // set initial value programatically because of error if min is greater than initial max
   }
 
@@ -92,6 +94,7 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
         tabIndex={tabIndex}
         role="slider"
         aria-label="Select Value"
+        ref={this.setControlRef}
         {...props}>
         <div class="mdc-slider__track-container">
           <div class="mdc-slider__track" />

@@ -45,8 +45,10 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    this.MDComponent = new MDCSelect(this.base);
-    this.MDComponent.listen('MDCSelect:change', this.changed);
+    if (this.control) {
+      this.MDComponent = new MDCSelect(this.control);
+      this.MDComponent.listen('MDCSelect:change', this.changed);
+    }
     this.updateSelection();
   }
 
@@ -101,7 +103,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
     const {outlined, ...props} = allprops;
     // noinspection RequiredAttributes
     return (
-      <div {...props}>
+      <div ref={this.setControlRef} {...props}>
         <select class="mdc-select__native-control">
           {props.hintText && <option value="" disabled selected />}
           {props.children}
