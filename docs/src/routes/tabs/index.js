@@ -22,7 +22,7 @@ export default class TabsPage extends Component {
     super();
     this.propsTable = [
       {
-        component: 'Tabs',
+        component: 'Tabs - deprecated',
         props: [
           {
             name: 'icon-tab-bar',

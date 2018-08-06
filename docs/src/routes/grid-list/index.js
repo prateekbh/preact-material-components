@@ -17,7 +17,7 @@ export default class GridListPage extends Component {
     super();
     this.propsTable = [
       {
-        component: 'GridList',
+        component: 'GridList - deprecated',
         props: [
           {
             name: 'tile-gutter-1',

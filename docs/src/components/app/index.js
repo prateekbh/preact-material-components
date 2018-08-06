@@ -100,7 +100,7 @@ const menuItems = [
     component: FormFieldPage
   },
   {
-    text: 'GridList',
+    text: 'GridList - deprecated',
     link: '/component/grid-list/',
     component: GridListPage
   },
@@ -115,7 +115,7 @@ const menuItems = [
     component: IconButtonPage
   },
   {
-    text: 'IconToggle',
+    text: 'IconToggle - deprecated',
     link: '/component/icon-toggle/',
     component: IconTogglePage
   },
@@ -170,7 +170,7 @@ const menuItems = [
     component: SwitchPage
   },
   {
-    text: 'Tabs',
+    text: 'Tabs - deprecated',
     link: '/component/tabs/',
     component: TabsPage
   },
