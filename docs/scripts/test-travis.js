@@ -5,6 +5,7 @@ const shell = require('shelljs');
 const request = require('request');
 const path = require('path');
 const archiver = require('archiver');
+const chalk = require('chalk');
 
 const runTests = spawn('npm', ['test'], {shell: true});
 
@@ -21,6 +22,19 @@ runTests.on('close', code => {
   if (process.env.TRAVIS_PULL_REQUEST === 'false') {
     console.log("Not uploading pictures because it's not a pull request");
     process.exit(-1);
+  }
+
+  try {
+    fs.accessSync('tests/generated');
+    if (!fs.statSync('tests/generated').isDirectory()) {
+      // noinspection ExceptionCaughtLocallyJS
+      throw new ErrorEvent('');
+    }
+  } catch (e) {
+    console.error(
+      chalk.red("Can't upload failed Pictures! Did the compile fail?")
+    );
+    process.exit(-2);
   }
 
   const archivePath = __dirname + '/failed-pictures.zip';
@@ -59,7 +73,6 @@ runTests.on('close', code => {
       }
     );
   });
-
   console.log('Creating archive');
   shell.cd('tests/generated');
   archive.pipe(output);

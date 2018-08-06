@@ -1,0 +1,42 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "no-empty": false,
+    "eofline": false,
+    "indent": false,
+    "deprecation": true,
+    "prefer-const": [
+      true,
+      {
+        "destructuring": "all"
+      }
+    ],
+    "encoding": true,
+    "prefer-template": [true, "allow-single-concat"],
+    "quotemark": false,
+    "max-line-length": false,
+    "trailing-comma": false,
+    "no-console": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-trailing-underscore",
+      "allow-pascal-case"
+    ],
+    "no-empty-interface": false,
+    "max-classes-per-file": false,
+    "no-trailing-whitespace": false,
+    "jsx-no-multiline-js": false,
+    "jsx-boolean-value": [true, "never"],
+    "jsx-space-before-trailing-slash": true,
+    "jsx-wrap-multiline": false,
+    "jsx-curly-spacing": false,
+    "no-misused-new": false,
+    "prettier": true,
+    "jsx-no-lambda": false
+  },
+  "rulesDirectory": ["tslint-plugin-prettier"]
+}
