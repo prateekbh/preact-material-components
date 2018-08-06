@@ -48,3 +48,6 @@ copy-css.js
 tslint.json
 prettier.config.js
 CssMigrationWebpackPlugin.js
+.babelrc
+.prettierignore
+.eslintignore
