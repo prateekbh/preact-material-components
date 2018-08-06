@@ -45,5 +45,6 @@ webpack.config.js
 copy-css.js
 *.yml
 .eslintrc
-ts/sample
 tslint.json
+prettier.config.js
+CssMigrationWebpackPlugin.js

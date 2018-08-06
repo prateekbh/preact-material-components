@@ -186,8 +186,6 @@ esm
 */*.js.map
 */*.d.ts
 !/docs/prettier.config.js
-!/sample/webpack.config.js
 
 package-lock.json
 yarn.lock
-!/sample/webpack.config.js
