@@ -1,6 +1,7 @@
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {MDCSwitch} from '@material/switch';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {
   disabled?: boolean;
@@ -17,13 +18,11 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
     const {className, ...props} = allprops;
     return (
       <div className={className}>
-        <input
-          type="checkbox"
-          className="mdc-switch__native-control"
-          {...props}
-        />
-        <div className="mdc-switch__background">
-          <div className="mdc-switch__knob" />
+        <div class="mdc-switch__track"></div>
+        <div class="mdc-switch__thumb-underlay">
+          <div class="mdc-switch__thumb">
+              <input type="checkbox" id="basic-switch" class="mdc-switch__native-control" role="switch" {...props}/>
+          </div>
         </div>
       </div>
     );
