@@ -92,7 +92,9 @@ export default class CardPage extends Component {
           </Card.Actions>
         </Card>
 
-        <div className="mdc-typography--display1">Card with full-bleed action area</div>
+        <div className="mdc-typography--display1">
+          Card with full-bleed action area
+        </div>
         <Card>
           <div class="card-header">
             <h2 class=" mdc-typography--title">Title</h2>
