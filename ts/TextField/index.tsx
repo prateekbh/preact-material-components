@@ -208,6 +208,7 @@ export interface ITextFieldProps extends JSX.HTMLAttributes {
   box?: boolean;
   disabled?: boolean;
   outlined?: boolean;
+  valid?: boolean; // TODO: Add to docs
   helperText?: string;
   helperTextPersistent?: boolean;
   helperTextValidationMsg?: boolean;
