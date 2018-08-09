@@ -42,7 +42,7 @@
     "highlight.js": "^9.12.0",
     "if-env": "^1.0.0",
     "mocha": "^5.0.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.9.3",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "serve": "^6.5.1",
