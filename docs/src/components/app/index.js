@@ -176,7 +176,7 @@ const menuItems = [
     component: TabsPage
   },
   {
-    text: 'TabBar - deprecated',
+    text: 'TabBar',
     link: '/component/tabbar/',
     component: TabBarPage
   },
