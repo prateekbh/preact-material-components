@@ -12,15 +12,16 @@ const defaultProps = {
 
 export interface ITabLabelProps {}
 export interface ITabLabelState {}
-export class TabLabel extends MaterialComponent<ITabLabelProps, ITabLabelState> {
+export class TabLabel extends MaterialComponent<
+  ITabLabelProps,
+  ITabLabelState
+> {
   protected componentName = 'tab__text-label';
   protected mdcProps = [];
 
   @autobind
   protected materialDom(props) {
-    return (
-      <span {...props}>{props.children}</span>
-    );
+    return <span {...props}>{props.children}</span>;
   }
 }
 
@@ -33,7 +34,9 @@ export class TabIcon extends MaterialComponent<ITabIconProps, ITabIconState> {
   @autobind
   protected materialDom(props) {
     return (
-      <span className="material-icons" {...props}>{props.children}</span>
+      <span className="material-icons" {...props}>
+        {props.children}
+      </span>
     );
   }
 }
@@ -50,18 +53,18 @@ export class Tab extends MaterialComponent<ITabProps, ITabState> {
   protected materialDom(props) {
     return (
       <button class="mdc-tab" role="tab" aria-selected="true" {...props}>
-        <span class="mdc-tab__content">
-          {props.children}
+        <span class="mdc-tab__content">{props.children}</span>
+        <span
+          class={`mdc-tab-indicator ${
+            props.active ? 'mdc-tab-indicator--active' : ''
+          }`}>
+          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" />
         </span>
-        <span class={`mdc-tab-indicator ${props.active?'mdc-tab-indicator--active':''}`}>
-          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-        </span>
-        <span class="mdc-tab__ripple"></span>
+        <span class="mdc-tab__ripple" />
       </button>
     );
   }
 }
-
 
 export interface ITabsProps {
   activeTabIndex?: number; // TODO: Fix type in docs
@@ -122,9 +125,7 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
       <div class="mdc-tab-bar" role="tablist" ref={this.setControlRef}>
         <div class="mdc-tab-scroller">
           <div class="mdc-tab-scroller__scroll-area">
-            <div class="mdc-tab-scroller__scroll-content">
-              {props.children}
-            </div>
+            <div class="mdc-tab-scroller__scroll-content">{props.children}</div>
           </div>
         </div>
       </div>
