@@ -1,7 +1,7 @@
+import {MDCSwitch} from '@material/switch';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import {MDCSwitch} from '@material/switch';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {
   disabled?: boolean;
