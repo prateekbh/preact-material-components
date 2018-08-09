@@ -53,7 +53,8 @@ export default class TabsPage extends Component {
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
           This component encapsulates
-          <span className="strong">mdc-tab-bar</span>, you can refer to its documentation
+          <span className="strong">mdc-tab-bar</span>, you can refer to its
+          documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-bar">
             {' '}
             here
@@ -91,7 +92,9 @@ export default class TabsPage extends Component {
         </TabBar>
         <CodeBlock>{iconsSample}</CodeBlock>
 
-        <div className={`mdc-typography--title ${style.section}`}>Scroller.</div>
+        <div className={`mdc-typography--title ${style.section}`}>
+          Scroller.
+        </div>
         <TabBar>
           <TabBar.Tab active>
             <TabBar.TabLabel>Tab One</TabBar.TabLabel>

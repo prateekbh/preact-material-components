@@ -33,10 +33,16 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
     const {className, ...props} = allprops;
     return (
       <div className={className} ref={this.setControlRef}>
-        <div class="mdc-switch__track"></div>
+        <div class="mdc-switch__track" />
         <div class="mdc-switch__thumb-underlay">
           <div class="mdc-switch__thumb">
-              <input type="checkbox" id="basic-switch" class="mdc-switch__native-control" role="switch" {...props}/>
+            <input
+              type="checkbox"
+              id="basic-switch"
+              class="mdc-switch__native-control"
+              role="switch"
+              {...props}
+            />
           </div>
         </div>
       </div>
