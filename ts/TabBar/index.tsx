@@ -41,7 +41,7 @@ export class TabIcon extends MaterialComponent<ITabIconProps, ITabIconState> {
   }
 }
 
-export interface ITabProps extends JSX.HTMLAttributes {
+export interface ITabProps {
   active?: boolean;
 }
 export interface ITabState {}
