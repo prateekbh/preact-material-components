@@ -34,6 +34,7 @@ import SliderPage from '../../routes/slider';
 import SnackbarPage from '../../routes/snackbar';
 import SwitchPage from '../../routes/switch';
 import TabsPage from '../../routes/tabs';
+import TabBarPage from '../../routes/tabbar';
 import TextfieldPage from '../../routes/textfield';
 import ThemePage from '../../routes/theme';
 import ToolbarPage from '../../routes/toolbar';
@@ -173,6 +174,11 @@ const menuItems = [
     text: 'Tabs - deprecated',
     link: '/component/tabs/',
     component: TabsPage
+  },
+  {
+    text: 'TabBar - deprecated',
+    link: '/component/tabbar/',
+    component: TabBarPage
   },
   {
     text: 'TextField',

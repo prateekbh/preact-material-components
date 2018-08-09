@@ -12,12 +12,27 @@ export interface ISwitchState {}
 export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
   protected componentName = 'switch';
   protected mdcProps = ['disabled'];
+  protected MDComponent?: MDCSwitch;
+
+  public componentDidMount() {
+    super.componentDidMount();
+    if (this.control) {
+      this.MDComponent = new MDCSwitch(this.control);
+    }
+  }
+
+  public componentWillUnmount() {
+    super.componentWillUnmount();
+    if (this.MDComponent) {
+      this.MDComponent.destroy();
+    }
+  }
 
   @autobind
   protected materialDom(allprops) {
     const {className, ...props} = allprops;
     return (
-      <div className={className}>
+      <div className={className} ref={this.setControlRef}>
         <div class="mdc-switch__track"></div>
         <div class="mdc-switch__thumb-underlay">
           <div class="mdc-switch__thumb">
