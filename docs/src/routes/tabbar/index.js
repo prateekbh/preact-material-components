@@ -4,7 +4,7 @@ import {h, Component} from 'preact';
 // Material Components
 import TabBar from '../../../../TabBar';
 import Icon from '../../../../Icon';
-import style from './style.css';
+import style from './style';
 
 // Components
 import ComponentTable from '../../components/component-table';
