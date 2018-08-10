@@ -3,7 +3,7 @@ import TabBar from 'preact-material-components/TabBar';
 import 'preact-material-components/TabBar/style.css';
 
 export default class TabBarPage extends Component {
-  render(){
+  render() {
     return (
       <div>
         <TabBar>
