@@ -141,6 +141,10 @@ describe('docs site', () => {
       return takeAndCompareScreenshot(page, 'component/tabs', 'wide');
     });
 
+    it('should match TabBar page against golden directory', () => {
+      return takeAndCompareScreenshot(page, 'component/tabbar', 'wide');
+    });
+
     it('should match Textfield page against golden directory', () => {
       return takeAndCompareScreenshot(page, 'component/textfield', 'wide');
     });

@@ -110,7 +110,7 @@ export class ListTextContainer extends MaterialComponent<
 }
 
 export class ListPrimaryText extends ListTextContainer {
-  protected componentName = 'list-item__text__primary';
+  protected componentName = 'list-item__primary-text';
 }
 
 export class ListSecondaryText extends ListTextContainer {
