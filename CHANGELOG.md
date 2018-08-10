@@ -1,6 +1,7 @@
 # Changelog
 
 ## 1.5.1
+
 - Update to mdc 0.38.0
 - New build system with different builds:
   - Package root: Transpiled to support all browsers supported by mwc
