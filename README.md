@@ -25,7 +25,7 @@ Location: Package Root / `preact-material-components/<Component>`
 
 Who?
 
-- Libraries: ❌ (Users should decide about transpilation themselves)
+- Libraries: ✖ (Users should decide about transpilation themselves)
 - Applications: ✔
 
 Support:

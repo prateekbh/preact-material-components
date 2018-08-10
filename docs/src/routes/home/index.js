@@ -13,6 +13,7 @@ import CodeBlock from '../../components/code-block';
 import invidualComponentSample from './invidual-component-sample.txt';
 import jsSample from './js-sample.txt';
 import cssSample from './css-sample.txt';
+import Typography from '../../../../Typography';
 
 // Class
 export default class FormFieldPage extends Component {
@@ -41,7 +42,76 @@ export default class FormFieldPage extends Component {
             app, without worrying about the extra code of components which you
             are not using.
           </div>
-          <div className="mdc-typography--display1">How to use</div>
+          <br />
+          <Typography headline4>How to use</Typography>
+          <br />
+          <br />
+          <Typography headline5>There are three distributions:</Typography>
+          <ul>
+            <li>
+              <Typography headline6>Default Build</Typography>
+              <div>Location:</div> Package Root /{' '}
+              <span className="code-snippet">
+                {'preact-material-components/<Component>'}
+              </span>
+              <div>Who?</div>
+              <ul>
+                <li>
+                  Libraries: ✖ (Users should decide about transpilation
+                  themselves)
+                </li>
+                <li>Applications: ✔</li>
+              </ul>
+              <div>Support:</div>
+              <div>
+                This supports all browsers supported by mwc, JavaScript and
+                TypeScript
+              </div>
+            </li>
+            <br />
+            <li>
+              <Typography headline6>ES Module Build</Typography>
+              <div>
+                Location:
+              </div> <span className="code-snippet">esm</span> directory /{' '}
+              <span className="code-snippet">
+                {'preact-material-components/esm/<Component>'}
+              </span>
+              <div>Who?</div>
+              <ul>
+                <li>Libraries: ✔</li>
+                <li>Applications: ✔</li>
+              </ul>
+              <div>Support:</div>
+              <div>
+                This supports most recent browsers, JavaScript and TypeScript
+              </div>
+            </li>
+            <br />
+            <li>
+              <Typography headline6>TypeScript Source</Typography>
+              <div>Location:</div> <span className="code-snippet">ts</span>{' '}
+              directory /{' '}
+              <span className="code-snippet">
+                {'preact-material-components/ts/<Component>'}
+              </span>
+              <div>Who?</div>
+              <ul>
+                <li>
+                  Libraries: (✔) (Not recommended, keep in mind that your
+                  library will only support TypeScript)
+                </li>
+                <li>Applications: ✔</li>
+              </ul>
+              <div>Support:</div>
+              <div>
+                Browser support depends on transpilation/TypeScript
+                configuration and only TypeScript is supported.
+              </div>
+            </li>
+          </ul>
+          <br />
+          <Typography headline5>Installation and Usage:</Typography>
           <div>
             All the components of{' '}
             <span className="grey">preact-material-components</span> are built
@@ -53,9 +123,7 @@ export default class FormFieldPage extends Component {
             </CodeBlock>
           </div>
           <div>
-            <div className="mdc-typography--title">
-              Using the JS of the component
-            </div>
+            <Typography headline6>Using the JS of the component</Typography>
             <div>
               You can also use the components individually, as none of the tree
               shaking currently removes unused classes.
@@ -73,9 +141,7 @@ export default class FormFieldPage extends Component {
             </div>
           </div>
           <div>
-            <div className="mdc-typography--title">
-              Using the CSS of the component
-            </div>
+            <Typography headline6>Using the CSS of the component</Typography>
             <div>
               If you are using only a couple of components from the entire
               package, try importing individual CSS, for the same reason: TO
