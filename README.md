@@ -4,7 +4,7 @@
 [![Dependencies badge](https://david-dm.org/prateekbh/preact-material-components.svg)](https://david-dm.org/)
 [![build](https://api.travis-ci.org/prateekbh/preact-material-components.svg?branch=master)](https://api.travis-ci.org/prateekbh/preact-material-components.svg?branch=master)
 
-preact components for [material-components-web](https://github.com/material-components/material-components-web)
+preact components for [material-components-web](https://material.io/develop/web)
 
 ---
 
@@ -15,55 +15,48 @@ You can use `n` number of components without taking the weight of any extra code
 
 Smaller bundles FTW!!!
 
-## Components List
+## Which distribution to use
 
-- 👍 button
+There are now three distributions:
 
-- 👍 card
+#### Default Build
 
-- 👍 chips
+Location: Package Root / `preact-material-components/<Component>`
 
-- 👍 checkbox
+Who?
 
-- 👍 dialog
+- Libraries: ✖ (Users should decide about transpilation themselves)
+- Applications: ✔
 
-- 👍 drawer
+Support:
 
-- 👍 elevation
+This supports all browsers supported by mwc, JavaScript and TypeScript
 
-- 👍 fab
+#### ES Module Build
 
-- 👍 form-field
+Location: `esm` directory / `preact-material-components/esm/<Component>`
 
-- 👍 icon-toggle
+Who?
 
-- 👍 layout-grid
+- Libraries: ✔
+- Applications: ✔
 
-- 👍 line-ripple
+Support:
 
-- 👍 linear-progress
+This supports most recent browsers, JavaScript and TypeScript
 
-- 👍 list
+#### TypeScript Source
 
-- 👍 menu
+Location: `ts` directory / `preact-material-components/ts/<Component>`
 
-- 👍 radio
+Who?
 
-- 👍 select
+- Libraries: (✔) (Not recommended, keep in mind that your library will only support TypeScript)
+- Applications: ✔
 
-- 👍 slider
+Support:
 
-- 👍 snackbar
-
-- 👍 switch
-
-- 👍 tabs
-
-- 👍 textfield
-
-- 👍 theme
-
-- 👍 toolbar
+Browser support depends on transpilation/TypeScript configuration and only TypeScript is supported.
 
 ## FAQ
 
