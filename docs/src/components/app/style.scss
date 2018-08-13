@@ -68,14 +68,47 @@
     padding: 2px;
     margin: 2px;
   }
+  .code-snippet {
+    font-variant: common-ligatures;
+    font-family: 'Fira Code', monospace;
+    background-color: #eee;
+    padding: 0.2rem;
+    margin: 0.1rem;
+    border-radius: 0.3rem;
+  }
+  code {
+    font-family: 'Fira Code', monospace;
+    padding: 0.2rem;
+    margin: 0.1rem;
+    border-radius: 0.3rem;
+  }
 }
 
 :global .mdc-theme--dark {
   .mdc-temporary-drawer li.mdc-list-item {
     color: #666;
   }
+  .code-snippet {
+    background-color: #696969;
+  }
 }
 
 :global .mdc-typography--body {
   line-height: 28px;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/eot/FiraCode-Regular.eot');
+  src: url('https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/eot/FiraCode-Regular.eot')
+      format('embedded-opentype'),
+    url('https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/woff2/FiraCode-Regular.woff2')
+      format('woff2'),
+    url('https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/woff/FiraCode-Regular.woff')
+      format('woff'),
+    url('https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/ttf/FiraCode-Regular.ttf')
+      format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
