@@ -58,56 +58,6 @@ Support:
 
 Browser support depends on transpilation/TypeScript configuration and only TypeScript is supported.
 
-## Components List
-
-- 👍 button
-
-- 👍 card
-
-- 👍 chips
-
-- 👍 checkbox
-
-- 👍 dialog
-
-- 👍 drawer
-
-- 👍 elevation
-
-- 👍 fab
-
-- 👍 form-field
-
-- 👍 icon-toggle
-
-- 👍 layout-grid
-
-- 👍 line-ripple
-
-- 👍 linear-progress
-
-- 👍 list
-
-- 👍 menu
-
-- 👍 radio
-
-- 👍 select
-
-- 👍 slider
-
-- 👍 snackbar
-
-- 👍 switch
-
-- 👍 tabs
-
-- 👍 textfield
-
-- 👍 theme
-
-- 👍 toolbar
-
 ## FAQ
 
 ### Error while using preact-material-components with **less**
