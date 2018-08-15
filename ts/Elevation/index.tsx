@@ -49,7 +49,7 @@ export class Elevation extends MaterialComponent<
     const {ref, z, ...props} = allprops;
     let className;
     if (z) {
-      className = 'mdc-elevation--z' + props.z;
+      className = 'mdc-elevation--z' + z;
     }
     return (
       <p className={className} {...props} ref={this.getSharedRefSetter(ref)}>
