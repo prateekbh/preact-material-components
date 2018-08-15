@@ -54,3 +54,13 @@ jspm_packages
 
 .DS_Store
 .idea/
+yarn.lock
+
+# Exclude build artifacts
+esm
+*/*.js
+*/*.js.map
+*/*.d.ts
+!/docs/prettier.config.js
+tests/bin/
+tests/golden/dom/

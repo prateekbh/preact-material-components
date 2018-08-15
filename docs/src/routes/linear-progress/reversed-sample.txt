@@ -1,1 +1,1 @@
-<LinearProgress reversed={true} indeterminate={true} />
+<LinearProgress reversed indeterminate />

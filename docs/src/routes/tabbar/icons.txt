@@ -1,0 +1,26 @@
+import {h, Component} from 'preact';
+import TabBar from 'preact-material-components/TabBar';
+import 'preact-material-components/TabBar/style.css';
+
+export default class TabBarPage extends Component {
+  render() {
+    return (
+      <div>
+        <TabBar>
+          <TabBar.Tab active>
+            <TabBar.TabIcon>access_time</TabBar.TabIcon>
+            <TabBar.TabLabel>Time</TabBar.TabLabel>
+          </TabBar.Tab>
+          <TabBar.Tab>
+            <TabBar.TabIcon>near_me</TabBar.TabIcon>
+            <TabBar.TabLabel>Nearby</TabBar.TabLabel>
+          </TabBar.Tab>
+          <TabBar.Tab>
+            <TabBar.TabIcon>favorite</TabBar.TabIcon>
+            <TabBar.TabLabel>Favorites</TabBar.TabLabel>
+          </TabBar.Tab>
+        </TabBar>
+      </div>
+    );
+  }
+}

@@ -17,7 +17,7 @@ export default class IconTogglePage extends Component {
     super();
     this.propsTable = [
       {
-        component: 'IconToggle',
+        component: 'IconToggle - deprecated',
         props: [
           {
             name: 'disabled',

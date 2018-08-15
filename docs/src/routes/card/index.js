@@ -72,35 +72,37 @@ export default class CardPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates <span className="strong">mdc-card</span>,
-          you can refer to its documentation
+          This component encapsulates <span className="strong">mdc-card</span>.
+          You can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-card">
             {' '}
             here
           </a>.
         </div>
 
-        <div className="mdc-typography--display1">Demo</div>
+        <div className="mdc-typography--display1">Card with action button</div>
         <Card>
           <div class="card-header">
-            <h2 class=" mdc-typography--title">Hi</h2>
-            <div class=" mdc-typography--caption">Let me subtitle</div>
+            <h2 class=" mdc-typography--title">Title</h2>
+            <div class=" mdc-typography--caption">Caption</div>
           </div>
           <Card.Media className="card-media" />
           <Card.Actions>
-            <Card.ActionButton>OKAY</Card.ActionButton>
+            <Card.ActionButton>OK</Card.ActionButton>
           </Card.Actions>
         </Card>
 
-        <div className="mdc-typography--display1">Demo</div>
+        <div className="mdc-typography--display1">
+          Card with full-bleed action area
+        </div>
         <Card>
           <div class="card-header">
-            <h2 class=" mdc-typography--title">Hi</h2>
-            <div class=" mdc-typography--caption">Let me subtitle</div>
+            <h2 class=" mdc-typography--title">Title</h2>
+            <div class=" mdc-typography--caption">Caption</div>
           </div>
           <Card.Media className="card-media" />
           <Card.Actions full-bleed>
-            <Card.ActionButton>OKAY</Card.ActionButton>
+            <Card.ActionButton>Full-bleed button</Card.ActionButton>
           </Card.Actions>
         </Card>
       </div>

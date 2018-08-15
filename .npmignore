@@ -45,4 +45,9 @@ webpack.config.js
 copy-css.js
 *.yml
 .eslintrc
-sample
+tslint.json
+prettier.config.js
+CssMigrationWebpackPlugin.js
+.babelrc
+.prettierignore
+.eslintignore

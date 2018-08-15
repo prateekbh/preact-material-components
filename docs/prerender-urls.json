@@ -92,6 +92,10 @@
     "url": "/component/tabs"
   },
   {
+    "title": "Tabbar",
+    "url": "/component/tabbar"
+  },
+  {
     "title": "Textfield",
     "url": "/component/textfield"
   },
