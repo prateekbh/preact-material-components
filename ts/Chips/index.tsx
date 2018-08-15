@@ -2,6 +2,7 @@ import {MDCChipSet} from '@material/chips';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IChipProps {
@@ -17,10 +18,10 @@ export class Chip extends MaterialComponent<IChipProps, IChipState> {
 
   @autobind
   protected materialDom(allprops) {
-    const {children, ...props} = allprops;
+    const {children, ref, ...props} = allprops;
 
     return (
-      <div {...props} ref={this.setControlRef}>
+      <div {...props} ref={this.getSharedRefSetter(ref)}>
         {children}
       </div>
     );
@@ -99,6 +100,7 @@ export interface IChipSetProps {
   choice?: boolean;
   filter?: boolean;
   input?: boolean;
+  ref?: IMDRef<MDCChipSet>;
 }
 
 export interface IChipSetState {}
@@ -129,10 +131,10 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
 
   @autobind
   protected materialDom(allprops) {
-    const {children, ...props} = allprops;
+    const {children, ref, ...props} = allprops;
 
     return (
-      <div {...props} ref={this.setControlRef}>
+      <div {...props} ref={this.getSharedRefSetter(ref)}>
         {children}
       </div>
     );

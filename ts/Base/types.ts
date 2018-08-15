@@ -1,3 +1,5 @@
+import MDCComponent from '@material/base/component';
+
 export type Diff<
   T extends string | number | symbol,
   U extends string | number | symbol
@@ -9,3 +11,7 @@ export type OmitAttrs<
   T extends {[attr: string]: any},
   O extends {[attr: string]: any}
 > = Pick<T, Diff<keyof T, keyof O>>;
+
+export interface IMDRef<T extends MDCComponent<any, any>> extends Element {
+  MDComponent?: T;
+}

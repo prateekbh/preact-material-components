@@ -2,6 +2,7 @@ import {MDCDialog} from '@material/dialog/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 import Button from '../Button';
 
 export interface IDialogHeaderProps {}
@@ -76,18 +77,23 @@ export class DialogFooterButton extends Button<
   protected mdcProps = ['cancel', 'accept'];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <button {...props} className="mdc-button" ref={this.setControlRef}>
+      <button
+        {...props}
+        className="mdc-button"
+        ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </button>
     );
   }
 }
 
-export interface IDialogProps extends JSX.HTMLAttributes {
+export interface IDialogProps {
   onAccept?: JSX.GenericEventHandler;
   onCancel?: JSX.GenericEventHandler;
+  ref?: IMDRef<MDCDialog>;
 }
 
 export interface IDialogState {}
@@ -136,9 +142,10 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <aside role={'alertdialog'} ref={this.setControlRef} {...props}>
+      <aside role={'alertdialog'} ref={this.getSharedRefSetter(ref)} {...props}>
         <div className="mdc-dialog__surface">{props.children}</div>
         <div className="mdc-dialog__backdrop" />
       </aside>

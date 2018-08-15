@@ -2,11 +2,13 @@ import {MDCLinearProgress} from '@material/linear-progress';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 export interface ILinearProgressProps {
   indeterminate?: boolean;
   reversed?: boolean;
   progress?: number; // TODO: fix type in docs
+  ref?: IMDRef<MDCLinearProgress>;
 }
 
 export interface ILinearProgressState {}
@@ -40,10 +42,11 @@ export class LinearProgress extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     // TODO: Fix theme props
     return (
-      <div role="progressbar" {...props} ref={this.setControlRef}>
+      <div role="progressbar" {...props} ref={this.getSharedRefSetter(ref)}>
         <div className="mdc-linear-progress__buffering-dots" />
         <div className="mdc-linear-progress__buffer" />
         <div className="mdc-linear-progress__bar mdc-linear-progress__primary-bar">

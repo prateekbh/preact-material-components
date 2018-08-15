@@ -2,6 +2,7 @@ import {MDCMenu} from '@material/menu';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 import List, {ListItem} from '../List';
 
 export interface IMenuAnchorProps {}
@@ -29,6 +30,7 @@ export interface IMenuProps {
   'open-from-top-right'?: boolean; // TODO: Add to docs / remove from here
   'open-from-bottom-left'?: boolean; // TODO: Add to docs / remove from here
   'open-from-bottom-right'?: boolean; // TODO: Add to docs / remove from here
+  ref?: IMDRef<MDCMenu>;
 
   onSelect?: (e: Event) => void;
   onCancel?: (e: Event) => void;
@@ -102,9 +104,10 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <div tabIndex="-1" {...props} ref={this.setControlRef}>
+      <div tabIndex="-1" {...props} ref={this.getSharedRefSetter(ref)}>
         <List className="mdc-menu__items" role="menu" aria-hidden="true">
           {props.children}
         </List>

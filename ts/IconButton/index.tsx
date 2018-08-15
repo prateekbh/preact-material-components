@@ -2,6 +2,7 @@ import {MDCIconButtonToggle} from '@material/icon-button';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IIconButtonProps {
@@ -10,6 +11,7 @@ export interface IIconButtonProps {
   'data-toggle-on-label'?: boolean;
   'data-toggle-off-label'?: boolean;
   disabled?: boolean;
+  ref?: IMDRef<MDCIconButtonToggle>;
 }
 
 export interface IIconButtonState {}
@@ -43,9 +45,13 @@ export class IconButton extends MaterialComponent<
   protected onChange(e: Event) {} // TODO: Implement this method
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <button className="material-icons" ref={this.setControlRef} {...props}>
+      <button
+        className="material-icons"
+        ref={this.getSharedRefSetter(ref)}
+        {...props}>
         {this.props.children}
       </button>
     );

@@ -2,10 +2,12 @@ import {MDCRadio} from '@material/radio/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 export interface IRadioProps {
   checked?: boolean;
   disabled?: boolean;
+  ref?: IMDRef<MDCRadio>;
 }
 
 export interface IRadioState {}
@@ -42,9 +44,9 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
 
   @autobind
   protected materialDom(allprops) {
-    const {className, ...props} = allprops;
+    const {className, ref, ...props} = allprops;
     return (
-      <div className={className} ref={this.setControlRef}>
+      <div className={className} ref={this.getSharedRefSetter(ref)}>
         <input className="mdc-radio__native-control" type="radio" {...props} />
         <div className="mdc-radio__background">
           <div className="mdc-radio__outer-circle" />

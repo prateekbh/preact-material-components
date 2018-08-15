@@ -18,9 +18,10 @@ export class ListItem<
   protected mdcProps: string[] = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <li role="option" {...props} ref={this.setControlRef}>
+      <li role="option" {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </li>
     );
@@ -35,9 +36,10 @@ export class ListLinkItem<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <a role="option" {...props} ref={this.setControlRef}>
+      <a role="option" {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </a>
     );
@@ -56,9 +58,10 @@ export class ListItemGraphic extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <span {...props} ref={this.setControlRef} role="presentation">
+      <span {...props} ref={this.getSharedRefSetter(ref)} role="presentation">
         <Icon aria-hidden="true">{props.children}</Icon>
       </span>
     );
@@ -83,8 +86,11 @@ export class ListDivider extends MaterialComponent<
   protected mdcProps = ['inset'];
 
   @autobind
-  protected materialDom(props) {
-    return <li role="separator" {...props} ref={this.setControlRef} />;
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
+    return (
+      <li role="separator" {...props} ref={this.getSharedRefSetter(ref)} />
+    );
   }
 }
 
@@ -100,9 +106,10 @@ export class ListTextContainer extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <span {...props} ref={this.setControlRef}>
+      <span {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </span>
     );
@@ -146,9 +153,10 @@ export class ListGroupHeader extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <h3 {...props} ref={this.setControlRef}>
+      <h3 {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </h3>
     );
@@ -179,17 +187,18 @@ export class List extends MaterialComponent<IListProps, IListState> {
   protected mdcProps = ['dense', 'two-line', 'avatar-list'];
 
   @autobind
-  protected materialDom(props) {
-    if (props.interactive) {
+  protected materialDom(allprops) {
+    const {ref, interactive, ...props} = allprops;
+    if (interactive) {
       return (
-        <nav ref={this.setControlRef} {...props}>
+        <nav ref={this.getSharedRefSetter(ref)} {...props}>
           {props.children}
         </nav>
       );
     }
 
     return (
-      <ul {...props} ref={this.setControlRef}>
+      <ul {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </ul>
     );

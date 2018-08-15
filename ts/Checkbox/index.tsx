@@ -2,6 +2,7 @@ import {MDCCheckbox} from '@material/checkbox/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 /*
  * Default props for check box
@@ -16,6 +17,7 @@ export interface ICheckboxProps {
   disabled?: boolean;
   onChange?: JSX.GenericEventHandler;
   checked?: boolean;
+  ref?: IMDRef<MDCCheckbox>;
 }
 
 export interface ICheckboxState {}
@@ -49,12 +51,13 @@ export class Checkbox extends MaterialComponent<
 
   @autobind
   protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <div ref={this.setControlRef}>
+      <div ref={this.getSharedRefSetter(ref)}>
         <input
           type="checkbox"
           className="mdc-checkbox__native-control"
-          {...allprops}
+          {...props}
         />
         <div className="mdc-checkbox__background">
           <svg

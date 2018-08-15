@@ -2,6 +2,7 @@ import {MDCTopAppBar} from '@material/top-app-bar';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 export interface ITopAppBarRowProps {}
 
@@ -88,6 +89,8 @@ export interface ITopAppBarProps {
   'short-collapsed'?: boolean; // TODO: Add to docs / remove from here
   fixed?: boolean; // TODO: Add to docs / remove from here
   prominent?: boolean; // TODO: Add to docs / remove from here
+  ref?: IMDRef<MDCTopAppBar>;
+
   onNav: JSX.GenericEventHandler; // TODO: Add to docs / remove from here
 }
 
@@ -132,9 +135,10 @@ export class TopAppBar extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <header ref={this.setControlRef} {...props}>
+      <header ref={this.getSharedRefSetter(ref)} {...props}>
         {props.children}
       </header>
     );

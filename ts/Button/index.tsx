@@ -35,7 +35,8 @@ export class Button<
   protected themeProps = ['primary', 'secondary'];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, className: pcn, ...props} = allprops;
     const ButtonElement = props.href ? 'a' : 'button';
     let className = '';
     this.themeProps.forEach(themeProp => {
@@ -43,9 +44,13 @@ export class Button<
         className += generateThemeClass(themeProp) + ' ';
       }
     });
+    className += ` ${pcn}`;
 
     return (
-      <ButtonElement ref={this.setControlRef} {...props} className={className}>
+      <ButtonElement
+        ref={this.getSharedRefSetter(ref)}
+        {...props}
+        className={className}>
         {this.props.children}
       </ButtonElement>
     );

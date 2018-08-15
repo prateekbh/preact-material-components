@@ -1,7 +1,8 @@
+import MDCComponent from '@material/base/component';
 import {MDCRipple} from '@material/ripple';
 import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
-import {OmitAttrs} from './types';
+import {IMDRef, OmitAttrs} from './types';
 
 export interface IMaterialComponentOwnProps {
   ripple?: boolean;
@@ -42,7 +43,7 @@ export abstract class MaterialComponent<
   protected classText?: string | null;
   protected ripple?: MDCRipple | null;
 
-  protected control?: Element;
+  protected control?: IMDRef<any>;
 
   public render(props): VNode {
     if (!this.classText) {
@@ -93,10 +94,18 @@ export abstract class MaterialComponent<
     }
   }
 
-  // Shared setter for the root element ref
   @autobind
-  protected setControlRef(control?: Element) {
-    this.control = control;
+  protected getSharedRefSetter<T extends MDCComponent<any, any>>(
+    ref?: (control?: IMDRef<T>) => void
+  ): (control?: IMDRef<T>) => void {
+    if (ref) {
+      return (control?: IMDRef<T>) => {
+        this.setControlRef(control);
+        ref(control);
+      };
+    } else {
+      return this.setControlRef;
+    }
   }
 
   /** Build the className based on component names and mdc props */
@@ -141,6 +150,12 @@ export abstract class MaterialComponent<
   protected abstract materialDom(
     props: MaterialComponentProps<PropType>
   ): VNode;
+
+  // Shared setter for the root element ref
+  @autobind
+  private setControlRef<T extends MDCComponent<any, any>>(control?: IMDRef<T>) {
+    this.control = control;
+  }
 }
 
 export default MaterialComponent;

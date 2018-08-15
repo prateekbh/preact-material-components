@@ -45,13 +45,14 @@ export class Elevation extends MaterialComponent<
   protected mdcProps = generatedProps;
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, z, ...props} = allprops;
     let className;
-    if (props.z) {
+    if (z) {
       className = 'mdc-elevation--z' + props.z;
     }
     return (
-      <p className={className} {...props} ref={this.setControlRef}>
+      <p className={className} {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </p>
     );

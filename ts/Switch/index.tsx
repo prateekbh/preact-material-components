@@ -2,9 +2,11 @@ import {MDCSwitch} from '@material/switch';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
-export interface ISwitchProps extends JSX.HTMLAttributes {
+export interface ISwitchProps {
   disabled?: boolean;
+  ref?: IMDRef<MDCSwitch>;
 }
 
 export interface ISwitchState {}
@@ -30,9 +32,9 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
 
   @autobind
   protected materialDom(allprops) {
-    const {className, ...props} = allprops;
+    const {className, ref, ...props} = allprops;
     return (
-      <div className={className} ref={this.setControlRef}>
+      <div className={className} ref={this.getSharedRefSetter(ref)}>
         <div class="mdc-switch__track" />
         <div class="mdc-switch__thumb-underlay">
           <div class="mdc-switch__thumb">
