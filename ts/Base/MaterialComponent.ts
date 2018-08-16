@@ -16,6 +16,9 @@ type MaterialComponentProps<PropType> = PropType &
 type MaterialComponentState<StateType> = StateType & IMaterialComponentOwnState;
 
 function detect_prerenderer() {
+  if (typeof document === 'undefined' || typeof window === 'undefined') {
+    return true;
+  }
   if (document.visibilityState === 'prerender') {
     return true;
   }
