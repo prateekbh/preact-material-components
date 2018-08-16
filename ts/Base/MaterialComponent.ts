@@ -15,6 +15,16 @@ type MaterialComponentProps<PropType> = PropType &
 
 type MaterialComponentState<StateType> = StateType & IMaterialComponentOwnState;
 
+function detect_prerenderer() {
+  if (document.visibilityState === 'prerender') {
+    return true;
+  }
+  // implement detection techniques here
+  return false;
+}
+
+export const isPrerendering = detect_prerenderer();
+
 /**
  * Base class for every Material component in this package
  * NOTE: every component should add a ref by the name of `control` to its root dom for autoInit Properties
