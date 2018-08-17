@@ -13,7 +13,7 @@ export interface IHelperTextProps {
 export interface IHelperTextState {}
 
 export class HelperText extends MaterialComponent<
-  IHelperTextProps,
+  OmitAttrsIHelperTextProps,
   IHelperTextState
 > {
   protected componentName = 'text-field-helper-text';
@@ -63,7 +63,7 @@ export interface ITextFieldInputState {
 }
 
 export class TextFieldInput extends MaterialComponent<
-  ITextFieldInputProps,
+  OmitAttrs<JSX.HTMLAttributes, ITextFieldInputProps> & ITextFieldInputProps,
   ITextFieldInputState
 > {
   public static readonly defaultProps = {
