@@ -229,7 +229,7 @@ export interface ITextFieldState {
 }
 
 export class TextField extends Component<
-  OmitAttrs<JSX.HTMLAttributes, ITextFieldProps>,
+  OmitAttrs<JSX.HTMLAttributes, ITextFieldProps> & ITextFieldProps,
   ITextFieldState
 > {
   public static readonly defaultProps = {
