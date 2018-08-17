@@ -36,7 +36,7 @@ export class Button<
 
   @autobind
   protected materialDom(allprops) {
-    const {ref, className: pcn, ...props} = allprops;
+    const {ref, ...props} = allprops;
     const ButtonElement = props.href ? 'a' : 'button';
     let className = '';
     this.themeProps.forEach(themeProp => {
@@ -44,7 +44,6 @@ export class Button<
         className += generateThemeClass(themeProp) + ' ';
       }
     });
-    className += ` ${pcn}`;
 
     return (
       <ButtonElement
