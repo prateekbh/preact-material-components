@@ -13,7 +13,7 @@ export interface IHelperTextProps {
 export interface IHelperTextState {}
 
 export class HelperText extends MaterialComponent<
-  OmitAttrsIHelperTextProps,
+  IHelperTextProps,
   IHelperTextState
 > {
   protected componentName = 'text-field-helper-text';
