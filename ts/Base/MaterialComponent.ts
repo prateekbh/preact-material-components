@@ -107,6 +107,8 @@ export abstract class MaterialComponent<
         }
       }
     }
+
+    this.classText = this.buildClassName();
   }
 
   public componentWillUnmount() {
