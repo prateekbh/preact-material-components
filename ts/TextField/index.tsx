@@ -83,6 +83,8 @@ export class TextFieldInput extends MaterialComponent<
     'outlined'
   ];
 
+  protected mdcNotifyProps = ['valid', 'disabled'];
+
   public componentDidMount() {
     super.componentDidMount();
     this.setState(
@@ -95,14 +97,10 @@ export class TextFieldInput extends MaterialComponent<
           if (this.props.onInit) {
             this.props.onInit(this.MDComponent);
           }
-          setValid({valid: true}, this.props, this.MDComponent);
+          this.afterComponentDidMount();
         }
       }
     );
-  }
-
-  public componentWillUpdate(nextProps) {
-    setValid(this.props, nextProps, this.MDComponent);
   }
 
   public componentWillUnmount() {

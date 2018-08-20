@@ -1,6 +1,7 @@
 import {MDCRipple} from '@material/ripple';
 import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
+import MDCComponent from '../../node_modules/@types/material__base/component';
 import {OmitAttrs} from './types';
 
 export interface IMaterialComponentOwnProps {
@@ -38,11 +39,19 @@ export abstract class MaterialComponent<
   /** This will again be used to add apt classname to the component */
   protected abstract componentName: string;
 
+  /**
+   * Props of which change the MDComponent will be informed.
+   * Override to use.
+   * When used do not forget to include this.afterComponentDidMount() at the end of your componentDidMount function.
+   * Requires this.MDComponent to be defined.
+   */
+  protected mdcNotifyProps?: string[];
+
   /** The final class name given to the dom */
   protected classText?: string | null;
   protected ripple?: MDCRipple | null;
-
   protected control?: Element;
+  protected MDComponent?: MDCComponent<any, any>;
 
   public render(props): VNode {
     if (!this.classText) {
@@ -87,9 +96,32 @@ export abstract class MaterialComponent<
     }
   }
 
+  public componentWillUpdate(nextProps: PropType) {
+    if (this.MDComponent && this.mdcNotifyProps) {
+      for (const prop of this.mdcNotifyProps) {
+        if (
+          this.MDComponent.hasOwnProperty(prop) &&
+          this.props[prop] !== nextProps[prop]
+        ) {
+          this.MDComponent[prop as string] = nextProps[prop];
+        }
+      }
+    }
+  }
+
   public componentWillUnmount() {
     if (this.ripple) {
       this.ripple.destroy();
+    }
+  }
+
+  @autobind
+  protected afterComponentDidMount() {
+    if (this.MDComponent && this.mdcNotifyProps) {
+      for (const prop of this.mdcNotifyProps) {
+        console.log(`Setting ${prop} to ${this.props[prop]}`);
+        this.MDComponent[prop as string] = this.props[prop];
+      }
     }
   }
 

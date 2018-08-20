@@ -27,7 +27,7 @@ export default class LinearProgressPage extends Component {
             description: 'Tells if the progress bar is running forever.'
           },
           {
-            name: 'reversed',
+            name: 'reverse',
             description: 'Tells if the progress bar direction is reversed.'
           },
           {
@@ -66,7 +66,7 @@ export default class LinearProgressPage extends Component {
           <code class="lang-html">{indeterminateSample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">Reversed </div>
-        <LinearProgress reversed indeterminate />
+        <LinearProgress reverse indeterminate />
         <CodeBlock>
           <code class="lang-html">{reversedSample}</code>
         </CodeBlock>

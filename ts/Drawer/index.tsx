@@ -16,13 +16,6 @@ export interface ITemporaryDrawerProps extends IDrawerProps {}
 
 export interface ITemporaryDrawerState extends IDrawerState {}
 
-/**
- * Default props for drawers
- */
-const defaultProps = {
-  open: false
-};
-
 export class TemporaryDrawer extends MaterialComponent<
   ITemporaryDrawerProps,
   ITemporaryDrawerState
@@ -30,6 +23,7 @@ export class TemporaryDrawer extends MaterialComponent<
   protected componentName = 'drawer--temporary';
   protected mdcProps = [];
   protected MDComponent?: MDCTemporaryDrawer;
+  protected mdcNotifyProps = ['open'];
 
   public componentDidMount() {
     super.componentDidMount();
@@ -37,8 +31,8 @@ export class TemporaryDrawer extends MaterialComponent<
       this.MDComponent = new MDCTemporaryDrawer(this.control);
       this.MDComponent.listen('MDCTemporaryDrawer:open', this.open);
       this.MDComponent.listen('MDCTemporaryDrawer:close', this.close);
-      toggleDrawer(defaultProps, this.props, this.MDComponent);
     }
+    this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
@@ -48,10 +42,6 @@ export class TemporaryDrawer extends MaterialComponent<
       this.MDComponent.unlisten('MDCTemporaryDrawer:open', this.open);
       this.MDComponent.destroy();
     }
-  }
-
-  public componentWillUpdate(nextProps) {
-    toggleDrawer(this.props, nextProps, this.MDComponent);
   }
 
   @autobind
@@ -123,6 +113,7 @@ export class PersistentDrawer extends MaterialComponent<
   protected componentName = 'drawer--persistent';
   protected mdcProps = [];
   protected MDComponent?: MDCPersistentDrawer;
+  protected mdcNotifyProps = ['open'];
 
   public componentDidMount() {
     super.componentDidMount();
@@ -130,7 +121,6 @@ export class PersistentDrawer extends MaterialComponent<
       this.MDComponent = new MDCPersistentDrawer(this.control);
       this.MDComponent.listen('MDCPersistentDrawer:open', this.open);
       this.MDComponent.listen('MDCPersistentDrawer:close', this.close);
-      toggleDrawer(defaultProps, this.props, this.MDComponent);
     }
   }
 
@@ -141,10 +131,7 @@ export class PersistentDrawer extends MaterialComponent<
       this.MDComponent.unlisten('MDCPersistentDrawer:open', this.open);
       this.MDComponent.destroy();
     }
-  }
-
-  public componentWillUpdate(nextProps) {
-    toggleDrawer(this.props, nextProps, this.MDComponent);
+    this.afterComponentDidMount();
   }
 
   @autobind

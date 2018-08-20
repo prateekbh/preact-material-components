@@ -5,7 +5,7 @@ import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ILinearProgressProps {
   indeterminate?: boolean;
-  reversed?: boolean;
+  reverse?: boolean;
   progress?: number; // TODO: fix type in docs
 }
 
@@ -15,16 +15,29 @@ export class LinearProgress extends MaterialComponent<
   ILinearProgressProps,
   ILinearProgressState
 > {
+  public defaultProps = {
+    determinate: true
+  };
+
   protected componentName = 'linear-progress';
-  protected mdcProps = ['indeterminate', 'reversed'];
+  protected mdcProps = ['reverse'];
   protected themeProps = ['primary', 'secondary'];
   protected MDComponent?: MDCLinearProgress;
+  protected mdcNotifyProps = ['reverse', 'progress'];
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCLinearProgress(this.control);
-      updateProgress(this.props, this.MDComponent);
+      this.MDComponent.determinate = !this.props.indeterminate;
+    }
+    this.afterComponentDidMount();
+  }
+
+  public componentWillUpdate(nextProps) {
+    super.componentWillUpdate(nextProps);
+    if (this.MDComponent) {
+      this.MDComponent.determinate = !this.props.indeterminate;
     }
   }
 
@@ -33,10 +46,6 @@ export class LinearProgress extends MaterialComponent<
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }
-  }
-
-  public componentWillUpdate(nextProps) {
-    updateProgress(nextProps, this.MDComponent);
   }
 
   @autobind
@@ -54,12 +63,6 @@ export class LinearProgress extends MaterialComponent<
         </div>
       </div>
     );
-  }
-}
-
-function updateProgress(props, progressBar) {
-  if (!props.indeterminate && props.progress) {
-    progressBar.progress = props.progress;
   }
 }
 

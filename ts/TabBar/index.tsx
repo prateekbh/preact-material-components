@@ -72,23 +72,6 @@ export interface ITabsProps {
 
 export interface ITabsState {}
 
-/*
- * Function to add declarative opening/closing to drawer
- */
-function setActiveTabIndex(
-  oldprops: ITabsProps,
-  newprops: ITabsProps,
-  tabs: MDCTabBar
-) {
-  if (
-    oldprops.activeTabIndex &&
-    newprops.activeTabIndex &&
-    oldprops.activeTabIndex !== newprops.activeTabIndex
-  ) {
-    tabs.activeTabIndex = newprops.activeTabIndex;
-  }
-}
-
 export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   public static readonly Tab = Tab;
   public static readonly TabLabel = TabLabel;
@@ -97,25 +80,20 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   protected componentName = 'tab-bar';
   protected mdcProps = [];
   protected MDComponent?: MDCTabBar;
+  protected mdcNotifyProps = ['activeTabIndex'];
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCTabBar(this.control);
-      setActiveTabIndex(defaultProps, this.props, this.MDComponent);
     }
+    this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
-    }
-  }
-
-  public componentWillUpdate(nextProps) {
-    if (this.MDComponent) {
-      setActiveTabIndex(this.props, nextProps, this.MDComponent);
     }
   }
 
