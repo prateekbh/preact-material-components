@@ -313,14 +313,4 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
   }
 }
 
-function setValid(oldprops, newprops, textfield) {
-  if (
-    'valid' in oldprops &&
-    'valid' in newprops &&
-    oldprops.valid !== newprops.valid
-  ) {
-    textfield.valid = newprops.valid;
-  }
-}
-
 export default TextField;
