@@ -53,7 +53,8 @@ export interface ITextFieldInputProps {
   leadingIcon?: string;
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
-  onInit: (c: MDCTextField) => any | void;
+  onInit?: (c: MDCTextField) => any | void;
+  value?: string;
 }
 
 export interface ITextFieldInputState {
@@ -83,7 +84,7 @@ export class TextFieldInput extends MaterialComponent<
     'outlined'
   ];
 
-  protected mdcNotifyProps = ['valid', 'disabled', 'value'];
+  protected mdcNotifyProps = ['valid', 'disabled'];
 
   public componentDidMount() {
     super.componentDidMount();
@@ -97,10 +98,24 @@ export class TextFieldInput extends MaterialComponent<
           if (this.props.onInit) {
             this.props.onInit(this.MDComponent);
           }
-          this.afterComponentDidMount();
+          if (this.props.value) {
+            this.MDComponent.value = this.props.value;
+          }
         }
+        this.afterComponentDidMount();
       }
     );
+  }
+
+  public componentWillUpdate(nextProps) {
+    super.componentWillUpdate(nextProps);
+    if (
+      this.MDComponent &&
+      nextProps.value &&
+      this.props.value !== nextProps.value
+    ) {
+      this.MDComponent.value = nextProps.value;
+    }
   }
 
   public componentWillUnmount() {
