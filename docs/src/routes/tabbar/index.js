@@ -48,11 +48,13 @@ export default class TabsPage extends Component {
         <ComponentTable data={this.propsTable} />
 
         <div className="mdc-typography--display1">Sample code </div>
-        <CodeBlock>{sample}</CodeBlock>
+        <CodeBlock>
+          <code class="lang-js">{sample}</code>
+        </CodeBlock>
 
         <div className="mdc-typography--display1">Original documentation</div>
         <div className="mdc-typography--body">
-          This component encapsulates
+          This component encapsulates{' '}
           <span className="strong">mdc-tab-bar</span>, you can refer to its
           documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-bar">
@@ -90,7 +92,9 @@ export default class TabsPage extends Component {
             <TabBar.TabLabel>Favorites</TabBar.TabLabel>
           </TabBar.Tab>
         </TabBar>
-        <CodeBlock>{iconsSample}</CodeBlock>
+        <CodeBlock>
+          <code class="lang-js">{iconsSample}</code>
+        </CodeBlock>
 
         <div className={`mdc-typography--title ${style.section}`}>
           Scroller.

@@ -124,7 +124,7 @@
     "clean-webpack-plugin": "^0.1.17",
     "cp": "^0.2.0",
     "eslint": "^5.0.0",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^3.0.0",
     "eslint-plugin-prettier": "^2.6.1",
     "eslint-plugin-react": "^7.5.1",
     "glob-copy": "^0.1.0",

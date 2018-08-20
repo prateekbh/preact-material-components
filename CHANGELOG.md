@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.1
+
+- Update to mdc 0.38.0
+- New build system with different builds:
+  - Package root: Transpiled to support all browsers supported by mwc
+  - `esm` directory: For use with newer browsers or in libraries. Can be transpiled.
+  - `ts` directory: Source and can be used directly by TypeScript applications. Written in TypeScript.
+
 ## 1.4.5
 
 - Fixed typings for `Typography`.
