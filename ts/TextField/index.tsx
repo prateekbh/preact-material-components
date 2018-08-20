@@ -83,7 +83,7 @@ export class TextFieldInput extends MaterialComponent<
     'outlined'
   ];
 
-  protected mdcNotifyProps = ['valid', 'disabled'];
+  protected mdcNotifyProps = ['valid', 'disabled', 'value'];
 
   public componentDidMount() {
     super.componentDidMount();
