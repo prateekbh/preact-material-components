@@ -107,7 +107,7 @@ export class TextFieldInput extends MaterialComponent<
     );
   }
 
-  public componentWillUpdate(nextProps) {
+  public componentWillUpdate(nextProps: ITextFieldInputProps) {
     super.componentWillUpdate(nextProps);
     if (
       this.MDComponent &&
@@ -229,6 +229,7 @@ export interface ITextFieldProps extends JSX.HTMLAttributes {
   leadingIcon?: string; // TODO: Add to docs
   trailingIcon?: string; // TODO: Add to docs
   outerStyle?: {[key: string]: string};
+  value?: string;
 }
 
 export interface ITextFieldState {
