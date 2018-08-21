@@ -107,8 +107,12 @@ export abstract class MaterialComponent<
         }
       }
     }
-
-    this.classText = this.buildClassName();
+    for (const prop of this.mdcProps) {
+      if (this.props[prop] !== nextProps[prop]) {
+        this.classText = this.buildClassName();
+        break;
+      }
+    }
   }
 
   public componentWillUnmount() {
