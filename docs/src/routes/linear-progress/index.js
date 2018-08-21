@@ -66,7 +66,7 @@ export default class LinearProgressPage extends Component {
           <code class="lang-html">{indeterminateSample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">Reversed </div>
-        <LinearProgress reverse indeterminate />
+        <LinearProgress reversed indeterminate />
         <CodeBlock>
           <code class="lang-html">{reversedSample}</code>
         </CodeBlock>

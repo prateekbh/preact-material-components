@@ -5,7 +5,7 @@ import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ILinearProgressProps {
   indeterminate?: boolean;
-  reverse?: boolean;
+  reversed?: boolean;
   progress?: number; // TODO: fix type in docs
 }
 
@@ -20,10 +20,10 @@ export class LinearProgress extends MaterialComponent<
   };
 
   protected componentName = 'linear-progress';
-  protected mdcProps = ['reverse'];
+  protected mdcProps = ['reversed'];
   protected themeProps = ['primary', 'secondary'];
   protected MDComponent?: MDCLinearProgress;
-  protected mdcNotifyProps = ['reverse', 'progress'];
+  protected mdcNotifyProps = ['progress'];
 
   public componentDidMount() {
     super.componentDidMount();
@@ -34,10 +34,11 @@ export class LinearProgress extends MaterialComponent<
     this.afterComponentDidMount();
   }
 
-  public componentWillUpdate(nextProps) {
+  public componentWillUpdate(nextProps: ILinearProgressProps) {
     super.componentWillUpdate(nextProps);
     if (this.MDComponent) {
       this.MDComponent.determinate = !this.props.indeterminate;
+      this.MDComponent.reverse = !!nextProps.reversed;
     }
   }
 
