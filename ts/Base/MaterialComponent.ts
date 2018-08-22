@@ -125,7 +125,6 @@ export abstract class MaterialComponent<
   protected afterComponentDidMount() {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
-        console.log(`Setting ${prop} to ${this.props[prop]}`);
         this.MDComponent[prop as string] = this.props[prop];
       }
     }
