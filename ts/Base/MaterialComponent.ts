@@ -1,3 +1,4 @@
+import MDCComponent from '@material/base/component';
 import {MDCRipple} from '@material/ripple';
 import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
@@ -36,13 +37,29 @@ export abstract class MaterialComponent<
    */
   protected abstract mdcProps: string[];
   /** This will again be used to add apt classname to the component */
-  protected abstract componentName: string;
+  protected abstract readonly componentName: string;
 
   /** The final class name given to the dom */
   protected classText?: string | null;
   protected ripple?: MDCRipple | null;
 
   protected control?: Element;
+  protected MDComponent?: MDCComponent<any, any>;
+
+  @autobind
+  public getMDComponent() {
+    return this.MDComponent;
+  }
+
+  @autobind
+  public getComponentName() {
+    return this.componentName;
+  }
+
+  @autobind
+  public getControl() {
+    return this.control;
+  }
 
   public render(props): VNode {
     if (!this.classText) {

@@ -1,7 +1,9 @@
 import {MDCTextField} from '@material/textfield';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
+import {InputComponent} from '../Base/InputComponent';
 import MaterialComponent from '../Base/MaterialComponent';
+import {OmitAttrs, Ref} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IHelperTextProps {
@@ -53,14 +55,16 @@ export interface ITextFieldInputProps {
   leadingIcon?: string;
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
-  onInit: (c: MDCTextField) => any | void;
+
+  ref?: Ref<TextFieldInput>;
 }
 
 export interface ITextFieldInputState {
   showFloatingLabel: boolean;
 }
 
-export class TextFieldInput extends MaterialComponent<
+export class TextFieldInput extends InputComponent<
+  MDCTextField,
   ITextFieldInputProps,
   ITextFieldInputState
 > {
@@ -92,9 +96,6 @@ export class TextFieldInput extends MaterialComponent<
       () => {
         if (this.control) {
           this.MDComponent = new MDCTextField(this.control);
-          if (this.props.onInit) {
-            this.props.onInit(this.MDComponent);
-          }
           setValid({valid: true}, this.props, this.MDComponent);
         }
       }
@@ -110,11 +111,6 @@ export class TextFieldInput extends MaterialComponent<
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }
-  }
-
-  @autobind
-  public getValue() {
-    return this.MDComponent ? this.MDComponent.value : null;
   }
 
   @autobind
@@ -151,6 +147,7 @@ export class TextFieldInput extends MaterialComponent<
           <input
             type={props.type || 'text'}
             className="mdc-text-field__input"
+            ref={this.setInputRef}
             {...props}
           />
         )}
@@ -200,7 +197,7 @@ type input_type =
   | 'url'
   | 'week';
 
-export interface ITextFieldProps extends JSX.HTMLAttributes {
+export interface ITextFieldProps {
   fullwidth?: boolean;
   textarea?: boolean;
   type?: input_type;
@@ -216,13 +213,18 @@ export interface ITextFieldProps extends JSX.HTMLAttributes {
   leadingIcon?: string; // TODO: Add to docs
   trailingIcon?: string; // TODO: Add to docs
   outerStyle?: {[key: string]: string};
+
+  ref?: Ref<TextField>;
 }
 
 export interface ITextFieldState {
   showFloatingLabel: boolean;
 }
 
-export class TextField extends Component<ITextFieldProps, ITextFieldState> {
+export class TextField extends Component<
+  ITextFieldProps & OmitAttrs<ITextFieldProps, JSX.HTMLAttributes>,
+  ITextFieldState
+> {
   public static readonly defaultProps = {
     outerStyle: {}
   };
@@ -239,7 +241,20 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
   };
 
   protected readonly id = TextField.uid();
-  protected MDComponent?: MDCTextField;
+
+  @autobind
+  public get MDComponent(): MDCTextField | undefined {
+    if (this.inputRef) {
+      return this.inputRef.getMDComponent();
+    }
+  }
+
+  protected inputRef?: TextFieldInput;
+
+  @autobind
+  public get tfInput(): TextFieldInput | undefined {
+    return this.inputRef;
+  }
 
   public componentDidMount() {
     this.setState({
@@ -275,10 +290,10 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
           )}
         <TextFieldInput
           {...props}
-          onInit={MDComponent => {
-            this.MDComponent = MDComponent;
-          }}
           aria-controls={props.helperText && `${props.id}-helper-text`}
+          ref={ref => {
+            this.inputRef = ref;
+          }}
         />
         {props.helperText && (
           <HelperText id={`${props.id}-helper-text`} {...helperTextProps}>
@@ -291,8 +306,8 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
         {...props}
         className={className}
         outerStyle={outerStyle}
-        onInit={MDComponent => {
-          this.MDComponent = MDComponent;
+        ref={ref => {
+          this.inputRef = ref;
         }}
       />
     );

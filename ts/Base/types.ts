@@ -9,3 +9,5 @@ export type OmitAttrs<
   T extends {[attr: string]: any},
   O extends {[attr: string]: any}
 > = Pick<T, Diff<keyof T, keyof O>>;
+
+export type Ref<C> = (ref?: C) => void;
