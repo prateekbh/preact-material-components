@@ -33,3 +33,5 @@ export abstract class InputComponent<
     this.inputRef = ref;
   }
 }
+
+export default InputComponent;

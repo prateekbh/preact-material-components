@@ -1,7 +1,7 @@
 import {MDCTextField} from '@material/textfield';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
-import {InputComponent} from '../Base/InputComponent';
+import InputComponent from '../Base/InputComponent';
 import MaterialComponent from '../Base/MaterialComponent';
 import {OmitAttrs, Ref} from '../Base/types';
 import Icon from '../Icon';
