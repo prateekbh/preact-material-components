@@ -2,6 +2,7 @@ import {MDCSlider} from '@material/slider';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 export interface ISliderProps {
   disabled?: boolean;
@@ -10,6 +11,7 @@ export interface ISliderProps {
   min?: number;
   max?: number;
   step?: number;
+  ref?: IMDRef<MDCSlider>;
 
   onInput?: JSX.GenericEventHandler;
   onChange?: JSX.GenericEventHandler;
@@ -86,7 +88,7 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
 
   @autobind
   protected materialDom(allprops) {
-    const {tabindex: tabIndex = 0, ...props} = allprops;
+    const {tabindex: tabIndex = 0, ref, ...props} = allprops;
 
     this.setValue(allprops);
     return (
@@ -94,7 +96,7 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
         tabIndex={tabIndex}
         role="slider"
         aria-label="Select Value"
-        ref={this.setControlRef}
+        ref={this.getSharedRefSetter(ref)}
         {...props}>
         <div class="mdc-slider__track-container">
           <div class="mdc-slider__track" />

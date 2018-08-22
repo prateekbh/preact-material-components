@@ -3,6 +3,7 @@ import {MDCTemporaryDrawer} from '@material/drawer/temporary';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 import {ListLinkItem} from '../List';
 
 export interface IDrawerProps {
@@ -12,7 +13,9 @@ export interface IDrawerProps {
 
 export interface IDrawerState {}
 
-export interface ITemporaryDrawerProps extends IDrawerProps {}
+export interface ITemporaryDrawerProps extends IDrawerProps {
+  ref?: IMDRef<MDCTemporaryDrawer>;
+}
 
 export interface ITemporaryDrawerState extends IDrawerState {}
 
@@ -69,11 +72,12 @@ export class TemporaryDrawer extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
       <aside
         className="mdc-typography mdc-drawer"
-        ref={this.setControlRef}
+        ref={this.getSharedRefSetter(ref)}
         {...props}>
         <nav className="mdc-drawer__drawer">{props.children}</nav>
       </aside>
@@ -112,6 +116,7 @@ export class PermanentDrawer extends MaterialComponent<
 
 export interface IPersistentDrawerProps extends IDrawerProps {
   spacer?: boolean;
+  ref?: IMDRef<MDCPersistentDrawer>;
 }
 
 export interface IPersistentDrawerState extends IDrawerState {}
@@ -162,11 +167,12 @@ export class PersistentDrawer extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
       <aside
         className="mdc-typography mdc-drawer"
-        ref={this.setControlRef}
+        ref={this.getSharedRefSetter(ref)}
         {...props}>
         <nav className="mdc-drawer__drawer">{props.children}</nav>
       </aside>
@@ -186,9 +192,10 @@ export class DrawerHeader extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <header ref={this.setControlRef} {...props}>
+      <header ref={this.getSharedRefSetter(ref)} {...props}>
         <div className="mdc-drawer__header-content">{props.children}</div>
       </header>
     );
@@ -210,9 +217,10 @@ export class DrawerContent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <nav className="mdc-list" ref={this.setControlRef} {...props}>
+      <nav className="mdc-list" ref={this.getSharedRefSetter(ref)} {...props}>
         {props.children}
       </nav>
     );

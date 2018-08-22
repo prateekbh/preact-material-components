@@ -44,9 +44,10 @@ export class Typography extends MaterialComponent<
   ];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <span {...props} ref={this.setControlRef}>
+      <span {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </span>
     );

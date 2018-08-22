@@ -2,6 +2,7 @@ import {MDCTabBar, MDCTabBarScroller} from '@material/tabs';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 /*
  * Default props for tabs
@@ -12,6 +13,7 @@ const defaultProps = {
 
 export interface ITabBarScrollerProps {
   activeTabIndex?: number;
+  ref?: IMDRef<MDCTabBar>;
 }
 
 export interface ITabBarScrollerState {}
@@ -47,9 +49,10 @@ export class TabBarScroller extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <div {...props} ref={this.setControlRef}>
+      <div {...props} ref={this.getSharedRefSetter(ref)}>
         <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
           <a
             className="mdc-tab-bar-scroller__indicator__inner material-icons"
@@ -89,13 +92,13 @@ export class TabBarScrollerTabs extends MaterialComponent<
   protected mdcProps = ['icon-tab-bar', 'icons-with-text'];
 
   @autobind
-  protected materialDom({className, ...props}) {
+  protected materialDom({className, ref, ...props}) {
     return (
       <nav
         role={'tablist'}
         className="mdc-tab-bar-scroller__scroll-frame__tabs"
         {...props}
-        ref={this.setControlRef}>
+        ref={this.getSharedRefSetter(ref)}>
         {props.children}
         <span class="mdc-tab-bar__indicator" />
       </nav>
@@ -114,9 +117,9 @@ export class Tab extends MaterialComponent<ITabProps, ITabState> {
   protected mdcProps = ['active'];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom({ref, ...props}) {
     return (
-      <a role="tab" {...props} ref={this.setControlRef}>
+      <a role="tab" {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </a>
     );
@@ -135,9 +138,9 @@ export class TabIconLabel extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom({ref, ...props}) {
     return (
-      <span {...props} ref={this.setControlRef}>
+      <span {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </span>
     );
@@ -201,9 +204,9 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom({ref, ...props}) {
     return (
-      <nav role={'tablist'} {...props} ref={this.setControlRef}>
+      <nav role={'tablist'} {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
         <span class="mdc-tab-bar__indicator" />
       </nav>

@@ -2,6 +2,7 @@ import {MDCSelect} from '@material/select/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 export interface ISelectOptionProps {
   disabled?: boolean;
@@ -29,6 +30,7 @@ export interface ISelectProps {
   outlined?: boolean;
   hintText?: string;
   selectedIndex?: number;
+  ref?: IMDRef<MDCSelect>;
 
   onChange?: (e: Event & {selectedIndex: number}) => void;
 }
@@ -100,10 +102,9 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
 
   @autobind
   protected materialDom(allprops) {
-    const {outlined, ...props} = allprops;
-    // noinspection RequiredAttributes
+    const {outlined, ref, ...props} = allprops;
     return (
-      <div ref={this.setControlRef} {...props}>
+      <div ref={this.getSharedRefSetter(ref)} {...props}>
         <select class="mdc-select__native-control">
           {props.hintText && <option value="" disabled selected />}
           {props.children}
@@ -111,8 +112,8 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
         {props.hintText && (
           <div
             class="mdc-floating-label"
-            ref={ref => {
-              this.labelRef = ref;
+            ref={lref => {
+              this.labelRef = lref;
             }}>
             {props.hintText}
           </div>

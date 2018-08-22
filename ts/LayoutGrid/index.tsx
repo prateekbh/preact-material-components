@@ -14,9 +14,10 @@ export class LayoutGridInner extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <div ref={this.setControlRef} {...props}>
+      <div ref={this.getSharedRefSetter(ref)} {...props}>
         {props.children}
       </div>
     );
@@ -106,12 +107,13 @@ export class LayoutGridCell extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
       <div
         {...props}
         className={LayoutGridCell.createClassName(props)}
-        ref={this.setControlRef}>
+        ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </div>
     );
@@ -133,9 +135,10 @@ export class LayoutGrid extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <div ref={this.setControlRef} {...props}>
+      <div ref={this.getSharedRefSetter(ref)} {...props}>
         {props.children}
       </div>
     );

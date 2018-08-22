@@ -51,12 +51,13 @@ export class CardActionButton extends Button {
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
       <button
         className="mdc-button mdc-card__action--button"
         {...props}
-        ref={this.setControlRef}>
+        ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </button>
     );

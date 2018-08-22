@@ -2,6 +2,7 @@ import {MDCTabBar} from '@material/tab-bar';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 /*
  * Default props for tabs
@@ -68,6 +69,7 @@ export class Tab extends MaterialComponent<ITabProps, ITabState> {
 
 export interface ITabsProps {
   activeTabIndex?: number; // TODO: Fix type in docs
+  ref?: IMDRef<MDCTabBar>;
 }
 
 export interface ITabsState {}
@@ -120,9 +122,13 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <div class="mdc-tab-bar" role="tablist" ref={this.setControlRef}>
+      <div
+        class="mdc-tab-bar"
+        role="tablist"
+        ref={this.getSharedRefSetter(ref)}>
         <div class="mdc-tab-scroller">
           <div class="mdc-tab-scroller__scroll-area">
             <div class="mdc-tab-scroller__scroll-content">{props.children}</div>

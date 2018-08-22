@@ -2,6 +2,7 @@ import {MDCSnackbar} from '@material/snackbar/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 function shallowDiffers(a, b) {
   for (const i in a) {
@@ -20,6 +21,7 @@ function shallowDiffers(a, b) {
 
 export interface ISnackbarProps {
   dismissesOnAction?: boolean;
+  ref?: IMDRef<MDCSnackbar>;
 }
 
 export interface ISnackbarState {}
@@ -62,13 +64,14 @@ export class Snackbar extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
       <div
         aria-live="assertive"
         aria-atomic="true"
         aria-hidden="true"
-        ref={this.setControlRef}
+        ref={this.getSharedRefSetter(ref)}
         {...props}>
         <div className="mdc-snackbar__text" />
         <div className="mdc-snackbar__action-wrapper">

@@ -2,6 +2,7 @@ import {MDCToolbar} from '@material/toolbar';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 export interface IToolbarRowProps {}
 
@@ -96,6 +97,7 @@ export interface IToolbarProps {
   waterfall?: boolean;
   flexible?: boolean;
   'flexible-default-behavior'?: boolean;
+  ref?: IMDRef<MDCToolbar>;
 }
 
 export interface IToolbarState {}
@@ -140,9 +142,10 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <header ref={this.setControlRef} {...props}>
+      <header ref={this.getSharedRefSetter(ref)} {...props}>
         {props.children}
       </header>
     );

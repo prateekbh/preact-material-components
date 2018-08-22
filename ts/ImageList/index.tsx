@@ -31,9 +31,10 @@ export class ImageListItem extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <li {...props} ref={this.setControlRef}>
+      <li {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </li>
     );
@@ -55,9 +56,9 @@ export class ImageListImage extends MaterialComponent<
 
   @autobind
   protected materialDom(allprops) {
-    const {src, ...props} = allprops;
+    const {src, ref, ...props} = allprops;
     return (
-      <img src={src} {...props} ref={this.setControlRef}>
+      <img src={src} {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </img>
     );
@@ -93,9 +94,10 @@ export class ImageListLabel extends MaterialComponent<
   protected mdcProps = [];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <span {...props} ref={this.setControlRef}>
+      <span {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </span>
     );
@@ -123,9 +125,10 @@ export class ImageList extends MaterialComponent<
   protected mdcProps = ['masonry', 'with-text-protection'];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     return (
-      <ul {...props} ref={this.setControlRef}>
+      <ul {...props} ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </ul>
     );

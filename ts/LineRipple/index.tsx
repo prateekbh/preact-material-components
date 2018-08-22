@@ -2,8 +2,11 @@ import {MDCLineRipple} from '@material/line-ripple';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
-export interface ILineRippleProps {}
+export interface ILineRippleProps {
+  ref?: IMDRef<MDCLineRipple>;
+}
 
 export interface ILineRippleState {}
 
@@ -30,8 +33,9 @@ export class LineRipple extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
-    return <div {...props} ref={this.setControlRef} />;
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
+    return <div {...props} ref={this.getSharedRefSetter(ref)} />;
   }
 }
 

@@ -2,6 +2,7 @@ import {MDCTextField} from '@material/textfield';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef, OmitAttrs} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IHelperTextProps {
@@ -54,6 +55,7 @@ export interface ITextFieldInputProps {
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
   onInit: (c: MDCTextField) => any | void;
+  ref?: IMDRef<MDCTextField>;
 }
 
 export interface ITextFieldInputState {
@@ -61,7 +63,7 @@ export interface ITextFieldInputState {
 }
 
 export class TextFieldInput extends MaterialComponent<
-  ITextFieldInputProps,
+  OmitAttrs<JSX.HTMLAttributes, ITextFieldInputProps> & ITextFieldInputProps,
   ITextFieldInputState
 > {
   public static readonly defaultProps = {
@@ -119,7 +121,7 @@ export class TextFieldInput extends MaterialComponent<
 
   @autobind
   protected materialDom(allprops) {
-    let {className, outerStyle, outlined, ...props} = allprops;
+    let {className, outerStyle, outlined, ref, ...props} = allprops;
     className = className || '';
 
     if ('leadingIcon' in props) {
@@ -141,7 +143,10 @@ export class TextFieldInput extends MaterialComponent<
 
     // noinspection RequiredAttributes
     return (
-      <div className={className} ref={this.setControlRef} style={outerStyle}>
+      <div
+        className={className}
+        ref={this.getSharedRefSetter(ref)}
+        style={outerStyle}>
         {props.leadingIcon ? (
           <Icon className="mdc-text-field__icon">{props.leadingIcon}</Icon>
         ) : null}
@@ -200,7 +205,7 @@ type input_type =
   | 'url'
   | 'week';
 
-export interface ITextFieldProps extends JSX.HTMLAttributes {
+export interface ITextFieldProps {
   fullwidth?: boolean;
   textarea?: boolean;
   type?: input_type;
@@ -216,13 +221,17 @@ export interface ITextFieldProps extends JSX.HTMLAttributes {
   leadingIcon?: string; // TODO: Add to docs
   trailingIcon?: string; // TODO: Add to docs
   outerStyle?: {[key: string]: string};
+  ref?: IMDRef<MDCTextField>;
 }
 
 export interface ITextFieldState {
   showFloatingLabel: boolean;
 }
 
-export class TextField extends Component<ITextFieldProps, ITextFieldState> {
+export class TextField extends Component<
+  OmitAttrs<JSX.HTMLAttributes, ITextFieldProps> & ITextFieldProps,
+  ITextFieldState
+> {
   public static readonly defaultProps = {
     outerStyle: {}
   };

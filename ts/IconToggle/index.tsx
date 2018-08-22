@@ -2,6 +2,7 @@ import {MDCIconToggle} from '@material/icon-toggle/';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {IMDRef} from '../Base/types';
 
 interface IconToggleData {
   label?: string;
@@ -13,6 +14,7 @@ export interface IIconToggleProps {
   'data-toggle-on'?: IconToggleData; // TODO: wrong docs?
   'data-toggle-off'?: IconToggleData; // TODO: wrong docs?
   disabled?: boolean;
+  ref?: IMDRef<MDCIconToggle>;
 }
 
 export interface IIconToggleState {}
@@ -49,7 +51,8 @@ export class IconToggle extends MaterialComponent<
   }
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     if (props['data-toggle-on']) {
       props['data-toggle-on'] = JSON.stringify(props['data-toggle-on']);
     }
@@ -57,7 +60,10 @@ export class IconToggle extends MaterialComponent<
       props['data-toggle-off'] = JSON.stringify(props['data-toggle-off']);
     }
     return (
-      <i {...props} className="material-icons" ref={this.setControlRef}>
+      <i
+        {...props}
+        className="material-icons"
+        ref={this.getSharedRefSetter(ref)}>
         {props.children}
       </i>
     );

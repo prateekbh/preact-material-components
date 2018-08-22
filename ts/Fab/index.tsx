@@ -26,7 +26,8 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
   protected themeProps = ['primary', 'secondary'];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {ref, ...props} = allprops;
     const classNames: string[] = [];
     this.themeProps.forEach(themeProp => {
       if (themeProp in props && props[themeProp] !== false) {
@@ -36,7 +37,7 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
 
     return (
       <button
-        ref={this.setControlRef}
+        ref={this.getSharedRefSetter(ref)}
         {...props}
         className={classNames.join(' ')}>
         {props.children}
