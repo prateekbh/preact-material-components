@@ -2,6 +2,7 @@ import {MDCTextField} from '@material/textfield';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
+import {ITypedEvent, OptPromise} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IHelperTextProps {
@@ -53,6 +54,13 @@ export interface ITextFieldInputProps {
   leadingIcon?: string;
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
+  validate?: (
+    value: string,
+    target: HTMLInputElement,
+    event: ITypedEvent<HTMLInputElement>
+  ) => undefined | OptPromise<boolean | {value: boolean; message?: string}>;
+  validateOnKeys?: boolean;
+
   onInit: (c: MDCTextField) => any | void;
 }
 
@@ -119,7 +127,15 @@ export class TextFieldInput extends MaterialComponent<
 
   @autobind
   protected materialDom(allprops) {
-    let {className, outerStyle, outlined, ...props} = allprops;
+    let {
+      className,
+      outerStyle,
+      outlined,
+      valid,
+      validate,
+      validateOnKeys,
+      ...props
+    } = allprops;
     className = className || '';
 
     if ('leadingIcon' in props) {
@@ -137,6 +153,54 @@ export class TextFieldInput extends MaterialComponent<
       console.log(
         'Passing a "label" prop is not supported when using a "fullwidth" text field.'
       );
+    }
+
+    if (typeof valid === 'boolean' && validate) {
+      console.error(
+        'Passing a "valid" prop is not supported when using a "validate" text field. "valid" will be overwritten!'
+      );
+    }
+    if (validate) {
+      const validationFunction = async event => {
+        let ret = await validate(event.target.value, event.target, event);
+        if (typeof ret === 'boolean') {
+          ret = {valid: ret} as {valid: boolean};
+        }
+        if (ret) {
+          if (ret.valid && ret.message) {
+            event.target.setCustomValidity(ret.message);
+          } else {
+            event.target.setCustomValidity('');
+          }
+          if (ret.valid) {
+            if (this.MDComponent) {
+              this.MDComponent.valid = ret.valid;
+            }
+          }
+        }
+      };
+      if (props.onChange) {
+        const oldOnChange = props.onChange;
+        props.onChange = event => {
+          // noinspection JSIgnoredPromiseFromCall
+          validationFunction(event);
+          oldOnChange(event);
+        };
+      } else {
+        props.onChange = validationFunction;
+      }
+      if (validateOnKeys) {
+        if (props.onKeyUp) {
+          const olOnKeyUp = props.onKeyUp;
+          props.onKeyUp = event => {
+            // noinspection JSIgnoredPromiseFromCall
+            validationFunction(event);
+            olOnKeyUp(event);
+          };
+        } else {
+          props.onKeyUp = props.onChange;
+        }
+      }
     }
 
     // noinspection RequiredAttributes

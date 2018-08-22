@@ -9,3 +9,9 @@ export type OmitAttrs<
   T extends {[attr: string]: any},
   O extends {[attr: string]: any}
 > = Pick<T, Diff<keyof T, keyof O>>;
+
+export interface ITypedEvent<E extends HTMLElement> extends Event {
+  target: E;
+}
+
+export type OptPromise<T> = T | Promise<T>;
