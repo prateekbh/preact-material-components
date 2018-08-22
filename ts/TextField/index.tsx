@@ -63,7 +63,7 @@ export interface ITextFieldInputState {
 }
 
 export class TextFieldInput extends MaterialComponent<
-  ITextFieldInputProps,
+  OmitAttrs<JSX.HTMLAttributes, ITextFieldInputProps> & ITextFieldInputProps,
   ITextFieldInputState
 > {
   public static readonly defaultProps = {
@@ -229,7 +229,7 @@ export interface ITextFieldState {
 }
 
 export class TextField extends Component<
-  OmitAttrs<JSX.HTMLAttributes, ITextFieldProps>,
+  OmitAttrs<JSX.HTMLAttributes, ITextFieldProps> & ITextFieldProps,
   ITextFieldState
 > {
   public static readonly defaultProps = {
