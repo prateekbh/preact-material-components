@@ -20,7 +20,7 @@ export class LinearProgress extends MaterialComponent<
   };
 
   protected componentName = 'linear-progress';
-  protected mdcProps = ['reversed'];
+  protected mdcProps = ['reversed', 'indeterminate'];
   protected themeProps = ['primary', 'secondary'];
   protected MDComponent?: MDCLinearProgress;
   protected mdcNotifyProps = ['progress'];
@@ -30,6 +30,7 @@ export class LinearProgress extends MaterialComponent<
     if (this.control) {
       this.MDComponent = new MDCLinearProgress(this.control);
       this.MDComponent.determinate = !this.props.indeterminate;
+      this.MDComponent.reverse = !!this.props.reversed;
     }
     this.afterComponentDidMount();
   }

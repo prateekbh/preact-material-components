@@ -56,6 +56,7 @@ export interface ITextFieldInputProps {
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
   onInit?: (c: MDCTextField) => any | void;
+  valid?: boolean;
   value?: string;
 }
 
@@ -107,17 +108,6 @@ export class TextFieldInput extends MaterialComponent<
         this.afterComponentDidMount();
       }
     );
-  }
-
-  public componentWillUpdate(nextProps: ITextFieldInputProps) {
-    super.componentWillUpdate(nextProps);
-    if (
-      this.MDComponent &&
-      nextProps.value &&
-      this.props.value !== nextProps.value
-    ) {
-      this.MDComponent.value = nextProps.value;
-    }
   }
 
   public componentWillUnmount() {

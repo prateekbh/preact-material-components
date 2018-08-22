@@ -1,7 +1,7 @@
+import MDCComponent from '@material/base/component';
 import {MDCRipple} from '@material/ripple';
 import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
-import MDCComponent from '../../node_modules/@types/material__base/component';
 import {OmitAttrs} from './types';
 
 export interface IMaterialComponentOwnProps {
