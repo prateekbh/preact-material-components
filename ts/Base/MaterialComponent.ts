@@ -16,6 +16,8 @@ type MaterialComponentProps<PropType> = PropType &
 
 type MaterialComponentState<StateType> = StateType & IMaterialComponentOwnState;
 
+const doNotRemoveProps = ['disabled'];
+
 /**
  * Base class for every Material component in this package
  * NOTE: every component should add a ref by the name of `control` to its root dom for autoInit Properties
@@ -84,6 +86,10 @@ export abstract class MaterialComponent<
       .join(' ');
     // Clean this shit of proxy attributes
     this.mdcProps.forEach(prop => {
+      // TODO: Fix this better
+      if (prop in doNotRemoveProps) {
+        return;
+      }
       delete element.attributes[prop];
     });
     return element;
