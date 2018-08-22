@@ -55,9 +55,9 @@ export abstract class MaterialComponent<
   protected control?: Element;
   protected MDComponent?: MDCComponent<any, any>;
 
-  public render(props): VNode {
+  public render(props: MaterialComponentProps<PropType>): VNode {
     if (!this.classText) {
-      this.classText = this.buildClassName();
+      this.classText = this.buildClassName(props);
     }
     // Fetch a VNode
     const componentProps = props;
@@ -102,7 +102,7 @@ export abstract class MaterialComponent<
     }
   }
 
-  public componentWillUpdate(nextProps: PropType) {
+  public componentWillUpdate(nextProps: MaterialComponentProps<PropType>) {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
         if (this.props[prop] !== nextProps[prop]) {
@@ -112,7 +112,7 @@ export abstract class MaterialComponent<
     }
     for (const prop of this.mdcProps) {
       if (this.props[prop] !== nextProps[prop]) {
-        this.classText = this.buildClassName();
+        this.classText = this.buildClassName(nextProps);
         break;
       }
     }
@@ -141,14 +141,14 @@ export abstract class MaterialComponent<
 
   /** Build the className based on component names and mdc props */
   @autobind
-  protected buildClassName() {
+  protected buildClassName(props: MaterialComponentProps<PropType>) {
     // Class name based on component name
     let classText = 'mdc-' + this.componentName;
 
     // Loop over mdcProps to turn them into classNames
-    for (const propKey in this.props) {
-      if (this.props.hasOwnProperty(propKey)) {
-        const prop = this.props[propKey];
+    for (const propKey in props) {
+      if (props.hasOwnProperty(propKey)) {
+        const prop = props[propKey];
         if (typeof prop === 'boolean' && prop) {
           if (this.mdcProps.indexOf(propKey) !== -1) {
             classText += ` mdc-${this.componentName}--${propKey}`;
