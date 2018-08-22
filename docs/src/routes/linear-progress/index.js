@@ -27,7 +27,7 @@ export default class LinearProgressPage extends Component {
             description: 'Tells if the progress bar is running forever.'
           },
           {
-            name: 'reverse',
+            name: 'reversed',
             description: 'Tells if the progress bar direction is reversed.'
           },
           {
