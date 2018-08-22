@@ -242,7 +242,6 @@ export class TextField extends Component<
 
   protected readonly id = TextField.uid();
 
-  @autobind
   public get MDComponent(): MDCTextField | undefined {
     if (this.inputRef) {
       return this.inputRef.getMDComponent();
@@ -251,7 +250,6 @@ export class TextField extends Component<
 
   protected inputRef?: TextFieldInput;
 
-  @autobind
   public get tfInput(): TextFieldInput | undefined {
     return this.inputRef;
   }

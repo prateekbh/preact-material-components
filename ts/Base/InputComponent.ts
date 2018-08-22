@@ -15,12 +15,10 @@ export abstract class InputComponent<
     return this.MDComponent;
   }
 
-  @autobind
   public get input(): HTMLInputElement | undefined {
     return this.inputRef;
   }
 
-  @autobind
   public get value(): string | undefined {
     if (this.MDComponent && this.MDComponent.value) {
       return this.MDComponent.value;
