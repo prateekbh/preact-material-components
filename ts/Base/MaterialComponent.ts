@@ -99,10 +99,7 @@ export abstract class MaterialComponent<
   public componentWillUpdate(nextProps: PropType) {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
-        if (
-          this.MDComponent.hasOwnProperty(prop) &&
-          this.props[prop] !== nextProps[prop]
-        ) {
+        if (this.props[prop] !== nextProps[prop]) {
           this.MDComponent[prop as string] = nextProps[prop];
         }
       }
