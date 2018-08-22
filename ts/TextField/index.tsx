@@ -1,7 +1,9 @@
 import {MDCTextField} from '@material/textfield';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
+import MaterialComponent, {
+  MaterialComponentProps
+} from '../Base/MaterialComponent';
 import Icon from '../Icon';
 
 export interface IHelperTextProps {
@@ -185,6 +187,17 @@ export class TextFieldInput extends MaterialComponent<
         {outlined ? <div className="mdc-notched-outline__idle" /> : null}
       </div>
     );
+  }
+
+  @autobind
+  protected buildClassName(
+    props: MaterialComponentProps<ITextFieldInputProps>
+  ) {
+    let cn: string = super.buildClassName(props);
+    if (this.MDComponent) {
+      cn += ' mdc-text-field--upgraded';
+    }
+    return cn;
   }
 }
 

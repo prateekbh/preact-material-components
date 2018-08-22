@@ -10,11 +10,11 @@ export interface IMaterialComponentOwnProps {
 
 export interface IMaterialComponentOwnState {}
 
-type MaterialComponentProps<PropType> = PropType &
+export type MaterialComponentProps<PropType> = PropType &
   IMaterialComponentOwnProps &
   OmitAttrs<JSX.HTMLAttributes, PropType>;
 
-type MaterialComponentState<StateType> = StateType & IMaterialComponentOwnState;
+export type MaterialComponentState<StateType> = StateType & IMaterialComponentOwnState;
 
 const doNotRemoveProps = ['disabled'];
 
