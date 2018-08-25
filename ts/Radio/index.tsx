@@ -46,17 +46,4 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
   }
 }
 
-/*
- * Function to add declarative checked to radio
- */
-function toggleRadio(oldprops, newprops, radio) {
-  if (
-    'checked' in oldprops &&
-    'checked' in newprops &&
-    oldprops.checked !== newprops.checked
-  ) {
-    radio.checked = newprops.checked;
-  }
-}
-
 export default Radio;

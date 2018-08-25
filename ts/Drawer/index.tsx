@@ -230,19 +230,6 @@ export class DrawerItem extends ListLinkItem<
   }
 }
 
-/**
- * Function to add declarative opening/closing to drawer
- */
-function toggleDrawer(oldprops, newprops, drawer) {
-  if (
-    'open' in oldprops &&
-    'open' in newprops &&
-    oldprops.open !== newprops.open
-  ) {
-    drawer.open = newprops.open;
-  }
-}
-
 export class Drawer {
   public static readonly DrawerContent = DrawerContent;
   public static readonly DrawerHeader = DrawerHeader;

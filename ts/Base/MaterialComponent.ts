@@ -56,7 +56,7 @@ export abstract class MaterialComponent<
   protected control?: Element;
   protected MDComponent?: MDCComponent<any, any>;
 
-  public render(props: MaterialComponentProps<PropType>): VNode {
+  public render(props): VNode {
     if (!this.classText) {
       this.classText = this.buildClassName(props);
     }
@@ -107,7 +107,7 @@ export abstract class MaterialComponent<
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
         if (this.props[prop] !== nextProps[prop]) {
-          this.MDComponent[prop as string] = nextProps[prop];
+          this.MDComponent[prop] = nextProps[prop];
         }
       }
     }
@@ -129,7 +129,7 @@ export abstract class MaterialComponent<
   protected afterComponentDidMount() {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
-        this.MDComponent[prop as string] = this.props[prop];
+        this.MDComponent[prop] = this.props[prop];
       }
     }
   }
