@@ -55,7 +55,7 @@
     "@material/icon-toggle": "^0.38.0",
     "@material/layout-grid": "^0.34.0",
     "@material/line-ripple": "^0.38.0",
-    "@material/linear-progress": "^0.38.0",
+    "@material/linear-progress": "^0.39.0",
     "@material/list": "^0.38.0",
     "@material/menu": "^0.38.0",
     "@material/notched-outline": "^0.38.0",
