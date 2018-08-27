@@ -70,7 +70,7 @@
     "@material/tab-bar": "^0.38.0",
     "@material/tabs": "^0.38.0",
     "@material/textfield": "^0.38.0",
-    "@material/theme": "^0.38.0",
+    "@material/theme": "^0.39.0",
     "@material/toolbar": "^0.38.0",
     "@material/top-app-bar": "^0.38.0",
     "@material/typography": "^0.38.0",
