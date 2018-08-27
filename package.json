@@ -76,7 +76,7 @@
     "@material/typography": "^0.38.0",
     "@types/material-components-web": "^0.35.0",
     "autobind-decorator": "^2.1.0",
-    "material-components-web": "^0.38.0"
+    "material-components-web": "^0.39.0"
   },
   "peerDependencies": {
     "preact": "*"
