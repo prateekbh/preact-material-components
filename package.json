@@ -51,7 +51,7 @@
     "@material/elevation": "^0.38.0",
     "@material/fab": "^0.38.0",
     "@material/form-field": "^0.38.0",
-    "@material/grid-list": "^0.38.0",
+    "@material/grid-list": "^0.39.0",
     "@material/icon-toggle": "^0.38.0",
     "@material/layout-grid": "^0.34.0",
     "@material/line-ripple": "^0.38.0",
