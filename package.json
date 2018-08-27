@@ -71,7 +71,7 @@
     "@material/tabs": "^0.38.0",
     "@material/textfield": "^0.38.0",
     "@material/theme": "^0.38.0",
-    "@material/toolbar": "^0.38.0",
+    "@material/toolbar": "^0.39.0",
     "@material/top-app-bar": "^0.38.0",
     "@material/typography": "^0.38.0",
     "@types/material-components-web": "^0.35.0",
