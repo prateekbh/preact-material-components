@@ -3,13 +3,6 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-/*
- * Default props for tabs
- */
-const defaultProps = {
-  activeTabIndex: 0
-};
-
 export interface ITabLabelProps {}
 export interface ITabLabelState {}
 export class TabLabel extends MaterialComponent<
@@ -44,10 +37,13 @@ export class TabIcon extends MaterialComponent<ITabIconProps, ITabIconState> {
 export interface ITabProps {
   active?: boolean;
 }
+
 export interface ITabState {}
+
 export class Tab extends MaterialComponent<ITabProps, ITabState> {
   protected componentName = 'tab';
   protected mdcProps = ['active'];
+  protected mdcNotifyProps = ['active'];
 
   @autobind
   protected materialDom(props) {
@@ -72,7 +68,7 @@ export interface ITabsProps {
 
 export interface ITabsState {}
 
-export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
+export class TabBar extends MaterialComponent<ITabsProps, ITabsState> {
   public static readonly Tab = Tab;
   public static readonly TabLabel = TabLabel;
   public static readonly TabIcon = TabIcon;
@@ -111,4 +107,4 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   }
 }
 
-export default Tabs;
+export default TabBar;
