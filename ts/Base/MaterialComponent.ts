@@ -2,7 +2,7 @@ import MDCComponent from '@material/base/component';
 import {MDCRipple} from '@material/ripple';
 import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
-import {OmitAttrs} from './types';
+import {SoftMerge} from './types';
 
 export interface IMaterialComponentOwnProps {
   ripple?: boolean;
@@ -10,9 +10,10 @@ export interface IMaterialComponentOwnProps {
 
 export interface IMaterialComponentOwnState {}
 
-export type MaterialComponentProps<PropType> = PropType &
-  IMaterialComponentOwnProps &
-  OmitAttrs<JSX.HTMLAttributes, PropType>;
+export type MaterialComponentProps<PropType> = SoftMerge<
+  PropType & IMaterialComponentOwnProps,
+  JSX.HTMLAttributes
+>;
 
 export type MaterialComponentState<StateType> = StateType &
   IMaterialComponentOwnState;
