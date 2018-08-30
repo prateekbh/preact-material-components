@@ -4,6 +4,7 @@ import {Component, h} from 'preact';
 import MaterialComponent, {
   MaterialComponentProps
 } from '../Base/MaterialComponent';
+import {SoftMerge} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IHelperTextProps {
@@ -216,7 +217,7 @@ type input_type =
   | 'url'
   | 'week';
 
-export interface ITextFieldProps extends JSX.HTMLAttributes {
+export interface ITextFieldProps {
   fullwidth?: boolean;
   textarea?: boolean;
   type?: input_type;
@@ -239,7 +240,10 @@ export interface ITextFieldState {
   showFloatingLabel: boolean;
 }
 
-export class TextField extends Component<ITextFieldProps, ITextFieldState> {
+export class TextField extends Component<
+  SoftMerge<ITextFieldProps, JSX.HTMLAttributes>,
+  ITextFieldState
+> {
   public static readonly defaultProps = {
     outerStyle: {}
   };
