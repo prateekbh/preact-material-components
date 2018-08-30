@@ -1,11 +1,18 @@
-export type Diff<
-  T extends string | number | symbol,
-  U extends string | number | symbol
-> = ({[P in T]: P} & {[P in U]: never} & {[x: string]: never})[T];
-
-export type Omit<T, K extends keyof T> = Pick<T, Diff<keyof T, K>>;
-
+/**
+ * Excludes all keys of the first type, that are also on the second type
+ *
+ * Example:
+ * type X = OmitAttrs<{b: () => void, c: any}, {a: number, b: string}>;  // {c: any}
+ */
 export type OmitAttrs<
   T extends {[attr: string]: any},
   O extends {[attr: string]: any}
-> = Pick<T, Diff<keyof T, keyof O>>;
+> = Pick<T, Exclude<keyof T, keyof O>>;
+
+/**
+ * Merge two types and any keys that are also in the first get deleted in the second
+ *
+ * Example:
+ * type Y = SoftMerge<{a: number, b: string}, {b: () => void, c: any}>;  // {a: number, b: string, c: any}
+ */
+export type SoftMerge<A, B> = A & OmitAttrs<B, A>;

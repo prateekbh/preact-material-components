@@ -3,13 +3,6 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-/*
- * Default props for tabs
- */
-const defaultProps = {
-  activeTabIndex: 0
-};
-
 export interface ITabLabelProps {}
 export interface ITabLabelState {}
 export class TabLabel extends MaterialComponent<
@@ -44,10 +37,13 @@ export class TabIcon extends MaterialComponent<ITabIconProps, ITabIconState> {
 export interface ITabProps {
   active?: boolean;
 }
+
 export interface ITabState {}
+
 export class Tab extends MaterialComponent<ITabProps, ITabState> {
   protected componentName = 'tab';
   protected mdcProps = ['active'];
+  protected mdcNotifyProps = ['active'];
 
   @autobind
   protected materialDom(props) {
@@ -72,24 +68,7 @@ export interface ITabsProps {
 
 export interface ITabsState {}
 
-/*
- * Function to add declarative opening/closing to drawer
- */
-function setActiveTabIndex(
-  oldprops: ITabsProps,
-  newprops: ITabsProps,
-  tabs: MDCTabBar
-) {
-  if (
-    oldprops.activeTabIndex &&
-    newprops.activeTabIndex &&
-    oldprops.activeTabIndex !== newprops.activeTabIndex
-  ) {
-    tabs.activeTabIndex = newprops.activeTabIndex;
-  }
-}
-
-export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
+export class TabBar extends MaterialComponent<ITabsProps, ITabsState> {
   public static readonly Tab = Tab;
   public static readonly TabLabel = TabLabel;
   public static readonly TabIcon = TabIcon;
@@ -97,25 +76,20 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   protected componentName = 'tab-bar';
   protected mdcProps = [];
   protected MDComponent?: MDCTabBar;
+  protected mdcNotifyProps = ['activeTabIndex'];
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCTabBar(this.control);
-      setActiveTabIndex(defaultProps, this.props, this.MDComponent);
     }
+    this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
-    }
-  }
-
-  public componentWillUpdate(nextProps) {
-    if (this.MDComponent) {
-      setActiveTabIndex(this.props, nextProps, this.MDComponent);
     }
   }
 
@@ -133,4 +107,4 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   }
 }
 
-export default Tabs;
+export default TabBar;
