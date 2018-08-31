@@ -15,7 +15,6 @@ export interface ICheckboxState {}
 
 export class Checkbox extends InputComponent<
   MDCCheckbox,
-  MDCCheckboxFoundation,
   ICheckboxProps,
   ICheckboxState
 > {

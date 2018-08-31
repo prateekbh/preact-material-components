@@ -11,12 +11,7 @@ export interface IRadioProps {
 
 export interface IRadioState {}
 
-export class Radio extends InputComponent<
-  MDCRadio,
-  MDCRadioFoundation,
-  IRadioProps,
-  IRadioState
-> {
+export class Radio extends InputComponent<MDCRadio, IRadioProps, IRadioState> {
   protected componentName = 'radio';
   protected mdcProps = ['disabled'];
   protected MDComponent?: MDCRadio;

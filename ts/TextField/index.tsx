@@ -69,7 +69,6 @@ export interface ITextFieldInputState {
 
 export class TextFieldInput extends InputComponent<
   MDCTextField,
-  MDCTextFieldFoundation,
   ITextFieldInputProps,
   ITextFieldInputState
 > {

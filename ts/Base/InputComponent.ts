@@ -1,11 +1,9 @@
 import MDCComponent from '@material/base/component';
-import MDCFoundation from '@material/base/foundation';
 import autobind from 'autobind-decorator';
 import MaterialComponent from './MaterialComponent';
 
 export abstract class InputComponent<
-  M extends MDCComponent<any, F>,
-  F extends MDCFoundation<any> & {getValue(): string},
+  M extends MDCComponent<any, any> & {value: string},
   PropType,
   StateType
 > extends MaterialComponent<PropType, StateType> {
@@ -26,7 +24,7 @@ export abstract class InputComponent<
 
   public get value(): string | undefined {
     if (this.MDComponent) {
-      return this.MDComponent.getDefaultFoundation().getValue();
+      return this.MDComponent.value;
     } else if (this.inputRef) {
       return this.inputRef.value;
     }

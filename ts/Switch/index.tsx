@@ -12,7 +12,6 @@ export interface ISwitchState {}
 
 export class Switch extends InputComponent<
   MDCSwitch,
-  MDCSwitchFoundation,
   ISwitchProps,
   ISwitchState
 > {
