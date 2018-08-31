@@ -16,3 +16,5 @@ export type OmitAttrs<
  * type Y = SoftMerge<{a: number, b: string}, {b: () => void, c: any}>;  // {a: number, b: string, c: any}
  */
 export type SoftMerge<A, B> = A & OmitAttrs<B, A>;
+
+export type Ref<C> = (ref?: C) => void;

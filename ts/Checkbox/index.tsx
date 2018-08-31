@@ -1,15 +1,8 @@
 import {MDCCheckbox} from '@material/checkbox/';
+import MDCCheckboxFoundation from '@material/checkbox/foundation';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
-
-/*
- * Default props for check box
- */
-const defaultProps = {
-  checked: false,
-  indeterminate: false
-};
+import InputComponent from '../Base/InputComponent';
 
 export interface ICheckboxProps {
   indeterminate?: boolean;
@@ -20,7 +13,8 @@ export interface ICheckboxProps {
 
 export interface ICheckboxState {}
 
-export class Checkbox extends MaterialComponent<
+export class Checkbox extends InputComponent<
+  MDCCheckbox,
   ICheckboxProps,
   ICheckboxState
 > {
@@ -51,6 +45,7 @@ export class Checkbox extends MaterialComponent<
         <input
           type="checkbox"
           className="mdc-checkbox__native-control"
+          ref={this.setInputRef}
           {...allprops}
         />
         <div className="mdc-checkbox__background">

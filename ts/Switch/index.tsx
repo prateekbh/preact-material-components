@@ -1,7 +1,8 @@
 import {MDCSwitch} from '@material/switch';
+import {MDCSwitchFoundation} from '@material/switch/foundation';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
+import InputComponent from '../Base/InputComponent';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {
   disabled?: boolean;
@@ -9,7 +10,11 @@ export interface ISwitchProps extends JSX.HTMLAttributes {
 
 export interface ISwitchState {}
 
-export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
+export class Switch extends InputComponent<
+  MDCSwitch,
+  ISwitchProps,
+  ISwitchState
+> {
   protected componentName = 'switch';
   protected mdcProps = ['disabled'];
   protected MDComponent?: MDCSwitch;
@@ -41,6 +46,7 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
               id="basic-switch"
               class="mdc-switch__native-control"
               role="switch"
+              ref={this.setInputRef}
               {...props}
             />
           </div>

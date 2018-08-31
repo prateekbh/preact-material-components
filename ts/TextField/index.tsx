@@ -1,10 +1,11 @@
 import {MDCTextField} from '@material/textfield';
+import MDCTextFieldFoundation from '@material/textfield/foundation';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
-import MaterialComponent, {
-  MaterialComponentProps
-} from '../Base/MaterialComponent';
-import {SoftMerge} from '../Base/types';
+import InputComponent from '../Base/InputComponent';
+import {MaterialComponentProps} from '../Base/MaterialComponent';
+import MaterialComponent from '../Base/MaterialComponent';
+import {Ref, SoftMerge} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IHelperTextProps {
@@ -56,16 +57,18 @@ export interface ITextFieldInputProps {
   leadingIcon?: string;
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
-  onInit?: (c: MDCTextField) => any | void;
   valid?: boolean;
   value?: string;
+
+  ref?: Ref<TextFieldInput>;
 }
 
 export interface ITextFieldInputState {
   showFloatingLabel: boolean;
 }
 
-export class TextFieldInput extends MaterialComponent<
+export class TextFieldInput extends InputComponent<
+  MDCTextField,
   ITextFieldInputProps,
   ITextFieldInputState
 > {
@@ -99,9 +102,6 @@ export class TextFieldInput extends MaterialComponent<
       () => {
         if (this.control) {
           this.MDComponent = new MDCTextField(this.control);
-          if (this.props.onInit) {
-            this.props.onInit(this.MDComponent);
-          }
           if (this.props.value) {
             this.MDComponent.value = this.props.value;
           }
@@ -116,11 +116,6 @@ export class TextFieldInput extends MaterialComponent<
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }
-  }
-
-  @autobind
-  public getValue() {
-    return this.MDComponent ? this.MDComponent.value : null;
   }
 
   @autobind
@@ -157,6 +152,7 @@ export class TextFieldInput extends MaterialComponent<
           <input
             type={props.type || 'text'}
             className="mdc-text-field__input"
+            ref={this.setInputRef}
             {...props}
           />
         )}
@@ -234,6 +230,8 @@ export interface ITextFieldProps {
   trailingIcon?: string; // TODO: Add to docs
   outerStyle?: {[key: string]: string};
   value?: string;
+
+  ref?: Ref<TextField>;
 }
 
 export interface ITextFieldState {
@@ -260,7 +258,18 @@ export class TextField extends Component<
   };
 
   protected readonly id = TextField.uid();
-  protected MDComponent?: MDCTextField;
+
+  public get MDComponent(): MDCTextField | undefined {
+    if (this.inputRef) {
+      return this.inputRef.getMDComponent();
+    }
+  }
+
+  protected inputRef?: TextFieldInput;
+
+  public get tfInput(): TextFieldInput | undefined {
+    return this.inputRef;
+  }
 
   public componentDidMount() {
     this.setState({
@@ -296,10 +305,10 @@ export class TextField extends Component<
           )}
         <TextFieldInput
           {...props}
-          onInit={MDComponent => {
-            this.MDComponent = MDComponent;
-          }}
           aria-controls={props.helperText && `${props.id}-helper-text`}
+          ref={ref => {
+            this.inputRef = ref;
+          }}
         />
         {props.helperText && (
           <HelperText id={`${props.id}-helper-text`} {...helperTextProps}>
@@ -312,8 +321,8 @@ export class TextField extends Component<
         {...props}
         className={className}
         outerStyle={outerStyle}
-        onInit={MDComponent => {
-          this.MDComponent = MDComponent;
+        ref={ref => {
+          this.inputRef = ref;
         }}
       />
     );
