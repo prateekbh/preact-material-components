@@ -2,8 +2,9 @@ import {MDCTextField} from '@material/textfield';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
 import InputComponent from '../Base/InputComponent';
+import {MaterialComponentProps} from '../Base/MaterialComponent';
 import MaterialComponent from '../Base/MaterialComponent';
-import {OmitAttrs, Ref} from '../Base/types';
+import {Ref, SoftMerge} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IHelperTextProps {
@@ -55,6 +56,8 @@ export interface ITextFieldInputProps {
   leadingIcon?: string;
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
+  valid?: boolean;
+  value?: string;
 
   ref?: Ref<TextFieldInput>;
 }
@@ -87,6 +90,8 @@ export class TextFieldInput extends InputComponent<
     'outlined'
   ];
 
+  protected mdcNotifyProps = ['valid', 'disabled'];
+
   public componentDidMount() {
     super.componentDidMount();
     this.setState(
@@ -96,14 +101,16 @@ export class TextFieldInput extends InputComponent<
       () => {
         if (this.control) {
           this.MDComponent = new MDCTextField(this.control);
-          setValid({valid: true}, this.props, this.MDComponent);
+          if (this.props.onInit) {
+            this.props.onInit(this.MDComponent);
+          }
+          if (this.props.value) {
+            this.MDComponent.value = this.props.value;
+          }
         }
+        this.afterComponentDidMount();
       }
     );
-  }
-
-  public componentWillUpdate(nextProps) {
-    setValid(this.props, nextProps, this.MDComponent);
   }
 
   public componentWillUnmount() {
@@ -170,6 +177,17 @@ export class TextFieldInput extends InputComponent<
       </div>
     );
   }
+
+  @autobind
+  protected buildClassName(
+    props: MaterialComponentProps<ITextFieldInputProps>
+  ) {
+    let cn: string = super.buildClassName(props);
+    if (this.MDComponent) {
+      cn += ' mdc-text-field--upgraded';
+    }
+    return cn;
+  }
 }
 
 type input_type =
@@ -213,6 +231,7 @@ export interface ITextFieldProps {
   leadingIcon?: string; // TODO: Add to docs
   trailingIcon?: string; // TODO: Add to docs
   outerStyle?: {[key: string]: string};
+  value?: string;
 
   ref?: Ref<TextField>;
 }
@@ -222,7 +241,7 @@ export interface ITextFieldState {
 }
 
 export class TextField extends Component<
-  ITextFieldProps & OmitAttrs<ITextFieldProps, JSX.HTMLAttributes>,
+  SoftMerge<ITextFieldProps, JSX.HTMLAttributes>,
   ITextFieldState
 > {
   public static readonly defaultProps = {
@@ -309,16 +328,6 @@ export class TextField extends Component<
         }}
       />
     );
-  }
-}
-
-function setValid(oldprops, newprops, textfield) {
-  if (
-    'valid' in oldprops &&
-    'valid' in newprops &&
-    oldprops.valid !== newprops.valid
-  ) {
-    textfield.valid = newprops.valid;
   }
 }
 

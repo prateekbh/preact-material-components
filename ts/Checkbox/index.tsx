@@ -28,13 +28,14 @@ export class Checkbox extends InputComponent<
   protected componentName = 'checkbox';
   protected mdcProps = ['disabled'];
   protected MDComponent?: MDCCheckbox;
+  protected mdcNotifyProps = ['checked', 'indeterminate', 'disabled'];
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCCheckbox(this.control);
-      toggleCheckbox(defaultProps, this.props, this.MDComponent);
     }
+    this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
@@ -42,10 +43,6 @@ export class Checkbox extends InputComponent<
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }
-  }
-
-  public componentWillUpdate(nextProps) {
-    toggleCheckbox(this.props, nextProps, this.MDComponent);
   }
 
   @autobind
@@ -75,27 +72,6 @@ export class Checkbox extends InputComponent<
         </div>
       </div>
     );
-  }
-}
-
-/*
- * Function to add declarative opening/closing to drawer
- */
-function toggleCheckbox(oldprops, newprops, cbox) {
-  if (
-    'checked' in oldprops &&
-    'checked' in newprops &&
-    oldprops.checked !== newprops.checked
-  ) {
-    cbox.checked = newprops.checked;
-  }
-
-  if (
-    'indeterminate' in oldprops &&
-    'indeterminate' in newprops &&
-    oldprops.indeterminate !== newprops.indeterminate
-  ) {
-    cbox.indeterminate = newprops.indeterminate;
   }
 }
 
