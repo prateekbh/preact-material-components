@@ -17,6 +17,9 @@ export abstract class InputComponent<
     return this.MDComponent;
   }
 
+  /**
+   * Warning: Experimental
+   */
   public get input(): HTMLInputElement | undefined {
     return this.inputRef;
   }
