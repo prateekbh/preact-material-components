@@ -2,7 +2,7 @@ import MDCComponent from '@material/base/component';
 import {MDCRipple} from '@material/ripple';
 import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
-import {SoftMerge} from './types';
+import {Ref, SoftMerge} from './types';
 
 export interface IMaterialComponentOwnProps {
   ripple?: boolean;
@@ -32,7 +32,14 @@ export abstract class MaterialComponent<
   PropType extends {[prop: string]: any},
   StateType extends {[prop: string]: any}
 > extends Component<
-  MaterialComponentProps<PropType>,
+  MaterialComponentProps<PropType> & {
+    ref?: Ref<
+      MaterialComponent<
+        MaterialComponentProps<PropType>,
+        MaterialComponentState<StateType>
+      >
+    >;
+  },
   MaterialComponentState<StateType>
 > {
   /**
