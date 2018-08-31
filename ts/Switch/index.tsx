@@ -1,4 +1,5 @@
 import {MDCSwitch} from '@material/switch';
+import {MDCSwitchFoundation} from '@material/switch/foundation';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import InputComponent from '../Base/InputComponent';
@@ -11,6 +12,7 @@ export interface ISwitchState {}
 
 export class Switch extends InputComponent<
   MDCSwitch,
+  MDCSwitchFoundation,
   ISwitchProps,
   ISwitchState
 > {

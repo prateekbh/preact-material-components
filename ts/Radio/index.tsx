@@ -1,4 +1,5 @@
 import {MDCRadio} from '@material/radio/';
+import MDCRadioFoundation from '@material/radio/foundation';
 import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import InputComponent from '../Base/InputComponent';
@@ -10,7 +11,12 @@ export interface IRadioProps {
 
 export interface IRadioState {}
 
-export class Radio extends InputComponent<MDCRadio, IRadioProps, IRadioState> {
+export class Radio extends InputComponent<
+  MDCRadio,
+  MDCRadioFoundation,
+  IRadioProps,
+  IRadioState
+> {
   protected componentName = 'radio';
   protected mdcProps = ['disabled'];
   protected MDComponent?: MDCRadio;

@@ -1,4 +1,5 @@
 import {MDCTextField} from '@material/textfield';
+import MDCTextFieldFoundation from '@material/textfield/foundation';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
 import InputComponent from '../Base/InputComponent';
@@ -68,6 +69,7 @@ export interface ITextFieldInputState {
 
 export class TextFieldInput extends InputComponent<
   MDCTextField,
+  MDCTextFieldFoundation,
   ITextFieldInputProps,
   ITextFieldInputState
 > {
