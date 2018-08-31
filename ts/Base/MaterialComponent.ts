@@ -20,19 +20,6 @@ export type MaterialComponentState<StateType> = StateType &
 
 const doNotRemoveProps = ['disabled'];
 
-function detect_prerenderer() {
-  if (typeof document === 'undefined' || typeof window === 'undefined') {
-    return true;
-  }
-  if (document.visibilityState === 'prerender') {
-    return true;
-  }
-  // implement detection techniques here
-  return false;
-}
-
-export const isPrerendering = detect_prerenderer();
-
 /**
  * Base class for every Material component in this package
  * NOTE: every component should add a ref by the name of `control` to its root dom for autoInit Properties
@@ -48,6 +35,11 @@ export abstract class MaterialComponent<
   MaterialComponentProps<PropType>,
   MaterialComponentState<StateType>
 > {
+  public static activatePrerenderMode() {
+    MaterialComponent.isPrerendering = true;
+  }
+
+  protected static isPrerendering = false;
   /**
    * Attributes inside this array will be check for boolean value true
    * and will be converted to mdc classes
