@@ -97,7 +97,7 @@ export class TextFieldInput extends MaterialComponent<
         showFloatingLabel: true
       },
       () => {
-        if (this.control) {
+        if (this.control && !MaterialComponent.isPrerendering) {
           this.MDComponent = new MDCTextField(this.control);
           if (this.props.onInit) {
             this.props.onInit(this.MDComponent);
@@ -136,11 +136,11 @@ export class TextFieldInput extends MaterialComponent<
       className += ' mdc-text-field--box mdc-text-field--with-trailing-icon';
     }
 
-    if ('value' in props && this.state.showFloatingLabel) {
+    if (this.MDComponent) {
       className = [className, 'mdc-text-field--upgraded'].join(' ');
     }
     if (props.label && props.fullwidth) {
-      console.log(
+      console.warn(
         'Passing a "label" prop is not supported when using a "fullwidth" text field.'
       );
     }

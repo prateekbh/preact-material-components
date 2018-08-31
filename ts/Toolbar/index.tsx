@@ -118,7 +118,7 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control) {
+    if (this.control && !MaterialComponent.isPrerendering) {
       this.MDComponent = new MDCToolbar(this.control);
       this.MDComponent.listen('MDCToolbar:change', this.onChange);
     }

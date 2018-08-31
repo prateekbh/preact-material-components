@@ -27,7 +27,7 @@ export class LinearProgress extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control) {
+    if (this.control && !MaterialComponent.isPrerendering) {
       this.MDComponent = new MDCLinearProgress(this.control);
       this.MDComponent.determinate = !this.props.indeterminate;
       this.MDComponent.reverse = !!this.props.reversed;

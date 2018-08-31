@@ -109,7 +109,7 @@ export class TopAppBar extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control) {
+    if (this.control && !MaterialComponent.isPrerendering) {
       const comp = new MDCTopAppBar(this.control);
       comp.listen('MDCTopAppBar:nav', this.onNav);
       this.MDComponent = comp;

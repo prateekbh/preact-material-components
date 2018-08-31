@@ -115,7 +115,7 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control) {
+    if (this.control && !MaterialComponent.isPrerendering) {
       this.MDComponent = new MDCChipSet(this.control);
     }
   }

@@ -58,7 +58,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control) {
+    if (this.control && !MaterialComponent.isPrerendering) {
       this.MDComponent = new MDCMenu(this.control);
       this.MDComponent.listen('MDCMenu:selected', this.select);
       this.MDComponent.listen('MDCMenu:cancel', this.cancel);

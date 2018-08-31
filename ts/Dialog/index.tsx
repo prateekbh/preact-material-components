@@ -105,7 +105,7 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   @autobind
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control) {
+    if (this.control && !MaterialComponent.isPrerendering) {
       this.MDComponent = new MDCDialog(this.control);
       this.MDComponent.listen('MDCDialog:accept', this.onAccept);
       this.MDComponent.listen('MDCDialog:cancel', this.onCancel);

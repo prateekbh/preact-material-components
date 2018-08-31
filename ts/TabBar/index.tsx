@@ -80,7 +80,7 @@ export class TabBar extends MaterialComponent<ITabsProps, ITabsState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control) {
+    if (this.control && !MaterialComponent.isPrerendering) {
       this.MDComponent = new MDCTabBar(this.control);
     }
     this.afterComponentDidMount();
