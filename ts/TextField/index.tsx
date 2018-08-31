@@ -146,7 +146,6 @@ export class TextFieldInput extends MaterialComponent<
       );
     }
 
-    // noinspection RequiredAttributes
     return (
       <div className={cn.join(' ')} ref={this.setControlRef} style={outerStyle}>
         {props.leadingIcon ? (
