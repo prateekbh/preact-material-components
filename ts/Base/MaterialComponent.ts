@@ -1,7 +1,8 @@
+import MDCComponent from '@material/base/component';
 import {MDCRipple} from '@material/ripple';
 import autobind from 'autobind-decorator';
 import {Component, VNode} from 'preact';
-import {OmitAttrs} from './types';
+import {SoftMerge} from './types';
 
 export interface IMaterialComponentOwnProps {
   ripple?: boolean;
@@ -9,11 +10,15 @@ export interface IMaterialComponentOwnProps {
 
 export interface IMaterialComponentOwnState {}
 
-type MaterialComponentProps<PropType> = PropType &
-  IMaterialComponentOwnProps &
-  OmitAttrs<JSX.HTMLAttributes, PropType>;
+export type MaterialComponentProps<PropType> = SoftMerge<
+  PropType & IMaterialComponentOwnProps,
+  JSX.HTMLAttributes
+>;
 
-type MaterialComponentState<StateType> = StateType & IMaterialComponentOwnState;
+export type MaterialComponentState<StateType> = StateType &
+  IMaterialComponentOwnState;
+
+const doNotRemoveProps = ['disabled'];
 
 function detect_prerenderer() {
   if (typeof document === 'undefined' || typeof window === 'undefined') {
@@ -51,15 +56,23 @@ export abstract class MaterialComponent<
   /** This will again be used to add apt classname to the component */
   protected abstract componentName: string;
 
+  /**
+   * Props of which change the MDComponent will be informed.
+   * Override to use.
+   * When used do not forget to include this.afterComponentDidMount() at the end of your componentDidMount function.
+   * Requires this.MDComponent to be defined.
+   */
+  protected mdcNotifyProps?: string[];
+
   /** The final class name given to the dom */
   protected classText?: string | null;
   protected ripple?: MDCRipple | null;
-
   protected control?: Element;
+  protected MDComponent?: MDCComponent<any, any>;
 
   public render(props): VNode {
     if (!this.classText) {
-      this.classText = this.buildClassName();
+      this.classText = this.buildClassName(props);
     }
     // Fetch a VNode
     const componentProps = props;
@@ -88,6 +101,10 @@ export abstract class MaterialComponent<
       .join(' ');
     // Clean this shit of proxy attributes
     this.mdcProps.forEach(prop => {
+      // TODO: Fix this better
+      if (prop in doNotRemoveProps) {
+        return;
+      }
       delete element.attributes[prop];
     });
     return element;
@@ -100,9 +117,34 @@ export abstract class MaterialComponent<
     }
   }
 
+  public componentWillUpdate(nextProps: MaterialComponentProps<PropType>) {
+    if (this.MDComponent && this.mdcNotifyProps) {
+      for (const prop of this.mdcNotifyProps) {
+        if (this.props[prop] !== nextProps[prop]) {
+          this.MDComponent[prop] = nextProps[prop];
+        }
+      }
+    }
+    for (const prop of this.mdcProps) {
+      if (this.props[prop] !== nextProps[prop]) {
+        this.classText = this.buildClassName(nextProps);
+        break;
+      }
+    }
+  }
+
   public componentWillUnmount() {
     if (this.ripple) {
       this.ripple.destroy();
+    }
+  }
+
+  @autobind
+  protected afterComponentDidMount() {
+    if (this.MDComponent && this.mdcNotifyProps) {
+      for (const prop of this.mdcNotifyProps) {
+        this.MDComponent[prop] = this.props[prop];
+      }
     }
   }
 
@@ -114,14 +156,14 @@ export abstract class MaterialComponent<
 
   /** Build the className based on component names and mdc props */
   @autobind
-  protected buildClassName() {
+  protected buildClassName(props: MaterialComponentProps<PropType>) {
     // Class name based on component name
     let classText = 'mdc-' + this.componentName;
 
     // Loop over mdcProps to turn them into classNames
-    for (const propKey in this.props) {
-      if (this.props.hasOwnProperty(propKey)) {
-        const prop = this.props[propKey];
+    for (const propKey in props) {
+      if (props.hasOwnProperty(propKey)) {
+        const prop = props[propKey];
         if (typeof prop === 'boolean' && prop) {
           if (this.mdcProps.indexOf(propKey) !== -1) {
             classText += ` mdc-${this.componentName}--${propKey}`;

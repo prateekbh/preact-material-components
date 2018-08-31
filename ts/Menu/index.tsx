@@ -54,6 +54,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     'open-from-bottom-right'
   ];
   protected MDComponent?: MDCMenu;
+  protected mdcNotifyProps = ['open'];
 
   public componentDidMount() {
     super.componentDidMount();
@@ -61,8 +62,8 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
       this.MDComponent = new MDCMenu(this.control);
       this.MDComponent.listen('MDCMenu:selected', this.select);
       this.MDComponent.listen('MDCMenu:cancel', this.cancel);
-      toggleMenu(Menu.defaultProps, this.props, this.MDComponent);
     }
+    this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
@@ -72,10 +73,6 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
       this.MDComponent.unlisten('MDCMenu:cancel', this.cancel);
       this.MDComponent.destroy();
     }
-  }
-
-  public componentWillUpdate(nextProps) {
-    toggleMenu(this.props, nextProps, this.MDComponent);
   }
 
   @autobind
@@ -110,19 +107,6 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
         </List>
       </div>
     );
-  }
-}
-
-/*
- * Function to add declarative opening/closing to drawer
- */
-function toggleMenu(oldprops, newprops, menu) {
-  if (
-    'open' in oldprops &&
-    'open' in newprops &&
-    oldprops.open !== newprops.open
-  ) {
-    menu.open = newprops.open;
   }
 }
 

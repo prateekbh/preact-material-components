@@ -1,7 +1,10 @@
 import {MDCTextField} from '@material/textfield';
 import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
+import MaterialComponent, {
+  MaterialComponentProps
+} from '../Base/MaterialComponent';
+import {SoftMerge} from '../Base/types';
 import Icon from '../Icon';
 
 export interface IHelperTextProps {
@@ -53,7 +56,9 @@ export interface ITextFieldInputProps {
   leadingIcon?: string;
   trailingIcon?: string;
   outerStyle?: {[key: string]: string};
-  onInit: (c: MDCTextField) => any | void;
+  onInit?: (c: MDCTextField) => any | void;
+  valid?: boolean;
+  value?: string;
 }
 
 export interface ITextFieldInputState {
@@ -83,6 +88,8 @@ export class TextFieldInput extends MaterialComponent<
     'outlined'
   ];
 
+  protected mdcNotifyProps = ['valid', 'disabled'];
+
   public componentDidMount() {
     super.componentDidMount();
     this.setState(
@@ -95,14 +102,13 @@ export class TextFieldInput extends MaterialComponent<
           if (this.props.onInit) {
             this.props.onInit(this.MDComponent);
           }
-          setValid({valid: true}, this.props, this.MDComponent);
+          if (this.props.value) {
+            this.MDComponent.value = this.props.value;
+          }
         }
+        this.afterComponentDidMount();
       }
     );
-  }
-
-  public componentWillUpdate(nextProps) {
-    setValid(this.props, nextProps, this.MDComponent);
   }
 
   public componentWillUnmount() {
@@ -173,6 +179,17 @@ export class TextFieldInput extends MaterialComponent<
       </div>
     );
   }
+
+  @autobind
+  protected buildClassName(
+    props: MaterialComponentProps<ITextFieldInputProps>
+  ) {
+    let cn: string = super.buildClassName(props);
+    if (this.MDComponent) {
+      cn += ' mdc-text-field--upgraded';
+    }
+    return cn;
+  }
 }
 
 type input_type =
@@ -200,7 +217,7 @@ type input_type =
   | 'url'
   | 'week';
 
-export interface ITextFieldProps extends JSX.HTMLAttributes {
+export interface ITextFieldProps {
   fullwidth?: boolean;
   textarea?: boolean;
   type?: input_type;
@@ -216,13 +233,17 @@ export interface ITextFieldProps extends JSX.HTMLAttributes {
   leadingIcon?: string; // TODO: Add to docs
   trailingIcon?: string; // TODO: Add to docs
   outerStyle?: {[key: string]: string};
+  value?: string;
 }
 
 export interface ITextFieldState {
   showFloatingLabel: boolean;
 }
 
-export class TextField extends Component<ITextFieldProps, ITextFieldState> {
+export class TextField extends Component<
+  SoftMerge<ITextFieldProps, JSX.HTMLAttributes>,
+  ITextFieldState
+> {
   public static readonly defaultProps = {
     outerStyle: {}
   };
@@ -296,16 +317,6 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
         }}
       />
     );
-  }
-}
-
-function setValid(oldprops, newprops, textfield) {
-  if (
-    'valid' in oldprops &&
-    'valid' in newprops &&
-    oldprops.valid !== newprops.valid
-  ) {
-    textfield.valid = newprops.valid;
   }
 }
 
