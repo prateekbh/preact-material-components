@@ -24,7 +24,7 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
+    if (this.control) {
       this.MDComponent = new MDCSlider(this.control);
       this.MDComponent.listen('MDCSlider:change', this.onChange);
       this.MDComponent.listen('MDCSlider:input', this.onInput);

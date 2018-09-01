@@ -35,11 +35,6 @@ export abstract class MaterialComponent<
   MaterialComponentProps<PropType>,
   MaterialComponentState<StateType>
 > {
-  public static activatePrerenderMode() {
-    MaterialComponent.isPrerendering = true;
-  }
-
-  protected static isPrerendering = false;
   /**
    * Attributes inside this array will be check for boolean value true
    * and will be converted to mdc classes

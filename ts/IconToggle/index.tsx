@@ -27,7 +27,7 @@ export class IconToggle extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
+    if (this.control) {
       this.MDComponent = new MDCIconToggle(this.control);
       this.MDComponent.listen('MDCIconToggle:change', this.onChange);
     }

@@ -18,7 +18,7 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
+    if (this.control) {
       this.MDComponent = new MDCRadio(this.control);
     }
     this.afterComponentDidMount();

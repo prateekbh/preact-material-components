@@ -17,7 +17,7 @@ export class LineRipple extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
+    if (this.control) {
       this.MDComponent = new MDCLineRipple(this.control);
     }
   }

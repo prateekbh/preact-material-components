@@ -27,7 +27,7 @@ export class TemporaryDrawer extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
+    if (this.control) {
       this.MDComponent = new MDCTemporaryDrawer(this.control);
       this.MDComponent.listen('MDCTemporaryDrawer:open', this.open);
       this.MDComponent.listen('MDCTemporaryDrawer:close', this.close);
@@ -117,7 +117,7 @@ export class PersistentDrawer extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
+    if (this.control) {
       this.MDComponent = new MDCPersistentDrawer(this.control);
       this.MDComponent.listen('MDCPersistentDrawer:open', this.open);
       this.MDComponent.listen('MDCPersistentDrawer:close', this.close);

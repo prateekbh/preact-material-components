@@ -45,7 +45,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
+    if (this.control) {
       this.MDComponent = new MDCSelect(this.control);
       this.MDComponent.listen('MDCSelect:change', this.changed);
     }

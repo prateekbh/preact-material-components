@@ -23,7 +23,7 @@ export class Checkbox extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
+    if (this.control) {
       this.MDComponent = new MDCCheckbox(this.control);
     }
     this.afterComponentDidMount();
