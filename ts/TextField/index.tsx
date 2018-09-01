@@ -239,7 +239,9 @@ interface ITextFieldOwnProps {
 export interface ITextFieldProps
   extends SoftMerge<ITextFieldOwnProps, JSX.HTMLAttributes> {}
 
-export interface ITextFieldState {}
+export interface ITextFieldState {
+  showFloatingLabel: boolean;
+}
 
 export class TextField extends Component<ITextFieldProps, ITextFieldState> {
   public static readonly HelperText = HelperText;
@@ -249,10 +251,20 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
     return ++this.uidCounter;
   }
 
+  public state = {
+    showFloatingLabel: false
+  };
+
   protected readonly id = TextField.uid();
   protected MDComponent?: MDCTextField;
 
-  public render(allprops, {showFloatingLabel}) {
+  public componentDidMount() {
+    this.setState({
+      showFloatingLabel: true
+    });
+  }
+
+  public render(allprops) {
     const {
       className,
       outerStyle,
@@ -260,6 +272,7 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
       helperTextValidationMsg,
       ...props
     } = allprops;
+    const {showFloatingLabel} = this.state;
     const showDiv = props.helperText || (props.label && !showFloatingLabel);
 
     if ((props.helperText || props.label) && !props.id) {
