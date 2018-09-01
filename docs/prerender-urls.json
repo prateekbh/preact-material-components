@@ -4,6 +4,10 @@
     "url": "/"
   },
   {
+    "title": "Prerendering",
+    "url": "/help/prerendering"
+  },
+  {
     "title": "Button",
     "url": "/component/button"
   },

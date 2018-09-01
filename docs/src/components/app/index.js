@@ -40,6 +40,7 @@ import ThemePage from '../../routes/theme';
 import ToolbarPage from '../../routes/toolbar';
 import TopAppBar from '../../routes/top-app-bar';
 import Typography from '../../routes/typography';
+import PrerenderingPage from '../../routes/prerendering';
 
 // Components
 import Menu from '../menu';
@@ -54,6 +55,12 @@ const menuItems = [
     icon: 'home',
     link: '/',
     component: HomePage
+  },
+  {
+    text: 'Prerendering',
+    icon: 'compare',
+    link: '/help/prerendering',
+    component: PrerenderingPage
   },
   {
     text: 'Button',
@@ -215,13 +222,14 @@ export default class Home extends Component {
       darkMode: false
     };
     if (typeof window !== 'undefined') {
-      this.state.toolbarTitle =
-        window.location.pathname === '/'
-          ? null
-          : (
-              menuItems.find(item => item.link === window.location.pathname) ||
-              {}
-            ).text;
+      const title = (
+        menuItems.find(item => item.link === window.location.pathname) || {}
+      ).text;
+      this.setState({
+        toolbarTitle: window.location.pathname === '/' ? null : title
+      });
+      const titleList = document.getElementsByTagName('title');
+      titleList[0].innerText = title;
     }
   }
 
@@ -241,12 +249,12 @@ export default class Home extends Component {
   }
 
   handleRoute_ = url => {
+    const title = (menuItems.find(item => item.link === url) || {}).text;
     this.setState({
-      toolbarTitle:
-        url === '/'
-          ? null
-          : (menuItems.find(item => item.link === url) || {}).text
+      toolbarTitle: url === '/' ? null : title
     });
+    const titleList = document.getElementsByTagName('title');
+    titleList[0].innerText = title;
   };
 
   render() {

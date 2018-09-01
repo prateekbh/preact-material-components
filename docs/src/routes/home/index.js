@@ -2,31 +2,18 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Radio from '../../../../Radio';
-import Formfield from '../../../../FormField';
+import Typography from '../../../../Typography';
 
 // Components
-import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
 
 // Samples
 import invidualComponentSample from './invidual-component-sample.txt';
 import jsSample from './js-sample.txt';
 import cssSample from './css-sample.txt';
-import Typography from '../../../../Typography';
 
 // Class
-export default class FormFieldPage extends Component {
-  constructor() {
-    super();
-    this.propsTable = [
-      {
-        component: 'Formfield',
-        props: []
-      }
-    ];
-  }
-
+export default class HomePage extends Component {
   render() {
     return (
       <div>
