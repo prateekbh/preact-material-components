@@ -63,17 +63,15 @@ export interface ITextFieldInputProps {
 
 export interface ITextFieldInputState {
   showFloatingLabel: boolean;
+  jsComponent: boolean;
 }
 
 export class TextFieldInput extends MaterialComponent<
   ITextFieldInputProps,
   ITextFieldInputState
 > {
-  public static readonly defaultProps = {
-    valid: true
-  };
-
   public state = {
+    jsComponent: false,
     showFloatingLabel: false
   };
   protected MDComponent?: MDCTextField;
@@ -99,6 +97,7 @@ export class TextFieldInput extends MaterialComponent<
       () => {
         if (this.control && !MaterialComponent.isPrerendering) {
           this.MDComponent = new MDCTextField(this.control);
+          this.setState({jsComponent: true});
           if (this.props.onInit) {
             this.props.onInit(this.MDComponent);
           }
@@ -115,6 +114,7 @@ export class TextFieldInput extends MaterialComponent<
     super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
+      this.setState({jsComponent: false});
     }
   }
 
@@ -136,7 +136,7 @@ export class TextFieldInput extends MaterialComponent<
       cn.push(' mdc-text-field--box mdc-text-field--with-trailing-icon');
     }
 
-    if (this.MDComponent) {
+    if (this.state.jsComponent) {
       cn.push('mdc-text-field--upgraded');
     }
 
