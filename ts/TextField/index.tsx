@@ -243,18 +243,8 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
     return ++this.uidCounter;
   }
 
-  public state = {
-    showFloatingLabel: false
-  };
-
   protected readonly id = TextField.uid();
   protected MDComponent?: MDCTextField;
-
-  public componentDidMount() {
-    this.setState({
-      showFloatingLabel: true
-    });
-  }
 
   public render(allprops) {
     const {
@@ -264,8 +254,7 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
       helperTextValidationMsg,
       ...props
     } = allprops;
-    const {showFloatingLabel} = this.state;
-    const showDiv = props.helperText || (props.label && !showFloatingLabel);
+    const showDiv = props.helperText;
 
     if ((props.helperText || props.label) && !props.id) {
       props.id = `tf-${this.id}`;
@@ -279,10 +268,6 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
 
     return showDiv ? (
       <div className={className} style={outerStyle}>
-        {props.label &&
-          !showFloatingLabel && (
-            <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
-          )}
         <TextFieldInput
           {...props}
           onInit={MDComponent => {
