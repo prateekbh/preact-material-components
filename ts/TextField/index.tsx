@@ -146,7 +146,9 @@ export class TextFieldInput extends MaterialComponent<
           <input
             type={props.type || 'text'}
             className="mdc-text-field__input"
-            placeholder={!this.state.jsComponent && label}
+            placeholder={
+              !this.state.jsComponent && (props.required ? `${label}*` : label)
+            }
             {...props}
           />
         )}
