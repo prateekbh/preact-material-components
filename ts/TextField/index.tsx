@@ -62,7 +62,6 @@ export interface ITextFieldInputProps {
 }
 
 export interface ITextFieldInputState {
-  showFloatingLabel: boolean;
   jsComponent: boolean;
 }
 
@@ -71,8 +70,7 @@ export class TextFieldInput extends MaterialComponent<
   ITextFieldInputState
 > {
   public state = {
-    jsComponent: false,
-    showFloatingLabel: false
+    jsComponent: false
   };
   protected MDComponent?: MDCTextField;
 
@@ -90,24 +88,17 @@ export class TextFieldInput extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    this.setState(
-      {
-        showFloatingLabel: true
-      },
-      () => {
-        if (this.control && !MaterialComponent.isPrerendering) {
-          this.MDComponent = new MDCTextField(this.control);
-          this.setState({jsComponent: true});
-          if (this.props.onInit) {
-            this.props.onInit(this.MDComponent);
-          }
-          if (this.props.value) {
-            this.MDComponent.value = this.props.value;
-          }
-        }
-        this.afterComponentDidMount();
+    if (this.control && !MaterialComponent.isPrerendering) {
+      this.MDComponent = new MDCTextField(this.control);
+      this.setState({jsComponent: true});
+      if (this.props.onInit) {
+        this.props.onInit(this.MDComponent);
       }
-    );
+      if (this.props.value) {
+        this.MDComponent.value = this.props.value;
+      }
+    }
+    this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
@@ -125,7 +116,7 @@ export class TextFieldInput extends MaterialComponent<
 
   @autobind
   protected materialDom(allprops) {
-    const {className, outerStyle, outlined, ...props} = allprops;
+    const {className, outerStyle, outlined, label, ...props} = allprops;
     const cn: string[] = [className] || [];
 
     if ('leadingIcon' in props) {
@@ -136,11 +127,9 @@ export class TextFieldInput extends MaterialComponent<
       cn.push(' mdc-text-field--box mdc-text-field--with-trailing-icon');
     }
 
-    if (this.state.jsComponent) {
-      cn.push('mdc-text-field--upgraded');
-    }
+    cn.push('mdc-text-field--upgraded');
 
-    if (props.label && props.fullwidth) {
+    if (label && props.fullwidth) {
       console.warn(
         'Passing a "label" prop is not supported when using a "fullwidth" text field.'
       );
@@ -157,13 +146,12 @@ export class TextFieldInput extends MaterialComponent<
           <input
             type={props.type || 'text'}
             className="mdc-text-field__input"
+            placeholder={!this.state.jsComponent && label}
             {...props}
           />
         )}
-        {props.label &&
-          this.state.showFloatingLabel && (
-            <Label for={props.id}>{props.label}</Label>
-          )}
+        {label &&
+          this.state.jsComponent && <Label for={props.id}>{label}</Label>}
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
