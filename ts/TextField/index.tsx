@@ -116,7 +116,7 @@ export class TextFieldInput extends MaterialComponent<
 
   @autobind
   protected materialDom(allprops) {
-    const {className, outerStyle, outlined, label, ...props} = allprops;
+    const {className, outerStyle, outlined, ...props} = allprops;
     const cn: string[] = [className] || [];
 
     if ('leadingIcon' in props) {
@@ -129,7 +129,7 @@ export class TextFieldInput extends MaterialComponent<
 
     cn.push('mdc-text-field--upgraded');
 
-    if (label && props.fullwidth) {
+    if (props.label && props.fullwidth) {
       console.warn(
         'Passing a "label" prop is not supported when using a "fullwidth" text field.'
       );
@@ -147,13 +147,14 @@ export class TextFieldInput extends MaterialComponent<
             type={props.type || 'text'}
             className="mdc-text-field__input"
             placeholder={
-              !this.state.jsComponent && (props.required ? `${label}*` : label)
+              !this.state.jsComponent &&
+              (props.required ? `${props.label}*` : props.label)
             }
             {...props}
           />
         )}
-        {label &&
-          this.state.jsComponent && <Label for={props.id}>{label}</Label>}
+        {props.label &&
+          this.state.jsComponent && <Label for={props.id}>{props.label}</Label>}
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
