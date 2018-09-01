@@ -217,7 +217,7 @@ type input_type =
   | 'url'
   | 'week';
 
-export interface ITextFieldProps {
+interface ITextFieldOwnProps {
   fullwidth?: boolean;
   textarea?: boolean;
   type?: input_type;
@@ -236,18 +236,12 @@ export interface ITextFieldProps {
   value?: string;
 }
 
-export interface ITextFieldState {
-  showFloatingLabel: boolean;
-}
+export interface ITextFieldProps
+  extends SoftMerge<ITextFieldOwnProps, JSX.HTMLAttributes> {}
 
-export class TextField extends Component<
-  SoftMerge<ITextFieldProps, JSX.HTMLAttributes>,
-  ITextFieldState
-> {
-  public static readonly defaultProps = {
-    outerStyle: {}
-  };
+export interface ITextFieldState {}
 
+export class TextField extends Component<ITextFieldProps, ITextFieldState> {
   public static readonly HelperText = HelperText;
   protected static uidCounter = 0;
 
@@ -255,18 +249,8 @@ export class TextField extends Component<
     return ++this.uidCounter;
   }
 
-  public state = {
-    showFloatingLabel: false
-  };
-
   protected readonly id = TextField.uid();
   protected MDComponent?: MDCTextField;
-
-  public componentDidMount() {
-    this.setState({
-      showFloatingLabel: true
-    });
-  }
 
   public render(allprops, {showFloatingLabel}) {
     const {
