@@ -88,15 +88,18 @@ export class TextFieldInput extends MaterialComponent<
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control && !MaterialComponent.isPrerendering) {
-      this.MDComponent = new MDCTextField(this.control);
-      this.setState({jsComponent: true});
-      if (this.props.onInit) {
-        this.props.onInit(this.MDComponent);
-      }
-      if (this.props.value) {
-        this.MDComponent.value = this.props.value;
-      }
+    if (!MaterialComponent.isPrerendering) {
+      this.setState({jsComponent: true}, () => {
+        if (this.control) {
+          this.MDComponent = new MDCTextField(this.control);
+          if (this.props.onInit) {
+            this.props.onInit(this.MDComponent);
+          }
+          if (this.props.value) {
+            this.MDComponent.value = this.props.value;
+          }
+        }
+      });
     }
     this.afterComponentDidMount();
   }
