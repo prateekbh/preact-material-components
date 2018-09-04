@@ -212,9 +212,6 @@ export interface IDrawerItemProps {
 
 export interface IDrawerItemState {}
 
-/**
- * @prop selected = false
- */
 export class DrawerItem extends ListLinkItem<
   IDrawerItemProps,
   IDrawerItemState

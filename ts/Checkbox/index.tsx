@@ -3,14 +3,6 @@ import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-/*
- * Default props for check box
- */
-const defaultProps = {
-  checked: false,
-  indeterminate: false
-};
-
 export interface ICheckboxProps {
   indeterminate?: boolean;
   disabled?: boolean;

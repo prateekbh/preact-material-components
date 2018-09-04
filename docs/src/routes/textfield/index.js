@@ -100,7 +100,6 @@ export default class TextFieldPage extends Component {
           <span className="strong">mdc-text-field</span>. You can refer to its
           documentation
           <a href="https://material.io/develop/web/components/input-controls/text-field/">
-            {' '}
             here
           </a>.
         </div>

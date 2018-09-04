@@ -1,5 +1,5 @@
 import autobind from 'autobind-decorator';
-import {h} from 'preact';
+import {Component, h, VNode} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ITypographyProps {
@@ -17,6 +17,7 @@ export interface ITypographyProps {
   subtitle1?: boolean;
   subtitle2?: boolean;
   title?: boolean; // TODO: Add to docs / remove from here
+  tag?: string | Component<{children?: [string]}, any> | ((props: {}) => VNode);
 }
 
 export interface ITypographyState {}
@@ -44,11 +45,15 @@ export class Typography extends MaterialComponent<
   ];
 
   @autobind
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    let {tag: Tag, ...props} = allprops;
+    if (!Tag) {
+      Tag = 'span';
+    }
     return (
-      <span {...props} ref={this.setControlRef}>
+      <Tag {...props} ref={this.setControlRef}>
         {props.children}
-      </span>
+      </Tag>
     );
   }
 }
