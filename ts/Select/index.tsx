@@ -66,6 +66,8 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
 
   @autobind
   protected changed(e) {
+    e = e || {};
+
     if (typeof e.selectedIndex !== 'number') {
       if (this.MDComponent) {
         e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
@@ -74,7 +76,6 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
       }
     }
 
-    e = e || {};
     if (this.props.onChange) {
       this.props.onChange(e);
     }
