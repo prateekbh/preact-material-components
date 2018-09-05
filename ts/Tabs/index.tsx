@@ -178,25 +178,20 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   protected componentName = 'tab-bar';
   protected mdcProps = ['icon-tab-bar', 'icons-with-text'];
   protected MDComponent?: MDCTabBar;
+  protected mdcNotifyProps = ['activeTabIndex'];
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCTabBar(this.control);
-      setActiveTabIndex(defaultProps, this.props, this.MDComponent);
     }
+    this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.destroy();
-    }
-  }
-
-  public componentWillUpdate(nextProps) {
-    if (this.MDComponent) {
-      setActiveTabIndex(this.props, nextProps, this.MDComponent);
     }
   }
 

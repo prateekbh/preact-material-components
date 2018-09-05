@@ -51,3 +51,6 @@ CssMigrationWebpackPlugin.js
 .babelrc
 .prettierignore
 .eslintignore
+/docs
+.idea
+yarn.lock
