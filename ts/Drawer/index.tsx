@@ -29,8 +29,8 @@ export class TemporaryDrawer extends MaterialComponent<
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCTemporaryDrawer(this.control);
-      this.MDComponent.listen('MDCTemporaryDrawer:open', this.open);
-      this.MDComponent.listen('MDCTemporaryDrawer:close', this.close);
+      this.MDComponent.listen('MDCTemporaryDrawer:open', this.onOpen);
+      this.MDComponent.listen('MDCTemporaryDrawer:close', this.onClose);
     }
     this.afterComponentDidMount();
   }
@@ -38,21 +38,21 @@ export class TemporaryDrawer extends MaterialComponent<
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
-      this.MDComponent.unlisten('MDCTemporaryDrawer:close', this.close);
-      this.MDComponent.unlisten('MDCTemporaryDrawer:open', this.open);
+      this.MDComponent.unlisten('MDCTemporaryDrawer:open', this.onOpen);
+      this.MDComponent.unlisten('MDCTemporaryDrawer:close', this.onClose);
       this.MDComponent.destroy();
     }
   }
 
   @bind
-  protected open(e) {
+  protected onOpen(e) {
     if (this.props.onOpen) {
       this.props.onOpen(e);
     }
   }
 
   @bind
-  protected close(e) {
+  protected onClose(e) {
     if (this.props.onClose) {
       this.props.onClose(e);
     }
@@ -76,9 +76,6 @@ export interface IPermanentDrawerProps extends IDrawerProps {
 
 export interface IPermanentDrawerState extends IDrawerState {}
 
-/**
- * @prop spacer = false
- */
 export class PermanentDrawer extends MaterialComponent<
   IPermanentDrawerProps,
   IPermanentDrawerState
@@ -117,30 +114,30 @@ export class PersistentDrawer extends MaterialComponent<
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCPersistentDrawer(this.control);
-      this.MDComponent.listen('MDCPersistentDrawer:open', this.open);
-      this.MDComponent.listen('MDCPersistentDrawer:close', this.close);
+      this.MDComponent.listen('MDCPersistentDrawer:open', this.onOpen);
+      this.MDComponent.listen('MDCPersistentDrawer:close', this.onClose);
     }
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
-      this.MDComponent.unlisten('MDCPersistentDrawer:close', this.close);
-      this.MDComponent.unlisten('MDCPersistentDrawer:open', this.open);
+      this.MDComponent.unlisten('MDCPersistentDrawer:open', this.onOpen);
+      this.MDComponent.unlisten('MDCPersistentDrawer:close', this.onClose);
       this.MDComponent.destroy();
     }
     this.afterComponentDidMount();
   }
 
   @bind
-  protected open(e) {
+  protected onOpen(e) {
     if (this.props.onOpen) {
       this.props.onOpen(e);
     }
   }
 
   @bind
-  protected close(e) {
+  protected onClose(e) {
     if (this.props.onClose) {
       this.props.onClose(e);
     }
@@ -207,9 +204,6 @@ export interface IDrawerItemProps {
 
 export interface IDrawerItemState {}
 
-/**
- * @prop selected = false
- */
 export class DrawerItem extends ListLinkItem<
   IDrawerItemProps,
   IDrawerItemState

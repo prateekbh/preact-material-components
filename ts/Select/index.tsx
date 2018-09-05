@@ -46,7 +46,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCSelect(this.control);
-      this.MDComponent.listen('MDCSelect:change', this.changed);
+      this.MDComponent.listen('MDCSelect:change', this.onChange);
     }
     this.updateSelection();
   }
@@ -54,7 +54,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
-      this.MDComponent.unlisten('MDCSelect:change', this.changed);
+      this.MDComponent.unlisten('MDCSelect:change', this.onChange);
       this.MDComponent.destroy();
     }
   }
@@ -64,7 +64,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   }
 
   @bind
-  protected changed(e) {
+  protected onChange(e) {
     if (this.MDComponent) {
       e = e || {};
       e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;

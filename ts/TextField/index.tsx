@@ -238,10 +238,6 @@ export class TextField extends Component<
   SoftMerge<ITextFieldProps, JSX.HTMLAttributes>,
   ITextFieldState
 > {
-  public static readonly defaultProps = {
-    outerStyle: {}
-  };
-
   public static readonly HelperText = HelperText;
   protected static uidCounter = 0;
 
