@@ -126,7 +126,6 @@ export abstract class MaterialComponent<
     }
   }
 
-
   protected afterComponentDidMount() {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
