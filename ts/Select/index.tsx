@@ -17,7 +17,6 @@ export class SelectOption extends MaterialComponent<
   protected componentName = 'select-item';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return <option {...props}>{props.children}</option>;
   }
@@ -75,7 +74,6 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
     }
   }
 
-  @bind
   protected updateSelection() {
     if (this.MDComponent) {
       if (this.props.selectedIndex) {
@@ -98,7 +96,6 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
     }
   }
 
-  @bind
   protected materialDom(allprops) {
     const {outlined, ...props} = allprops;
     // noinspection RequiredAttributes

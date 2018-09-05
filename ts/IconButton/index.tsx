@@ -42,7 +42,6 @@ export class IconButton extends MaterialComponent<
   @bind
   protected onChange(e: Event) {} // TODO: Implement this method
 
-  @bind
   protected materialDom(props) {
     return (
       <button className="material-icons" ref={this.setControlRef} {...props}>

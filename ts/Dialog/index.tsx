@@ -102,7 +102,6 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   protected mdcProps = [];
   protected MDComponent?: MDCDialog;
 
-  @bind
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
@@ -135,7 +134,6 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
     }
   }
 
-  @bind
   protected materialDom(props) {
     return (
       <aside role={'alertdialog'} ref={this.setControlRef} {...props}>

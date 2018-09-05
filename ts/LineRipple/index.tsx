@@ -1,5 +1,4 @@
 import {MDCLineRipple} from '@material/line-ripple';
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -29,7 +28,6 @@ export class LineRipple extends MaterialComponent<
     }
   }
 
-  @bind
   protected materialDom(props) {
     return <div {...props} ref={this.setControlRef} />;
   }

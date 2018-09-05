@@ -41,14 +41,12 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
     }
   }
 
-  @bind
   public getValue() {
     if (this.MDComponent) {
       return this.MDComponent.value;
     }
   }
 
-  @bind
   public setValue(value?: number) {
     const {disabled = false, min = 0, max = 100, step} = this.props;
     if (this.MDComponent) {
@@ -84,7 +82,6 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
     }
   }
 
-  @bind
   protected materialDom(allprops) {
     const {tabindex: tabIndex = 0, ...props} = allprops;
 

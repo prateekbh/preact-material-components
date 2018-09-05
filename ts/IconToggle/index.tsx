@@ -48,7 +48,6 @@ export class IconToggle extends MaterialComponent<
     }
   }
 
-  @bind
   protected materialDom(props) {
     if (props['data-toggle-on']) {
       props['data-toggle-on'] = JSON.stringify(props['data-toggle-on']);

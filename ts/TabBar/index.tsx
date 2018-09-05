@@ -1,5 +1,4 @@
 import {MDCTabBar} from '@material/tab-bar';
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -12,7 +11,6 @@ export class TabLabel extends MaterialComponent<
   protected componentName = 'tab__text-label';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return <span {...props}>{props.children}</span>;
   }
@@ -24,7 +22,6 @@ export class TabIcon extends MaterialComponent<ITabIconProps, ITabIconState> {
   protected componentName = 'tab__icon';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return (
       <span className="material-icons" {...props}>
@@ -45,7 +42,6 @@ export class Tab extends MaterialComponent<ITabProps, ITabState> {
   protected mdcProps = ['active'];
   protected mdcNotifyProps = ['active'];
 
-  @bind
   protected materialDom(props) {
     return (
       <button class="mdc-tab" role="tab" aria-selected="true" {...props}>
@@ -93,7 +89,6 @@ export class TabBar extends MaterialComponent<ITabsProps, ITabsState> {
     }
   }
 
-  @bind
   protected materialDom(props) {
     return (
       <div class="mdc-tab-bar" role="tablist" ref={this.setControlRef}>

@@ -1,5 +1,4 @@
 import {MDCSnackbar} from '@material/snackbar/';
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -61,7 +60,6 @@ export class Snackbar extends MaterialComponent<
     );
   }
 
-  @bind
   protected materialDom(props) {
     return (
       <div

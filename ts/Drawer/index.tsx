@@ -58,7 +58,6 @@ export class TemporaryDrawer extends MaterialComponent<
     }
   }
 
-  @bind
   protected materialDom(props) {
     return (
       <aside
@@ -87,7 +86,6 @@ export class PermanentDrawer extends MaterialComponent<
   protected componentName = 'drawer--permanent';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return (
       <nav className="mdc-typography mdc-drawer" {...props}>
@@ -148,7 +146,6 @@ export class PersistentDrawer extends MaterialComponent<
     }
   }
 
-  @bind
   protected materialDom(props) {
     return (
       <aside
@@ -172,7 +169,6 @@ export class DrawerHeader extends MaterialComponent<
   protected componentName = 'drawer__header';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return (
       <header ref={this.setControlRef} {...props}>
@@ -196,7 +192,6 @@ export class DrawerContent<
   protected componentName = 'drawer__content';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return (
       <nav className="mdc-list" ref={this.setControlRef} {...props}>
@@ -219,7 +214,6 @@ export class DrawerItem extends ListLinkItem<
   IDrawerItemProps,
   IDrawerItemState
 > {
-  @bind
   protected materialDom(props) {
     const returnedNode = super.materialDom(props);
     /* Logic to add selected class */

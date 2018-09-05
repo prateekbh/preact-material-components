@@ -171,7 +171,6 @@ export class GridList extends MaterialComponent<
   protected componentName = 'grid-list';
   protected mdcProps = ['header-caption', 'twoline-caption', 'tile-gutter-1'];
 
-  @bind
   protected isValidValue(validationValues, testValue) {
     return (
       validationValues &&
@@ -179,7 +178,6 @@ export class GridList extends MaterialComponent<
     );
   }
 
-  @bind
   protected mapClassName(propKey, props) {
     const propValue = props[propKey];
     const validationValues = GridList.validationValuesByKey[propKey];
@@ -189,7 +187,6 @@ export class GridList extends MaterialComponent<
       : '';
   }
 
-  @bind
   protected materialDom(props) {
     const className = Object.keys(GridList.validationValuesByKey)
       .map(key => {

@@ -15,7 +15,6 @@ export class MenuAnchor extends MaterialComponent<
   protected componentName = 'menu-anchor';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -98,7 +97,6 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     }
   }
 
-  @bind
   protected materialDom(props) {
     return (
       <div tabIndex="-1" {...props} ref={this.setControlRef}>

@@ -122,7 +122,6 @@ export class ImageList extends MaterialComponent<
   protected componentName = 'image-list';
   protected mdcProps = ['masonry', 'with-text-protection'];
 
-  @bind
   protected materialDom(props) {
     return (
       <ul {...props} ref={this.setControlRef}>

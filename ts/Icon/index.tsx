@@ -1,4 +1,3 @@
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -13,7 +12,6 @@ export class Icon<PropsType = {}, StateType = {}> extends MaterialComponent<
   protected componentName = 'icon';
   protected mdcProps: string[] = [];
 
-  @bind
   protected materialDom(props) {
     const classes = ['material-icons'];
     // CardActionIcon sends className

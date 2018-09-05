@@ -1,5 +1,4 @@
 import {MDCRadio} from '@material/radio/';
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -31,7 +30,6 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
     }
   }
 
-  @bind
   protected materialDom(allprops) {
     const {className, ...props} = allprops;
     return (
