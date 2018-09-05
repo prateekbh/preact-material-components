@@ -1,5 +1,4 @@
 import {MDCSnackbar} from '@material/snackbar/';
-import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -61,7 +60,6 @@ export class Snackbar extends MaterialComponent<
     );
   }
 
-  @autobind
   protected materialDom(props) {
     return (
       <div

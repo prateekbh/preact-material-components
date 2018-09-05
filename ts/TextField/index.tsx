@@ -1,5 +1,4 @@
 import {MDCTextField} from '@material/textfield';
-import autobind from 'autobind-decorator';
 import {Component, h} from 'preact';
 import MaterialComponent, {
   MaterialComponentProps
@@ -21,7 +20,6 @@ export class HelperText extends MaterialComponent<
   protected componentName = 'text-field-helper-text';
   protected mdcProps = ['persistent', 'validation-msg'];
 
-  @autobind
   protected materialDom(props) {
     return (
       <p {...props} aria-hidden="true">
@@ -39,7 +37,6 @@ export class Label extends MaterialComponent<ILabelProps, ILabelState> {
   protected componentName = 'floating-label';
   protected mdcProps = [];
 
-  @autobind
   protected materialDom(props) {
     return <label {...props}>{props.children}</label>;
   }
@@ -118,12 +115,10 @@ export class TextFieldInput extends MaterialComponent<
     }
   }
 
-  @autobind
   public getValue() {
     return this.MDComponent ? this.MDComponent.value : null;
   }
 
-  @autobind
   protected materialDom(allprops) {
     let {className, outerStyle, outlined, ...props} = allprops;
     className = className || '';
@@ -180,7 +175,6 @@ export class TextFieldInput extends MaterialComponent<
     );
   }
 
-  @autobind
   protected buildClassName(
     props: MaterialComponentProps<ITextFieldInputProps>
   ) {

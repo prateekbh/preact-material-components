@@ -1,4 +1,3 @@
-import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -43,7 +42,6 @@ export class Typography extends MaterialComponent<
     'title'
   ];
 
-  @autobind
   protected materialDom(props) {
     return (
       <span {...props} ref={this.setControlRef}>

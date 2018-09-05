@@ -1,5 +1,5 @@
 import {MDCMenu} from '@material/menu';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import List, {ListItem} from '../List';
@@ -15,7 +15,6 @@ export class MenuAnchor extends MaterialComponent<
   protected componentName = 'menu-anchor';
   protected mdcProps = [];
 
-  @autobind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -71,7 +70,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     }
   }
 
-  @autobind
+  @bind
   protected select(e) {
     if (this.props.onSelect) {
       this.props.onSelect(e);
@@ -79,7 +78,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     this.menuClosed(e);
   }
 
-  @autobind
+  @bind
   protected cancel(e) {
     if (this.props.onCancel) {
       this.props.onCancel(e);
@@ -87,14 +86,13 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     this.menuClosed(e);
   }
 
-  @autobind
+  @bind
   protected menuClosed(e) {
     if (this.props.onMenuClosed) {
       this.props.onMenuClosed(e);
     }
   }
 
-  @autobind
   protected materialDom(props) {
     return (
       <div tabIndex="-1" {...props} ref={this.setControlRef}>
