@@ -2,11 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Button from '../../../../Button';
-
-// Components
-import ComponentTable from '../../components/component-table';
-import CodeBlock from '../../components/code-block';
+import Button from '../../../../esm/Button';
 
 // Styles
 import style from './style';

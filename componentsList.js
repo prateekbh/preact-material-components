@@ -24,6 +24,7 @@ const bundleMapping = {
   Slider: 'slider',
   Snackbar: 'snackbar',
   Switch: 'switch',
+  TabBar: 'tab-bar',
   TextField: 'textfield',
   Toolbar: 'toolbar',
   TopAppBar: 'top-app-bar',
