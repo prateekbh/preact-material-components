@@ -70,6 +70,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     }
   }
 
+
   @bind
   protected onSelect(e) {
     if (this.props.onSelect) {
