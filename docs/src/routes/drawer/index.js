@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Drawer from '../../../../Drawer';
-import Button from '../../../../Button';
-import List from '../../../../List';
+import Drawer from '../../../../esm/Drawer';
+import Button from '../../../../esm/Button';
+import List from '../../../../esm/List';
 
 import './style';
 

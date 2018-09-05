@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Dialog from '../../../../Dialog';
-import Button from '../../../../Button';
-import List from '../../../../List';
+import Dialog from '../../../../esm/Dialog';
+import Button from '../../../../esm/Button';
+import List from '../../../../esm/List';
 
 // Components
 import ComponentTable from '../../components/component-table';
