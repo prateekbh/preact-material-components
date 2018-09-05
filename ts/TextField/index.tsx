@@ -211,7 +211,7 @@ type input_type =
   | 'url'
   | 'week';
 
-export interface ITextFieldProps {
+interface ITextFieldOwnProps {
   fullwidth?: boolean;
   textarea?: boolean;
   type?: input_type;
@@ -230,14 +230,14 @@ export interface ITextFieldProps {
   value?: string;
 }
 
+export interface ITextFieldProps
+  extends SoftMerge<ITextFieldOwnProps, JSX.HTMLAttributes> {}
+
 export interface ITextFieldState {
   showFloatingLabel: boolean;
 }
 
-export class TextField extends Component<
-  SoftMerge<ITextFieldProps, JSX.HTMLAttributes>,
-  ITextFieldState
-> {
+export class TextField extends Component<ITextFieldProps, ITextFieldState> {
   public static readonly HelperText = HelperText;
   protected static uidCounter = 0;
 
