@@ -41,10 +41,6 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   public static readonly defaultProps = {
     open: false
   };
-
-  public static readonly Anchor = MenuAnchor;
-  public static readonly Item = MenuItem;
-
   protected componentName = 'menu';
   protected mdcProps = [
     'open',
@@ -110,4 +106,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   }
 }
 
-export default Menu;
+export default class extends Menu {
+  public static readonly Anchor = MenuAnchor;
+  public static readonly Item = MenuItem;
+}

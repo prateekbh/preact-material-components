@@ -4,6 +4,8 @@ import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
 
+export {Icon as IconButtonIcon} from '../Icon';
+
 export interface IIconButtonProps {
   'data-toggle-on-content'?: boolean;
   'data-toggle-off-content'?: boolean;
@@ -18,8 +20,6 @@ export class IconButton extends MaterialComponent<
   IIconButtonProps,
   IIconButtonState
 > {
-  public static readonly Icon = Icon;
-
   protected componentName = 'icon-button';
   protected mdcProps = [];
 
@@ -52,4 +52,6 @@ export class IconButton extends MaterialComponent<
   }
 }
 
-export default IconButton;
+export default class extends IconButton {
+  public static readonly Icon = Icon;
+}

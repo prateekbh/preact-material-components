@@ -164,17 +164,6 @@ export interface IListProps {
 export interface IListState {}
 
 export class List extends MaterialComponent<IListProps, IListState> {
-  public static readonly Item = ListItem;
-  public static readonly LinkItem = ListLinkItem;
-  public static readonly ItemGraphic = ListItemGraphic;
-  public static readonly ItemMeta = ListItemMeta;
-  public static readonly Divider = ListDivider;
-  public static readonly TextContainer = ListTextContainer;
-  public static readonly PrimaryText = ListPrimaryText;
-  public static readonly SecondaryText = ListSecondaryText;
-  public static readonly Group = ListGroup;
-  public static readonly GroupHeader = ListGroupHeader;
-
   protected componentName = 'list';
   protected mdcProps = ['dense', 'two-line', 'avatar-list'];
 
@@ -196,4 +185,15 @@ export class List extends MaterialComponent<IListProps, IListState> {
   }
 }
 
-export default List;
+export default class extends List {
+  public static readonly Item = ListItem;
+  public static readonly LinkItem = ListLinkItem;
+  public static readonly ItemGraphic = ListItemGraphic;
+  public static readonly ItemMeta = ListItemMeta;
+  public static readonly Divider = ListDivider;
+  public static readonly TextContainer = ListTextContainer;
+  public static readonly PrimaryText = ListPrimaryText;
+  public static readonly SecondaryText = ListSecondaryText;
+  public static readonly Group = ListGroup;
+  public static readonly GroupHeader = ListGroupHeader;
+}

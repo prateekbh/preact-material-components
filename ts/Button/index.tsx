@@ -28,8 +28,6 @@ export class Button<
   PropsType & IButtonProps,
   StateType & IButtonState
 > {
-  public static readonly Icon = ButtonIcon;
-
   protected componentName = 'button';
   protected mdcProps = ['dense', 'raised', 'unelevated', 'outlined'];
   protected themeProps = ['primary', 'secondary'];
@@ -52,4 +50,9 @@ export class Button<
   }
 }
 
-export default Button;
+export default class<PropsType = {}, StateType = {}> extends Button<
+  PropsType,
+  StateType
+> {
+  public static readonly Icon = ButtonIcon;
+}

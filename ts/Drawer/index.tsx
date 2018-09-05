@@ -230,7 +230,7 @@ export class DrawerItem extends ListLinkItem<
   }
 }
 
-export class Drawer {
+export default class {
   public static readonly DrawerContent = DrawerContent;
   public static readonly DrawerHeader = DrawerHeader;
   public static readonly DrawerItem = DrawerItem;
@@ -238,5 +238,3 @@ export class Drawer {
   public static readonly PersistentDrawer = PersistentDrawer;
   public static readonly TemporaryDrawer = TemporaryDrawer;
 }
-
-export default Drawer;

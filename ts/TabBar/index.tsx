@@ -69,10 +69,6 @@ export interface ITabsProps {
 export interface ITabsState {}
 
 export class TabBar extends MaterialComponent<ITabsProps, ITabsState> {
-  public static readonly Tab = Tab;
-  public static readonly TabLabel = TabLabel;
-  public static readonly TabIcon = TabIcon;
-
   protected componentName = 'tab-bar';
   protected mdcProps = [];
   protected MDComponent?: MDCTabBar;
@@ -107,4 +103,8 @@ export class TabBar extends MaterialComponent<ITabsProps, ITabsState> {
   }
 }
 
-export default TabBar;
+export default class extends TabBar {
+  public static readonly Tab = Tab;
+  public static readonly TabLabel = TabLabel;
+  public static readonly TabIcon = TabIcon;
+}

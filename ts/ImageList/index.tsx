@@ -113,12 +113,6 @@ export class ImageList extends MaterialComponent<
   IImageListProps,
   IImageListState
 > {
-  public static readonly Item = ImageListItem;
-  public static readonly AspectContainer = ImageListAspectContainer;
-  public static readonly Image = ImageListImage;
-  public static readonly Supporting = ImageListSupporting;
-  public static readonly Label = ImageListLabel;
-
   protected componentName = 'image-list';
   protected mdcProps = ['masonry', 'with-text-protection'];
 
@@ -132,4 +126,10 @@ export class ImageList extends MaterialComponent<
   }
 }
 
-export default ImageList;
+export default class extends ImageList {
+  public static readonly Item = ImageListItem;
+  public static readonly AspectContainer = ImageListAspectContainer;
+  public static readonly Image = ImageListImage;
+  public static readonly Supporting = ImageListSupporting;
+  public static readonly Label = ImageListLabel;
+}

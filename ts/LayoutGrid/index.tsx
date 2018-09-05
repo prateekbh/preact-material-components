@@ -126,9 +126,6 @@ export class LayoutGrid extends MaterialComponent<
   ILayoutGridProps,
   ILayoutGridState
 > {
-  public static readonly Cell = LayoutGridCell;
-  public static readonly Inner = LayoutGridInner;
-
   protected componentName = 'layout-grid';
   protected mdcProps = [];
 
@@ -142,4 +139,7 @@ export class LayoutGrid extends MaterialComponent<
   }
 }
 
-export default LayoutGrid;
+export default class extends LayoutGrid {
+  public static readonly Cell = LayoutGridCell;
+  public static readonly Inner = LayoutGridInner;
+}

@@ -19,8 +19,6 @@ export interface IFabProps {
 export interface IFabState {}
 
 export class Fab extends MaterialComponent<IFabProps, IFabState> {
-  public static readonly Icon = FabIcon;
-
   protected componentName = 'fab';
   protected mdcProps = ['mini', 'exited'];
   protected themeProps = ['primary', 'secondary'];
@@ -45,4 +43,6 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
   }
 }
 
-export default Fab;
+export default class extends Fab {
+  public static readonly Icon = FabIcon;
+}
