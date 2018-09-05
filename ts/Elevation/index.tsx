@@ -1,4 +1,3 @@
-import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -44,7 +43,6 @@ export class Elevation extends MaterialComponent<
   protected componentName = 'elevation';
   protected mdcProps = generatedProps;
 
-  @autobind
   protected materialDom(props) {
     let className;
     if (props.z) {

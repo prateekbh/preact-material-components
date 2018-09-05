@@ -1,4 +1,3 @@
-import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
@@ -34,7 +33,6 @@ export class Button<
   protected mdcProps = ['dense', 'raised', 'unelevated', 'outlined'];
   protected themeProps = ['primary', 'secondary'];
 
-  @autobind
   protected materialDom(props) {
     const ButtonElement = props.href ? 'a' : 'button';
     let className = '';
