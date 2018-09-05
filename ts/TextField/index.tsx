@@ -248,7 +248,6 @@ export class TextField extends Component<
     outerStyle: {}
   };
 
-  public static readonly HelperText = HelperText;
   protected static uidCounter = 0;
 
   protected static uid() {
@@ -320,4 +319,6 @@ export class TextField extends Component<
   }
 }
 
-export default TextField;
+export default class extends TextField {
+  public static readonly HelperText = HelperText;
+}
