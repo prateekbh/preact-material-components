@@ -1,5 +1,5 @@
 import {MDCToolbar} from '@material/toolbar';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -14,7 +14,6 @@ export class ToolbarRow extends MaterialComponent<
   protected componentName = 'toolbar__row';
   protected mdcProps = [];
 
-  @autobind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -35,7 +34,6 @@ export class ToolbarSection extends MaterialComponent<
   protected componentName = 'toolbar__section';
   protected mdcProps = ['align-start', 'align-end', 'shrink-to-fit'];
 
-  @autobind
   protected materialDom(props) {
     return <section {...props}>{props.children}</section>;
   }
@@ -61,7 +59,6 @@ export class ToolbarIcon extends MaterialComponent<
     }
   }
 
-  @autobind
   protected materialDom(props) {
     return (
       <a className="material-icons" {...props}>
@@ -84,7 +81,6 @@ export class ToolbarTitle extends MaterialComponent<
   protected componentName = 'toolbar__title';
   protected mdcProps = [];
 
-  @autobind
   protected materialDom(props) {
     return <span {...props}>{props.children}</span>;
   }
@@ -132,14 +128,13 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
     }
   }
 
-  @autobind
+  @bind
   protected onChange(e) {
     if (this.props.onChange) {
       this.props.onChange(e);
     }
   }
 
-  @autobind
   protected materialDom(props) {
     return (
       <header ref={this.setControlRef} {...props}>

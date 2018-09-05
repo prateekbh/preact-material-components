@@ -1,5 +1,5 @@
 import {MDCDialog} from '@material/dialog/';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Button from '../Button';
@@ -15,7 +15,7 @@ export class DialogHeader extends MaterialComponent<
   protected componentName = 'dialog__header';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <header {...props}>
@@ -38,7 +38,7 @@ export class DialogBody extends MaterialComponent<
   protected componentName = 'dialog__body';
   protected mdcProps = ['scrollable'];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <section {...props}>{props.children}</section>;
   }
@@ -55,7 +55,7 @@ export class DialogFooter extends MaterialComponent<
   protected componentName = 'dialog__footer';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <footer {...props}>{props.children}</footer>;
   }
@@ -75,7 +75,7 @@ export class DialogFooterButton extends Button<
   protected componentName = 'dialog__footer__button';
   protected mdcProps = ['cancel', 'accept'];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <button {...props} className="mdc-button" ref={this.setControlRef}>
@@ -102,7 +102,6 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   protected mdcProps = [];
   protected MDComponent?: MDCDialog;
 
-  @autobind
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
@@ -121,21 +120,20 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
     }
   }
 
-  @autobind
+  @bind
   protected onAccept(e) {
     if (this.props.onAccept) {
       this.props.onAccept(e);
     }
   }
 
-  @autobind
+  @bind
   protected onCancel(e) {
     if (this.props.onCancel) {
       this.props.onCancel(e);
     }
   }
 
-  @autobind
   protected materialDom(props) {
     return (
       <aside role={'alertdialog'} ref={this.setControlRef} {...props}>

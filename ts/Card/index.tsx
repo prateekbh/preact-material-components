@@ -1,4 +1,3 @@
-import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Button from '../Button';
@@ -17,7 +16,6 @@ export class CardActions extends MaterialComponent<
   protected componentName = 'card__actions';
   protected mdcProps = ['full-bleed'];
 
-  @autobind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -37,7 +35,6 @@ export class CardMedia extends MaterialComponent<
   protected componentName = 'card__media';
   protected mdcProps = ['square', '16-9'];
 
-  @autobind
   protected materialDom(props) {
     if (props.sixteenByNine) {
       props.className = 'mdc-card__media--16-9';
@@ -50,7 +47,6 @@ export class CardActionButton extends Button {
   protected componentName = 'card__action';
   protected mdcProps = [];
 
-  @autobind
   protected materialDom(props) {
     return (
       <button
@@ -74,7 +70,6 @@ export class CardActionIcons extends MaterialComponent<
   protected componentName = 'card__action-icons';
   protected mdcProps = [];
 
-  @autobind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -84,7 +79,6 @@ export class CardActionIcon extends Icon {
   protected componentName = 'card__action';
   protected mdcProps = [];
 
-  @autobind
   protected materialDom(props) {
     if (props.className) {
       props.className += ' mdc-card__action--icon';
@@ -106,7 +100,6 @@ export class CardMediaContent extends MaterialComponent<
   protected componentName = 'card__media-content';
   protected mdcProps = [];
 
-  @autobind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -129,7 +122,6 @@ export class Card extends MaterialComponent<ICardProps, ICardState> {
   protected componentName = 'card';
   protected mdcProps = ['outlined'];
 
-  @autobind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
