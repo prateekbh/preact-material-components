@@ -1,4 +1,3 @@
-import autobind from 'autobind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
@@ -23,7 +22,6 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
   protected mdcProps = ['mini', 'exited'];
   protected themeProps = ['primary', 'secondary'];
 
-  @autobind
   protected materialDom(props) {
     const classNames: string[] = [];
     this.themeProps.forEach(themeProp => {
