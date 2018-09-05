@@ -1,5 +1,5 @@
 import {MDCIconButtonToggle} from '@material/icon-button';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
@@ -39,10 +39,9 @@ export class IconButton extends MaterialComponent<
     }
   }
 
-  @autobind
+  @bind
   protected onChange(e: Event) {} // TODO: Implement this method
 
-  @autobind
   protected materialDom(props) {
     return (
       <button className="material-icons" ref={this.setControlRef} {...props}>

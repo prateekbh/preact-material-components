@@ -1,5 +1,5 @@
 import {MDCTabBar, MDCTabBarScroller} from '@material/tabs';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -46,7 +46,7 @@ export class TabBarScroller extends MaterialComponent<
     }
   }
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <div {...props} ref={this.setControlRef}>
@@ -88,7 +88,7 @@ export class TabBarScrollerTabs extends MaterialComponent<
   protected componentName = 'tab-bar';
   protected mdcProps = ['icon-tab-bar', 'icons-with-text'];
 
-  @autobind
+  @bind
   protected materialDom({className, ...props}) {
     return (
       <nav
@@ -113,7 +113,7 @@ export class Tab extends MaterialComponent<ITabProps, ITabState> {
   protected componentName = 'tab';
   protected mdcProps = ['active'];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <a role="tab" {...props} ref={this.setControlRef}>
@@ -134,7 +134,7 @@ export class TabIconLabel extends MaterialComponent<
   protected componentName = 'tab__icon-text';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <span {...props} ref={this.setControlRef}>
@@ -195,7 +195,7 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
     }
   }
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <nav role={'tablist'} {...props} ref={this.setControlRef}>
