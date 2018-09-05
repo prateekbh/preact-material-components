@@ -2,8 +2,8 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Menu from '../../../../Menu';
-import Button from '../../../../Button';
+import Menu from '../../../../esm/Menu';
+import Button from '../../../../esm/Button';
 
 // Components
 import ComponentTable from '../../components/component-table';

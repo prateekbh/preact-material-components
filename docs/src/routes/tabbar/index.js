@@ -2,8 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import TabBar from '../../../../TabBar';
-import Icon from '../../../../Icon';
+import TabBar from '../../../../esm/TabBar';
 import style from './style';
 
 // Components

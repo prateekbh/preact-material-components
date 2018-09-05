@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Card from '../../../../Card';
+import Card from '../../../../esm/Card';
 
 // Components
 import ComponentTable from '../../components/component-table';

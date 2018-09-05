@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Typography from '../../../../Typography';
+import Typography from '../../../../esm/Typography';
 
 // Components
 import ComponentTable from '../../components/component-table';
