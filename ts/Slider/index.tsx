@@ -1,5 +1,5 @@
 import {MDCSlider} from '@material/slider';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -41,14 +41,14 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
     }
   }
 
-  @autobind
+  @bind
   public getValue() {
     if (this.MDComponent) {
       return this.MDComponent.value;
     }
   }
 
-  @autobind
+  @bind
   public setValue(value?: number) {
     const {disabled = false, min = 0, max = 100, step} = this.props;
     if (this.MDComponent) {
@@ -70,21 +70,21 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
     }
   }
 
-  @autobind
+  @bind
   protected onChange(e) {
     if (this.props.onChange) {
       this.props.onChange(e);
     }
   }
 
-  @autobind
+  @bind
   protected onInput(e) {
     if (this.props.onInput) {
       this.props.onInput(e);
     }
   }
 
-  @autobind
+  @bind
   protected materialDom(allprops) {
     const {tabindex: tabIndex = 0, ...props} = allprops;
 

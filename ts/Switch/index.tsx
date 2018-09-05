@@ -1,5 +1,5 @@
 import {MDCSwitch} from '@material/switch';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -28,7 +28,7 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
     }
   }
 
-  @autobind
+  @bind
   protected materialDom(allprops) {
     const {className, ...props} = allprops;
     return (

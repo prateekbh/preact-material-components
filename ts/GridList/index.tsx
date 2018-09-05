@@ -1,4 +1,4 @@
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
@@ -19,7 +19,7 @@ export class GridListTiles extends MaterialComponent<
   protected componentName = 'grid-list__tiles';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <ul {...props}>{props.children}</ul>;
   }
@@ -37,7 +37,7 @@ export class GridListTile extends MaterialComponent<
   protected componentName = 'grid-tile';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <li {...props}>{props.children}</li>;
   }
@@ -55,7 +55,7 @@ export class GridListPrimaryTile extends MaterialComponent<
   protected componentName = 'grid-tile__primary';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <div {...props}>{props.children}</div>;
   }
@@ -75,7 +75,7 @@ export class GridListPrimaryContentTile extends MaterialComponent<
   protected componentName = 'grid-tile__primary-content';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(allprops) {
     const {src, ...props} = allprops;
     return <img src={src} {...props} />;
@@ -94,7 +94,7 @@ export class GridListSecondaryTile extends MaterialComponent<
   protected componentName = 'grid-tile__secondary';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <span {...props}>{props.children}</span>;
   }
@@ -112,7 +112,7 @@ export class GridListTitleTile extends MaterialComponent<
   protected componentName = 'grid-tile__title';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <span {...props}>{props.children}</span>;
   }
@@ -130,7 +130,7 @@ export class GridListSupportTextTile extends MaterialComponent<
   protected componentName = 'grid-tile__support-text';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <span {...props}>{props.children}</span>;
   }
@@ -171,7 +171,7 @@ export class GridList extends MaterialComponent<
   protected componentName = 'grid-list';
   protected mdcProps = ['header-caption', 'twoline-caption', 'tile-gutter-1'];
 
-  @autobind
+  @bind
   protected isValidValue(validationValues, testValue) {
     return (
       validationValues &&
@@ -179,7 +179,7 @@ export class GridList extends MaterialComponent<
     );
   }
 
-  @autobind
+  @bind
   protected mapClassName(propKey, props) {
     const propValue = props[propKey];
     const validationValues = GridList.validationValuesByKey[propKey];
@@ -189,7 +189,7 @@ export class GridList extends MaterialComponent<
       : '';
   }
 
-  @autobind
+  @bind
   protected materialDom(props) {
     const className = Object.keys(GridList.validationValuesByKey)
       .map(key => {

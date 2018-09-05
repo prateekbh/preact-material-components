@@ -1,4 +1,4 @@
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h, VNode} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -13,7 +13,7 @@ export class LayoutGridInner extends MaterialComponent<
   protected componentName = 'layout-grid__inner';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <div ref={this.setControlRef} {...props}>
@@ -51,7 +51,7 @@ export class LayoutGridCell extends MaterialComponent<
     tablet: 'tabletCols'
   };
 
-  @autobind
+  @bind
   protected static createClassName(props) {
     const baseClass = 'mdc-layout-grid__cell--';
     const classes: string[] = [];
@@ -105,7 +105,7 @@ export class LayoutGridCell extends MaterialComponent<
     return element;
   }
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <div
@@ -132,7 +132,7 @@ export class LayoutGrid extends MaterialComponent<
   protected componentName = 'layout-grid';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <div ref={this.setControlRef} {...props}>

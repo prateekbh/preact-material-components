@@ -1,5 +1,5 @@
 import {MDCChipSet} from '@material/chips';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
@@ -15,7 +15,7 @@ export class Chip extends MaterialComponent<IChipProps, IChipState> {
   protected componentName = 'chip';
   protected mdcProps = ['selected'];
 
-  @autobind
+  @bind
   protected materialDom(allprops) {
     const {children, ...props} = allprops;
 
@@ -38,7 +38,7 @@ export class ChipIcon extends Icon<IChipIconProps, IChipIconState> {
   protected componentName = 'chip__icon';
   protected mdcProps = ['leading', 'trailing'];
 
-  @autobind
+  @bind
   protected materialDom(allprops) {
     const {children, ...props} = allprops;
     const otherprops: {[prop: string]: any} = {};
@@ -58,7 +58,7 @@ export class ChipCheckmark extends Icon {
   protected componentName = 'chip__checkmark';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <div {...props}>
@@ -86,7 +86,7 @@ export class ChipText extends MaterialComponent<
   protected componentName = 'chip__text';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(allprops) {
     const {children, ...props} = allprops;
 
@@ -127,7 +127,7 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
     }
   }
 
-  @autobind
+  @bind
   protected materialDom(allprops) {
     const {children, ...props} = allprops;
 

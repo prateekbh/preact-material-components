@@ -1,6 +1,6 @@
 import MDCComponent from '@material/base/component';
 import {MDCRipple} from '@material/ripple';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {Component, VNode} from 'preact';
 import {SoftMerge} from './types';
 
@@ -126,7 +126,7 @@ export abstract class MaterialComponent<
     }
   }
 
-  @autobind
+  @bind
   protected afterComponentDidMount() {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
@@ -136,13 +136,13 @@ export abstract class MaterialComponent<
   }
 
   // Shared setter for the root element ref
-  @autobind
+  @bind
   protected setControlRef(control?: Element) {
     this.control = control;
   }
 
   /** Build the className based on component names and mdc props */
-  @autobind
+  @bind
   protected buildClassName(props: MaterialComponentProps<PropType>) {
     // Class name based on component name
     let classText = 'mdc-' + this.componentName;
@@ -163,7 +163,7 @@ export abstract class MaterialComponent<
   }
 
   /** Returns the class name for element */
-  @autobind
+  @bind
   protected getClassName(element: VNode) {
     if (!element) {
       return '';

@@ -1,5 +1,5 @@
 import {MDCCheckbox} from '@material/checkbox/';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -44,7 +44,7 @@ export class Checkbox extends MaterialComponent<
     }
   }
 
-  @autobind
+  @bind
   protected materialDom(allprops) {
     return (
       <div ref={this.setControlRef}>

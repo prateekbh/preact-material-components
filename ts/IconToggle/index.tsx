@@ -1,5 +1,5 @@
 import {MDCIconToggle} from '@material/icon-toggle/';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -41,14 +41,14 @@ export class IconToggle extends MaterialComponent<
     }
   }
 
-  @autobind
+  @bind
   protected onChange(e) {
     if (this.props.onChange) {
       this.props.onChange(e);
     }
   }
 
-  @autobind
+  @bind
   protected materialDom(props) {
     if (props['data-toggle-on']) {
       props['data-toggle-on'] = JSON.stringify(props['data-toggle-on']);

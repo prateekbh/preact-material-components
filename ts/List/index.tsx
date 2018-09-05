@@ -1,4 +1,4 @@
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 import Icon from '../Icon';
@@ -17,7 +17,7 @@ export class ListItem<
   protected componentName = 'list-item';
   protected mdcProps: string[] = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <li role="option" {...props} ref={this.setControlRef}>
@@ -34,7 +34,7 @@ export class ListLinkItem<
   protected componentName = 'list-item';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <a role="option" {...props} ref={this.setControlRef}>
@@ -55,7 +55,7 @@ export class ListItemGraphic extends MaterialComponent<
   protected componentName = 'list-item__graphic';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <span {...props} ref={this.setControlRef} role="presentation">
@@ -82,7 +82,7 @@ export class ListDivider extends MaterialComponent<
   protected componentName = 'list-divider';
   protected mdcProps = ['inset'];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <li role="separator" {...props} ref={this.setControlRef} />;
   }
@@ -99,7 +99,7 @@ export class ListTextContainer extends MaterialComponent<
   protected componentName = 'list-item__text';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <span {...props} ref={this.setControlRef}>
@@ -128,7 +128,7 @@ export class ListGroup extends MaterialComponent<
   protected componentName = 'list-group';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -145,7 +145,7 @@ export class ListGroupHeader extends MaterialComponent<
   protected componentName = 'list-group__subheader';
   protected mdcProps = [];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     return (
       <h3 {...props} ref={this.setControlRef}>
@@ -178,7 +178,7 @@ export class List extends MaterialComponent<IListProps, IListState> {
   protected componentName = 'list';
   protected mdcProps = ['dense', 'two-line', 'avatar-list'];
 
-  @autobind
+  @bind
   protected materialDom(props) {
     if (props.interactive) {
       return (

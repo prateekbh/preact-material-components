@@ -1,5 +1,5 @@
 import {MDCLinearProgress} from '@material/linear-progress';
-import autobind from 'autobind-decorator';
+import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -50,7 +50,7 @@ export class LinearProgress extends MaterialComponent<
     }
   }
 
-  @autobind
+  @bind
   protected materialDom(props) {
     // TODO: Fix theme props
     return (
