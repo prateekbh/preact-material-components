@@ -126,7 +126,6 @@ export abstract class MaterialComponent<
     }
   }
 
-  @bind
   protected afterComponentDidMount() {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
@@ -142,7 +141,6 @@ export abstract class MaterialComponent<
   }
 
   /** Build the className based on component names and mdc props */
-  @bind
   protected buildClassName(props: MaterialComponentProps<PropType>) {
     // Class name based on component name
     let classText = 'mdc-' + this.componentName;
@@ -163,7 +161,6 @@ export abstract class MaterialComponent<
   }
 
   /** Returns the class name for element */
-  @bind
   protected getClassName(element: VNode) {
     if (!element) {
       return '';
