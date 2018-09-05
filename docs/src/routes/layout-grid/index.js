@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import LayoutGrid from '../../../../LayoutGrid';
+import LayoutGrid from '../../../../esm/LayoutGrid';
 
 // Components
 import ComponentTable from '../../components/component-table';
