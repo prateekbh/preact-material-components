@@ -24,35 +24,35 @@ export default class ButtonPage extends Component {
         props: [
           {
             name: 'ripple',
-            description: 'Adds riple effect to the button'
+            description: 'Adds riple effect to the button.'
           },
           {
             name: 'dense',
-            description: 'Adds dense padding to the button'
+            description: 'Adds dense padding to the button.'
           },
           {
             name: 'raised',
-            description: 'Adds raised effect to the button'
+            description: 'Adds raised effect to the button.'
           },
           {
             name: 'disabled',
-            description: 'Disables the button'
+            description: 'Disables the button.'
           },
           {
             name: 'unelevated',
-            description: 'Adds unelevated effect to the button'
+            description: 'Adds unelevated effect to the button.'
           },
           {
             name: 'outlined',
-            description: 'Adds outlined effect to the button'
+            description: 'Adds outlined effect to the button.'
           },
           {
             name: 'primary',
-            description: 'Adds primary color to button'
+            description: 'Adds primary color to button.'
           },
           {
             name: 'secondary',
-            description: 'Adds secondary color to button'
+            description: 'Adds secondary color to button.'
           }
         ]
       }
