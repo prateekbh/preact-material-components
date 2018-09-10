@@ -68,7 +68,7 @@ export default class ButtonPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <div className="mdc-typography--display1">Original documentation</div>
+        <div className="mdc-typography--display1">Original documentation.</div>
         <div className="mdc-typography--body">
           This component encapsulates <span className="strong">mdc-button</span>,
           you can refer to its documentation
