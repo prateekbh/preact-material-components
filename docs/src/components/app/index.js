@@ -3,10 +3,10 @@ import {h, Component} from 'preact';
 import Router from 'preact-router';
 
 // Material Components
-import Formfield from '../../../../FormField';
-import LayoutGrid from '../../../../LayoutGrid';
-import Switch from '../../../../Switch';
-import Toolbar from '../../../../Toolbar';
+import Formfield from '../../../../esm/FormField';
+import LayoutGrid from '../../../../esm/LayoutGrid';
+import Switch from '../../../../esm/Switch';
+import Toolbar from '../../../../esm/Toolbar';
 
 // Routes
 import ButtonPage from '../../routes/button';
