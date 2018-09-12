@@ -25,8 +25,17 @@ export default class DrawerPage extends Component {
     super();
     this.propsTable = [
       {
-        component: 'Drawer.TemporaryDrawer',
-        props: []
+        component: 'Drawer.Drawer',
+        props: [
+          {
+            name: 'dismissible',
+            description: 'Builds a dismissible drawer.'
+          },
+          {
+            name: 'modal',
+            description: 'Builds a modal based drawer.'
+          }
+        ]
       },
       {
         component: 'Drawer.DrawerHeader',
@@ -42,26 +51,6 @@ export default class DrawerPage extends Component {
           {
             name: 'selected',
             description: 'Tells if the drawer item is selected.'
-          }
-        ]
-      },
-      {
-        component: 'Drawer.PermanentDrawer',
-        props: [
-          {
-            name: 'spacer',
-            description:
-              'Teels if the tollbar height equivalent spacer is required.'
-          }
-        ]
-      },
-      {
-        component: 'Drawer.PersistentDrawer',
-        props: [
-          {
-            name: 'spacer',
-            description:
-              'Teels if the tollbar height equivalent spacer is required.'
           }
         ]
       }
@@ -113,7 +102,7 @@ export default class DrawerPage extends Component {
           Toggle Drawer
         </Button>
         <div className="demo-drawer">
-          <Drawer.TemporaryDrawer
+          <Drawer
             open={this.state.drawerOpened}
             onClose={() => {
               this.setState({
@@ -124,14 +113,12 @@ export default class DrawerPage extends Component {
               Components
             </Drawer.DrawerHeader>
             <Drawer.DrawerContent>
-              <List>
-                <List.LinkItem>
-                  <List.ItemIcon>home</List.ItemIcon>
-                  Home
-                </List.LinkItem>
-              </List>
+              <Drawer.DrawerItem>
+                <List.ItemIcon>home</List.ItemIcon>
+                Home
+              </Drawer.DrawerItem>
             </Drawer.DrawerContent>
-          </Drawer.TemporaryDrawer>
+          </Drawer>
         </div>
       </div>
     );

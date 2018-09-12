@@ -16,18 +16,19 @@
     transition-property: max-height;
     will-change: max-height;
     transition-duration: 300ms;
+    margin-top: 54px;
     &.collapsed {
-      max-height: 64px;
+      max-height: 0px;
       @media (max-width: 959px) and (orientation: landscape) {
-        max-height: 56px;
+        max-height: 0px;
       }
       @media (max-width: 599px) {
-        max-height: 56px;
+        max-height: 0px;
       }
     }
-    a {
-      color: #fff;
-    }
+  }
+  .mdc-top-app-bar__row a {
+    color: #fff;
   }
   h1 {
     margin: 0;

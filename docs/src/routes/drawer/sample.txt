@@ -24,24 +24,23 @@ export default class DrawerPage extends Component {
         >
           Open Drawer
         </Button>
-        <Drawer.TemporaryDrawer open={this.state.drawerOpened} onClose={() => {
+        <Drawer
+          open={this.state.drawerOpened}
+          onClose={() => {
             this.setState({
               drawerOpened: false
             });
-          }}
-        >
+          }}>
           <Drawer.DrawerHeader className="mdc-theme--primary-bg">
             Components
           </Drawer.DrawerHeader>
           <Drawer.DrawerContent>
-            <List>
-              <List.LinkItem>
-                  <List.ItemIcon>home</List.ItemIcon>
-                  Home
-              </List.LinkItem>
-            </List>
+            <Drawer.DrawerItem>
+              <List.ItemIcon>home</List.ItemIcon>
+              Home
+            </Drawer.DrawerItem>
           </Drawer.DrawerContent>
-        </Drawer.TemporaryDrawer>
+        </Drawer>
       </div>
     );
   }
