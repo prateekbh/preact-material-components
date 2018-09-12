@@ -68,7 +68,10 @@ export default class Menu extends Component {
         </Drawer.DrawerHeader>
         <Drawer.DrawerContent>
           {items.map(({icon, link, text}, index) => (
-            <Drawer.DrawerItem selected={index===0} href={link} onClick={this._onClick}>
+            <Drawer.DrawerItem
+              selected={index === 0}
+              href={link}
+              onClick={this._onClick}>
               <List.ItemGraphic>{icon || 'code'}</List.ItemGraphic>
               {text}
             </Drawer.DrawerItem>

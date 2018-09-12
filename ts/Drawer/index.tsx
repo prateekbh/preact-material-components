@@ -1,5 +1,5 @@
 // @ts-ignore
-import {MDCDrawer} from "@material/drawer";
+import {MDCDrawer} from '@material/drawer';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
@@ -122,16 +122,16 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   }
 
   protected materialDom(props) {
-    const classes = ["mdc-drawer"];
+    const classes = ['mdc-drawer'];
     // cant use mdcProps cuz classes need to be on the inner child and not on root level
     if (props.modal) {
-      classes.push('mdc-drawer--modal')
+      classes.push('mdc-drawer--modal');
     } else if (props.dismissible) {
-      classes.push('mdc-drawer--dismissible')
+      classes.push('mdc-drawer--dismissible');
     }
     return (
       <div>
-        <aside class={classes.join(" ")} ref={this.setControlRef} {...props}>
+        <aside class={classes.join(' ')} ref={this.setControlRef} {...props}>
           {props.children}
         </aside>
         {props.modal && <div class="mdc-drawer-scrim" />}
