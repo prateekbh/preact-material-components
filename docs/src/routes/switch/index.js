@@ -14,6 +14,7 @@ import './style';
 // Samples
 import sample from './sample.txt';
 import defaultSample from './default-sample.txt';
+import checkedSample from './checked-sample.txt';
 import disabledSample from './disabled-sample.txt';
 
 // Class
@@ -27,6 +28,10 @@ export default class SwitchPage extends Component {
           {
             name: 'disabled',
             description: 'Disables the switch.'
+          },
+          {
+            name: 'checked',
+            description: 'Tells if the switch is checked.'
           }
         ]
       }
@@ -57,6 +62,11 @@ export default class SwitchPage extends Component {
         <Switch />
         <CodeBlock>
           <code class="lang-html">{defaultSample}</code>
+        </CodeBlock>
+        <div className="mdc-typography--title">Checked </div>
+        <Switch checked />
+        <CodeBlock>
+          <code class="lang-html">{checkedSample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">Disabled </div>
         <Switch disabled={true} />

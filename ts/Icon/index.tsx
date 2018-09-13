@@ -14,7 +14,7 @@ export class Icon<PropsType = {}, StateType = {}> extends MaterialComponent<
 
   protected materialDom(props) {
     const classes = ['material-icons'];
-    // CardActionIcon sends className  TODO: Isn't that handled by MaterialComponent
+    // CardActionIcon sends className
     if (props.className) {
       classes.push(props.className);
     }
