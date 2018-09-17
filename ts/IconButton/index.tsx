@@ -1,6 +1,6 @@
-import {h} from 'preact';
-import {MDCIconButtonToggle} from '@material/icon-button';
 import MaterialComponent from '../Base/MaterialComponent';
+import {MDCIconButtonToggle} from '@material/icon-button';
+import {h} from 'preact';
 
 export interface IIconButtonProps {
   disabled?: boolean;
