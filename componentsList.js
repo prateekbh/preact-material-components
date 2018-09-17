@@ -18,6 +18,7 @@ const bundleMapping = {
   LineRipple: 'line-ripple',
   List: 'list',
   Menu: 'menu',
+  MenuSurface: 'menu-surface',
   Tabs: 'tabs',
   Radio: 'radio',
   Select: 'select',

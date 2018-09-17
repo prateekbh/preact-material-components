@@ -8,28 +8,28 @@ export interface IIconButtonProps {
 
 export interface IIconButtonState {}
 
-export interface IButtonProps {
+export interface IIconProps {
   on?: boolean;
   element?: boolean;
 }
 
-export interface IButtonState {}
+export interface IIconState {}
 
-class Button extends MaterialComponent<IButtonProps, IButtonState> {
+export class Icon extends MaterialComponent<IIconProps, IIconState> {
   protected componentName = 'icon-button__icon';
   protected mdcProps = ['on'];
   protected materialDom(props) {
-    const ButtonElement = props.element || 'i';
+    const IconElement = props.element || 'i';
     return (
-      <ButtonElement class="material-icons" {...props}>
+      <IconElement class="material-icons" {...props}>
         {props.children}
-      </ButtonElement>
+      </IconElement>
     );
   }
 }
 
-class IconButton extends MaterialComponent<IIconButtonProps, IIconButtonState> {
-  public static readonly Icon = Button;
+export default class IconButton extends MaterialComponent<IIconButtonProps, IIconButtonState> {
+  public static readonly Icon = Icon;
 
   protected componentName = 'icon-button';
   protected mdcProps = [];
@@ -54,4 +54,3 @@ class IconButton extends MaterialComponent<IIconButtonProps, IIconButtonState> {
   }
 }
 
-export default IconButton;

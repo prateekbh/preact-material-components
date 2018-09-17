@@ -100,9 +100,9 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     super.componentDidMount();
     if (this.control && (this.props.modal || this.props.dismissible)) {
       this.MDComponent = new MDCDrawer(this.control);
-      //@ts-ignore
+      // @ts-ignore
       this.MDComponent.listen('MDCDrawer:opened', this.onOpen);
-      //@ts-ignore
+      // @ts-ignore
       this.MDComponent.listen('MDCDrawer:closed', this.onClose);
     }
   }
