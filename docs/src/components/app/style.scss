@@ -16,9 +16,10 @@
     transition-property: max-height;
     will-change: max-height;
     transition-duration: 300ms;
-    margin-top: 54px;
+    margin-top: 62px;
     &.collapsed {
       max-height: 0px;
+      width: 100vw;
       @media (max-width: 959px) and (orientation: landscape) {
         max-height: 0px;
       }
@@ -32,9 +33,6 @@
   }
   h1 {
     margin: 0;
-  }
-  .content {
-    max-width: 1280px;
   }
   .st0 {
     fill: #757575;
