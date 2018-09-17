@@ -27,7 +27,8 @@ export default class IconButtonPage extends Component {
         props: [
           {
             name: 'on',
-            description: 'Determine if this button is the on state or off state button.'
+            description:
+              'Determine if this button is the on state or off state button.'
           }
         ]
       }
