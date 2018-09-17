@@ -74,7 +74,6 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     }
   }
 
-
   @bind
   protected select(e) {
     if (this.props.onSelect) {

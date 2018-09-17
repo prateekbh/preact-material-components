@@ -49,7 +49,6 @@ export class LinearProgress extends MaterialComponent<
     }
   }
 
-
   protected materialDom(props) {
     // TODO: Fix theme props
     return (
