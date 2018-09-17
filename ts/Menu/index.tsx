@@ -99,7 +99,11 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
 
   protected materialDom(props) {
     return (
-      <div class="mdc-menu-surface" tabIndex="-1" {...props} ref={this.setControlRef}>
+      <div
+        class="mdc-menu-surface"
+        tabIndex="-1"
+        {...props}
+        ref={this.setControlRef}>
         <List className="mdc-menu__items" role="menu" aria-hidden="true">
           {props.children}
         </List>

@@ -28,7 +28,10 @@ export class Icon extends MaterialComponent<IIconProps, IIconState> {
   }
 }
 
-export default class IconButton extends MaterialComponent<IIconButtonProps, IIconButtonState> {
+export default class IconButton extends MaterialComponent<
+  IIconButtonProps,
+  IIconButtonState
+> {
   public static readonly Icon = Icon;
 
   protected componentName = 'icon-button';
@@ -53,4 +56,3 @@ export default class IconButton extends MaterialComponent<IIconButtonProps, IIco
     );
   }
 }
-
