@@ -40,16 +40,27 @@ class CssMigrationWebpackPlugin {
       'mdc.' + component + '.css'
     );
     const sourceScssPath = path.join(sourcePath, '*.scss');
-    const destCssFilePath = path.join(destFolder, 'style.css');
-    const destScssFilePath = path.join(destFolder);
+    const destCssFilePath = path.join(destFolder, 'css', `${component}.css`);
+    const destScssDirPath = path.join(destFolder, 'scss', component);
     //delete already existing file
     if (fs.existsSync(destCssFilePath)) {
       fs.unlinkSync(destCssFilePath);
     }
 
+    // create needed directories
+    if (!fs.existsSync(path.join(destFolder, 'css'))) {
+      fs.mkdirSync(path.join(destFolder, 'css'));
+    }
+    if (!fs.existsSync(path.join(destFolder, 'scss'))) {
+      fs.mkdirSync(path.join(destFolder, 'scss'));
+    }
+    if (!fs.existsSync(path.join(destFolder, 'scss', component))) {
+      fs.mkdirSync(path.join(destFolder, 'scss', component));
+    }
+
     //copy new file
     cp.sync(sourceCssPath, destCssFilePath);
-    globCopy.sync(sourceScssPath, destScssFilePath);
+    globCopy.sync(sourceScssPath, destScssDirPath);
 
     //get nested folders with .scss files
     const isDirectory = source => fs.lstatSync(source).isDirectory();
@@ -77,7 +88,7 @@ class CssMigrationWebpackPlugin {
 
     //create new directories in dest and copy over files
     subDirectoriesWithScss.forEach(subdir => {
-      const destSubFolder = path.join(destFolder, subdir);
+      const destSubFolder = path.join(destScssDirPath, subdir);
       const srcSubPath = path.join(sourcePath, subdir, '*.scss');
       if (!fs.existsSync(destSubFolder)) fs.mkdirSync(destSubFolder);
       globCopy.sync(srcSubPath, destSubFolder);
@@ -87,17 +98,19 @@ class CssMigrationWebpackPlugin {
     compiler.plugin('after-emit', (compilation, callback) => {
       for (let dest in bundleMapping) {
         if (bundleMapping.hasOwnProperty(dest)) {
-          const source = bundleMapping[dest];
-          const destFolderPath = path.join(__dirname, dest);
-          try {
-            //create folder if not already present
-            if (!fs.existsSync(destFolderPath)) {
-              mkdirp.sync(destFolderPath);
-            }
+          const sources = bundleMapping[dest];
+          for (const source of sources) {
+            const destFolderPath = path.join(__dirname, dest);
+            try {
+              //create folder if not already present
+              if (!fs.existsSync(destFolderPath)) {
+                mkdirp.sync(destFolderPath);
+              }
 
-            this.copyIndividualCss(source, destFolderPath);
-          } catch (err) {
-            return callback(err);
+              this.copyIndividualCss(source, destFolderPath);
+            } catch (err) {
+              return callback(err);
+            }
           }
         }
       }
