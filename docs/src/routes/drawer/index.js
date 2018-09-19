@@ -89,37 +89,6 @@ export default class DrawerPage extends Component {
             here
           </a>.
         </div>
-
-        <div className="mdc-typography--display1">Demo </div>
-        <Button
-          primary={true}
-          raised={true}
-          onClick={() => {
-            this.setState({
-              drawerOpened: !this.state.drawerOpened
-            });
-          }}>
-          Toggle Drawer
-        </Button>
-        <div className="demo-drawer">
-          <Drawer
-            open={this.state.drawerOpened}
-            onClose={() => {
-              this.setState({
-                drawerOpened: false
-              });
-            }}>
-            <Drawer.DrawerHeader className="mdc-theme--primary-bg">
-              Components
-            </Drawer.DrawerHeader>
-            <Drawer.DrawerContent>
-              <Drawer.DrawerItem>
-                <List.ItemIcon>home</List.ItemIcon>
-                Home
-              </Drawer.DrawerItem>
-            </Drawer.DrawerContent>
-          </Drawer>
-        </div>
       </div>
     );
   }
