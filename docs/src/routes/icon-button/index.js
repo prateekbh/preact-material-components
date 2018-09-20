@@ -23,7 +23,7 @@ export default class IconButtonPage extends Component {
         props: []
       },
       {
-        component: 'Button',
+        component: 'Icon',
         props: [
           {
             name: 'on',
