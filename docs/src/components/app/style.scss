@@ -17,7 +17,7 @@
     will-change: max-height;
     transition-duration: 300ms;
     margin-top: 56px;
-    @media (min-width: 1024px){
+    @media (min-width: 1024px) {
       margin-top: 62px;
     }
     &.collapsed {
