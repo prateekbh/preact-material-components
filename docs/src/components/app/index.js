@@ -198,7 +198,7 @@ const menuItems = [
   {
     text: 'TopAppBar',
     link: '/component/top-app-bar/',
-    component: TopAppBar
+    component: TopAppBarPage
   },
   {
     text: 'Typography',
