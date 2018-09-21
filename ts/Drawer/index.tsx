@@ -1,4 +1,3 @@
-// @ts-ignore
 import {MDCDrawer} from '@material/drawer';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
@@ -100,9 +99,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     super.componentDidMount();
     if (this.control && (this.props.modal || this.props.dismissible)) {
       this.MDComponent = new MDCDrawer(this.control);
-      // @ts-ignore
       this.MDComponent.listen('MDCDrawer:opened', this.onOpen);
-      // @ts-ignore
       this.MDComponent.listen('MDCDrawer:closed', this.onClose);
     }
   }
