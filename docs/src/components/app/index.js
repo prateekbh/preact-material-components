@@ -8,6 +8,11 @@ import LayoutGrid from '../../../../esm/LayoutGrid';
 import Switch from '../../../../esm/Switch';
 import TopAppBar from '../../../../esm/TopAppBar';
 
+import '../../../../FormField/style.css';
+import '../../../../LayoutGrid/style.css';
+import '../../../../Switch/style.css';
+import '../../../../TopAppBar/style.css';
+
 // Routes
 import ButtonPage from '../../routes/button';
 import CardPage from '../../routes/card';
@@ -45,7 +50,6 @@ import Typography from '../../routes/typography';
 import Menu from '../menu';
 
 // Styles
-import '../../../../style.css';
 import './style';
 
 const menuItems = [
