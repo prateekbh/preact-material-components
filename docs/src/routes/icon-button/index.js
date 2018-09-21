@@ -3,6 +3,7 @@ import {h, Component} from 'preact';
 
 // Material Components
 import IconButton from '../../../../esm/IconButton';
+
 import '../../../../IconButton/style.css';
 import '../../../../Icon/style.css';
 

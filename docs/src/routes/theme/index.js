@@ -4,6 +4,8 @@ import {h, Component} from 'preact';
 // Material Components
 import Button from '../../../../esm/Button';
 
+import '../../../../Button/style.css';
+
 // Styles
 import style from './style';
 

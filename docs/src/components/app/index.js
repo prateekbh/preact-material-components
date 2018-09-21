@@ -23,10 +23,8 @@ import DrawerPage from '../../routes/drawer';
 import ElevationPage from '../../routes/elevation';
 import FabPage from '../../routes/fab';
 import FormFieldPage from '../../routes/form-field';
-import GridListPage from '../../routes/grid-list';
 import HomePage from '../../routes/home';
 import IconPage from '../../routes/icon';
-import IconTogglePage from '../../routes/icon-toggle';
 import IconButtonPage from '../../routes/icon-button';
 import ImageListPage from '../../routes/image-list';
 import LayoutGridPage from '../../routes/layout-grid';
@@ -38,11 +36,9 @@ import SelectPage from '../../routes/select';
 import SliderPage from '../../routes/slider';
 import SnackbarPage from '../../routes/snackbar';
 import SwitchPage from '../../routes/switch';
-import TabsPage from '../../routes/tabs';
 import TabBarPage from '../../routes/tabbar';
 import TextfieldPage from '../../routes/textfield';
 import ThemePage from '../../routes/theme';
-import ToolbarPage from '../../routes/toolbar';
 import TopAppBarPage from '../../routes/top-app-bar';
 import Typography from '../../routes/typography';
 
@@ -105,11 +101,6 @@ const menuItems = [
     component: FormFieldPage
   },
   {
-    text: 'GridList - deprecated',
-    link: '/component/grid-list/',
-    component: GridListPage
-  },
-  {
     text: 'Icon',
     link: '/component/icon/',
     component: IconPage
@@ -118,11 +109,6 @@ const menuItems = [
     text: 'IconButton',
     link: '/component/icon-button/',
     component: IconButtonPage
-  },
-  {
-    text: 'IconToggle - deprecated',
-    link: '/component/icon-toggle/',
-    component: IconTogglePage
   },
   {
     text: 'ImageList',
@@ -175,11 +161,6 @@ const menuItems = [
     component: SwitchPage
   },
   {
-    text: 'Tabs - deprecated',
-    link: '/component/tabs/',
-    component: TabsPage
-  },
-  {
     text: 'TabBar',
     link: '/component/tabbar/',
     component: TabBarPage
@@ -193,11 +174,6 @@ const menuItems = [
     text: 'Theme',
     link: '/component/theme/',
     component: ThemePage
-  },
-  {
-    text: 'Toolbar',
-    link: '/component/toolbar/',
-    component: ToolbarPage
   },
   {
     text: 'TopAppBar',

@@ -4,6 +4,8 @@ import {h, Component} from 'preact';
 // Material Components
 import TextField from '../../../../esm/TextField';
 
+import '../../../../TextField/style.css';
+
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
