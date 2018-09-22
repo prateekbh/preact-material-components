@@ -5,6 +5,9 @@ import {h, Component} from 'preact';
 import Checkbox from '../../../../esm/Checkbox';
 import Formfield from '../../../../esm/FormField';
 
+import '../../../../Checkbox/style.css';
+import '../../../../FormField/style.css';
+
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';

@@ -89,10 +89,6 @@ describe('docs site', () => {
       return takeAndCompareScreenshot(page, 'component/icon', 'wide');
     });
 
-    it('should match IconToggle page against golden directory', () => {
-      return takeAndCompareScreenshot(page, 'component/icon-toggle', 'wide');
-    });
-
     it('should match IconButton page against golden directory', () => {
       return takeAndCompareScreenshot(page, 'component/icon-button', 'wide');
     });
@@ -137,10 +133,6 @@ describe('docs site', () => {
       return takeAndCompareScreenshot(page, 'component/switch', 'wide');
     });
 
-    it('should match Tabs page against golden directory', () => {
-      return takeAndCompareScreenshot(page, 'component/tabs', 'wide');
-    });
-
     it('should match TabBar page against golden directory', () => {
       return takeAndCompareScreenshot(page, 'component/tabbar', 'wide');
     });
@@ -151,10 +143,6 @@ describe('docs site', () => {
 
     it('should match Theme page against golden directory', () => {
       return takeAndCompareScreenshot(page, 'component/theme', 'wide');
-    });
-
-    it('should match Toolbar page against golden directory', () => {
-      return takeAndCompareScreenshot(page, 'component/toolbar', 'wide');
     });
 
     it('should match Topappbar page against golden directory', () => {

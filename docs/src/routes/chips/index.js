@@ -4,6 +4,8 @@ import {h, Component} from 'preact';
 // Material Components
 import Chips from '../../../../esm/Chips';
 
+import '../../../../Chips/style.css';
+
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
