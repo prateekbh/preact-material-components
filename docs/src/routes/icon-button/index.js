@@ -3,6 +3,8 @@ import {h, Component} from 'preact';
 
 // Material Components
 import IconButton from '../../../../esm/IconButton';
+import '../../../../IconButton/style.css';
+import '../../../../Icon/style.css';
 
 // Components
 import ComponentTable from '../../components/component-table';
@@ -18,38 +20,21 @@ export default class IconButtonPage extends Component {
     this.propsTable = [
       {
         component: 'IconButton',
+        props: []
+      },
+      {
+        component: 'Icon',
         props: [
           {
-            name: 'disabled',
-            description: 'Is the icon disabled'
-          },
-          {
-            name: 'data-toggle-on-content',
-            description: 'icon for on state'
-          },
-          {
-            name: 'data-toggle-off-content',
-            description: 'icon for off state'
-          },
-          {
-            name: 'data-toggle-on-label',
-            description: 'label for on state'
-          },
-          {
-            name: 'data-toggle-off-label',
-            description: 'label for off state'
+            name: 'on',
+            description:
+              'Determine if this button is the on state or off state button.'
           }
         ]
       }
     ];
   }
   render() {
-    const toggleOnIcon = {
-      label: 'Remove From Favorites'
-    };
-    const toggleOffIcon = {
-      label: 'Add to Favorites'
-    };
     return (
       <div>
         <ComponentTable data={this.propsTable} />
@@ -71,14 +56,9 @@ export default class IconButtonPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
-        <IconButton
-          role="button"
-          tabindex="0"
-          aria-pressed="false"
-          aria-label="Add to favorites"
-          data-toggle-on-content="favorite"
-          data-toggle-off-content="favorite_border">
-          favorite_border
+        <IconButton>
+          <IconButton.Icon on>favorite</IconButton.Icon>
+          <IconButton.Icon>favorite_border</IconButton.Icon>
         </IconButton>
       </div>
     );

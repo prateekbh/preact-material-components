@@ -25,8 +25,17 @@ export default class DrawerPage extends Component {
     super();
     this.propsTable = [
       {
-        component: 'Drawer.TemporaryDrawer',
-        props: []
+        component: 'Drawer.Drawer',
+        props: [
+          {
+            name: 'dismissible',
+            description: 'Builds a dismissible drawer.'
+          },
+          {
+            name: 'modal',
+            description: 'Builds a modal based drawer.'
+          }
+        ]
       },
       {
         component: 'Drawer.DrawerHeader',
@@ -42,26 +51,6 @@ export default class DrawerPage extends Component {
           {
             name: 'selected',
             description: 'Tells if the drawer item is selected.'
-          }
-        ]
-      },
-      {
-        component: 'Drawer.PermanentDrawer',
-        props: [
-          {
-            name: 'spacer',
-            description:
-              'Teels if the tollbar height equivalent spacer is required.'
-          }
-        ]
-      },
-      {
-        component: 'Drawer.PersistentDrawer',
-        props: [
-          {
-            name: 'spacer',
-            description:
-              'Teels if the tollbar height equivalent spacer is required.'
           }
         ]
       }
@@ -99,39 +88,6 @@ export default class DrawerPage extends Component {
             {' '}
             here
           </a>.
-        </div>
-
-        <div className="mdc-typography--display1">Demo </div>
-        <Button
-          primary={true}
-          raised={true}
-          onClick={() => {
-            this.setState({
-              drawerOpened: !this.state.drawerOpened
-            });
-          }}>
-          Toggle Drawer
-        </Button>
-        <div className="demo-drawer">
-          <Drawer.TemporaryDrawer
-            open={this.state.drawerOpened}
-            onClose={() => {
-              this.setState({
-                drawerOpened: false
-              });
-            }}>
-            <Drawer.DrawerHeader className="mdc-theme--primary-bg">
-              Components
-            </Drawer.DrawerHeader>
-            <Drawer.DrawerContent>
-              <List>
-                <List.LinkItem>
-                  <List.ItemIcon>home</List.ItemIcon>
-                  Home
-                </List.LinkItem>
-              </List>
-            </Drawer.DrawerContent>
-          </Drawer.TemporaryDrawer>
         </div>
       </div>
     );
