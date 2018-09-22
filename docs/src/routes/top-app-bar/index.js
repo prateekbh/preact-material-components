@@ -3,6 +3,7 @@ import {h, Component} from 'preact';
 
 // Material Components
 import TopAppBar from '../../../../esm/TopAppBar';
+import '../../../../TopAppBar/style.css';
 
 // Components
 import ComponentTable from '../../components/component-table';

@@ -4,6 +4,8 @@ import {h, Component} from 'preact';
 // Material Components
 import Button from '../../../../esm/Button';
 
+import '../../../../Button/style.css';
+
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
@@ -24,35 +26,35 @@ export default class ButtonPage extends Component {
         props: [
           {
             name: 'ripple',
-            description: 'Adds riple effect to the button'
+            description: 'Adds riple effect to the button.'
           },
           {
             name: 'dense',
-            description: 'Adds dense padding to the button'
+            description: 'Adds dense padding to the button.'
           },
           {
             name: 'raised',
-            description: 'Adds raised effect to the button'
+            description: 'Adds raised effect to the button.'
           },
           {
             name: 'disabled',
-            description: 'Disables the button'
+            description: 'Disables the button.'
           },
           {
             name: 'unelevated',
-            description: 'Adds unelevated effect to the button'
+            description: 'Adds unelevated effect to the button.'
           },
           {
             name: 'outlined',
-            description: 'Adds outlined effect to the button'
+            description: 'Adds outlined effect to the button.'
           },
           {
             name: 'primary',
-            description: 'Adds primary color to button'
+            description: 'Adds primary color to button.'
           },
           {
             name: 'secondary',
-            description: 'Adds secondary color to button'
+            description: 'Adds secondary color to button.'
           }
         ]
       }
@@ -68,7 +70,7 @@ export default class ButtonPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <div className="mdc-typography--display1">Original documentation</div>
+        <div className="mdc-typography--display1">Original documentation.</div>
         <div className="mdc-typography--body">
           This component encapsulates <span className="strong">mdc-button</span>,
           you can refer to its documentation

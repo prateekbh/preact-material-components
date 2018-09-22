@@ -4,6 +4,8 @@ import {h, Component} from 'preact';
 // Material Components
 import List from '../../../../esm/List';
 
+import '../../../../List/style.css';
+
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
