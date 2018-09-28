@@ -94,6 +94,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   protected componentName = 'drawer-container';
   protected mdcProps = [];
   protected mdcNotifyProps = ['open'];
+  public MDComponent?: MDCDrawer;
 
   public componentDidMount() {
     super.componentDidMount();
