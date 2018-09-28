@@ -254,14 +254,11 @@ export class TextField extends Component<
     return ++this.uidCounter;
   }
 
-<<<<<<< HEAD
   public state = {
     showFloatingLabel: false
   };
   public MDComponent?: MDCTextField;
 
-=======
->>>>>>> dafca75cde83aff65a35f7d538b6ca0ea57e9baa
   protected readonly id = TextField.uid();
 
   public componentDidMount() {
