@@ -9,9 +9,9 @@ export interface ISwitchProps extends JSX.HTMLAttributes {
 export interface ISwitchState {}
 
 export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
+  public MDComponent?: MDCSwitch;
   protected componentName = 'switch';
   protected mdcProps = ['disabled', 'checked'];
-  protected MDComponent?: MDCSwitch;
 
   public componentDidMount() {
     super.componentDidMount();

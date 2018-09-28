@@ -43,6 +43,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
 
   public static readonly Anchor = MenuAnchor;
   public static readonly Item = MenuItem;
+  public MDComponent?: MDCMenu;
 
   protected componentName = 'menu';
   protected mdcProps = [
@@ -52,7 +53,6 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     'open-from-bottom-left',
     'open-from-bottom-right'
   ];
-  protected MDComponent?: MDCMenu;
   protected mdcNotifyProps = ['open'];
 
   public componentDidMount() {

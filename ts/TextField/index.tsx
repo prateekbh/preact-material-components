@@ -73,7 +73,7 @@ export class TextFieldInput extends MaterialComponent<
   public state = {
     showFloatingLabel: false
   };
-  protected MDComponent?: MDCTextField;
+  public MDComponent?: MDCTextField;
 
   protected componentName = 'text-field';
   protected mdcProps = [
@@ -252,9 +252,9 @@ export class TextField extends Component<
   public state = {
     showFloatingLabel: false
   };
+  public MDComponent?: MDCTextField;
 
   protected readonly id = TextField.uid();
-  protected MDComponent?: MDCTextField;
 
   public componentDidMount() {
     this.setState({

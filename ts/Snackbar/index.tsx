@@ -28,9 +28,9 @@ export class Snackbar extends MaterialComponent<
   ISnackbarState
 > {
   public readonly isPureReactComponent = true;
+  public MDComponent?: MDCSnackbar;
   protected componentName = 'snackbar';
   protected mdcProps = [];
-  protected MDComponent?: MDCSnackbar;
 
   public componentDidMount() {
     super.componentDidMount();
