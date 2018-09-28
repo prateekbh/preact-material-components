@@ -73,8 +73,7 @@ export class TextFieldInput extends MaterialComponent<
   public state = {
     jsComponentAttached: false
   };
-
-  protected MDComponent?: MDCTextField;
+  public MDComponent?: MDCTextField;
 
   protected componentName = 'text-field';
   protected mdcProps = [
@@ -255,8 +254,9 @@ export class TextField extends Component<
     return ++this.uidCounter;
   }
 
+  public MDComponent?: MDCTextField;
+
   protected readonly id = TextField.uid();
-  protected MDComponent?: MDCTextField;
 
   public componentDidMount() {
     this.setState({

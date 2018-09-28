@@ -103,10 +103,10 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
   public static readonly Icon = ChipIcon;
   public static readonly Text = ChipText;
   public static readonly Checkmark = ChipCheckmark;
+  public MDComponent?: MDCChipSet;
 
   protected componentName = 'chip-set';
   protected mdcProps = ['choice', 'filter', 'input'];
-  protected MDComponent?: MDCChipSet;
 
   public componentDidMount() {
     super.componentDidMount();

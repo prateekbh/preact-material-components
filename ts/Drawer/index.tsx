@@ -90,6 +90,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   public static readonly DrawerContent = DrawerContent;
   public static readonly DrawerHeader = DrawerHeader;
   public static readonly DrawerItem = DrawerItem;
+  public MDComponent?: MDCDrawer;
 
   protected componentName = 'drawer-container';
   protected mdcProps = [];

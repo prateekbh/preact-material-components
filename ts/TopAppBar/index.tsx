@@ -98,10 +98,10 @@ export class TopAppBar extends MaterialComponent<
   public static readonly Title = TopAppBarTitle;
   public static readonly Row = TopAppBarRow;
 
+  public MDComponent?: MDCTopAppBar;
+
   protected componentName = 'top-app-bar';
   protected mdcProps = ['short', 'short-collapsed', 'fixed', 'prominent'];
-
-  protected MDComponent?: MDCTopAppBar;
 
   public componentDidMount() {
     super.componentDidMount();

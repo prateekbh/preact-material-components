@@ -10,9 +10,9 @@ export interface IRadioProps {
 export interface IRadioState {}
 
 export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
+  public MDComponent?: MDCRadio;
   protected componentName = 'radio';
   protected mdcProps = ['disabled'];
-  protected MDComponent?: MDCRadio;
   protected mdcNotifyProps = ['checked'];
 
   public componentDidMount() {
