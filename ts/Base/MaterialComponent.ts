@@ -55,7 +55,7 @@ export abstract class MaterialComponent<
   protected classText?: string | null;
   protected ripple?: MDCRipple | null;
   protected control?: Element;
-  protected MDComponent?: MDCComponent<any, any>;
+  public MDComponent?: MDCComponent<any, any>;
 
   public render(props): VNode {
     if (!this.classText) {
