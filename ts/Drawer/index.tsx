@@ -139,7 +139,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
 }
 
 export default class {
-    public static readonly DrawerContent = DrawerContent;
-    public static readonly DrawerHeader = DrawerHeader;
-    public static readonly DrawerItem = DrawerItem;
+  public static readonly DrawerContent = DrawerContent;
+  public static readonly DrawerHeader = DrawerHeader;
+  public static readonly DrawerItem = DrawerItem;
 }
