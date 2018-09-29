@@ -14,9 +14,6 @@ export class LinearProgress extends MaterialComponent<
   ILinearProgressProps,
   ILinearProgressState
 > {
-  public defaultProps = {
-    determinate: true
-  };
   public MDComponent?: MDCLinearProgress;
 
   protected componentName = 'linear-progress';

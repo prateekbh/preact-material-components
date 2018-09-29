@@ -2,7 +2,7 @@ import {MDCMenu} from '@material/menu';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import {List, ListItem, ListLinkItem} from '../List';
+import {List, ListItem} from '../List';
 
 export interface IMenuAnchorProps {}
 
@@ -37,10 +37,6 @@ export interface IMenuProps {
 export interface IMenuState {}
 
 export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
-  public static readonly defaultProps = {
-    open: false
-  };
-
   public MDComponent?: MDCMenu;
 
   protected componentName = 'menu';
@@ -57,8 +53,8 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCMenu(this.control);
-      this.MDComponent.listen('MDCMenu:selected', this.select);
-      this.MDComponent.listen('MDCMenu:cancel', this.cancel);
+      this.MDComponent.listen('MDCMenu:selected', this.onSelect);
+      this.MDComponent.listen('MDCMenu:cancel', this.onCancel);
     }
     this.afterComponentDidMount();
   }
@@ -66,30 +62,30 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
-      this.MDComponent.unlisten('MDCMenu:selected', this.select);
-      this.MDComponent.unlisten('MDCMenu:cancel', this.cancel);
+      this.MDComponent.unlisten('MDCMenu:selected', this.onSelect);
+      this.MDComponent.unlisten('MDCMenu:cancel', this.onCancel);
       this.MDComponent.destroy();
     }
   }
 
   @bind
-  protected select(e) {
+  protected onSelect(e) {
     if (this.props.onSelect) {
       this.props.onSelect(e);
     }
-    this.menuClosed(e);
+    this.onMenuClosed(e);
   }
 
   @bind
-  protected cancel(e) {
+  protected onCancel(e) {
     if (this.props.onCancel) {
       this.props.onCancel(e);
     }
-    this.menuClosed(e);
+    this.onMenuClosed(e);
   }
 
   @bind
-  protected menuClosed(e) {
+  protected onMenuClosed(e) {
     if (this.props.onMenuClosed) {
       this.props.onMenuClosed(e);
     }

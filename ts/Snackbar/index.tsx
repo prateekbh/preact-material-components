@@ -2,6 +2,7 @@ import {MDCSnackbar} from '@material/snackbar/';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
+// TODO: Is that needed?
 function shallowDiffers(a, b) {
   for (const i in a) {
     if (!(i in b)) {
@@ -27,8 +28,8 @@ export class Snackbar extends MaterialComponent<
   ISnackbarProps,
   ISnackbarState
 > {
-  public readonly isPureReactComponent = true;
   public MDComponent?: MDCSnackbar;
+
   protected componentName = 'snackbar';
   protected mdcProps = [];
 
