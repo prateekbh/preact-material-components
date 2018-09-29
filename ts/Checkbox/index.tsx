@@ -43,7 +43,6 @@ export class Checkbox extends MaterialComponent<
     }
   }
 
-
   protected materialDom(allprops) {
     return (
       <div ref={this.setControlRef}>

@@ -85,7 +85,6 @@ export class TabBar extends MaterialComponent<ITabsProps, ITabsState> {
     }
   }
 
-
   protected materialDom(props) {
     return (
       <div class="mdc-tab-bar" role="tablist" ref={this.setControlRef}>
