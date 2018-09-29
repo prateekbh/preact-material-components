@@ -1,4 +1,4 @@
-import {h} from 'preact';
+import {Component, h, VNode} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ITypographyProps {
@@ -16,6 +16,10 @@ export interface ITypographyProps {
   subtitle1?: boolean;
   subtitle2?: boolean;
   title?: boolean; // TODO: Add to docs / remove from here
+  tag?:
+    | Component<{}, {}>
+    | ((props: {}) => VNode)
+    | keyof JSX.IntrinsicElements;
 }
 
 export interface ITypographyState {}
@@ -42,11 +46,13 @@ export class Typography extends MaterialComponent<
     'title'
   ];
 
-  protected materialDom(props) {
+  protected materialDom(allprops) {
+    const {tag, ...props} = allprops;
+    const Tag = tag ? tag : 'span';
     return (
-      <span {...props} ref={this.setControlRef}>
+      <Tag {...props} ref={this.setControlRef}>
         {props.children}
-      </span>
+      </Tag>
     );
   }
 }
