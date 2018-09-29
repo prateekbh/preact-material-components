@@ -99,10 +99,6 @@ export interface IChipSetProps {
 export interface IChipSetState {}
 
 export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
-  public static readonly Chip = Chip;
-  public static readonly Icon = ChipIcon;
-  public static readonly Text = ChipText;
-  public static readonly Checkmark = ChipCheckmark;
   public MDComponent?: MDCChipSet;
 
   protected componentName = 'chip-set';
@@ -133,4 +129,9 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
   }
 }
 
-export default ChipSet;
+export default class extends ChipSet {
+  public static readonly Chip = Chip;
+  public static readonly Icon = ChipIcon;
+  public static readonly Text = ChipText;
+  public static readonly Checkmark = ChipCheckmark;
+}

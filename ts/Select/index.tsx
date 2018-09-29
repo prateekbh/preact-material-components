@@ -35,7 +35,6 @@ export interface ISelectProps {
 export interface ISelectState {}
 
 export class Select extends MaterialComponent<ISelectProps, ISelectState> {
-  public static readonly Item = SelectOption;
   public MDComponent?: MDCSelect;
 
   protected componentName = 'select';
@@ -128,4 +127,6 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   }
 }
 
-export default Select;
+export default class extends Select {
+  public static readonly Item = SelectOption;
+}

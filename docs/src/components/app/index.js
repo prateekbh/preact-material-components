@@ -256,9 +256,7 @@ export default class Home extends Component {
                 Dark Mode
                 <Switch
                   className="switch-darkmode"
-                  onChange={() => {
-                    this.toggleDarkMode();
-                  }}
+                  onChange={this.toggleDarkMode}
                 />
               </Formfield>
             </TopAppBar.Section>

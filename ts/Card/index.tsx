@@ -112,13 +112,6 @@ export interface ICardProps {
 export interface ICardState {}
 
 export class Card extends MaterialComponent<ICardProps, ICardState> {
-  public static readonly Actions = CardActions;
-  public static readonly ActionButton = CardActionButton;
-  public static readonly ActionIcons = CardActionIcons;
-  public static readonly ActionIcon = CardActionIcon;
-  public static readonly Media = CardMedia;
-  public static readonly CardMediaContent = CardMediaContent;
-
   protected componentName = 'card';
   protected mdcProps = ['outlined'];
 
@@ -127,4 +120,11 @@ export class Card extends MaterialComponent<ICardProps, ICardState> {
   }
 }
 
-export default Card;
+export default class extends Card {
+  public static readonly Actions = CardActions;
+  public static readonly ActionButton = CardActionButton;
+  public static readonly ActionIcons = CardActionIcons;
+  public static readonly ActionIcon = CardActionIcon;
+  public static readonly Media = CardMedia;
+  public static readonly CardMediaContent = CardMediaContent;
+}

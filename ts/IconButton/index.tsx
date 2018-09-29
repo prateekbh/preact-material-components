@@ -28,11 +28,11 @@ export class Icon extends MaterialComponent<IIconProps, IIconState> {
   }
 }
 
-export default class IconButton extends MaterialComponent<
+export class IconButton extends MaterialComponent<
   IIconButtonProps,
   IIconButtonState
 > {
-  public static readonly Icon = Icon;
+  public MDComponent?: MDCIconButtonToggle;
 
   protected componentName = 'icon-button';
   protected mdcProps = [];
@@ -55,4 +55,8 @@ export default class IconButton extends MaterialComponent<
       </button>
     );
   }
+}
+
+export default class extends IconButton {
+  public static readonly Icon = Icon;
 }
