@@ -3,6 +3,12 @@ import {h, Component} from 'preact';
 
 // Material Components
 import TabBar from '../../../../esm/TabBar';
+
+import '../../../../Tab/style.css';
+import '../../../../TabScroller/style.css';
+import '../../../../TabIndicator/style.css';
+import '../../../../TabBar/style.css';
+
 import style from './style';
 
 // Components

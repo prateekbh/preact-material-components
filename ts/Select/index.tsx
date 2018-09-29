@@ -36,10 +36,10 @@ export interface ISelectState {}
 
 export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   public static readonly Item = SelectOption;
+  public MDComponent?: MDCSelect;
 
   protected componentName = 'select';
   protected mdcProps = ['disabled', 'box', 'outlined'];
-  protected MDComponent?: MDCSelect;
   protected labelRef?: Element;
 
   public componentDidMount() {

@@ -28,9 +28,10 @@ export class Snackbar extends MaterialComponent<
   ISnackbarProps,
   ISnackbarState
 > {
+  public MDComponent?: MDCSnackbar;
+
   protected componentName = 'snackbar';
   protected mdcProps = [];
-  protected MDComponent?: MDCSnackbar;
 
   public componentDidMount() {
     super.componentDidMount();

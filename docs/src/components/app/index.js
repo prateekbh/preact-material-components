@@ -6,7 +6,12 @@ import Router from 'preact-router';
 import Formfield from '../../../../esm/FormField';
 import LayoutGrid from '../../../../esm/LayoutGrid';
 import Switch from '../../../../esm/Switch';
-import Toolbar from '../../../../esm/Toolbar';
+import TopAppBar from '../../../../esm/TopAppBar';
+
+import '../../../../FormField/style.css';
+import '../../../../LayoutGrid/style.css';
+import '../../../../Switch/style.css';
+import '../../../../TopAppBar/style.css';
 
 // Routes
 import ButtonPage from '../../routes/button';
@@ -18,10 +23,8 @@ import DrawerPage from '../../routes/drawer';
 import ElevationPage from '../../routes/elevation';
 import FabPage from '../../routes/fab';
 import FormFieldPage from '../../routes/form-field';
-import GridListPage from '../../routes/grid-list';
 import HomePage from '../../routes/home';
 import IconPage from '../../routes/icon';
-import IconTogglePage from '../../routes/icon-toggle';
 import IconButtonPage from '../../routes/icon-button';
 import ImageListPage from '../../routes/image-list';
 import LayoutGridPage from '../../routes/layout-grid';
@@ -33,19 +36,16 @@ import SelectPage from '../../routes/select';
 import SliderPage from '../../routes/slider';
 import SnackbarPage from '../../routes/snackbar';
 import SwitchPage from '../../routes/switch';
-import TabsPage from '../../routes/tabs';
 import TabBarPage from '../../routes/tabbar';
 import TextfieldPage from '../../routes/textfield';
 import ThemePage from '../../routes/theme';
-import ToolbarPage from '../../routes/toolbar';
-import TopAppBar from '../../routes/top-app-bar';
+import TopAppBarPage from '../../routes/top-app-bar';
 import Typography from '../../routes/typography';
 
 // Components
 import Menu from '../menu';
 
 // Styles
-import '../../../../style.css';
 import './style';
 
 const menuItems = [
@@ -101,11 +101,6 @@ const menuItems = [
     component: FormFieldPage
   },
   {
-    text: 'GridList - deprecated',
-    link: '/component/grid-list/',
-    component: GridListPage
-  },
-  {
     text: 'Icon',
     link: '/component/icon/',
     component: IconPage
@@ -114,11 +109,6 @@ const menuItems = [
     text: 'IconButton',
     link: '/component/icon-button/',
     component: IconButtonPage
-  },
-  {
-    text: 'IconToggle - deprecated',
-    link: '/component/icon-toggle/',
-    component: IconTogglePage
   },
   {
     text: 'ImageList',
@@ -171,11 +161,6 @@ const menuItems = [
     component: SwitchPage
   },
   {
-    text: 'Tabs - deprecated',
-    link: '/component/tabs/',
-    component: TabsPage
-  },
-  {
     text: 'TabBar',
     link: '/component/tabbar/',
     component: TabBarPage
@@ -191,14 +176,9 @@ const menuItems = [
     component: ThemePage
   },
   {
-    text: 'Toolbar',
-    link: '/component/toolbar/',
-    component: ToolbarPage
-  },
-  {
     text: 'TopAppBar',
     link: '/component/top-app-bar/',
-    component: TopAppBar
+    component: TopAppBarPage
   },
   {
     text: 'Typography',
@@ -252,38 +232,39 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home mdc-typography">
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        <Menu
+          items={menuItems}
+          ref={menu => (this.menu = menu)}
+          onSelect={this.handleRoute_}
         />
+        <TopAppBar className="mdc-theme--dark">
+          <TopAppBar.Row>
+            <TopAppBar.Section align-start={true}>
+              <TopAppBar.Icon
+                menu={true}
+                href="#"
+                onClick={e => {
+                  e.preventDefault();
+                  this.menu.open();
+                }}>
+                menu
+              </TopAppBar.Icon>
+              <TopAppBar.Title>{this.state.toolbarTitle}</TopAppBar.Title>
+            </TopAppBar.Section>
+            <TopAppBar.Section align-end={true}>
+              <Formfield className="field-darkmode">
+                Dark Mode
+                <Switch
+                  className="switch-darkmode"
+                  onChange={() => {
+                    this.toggleDarkMode();
+                  }}
+                />
+              </Formfield>
+            </TopAppBar.Section>
+          </TopAppBar.Row>
+        </TopAppBar>
         <div className={this.state.toolbarTitle ? 'hero collapsed' : 'hero'}>
-          <Toolbar className="mdc-theme--dark">
-            <Toolbar.Row>
-              <Toolbar.Section align-start={true}>
-                <Toolbar.Icon
-                  menu={true}
-                  href="#"
-                  onClick={e => {
-                    e.preventDefault();
-                    this.menu.open();
-                  }}>
-                  menu
-                </Toolbar.Icon>
-                <Toolbar.Title>{this.state.toolbarTitle}</Toolbar.Title>
-              </Toolbar.Section>
-              <Toolbar.Section align-end={true}>
-                <Formfield className="field-darkmode">
-                  Dark Mode
-                  <Switch
-                    className="switch-darkmode"
-                    onChange={() => {
-                      this.toggleDarkMode();
-                    }}
-                  />
-                </Formfield>
-              </Toolbar.Section>
-            </Toolbar.Row>
-          </Toolbar>
           <svg
             width="200"
             height="200"
@@ -380,11 +361,6 @@ export default class Home extends Component {
             preact-material-components
           </div>
         </div>
-        <Menu
-          items={menuItems}
-          ref={menu => (this.menu = menu)}
-          onSelect={this.handleRoute_}
-        />
         <LayoutGrid className="content">
           <LayoutGrid.Inner>
             <LayoutGrid.Cell cols="12">

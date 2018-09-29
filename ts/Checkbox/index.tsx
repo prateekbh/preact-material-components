@@ -15,9 +15,9 @@ export class Checkbox extends MaterialComponent<
   ICheckboxProps,
   ICheckboxState
 > {
+  public MDComponent?: MDCCheckbox;
   protected componentName = 'checkbox';
   protected mdcProps = ['disabled'];
-  protected MDComponent?: MDCCheckbox;
   protected mdcNotifyProps = ['checked', 'indeterminate', 'disabled'];
 
   public componentDidMount() {

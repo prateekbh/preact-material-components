@@ -1,5 +1,0 @@
-<Tabs className="demo-tabs">
-  <Tabs.Tab>Tab1</Tabs.Tab>
-  <Tabs.Tab>Tab2</Tabs.Tab>
-  <Tabs.Tab>Tab3</Tabs.Tab>
-</Tabs>

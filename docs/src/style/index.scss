@@ -1,6 +1,8 @@
 body {
   padding: 0;
   margin: 0;
+  display: flex;
+  height: 100vh;
 }
 
 a {
@@ -12,7 +14,7 @@ a {
 }
 
 .mdc-theme--dark {
-  background-color: #333;
+  background-color: #2b313c;
   color: #fff;
   .grey {
     background-color: #999;
@@ -31,4 +33,22 @@ a {
   display: inline-block;
   min-width: 50%;
   max-width: 50%;
+}
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+
+.mdc-drawer__header {
+  padding-top: 16px;
 }

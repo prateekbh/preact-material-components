@@ -97,10 +97,10 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   public static readonly Body = DialogBody;
   public static readonly Footer = DialogFooter;
   public static readonly FooterButton = DialogFooterButton;
+  public MDComponent?: MDCDialog;
 
   protected componentName = 'dialog';
   protected mdcProps = [];
-  protected MDComponent?: MDCDialog;
 
   public componentDidMount() {
     super.componentDidMount();
