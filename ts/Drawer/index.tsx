@@ -60,9 +60,6 @@ export interface IDrawerItemProps {
 
 export interface IDrawerItemState {}
 
-/**
- * @prop selected = false
- */
 export class DrawerItem extends ListLinkItem<
   IDrawerItemProps,
   IDrawerItemState
@@ -138,7 +135,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   }
 }
 
-export default class {
+export default class extends Drawer {
   public static readonly DrawerContent = DrawerContent;
   public static readonly DrawerHeader = DrawerHeader;
   public static readonly DrawerItem = DrawerItem;
