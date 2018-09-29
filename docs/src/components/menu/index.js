@@ -3,8 +3,14 @@ import {h, Component} from 'preact';
 import {route} from 'preact-router';
 
 // Material Components
-import Drawer from '../../../../Drawer';
-import List from '../../../../List';
+import Drawer from '../../../../esm/Drawer';
+import List from '../../../../esm/List';
+import Typography from '../../../../esm/Typography';
+
+import '../../../../Drawer/style.css';
+import '../../../../List/style.css';
+import '../../../../Typography/style.css';
+
 const json = require('../../../../package.json');
 
 // Class
@@ -62,19 +68,25 @@ export default class Menu extends Component {
 
   render({items}) {
     return (
-      <Drawer.TemporaryDrawer ref={drawer => (this.drawer = drawer)}>
-        <Drawer.DrawerHeader className="mdc-theme--primary-bg">
-          Components @ (v{json['version']})
+      <Drawer modal ref={drawer => (this.drawer = drawer)}>
+        <Drawer.DrawerHeader>
+          <div>
+            <Typography headline5>Components</Typography>
+          </div>
+          <Typography caption>@ (v{json['version']})</Typography>
         </Drawer.DrawerHeader>
         <Drawer.DrawerContent>
-          {items.map(({icon, link, text}) => (
-            <Drawer.DrawerItem href={link} onClick={this._onClick}>
+          {items.map(({icon, link, text}, index) => (
+            <Drawer.DrawerItem
+              selected={index === 0}
+              href={link}
+              onClick={this._onClick}>
               <List.ItemGraphic>{icon || 'code'}</List.ItemGraphic>
               {text}
             </Drawer.DrawerItem>
           ))}
         </Drawer.DrawerContent>
-      </Drawer.TemporaryDrawer>
+      </Drawer>
     );
   }
 }

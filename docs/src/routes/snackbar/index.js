@@ -5,6 +5,9 @@ import {h, Component} from 'preact';
 import Snackbar from '../../../../esm/Snackbar';
 import Button from '../../../../esm/Button';
 
+import '../../../../Snackbar/style.css';
+import '../../../../Button/style.css';
+
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';

@@ -65,9 +65,10 @@ export interface ITabsProps {
 export interface ITabsState {}
 
 export class TabBar extends MaterialComponent<ITabsProps, ITabsState> {
+  public MDComponent?: MDCTabBar;
+
   protected componentName = 'tab-bar';
   protected mdcProps = [];
-  protected MDComponent?: MDCTabBar;
   protected mdcNotifyProps = ['activeTabIndex'];
 
   public componentDidMount() {

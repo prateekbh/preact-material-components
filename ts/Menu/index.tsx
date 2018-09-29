@@ -12,7 +12,7 @@ export class MenuAnchor extends MaterialComponent<
   IMenuAnchorProps,
   IMenuAnchorState
 > {
-  protected componentName = 'menu-anchor';
+  protected componentName = 'menu-surface--anchor';
   protected mdcProps = [];
 
   protected materialDom(props) {
@@ -40,6 +40,9 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   public static readonly defaultProps = {
     open: false
   };
+
+  public MDComponent?: MDCMenu;
+
   protected componentName = 'menu';
   protected mdcProps = [
     'open',
@@ -48,7 +51,6 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     'open-from-bottom-left',
     'open-from-bottom-right'
   ];
-  protected MDComponent?: MDCMenu;
   protected mdcNotifyProps = ['open'];
 
   public componentDidMount() {
@@ -95,7 +97,11 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
 
   protected materialDom(props) {
     return (
-      <div tabIndex="-1" {...props} ref={this.setControlRef}>
+      <div
+        class="mdc-menu-surface"
+        tabIndex="-1"
+        {...props}
+        ref={this.setControlRef}>
         <List className="mdc-menu__items" role="menu" aria-hidden="true">
           {props.children}
         </List>

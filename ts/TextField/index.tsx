@@ -59,7 +59,7 @@ export interface ITextFieldInputProps {
 }
 
 export interface ITextFieldInputState {
-  showFloatingLabel: boolean;
+  jsComponentAttached: boolean;
 }
 
 export class TextFieldInput extends MaterialComponent<
@@ -71,9 +71,9 @@ export class TextFieldInput extends MaterialComponent<
   };
 
   public state = {
-    showFloatingLabel: false
+    jsComponentAttached: false
   };
-  protected MDComponent?: MDCTextField;
+  public MDComponent?: MDCTextField;
 
   protected componentName = 'text-field';
   protected mdcProps = [
@@ -91,7 +91,7 @@ export class TextFieldInput extends MaterialComponent<
     super.componentDidMount();
     this.setState(
       {
-        showFloatingLabel: true
+        jsComponentAttached: true
       },
       () => {
         if (this.control) {
@@ -131,7 +131,7 @@ export class TextFieldInput extends MaterialComponent<
       className += ' mdc-text-field--box mdc-text-field--with-trailing-icon';
     }
 
-    if ('value' in props && this.state.showFloatingLabel) {
+    if ('value' in props && this.state.jsComponentAttached) {
       className = [className, 'mdc-text-field--upgraded'].join(' ');
     }
     if (props.label && props.fullwidth) {
@@ -152,11 +152,18 @@ export class TextFieldInput extends MaterialComponent<
           <input
             type={props.type || 'text'}
             className="mdc-text-field__input"
+            placeholder={
+              this.state.jsComponentAttached
+                ? undefined
+                : props.label + this.props.required
+                  ? '*'
+                  : ''
+            }
             {...props}
           />
         )}
         {props.label &&
-          this.state.showFloatingLabel && (
+          this.state.jsComponentAttached && (
             <Label for={props.id}>{props.label}</Label>
           )}
         {props.trailingIcon ? (
@@ -230,9 +237,7 @@ export interface ITextFieldProps {
   value?: string;
 }
 
-export interface ITextFieldState {
-  showFloatingLabel: boolean;
-}
+export interface ITextFieldState {}
 
 export class TextField extends Component<
   SoftMerge<ITextFieldProps, JSX.HTMLAttributes>,
@@ -248,16 +253,13 @@ export class TextField extends Component<
     return ++this.uidCounter;
   }
 
-  public state = {
-    showFloatingLabel: false
-  };
+  public MDComponent?: MDCTextField;
 
   protected readonly id = TextField.uid();
-  protected MDComponent?: MDCTextField;
 
   public componentDidMount() {
     this.setState({
-      showFloatingLabel: true
+      jsComponentAttached: true
     });
   }
 
@@ -269,7 +271,7 @@ export class TextField extends Component<
       helperTextValidationMsg,
       ...props
     } = allprops;
-    const showDiv = props.helperText || (props.label && !showFloatingLabel);
+    const showDiv = props.helperText;
 
     if ((props.helperText || props.label) && !props.id) {
       props.id = `tf-${this.id}`;
@@ -283,10 +285,6 @@ export class TextField extends Component<
 
     return showDiv ? (
       <div className={className} style={outerStyle}>
-        {props.label &&
-          !showFloatingLabel && (
-            <label for={props.id}>{props.cssLabel || `${props.label}: `}</label>
-          )}
         <TextFieldInput
           {...props}
           onInit={MDComponent => {

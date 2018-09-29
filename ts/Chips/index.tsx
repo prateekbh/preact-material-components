@@ -99,9 +99,10 @@ export interface IChipSetProps {
 export interface IChipSetState {}
 
 export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
+  public MDComponent?: MDCChipSet;
+
   protected componentName = 'chip-set';
   protected mdcProps = ['choice', 'filter', 'input'];
-  protected MDComponent?: MDCChipSet;
 
   public componentDidMount() {
     super.componentDidMount();

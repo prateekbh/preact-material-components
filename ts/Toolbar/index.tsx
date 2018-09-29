@@ -97,6 +97,8 @@ export interface IToolbarProps {
 export interface IToolbarState {}
 
 export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
+  public MDComponent?: MDCToolbar;
+
   protected componentName = 'toolbar';
   protected mdcProps = [
     'fixed',
@@ -105,7 +107,6 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
     'flexible',
     'flexible-default-behavior'
   ];
-  protected MDComponent?: MDCToolbar;
 
   public componentDidMount() {
     super.componentDidMount();

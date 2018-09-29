@@ -21,9 +21,9 @@ export class IconToggle extends MaterialComponent<
   IIconToggleProps,
   IIconToggleState
 > {
+  public MDComponent?: MDCIconToggle;
   protected componentName = 'icon-toggle';
   protected mdcProps = ['disabled'];
-  protected MDComponent?: MDCIconToggle;
 
   public componentDidMount() {
     super.componentDidMount();

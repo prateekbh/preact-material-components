@@ -18,9 +18,9 @@ export interface ISliderProps {
 export interface ISliderState {}
 
 export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
+  public MDComponent?: MDCSlider;
   protected componentName = 'slider';
   protected mdcProps = ['discrete'];
-  protected MDComponent?: MDCSlider;
 
   public componentDidMount() {
     super.componentDidMount();

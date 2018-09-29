@@ -93,9 +93,10 @@ export interface IDialogProps extends JSX.HTMLAttributes {
 export interface IDialogState {}
 
 export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
+  public MDComponent?: MDCDialog;
+
   protected componentName = 'dialog';
   protected mdcProps = [];
-  protected MDComponent?: MDCDialog;
 
   public componentDidMount() {
     super.componentDidMount();

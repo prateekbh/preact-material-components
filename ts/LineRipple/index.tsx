@@ -10,9 +10,9 @@ export class LineRipple extends MaterialComponent<
   ILineRippleProps,
   ILineRippleState
 > {
+  public MDComponent?: MDCLineRipple;
   protected componentName = 'line-ripple';
   protected mdcProps = [];
-  protected MDComponent?: MDCLineRipple;
 
   public componentDidMount() {
     super.componentDidMount();
