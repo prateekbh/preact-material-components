@@ -64,3 +64,4 @@ esm
 !/docs/prettier.config.js
 tests/bin/
 tests/golden/dom/
+/preact-material-components-v*.*.*.tgz

@@ -260,7 +260,7 @@ export class TextField extends Component<ITextFieldProps, ITextFieldState> {
     });
   }
 
-  public render(allprops, {showFloatingLabel}) {
+  public render(allprops) {
     const {
       className,
       outerStyle,
