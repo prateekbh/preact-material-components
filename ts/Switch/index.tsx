@@ -17,6 +17,15 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCSwitch(this.control);
+      if (this.props.value) {
+        this.MDComponent.value = this.props.value;
+      }
+    }
+  }
+
+  public componentWillUpdate(nextProps: ISwitchProps) {
+    if (nextProps.value && this.props.value !== nextProps.value) {
+      this.MDComponent.value = nextProps.value;
     }
   }
 
