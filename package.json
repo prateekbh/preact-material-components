@@ -124,7 +124,7 @@
     "cp": "^0.2.0",
     "eslint": "^5.0.0",
     "eslint-config-prettier": "^3.0.0",
-    "eslint-plugin-prettier": "^2.6.1",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.5.1",
     "glob-copy": "^0.1.0",
     "http-server": "^0.11.0",
