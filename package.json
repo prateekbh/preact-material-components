@@ -72,7 +72,7 @@
     "@material/textfield": "0.39.3",
     "@material/theme": "0.39.1",
     "@material/toolbar": "0.39.3",
-    "@material/top-app-bar": "0.39.3",
+    "@material/top-app-bar": "0.40.1",
     "@material/typography": "0.39.0",
     "bind-decorator": "^1.0.11",
     "material-components-web": "0.39.3"
