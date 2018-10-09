@@ -69,7 +69,7 @@
     "@material/switch": "0.39.3",
     "@material/tab-bar": "0.39.3",
     "@material/tabs": "0.39.3",
-    "@material/textfield": "0.39.3",
+    "@material/textfield": "0.40.1",
     "@material/theme": "0.39.1",
     "@material/toolbar": "0.39.3",
     "@material/top-app-bar": "0.39.3",
