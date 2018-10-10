@@ -35,18 +35,17 @@ export interface ISelectProps {
 export interface ISelectState {}
 
 export class Select extends MaterialComponent<ISelectProps, ISelectState> {
-  public static readonly Item = SelectOption;
+  public MDComponent?: MDCSelect;
 
   protected componentName = 'select';
   protected mdcProps = ['disabled', 'box', 'outlined'];
-  protected MDComponent?: MDCSelect;
   protected labelRef?: Element;
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCSelect(this.control);
-      this.MDComponent.listen('MDCSelect:change', this.changed);
+      this.MDComponent.listen('MDCSelect:change', this.onChanged);
     }
     this.updateSelection();
   }
@@ -54,7 +53,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
-      this.MDComponent.unlisten('MDCSelect:change', this.changed);
+      this.MDComponent.unlisten('MDCSelect:change', this.onChanged);
       this.MDComponent.destroy();
     }
   }
@@ -64,7 +63,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   }
 
   @bind
-  protected changed(e) {
+  protected onChanged(e) {
     if (this.MDComponent) {
       e = e || {};
       e.selectedIndex = e.selectedIndex || this.MDComponent.selectedIndex;
@@ -128,4 +127,6 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   }
 }
 
-export default Select;
+export default class extends Select {
+  public static readonly Item = SelectOption;
+}

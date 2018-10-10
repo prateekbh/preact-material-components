@@ -2,7 +2,7 @@ import {MDCDialog} from '@material/dialog/';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
-import Button from '../Button';
+import {Button} from '../Button';
 
 export interface IDialogHeaderProps {}
 
@@ -93,14 +93,10 @@ export interface IDialogProps extends JSX.HTMLAttributes {
 export interface IDialogState {}
 
 export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
-  public static readonly Header = DialogHeader;
-  public static readonly Body = DialogBody;
-  public static readonly Footer = DialogFooter;
-  public static readonly FooterButton = DialogFooterButton;
+  public MDComponent?: MDCDialog;
 
   protected componentName = 'dialog';
   protected mdcProps = [];
-  protected MDComponent?: MDCDialog;
 
   public componentDidMount() {
     super.componentDidMount();
@@ -144,4 +140,9 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   }
 }
 
-export default Dialog;
+export default class extends Dialog {
+  public static readonly Header = DialogHeader;
+  public static readonly Body = DialogBody;
+  public static readonly Footer = DialogFooter;
+  public static readonly FooterButton = DialogFooterButton;
+}

@@ -97,10 +97,7 @@ export interface IToolbarProps {
 export interface IToolbarState {}
 
 export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
-  public static readonly Section = ToolbarSection;
-  public static readonly Icon = ToolbarIcon;
-  public static readonly Title = ToolbarTitle;
-  public static readonly Row = ToolbarRow;
+  public MDComponent?: MDCToolbar;
 
   protected componentName = 'toolbar';
   protected mdcProps = [
@@ -110,7 +107,6 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
     'flexible',
     'flexible-default-behavior'
   ];
-  protected MDComponent?: MDCToolbar;
 
   public componentDidMount() {
     super.componentDidMount();
@@ -144,4 +140,9 @@ export class Toolbar extends MaterialComponent<IToolbarProps, IToolbarState> {
   }
 }
 
-export default Toolbar;
+export default class extends Toolbar {
+  public static readonly Section = ToolbarSection;
+  public static readonly Icon = ToolbarIcon;
+  public static readonly Title = ToolbarTitle;
+  public static readonly Row = ToolbarRow;
+}

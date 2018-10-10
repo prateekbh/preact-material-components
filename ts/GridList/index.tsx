@@ -154,15 +154,6 @@ export class GridList extends MaterialComponent<
   IGridListProps,
   IGridListState
 > {
-  public static readonly Tiles = GridListTiles;
-  public static readonly Tile = GridListTile;
-  public static readonly PrimaryTile = GridListPrimaryTile;
-  public static readonly PrimaryContentTile = GridListPrimaryContentTile;
-  public static readonly SecondaryTile = GridListSecondaryTile;
-  public static readonly TitleTile = GridListTitleTile;
-  public static readonly SupportTextTile = GridListSupportTextTile;
-  public static readonly IconTile = GridListIconTile;
-
   protected static validationValuesByKey = {
     'tile-aspect': ['1x1', '16x9', '2x3', '3x2', '4x3', '3x4'],
     'with-icon-align': ['start', 'end']
@@ -203,4 +194,13 @@ export class GridList extends MaterialComponent<
   }
 }
 
-export default GridList;
+export default class extends GridList {
+  public static readonly Tiles = GridListTiles;
+  public static readonly Tile = GridListTile;
+  public static readonly PrimaryTile = GridListPrimaryTile;
+  public static readonly PrimaryContentTile = GridListPrimaryContentTile;
+  public static readonly SecondaryTile = GridListSecondaryTile;
+  public static readonly TitleTile = GridListTitleTile;
+  public static readonly SupportTextTile = GridListSupportTextTile;
+  public static readonly IconTile = GridListIconTile;
+}

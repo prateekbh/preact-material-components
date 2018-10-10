@@ -2,14 +2,6 @@ import {MDCCheckbox} from '@material/checkbox/';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-/*
- * Default props for check box
- */
-const defaultProps = {
-  checked: false,
-  indeterminate: false
-};
-
 export interface ICheckboxProps {
   indeterminate?: boolean;
   disabled?: boolean;
@@ -23,9 +15,9 @@ export class Checkbox extends MaterialComponent<
   ICheckboxProps,
   ICheckboxState
 > {
+  public MDComponent?: MDCCheckbox;
   protected componentName = 'checkbox';
   protected mdcProps = ['disabled'];
-  protected MDComponent?: MDCCheckbox;
   protected mdcNotifyProps = ['checked', 'indeterminate', 'disabled'];
 
   public componentDidMount() {

@@ -4,6 +4,8 @@ import {h, Component} from 'preact';
 // Material Components
 import LayoutGrid from '../../../../esm/LayoutGrid';
 
+import '../../../../LayoutGrid/style.css';
+
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';

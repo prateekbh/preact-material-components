@@ -1,4 +1,3 @@
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
@@ -13,7 +12,6 @@ export class ImageListAspectContainer extends MaterialComponent<
   protected componentName = 'image-list__image-aspect-container';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -30,7 +28,6 @@ export class ImageListItem extends MaterialComponent<
   protected componentName = 'image-list__item';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return (
       <li {...props} ref={this.setControlRef}>
@@ -53,7 +50,6 @@ export class ImageListImage extends MaterialComponent<
   protected componentName = 'image-list__image';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(allprops) {
     const {src, ...props} = allprops;
     return (
@@ -75,7 +71,6 @@ export class ImageListSupporting extends MaterialComponent<
   protected componentName = 'image-list__supporting';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return <div {...props}>{this.props.children}</div>;
   }
@@ -92,7 +87,6 @@ export class ImageListLabel extends MaterialComponent<
   protected componentName = 'image-list__label';
   protected mdcProps = [];
 
-  @bind
   protected materialDom(props) {
     return (
       <span {...props} ref={this.setControlRef}>
@@ -113,12 +107,6 @@ export class ImageList extends MaterialComponent<
   IImageListProps,
   IImageListState
 > {
-  public static readonly Item = ImageListItem;
-  public static readonly AspectContainer = ImageListAspectContainer;
-  public static readonly Image = ImageListImage;
-  public static readonly Supporting = ImageListSupporting;
-  public static readonly Label = ImageListLabel;
-
   protected componentName = 'image-list';
   protected mdcProps = ['masonry', 'with-text-protection'];
 
@@ -131,4 +119,10 @@ export class ImageList extends MaterialComponent<
   }
 }
 
-export default ImageList;
+export default class extends ImageList {
+  public static readonly Item = ImageListItem;
+  public static readonly AspectContainer = ImageListAspectContainer;
+  public static readonly Image = ImageListImage;
+  public static readonly Supporting = ImageListSupporting;
+  public static readonly Label = ImageListLabel;
+}

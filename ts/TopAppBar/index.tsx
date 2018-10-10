@@ -93,15 +93,10 @@ export class TopAppBar extends MaterialComponent<
   ITopAppBarProps,
   ITopAppBarState
 > {
-  public static readonly Section = TopAppBarSection;
-  public static readonly Icon = TopAppBarIcon;
-  public static readonly Title = TopAppBarTitle;
-  public static readonly Row = TopAppBarRow;
+  public MDComponent?: MDCTopAppBar;
 
   protected componentName = 'top-app-bar';
   protected mdcProps = ['short', 'short-collapsed', 'fixed', 'prominent'];
-
-  protected MDComponent?: MDCTopAppBar;
 
   public componentDidMount() {
     super.componentDidMount();
@@ -136,4 +131,9 @@ export class TopAppBar extends MaterialComponent<
   }
 }
 
-export default TopAppBar;
+export default class extends TopAppBar {
+  public static readonly Section = TopAppBarSection;
+  public static readonly Icon = TopAppBarIcon;
+  public static readonly Title = TopAppBarTitle;
+  public static readonly Row = TopAppBarRow;
+}

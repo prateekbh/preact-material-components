@@ -4,6 +4,8 @@ import {h, Component} from 'preact';
 // Material Components
 import LinearProgress from '../../../../esm/LinearProgress';
 
+import '../../../../LinearProgress/style.css';
+
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';

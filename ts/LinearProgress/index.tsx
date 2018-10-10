@@ -14,14 +14,11 @@ export class LinearProgress extends MaterialComponent<
   ILinearProgressProps,
   ILinearProgressState
 > {
-  public defaultProps = {
-    determinate: true
-  };
+  public MDComponent?: MDCLinearProgress;
 
   protected componentName = 'linear-progress';
   protected mdcProps = ['reversed', 'indeterminate'];
   protected themeProps = ['primary', 'secondary'];
-  protected MDComponent?: MDCLinearProgress;
   protected mdcNotifyProps = ['progress'];
 
   public componentDidMount() {

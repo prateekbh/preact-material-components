@@ -20,10 +20,9 @@ export class TabBarScroller extends MaterialComponent<
   ITabBarScrollerProps,
   ITabBarScrollerState
 > {
+  public MDComponent?: MDCTabBarScroller;
   protected componentName = 'tab-bar-scroller';
   protected mdcProps = [];
-
-  protected MDComponent?: MDCTabBarScroller;
 
   public componentDidMount() {
     super.componentDidMount();
@@ -174,10 +173,10 @@ export class Tabs extends MaterialComponent<ITabsProps, ITabsState> {
   public static readonly TabBarScrollerTabs = TabBarScrollerTabs;
   public static readonly Tab = Tab;
   public static readonly TabIconLabel = TabIconLabel;
+  public MDComponent?: MDCTabBar;
 
   protected componentName = 'tab-bar';
   protected mdcProps = ['icon-tab-bar', 'icons-with-text'];
-  protected MDComponent?: MDCTabBar;
   protected mdcNotifyProps = ['activeTabIndex'];
 
   public componentDidMount() {
