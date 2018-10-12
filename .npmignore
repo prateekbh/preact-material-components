@@ -53,5 +53,5 @@ CssMigrationWebpackPlugin.js
 .eslintignore
 /docs
 .idea
-yarn.lock
+package-lock.json
 /preact-material-components-v*.*.*.tgz

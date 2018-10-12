@@ -3,13 +3,13 @@
   "version": "1.0.1",
   "description": "preact material component's site",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "start": "if-env NODE_ENV=production && yarn run -s serve || yarn run -s dev",
     "build": "preact build",
     "build:prod": "preact build --template template.html && npm run copyAssets",
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "npm run build:prod && mocha ./tests/visdiff.js --timeout 15000",
+    "test": "yarn build:prod && mocha ./tests/visdiff.js --timeout 15000",
     "test:travis": "node ./scripts/test-travis.js"
   },
   "repository": {

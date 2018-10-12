@@ -5,7 +5,7 @@
   "module": "index.js",
   "main": "dist",
   "scripts": {
-    "build": "npm run compile-ts && npm run transpile && npm run bundle",
+    "build": "yarn compile-ts && yarn transpile && yarn bundle",
     "compile-ts": "tsc --pretty --listEmittedFiles && tsc --pretty --listEmittedFiles --emitDeclarationOnly --outDir .",
     "transpile": "babel esm --out-dir . -s",
     "bundle": "webpack --mode production",
@@ -14,9 +14,9 @@
     "ts-watch": "tsc --pretty --watch",
     "tslint": "tslint -p tsconfig.json",
     "tslint:fix": "tslint -p tsconfig.json --fix",
-    "prepublishOnly": "npm run build && npm run test",
+    "prepublishOnly": "yarn build && npm run test",
     "prettier:fix": "prettier --config ./prettier.config.js {,ts/**/*.tsx} --write",
-    "test": "npm run tslint && npm run build",
+    "test": "yarn tslint && yarn build",
     "prepare": "lerna bootstrap"
   },
   "repository": {

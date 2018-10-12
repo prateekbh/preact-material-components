@@ -54,7 +54,7 @@ jspm_packages
 
 .DS_Store
 .idea/
-yarn.lock
+package-lock.json
 
 # Exclude build artifacts
 esm
@@ -62,6 +62,5 @@ esm
 */*.js.map
 */*.d.ts
 !/docs/prettier.config.js
-tests/bin/
-tests/golden/dom/
+/docs/tests/bin
 /preact-material-components-v*.*.*.tgz

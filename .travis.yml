@@ -12,12 +12,9 @@ os: osx
 install: true
 script: ./scripts/travis.sh $TEST_DIR
 
-cache:
-  directories:
-    - node_modules
-    - docs/node_modules
+cache: "yarn"
 
-before_deploy: cd $TRAVIS_BUILD_DIR/docs && npm run build:prod
+before_deploy: cd $TRAVIS_BUILD_DIR/docs && yarn build:prod
 
 deploy:
   provider: surge
