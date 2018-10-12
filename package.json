@@ -16,7 +16,8 @@
     "tslint:fix": "tslint -p tsconfig.json --fix",
     "prepublishOnly": "npm run build && npm run test",
     "prettier:fix": "prettier --config ./prettier.config.js {,ts/**/*.tsx} --write",
-    "test": "npm run tslint && npm run build"
+    "test": "npm run tslint && npm run build",
+    "prepare": "lerna bootstrap"
   },
   "repository": {
     "type": "git",
@@ -128,6 +129,7 @@
     "eslint-plugin-react": "^7.5.1",
     "glob-copy": "^0.1.0",
     "http-server": "^0.11.0",
+    "lerna": "^3.4.3",
     "lint-staged": "^7.2.0",
     "mkdirp": "^0.5.1",
     "mocha": "^5.0.1",
