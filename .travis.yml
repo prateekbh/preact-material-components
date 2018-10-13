@@ -15,6 +15,9 @@ script: ./scripts/travis.sh $TEST_DIR
 
 cache: "yarn"
 
+before_install:
+- sudo apt-get install -y jq
+
 before_deploy: cd $TRAVIS_BUILD_DIR/docs && yarn build:prod
 
 deploy:

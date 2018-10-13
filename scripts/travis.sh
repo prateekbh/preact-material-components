@@ -5,16 +5,15 @@ SUBFOLDER=$1
 
 function test {
     set -ev
-    npm install
-    npm run build
+    yarn install --frozen-lockfile
+    yarn build
     cd $TRAVIS_BUILD_DIR/$SUBFOLDER
-    npm install
+    yarn install --frozen-lockfile
     
-    if npm run | grep test:travis > /dev/null
-    then
-        npm run test:travis
+    if [ "$(cat package.json | jq ".scripts.\"test:travis\"")" != "null" ]; then
+        yarn test:travis
     else
-        npm test
+        yarn test
     fi
     exit
 }
