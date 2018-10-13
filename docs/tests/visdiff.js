@@ -25,7 +25,7 @@ describe('docs site', () => {
 
     // Artificial wait as serve takes time to boot sometimes
     await new Promise(resolve => {
-      setTimeout(() => resolve(), 2000);
+      setTimeout(() => resolve(), 5000);
     });
 
     browser = await puppeteer.launch();
