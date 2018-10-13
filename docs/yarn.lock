@@ -2220,6 +2220,13 @@ create-error-class@^3.0.0, create-error-class@^3.0.1:
   dependencies:
     capture-stack-trace "^1.0.0"
 
+create-firefox-profile@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/create-firefox-profile/-/create-firefox-profile-1.0.0.tgz#5320a3dd05f4f005df27fb88858b89b88e232387"
+  integrity sha1-UyCj3QX08AXfJ/uIhYuJuI4jI4c=
+  dependencies:
+    tempy "~0.2.1"
+
 create-hash@^1.1.0, create-hash@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/create-hash/-/create-hash-1.2.0.tgz#889078af11a63756bcfb59bd221996be3a9ef196"
@@ -3127,6 +3134,11 @@ eslint@^4.6.1:
     table "4.0.2"
     text-table "~0.2.0"
 
+esm@^3.0.81:
+  version "3.0.84"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.0.84.tgz#bb108989f4673b32d4f62406869c28eed3815a63"
+  integrity sha512-SzSGoZc17S7P+12R9cg21Bdb7eybX25RnIeRZ80xZs+VZ3kdQKzqTp2k4hZJjR7p9l0186TTXSgrxzlMDBktlw==
+
 espree@^3.5.4:
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
@@ -3664,6 +3676,14 @@ forwarded@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
   integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
+
+foxr@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/foxr/-/foxr-0.7.0.tgz#b96c94d40bcf5ebed3f5740ef43bbe7711584b57"
+  integrity sha512-/oj78V3Hupas+K6yctrDfiLPOr0wUgBZkOZ2Qot9b0PNMuUlG121B8d2RVcYmhYpxeyCeG3iHNZEyGl9RvUMfw==
+  dependencies:
+    esm "^3.0.81"
+    typeon "^0.1.1"
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -5298,6 +5318,11 @@ lodash.clonedeep@^4.3.2:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
+
+lodash.compact@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.compact/-/lodash.compact-3.0.1.tgz#540ce3837745975807471e16b4a2ba21e7256ca5"
+  integrity sha1-VAzjg3dFl1gHRx4WtKK6IeclbKU=
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
@@ -8581,6 +8606,11 @@ tar@^4, tar@^4.4.1:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
+temp-dir@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/temp-dir/-/temp-dir-1.0.0.tgz#0a7c0ea26d3a39afa7e0ebea9c1fc0bc4daa011d"
+  integrity sha1-CnwOom06Oa+n4OvqnB/AvE2qAR0=
+
 tempfile@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/tempfile/-/tempfile-1.1.1.tgz#5bcc4eaecc4ab2c707d8bc11d99ccc9a2cb287f2"
@@ -8588,6 +8618,14 @@ tempfile@^1.0.0:
   dependencies:
     os-tmpdir "^1.0.0"
     uuid "^2.0.1"
+
+tempy@~0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/tempy/-/tempy-0.2.1.tgz#9038e4dbd1c201b74472214179bc2c6f7776e54c"
+  integrity sha512-LB83o9bfZGrntdqPuRdanIVCPReam9SOZKW0fOy5I9X3A854GGWi0tjCqoXEk84XIEYBc/x9Hq3EFop/H5wJaw==
+  dependencies:
+    temp-dir "^1.0.0"
+    unique-string "^1.0.0"
 
 term-size@^1.2.0:
   version "1.2.0"
@@ -8813,6 +8851,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typeon@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/typeon/-/typeon-0.1.1.tgz#6fb1c1bbeba85fa5237a1a736b902489eda1b3c4"
+  integrity sha512-NCwaQCGsukUqST53+EiOYF6ufqR7fJWauOrsaQHuJFl8lUI8F3xJHl/IhTyt3/Ql16gTBqDaKYXNDGHL8ZV33Q==
 
 uglify-es@^3.3.9:
   version "3.3.9"

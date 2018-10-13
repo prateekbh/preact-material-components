@@ -1,19 +1,71 @@
-const puppeteer = require('puppeteer');
-const expect = require('chai').expect;
+const foxr = require('foxr').default;
+const {expect} = require('chai');
 const path = require('path');
 const serve = require('serve');
 const fs = require('fs');
-const PNG = require('pngjs').PNG;
+const {PNG} = require('pngjs');
 const pixelmatch = require('pixelmatch');
 const mkdirp = require('mkdirp');
+const {spawn} = require('child_process');
+const {constants} = require('os');
+const compact = require('lodash.compact');
+const newProfile = require('create-firefox-profile');
 
 const testDir = 'tests/generated';
 const goldenDir = 'tests/golden';
 
+/**
+ * Returns the boolean value of an environment variable. Returns default value when not set or invalid.
+ * @param env {string} Name of the environment variable
+ * @param def {boolean} default value
+ * @returns {boolean}
+ */
+function envBool(env, def) {
+  if (env in process.env) {
+    const val = JSON.parse(process.env[env]);
+    if (['boolean', 'number'].includes(typeof val)) {
+      return !!val;
+    }
+  }
+  return def;
+}
+
 describe('docs site', () => {
-  let server, browser, page;
+  let server, browser, page, firefox;
 
   before(async () => {
+    const profile = await new Promise((resolve, reject) => {
+      newProfile(
+        {
+          prefs: {
+            'app.normandy.first_run': false,
+            'browser.feeds.showFirstRunUI': false,
+            'toolkit.telemetry.reportingpolicy.firstRun': false,
+            'startup.homepage_welcome_url': 'about:blank'
+          }
+        },
+        (err, res) => {
+          err ? reject(err) : resolve(res);
+        }
+      );
+    });
+    firefox = spawn(
+      'firefox',
+      compact([
+        '--profile',
+        profile,
+        envBool('NO_HEADLESS', false) ? null : '--headless',
+        '--marionette',
+        '--no-remote',
+        '--safe-mode',
+        '--private',
+        'http://localhost:8080'
+      ])
+    );
+
+    firefox.stdout.pipe(process.stdout);
+    firefox.stderr.pipe(process.stderr);
+
     const serveDir = path.join(__dirname, '../build');
     server = serve(serveDir, {
       port: 8080,
@@ -23,26 +75,43 @@ describe('docs site', () => {
     // And its wide screen/small screen subdirectories.
     mkdirp.sync(`${testDir}/wide/component`);
 
-    // Artificial wait as serve takes time to boot sometimes
+    // Artificial wait as serve and firefox take time to boot
     await new Promise(resolve => {
       setTimeout(() => resolve(), 5000);
     });
 
-    browser = await puppeteer.launch();
-    page = await browser.newPage();
+    browser = await foxr.connect();
   });
 
-  after(() => {
-    browser.close();
-    server.stop();
+  after(async () => {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+    if (server) {
+      server.stop();
+    }
+    if (firefox) {
+      firefox.kill(constants.signals.SIGINT);
+    }
   });
 
   describe('desktop screen', async () => {
-    beforeEach(async function() {
-      return page.setViewport({
-        width: 1280,
-        height: 720
+    let page;
+    before(async function() {
+      page = await browser.newPage();
+      await page.setViewport({
+        width: 1920,
+        height: 1080
       });
+    });
+
+    after(async () => {
+      if (page) {
+        await page.close();
+      }
     });
 
     it('should match Home page against golden directory', () => {
@@ -163,52 +232,44 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   let fileName = filePrefix + '/' + (route ? route : 'index');
 
   // Start the browser, go to that page, and take a screenshot.
-  await page.goto(`http://localhost:8080/${route}`, {
-    waitUntil: 'networkidle0'
+  await page.goto(`http://localhost:8080/${route}`);
+  await new Promise(resolve => {
+    setTimeout(() => resolve(), 500);
   });
-  await page.screenshot({path: `${testDir}/${fileName}.png`, fullPage: true});
+  const body = await page.$('.content');
+  const img = new PNG();
+  img.parse(await body.screenshot({path: `${testDir}/${fileName}.png`}));
   // Test to see if it's right.
-  return compareScreenshots(fileName);
+  return compareScreenshots(img, fileName);
 }
 
-function compareScreenshots(fileName) {
-  return new Promise((resolve, reject) => {
-    const filePath = `${testDir}/${fileName}.png`;
-    const img1 = fs
-      .createReadStream(filePath)
-      .pipe(new PNG())
-      .on('parsed', doneReading);
-    const img2 = fs
-      .createReadStream(`${goldenDir}/${fileName}.png`)
-      .pipe(new PNG())
-      .on('parsed', doneReading);
-
-    let filesRead = 0;
-    function doneReading() {
-      // Wait until both files are read.
-      if (++filesRead < 2) return;
-
-      // The files should be the same size.
-      expect(img1.width, 'image widths are the same').equal(img2.width);
-      expect(img1.height, 'image heights are the same').equal(img2.height);
-
-      // Do the visual diff.
-      const diff = new PNG({width: img1.width, height: img2.height});
-      const numDiffPixels = pixelmatch(
-        img1.data,
-        img2.data,
-        diff.data,
-        img1.width,
-        img1.height,
-        {
-          threshold: 0.2
-        }
-      );
-
-      // The files should look the same.
-      expect(numDiffPixels, 'number of different pixels').equal(0);
-      fs.unlinkSync(filePath);
-      resolve();
-    }
+async function compareScreenshots(img1, fileName) {
+  const filePath = `${testDir}/${fileName}.png`;
+  const img2 = new PNG();
+  await new Promise(resolve => {
+    fs.createReadStream(`${goldenDir}/${fileName}.png`)
+      .pipe(img2)
+      .on('parsed', resolve);
   });
+
+  // The files should be the same size.
+  expect(img1.width, 'image widths are the same').equal(img2.width);
+  expect(img1.height, 'image heights are the same').equal(img2.height);
+
+  // Do the visual diff.
+  const diff = new PNG({width: img1.width, height: img2.height});
+  const numDiffPixels = pixelmatch(
+    img1.data,
+    img2.data,
+    diff.data,
+    img1.width,
+    img1.height,
+    {
+      threshold: 0.2
+    }
+  );
+
+  // The files should look the same.
+  expect(numDiffPixels, 'number of different pixels').equal(0);
+  fs.unlinkSync(filePath);
 }
