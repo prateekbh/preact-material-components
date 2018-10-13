@@ -6,7 +6,8 @@ env:
   - TEST_DIR=
   - TEST_DIR=docs
 
-os: osx
+os: linux
+dist: trusty
 
 # Skip npm install because our script takes care of that
 install: true
