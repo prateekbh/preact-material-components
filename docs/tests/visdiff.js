@@ -224,7 +224,7 @@ describe('docs site', () => {
   });
 });
 
-// - page is a reference to the Puppeteer page.
+// - page is a reference to the Foxr page.
 // - route is the path you're loading, which I'm using to name the file.
 // - filePrefix is either "wide" or "narrow", since I'm automatically testing both.
 async function takeAndCompareScreenshot(page, route, filePrefix) {
@@ -233,9 +233,6 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
 
   // Start the browser, go to that page, and take a screenshot.
   await page.goto(`http://localhost:8080/${route}`);
-  await new Promise(resolve => {
-    setTimeout(() => resolve(), 500);
-  });
   const body = await page.$('.content');
   const img = new PNG();
   img.parse(await body.screenshot({path: `${testDir}/${fileName}.png`}));
