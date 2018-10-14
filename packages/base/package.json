@@ -1,0 +1,31 @@
+{
+  "name": "base",
+  "version": "2.0.0-alpha1",
+  "description": "Common dependencies and types for preact-material-components",
+  "keywords": [
+    "preact-material-components",
+    "preact",
+    "material"
+  ],
+  "author": "Cromefire_ <tim.l@nghorst.net>",
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/base#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/preact-material-components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/prateekbh/preact-material-components/issues"
+  }
+}
