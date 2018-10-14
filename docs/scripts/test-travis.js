@@ -35,7 +35,7 @@ runTests.on('close', code => {
     process.exit(-2);
   }
 
-  if (!(shell.ls('**/*.png').length > 0)) {
+  if (!(shell.ls('tests/generated/**/*.png').length > 0)) {
     console.error(
       chalk.red("Can't upload failed Pictures! Did the test setup fail?")
     );
