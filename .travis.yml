@@ -33,10 +33,7 @@ branches:
     - gh-pages
 
 addons:
-  apt:
-    packages:
-    - jq
-  firefox: "latest"
+  firefox: "62"
 
 notifications:
   webhooks:

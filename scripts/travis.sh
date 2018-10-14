@@ -1,12 +1,18 @@
 #!/bin/bash
 
-set -ev
+# Tests for main sources
 if [ "${TEST}" == "main" ]
 then
+    set -ev
     yarn install --frozen-lockfile
     yarn build
     yarn test
-else
+fi
+
+# Tests for docs
+if [ "${TEST}" == "docs" ]
+then
+    set -ev
     yarn install --frozen-lockfile
     yarn build
     cd docs
