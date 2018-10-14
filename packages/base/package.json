@@ -1,6 +1,6 @@
 {
   "name": "base",
-  "version": "2.0.0-alpha1",
+  "version": "2.0.0-alpha01",
   "description": "Common dependencies and types for preact-material-components",
   "keywords": [
     "preact-material-components",
@@ -27,5 +27,9 @@
   },
   "bugs": {
     "url": "https://github.com/prateekbh/preact-material-components/issues"
+  },
+  "devDependencies": {
+    "bind-decorator": "^1.0.11",
+    "preact": "^8.3.1"
   }
 }

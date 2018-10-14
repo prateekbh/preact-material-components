@@ -14,7 +14,7 @@ then
     set -ev
     yarn build
     cd docs
-    yarn install --frozen-lockfile
+    yarn install --frozen-lockfile --non-interactive
     yarn test:travis
 fi
 exit

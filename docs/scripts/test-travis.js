@@ -5,7 +5,7 @@ const request = require('request');
 const archiver = require('archiver');
 const chalk = require('chalk');
 
-const runTests = spawn('yarn', ['test', '--colors'], {shell: true});
+const runTests = spawn('yarn', ['test', '--non-interactive', '--colors'], {shell: true});
 
 runTests.stdout.pipe(process.stdout);
 runTests.stderr.pipe(process.stderr);
