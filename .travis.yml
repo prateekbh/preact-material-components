@@ -3,8 +3,8 @@ node_js:
   - "8"
 
 env:
-  - TEST_DIR=
-  - TEST_DIR=docs
+  - TEST=main
+  - TEST=docs
 
 os: linux
 dist: trusty
@@ -24,7 +24,7 @@ deploy:
   skip_cleanup: true
   on:
     branch: release
-    condition: $(./scripts/has-changes.sh docs) = "yes" && $TEST_DIR = "docs"
+    condition: $(./scripts/has-changes.sh docs) = "yes" && $TEST = "docs"
     node: "8"
 
 # blocklist
