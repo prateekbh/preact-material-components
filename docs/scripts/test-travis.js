@@ -24,16 +24,20 @@ runTests.on('close', code => {
 
   try {
     fs.accessSync('tests/generated');
-    if (
-      !fs.statSync('tests/generated').isDirectory() ||
-      shell.ls('**/*.png').length === 0
-    ) {
+    if (!fs.statSync('tests/generated').isDirectory()) {
       // noinspection ExceptionCaughtLocallyJS
       throw new ErrorEvent('');
     }
   } catch (e) {
     console.error(
       chalk.red("Can't upload failed Pictures! Did the compile fail?")
+    );
+    process.exit(-2);
+  }
+
+  if (!(shell.ls('**/*.png').length > 0)) {
+    console.error(
+      chalk.red("Can't upload failed Pictures! Did the test setup fail?")
     );
     process.exit(-2);
   }
