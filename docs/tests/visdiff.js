@@ -1,8 +1,9 @@
+const {createServer} = require('http');
 const foxr = require('foxr').default;
 const {expect} = require('chai');
-const path = require('path');
-const serve = require('serve');
+const {join, resolve: resolvePath} = require('path');
 const fs = require('fs');
+const {Socket} = require('net');
 const {PNG} = require('pngjs');
 const pixelmatch = require('pixelmatch');
 const mkdirp = require('mkdirp');
@@ -10,9 +11,12 @@ const {spawn} = require('child_process');
 const {constants} = require('os');
 const compact = require('lodash.compact');
 const newProfile = require('create-firefox-profile');
+const serveStatic = require('serve-static');
+const finalhandler = require('finalhandler');
 
 const testDir = 'tests/generated';
 const goldenDir = 'tests/golden';
+const port = 8343;
 
 /**
  * Returns the boolean value of an environment variable. Returns default value when not set or invalid.
@@ -30,10 +34,45 @@ function envBool(env, def) {
   return def;
 }
 
+async function getServer() {
+  const serveDir = join(__dirname, '../build');
+  const serve = serveStatic(serveDir, {index: ['index.html']});
+  const server = createServer((req, res) => {
+    serve(req, res, finalhandler(req, res));
+  });
+  server.listen(port);
+  return server;
+}
+
+function tryConnection(host, port) {
+  const socket = new Socket();
+  return new Promise((resolve, reject) => {
+    const rejectAndDestroy = error => {
+      reject(error);
+      socket.destroy();
+    };
+    const resolveAndDestroy = () => {
+      resolve();
+      socket.destroy();
+    };
+
+    socket
+      .setTimeout(1000)
+      .once('connect', resolveAndDestroy)
+      .once('timeout', () => rejectAndDestroy(new Error('Timeout Connecting')))
+      .once('error', err => rejectAndDestroy(err))
+      .connect(
+        port,
+        host
+      );
+  });
+}
+
 describe('docs site', () => {
   let server, browser, page, firefox;
 
   before(async () => {
+    const serverProm = getServer();
     const profile = await new Promise((resolve, reject) => {
       newProfile(
         {
@@ -54,33 +93,44 @@ describe('docs site', () => {
       compact([
         '--profile',
         profile,
-        envBool('NO_HEADLESS', false) ? null : '--headless',
+        envBool('SHOW_FIREFOX', false) ? null : '--headless',
         '--marionette',
         '--no-remote',
         '--safe-mode',
         '--private',
-        'http://localhost:8080'
+        `http://localhost:${port}`
       ])
     );
 
-    firefox.stdout.pipe(process.stdout);
-    firefox.stderr.pipe(process.stderr);
-
-    const serveDir = path.join(__dirname, '../build');
-    server = serve(serveDir, {
-      port: 8080,
-      ignore: ['node_modules']
-    });
+    const firefoxLog = resolvePath(profile, 'firefox.log');
+    const firefoxLogStream = fs.createWriteStream(firefoxLog);
+    firefox.stdout.pipe(firefoxLogStream);
+    firefox.stderr.pipe(firefoxLogStream);
+    console.info(`Logging firefox output to ${firefoxLog}`);
 
     // And its wide screen/small screen subdirectories.
-    mkdirp.sync(`${testDir}/wide/component`);
+    mkdirp.sync(join(`${testDir}`, 'wide/component'));
 
-    // Artificial wait as serve and firefox take time to boot
-    await new Promise(resolve => {
-      setTimeout(() => resolve(), 5000);
+    // Artificial wait as firefox takes time to boot
+    await new Promise(async (resolve, reject) => {
+      let run = true;
+      const timeout = setTimeout(() => {
+        run = false;
+        reject(new Error('Timeout while starting firefox'));
+      }, 15 * 1000);
+      while (run) {
+        try {
+          await tryConnection('localhost', 2828);
+          resolve();
+          clearTimeout(timeout);
+          return;
+        } catch (e) {}
+        await new Promise(resolve1 => setTimeout(resolve1, 100));
+      }
     });
 
     browser = await foxr.connect();
+    server = await serverProm;
   });
 
   after(async () => {
@@ -91,7 +141,7 @@ describe('docs site', () => {
       await browser.close();
     }
     if (server) {
-      server.stop();
+      await new Promise(resolve => server.close(resolve));
     }
     if (firefox) {
       firefox.kill(constants.signals.SIGINT);
@@ -232,19 +282,19 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   let fileName = filePrefix + '/' + (route ? route : 'index');
 
   // Start the browser, go to that page, and take a screenshot.
-  await page.goto(`http://localhost:8080/${route}`);
+  await page.goto(`http://localhost:${port}/${route}`);
   const body = await page.$('.content');
   const img = new PNG();
-  img.parse(await body.screenshot({path: `${testDir}/${fileName}.png`}));
+  img.parse(await body.screenshot({path: join(testDir, `${fileName}.png`)}));
   // Test to see if it's right.
   return compareScreenshots(img, fileName);
 }
 
 async function compareScreenshots(img1, fileName) {
-  const filePath = `${testDir}/${fileName}.png`;
+  const filePath = join(testDir, `${fileName}.png`);
   const img2 = new PNG();
   await new Promise(resolve => {
-    fs.createReadStream(`${goldenDir}/${fileName}.png`)
+    fs.createReadStream(join(goldenDir, `${fileName}.png`))
       .pipe(img2)
       .on('parsed', resolve);
   });

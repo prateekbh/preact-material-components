@@ -1,9 +1,7 @@
 const {spawn} = require('child_process');
-const async = require('async');
 const fs = require('fs');
 const shell = require('shelljs');
 const request = require('request');
-const path = require('path');
 const archiver = require('archiver');
 const chalk = require('chalk');
 
@@ -15,18 +13,21 @@ runTests.on('error', console.error);
 
 runTests.on('close', code => {
   if (!code) {
-    console.log('Tests succeeded');
+    console.info('Tests succeeded');
     return;
   }
 
   if (process.env.TRAVIS_PULL_REQUEST === 'false') {
-    console.log("Not uploading pictures because it's not a pull request");
+    console.warn("Not uploading pictures because it's not a pull request");
     process.exit(-1);
   }
 
   try {
     fs.accessSync('tests/generated');
-    if (!fs.statSync('tests/generated').isDirectory()) {
+    if (
+      !fs.statSync('tests/generated').isDirectory() ||
+      shell.ls('**/*.png').length === 0
+    ) {
       // noinspection ExceptionCaughtLocallyJS
       throw new ErrorEvent('');
     }
