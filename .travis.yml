@@ -10,7 +10,7 @@ os: linux
 dist: trusty
 
 # Skip npm install because our script takes care of that
-install: true
+install: yarn install --frozen-lockfile
 script: ./scripts/travis.sh $TEST_DIR
 
 cache: "yarn"
