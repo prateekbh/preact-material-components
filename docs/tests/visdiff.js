@@ -117,10 +117,12 @@ describe('docs site', () => {
       const timeout = setTimeout(() => {
         run = false;
         reject(new Error('Timeout while starting firefox'));
+        console.error('Firefox log:');
+        console.error(fs.readFileSync(firefoxLog));
       }, 15 * 1000);
       while (run) {
         try {
-          await tryConnection('localhost', 2828);
+          await tryConnection('localhost', 28283);
           resolve();
           clearTimeout(timeout);
           return;
