@@ -101,7 +101,8 @@ async function getFirefox(port) {
     }, 20 * 1000);
     while (run) {
       try {
-        await foxr.connect();
+        const browser = await foxr.connect();
+        await browser.disconnect();
         resolve();
         clearTimeout(timeout);
         return;
