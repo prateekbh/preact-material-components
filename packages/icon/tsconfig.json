@@ -9,7 +9,5 @@
       "path": "../base"
     }
   ],
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./src/**/*"]
 }
