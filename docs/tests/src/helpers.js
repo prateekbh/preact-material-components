@@ -90,7 +90,7 @@ async function getFirefox(port) {
   firefox.stderr.pipe(firefoxLogStream);
   console.info(chalk.cyan(`  [info] Logging firefox output to ${firefoxLog}`));
 
-  // Artificial wait as firefox takes time to boot
+  // Wait until firefox is online
   await new Promise(async (resolve, reject) => {
     let run = true;
     const timeout = setTimeout(() => {
