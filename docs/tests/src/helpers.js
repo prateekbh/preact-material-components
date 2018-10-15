@@ -98,7 +98,7 @@ async function getFirefox(port) {
       console.error('Firefox log:');
       console.error(fs.readFileSync(firefoxLog, {encoding: 'utf8'}));
       reject(new Error('Timeout while starting firefox'));
-    }, 10 * 1000);
+    }, 20 * 1000);
     while (run) {
       try {
         await foxr.connect();

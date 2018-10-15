@@ -12,7 +12,10 @@ describe('Testing the documentation site', function() {
 
   let server, browser, firefox, page;
 
-  before(async () => {
+  before(async function() {
+    // noinspection JSPotentiallyInvalidUsageOfThis
+    this.timeout(30 * 1000);
+
     const serverProm = getServer(port);
     const firefoxProm = getFirefox(port);
 
