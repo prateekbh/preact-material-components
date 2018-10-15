@@ -60,7 +60,7 @@ describe('Testing the documentation site', function() {
   });
 
   describe('For a desktop screen', async function() {
-    beforeEach(async () => {
+    before(async () => {
       await page.setViewport({
         width: 1920,
         height: 1080
@@ -181,7 +181,7 @@ describe('Testing the documentation site', function() {
   });
 
   describe('For a mobile screen', async function() {
-    beforeEach(async () => {
+    before(async () => {
       await page.setViewport({
         width: 320,
         height: 480
