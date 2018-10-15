@@ -181,5 +181,3 @@ export abstract class MaterialComponent<
     props: MaterialComponentProps<PropType>
   ): VNode;
 }
-
-export default MaterialComponent;

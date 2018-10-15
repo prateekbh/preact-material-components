@@ -1,22 +1,23 @@
 {
-  "name": "@preact-material-components/base",
+  "name": "@preact-material-components/icon",
   "version": "2.0.0-alpha.1",
-  "description": "Common dependencies and types for preact-material-components",
+  "description": "Implementation of a material icon",
   "keywords": [
     "preact-material-components",
     "preact",
-    "material"
+    "material",
+    "icon"
   ],
   "author": "Cromefire_ <tim.l@nghorst.net>",
-  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/base#readme",
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/icon#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "directories": {
-    "src": "src",
+    "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "src"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -29,6 +30,6 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/ripple": "^0.39.3"
+    "@preact-material-components/base": "^2.0.0-alpha.1"
   }
 }

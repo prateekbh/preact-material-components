@@ -1,11 +1,8 @@
+import {
+  generateThemeClass,
+  MaterialComponent
+} from '@preact-material-components/base';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
-import Icon from '../Icon';
-import generateThemeClass from '../themeUtils/generateThemeClass';
-
-export class ButtonIcon extends Icon {
-  protected componentName = 'button__icon';
-}
 
 export interface IButtonProps {
   ripple?: boolean;
@@ -48,9 +45,4 @@ export class Button<
   }
 }
 
-export default class<PropsType = {}, StateType = {}> extends Button<
-  PropsType,
-  StateType
-> {
-  public static readonly Icon = ButtonIcon;
-}
+export * from './icon';

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "./esm",
     "sourceMap": true,
     "noImplicitAny": false,
     "module": "es6",
@@ -11,11 +10,14 @@
     "allowJs": false,
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
-    "rootDir": "./ts/",
     "declaration": true,
     "esModuleInterop": false,
     "experimentalDecorators": true,
-    "strict": true
-  },
-  "include": ["./ts/**/*"]
+    "strict": true,
+    "composite": true,
+    "baseUrl": "./packages",
+    "paths": {
+      "@preact-material-components/*": ["./*/src"]
+    }
+  }
 }

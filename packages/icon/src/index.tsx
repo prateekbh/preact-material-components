@@ -1,5 +1,5 @@
+import {MaterialComponent} from '@preact-material-components/base';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
 
 export interface IIconProps {}
 
