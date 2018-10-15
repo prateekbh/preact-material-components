@@ -1,4 +1,3 @@
-const {Socket} = require('net');
 const serveStatic = require('serve-static');
 const finalhandler = require('finalhandler');
 const {spawn, ChildProcess} = require('child_process');
@@ -8,6 +7,16 @@ const compact = require('lodash.compact');
 const newProfile = require('create-firefox-profile');
 const fs = require('fs');
 const chalk = require('chalk');
+const foxr = require('foxr').default;
+
+/**
+ * Returns a promise that resolves after a certain time
+ * @param ms {number} Milliseconds to sleep
+ * @returns {Promise<any>}
+ */
+function sleep(ms) {
+  return new Promise(resolve1 => setTimeout(resolve1, 100));
+}
 
 /**
  * Returns the boolean value of an environment variable. Returns default value when not set or invalid.
@@ -38,36 +47,6 @@ async function getServer(port) {
   });
   server.listen(port);
   return server;
-}
-
-/**
- * Try if port is reachable
- * @param host {string} Host to connect to
- * @param port {number} Port to connect to
- * @returns {Promise<void>}
- */
-function tryConnection(host, port) {
-  const socket = new Socket();
-  return new Promise((resolve, reject) => {
-    const rejectAndDestroy = error => {
-      reject(error);
-      socket.destroy();
-    };
-    const resolveAndDestroy = () => {
-      resolve();
-      socket.destroy();
-    };
-
-    socket
-      .setTimeout(1000)
-      .once('connect', resolveAndDestroy)
-      .once('timeout', () => rejectAndDestroy(new Error('Timeout Connecting')))
-      .once('error', err => rejectAndDestroy(err))
-      .connect(
-        port,
-        host
-      );
-  });
 }
 
 /**
@@ -122,12 +101,12 @@ async function getFirefox(port) {
     }, 10 * 1000);
     while (run) {
       try {
-        await tryConnection('localhost', 2828);
+        await foxr.connect();
         resolve();
         clearTimeout(timeout);
         return;
       } catch (e) {}
-      await new Promise(resolve1 => setTimeout(resolve1, 100));
+      await sleep(100);
     }
   });
 
@@ -137,5 +116,6 @@ async function getFirefox(port) {
 module.exports = {
   getServer,
   getFirefox,
-  envBool
+  envBool,
+  sleep
 };
