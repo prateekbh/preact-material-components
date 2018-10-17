@@ -65,3 +65,5 @@ esm
 tests/bin/
 tests/golden/dom/
 /preact-material-components-v*.*.*.tgz
+#temporary heck
+!docs/node_modules/preact-cli/package.json
