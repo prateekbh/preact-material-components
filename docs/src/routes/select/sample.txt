@@ -12,10 +12,8 @@ export default class SelectPage extends Component {
           selectedIndex={this.state.chosenIndex}
           onChange={(e)=>{
             this.setState({
-              chosenIndex: e.selectedIndex
+              chosenIndex: e.target.selectedIndex
             });
-            //selected options
-            console.log(e.selectedOptions);
           }}>
             <Select.Item>opt1</Select.Item>
             <Select.Item>opt2</Select.Item>
