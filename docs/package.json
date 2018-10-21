@@ -4,8 +4,9 @@
   "description": "preact material component's site",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "prebuilda": "cd node_modules/preact-cli && npm i mini-css-extract-plugin@0.4.4",
     "build": "preact build",
-    "prebuild:prod": "cd node_modules/preact-cli && npm i mini-css-extract-plugin@0.4.4",
+    "prebuild:proda": "cd node_modules/preact-cli && npm i mini-css-extract-plugin@0.4.4",
     "build:prod": "preact build --template template.html && npm run copyAssets",
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "serve": "preact build && preact serve",
@@ -48,11 +49,6 @@
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "serve": "^6.5.1",
-    "shelljs": "^0.8.1",
-    "webpack": "^3.8.1"
-  },
-  "dependencies": {
-    "preact": "^8.2.9",
-    "preact-router": "^2.6.1"
+    "shelljs": "^0.8.1"
   }
 }
