@@ -6,9 +6,6 @@ import IconButton from '../../../../esm/IconButton';
 import '../../../../IconButton/style.css';
 import '../../../../Icon/style.css';
 
-import '../../../../IconButton/style.css';
-import '../../../../Icon/style.css';
-
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
@@ -55,7 +52,8 @@ export default class IconButtonPage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-icon-button">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
