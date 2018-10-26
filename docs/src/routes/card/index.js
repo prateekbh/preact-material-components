@@ -79,7 +79,8 @@ export default class CardPage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-card">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Card with action button</div>
