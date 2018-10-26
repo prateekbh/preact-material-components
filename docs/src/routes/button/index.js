@@ -72,12 +72,13 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Original documentation.</div>
         <div className="mdc-typography--body">
-          This component encapsulates <span className="strong">mdc-button</span>,
-          you can refer to its documentation
+          This component encapsulates <span className="strong">mdc-button</span>
+          , you can refer to its documentation
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-button">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Demo </div>

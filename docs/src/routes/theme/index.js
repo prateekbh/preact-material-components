@@ -22,7 +22,8 @@ export default class ThemePage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-theme">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Changing colors</div>

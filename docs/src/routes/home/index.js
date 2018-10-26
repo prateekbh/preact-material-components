@@ -38,9 +38,10 @@ export default class FormFieldPage extends Component {
             is a thin opinionless wrapper around{' '}
             <a href="https://github.com/material-components/material-components-web">
               material-components-web
-            </a>. Use these components to add material components to your web
-            app, without worrying about the extra code of components which you
-            are not using.
+            </a>
+            . Use these components to add material components to your web app,
+            without worrying about the extra code of components which you are
+            not using.
           </div>
           <br />
           <Typography headline4>How to use</Typography>
