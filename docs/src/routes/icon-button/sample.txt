@@ -14,14 +14,9 @@ export default class IconTogglePage extends Component {
     };
     return (
       <div>
-        <IconButton
-          role="button"
-          tabindex="0"
-          aria-pressed="false"
-          aria-label="Add to favorites"
-          data-toggle-on-content='favorite'
-          data-toggle-off-content='favorite_border'>
-          favorite_border
+        <IconButton>
+          <IconButton.Icon on>favorite</IconButton.Icon>
+          <IconButton.Icon>favorite_border</IconButton.Icon>
         </IconButton>
       </div>
     );
