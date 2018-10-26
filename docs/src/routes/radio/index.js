@@ -54,7 +54,8 @@ export default class RadioPage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Basic radio group</div>

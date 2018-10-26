@@ -79,7 +79,8 @@ export default class ButtonPage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Demo</div>

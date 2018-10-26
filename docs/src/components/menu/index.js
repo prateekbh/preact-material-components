@@ -73,7 +73,10 @@ export default class Menu extends Component {
           <div>
             <Typography headline5>Components</Typography>
           </div>
-          <Typography caption>@ (v{json['version']})</Typography>
+          <Typography caption>
+            @ (v
+            {json['version']})
+          </Typography>
         </Drawer.DrawerHeader>
         <Drawer.DrawerContent>
           {items.map(({icon, link, text}, index) => (

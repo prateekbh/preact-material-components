@@ -45,7 +45,8 @@ export default class FormFieldPage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-form-field">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Demo</div>
