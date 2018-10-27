@@ -2,9 +2,13 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Card from '../../../../esm/Card';
-
-import '../../../../Card/style.css';
+import {
+  Card,
+  CardActionButton,
+  CardActions,
+  CardMedia
+} from '@preact-material-components/card';
+import '@preact-material-components/card/style.scss';
 
 // Components
 import ComponentTable from '../../components/component-table';
@@ -89,10 +93,10 @@ export default class CardPage extends Component {
             <h2 class=" mdc-typography--title">Title</h2>
             <div class=" mdc-typography--caption">Caption</div>
           </div>
-          <Card.Media className="card-media" />
-          <Card.Actions>
-            <Card.ActionButton>OK</Card.ActionButton>
-          </Card.Actions>
+          <CardMedia className="card-media" />
+          <CardActions>
+            <CardActionButton>OK</CardActionButton>
+          </CardActions>
         </Card>
 
         <div className="mdc-typography--display1">
@@ -103,10 +107,10 @@ export default class CardPage extends Component {
             <h2 class=" mdc-typography--title">Title</h2>
             <div class=" mdc-typography--caption">Caption</div>
           </div>
-          <Card.Media className="card-media" />
-          <Card.Actions full-bleed>
-            <Card.ActionButton>Full-bleed button</Card.ActionButton>
-          </Card.Actions>
+          <CardMedia className="card-media" />
+          <CardActions full-bleed>
+            <CardActionButton>Full-bleed button</CardActionButton>
+          </CardActions>
         </Card>
       </div>
     );
