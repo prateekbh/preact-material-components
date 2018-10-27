@@ -20,5 +20,23 @@
       "@preact-material-components/*": ["./*/src"],
       "@preact-material-components/*/lib/*": ["./*/src/*"]
     }
-  }
+  },
+  "references": [
+    {
+      "path": "base"
+    },
+    {
+      "path": "button"
+    },
+    {
+      "path": "card"
+    },
+    {
+      "path": "checkbox"
+    },
+    {
+      "path": "icon"
+    }
+  ],
+  "files": []
 }
