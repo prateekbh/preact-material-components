@@ -104,7 +104,8 @@ export default class TextFieldPage extends Component {
           <a href="https://material.io/develop/web/components/input-controls/text-field/">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
         <div className="mdc-typography--display1">Demo</div>
         <div className="mdc-typography--title">Default</div>

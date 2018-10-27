@@ -55,7 +55,8 @@ export default class IconButtonPage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-icon-button">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Demo </div>

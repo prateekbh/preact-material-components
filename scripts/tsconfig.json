@@ -4,10 +4,6 @@
     "target": "es6",
     "sourceMap": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "files": [
-    "compile.ts"
-  ]
+  "exclude": ["node_modules"],
+  "files": ["compile.ts"]
 }
