@@ -15,7 +15,7 @@ const tsPackages = packages.filter(path => {
 
 console.info('Compiling:');
 tsPackages.forEach((pack: string) => {
-  console.info(`- ${pack}`);
+  console.info(`- @preact-material-components/${pack}`);
 });
 console.info('');
 

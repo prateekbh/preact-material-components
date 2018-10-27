@@ -13,7 +13,7 @@ if [ "${TEST}" == "docs" ]
 then
     set -ev
     yarn build
-    cd docs
+    cd packages/docs
     yarn install --frozen-lockfile --non-interactive
     yarn test:travis
 fi
