@@ -55,3 +55,4 @@ CssMigrationWebpackPlugin.js
 .idea
 package-lock.json
 /preact-material-components-v*.*.*.tgz
+/packages

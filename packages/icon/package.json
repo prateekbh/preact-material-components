@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "@preact-material-components/base": "^2.0.0-alpha.1"
-  }
+  },
+  "sideEffects": false
 }

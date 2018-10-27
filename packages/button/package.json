@@ -30,7 +30,9 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
+    "@material/button": "0.39.3",
     "@preact-material-components/base": "^2.0.0-alpha.1",
     "@preact-material-components/icon": "^2.0.0-alpha.1"
-  }
+  },
+  "sideEffects": false
 }

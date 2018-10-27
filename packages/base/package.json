@@ -30,5 +30,6 @@
   },
   "dependencies": {
     "@material/ripple": "^0.39.3"
-  }
+  },
+  "sideEffects": false
 }
