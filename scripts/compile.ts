@@ -13,12 +13,6 @@ const tsPackages = packages.filter(path => {
   return existsSync(tsconfigPath);
 });
 
-console.info('Compiling:');
-tsPackages.forEach((pack: string) => {
-  console.info(`- @preact-material-components/${pack}`);
-});
-console.info('');
-
 const tsRel: string[] = [];
 const tsProjects: string[] = [];
 tsPackages.forEach(path => {
@@ -28,8 +22,14 @@ tsPackages.forEach(path => {
 });
 
 console.log(`$ ${['ttsc', '-b'].concat(tsRel).join(' ')}`);
+
+const args = ['-b', '-V'];
+if ('--watch' in process.argv) {
+  args.push('--watch');
+}
+
 npx({
-  cmdOpts: ['-b'].concat(tsProjects),
+  cmdOpts: args.concat(tsProjects),
   command: 'ttsc',
   package: ['ttypescript']
 });

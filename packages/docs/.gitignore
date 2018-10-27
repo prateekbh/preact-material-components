@@ -2,7 +2,7 @@
 /build
 
 # For parent .gitignore
-!/**/index.js
+!/src/**/index.js
 
 /tests/bin
 /tests/generated

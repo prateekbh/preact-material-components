@@ -58,14 +58,14 @@
     "node-sass": "^4.9.3",
     "pixelmatch": "^4.0.2",
     "pngjs": "^3.3.2",
+    "preact": "^8.2.9",
+    "preact-cli": "^3.0.0-next.14",
+    "preact-router": "^2.6.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "serve": "^6.5.1",
     "serve-static": "^1.13.2",
     "shelljs": "^0.8.1",
-    "webpack": "^3.8.1",
-    "preact": "^8.2.9",
-    "preact-cli": "^3.0.0-next.14",
-    "preact-router": "^2.6.1"
+    "webpack": "^3.8.1"
   }
 }

@@ -6,7 +6,7 @@
     "moduleResolution": "node",
     "target": "es2015",
     "jsx": "react",
-    "jsxFactory": "h",
+    "jsxFactory": "preact.h",
     "allowJs": false,
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
@@ -17,7 +17,8 @@
     "composite": true,
     "baseUrl": "./packages",
     "paths": {
-      "@preact-material-components/*": ["./*/src"]
+      "@preact-material-components/*": ["./*/src"],
+      "@preact-material-components/*/lib/*": ["./*/src/*"]
     }
   }
 }
