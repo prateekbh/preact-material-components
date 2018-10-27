@@ -1,0 +1,36 @@
+{
+  "name": "@preact-material-components/card",
+  "version": "2.0.0-alpha.1",
+  "description": "Implemetation of the material card",
+  "keywords": [
+    "preact-material-components",
+    "preact",
+    "material",
+    "card"
+  ],
+  "author": "Cromefire_ <tim.l@nghorst.net>",
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/card#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/preact-material-components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/prateekbh/preact-material-components/issues"
+  },
+  "dependencies": {
+    "@material/card": "0.39.3"
+  },
+  "side-effects": false
+}

@@ -9,7 +9,7 @@ import Snackbar from './Snackbar';
 import Radio from './Radio';
 import TextField from './TextField';
 import Select from './Select';
-import Card from './Card';
+import Card from './packages/card/src/index';
 import Elevation from './Elevation';
 import FormField from './FormField';
 import Dialog from './Dialog';
