@@ -6,9 +6,6 @@ import IconButton from '../../../../esm/IconButton';
 import '../../../../IconButton/style.css';
 import '../../../../Icon/style.css';
 
-import '../../../../IconButton/style.css';
-import '../../../../Icon/style.css';
-
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
