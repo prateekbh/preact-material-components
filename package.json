@@ -48,11 +48,11 @@
     "prettier": "^1.13.7",
     "shelljs": "^0.8.2",
     "ts-node": "^7.0.1",
+    "tsickle": "^0.33.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.14.0",
     "tslint-plugin-prettier": "^2.0.0",
     "tslint-react": "^3.6.0",
-    "ttypescript": "^1.5.5",
     "typescript": "^3.1.3"
   }
 }

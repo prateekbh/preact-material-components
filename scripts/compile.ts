@@ -21,15 +21,20 @@ tsPackages.forEach(path => {
   tsRel.push(relative(rootDir, basePath));
 });
 
-console.log(`$ ${['ttsc', '-b'].concat(tsRel).join(' ')}`);
-
-const args = ['-b', '-V'];
-if ('--watch' in process.argv) {
+const args = ['-b'];
+if (process.argv.indexOf('--watch') !== -1) {
   args.push('--watch');
 }
 
+console.log(
+  `$ ${['tsc']
+    .concat(args)
+    .concat(tsRel)
+    .join(' ')}`
+);
+
 npx({
   cmdOpts: args.concat(tsProjects),
-  command: 'ttsc',
-  package: ['ttypescript']
+  command: 'tsc',
+  package: []
 });
