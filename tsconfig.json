@@ -17,26 +17,8 @@
     "composite": true,
     "baseUrl": "./packages",
     "paths": {
-      "@preact-material-components/*": ["./*/src"],
-      "@preact-material-components/*/lib/*": ["./*/src/*"]
+      "@preact-material-components/*": ["./*/src"]
     }
   },
-  "references": [
-    {
-      "path": "base"
-    },
-    {
-      "path": "button"
-    },
-    {
-      "path": "card"
-    },
-    {
-      "path": "checkbox"
-    },
-    {
-      "path": "icon"
-    }
-  ],
   "files": []
 }
