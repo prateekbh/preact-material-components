@@ -35,7 +35,7 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'Card.Actions',
+        component: 'CardActions',
         props: [
           {
             name: 'full-bleed',
@@ -44,11 +44,11 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'Card.ActionButton',
+        component: 'CardActionButton',
         props: []
       },
       {
-        component: 'Card.Media',
+        component: 'CardMedia',
         props: [
           {
             name: 'square',
@@ -61,7 +61,7 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'Card.CardMediaContent',
+        component: 'CardCardMediaContent',
         props: []
       }
     ];

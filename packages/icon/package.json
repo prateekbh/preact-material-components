@@ -8,7 +8,10 @@
     "material",
     "icon"
   ],
-  "author": "Cromefire_ <tim.l@nghorst.net>",
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
   "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/icon#readme",
   "license": "MIT",
   "main": "lib/index.js",

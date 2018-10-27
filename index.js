@@ -1,5 +1,5 @@
 import Button from './Button';
-import Checkbox from './Checkbox';
+import Checkbox from './packages/checkbox/src/index';
 import Fab from './Fab';
 import Icon from './Icon';
 import IconButton from './IconButton';

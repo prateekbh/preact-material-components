@@ -8,7 +8,10 @@
     "material",
     "card"
   ],
-  "author": "Cromefire_ <tim.l@nghorst.net>",
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
   "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/card#readme",
   "license": "MIT",
   "main": "lib/index.js",
@@ -30,7 +33,8 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/card": "0.39.3"
+    "@material/card": "0.39.3",
+    "@preact-material-components/base": "^2.0.0-alpha.1"
   },
   "side-effects": false
 }
