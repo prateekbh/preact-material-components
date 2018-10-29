@@ -50,7 +50,7 @@
     "@material/drawer": "0.39.3",
     "@material/elevation": "0.39.1",
     "@material/fab": "0.39.3",
-    "@material/form-field": "0.39.3",
+    "@material/form-field": "0.41.0",
     "@material/grid-list": "0.39.1",
     "@material/icon-toggle": "0.39.3",
     "@material/layout-grid": "0.39.0",
