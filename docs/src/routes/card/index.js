@@ -5,6 +5,7 @@ import {h, Component} from 'preact';
 import Card from '../../../../esm/Card';
 
 import '../../../../Card/style.css';
+import '../../../../Button/style.css';
 
 // Components
 import ComponentTable from '../../components/component-table';
@@ -41,6 +42,18 @@ export default class CardPage extends Component {
       },
       {
         component: 'Card.ActionButton',
+        props: []
+      },
+      {
+        component: 'Card.ActionIcon',
+        props: []
+      },
+      {
+        component: 'Card.ActionButtons',
+        props: []
+      },
+      {
+        component: 'Card.ActionIcons',
         props: []
       },
       {
@@ -91,7 +104,12 @@ export default class CardPage extends Component {
           </div>
           <Card.Media className="card-media" />
           <Card.Actions>
-            <Card.ActionButton>OK</Card.ActionButton>
+            <Card.ActionButtons>
+              <Card.ActionButton>OK</Card.ActionButton>
+            </Card.ActionButtons>
+            <Card.ActionIcons>
+              <Card.ActionIcon>share</Card.ActionIcon>
+            </Card.ActionIcons>
           </Card.Actions>
         </Card>
 
