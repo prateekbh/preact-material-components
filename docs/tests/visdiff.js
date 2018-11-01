@@ -212,7 +212,7 @@ function compareScreenshots(fileName) {
         img1.width,
         img1.height,
         {
-          threshold: 0.2
+          threshold: 0.4
         }
       );
 
