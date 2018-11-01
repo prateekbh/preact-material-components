@@ -84,7 +84,8 @@ export default class LayoutGridPage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-layout-grid">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Demo</div>

@@ -23,7 +23,7 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
     }
   }
 
-  public componentWillUpdate(nextProps: ISwitchProps) {
+  public componentWillReceiveProps(nextProps: ISwitchProps) {
     if (nextProps.value && this.props.value !== nextProps.value) {
       this.MDComponent.value = nextProps.value;
     }

@@ -31,8 +31,8 @@ export class LinearProgress extends MaterialComponent<
     this.afterComponentDidMount();
   }
 
-  public componentWillUpdate(nextProps: ILinearProgressProps) {
-    super.componentWillUpdate(nextProps);
+  public componentWillReceiveProps(nextProps: ILinearProgressProps) {
+    super.componentWillReceiveProps(nextProps);
     if (this.MDComponent) {
       this.MDComponent.determinate = !this.props.indeterminate;
       this.MDComponent.reverse = !!nextProps.reversed;

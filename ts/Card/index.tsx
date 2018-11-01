@@ -75,6 +75,10 @@ export class CardActionIcons extends MaterialComponent<
   }
 }
 
+export class CardActionButtons extends CardActionIcons {
+  protected componentName = 'card__action-buttons';
+}
+
 export class CardActionIcon extends Icon {
   protected componentName = 'card__action';
   protected mdcProps = [];

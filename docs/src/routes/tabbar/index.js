@@ -65,7 +65,8 @@ export default class TabsPage extends Component {
           <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-bar">
             {' '}
             here
-          </a>.
+          </a>
+          .
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
