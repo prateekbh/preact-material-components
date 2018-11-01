@@ -1,7 +1,8 @@
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
 const path = require('path');
-const serve = require('serve');
+const nodeStatic = require('node-static');
+const http = require('http');
 const fs = require('fs');
 const PNG = require('pngjs').PNG;
 const pixelmatch = require('pixelmatch');
@@ -14,10 +15,16 @@ describe('docs site', () => {
   let server, browser, page;
 
   before(async () => {
-    const serveDir = path.join(__dirname, '../build');
-    server = serve(serveDir, {
-      port: 8080,
-      ignore: ['node_modules']
+    const serveDir = new nodeStatic.Server(path.join(__dirname, '../build'));
+    server = http.createServer((request, response) => {
+      request.addListener('end', function () {
+        //
+        // Serve files!
+        //
+        serveDir.serve(request, response);
+      }).resume();
+    }).listen(8080, () => {
+      console.log('listening on http://localhost:8080/');
     });
 
     // And its wide screen/small screen subdirectories.
@@ -34,7 +41,7 @@ describe('docs site', () => {
 
   after(() => {
     browser.close();
-    server.stop();
+    server.close();
   });
 
   describe('desktop screen', async () => {
