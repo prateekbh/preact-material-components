@@ -1,7 +1,8 @@
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
 const path = require('path');
-const serve = require('serve');
+const nodeStatic = require('node-static');
+const http = require('http');
 const fs = require('fs');
 const PNG = require('pngjs').PNG;
 const pixelmatch = require('pixelmatch');
@@ -14,11 +15,21 @@ describe('docs site', () => {
   let server, browser, page;
 
   before(async () => {
-    const serveDir = path.join(__dirname, '../build');
-    server = serve(serveDir, {
-      port: 8080,
-      ignore: ['node_modules']
-    });
+    const serveDir = new nodeStatic.Server(path.join(__dirname, '../build'));
+    server = http
+      .createServer((request, response) => {
+        request
+          .addListener('end', function() {
+            //
+            // Serve files!
+            //
+            serveDir.serve(request, response);
+          })
+          .resume();
+      })
+      .listen(8080, () => {
+        console.log('listening on http://localhost:8080/');
+      });
 
     // And its wide screen/small screen subdirectories.
     mkdirp.sync(`${testDir}/wide/component`);
@@ -34,7 +45,7 @@ describe('docs site', () => {
 
   after(() => {
     browser.close();
-    server.stop();
+    server.close();
   });
 
   describe('desktop screen', async () => {
@@ -201,12 +212,12 @@ function compareScreenshots(fileName) {
         img1.width,
         img1.height,
         {
-          threshold: 0.2
+          threshold: 0.5
         }
       );
 
       // The files should look the same.
-      expect(numDiffPixels, 'number of different pixels').equal(0);
+      expect(numDiffPixels, 'number of different pixels').to.be.lessThan(100);
       fs.unlinkSync(filePath);
       resolve();
     }
