@@ -16,16 +16,20 @@ describe('docs site', () => {
 
   before(async () => {
     const serveDir = new nodeStatic.Server(path.join(__dirname, '../build'));
-    server = http.createServer((request, response) => {
-      request.addListener('end', function () {
-        //
-        // Serve files!
-        //
-        serveDir.serve(request, response);
-      }).resume();
-    }).listen(8080, () => {
-      console.log('listening on http://localhost:8080/');
-    });
+    server = http
+      .createServer((request, response) => {
+        request
+          .addListener('end', function() {
+            //
+            // Serve files!
+            //
+            serveDir.serve(request, response);
+          })
+          .resume();
+      })
+      .listen(8080, () => {
+        console.log('listening on http://localhost:8080/');
+      });
 
     // And its wide screen/small screen subdirectories.
     mkdirp.sync(`${testDir}/wide/component`);
