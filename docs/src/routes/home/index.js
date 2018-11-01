@@ -44,7 +44,7 @@ export default class FormFieldPage extends Component {
             not using.
           </div>
           <br />
-          <Typography headline4>How to use</Typography>
+          <Typography headline4>How to use:</Typography>
           <br />
           <br />
           <Typography headline5>There are three distributions:</Typography>
