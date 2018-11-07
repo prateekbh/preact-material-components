@@ -134,7 +134,7 @@
     "pixelmatch": "^4.0.2",
     "pngjs": "^3.3.2",
     "preact": "^8.2.7",
-    "prettier": "^1.13.7",
+    "prettier": "^1.15.1",
     "puppeteer": "^1.5.0",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.14.0",
