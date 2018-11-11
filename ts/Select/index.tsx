@@ -29,7 +29,7 @@ export interface ISelectProps {
   hintText?: string;
   selectedIndex?: number;
 
-  onChange?: (e: Event & {selectedIndex: number}) => void;
+  onChange?: (e: Event & {target: EventTarget & {selectedIndex: number}}) => void;
 }
 
 export interface ISelectState {}
