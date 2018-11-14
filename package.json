@@ -100,7 +100,7 @@
     "@babel/plugin-transform-dotall-regex": "^7.0.0",
     "@babel/plugin-transform-duplicate-keys": "^7.0.0",
     "@babel/plugin-transform-exponentiation-operator": "^7.1.0",
-    "@babel/plugin-transform-for-of": "^7.0.0-beta.54",
+    "@babel/plugin-transform-for-of": "^7.0.0",
     "@babel/plugin-transform-function-name": "^7.0.0-beta.54",
     "@babel/plugin-transform-literals": "^7.0.0-beta.54",
     "@babel/plugin-transform-modules-amd": "^7.0.0-beta.54",
