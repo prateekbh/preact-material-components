@@ -104,7 +104,7 @@
     "@babel/plugin-transform-function-name": "^7.1.0",
     "@babel/plugin-transform-literals": "^7.0.0",
     "@babel/plugin-transform-modules-amd": "^7.1.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.54",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@babel/plugin-transform-modules-systemjs": "^7.0.0-beta.54",
     "@babel/plugin-transform-new-target": "^7.0.0-beta.54",
     "@babel/plugin-transform-object-super": "^7.0.0-beta.54",
