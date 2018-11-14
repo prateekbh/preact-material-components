@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components#readme",
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.54",
+    "@babel/runtime": "^7.1.5",
     "@material/animation": "0.39.0",
     "@material/auto-init": "0.39.0",
     "@material/base": "0.39.0",
