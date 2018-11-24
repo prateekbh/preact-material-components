@@ -1,5 +1,5 @@
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
 
 export interface IElevationProps {
   z?:

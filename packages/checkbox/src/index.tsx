@@ -1,4 +1,4 @@
-import {MDCCheckbox} from '@material/checkbox/';
+import {MDCCheckbox} from '@material/checkbox';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 

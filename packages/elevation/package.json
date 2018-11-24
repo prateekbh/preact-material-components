@@ -1,18 +1,18 @@
 {
-	"name": "@preact-material-components/drawer",
+	"name": "@preact-material-components/elevation",
 	"version": "2.0.0-alpha.1",
-	"description": "Implementation of a material drawer",
+	"description": "Implementation of a material elevation",
 	"keywords": [
 		"preact-material-components",
 		"preact",
 		"material",
-		"drawer"
+		"elevation"
 	],
 	"author": {
 		"name": "Prateek Bhatnagar",
 		"email": "prateek89born@gmail.com"
 	},
-	"homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/drawer#readme",
+	"homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/elevation#readme",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"directories": {
@@ -30,10 +30,8 @@
 		"url": "https://github.com/prateekbh/preact-material-components/issues"
 	},
 	"dependencies": {
-		"@material/drawer": "0.39.3",
-		"@preact-material-components/base": "^2.0.0-alpha.1",
-		"@preact-material-components/icon": "^2.0.0-alpha.1",
-		"@preact-material-components/list": "^2.0.0-alpha.1",
+		"@material/elevation": "0.39.1",
+    "@preact-material-components/base": "^2.0.0-alpha.1",
 		"bind-decorator": "^1.0.11"
 	},
 	"peerDependencies": {
