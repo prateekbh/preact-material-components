@@ -1,8 +1,8 @@
 import {MDCMenu} from '@material/menu';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
+import {List, ListItem} from '../../packages/list/src';
 import MaterialComponent from '../Base/MaterialComponent';
-import {List, ListItem} from '../List';
 
 export interface IMenuAnchorProps {}
 
@@ -20,7 +20,7 @@ export class MenuAnchor extends MaterialComponent<
   }
 }
 
-export {ListItem as MenuItem} from '../List';
+export {ListItem as MenuItem} from '../../packages/list/src';
 
 export interface IMenuProps {
   open?: boolean;

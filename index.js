@@ -13,7 +13,7 @@ import Card from './packages/card/src/index';
 import Elevation from './Elevation';
 import FormField from './FormField';
 import Dialog from './Dialog';
-import List from './List';
+import List from './packages/list/src';
 import Drawer from './Drawer';
 import Toolbar from './Toolbar';
 import TopAppBar from './TopAppBar';
