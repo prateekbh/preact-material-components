@@ -1,7 +1,7 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
-export * from './action';
+export * from './actions';
 export * from './media';
 
 export interface ICardProps {
