@@ -1,42 +1,42 @@
 {
-	"name": "@preact-material-components/drawer",
-	"version": "2.0.0-alpha.1",
-	"description": "Implementation of a material drawer",
-	"keywords": [
-		"preact-material-components",
-		"preact",
-		"material",
-		"drawer"
-	],
-	"author": {
-		"name": "Prateek Bhatnagar",
-		"email": "prateek89born@gmail.com"
-	},
-	"homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/drawer#readme",
-	"license": "MIT",
-	"main": "lib/index.js",
-	"directories": {
-		"lib": "lib",
-		"test": "__tests__"
-	},
-	"files": [
-		"lib"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/prateekbh/preact-material-components.git"
-	},
-	"bugs": {
-		"url": "https://github.com/prateekbh/preact-material-components/issues"
-	},
-	"dependencies": {
-		"@material/drawer": "0.39.3",
-		"@preact-material-components/icon": "^2.0.0-alpha.1",
-		"@preact-material-components/list": "^2.0.0-alpha.1",
-		"bind-decorator": "^1.0.11"
-	},
-	"peerDependencies": {
-		"preact": "^8.3.1"
-	},
-	"sideEffects": false
+  "name": "@preact-material-components/drawer",
+  "version": "2.0.0-alpha.1",
+  "description": "Implementation of a material drawer",
+  "keywords": [
+    "preact-material-components",
+    "preact",
+    "material",
+    "drawer"
+  ],
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/drawer#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/preact-material-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prateekbh/preact-material-components/issues"
+  },
+  "dependencies": {
+    "@material/drawer": "0.39.3",
+    "@preact-material-components/icon": "^2.0.0-alpha.1",
+    "@preact-material-components/list": "^2.0.0-alpha.1",
+    "bind-decorator": "^1.0.11"
+  },
+  "peerDependencies": {
+    "preact": "^8.3.1"
+  },
+  "sideEffects": false
 }
