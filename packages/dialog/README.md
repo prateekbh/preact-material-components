@@ -1,4 +1,4 @@
-# `chip`
+# `dialog`
 
 > TODO: description
 
