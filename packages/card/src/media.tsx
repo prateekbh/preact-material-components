@@ -1,4 +1,4 @@
-import {MaterialComponent} from '@preact-material-components/base';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
 export interface ICardMediaProps extends JSX.HTMLAttributes {

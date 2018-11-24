@@ -1,7 +1,6 @@
-import {
-  generateThemeClass,
-  MaterialComponent
-} from '@preact-material-components/base';
+import {generateThemeClass} from '@preact-material-components/base';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
+
 import {h} from 'preact';
 
 export interface IButtonProps {

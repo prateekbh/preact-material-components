@@ -1,4 +1,4 @@
-import {MaterialComponent} from '@preact-material-components/base';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {Button} from '@preact-material-components/button';
 import {Icon} from '@preact-material-components/icon';
 import {h} from 'preact';

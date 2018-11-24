@@ -36,5 +36,5 @@ console.log(
 npx({
   cmdOpts: args.concat(tsProjects),
   command: 'tsc',
-  package: []
+  package: ['typescript']
 });
