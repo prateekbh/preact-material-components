@@ -1,6 +1,6 @@
 import {MDCLinearProgress} from '@material/linear-progress';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ILinearProgressProps {
   indeterminate?: boolean;
@@ -62,5 +62,3 @@ export class LinearProgress extends MaterialComponent<
     );
   }
 }
-
-export default LinearProgress;
