@@ -1,21 +1,19 @@
 import {MDCIconButtonToggle} from '@material/icon-button';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
+import {ComponentProp} from '@preact-material-components/base/lib/types';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
 
-export interface IIconButtonProps {
-  disabled?: boolean;
-}
-
-export interface IIconButtonState {}
-
-export interface IIconProps {
+export interface IIconButtonIconProps {
   on?: boolean;
-  element?: boolean;
+  element?: ComponentProp<any>;
 }
 
-export interface IIconState {}
+export interface IIconButtonIconState {}
 
-export class Icon extends MaterialComponent<IIconProps, IIconState> {
+export class IconButtonIcon extends MaterialComponent<
+  IIconButtonIconProps,
+  IIconButtonIconState
+> {
   protected componentName = 'icon-button__icon';
   protected mdcProps = ['on'];
   protected materialDom(props) {
@@ -27,6 +25,12 @@ export class Icon extends MaterialComponent<IIconProps, IIconState> {
     );
   }
 }
+
+export interface IIconButtonProps {
+  disabled?: boolean;
+}
+
+export interface IIconButtonState {}
 
 export class IconButton extends MaterialComponent<
   IIconButtonProps,
@@ -55,8 +59,4 @@ export class IconButton extends MaterialComponent<
       </button>
     );
   }
-}
-
-export default class extends IconButton {
-  public static readonly Icon = Icon;
 }

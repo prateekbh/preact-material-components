@@ -1,0 +1,42 @@
+{
+  "name": "@preact-material-components/icon-button",
+  "version": "2.0.0-alpha.1",
+  "description": "Implementation of a material icon button",
+  "keywords": [
+    "preact-material-components",
+    "preact",
+    "material",
+    "button",
+    "icon button"
+  ],
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/icon-button#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/preact-material-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prateekbh/preact-material-components/issues"
+  },
+  "dependencies": {
+    "@material/icon-button": "0.39.1",
+    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "bind-decorator": "^1.0.11"
+  },
+  "peerDependencies": {
+    "preact": "^8.3.1"
+  },
+  "sideEffects": false
+}

@@ -1,3 +1,5 @@
+import {ComponentFactory} from 'preact';
+
 /**
  * Excludes all keys of the first type, that are also on the second type
  *
@@ -16,3 +18,5 @@ export type OmitAttrs<
  * type Y = SoftMerge<{a: number, b: string}, {b: () => void, c: any}>;  // {a: number, b: string, c: any}
  */
 export type SoftMerge<A, B> = A & OmitAttrs<B, A>;
+
+export type ComponentProp<P> = string | ComponentFactory<P>;
