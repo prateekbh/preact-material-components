@@ -1,11 +1,6 @@
+import {generateThemeClass} from '@preact-material-components/base';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
-import Icon from '../Icon';
-import generateThemeClass from '../themeUtils/generateThemeClass';
-
-export class FabIcon extends Icon {
-  protected componentName = 'fab__icon';
-}
 
 export interface IFabProps {
   ripple?: boolean;
@@ -39,8 +34,4 @@ export class Fab extends MaterialComponent<IFabProps, IFabState> {
       </button>
     );
   }
-}
-
-export default class extends Fab {
-  public static readonly Icon = FabIcon;
 }
