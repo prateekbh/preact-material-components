@@ -1,36 +1,16 @@
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h, VNode} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
 
-export interface ILayoutGridInnerProps {}
-
-export interface ILayoutGridInnerState {}
-
-export class LayoutGridInner extends MaterialComponent<
-  ILayoutGridInnerProps,
-  ILayoutGridInnerState
-> {
-  protected componentName = 'layout-grid__inner';
-  protected mdcProps = [];
-
-  protected materialDom(props) {
-    return (
-      <div ref={this.setControlRef} {...props}>
-        {props.children}
-      </div>
-    );
-  }
-}
-
-type PhoneCols = 1 | 2 | 3 | 4;
-type TabletCols = PhoneCols | 5 | 6 | 7 | 8;
-type LayoutCols = TabletCols | 9 | 10 | 11 | 12;
+export type LayoutGridPhoneCols = 1 | 2 | 3 | 4;
+export type LayoutGridTabletCols = LayoutGridPhoneCols | 5 | 6 | 7 | 8;
+export type LayoutGridLayoutCols = LayoutGridTabletCols | 9 | 10 | 11 | 12;
 
 export interface ILayoutGridCellProps {
-  cols?: LayoutCols;
-  desktopCols?: LayoutCols;
-  tabletCols?: TabletCols;
-  phoneCols?: PhoneCols;
-  order?: LayoutCols;
+  cols?: LayoutGridLayoutCols;
+  desktopCols?: LayoutGridLayoutCols;
+  tabletCols?: LayoutGridTabletCols;
+  phoneCols?: LayoutGridPhoneCols;
+  order?: LayoutGridLayoutCols;
   align?: 'top' | 'middle' | 'bottom';
 }
 
@@ -112,29 +92,4 @@ export class LayoutGridCell extends MaterialComponent<
       </div>
     );
   }
-}
-
-export interface ILayoutGridProps {}
-
-export interface ILayoutGridState {}
-
-export class LayoutGrid extends MaterialComponent<
-  ILayoutGridProps,
-  ILayoutGridState
-> {
-  protected componentName = 'layout-grid';
-  protected mdcProps = [];
-
-  protected materialDom(props) {
-    return (
-      <div ref={this.setControlRef} {...props}>
-        {props.children}
-      </div>
-    );
-  }
-}
-
-export default class extends LayoutGrid {
-  public static readonly Cell = LayoutGridCell;
-  public static readonly Inner = LayoutGridInner;
 }
