@@ -60,7 +60,7 @@
     "@material/menu": "0.39.3",
     "@material/notched-outline": "0.39.1",
     "@material/radio": "0.39.3",
-    "@material/ripple": "0.39.3",
+    "@material/ripple": "0.42.0",
     "@material/rtl": "0.39.1",
     "@material/select": "0.39.3",
     "@material/selection-control": "0.39.3",
