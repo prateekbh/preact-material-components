@@ -209,7 +209,7 @@ export default class Home extends Component {
     this.menu.close();
   }
 
-  toggleDarkMode() {
+  toggleDarkMode = () => {
     this.setState({
       darkMode: !this.state.darkMode
     });
