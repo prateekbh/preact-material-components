@@ -218,7 +218,7 @@ export default class Home extends Component {
     } else {
       document.body.classList.remove('mdc-theme--dark');
     }
-  }
+  };
 
   handleRoute_ = url => {
     this.setState({
