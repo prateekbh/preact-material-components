@@ -44,13 +44,10 @@ export default class RadioPage extends Component {
     return (
       <div>
         <ComponentTable data={this.propsTable} />
-
         <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
-
         <OrgDoc>mdc-radio</OrgDoc>
-
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Basic radio group</div>
         <div>

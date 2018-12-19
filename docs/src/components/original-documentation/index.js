@@ -10,12 +10,7 @@ export default ({children}) => {
       Original documentation
       <div className="mdc-typography--body">
         This component encapsulates <span className="strong">{child}</span>
-        , you can refer to its documentation
-        <a href={orgDocUrl}>
-          {' '}
-          here
-        </a>
-        .
+        , you can refer to its documentation <a href={orgDocUrl}>here</a>.
       </div>
     </div>
   );

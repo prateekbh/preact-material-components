@@ -65,7 +65,7 @@ describe('docs site', () => {
     });
 
     it('should match Card page against golden directory', () => {
-      return takeAndCompareScreenshot(page, 'component/card', 'wide');
+      return takeAndCompareScreenshot(page, 'component/card', 'wide', 100);
     });
 
     it('should match Checkbox page against golden directory', () => {
@@ -169,7 +169,7 @@ describe('docs site', () => {
 // - page is a reference to the Puppeteer page.
 // - route is the path you're loading, which I'm using to name the file.
 // - filePrefix is either "wide" or "narrow", since I'm automatically testing both.
-async function takeAndCompareScreenshot(page, route, filePrefix) {
+async function takeAndCompareScreenshot(page, route, filePrefix, delay = 0) {
   // If you didn't specify a file, use the name of the route.
   let fileName = filePrefix + '/' + (route ? route : 'index');
 
@@ -177,6 +177,13 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   await page.goto(`http://localhost:8080/${route}`, {
     waitUntil: 'load'
   });
+  // delay, to make sure everything has been rendered and stable (retry would be better...)
+  if (delay) {
+    await new Promise(resolve => {
+      setTimeout(() => resolve(), delay);
+    });
+  }
+  // screenshot
   await page.screenshot({path: `${testDir}/${fileName}.png`, fullPage: true});
   // Test to see if it's right.
   return compareScreenshots(fileName);

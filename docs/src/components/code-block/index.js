@@ -40,10 +40,10 @@ export default ({children, ...props}) => {
   }
 
   if (props.header) {
-    header = props.header
+    header = props.header;
     mainDivProps = {
-      className: "mdc-typography--display1"
-    }
+      className: 'mdc-typography--display1'
+    };
   }
 
   return (
@@ -52,5 +52,4 @@ export default ({children, ...props}) => {
       {preBlock}
     </div>
   );
-
 };

@@ -93,13 +93,10 @@ export default class TextFieldPage extends Component {
     return (
       <div>
         <ComponentTable data={this.propsTable} />
-
         <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
-
         <OrgDoc>mdc-textfield</OrgDoc>
-
         <div className="mdc-typography--display1">Demo</div>
         <div className="mdc-typography--title">Default</div>
         <TextField

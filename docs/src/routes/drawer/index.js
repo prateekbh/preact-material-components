@@ -76,7 +76,6 @@ export default class DrawerPage extends Component {
         </CodeBlock>
 
         <OrgDoc>mdc-drawer</OrgDoc>
-
       </div>
     );
   }

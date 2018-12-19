@@ -17,10 +17,8 @@ export default class ThemePage extends Component {
   render() {
     return (
       <div className={style['page-theme']}>
-
         <OrgDoc>mdc-theme</OrgDoc>
         Preact-material-components brings mdc-theme as-is.
-
         <div className="mdc-typography--display1">Changing colors</div>
         <div className="mdc-typography--body">
           With preact-material-components you can either choose to use the
@@ -44,28 +42,23 @@ export default class ThemePage extends Component {
             </a>
           </div>
         </div>
-
         <div className="mdc-typography--display1">Demo </div>
-
         <div className="mdc-typography--title">Unstyled </div>
         <Button ripple raised>
           Flat button with ripple
         </Button>
-
         <div className="mdc-typography--title">
           Overridden with css property
         </div>
         <Button ripple raised className={style['css-prop-override']}>
           Flat button with ripple
         </Button>
-
         <div className="mdc-typography--title">
           Overridden with css variable
         </div>
         <Button ripple raised className={style['css-var-override']}>
           Flat button with ripple
         </Button>
-
         <div className="mdc-typography--display1">Theme colors as Text </div>
         <div className={style.parentbox}>
           <div className={style.box}>
@@ -109,7 +102,6 @@ export default class ThemePage extends Component {
             </div>
           </div>
         </div>
-
         <div className="mdc-typography--display1">
           Theme colors as Background{' '}
         </div>
