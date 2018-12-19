@@ -6,6 +6,9 @@ import Button from '../../../../esm/Button';
 
 import '../../../../Button/style.css';
 
+// Components
+import OrgDoc from '../../components/original-documentation';
+
 // Styles
 import style from './style';
 
@@ -14,17 +17,8 @@ export default class ThemePage extends Component {
   render() {
     return (
       <div className={style['page-theme']}>
-        <div className="mdc-typography--display1">Original documentation</div>
-        <div className="mdc-typography--body">
-          preact-material-components brings{' '}
-          <span className="strong">mdc-theme</span> as is, you can refer to its
-          documentation
-          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-theme">
-            {' '}
-            here
-          </a>
-          .
-        </div>
+
+        <OrgDoc>mdc-theme</OrgDoc>
 
         <div className="mdc-typography--display1">Changing colors</div>
         <div className="mdc-typography--body">

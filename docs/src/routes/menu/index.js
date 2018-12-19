@@ -13,6 +13,7 @@ import '../../../../Button/style.css';
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+import OrgDoc from '../../components/original-documentation';
 
 // Samples
 import sample from './sample.txt';
@@ -46,21 +47,11 @@ export default class MenuPage extends Component {
       <div className="page-menu">
         <ComponentTable data={this.propsTable} />
 
-        <div className="mdc-typography--display1">Sample code </div>
         <CodeBlock>
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <div className="mdc-typography--display1">Original documentation</div>
-        <div className="mdc-typography--body">
-          This component encapsulates <span className="strong">mdc-menu</span>,
-          you can refer to its documentation
-          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-menu">
-            {' '}
-            here
-          </a>
-          .
-        </div>
+        <OrgDoc>mdc-menu</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <Menu.Anchor>

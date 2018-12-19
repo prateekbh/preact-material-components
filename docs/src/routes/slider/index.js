@@ -10,6 +10,7 @@ import '../../../../Slider/style.css';
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
 import EventsTable from '../../components/events-table';
+import OrgDoc from '../../components/original-documentation';
 
 // Samples
 import sample from './sample.txt';
@@ -72,21 +73,11 @@ export default class SliderPage extends Component {
         <ComponentTable data={this.propsTable} />
         <EventsTable data={this.eventsTable} />
 
-        <div className="mdc-typography--display1">Sample code </div>
         <CodeBlock>
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <div className="mdc-typography--display1">Original documentation</div>
-        <div className="mdc-typography--body">
-          This component encapsulates <span className="strong">mdc-slider</span>
-          , you can refer to its documentation
-          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-slider">
-            {' '}
-            here
-          </a>
-          .
-        </div>
+        <OrgDoc>mdc-slider</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Regular </div>
