@@ -51,7 +51,7 @@ export default class CheckboxPage extends Component {
       <div className="page-checkbox">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

@@ -74,7 +74,7 @@ export default class ListPage extends Component {
       <div className="page-list">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

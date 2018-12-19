@@ -89,7 +89,7 @@ export default class TypographyPage extends Component {
       <div className="page-fab">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

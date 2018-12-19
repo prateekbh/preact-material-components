@@ -66,7 +66,7 @@ export default class ButtonPage extends Component {
       <div className="page-buttons">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

@@ -17,7 +17,9 @@ Object.keys(LANGUAGES).forEach(key =>
 export default ({children, ...props}) => {
   let child = children && children[0],
     isHighlight = child && child.nodeName === 'code',
-    preBlock = '';
+    preBlock = '',
+    header = '',
+    mainDivProps = {};
   if (isHighlight) {
     let text = child.children[0].replace(/(^\s+|\s+$)/g, ''),
       lang = (child.attributes.class && child.attributes.class).match(
@@ -37,9 +39,16 @@ export default ({children, ...props}) => {
     preBlock = <pre {...props}>{children}</pre>;
   }
 
+  if (props.header) {
+    header = props.header
+    mainDivProps = {
+      className: "mdc-typography--display1"
+    }
+  }
+
   return (
-    <div className="mdc-typography--display1">
-      Sample code
+    <div {...mainDivProps}>
+      {header}
       {preBlock}
     </div>
   );

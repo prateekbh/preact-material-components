@@ -72,7 +72,7 @@ export default class LayoutGridPage extends Component {
       <div className="page-layout-grid">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

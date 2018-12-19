@@ -39,7 +39,7 @@ export default class ElevationPage extends Component {
       <div className="page-elevation">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

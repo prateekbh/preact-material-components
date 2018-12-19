@@ -84,7 +84,7 @@ export default class ImageListPage extends Component {
       <div className="page-image-list">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

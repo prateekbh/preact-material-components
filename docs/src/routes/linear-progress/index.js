@@ -46,7 +46,7 @@ export default class LinearProgressPage extends Component {
       <div>
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

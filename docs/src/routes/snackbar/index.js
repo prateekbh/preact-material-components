@@ -41,7 +41,7 @@ export default class SnackbarPage extends Component {
       <div className="page-snackbar">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

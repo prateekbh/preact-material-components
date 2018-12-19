@@ -45,7 +45,7 @@ export default class SwitchPage extends Component {
       <div className="page-switch">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 

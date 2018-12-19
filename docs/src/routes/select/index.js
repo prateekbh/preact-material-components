@@ -82,7 +82,7 @@ export default class SelectPage extends Component {
         <ComponentTable data={this.propsTable} />
         <EventsTable data={this.eventsTable} />
 
-        <CodeBlock>
+        <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
