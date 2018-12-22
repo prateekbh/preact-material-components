@@ -5,7 +5,7 @@ if [[ "${1}" == "build" ]]
 then
     set -ev
     yarn build
-    set
+    set +ev
 fi
 
 # Lint sources
@@ -13,7 +13,7 @@ if [[ "${1}" == "lint" ]]
 then
     set -ev
     yarn lint
-    set
+    set +ev
 fi
 
 # Tests for docs
@@ -24,5 +24,5 @@ then
     cd packages/docs
     yarn install --frozen-lockfile --non-interactive --emoji
     yarn test:travis
-    set
+    set +ev
 fi
