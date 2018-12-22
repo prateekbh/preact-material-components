@@ -1,0 +1,44 @@
+{
+  "name": "@preact-material-components/menu-surface",
+  "version": "2.0.0-alpha.1",
+  "description": "Implementation of a material menu surface",
+  "keywords": [
+    "preact-material-components",
+    "preact",
+    "material",
+    "menu",
+    "menu surface"
+  ],
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/menu-surface#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/preact-material-components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/prateekbh/preact-material-components/issues"
+  },
+  "dependencies": {
+    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "bind-decorator": "^1.0.11"
+  },
+  "peerDependencies": {
+    "preact": "^8.3.1"
+  },
+  "sideEffects": false
+}

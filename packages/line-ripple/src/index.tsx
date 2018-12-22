@@ -32,5 +32,3 @@ export class LineRipple extends MaterialComponent<
     return <div {...props} ref={this.setControlRef} />;
   }
 }
-
-export default LineRipple;

@@ -25,5 +25,3 @@ export class Icon<PropsType = {}, StateType = {}> extends MaterialComponent<
     );
   }
 }
-
-export default Icon;

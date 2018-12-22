@@ -18,5 +18,3 @@ export class Formfield extends MaterialComponent<
     return <div {...props}>{this.props.children}</div>;
   }
 }
-
-export default Formfield;

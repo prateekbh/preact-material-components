@@ -55,5 +55,3 @@ export class Elevation extends MaterialComponent<
     );
   }
 }
-
-export default Elevation;
