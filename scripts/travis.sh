@@ -1,15 +1,21 @@
 #!/bin/bash
 
-# Tests for main sources
-if [ "${TEST}" == "main" ]
+# Build sources
+if [[ "${1}" == "build" ]]
 then
     set -ev
     yarn build
-    yarn test
+fi
+
+# Lint sources
+if [[ "${1}" == "lint" ]]
+then
+    set -ev
+    yarn lint
 fi
 
 # Tests for docs
-if [ "${TEST}" == "docs" ]
+if [[ "${1}" == "docs" ]]
 then
     set -ev
     yarn build
