@@ -96,7 +96,7 @@ export default class TextFieldPage extends Component {
         <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
-        <OrgDoc>mdc-textfield</OrgDoc>
+        <OrgDoc link="input-controls/text-field">mdc-textfield</OrgDoc>
         <div className="mdc-typography--display1">Demo</div>
         <div className="mdc-typography--title">Default</div>
         <TextField

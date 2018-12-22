@@ -17,7 +17,7 @@ export default class ThemePage extends Component {
   render() {
     return (
       <div className={style['page-theme']}>
-        <OrgDoc>mdc-theme</OrgDoc>
+        <OrgDoc link="theme">mdc-theme</OrgDoc>
         Preact-material-components brings mdc-theme as-is.
         <div className="mdc-typography--display1">Changing colors</div>
         <div className="mdc-typography--body">

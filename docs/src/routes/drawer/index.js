@@ -75,7 +75,7 @@ export default class DrawerPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-drawer</OrgDoc>
+        <OrgDoc link="drawers">mdc-drawer</OrgDoc>
       </div>
     );
   }

@@ -86,7 +86,7 @@ export default class SelectPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-select</OrgDoc>
+        <OrgDoc link="input-controls/select-menus">mdc-select</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Normal </div>

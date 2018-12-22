@@ -37,7 +37,7 @@ export default class FormFieldPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-form-field</OrgDoc>
+        <OrgDoc link="input-controls/form-fields">mdc-form-field</OrgDoc>
 
         <div className="mdc-typography--display1">Demo</div>
         <FormField>

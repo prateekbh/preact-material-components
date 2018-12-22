@@ -78,7 +78,7 @@ export default class ListPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-list</OrgDoc>
+        <OrgDoc link="lists">mdc-list</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Normal </div>

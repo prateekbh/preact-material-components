@@ -88,7 +88,7 @@ export default class ImageListPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-image-list</OrgDoc>
+        <OrgDoc link="image-lists">mdc-image-list</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Normal </div>

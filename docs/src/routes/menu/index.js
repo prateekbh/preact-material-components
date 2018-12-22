@@ -51,7 +51,7 @@ export default class MenuPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-menu</OrgDoc>
+        <OrgDoc link="menus">mdc-menu</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <Menu.Anchor>

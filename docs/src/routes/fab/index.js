@@ -61,7 +61,7 @@ export default class FabPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-fab</OrgDoc>
+        <OrgDoc link="buttons/floating-action-buttons">mdc-fab</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <Fab>

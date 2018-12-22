@@ -45,7 +45,7 @@ export default class SnackbarPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-snackbar</OrgDoc>
+        <OrgDoc link="snackbars">mdc-snackbar</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <Button

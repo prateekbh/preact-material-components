@@ -43,7 +43,7 @@ export default class ElevationPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-elevation</OrgDoc>
+        <OrgDoc link="elevation">mdc-elevation</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <Elevation z={0}>Z0</Elevation>

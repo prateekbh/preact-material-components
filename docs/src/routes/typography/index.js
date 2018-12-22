@@ -93,7 +93,7 @@ export default class TypographyPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-typography</OrgDoc>
+        <OrgDoc link="typography">mdc-typography</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div>

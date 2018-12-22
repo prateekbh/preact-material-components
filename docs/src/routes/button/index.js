@@ -70,7 +70,7 @@ export default class ButtonPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-button</OrgDoc>
+        <OrgDoc link="buttons">mdc-button</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div>

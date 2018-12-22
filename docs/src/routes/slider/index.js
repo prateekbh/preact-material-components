@@ -77,7 +77,7 @@ export default class SliderPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-slider</OrgDoc>
+        <OrgDoc link="input-controls/sliders">mdc-slider</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Regular </div>

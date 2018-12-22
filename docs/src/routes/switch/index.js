@@ -49,7 +49,7 @@ export default class SwitchPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-switch</OrgDoc>
+        <OrgDoc link="input-controls/switches">mdc-switch</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default </div>

@@ -76,7 +76,7 @@ export default class LayoutGridPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-layout-grid</OrgDoc>
+        <OrgDoc link="layout-grid">mdc-layout-grid</OrgDoc>
 
         <div className="mdc-typography--display1">Demo</div>
         <div className="mdc-typography--body">

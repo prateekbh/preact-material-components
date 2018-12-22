@@ -47,7 +47,7 @@ export default class RadioPage extends Component {
         <CodeBlock header="Sample code">
           <code class="lang-js">{sample}</code>
         </CodeBlock>
-        <OrgDoc>mdc-radio</OrgDoc>
+        <OrgDoc link="input-controls/radio-buttons">mdc-radio</OrgDoc>
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Basic radio group</div>
         <div>

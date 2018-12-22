@@ -50,7 +50,7 @@ export default class LinearProgressPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-linear-progress</OrgDoc>
+        <OrgDoc link="linear-progress">mdc-linear-progress</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Indeterminate </div>

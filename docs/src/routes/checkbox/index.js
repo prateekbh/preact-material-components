@@ -55,7 +55,7 @@ export default class CheckboxPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-checkbox</OrgDoc>
+        <OrgDoc link="input-controls/checkboxes">mdc-checkbox</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
 

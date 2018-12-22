@@ -2,9 +2,10 @@
 import {h} from 'preact';
 
 // Class
-export default ({children}) => {
+export default ({children, ...props}) => {
   let child = children && children[0];
-  let orgDocUrl = `https://github.com/material-components/material-components-web/tree/master/packages/${child}`;
+  let orgDocUrl = `https://material.io/develop/web/components/${props.link}`;
+
   return (
     <div className="mdc-typography--display1">
       Original documentation

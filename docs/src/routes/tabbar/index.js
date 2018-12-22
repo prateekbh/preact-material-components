@@ -57,7 +57,7 @@ export default class TabsPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-tab-bar</OrgDoc>
+        <OrgDoc link="tabs/tab-bar">mdc-tab-bar</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className={`mdc-typography--title ${style.section}`}>Default.</div>

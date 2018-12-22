@@ -85,7 +85,7 @@ export default class DialogPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-dialog</OrgDoc>
+        <OrgDoc link="dialogs">mdc-dialog</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default Dialog</div>

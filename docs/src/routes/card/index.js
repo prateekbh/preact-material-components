@@ -86,7 +86,7 @@ export default class CardPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-card</OrgDoc>
+        <OrgDoc link="cards">mdc-card</OrgDoc>
 
         <div className="mdc-typography--display1">Card with action button</div>
         <Card>

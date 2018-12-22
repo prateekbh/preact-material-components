@@ -69,7 +69,7 @@ export default class TopAppBarPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-toolbar</OrgDoc>
+        <OrgDoc link="top-app-bar">mdc-toolbar</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default </div>

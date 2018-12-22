@@ -44,7 +44,7 @@ export default class IconButtonPage extends Component {
           <code class="lang-js">{sample}</code>
         </CodeBlock>
 
-        <OrgDoc>mdc-icon-button</OrgDoc>
+        <OrgDoc link="buttons/icon-buttons">mdc-icon-button</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <IconButton>
