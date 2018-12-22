@@ -22,7 +22,6 @@ then
     set -ev
     yarn build
     cd packages/docs
-    yarn install --frozen-lockfile --non-interactive --emoji
     yarn test:travis
     set +ev
 fi
