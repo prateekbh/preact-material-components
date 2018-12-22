@@ -18,8 +18,7 @@ export default ({children, ...props}) => {
   let child = children && children[0],
     isHighlight = child && child.nodeName === 'code',
     preBlock = '',
-    header = '',
-    mainDivProps = {};
+    header = '';
   if (isHighlight) {
     let text = child.children[0].replace(/(^\s+|\s+$)/g, ''),
       lang = (child.attributes.class && child.attributes.class).match(
@@ -40,14 +39,11 @@ export default ({children, ...props}) => {
   }
 
   if (props.header) {
-    header = props.header;
-    mainDivProps = {
-      className: 'mdc-typography--display1'
-    };
+    header = <div className="mdc-typography--display1">{props.header}</div>;
   }
 
   return (
-    <div {...mainDivProps}>
+    <div className="mdc-typography--body">
       {header}
       {preBlock}
     </div>
