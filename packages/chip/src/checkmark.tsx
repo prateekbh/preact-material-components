@@ -1,4 +1,4 @@
-import Icon from '@preact-material-components/icon';
+import {Icon} from '@preact-material/icon';
 import {h} from 'preact';
 
 export class ChipCheckmark extends Icon {

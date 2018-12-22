@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Checkbox} from '@preact-material-components/checkbox';
+import {Checkbox} from '@preact-material/checkbox';
 import Formfield from '../../../../esm/FormField';
 
 import '../../../../Checkbox/style.css';

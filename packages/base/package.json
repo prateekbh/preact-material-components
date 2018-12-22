@@ -1,9 +1,9 @@
 {
-  "name": "@preact-material-components/base",
+  "name": "@preact-material/base",
   "version": "2.0.0-alpha.1",
-  "description": "Common dependencies and types for preact-material-components",
+  "description": "Common dependencies and types for preact-material",
   "keywords": [
-    "preact-material-components",
+    "preact-material",
     "preact",
     "material"
   ],

@@ -7,8 +7,8 @@ import {
   CardActionButton,
   CardActions,
   CardMedia
-} from '@preact-material-components/card';
-import '@preact-material-components/card/style.scss';
+} from '@preact-material/card';
+import '@preact-material/card/style.scss';
 
 // Components
 import ComponentTable from '../../components/component-table';

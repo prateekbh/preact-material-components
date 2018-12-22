@@ -1,4 +1,4 @@
-import {ListItemLink} from '@preact-material-components/list/lib/item/link';
+import {ListItemLink} from '@preact-material/list/lib/item/link';
 import {h} from 'preact';
 
 export interface IDrawerItemProps {

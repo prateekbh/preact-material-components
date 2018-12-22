@@ -1,5 +1,5 @@
-import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
-import Icon from '@preact-material-components/icon';
+import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
+import {Icon} from '@preact-material/icon';
 import {h} from 'preact';
 
 export interface IListItemGraphicProps {}

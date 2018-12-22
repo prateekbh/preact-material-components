@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Icon} from '@preact-material-components/icon';
+import {Icon} from '@preact-material/icon';
 
 import '../../../../Icon/style.css';
 

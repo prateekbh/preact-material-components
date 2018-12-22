@@ -1,9 +1,9 @@
 {
-  "name": "@preact-material-components/icon",
+  "name": "@preact-material/icon",
   "version": "2.0.0-alpha.1",
   "description": "Implementation of a material icon",
   "keywords": [
-    "preact-material-components",
+    "preact-material",
     "preact",
     "material",
     "icon"
@@ -33,7 +33,7 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "@preact-material/base": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

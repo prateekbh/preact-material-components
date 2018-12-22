@@ -1,6 +1,6 @@
 import {MDCIconButtonToggle} from '@material/icon-button';
-import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
-import {ComponentProp} from '@preact-material-components/base/lib/types';
+import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
+import {ComponentProp} from '@preact-material/base/lib/types';
 import {h} from 'preact';
 
 export interface IIconButtonIconProps {

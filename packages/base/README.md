@@ -1,4 +1,4 @@
-# `@preact-material-components/base`
+# `@preact-material/base`
 
 > TODO: description
 

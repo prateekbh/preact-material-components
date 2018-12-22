@@ -1,9 +1,9 @@
 {
-  "name": "@preact-material-components/checkbox",
+  "name": "@preact-material/checkbox",
   "version": "2.0.0-alpha.1",
   "description": "Implemetation of the material checkbox",
   "keywords": [
-    "preact-material-components",
+    "preact-material",
     "preact",
     "material",
     "checkbox"
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@material/checkbox": "0.39.3",
-    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "@preact-material/base": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

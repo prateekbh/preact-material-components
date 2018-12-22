@@ -17,9 +17,9 @@
     "composite": true,
     "baseUrl": "./packages",
     "paths": {
-      "@preact-material-components/*": ["./*/src"],
-      "@preact-material-components/base/lib/*": ["./base/src/*"],
-      "@preact-material-components/list/lib/*": ["./list/src/*"]
+      "@preact-material/*": ["./*/src"],
+      "@preact-material/base/lib/*": ["./base/src/*"],
+      "@preact-material/list/lib/*": ["./list/src/*"]
     }
   },
   "exclude": [

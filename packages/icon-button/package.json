@@ -1,9 +1,9 @@
 {
-  "name": "@preact-material-components/icon-button",
+  "name": "@preact-material/icon-button",
   "version": "2.0.0-alpha.1",
   "description": "Implementation of a material icon button",
   "keywords": [
-    "preact-material-components",
+    "preact-material",
     "preact",
     "material",
     "button",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@material/icon-button": "0.39.1",
-    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "@preact-material/base": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

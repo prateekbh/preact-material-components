@@ -1,5 +1,5 @@
 {
-  "name": "@preact-material-components/docs",
+  "name": "@preact-material/docs",
   "version": "1.0.1",
   "description": "preact material component's site",
   "scripts": {
@@ -33,16 +33,16 @@
   "bugs": {
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
-  "homepage": "https://github.com/prateekbh/preact-material-components#readme",
+  "homepage": "https://github.com/prateekbh/preact-material#readme",
   "devDependencies": {
-    "@preact-material-components/button": "^2.0.0-alpha.1",
-    "@preact-material-components/card": "^2.0.0-alpha.1",
-    "@preact-material-components/checkbox": "^2.0.0-alpha.1",
-    "@preact-material-components/chip": "^2.0.0-alpha.1",
-    "@preact-material-components/dialog": "^2.0.0-alpha.1",
-    "@preact-material-components/drawer": "^2.0.0-alpha.1",
-    "@preact-material-components/icon": "^2.0.0-alpha.1",
-    "@preact-material-components/list": "^2.0.0-alpha.1",
+    "@preact-material/button": "^2.0.0-alpha.1",
+    "@preact-material/card": "^2.0.0-alpha.1",
+    "@preact-material/checkbox": "^2.0.0-alpha.1",
+    "@preact-material/chip": "^2.0.0-alpha.1",
+    "@preact-material/dialog": "^2.0.0-alpha.1",
+    "@preact-material/drawer": "^2.0.0-alpha.1",
+    "@preact-material/icon": "^2.0.0-alpha.1",
+    "@preact-material/list": "^2.0.0-alpha.1",
     "archiver": "^2.1.1",
     "babel-eslint": "^7.2.3",
     "chai": "^4.1.2",
