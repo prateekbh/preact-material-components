@@ -5,7 +5,5 @@
 ## Usage
 
 ```
-const icon = require('icon');
-
 // TODO: DEMONSTRATE API
 ```

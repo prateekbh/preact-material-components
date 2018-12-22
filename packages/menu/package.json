@@ -1,18 +1,18 @@
 {
-  "name": "@preact-material-components/list",
+  "name": "@preact-material-components/menu",
   "version": "2.0.0-alpha.1",
-  "description": "Implementation of a material list",
+  "description": "Implementation of a material menu",
   "keywords": [
     "preact-material-components",
     "preact",
     "material",
-    "list"
+    "menu"
   ],
   "author": {
     "name": "Prateek Bhatnagar",
     "email": "prateek89born@gmail.com"
   },
-  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/list#readme",
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/menu#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "directories": {
@@ -26,13 +26,16 @@
     "type": "git",
     "url": "git+https://github.com/prateekbh/preact-material-components.git"
   },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
   "bugs": {
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/list": "0.39.3",
+    "@material/menu": "^0.42.1",
     "@preact-material-components/base": "^2.0.0-alpha.1",
-    "@preact-material-components/icon": "^2.0.0-alpha.1",
+    "@preact-material-components/list": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

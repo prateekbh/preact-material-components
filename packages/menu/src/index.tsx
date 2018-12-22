@@ -1,26 +1,8 @@
 import {MDCMenu} from '@material/menu';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
+import {List} from '@preact-material-components/list/lib';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
-import {List, ListItem} from '../../packages/list/src';
-import MaterialComponent from '../Base/MaterialComponent';
-
-export interface IMenuAnchorProps {}
-
-export interface IMenuAnchorState {}
-
-export class MenuAnchor extends MaterialComponent<
-  IMenuAnchorProps,
-  IMenuAnchorState
-> {
-  protected componentName = 'menu-surface--anchor';
-  protected mdcProps = [];
-
-  protected materialDom(props) {
-    return <div {...props}>{this.props.children}</div>;
-  }
-}
-
-export {ListItem as MenuItem} from '../../packages/list/src';
 
 export interface IMenuProps {
   open?: boolean;
@@ -104,9 +86,4 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
       </div>
     );
   }
-}
-
-export default class extends Menu {
-  public static readonly Anchor = MenuAnchor;
-  public static readonly Item = ListItem;
 }

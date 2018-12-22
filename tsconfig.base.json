@@ -21,5 +21,8 @@
       "@preact-material-components/base/lib/*": ["./base/src/*"],
       "@preact-material-components/list/lib/*": ["./list/src/*"]
     }
-  }
+  },
+  "exclude": [
+    "ts/**/*"
+  ]
 }

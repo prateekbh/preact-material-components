@@ -1,4 +1,4 @@
-# `card`
+# `line-ripple`
 
 > TODO: description
 
