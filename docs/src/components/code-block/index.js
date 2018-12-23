@@ -43,7 +43,7 @@ export default ({children, ...props}) => {
   }
 
   return (
-    <div className="mdc-typography--body">
+    <div>
       {header}
       {preBlock}
     </div>
