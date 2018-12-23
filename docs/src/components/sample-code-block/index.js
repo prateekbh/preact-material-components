@@ -2,7 +2,7 @@
 import {h} from 'preact';
 
 import CodeBlock from '../../components/code-block';
-import sample from "../../routes/card/sample.txt";
+import sample from '../../routes/card/sample.txt';
 
 // Class
 export default ({children}) => {
