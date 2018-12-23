@@ -5,7 +5,7 @@ import './style';
 
 // Components
 import ComponentTable from '../../components/component-table';
-import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
 import EventsTable from '../../components/events-table';
 import OrgDoc from '../../components/original-documentation';
 
@@ -71,9 +71,7 @@ export default class DrawerPage extends Component {
         <ComponentTable data={this.propsTable} />
         <EventsTable data={this.eventsTable} />
 
-        <CodeBlock header="Sample code">
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock header="Sample code">{sample}</SampleCodeBlock>
 
         <OrgDoc link="drawers">mdc-drawer</OrgDoc>
       </div>

@@ -8,7 +8,7 @@ import '../../../../Icon/style.css';
 
 // Components
 import ComponentTable from '../../components/component-table';
-import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
 import OrgDoc from '../../components/original-documentation';
 
 // Samples
@@ -40,9 +40,7 @@ export default class IconButtonPage extends Component {
       <div>
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock header="Sample code">
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock>{sample}</SampleCodeBlock>
 
         <OrgDoc link="buttons/icon-buttons">mdc-icon-button</OrgDoc>
 

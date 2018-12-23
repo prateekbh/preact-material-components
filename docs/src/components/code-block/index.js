@@ -16,9 +16,7 @@ Object.keys(LANGUAGES).forEach(key =>
 // Class
 export default ({children, ...props}) => {
   let child = children && children[0],
-    isHighlight = child && child.nodeName === 'code',
-    preBlock = '',
-    header = '';
+    isHighlight = child && child.nodeName === 'code';
   if (isHighlight) {
     let text = child.children[0].replace(/(^\s+|\s+$)/g, ''),
       lang = (child.attributes.class && child.attributes.class).match(
@@ -26,7 +24,7 @@ export default ({children, ...props}) => {
       )[1],
       highlighted = hljs.highlightAuto(text, lang ? [lang] : null),
       hLang = highlighted.language;
-    preBlock = (
+    return (
       <pre class={cx('highlight', `highlight-${hLang}`, props.class)}>
         <code
           class={`hljs lang-${hLang}`}
@@ -34,18 +32,6 @@ export default ({children, ...props}) => {
         />
       </pre>
     );
-  } else {
-    preBlock = <pre {...props}>{children}</pre>;
   }
-
-  if (props.header) {
-    header = <div className="mdc-typography--display1">{props.header}</div>;
-  }
-
-  return (
-    <div>
-      {header}
-      {preBlock}
-    </div>
-  );
+  return <pre {...props}>{children}</pre>;
 };

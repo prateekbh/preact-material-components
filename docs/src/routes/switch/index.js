@@ -9,6 +9,7 @@ import '../../../../Switch/style.css';
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
 import OrgDoc from '../../components/original-documentation';
 
 // Styles
@@ -45,9 +46,7 @@ export default class SwitchPage extends Component {
       <div className="page-switch">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock header="Sample code">
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock>{sample}</SampleCodeBlock>
 
         <OrgDoc link="input-controls/switches">mdc-switch</OrgDoc>
 

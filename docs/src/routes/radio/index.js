@@ -11,6 +11,7 @@ import '../../../../FormField/style.css';
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
 import OrgDoc from '../../components/original-documentation';
 
 // Samples
@@ -44,9 +45,7 @@ export default class RadioPage extends Component {
     return (
       <div>
         <ComponentTable data={this.propsTable} />
-        <CodeBlock header="Sample code">
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock>{sample}</SampleCodeBlock>
         <OrgDoc link="input-controls/radio-buttons">mdc-radio</OrgDoc>
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Basic radio group</div>

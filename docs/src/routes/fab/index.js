@@ -9,6 +9,7 @@ import '../../../../Fab/style.css';
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
 import OrgDoc from '../../components/original-documentation';
 
 // Styles
@@ -57,9 +58,7 @@ export default class FabPage extends Component {
       <div className="page-fab">
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock header="Sample code">
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock header="Sample code">{sample}</SampleCodeBlock>
 
         <OrgDoc link="buttons/floating-action-buttons">mdc-fab</OrgDoc>
 

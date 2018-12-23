@@ -14,6 +14,7 @@ import style from './style';
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
 import OrgDoc from '../../components/original-documentation';
 
 // Samples
@@ -53,9 +54,7 @@ export default class TabsPage extends Component {
       <div>
         <ComponentTable data={this.propsTable} />
 
-        <CodeBlock header="Sample code">
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock>{sample}</SampleCodeBlock>
 
         <OrgDoc link="tabs/tab-bar">mdc-tab-bar</OrgDoc>
 
