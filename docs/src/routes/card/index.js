@@ -9,7 +9,8 @@ import '../../../../Button/style.css';
 
 // Components
 import ComponentTable from '../../components/component-table';
-import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
+import OrgDoc from '../../components/original-documentation';
 
 // Style
 import './style';
@@ -75,26 +76,15 @@ export default class CardPage extends Component {
       }
     ];
   }
+
   render() {
     return (
       <div className="page-card">
         <ComponentTable data={this.propsTable} />
 
-        <div className="mdc-typography--display1">Sample code</div>
-        <CodeBlock>
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock>{sample}</SampleCodeBlock>
 
-        <div className="mdc-typography--display1">Original documentation</div>
-        <div className="mdc-typography--body">
-          This component encapsulates <span className="strong">mdc-card</span>.
-          You can refer to its documentation
-          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-card">
-            {' '}
-            here
-          </a>
-          .
-        </div>
+        <OrgDoc link="cards">mdc-card</OrgDoc>
 
         <div className="mdc-typography--display1">Card with action button</div>
         <Card>

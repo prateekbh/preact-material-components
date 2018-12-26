@@ -7,8 +7,9 @@ import '../../../../TopAppBar/style.css';
 
 // Components
 import ComponentTable from '../../components/component-table';
-import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
 import EventsTable from '../../components/events-table';
+import OrgDoc from '../../components/original-documentation';
 
 // Samples
 import sample from './sample.txt';
@@ -64,22 +65,9 @@ export default class TopAppBarPage extends Component {
         <ComponentTable data={this.propsTable} />
         <EventsTable data={this.eventsTable} />
 
-        <div className="mdc-typography--display1">Sample code </div>
-        <CodeBlock>
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock>{sample}</SampleCodeBlock>
 
-        <div className="mdc-typography--display1">Original documentation</div>
-        <div className="mdc-typography--body">
-          This component encapsulates{' '}
-          <span className="strong">mdc-toolbar</span>, you can refer to its
-          documentation
-          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-toolbar">
-            {' '}
-            here
-          </a>
-          .
-        </div>
+        <OrgDoc link="top-app-bar">mdc-toolbar</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default </div>

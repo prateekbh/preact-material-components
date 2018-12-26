@@ -10,7 +10,7 @@ export default class DrawerPage extends Component {
   constructor(){
     super();
     this.state = {
-      drawerOpened = false
+      drawerOpened: false
     };
   }
   render(){
