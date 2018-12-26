@@ -66,14 +66,14 @@ const menuItems = [
     component: CardPage
   },
   {
-    text: 'Chips',
-    link: '/component/chips/',
-    component: ChipsPage
-  },
-  {
     text: 'Checkbox',
     link: '/component/checkbox/',
     component: CheckboxPage
+  },
+  {
+    text: 'Chips',
+    link: '/component/chips/',
+    component: ChipsPage
   },
   {
     text: 'Dialog',
