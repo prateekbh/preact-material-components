@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/slider#readme",
   "license": "MIT",
+  "sass": "sass",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib",
@@ -34,6 +35,7 @@
   },
   "dependencies": {
     "@material/slider": "^0.39.1",
+    "@material/typography": "^0.39",
     "@preact-material/base": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },

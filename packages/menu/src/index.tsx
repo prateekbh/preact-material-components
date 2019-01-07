@@ -1,6 +1,6 @@
 import {MDCMenu} from '@material/menu';
 import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
-import {List} from '@preact-material/list/lib';
+import {List} from '@preact-material/list';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
 

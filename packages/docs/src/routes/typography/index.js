@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Typography from '../../../../esm/Typography';
+import {Typography} from '@preact-material/typography';
 
-import '../../../../Typography/style.css';
+import '@preact-material/typography/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

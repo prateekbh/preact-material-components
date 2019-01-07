@@ -1,15 +1,15 @@
 import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
 import {h} from 'preact';
 
-export interface IFormfieldProps {
+export interface IFormFieldProps {
   'align-end'?: boolean; // TODO: Add to docs / remove here
 }
 
-export interface IFormfieldState {}
+export interface IFormFieldState {}
 
-export class Formfield extends MaterialComponent<
-  IFormfieldProps,
-  IFormfieldState
+export class FormField extends MaterialComponent<
+  IFormFieldProps,
+  IFormFieldState
 > {
   protected componentName = 'form-field';
   protected mdcProps = ['align-end'];

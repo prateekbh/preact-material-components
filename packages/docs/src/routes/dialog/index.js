@@ -2,13 +2,13 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Dialog from '../../../../esm/Dialog';
-import Button from '../../../../esm/Button';
-import List from '../../../../esm/List';
+import {Dialog} from '@preact-material/dialog';
+import {Button} from '@preact-material/button';
+import {List} from '@preact-material/list';
 
-import '../../../../Dialog/style.css';
-import '../../../../Button/style.css';
-import '../../../../List/style.css';
+import '@preact-material/dialog/sass';
+import '@preact-material/button/sass';
+import '@preact-material/list/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

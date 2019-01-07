@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Switch from '../../../../esm/Switch';
+import {Switch} from '@preact-material/switch';
 
-import '../../../../Switch/style.css';
+import '@preact-material/switch/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import LinearProgress from '../../../../esm/LinearProgress';
+import {LinearProgress} from '@preact-material/linear-progress';
 
-import '../../../../LinearProgress/style.css';
+import '@preact-material/linear-progress/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

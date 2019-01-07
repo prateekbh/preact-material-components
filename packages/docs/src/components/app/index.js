@@ -3,15 +3,15 @@ import {h, Component} from 'preact';
 import Router from 'preact-router';
 
 // Material Components
-import Formfield from '../../../../esm/FormField';
-import LayoutGrid from '../../../../esm/LayoutGrid';
-import Switch from '../../../../esm/Switch';
-import TopAppBar from '../../../../esm/TopAppBar';
+import {FormField} from '@preact-material/form-field';
+import {LayoutGrid} from '@preact-material/layout-grid';
+import {Switch} from '@preact-material/switch';
+import {TopAppBar} from '@preact-material/top-app-bar';
 
-import '../../../../FormField/style.css';
-import '../../../../LayoutGrid/style.css';
-import '../../../../Switch/style.css';
-import '../../../../TopAppBar/style.css';
+import '@preact-material/form-field/sass';
+import '@preact-material/layout-grid/sass';
+import '@preact-material/switch/sass';
+import '@preact-material/top-app-bar/sass';
 
 // Routes
 import ButtonPage from '../../routes/button';
@@ -252,13 +252,13 @@ export default class Home extends Component {
               <TopAppBar.Title>{this.state.toolbarTitle}</TopAppBar.Title>
             </TopAppBar.Section>
             <TopAppBar.Section align-end={true}>
-              <Formfield className="field-darkmode">
+              <FormField className="field-darkmode">
                 Dark Mode
                 <Switch
                   className="switch-darkmode"
                   onChange={this.toggleDarkMode}
                 />
-              </Formfield>
+              </FormField>
             </TopAppBar.Section>
           </TopAppBar.Row>
         </TopAppBar>

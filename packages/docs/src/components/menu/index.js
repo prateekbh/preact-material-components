@@ -3,15 +3,15 @@ import {h, Component} from 'preact';
 import {route} from 'preact-router';
 
 // Material Components
-import Drawer from '../../../../esm/Drawer';
-import List from '../../../../esm/List';
-import Typography from '../../../../esm/Typography';
+import {Drawer} from '@preact-material/drawer';
+import {List} from '@preact-material/list';
+import {Typography} from '@preact-material/typography';
 
-import '../../../../Drawer/style.css';
-import '../../../../List/style.css';
-import '../../../../Typography/style.css';
+import '@preact-material/drawer/sass';
+import '@preact-material/list/sass';
+import '@preact-material/typography/sass';
 
-const json = require('../../../../package.json');
+import json from '../../../package.json';
 
 // Class
 export default class Menu extends Component {

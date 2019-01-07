@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Elevation from '../../../../esm/Elevation';
+import {Elevation} from '@preact-material/elevation';
 
-import '../../../../Elevation/style.css';
+import '@preact-material/elevation/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

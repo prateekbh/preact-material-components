@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/button#readme",
   "license": "MIT",
+  "sass": "sass",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib",

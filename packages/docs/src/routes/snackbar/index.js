@@ -2,11 +2,11 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Snackbar from '../../../../esm/Snackbar';
-import Button from '../../../../esm/Button';
+import {Snackbar} from '@preact-material/snackbar';
+import {Button} from '@preact-material/button';
 
-import '../../../../Snackbar/style.css';
-import '../../../../Button/style.css';
+import '@preact-material/snackbar/sass';
+import '@preact-material/button/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/form-field#readme",
   "license": "MIT",
+  "sass": "sass",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib",

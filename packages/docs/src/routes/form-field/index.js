@@ -2,11 +2,11 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Radio from '../../../../esm/Radio';
-import FormField from '../../../../esm/FormField';
+import {Radio} from '@preact-material/radio';
+import {FormField} from '@preact-material/form-field';
 
-import '../../../../Radio/style.css';
-import '../../../../FormField/style.css';
+import '@preact-material/radio/sass';
+import '@preact-material/form-field/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

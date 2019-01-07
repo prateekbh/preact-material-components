@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/linear-progress#readme",
   "license": "MIT",
+  "sass": "sass",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib",

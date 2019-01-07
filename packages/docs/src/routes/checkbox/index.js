@@ -3,10 +3,10 @@ import {h, Component} from 'preact';
 
 // Material Components
 import {Checkbox} from '@preact-material/checkbox';
-import Formfield from '../../../../esm/FormField';
+import {Formfield} from '@preact-material/form-field';
 
-import '../../../../Checkbox/style.css';
-import '../../../../FormField/style.css';
+import '@preact-material/checkbox/sass';
+import '@preact-material/form-field/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

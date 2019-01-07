@@ -4,7 +4,7 @@ import {h, Component} from 'preact';
 // Material Components
 import {Button} from '@preact-material/button';
 
-import '@preact-material/button';
+import '@preact-material/button/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

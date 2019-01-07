@@ -4,7 +4,7 @@ import {h, Component} from 'preact';
 // Material Components
 import {Icon} from '@preact-material/icon';
 
-import '../../../../Icon/style.css';
+import '@preact-material/icon/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

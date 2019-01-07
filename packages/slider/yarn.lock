@@ -17,7 +17,7 @@
   resolved "https://registry.yarnpkg.com/@material/rtl/-/rtl-0.39.1.tgz#dcaf6f93fc6cd540137edb352139dc8139bca436"
   integrity sha512-6RcXv6tQladbl+SboEHUykiDAz7dE5DjBuLNV0KD7yEUCcUV41WXZ5e4oUd1nDWnK0vHzFtNM7D6BGMPZ2T3zA==
 
-"@material/slider@^0.39":
+"@material/slider@^0.39.1":
   version "0.39.1"
   resolved "https://registry.yarnpkg.com/@material/slider/-/slider-0.39.1.tgz#3662f8a3bc9ae353d77b70ee921063162e03a255"
   integrity sha512-pv3FrqLgEGqzt4CoN94SGIND9YyGp39NFIk5h9OruQZah8zjPm2lh7CGJ9UkkMGR7Zpxm44E+eqjvEli9LNniw==
@@ -31,6 +31,11 @@
   version "0.39.1"
   resolved "https://registry.yarnpkg.com/@material/theme/-/theme-0.39.1.tgz#5fb160222e2b213628b285af26ca65c6f4327fe5"
   integrity sha512-c7xjzzHdF4kBl66VJfATBAV9cwD/6TOyVPOWiK5rPxmu9g7uEAe1HmupqJRR1pMFCPX2w85gfvIsxh79EU6YJA==
+
+"@material/typography@^0.39":
+  version "0.39.0"
+  resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.39.0.tgz#7d7468673e104609d926528ffe5571cfd44d8c3c"
+  integrity sha512-S7YTR2mXuAaPvsgX6jyT1YvWQhH2xHWi+SKJvlunoF/Dw6vq6Ud+APmqigHVRPNCcFt4zkbM7C64IxYjjkIApQ==
 
 bind-decorator@^1.0.11:
   version "1.0.11"

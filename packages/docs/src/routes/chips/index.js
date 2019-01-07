@@ -2,9 +2,10 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Chips from '../../../../esm/Chips';
+import {Chip, ChipSet} from '@preact-material/chip';
+import {ChipText} from '@preact-material/chip/lib/text';
 
-import '../../../../Chips/style.css';
+import '@preact-material/chip/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';
@@ -85,20 +86,20 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Demo</div>
         <div>
-          <Chips>
-            <Chips.Chip>
-              <Chips.Text>Chip One</Chips.Text>
-            </Chips.Chip>
-            <Chips.Chip>
-              <Chips.Text>Chip Two</Chips.Text>
-            </Chips.Chip>
-            <Chips.Chip>
-              <Chips.Text>Chip Three</Chips.Text>
-            </Chips.Chip>
-            <Chips.Chip>
-              <Chips.Text>Chip Four</Chips.Text>
-            </Chips.Chip>
-          </Chips>
+          <ChipSet>
+            <Chip>
+              <ChipText>Chip One</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Two</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Three</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Four</ChipText>
+            </Chip>
+          </ChipSet>
           <CodeBlock>
             <code class="lang-html">{sample}</code>
           </CodeBlock>

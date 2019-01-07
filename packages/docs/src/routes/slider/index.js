@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import Slider from '../../../../esm/Slider';
+import {Slider} from '@preact-material/slider';
 
-import '../../../../Slider/style.css';
+import '@preact-material/slider/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

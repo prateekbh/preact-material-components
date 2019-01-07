@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import TextField from '../../../../esm/TextField';
+import {TextField} from '@preact-material/textfield';
 
-import '../../../../TextField/style.css';
+import '@preact-material/textfield/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

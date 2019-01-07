@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import IconButton from '../../../../esm/IconButton';
-import '../../../../IconButton/style.css';
-import '../../../../Icon/style.css';
+import {IconButton} from '@preact-material/icon-button';
+
+import '@preact-material/icon-button/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';
