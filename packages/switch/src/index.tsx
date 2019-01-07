@@ -1,6 +1,6 @@
 import {MDCSwitch} from '@material/switch';
+import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {
   disabled?: boolean;
@@ -56,5 +56,3 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
     );
   }
 }
-
-export default Switch;
