@@ -75,7 +75,7 @@
     "@material/top-app-bar": "0.39.3",
     "@material/typography": "0.39.0",
     "bind-decorator": "^1.0.11",
-    "material-components-web": "0.39.3"
+    "material-components-web": "0.43.0"
   },
   "peerDependencies": {
     "preact": "*"
