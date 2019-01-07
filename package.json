@@ -54,7 +54,7 @@
     "@material/grid-list": "0.39.1",
     "@material/icon-toggle": "0.39.3",
     "@material/layout-grid": "0.39.0",
-    "@material/line-ripple": "0.39.3",
+    "@material/line-ripple": "0.43.0",
     "@material/linear-progress": "0.39.1",
     "@material/list": "0.39.3",
     "@material/menu": "0.39.3",
