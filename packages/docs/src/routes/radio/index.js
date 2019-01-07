@@ -3,7 +3,7 @@ import {h, Component} from 'preact';
 
 // Material Components
 import {Radio} from '@preact-material/radio';
-import {Formfield} from '@preact-material/form-field';
+import {FormField} from '@preact-material/form-field';
 
 import '@preact-material/radio/sass';
 import '@preact-material/form-field/sass';
@@ -60,18 +60,18 @@ export default class RadioPage extends Component {
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Basic radio group</div>
         <div>
-          <Formfield>
+          <FormField>
             <Radio id="radio-1" name="Basic Options" />
             <label for="radio-1">Radio 1</label>
-          </Formfield>
-          <Formfield>
+          </FormField>
+          <FormField>
             <Radio id="radio-2" name="Basic Options" />
             <label for="radio-2">Radio 2</label>
-          </Formfield>
-          <Formfield>
+          </FormField>
+          <FormField>
             <Radio id="radio-3" name="Basic Options" />
             <label for="radio-3">Radio 3</label>
-          </Formfield>
+          </FormField>
         </div>
         <CodeBlock>
           <code class="lang-html">{basicExample}</code>
@@ -80,36 +80,36 @@ export default class RadioPage extends Component {
           Radio group with disabled option
         </div>
         <div>
-          <Formfield>
+          <FormField>
             <Radio disabled={true} id="radio-1" name="Disabled Options" />
             <label for="radio-1">Disabled</label>
-          </Formfield>
-          <Formfield>
+          </FormField>
+          <FormField>
             <Radio id="radio-2" name="Disabled Options" />
             <label for="radio-2">Radio 2</label>
-          </Formfield>
-          <Formfield>
+          </FormField>
+          <FormField>
             <Radio id="radio-3" name="Disabled Options" />
             <label for="radio-3">Radio 3</label>
-          </Formfield>
+          </FormField>
         </div>
         <CodeBlock>
           <code class="lang-html">{disabledExample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">Controlled radio group</div>
         <div>
-          <Formfield>
+          <FormField>
             <Radio id="radio-1" name="Controlled Options" />
             <label for="radio-1">Radio 1</label>
-          </Formfield>
-          <Formfield>
+          </FormField>
+          <FormField>
             <Radio checked={true} id="radio-2" name="Controlled Options" />
             <label for="radio-2">Radio 2</label>
-          </Formfield>
-          <Formfield>
+          </FormField>
+          <FormField>
             <Radio id="radio-3" name="Controlled Options" />
             <label for="radio-3">Radio 3</label>
-          </Formfield>
+          </FormField>
         </div>
         <CodeBlock>
           <code class="lang-html">{controlledExample}</code>

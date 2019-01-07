@@ -3,7 +3,7 @@ import {h, Component} from 'preact';
 
 // Material Components
 import {Checkbox} from '@preact-material/checkbox';
-import {Formfield} from '@preact-material/form-field';
+import {FormField} from '@preact-material/form-field';
 
 import '@preact-material/checkbox/sass';
 import '@preact-material/form-field/sass';
@@ -70,28 +70,28 @@ export default class CheckboxPage extends Component {
         <div className="mdc-typography--display1">Demo </div>
 
         <div className="mdc-typography--title">Basic Checkbox </div>
-        <Formfield>
+        <FormField>
           <Checkbox id="basic-checkbox" />
           <label for="basic-checkbox">Basic checkbox</label>
-        </Formfield>
+        </FormField>
         <CodeBlock>
           <code class="lang-html">{basicExample}</code>
         </CodeBlock>
 
         <div className="mdc-typography--title">Indeterminate Checkbox </div>
-        <Formfield>
+        <FormField>
           <Checkbox id="inderminate-checkbox" indeterminate={true} />
           <label for="inderminate-checkbox">Indeterminate checkbox</label>
-        </Formfield>
+        </FormField>
         <CodeBlock>
           <code class="lang-html">{indeterminateExample}</code>
         </CodeBlock>
 
         <div className="mdc-typography--title">Checked </div>
-        <Formfield>
+        <FormField>
           <Checkbox id="controlled-checkbox" checked={true} />
           <label for="controlled-checkbox">Controlled checkbox</label>
-        </Formfield>
+        </FormField>
         <CodeBlock>
           <code class="lang-html">{controlledExample}</code>
         </CodeBlock>
