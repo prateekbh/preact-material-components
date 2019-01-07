@@ -1,8 +1,8 @@
 import {MDCTextField} from '@material/textfield';
 import {SoftMerge} from '@preact-material/base/lib/types';
 import {Component, h} from 'preact';
-import {TextFieldInput} from "./input";
-import {HelperText} from "./helper-text";
+import {TextFieldInput} from './input';
+import {HelperText} from './helper-text';
 
 type input_type =
   | 'button'
