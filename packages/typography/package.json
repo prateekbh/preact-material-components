@@ -1,18 +1,18 @@
 {
-  "name": "@preact-material/top-app-bar",
+  "name": "@preact-material/typography",
   "version": "2.0.0-alpha.1",
-  "description": "Implementation of a material top-app-bar",
+  "description": "Implementation of a material typography",
   "keywords": [
     "preact-material",
     "preact",
     "material",
-    "top app bar"
+    "typography"
   ],
   "author": {
     "name": "Prateek Bhatnagar",
     "email": "prateek89born@gmail.com"
   },
-  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/top-app-bar#readme",
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/typography#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "directories": {
@@ -33,7 +33,7 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/top-app-bar": "^0.39.3",
+    "@material/typography": "^0.39.0",
     "@preact-material/base": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },

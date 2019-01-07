@@ -1,5 +1,5 @@
 import {Component, h, VNode} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
+import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
 
 export interface ITypographyProps {
   body1?: boolean;
@@ -56,5 +56,3 @@ export class Typography extends MaterialComponent<
     );
   }
 }
-
-export default Typography;
