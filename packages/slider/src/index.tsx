@@ -111,5 +111,3 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
     );
   }
 }
-
-export default Slider;
