@@ -131,9 +131,10 @@ export class TextFieldInput extends MaterialComponent<
             {...props}
           />
         )}
-        {props.label && this.state.jsComponentAttached && (
-          <Label for={props.id}>{props.label}</Label>
-        )}
+        {props.label &&
+          this.state.jsComponentAttached && (
+            <Label for={props.id}>{props.label}</Label>
+          )}
         {props.trailingIcon ? (
           <Icon className="mdc-text-field__icon">{props.trailingIcon}</Icon>
         ) : null}
