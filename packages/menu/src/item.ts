@@ -1,1 +1,1 @@
-export {ListItem as MenuItem} from '@preact-material-components/list/lib/item';
+export {ListItem as MenuItem} from '@preact-material/list/lib/item';

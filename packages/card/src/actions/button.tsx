@@ -2,7 +2,7 @@ import {
   Button,
   IButtonProps,
   IButtonState
-} from '@preact-material-components/button';
+} from '@preact-material/button';
 import {h} from 'preact';
 
 export interface ICardActionsButtonProps extends IButtonProps {}

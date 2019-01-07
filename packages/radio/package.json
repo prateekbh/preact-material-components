@@ -1,18 +1,18 @@
 {
-  "name": "@preact-material/chip",
+  "name": "@preact-material/radio",
   "version": "2.0.0-alpha.1",
-  "description": "Implementation of a material chip",
+  "description": "Implementation of a material radio select",
   "keywords": [
-    "preact-material-components",
+    "preact-material",
     "preact",
     "material",
-    "chip"
+    "radio"
   ],
   "author": {
     "name": "Prateek Bhatnagar",
     "email": "prateek89born@gmail.com"
   },
-  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/chip#readme",
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/radio#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "directories": {
@@ -33,9 +33,8 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/chips": "0.39.3",
+    "@material/radio": "^0.39.3",
     "@preact-material/base": "^2.0.0-alpha.1",
-    "@preact-material/icon": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

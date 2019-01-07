@@ -1,6 +1,6 @@
-import {MDCRadio} from '@material/radio/';
+import {MDCRadio} from '@material/radio';
+import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
 
 export interface IRadioProps {
   checked?: boolean;
