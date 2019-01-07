@@ -71,7 +71,7 @@
     "@material/tabs": "0.39.3",
     "@material/textfield": "0.39.3",
     "@material/theme": "0.39.1",
-    "@material/toolbar": "0.39.3",
+    "@material/toolbar": "0.43.0",
     "@material/top-app-bar": "0.39.3",
     "@material/typography": "0.39.0",
     "bind-decorator": "^1.0.11",
