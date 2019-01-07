@@ -43,5 +43,3 @@ export class Radio extends MaterialComponent<IRadioProps, IRadioState> {
     );
   }
 }
-
-export default Radio;

@@ -1,26 +1,7 @@
 import {MDCSelect} from '@material/select/';
+import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
-
-export interface ISelectOptionProps {
-  disabled?: boolean;
-  selected?: boolean;
-}
-
-export interface ISelectOptionState {}
-
-export class SelectOption extends MaterialComponent<
-  ISelectOptionProps,
-  ISelectOptionState
-> {
-  protected componentName = 'select-item';
-  protected mdcProps = [];
-
-  protected materialDom(props) {
-    return <option {...props}>{props.children}</option>;
-  }
-}
 
 export interface ISelectProps {
   disabled?: boolean;
@@ -125,8 +106,4 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
       </div>
     );
   }
-}
-
-export default class extends Select {
-  public static readonly Item = SelectOption;
 }
