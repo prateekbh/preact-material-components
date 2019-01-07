@@ -1,7 +1,7 @@
 import {MDCSlider} from '@material/slider';
+import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
-import MaterialComponent from '../Base/MaterialComponent';
 
 export interface ISliderProps {
   disabled?: boolean;
