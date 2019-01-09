@@ -9,6 +9,7 @@ import '../../../../Icon/style.css';
 // Components
 import ComponentTable from '../../components/component-table';
 import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
 
 // Samples
 import linktag from './linktag.txt';
@@ -30,10 +31,7 @@ export default class IconPage extends Component {
       <div>
         <ComponentTable data={this.propsTable} />
 
-        <div className="mdc-typography--display1">Sample code </div>
-        <CodeBlock>
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock header="Sample code">{sample}</SampleCodeBlock>
 
         <div className="mdc-typography--display1">Demo </div>
         <div>

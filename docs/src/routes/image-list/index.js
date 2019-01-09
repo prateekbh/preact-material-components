@@ -8,7 +8,8 @@ import '../../../../ImageList/style.css';
 
 // Components
 import ComponentTable from '../../components/component-table';
-import CodeBlock from '../../components/code-block';
+import SampleCodeBlock from '../../components/sample-code-block';
+import OrgDoc from '../../components/original-documentation';
 
 // Styles
 import './style.scss';
@@ -83,22 +84,9 @@ export default class ImageListPage extends Component {
       <div className="page-image-list">
         <ComponentTable data={this.propsTable} />
 
-        <div className="mdc-typography--display1">Sample code </div>
-        <CodeBlock>
-          <code class="lang-js">{sample}</code>
-        </CodeBlock>
+        <SampleCodeBlock>{sample}</SampleCodeBlock>
 
-        <div className="mdc-typography--display1">Original documentation</div>
-        <div className="mdc-typography--body">
-          This component encapsulates{' '}
-          <span className="strong">mdc-image-list</span>, you can refer to its
-          documentation
-          <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-image-list">
-            {' '}
-            here
-          </a>
-          .
-        </div>
+        <OrgDoc link="image-lists">mdc-image-list</OrgDoc>
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Normal </div>
