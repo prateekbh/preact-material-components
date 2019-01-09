@@ -12,20 +12,12 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
   public MDComponent?: MDCSwitch;
   protected componentName = 'switch';
   protected mdcProps = ['disabled', 'checked'];
+  protected mdcNotifyProps = ['disabled', 'checked'];
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCSwitch(this.control);
-      if (this.props.value) {
-        this.MDComponent.value = this.props.value;
-      }
-    }
-  }
-
-  public componentWillReceiveProps(nextProps: ISwitchProps) {
-    if (nextProps.value && this.props.value !== nextProps.value) {
-      this.MDComponent.value = nextProps.value;
     }
   }
 
