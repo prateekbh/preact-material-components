@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/linear-progress",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.1-alpha.0",
   "description": "Implementation of a material linear progress",
   "keywords": [
     "preact-material-components",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@material/linear-progress": "0.39.1",
-    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "@preact-material-components/base": "^2.0.1-alpha.0",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {
