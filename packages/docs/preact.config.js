@@ -7,10 +7,9 @@ export default config => {
     path.resolve(__dirname, '..', 'tab', 'node_modules'),
     path.resolve(__dirname, '..', 'textfield', 'node_modules'),
 
-  ]
-  config.module.loaders[2].use[0].options.options.includePaths.push(
+  ];
+  config.module.rules[2].use[0].options.options.includePaths.push(
     ...paths
-  )
-  // config.module.loaders[4].include.push(pathToInclude);
+  );
   return config;
 }
