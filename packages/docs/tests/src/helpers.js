@@ -7,7 +7,7 @@ const compact = require('lodash.compact');
 const newProfile = require('create-firefox-profile');
 const fs = require('fs');
 const chalk = require('chalk');
-const foxr = require('foxr').default;
+const puppeteer = require('puppeteer');
 
 /**
  * Returns a promise that resolves after a certain time
@@ -101,7 +101,7 @@ async function getFirefox(port) {
     }, 20 * 1000);
     while (run) {
       try {
-        const browser = await foxr.connect();
+        const browser = await puppeteer.launch();
         await browser.disconnect();
         resolve();
         clearTimeout(timeout);
