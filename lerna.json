@@ -2,7 +2,7 @@
   "packages": ["packages/*"],
   "command": {
     "publish": {
-      "allowBranch": "master"
+      "allowBranch": "modularize"
     }
   },
   "npmClient": "yarn",
