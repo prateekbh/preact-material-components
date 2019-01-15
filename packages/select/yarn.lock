@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@material/animation@^0.39.0":
+"@material/animation@0.39.0":
   version "0.39.0"
   resolved "https://registry.yarnpkg.com/@material/animation/-/animation-0.39.0.tgz#d3d503c9f87ac1193dc4a5b0cccfaedb39478439"
   integrity sha512-f3BGCba0GdYY+eGFnK0L08HLyljgEyBvMLoJoutP225IpvzsLLTqumL/796nFCsouWn6E3G+8BUVjAtzTjU2lA==
 
-"@material/base@^0.39.0":
+"@material/base@0.39.0":
   version "0.39.0"
   resolved "https://registry.yarnpkg.com/@material/base/-/base-0.39.0.tgz#ca451531cf438f51bf999ad7b96b5e8f3929e19a"
   integrity sha512-B+vMqnOR2JU2dzv/5UPKQUAZAj739pMkJkt3Zy7sJaQnw3j8wTKxiUMUhd9ZHaPx1FBlUNMn2PwOq8YZIn0svA==
@@ -17,18 +17,18 @@
   resolved "https://registry.yarnpkg.com/@material/floating-label/-/floating-label-0.39.1.tgz#8e5f2144460086ee8d586d6715cf0ed1707d3406"
   integrity sha512-Ry833abXfBsjdNTRkjSfsSzhV4RQ0BilvpRnP+6uf10f5A8UVK3rTBMJv3TtF/7wwojJtbgf8wAJz0JhZW/7oQ==
   dependencies:
-    "@material/base" "0.39.0"
+    "@material/base" "^0.39.0"
     "@material/rtl" "^0.39.1"
     "@material/theme" "^0.39.1"
-    "@material/typography" "0.39.0"
+    "@material/typography" "^0.39.0"
 
 "@material/line-ripple@^0.39.3":
   version "0.39.3"
   resolved "https://registry.yarnpkg.com/@material/line-ripple/-/line-ripple-0.39.3.tgz#4db9d5ea56f5a4745704627d1e96008716fa471e"
   integrity sha512-EWAWVYhRUWKWVeKFjntiNKe9OF99jwxxsj4j7FVgVD/XCCqDC5GpUEnIP8pjRVCFzmrO8Io3V5x8BipqSlOqUA==
   dependencies:
-    "@material/animation" "0.39.0"
-    "@material/base" "0.39.0"
+    "@material/animation" "^0.39.0"
+    "@material/base" "^0.39.0"
     "@material/theme" "^0.39.1"
 
 "@material/notched-outline@^0.39.1":
@@ -36,8 +36,8 @@
   resolved "https://registry.yarnpkg.com/@material/notched-outline/-/notched-outline-0.39.1.tgz#bd6d5adc2a0c5f63bb1ab4e1db7d43f37e488fa9"
   integrity sha512-EONvwh31IMeTChz6eqg/rMndfWaRTd/tqjR0dXSaimu4NBDBnPnUq6A4vVhBuAFFIjHU48Jw6HplnfqqDRMN1g==
   dependencies:
-    "@material/animation" "0.39.0"
-    "@material/base" "0.39.0"
+    "@material/animation" "^0.39.0"
+    "@material/base" "^0.39.0"
     "@material/rtl" "^0.39.1"
     "@material/theme" "^0.39.1"
 
@@ -46,8 +46,8 @@
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.39.3.tgz#4ff7a8fec5d5206f0da72a78d026529b53b7d564"
   integrity sha512-MwQjgwK9h13MdKGJT3RTDf9NjCoAS3LmnFpz1fxXgExA1QnoUbB1o7cEaPmqAtZopKVDCf52w1l6Mpf9qEhnCQ==
   dependencies:
-    "@material/animation" "0.39.0"
-    "@material/base" "0.39.0"
+    "@material/animation" "^0.39.0"
+    "@material/base" "^0.39.0"
     "@material/theme" "^0.39.1"
 
 "@material/rtl@^0.39.1":
@@ -60,22 +60,22 @@
   resolved "https://registry.yarnpkg.com/@material/select/-/select-0.39.3.tgz#d4766ec463b00ded2c6424566fb824155d6efe8c"
   integrity sha512-PW7LUt4YqZj3g2WVFbNjIR/igQYkmBe8oeEBjsHKMzWJkqABi+3koeEHCu+YuqaGT/yHwyocGia8y2QNvpn5jA==
   dependencies:
-    "@material/animation" "0.39.0"
-    "@material/base" "0.39.0"
+    "@material/animation" "^0.39.0"
+    "@material/base" "^0.39.0"
     "@material/floating-label" "^0.39.1"
     "@material/line-ripple" "^0.39.3"
     "@material/notched-outline" "^0.39.1"
     "@material/ripple" "^0.39.3"
     "@material/rtl" "^0.39.1"
     "@material/theme" "^0.39.1"
-    "@material/typography" "0.39.0"
+    "@material/typography" "^0.39.0"
 
 "@material/theme@^0.39.1":
   version "0.39.1"
   resolved "https://registry.yarnpkg.com/@material/theme/-/theme-0.39.1.tgz#5fb160222e2b213628b285af26ca65c6f4327fe5"
   integrity sha512-c7xjzzHdF4kBl66VJfATBAV9cwD/6TOyVPOWiK5rPxmu9g7uEAe1HmupqJRR1pMFCPX2w85gfvIsxh79EU6YJA==
 
-"@material/typography@^0.39.0":
+"@material/typography@0.39.0":
   version "0.39.0"
   resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.39.0.tgz#7d7468673e104609d926528ffe5571cfd44d8c3c"
   integrity sha512-S7YTR2mXuAaPvsgX6jyT1YvWQhH2xHWi+SKJvlunoF/Dw6vq6Ud+APmqigHVRPNCcFt4zkbM7C64IxYjjkIApQ==

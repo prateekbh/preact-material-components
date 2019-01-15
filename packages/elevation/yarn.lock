@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@material/animation@^0.39.0":
+"@material/animation@0.39.0":
   version "0.39.0"
   resolved "https://registry.yarnpkg.com/@material/animation/-/animation-0.39.0.tgz#d3d503c9f87ac1193dc4a5b0cccfaedb39478439"
   integrity sha512-f3BGCba0GdYY+eGFnK0L08HLyljgEyBvMLoJoutP225IpvzsLLTqumL/796nFCsouWn6E3G+8BUVjAtzTjU2lA==
@@ -12,7 +12,7 @@
   resolved "https://registry.yarnpkg.com/@material/elevation/-/elevation-0.39.1.tgz#43bb1fe6a0f71332ae11dc18505a8b7cec343dde"
   integrity sha512-ir0lqwpkXhJxUQ6KdCTsM2wZze3Oc54knUMbCUnitOWzIRBvlXUO0zlpld5pj3Mb6ApESA6BiaJb4JfEZmX2MA==
   dependencies:
-    "@material/animation" "0.39.0"
+    "@material/animation" "^0.39.0"
     "@material/theme" "^0.39.1"
 
 "@material/theme@^0.39.1":

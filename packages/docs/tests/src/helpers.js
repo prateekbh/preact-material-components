@@ -40,7 +40,6 @@ async function getServer(port) {
     serve(req, res, finalhandler(req, res));
   });
   server.listen(port);
-  console.log(`Running port: ${port}`);
   return server;
 }
 

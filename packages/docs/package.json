@@ -5,11 +5,10 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn run -s serve || yarn run -s dev",
     "prebuild": "cd node_modules/preact-cli",
-    "build": "preact build",
+    "build": "preact build --no-prerender",
     "prebuild:prod": "cd node_modules/preact-cli",
-    "build:prod": "preact build --template template.html --esm --preload && yarn run copyAssets",
+    "build:prod": "preact build --no-prerender --template template.html --esm --preload && yarn run copyAssets",
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
-    "serve": "preact build && preact serve",
     "dev": "preact watch",
     "test": "yarn build:prod && yarn test:mocha",
     "test:mocha": "mocha $NODE_DEBUG_OPTION ./tests/visdiff.js --async-only --exit",

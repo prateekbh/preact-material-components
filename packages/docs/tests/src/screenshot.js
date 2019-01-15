@@ -11,7 +11,6 @@ const {expect} = require('chai');
 async function takeAndCompareScreenshot(page, route, filePrefix) {
   // If you didn't specify a file, use the name of the route.
   let fileName = filePrefix + '/' + (route ? route : 'index');
-  console.log(`http://localhost:${port}/${route}`);
   // Start the browser, go to that page, and take a screenshot.
   await page.goto(`http://localhost:${port}/${route}`, {
     waitUntil: 'load'
@@ -19,7 +18,6 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   // Let the animations happen
   await new Promise(resolve1 => setTimeout(resolve1, 500));
   const body = await page.$('.content');
-  console.log(body);
   await body.screenshot({path: join(testDir, `${fileName}.png`)});
   // Test to see if it's right.
   return compareScreenshots(fileName);
