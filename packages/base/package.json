@@ -32,9 +32,9 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/base": "^0.39.0",
+    "@material/base": "0.39.0",
     "@material/ripple": "^0.39.3",
-    "@material/theme": "^0.39.0",
+    "@material/theme": "0.39.0",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

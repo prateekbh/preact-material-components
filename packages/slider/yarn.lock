@@ -22,8 +22,8 @@
   resolved "https://registry.yarnpkg.com/@material/slider/-/slider-0.39.1.tgz#3662f8a3bc9ae353d77b70ee921063162e03a255"
   integrity sha512-pv3FrqLgEGqzt4CoN94SGIND9YyGp39NFIk5h9OruQZah8zjPm2lh7CGJ9UkkMGR7Zpxm44E+eqjvEli9LNniw==
   dependencies:
-    "@material/animation" "^0.39.0"
-    "@material/base" "^0.39.0"
+    "@material/animation" "0.39.0"
+    "@material/base" "0.39.0"
     "@material/rtl" "^0.39.1"
     "@material/theme" "^0.39.1"
 

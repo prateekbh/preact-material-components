@@ -35,7 +35,7 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/menu-surface": "^0.39.0",
+    "@material/menu-surface": "0.39.0",
     "@preact-material-components/base": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },

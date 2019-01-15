@@ -17,7 +17,7 @@
   resolved "https://registry.yarnpkg.com/@material/elevation/-/elevation-0.39.1.tgz#43bb1fe6a0f71332ae11dc18505a8b7cec343dde"
   integrity sha512-ir0lqwpkXhJxUQ6KdCTsM2wZze3Oc54knUMbCUnitOWzIRBvlXUO0zlpld5pj3Mb6ApESA6BiaJb4JfEZmX2MA==
   dependencies:
-    "@material/animation" "^0.39.0"
+    "@material/animation" "0.39.0"
     "@material/theme" "^0.39.1"
 
 "@material/menu-surface@^0.39.0":
@@ -25,8 +25,8 @@
   resolved "https://registry.yarnpkg.com/@material/menu-surface/-/menu-surface-0.39.1.tgz#24c79ae746132d81bfb091f41245e4b1e807ad76"
   integrity sha512-dkb+9qI8BsUNUQxHfaJknCbyg/VTaJemEIbj+8kAaOn/47aem1or+yQos+uXPJZEQt/VHp5L1N9BKIzd5VcrUQ==
   dependencies:
-    "@material/animation" "^0.39.0"
-    "@material/base" "^0.39.0"
+    "@material/animation" "0.39.0"
+    "@material/base" "0.39.0"
     "@material/elevation" "^0.39.1"
     "@material/rtl" "^0.39.1"
     "@material/theme" "^0.39.1"

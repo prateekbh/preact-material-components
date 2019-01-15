@@ -17,7 +17,7 @@
   resolved "https://registry.yarnpkg.com/@material/icon-button/-/icon-button-0.39.1.tgz#8d4cf480186a69edfa8441a15a253e23d6d404b1"
   integrity sha512-cvM78QAUdsKGwBrQv+AUXO0rXGHSBL2yKxRv/tjIBsk678t9JZAv8tHRnpAeoSlamR0RLwnADxnC90BpGcsG5g==
   dependencies:
-    "@material/base" "^0.39.0"
+    "@material/base" "0.39.0"
     "@material/ripple" "^0.39.1"
     "@material/theme" "^0.39.1"
 
@@ -26,8 +26,8 @@
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.39.3.tgz#4ff7a8fec5d5206f0da72a78d026529b53b7d564"
   integrity sha512-MwQjgwK9h13MdKGJT3RTDf9NjCoAS3LmnFpz1fxXgExA1QnoUbB1o7cEaPmqAtZopKVDCf52w1l6Mpf9qEhnCQ==
   dependencies:
-    "@material/animation" "^0.39.0"
-    "@material/base" "^0.39.0"
+    "@material/animation" "0.39.0"
+    "@material/base" "0.39.0"
     "@material/theme" "^0.39.1"
 
 "@material/theme@^0.39.1":

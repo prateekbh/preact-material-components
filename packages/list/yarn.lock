@@ -17,19 +17,19 @@
   resolved "https://registry.yarnpkg.com/@material/list/-/list-0.39.3.tgz#64a0c19341052d8ec877f094c07a1fd93ce657af"
   integrity sha512-FaEPzkx/iloZDGsZmOHUfomdMEnEvezYIo6ldmddB2BPQOrDeqbPBsvslR0ak8InpGocoWhLRk46ZjBIIJEDNA==
   dependencies:
-    "@material/base" "^0.39.0"
+    "@material/base" "0.39.0"
     "@material/ripple" "^0.39.3"
     "@material/rtl" "^0.39.1"
     "@material/theme" "^0.39.1"
-    "@material/typography" "^0.39.0"
+    "@material/typography" "0.39.0"
 
 "@material/ripple@^0.39.3":
   version "0.39.3"
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.39.3.tgz#4ff7a8fec5d5206f0da72a78d026529b53b7d564"
   integrity sha512-MwQjgwK9h13MdKGJT3RTDf9NjCoAS3LmnFpz1fxXgExA1QnoUbB1o7cEaPmqAtZopKVDCf52w1l6Mpf9qEhnCQ==
   dependencies:
-    "@material/animation" "^0.39.0"
-    "@material/base" "^0.39.0"
+    "@material/animation" "0.39.0"
+    "@material/base" "0.39.0"
     "@material/theme" "^0.39.1"
 
 "@material/rtl@^0.39.1":

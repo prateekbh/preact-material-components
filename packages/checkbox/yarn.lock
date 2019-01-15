@@ -17,8 +17,8 @@
   resolved "https://registry.yarnpkg.com/@material/checkbox/-/checkbox-0.39.3.tgz#4be6bffbe0b6bfcd987bbe9567d17a17738af9fa"
   integrity sha512-9mVGnsuWJqQtTJlTaV6QY916w7mNBA1m2vdRrGGcAE30svp0fb9SSOaPxZ8aC7GcRTBk+WafHbN9ZYjJQSURkA==
   dependencies:
-    "@material/animation" "^0.39.0"
-    "@material/base" "^0.39.0"
+    "@material/animation" "0.39.0"
+    "@material/base" "0.39.0"
     "@material/ripple" "^0.39.3"
     "@material/rtl" "^0.39.1"
     "@material/selection-control" "^0.39.3"
@@ -29,8 +29,8 @@
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.39.3.tgz#4ff7a8fec5d5206f0da72a78d026529b53b7d564"
   integrity sha512-MwQjgwK9h13MdKGJT3RTDf9NjCoAS3LmnFpz1fxXgExA1QnoUbB1o7cEaPmqAtZopKVDCf52w1l6Mpf9qEhnCQ==
   dependencies:
-    "@material/animation" "^0.39.0"
-    "@material/base" "^0.39.0"
+    "@material/animation" "0.39.0"
+    "@material/base" "0.39.0"
     "@material/theme" "^0.39.1"
 
 "@material/rtl@^0.39.1":
