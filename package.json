@@ -10,7 +10,7 @@
     "lint": "tslint -p tsconfig.base.json",
     "lint:fix": "tslint -p tsconfig.base.json --fix",
     "prepublishOnly": "yarn build && yarn run test",
-    "prettier:fix": "prettier --config ./prettier.config.js {,packages/**/*.tsx} --write",
+    "prettier:fix": "prettier {,packages/**/*.tsx} --write",
     "test": "yarn lint && yarn build",
     "prepare": "lerna bootstrap"
   },
