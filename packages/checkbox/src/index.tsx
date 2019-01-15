@@ -1,5 +1,5 @@
 import {MDCCheckbox} from '@material/checkbox';
-import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
 export interface ICheckboxProps {

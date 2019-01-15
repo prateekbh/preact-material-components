@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Select} from '@preact-material/select';
+import {Select} from '@preact-material-components/select';
 
-import '@preact-material/select/sass';
+import '@preact-material-components/select/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

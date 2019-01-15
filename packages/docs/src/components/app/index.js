@@ -3,15 +3,15 @@ import {h, Component} from 'preact';
 import Router from 'preact-router';
 
 // Material Components
-import {FormField} from '@preact-material/form-field';
-import {LayoutGrid} from '@preact-material/layout-grid';
-import {Switch} from '@preact-material/switch';
-import {TopAppBar} from '@preact-material/top-app-bar';
+import {FormField} from '@preact-material-components/form-field';
+import {LayoutGrid} from '@preact-material-components/layout-grid';
+import {Switch} from '@preact-material-components/switch';
+import {TopAppBar} from '@preact-material-components/top-app-bar';
 
-import '@preact-material/form-field/sass';
-import '@preact-material/layout-grid/sass';
-import '@preact-material/switch/sass';
-import '@preact-material/top-app-bar/sass';
+import '@preact-material-components/form-field/sass';
+import '@preact-material-components/layout-grid/sass';
+import '@preact-material-components/switch/sass';
+import '@preact-material-components/top-app-bar/sass';
 
 // Routes
 import ButtonPage from '../../routes/button';

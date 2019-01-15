@@ -3,13 +3,13 @@ import {h, Component} from 'preact';
 import {route} from 'preact-router';
 
 // Material Components
-import {Drawer} from '@preact-material/drawer';
-import {List} from '@preact-material/list';
-import {Typography} from '@preact-material/typography';
+import {Drawer} from '@preact-material-components/drawer';
+import {List} from '@preact-material-components/list';
+import {Typography} from '@preact-material-components/typography';
 
-import '@preact-material/drawer/sass';
-import '@preact-material/list/sass';
-import '@preact-material/typography/sass';
+import '@preact-material-components/drawer/sass';
+import '@preact-material-components/list/sass';
+import '@preact-material-components/typography/sass';
 
 import json from '../../../package.json';
 

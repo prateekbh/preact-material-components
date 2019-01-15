@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Fab} from '@preact-material/fab';
+import {Fab} from '@preact-material-components/fab';
 
-import '@preact-material/fab/sass';
+import '@preact-material-components/fab/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

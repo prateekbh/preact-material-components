@@ -1,5 +1,5 @@
 {
-  "name": "@preact-material/drawer",
+  "name": "@preact-material-components/drawer",
   "version": "2.0.0-alpha.1",
   "description": "Implementation of a material drawer",
   "keywords": [
@@ -32,9 +32,9 @@
   },
   "dependencies": {
     "@material/drawer": "0.39.3",
-    "@preact-material/base": "^2.0.0-alpha.1",
-    "@preact-material/icon": "^2.0.0-alpha.1",
-    "@preact-material/list": "^2.0.0-alpha.1",
+    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "@preact-material-components/icon": "^2.0.0-alpha.1",
+    "@preact-material-components/list": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

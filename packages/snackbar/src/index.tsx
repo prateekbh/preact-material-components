@@ -1,6 +1,6 @@
 import {MDCSnackbar} from '@material/snackbar/';
 import {h} from 'preact';
-import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 
 // TODO: Is that needed?
 function shallowDiffers(a, b) {

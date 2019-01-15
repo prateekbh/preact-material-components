@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {LayoutGrid} from '@preact-material/layout-grid';
+import {LayoutGrid} from '@preact-material-components/layout-grid';
 
-import '@preact-material/layout-grid/sass';
+import '@preact-material-components/layout-grid/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

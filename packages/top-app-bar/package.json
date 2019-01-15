@@ -1,5 +1,5 @@
 {
-  "name": "@preact-material/top-app-bar",
+  "name": "@preact-material-components/top-app-bar",
   "version": "2.0.0-alpha.1",
   "description": "Implementation of a material top-app-bar",
   "keywords": [
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@material/top-app-bar": "^0.39.3",
-    "@preact-material/base": "^2.0.0-alpha.1",
+    "@preact-material-components/base": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

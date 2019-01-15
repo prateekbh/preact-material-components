@@ -1,5 +1,5 @@
 import {MDCChipSet} from '@material/chips';
-import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 import {ChipCheckmark} from './checkmark';
 import {ChipIcon} from './icon';

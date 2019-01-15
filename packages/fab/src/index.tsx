@@ -1,5 +1,5 @@
-import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
-import {generateThemeClass} from '@preact-material/base';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
+import {generateThemeClass} from '@preact-material-components/base';
 import {h} from 'preact';
 
 export interface IFabProps {

@@ -2,11 +2,11 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Checkbox} from '@preact-material/checkbox';
-import {FormField} from '@preact-material/form-field';
+import {Checkbox} from '@preact-material-components/checkbox';
+import {FormField} from '@preact-material-components/form-field';
 
-import '@preact-material/checkbox/sass';
-import '@preact-material/form-field/sass';
+import '@preact-material-components/checkbox/sass';
+import '@preact-material-components/form-field/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

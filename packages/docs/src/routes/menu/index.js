@@ -2,11 +2,11 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Menu} from '@preact-material/menu';
-import {Button} from '@preact-material/button';
+import {Menu} from '@preact-material-components/menu';
+import {Button} from '@preact-material-components/button';
 
-import '@preact-material/menu/sass';
-import '@preact-material/button/sass';
+import '@preact-material-components/menu/sass';
+import '@preact-material-components/button/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

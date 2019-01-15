@@ -1,5 +1,5 @@
 import {Component, h, VNode} from 'preact';
-import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 
 export interface ITypographyProps {
   body1?: boolean;

@@ -2,13 +2,13 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Dialog} from '@preact-material/dialog';
-import {Button} from '@preact-material/button';
-import {List} from '@preact-material/list';
+import {Dialog} from '@preact-material-components/dialog';
+import {Button} from '@preact-material-components/button';
+import {List} from '@preact-material-components/list';
 
-import '@preact-material/dialog/sass';
-import '@preact-material/button/sass';
-import '@preact-material/list/sass';
+import '@preact-material-components/dialog/sass';
+import '@preact-material-components/button/sass';
+import '@preact-material-components/list/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

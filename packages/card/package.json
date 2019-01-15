@@ -1,5 +1,5 @@
 {
-  "name": "@preact-material/card",
+  "name": "@preact-material-components/card",
   "version": "2.0.0-alpha.1",
   "description": "Implemetation of the material card",
   "keywords": [
@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@material/card": "0.39.3",
-    "@preact-material/base": "^2.0.0-alpha.1",
-    "@preact-material/button": "^2.0.0-alpha.1",
-    "@preact-material/icon": "^2.0.0-alpha.1",
+    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "@preact-material-components/button": "^2.0.0-alpha.1",
+    "@preact-material-components/icon": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {

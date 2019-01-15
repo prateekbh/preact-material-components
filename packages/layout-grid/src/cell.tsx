@@ -1,4 +1,4 @@
-import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h, VNode} from 'preact';
 
 export type LayoutGridPhoneCols = 1 | 2 | 3 | 4;

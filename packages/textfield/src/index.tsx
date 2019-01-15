@@ -1,5 +1,5 @@
 import {MDCTextField} from '@material/textfield';
-import {SoftMerge} from '@preact-material/base/lib/types';
+import {SoftMerge} from '@preact-material-components/base/lib/types';
 import {Component, h} from 'preact';
 import {HelperText} from './helper-text';
 import {TextFieldInput} from './input';

@@ -2,8 +2,8 @@ import {MDCTextField} from '@material/textfield';
 import {
   MaterialComponent,
   MaterialComponentProps
-} from '@preact-material/base/lib/MaterialComponent';
-import {Icon} from '@preact-material/icon';
+} from '@preact-material-components/base/lib/MaterialComponent';
+import {Icon} from '@preact-material-components/icon';
 import {h} from 'preact';
 import {Label} from './label';
 

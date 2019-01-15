@@ -1,4 +1,4 @@
-import {Button} from '@preact-material/button';
+import {Button} from '@preact-material-components/button';
 import bind from 'bind-decorator';
 import {h} from 'preact';
 

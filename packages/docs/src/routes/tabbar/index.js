@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {TabBar} from '@preact-material/tab';
+import {TabBar} from '@preact-material-components/tab';
 
-import '@preact-material/tab/sass';
+import '@preact-material-components/tab/sass';
 
 import style from './style';
 

@@ -1,5 +1,5 @@
 import {MDCTopAppBar} from '@material/top-app-bar';
-import {MaterialComponent} from '@preact-material/base/lib/MaterialComponent';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {bind} from 'bind-decorator';
 import {h} from 'preact';
 

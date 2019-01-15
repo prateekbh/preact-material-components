@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {ImageList} from '@preact-material/image-list';
+import {ImageList} from '@preact-material-components/image-list';
 
-import '@preact-material/image-list/sass';
+import '@preact-material-components/image-list/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

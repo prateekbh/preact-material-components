@@ -2,10 +2,10 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Chip, ChipSet} from '@preact-material/chip';
-import {ChipText} from '@preact-material/chip/lib/text';
+import {Chip, ChipSet} from '@preact-material-components/chip';
+import {ChipText} from '@preact-material-components/chip/lib/text';
 
-import '@preact-material/chip/sass';
+import '@preact-material-components/chip/sass';
 
 // Components
 import ComponentTable from '../../components/component-table';

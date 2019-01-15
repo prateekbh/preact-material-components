@@ -1,4 +1,4 @@
-import {Icon, IIconProps, IIconState} from '@preact-material/icon';
+import {Icon, IIconProps, IIconState} from '@preact-material-components/icon';
 import {h} from 'preact';
 
 export interface IFabIconProps extends IIconProps {}

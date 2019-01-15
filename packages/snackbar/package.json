@@ -1,5 +1,5 @@
 {
-  "name": "@preact-material/snackbar",
+  "name": "@preact-material-components/snackbar",
   "version": "2.0.0-alpha.1",
   "description": "Implementation of a material snackbar",
   "keywords": [
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@material/snackbar": "^0.39.1",
-    "@preact-material/base": "^2.0.0-alpha.1",
+    "@preact-material-components/base": "^2.0.0-alpha.1",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {
