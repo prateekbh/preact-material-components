@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/prateekbh/preact-material#readme",
   "devDependencies": {
+    "@preact-material-components/base": "^2.0.1-alpha.0",
     "@preact-material-components/button": "^2.0.1-alpha.0",
     "@preact-material-components/card": "^2.0.1-alpha.0",
     "@preact-material-components/checkbox": "^2.0.1-alpha.0",
