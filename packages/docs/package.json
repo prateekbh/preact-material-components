@@ -7,7 +7,7 @@
     "prebuild": "cd node_modules/preact-cli",
     "build": "preact build --no-prerender",
     "prebuild:prod": "cd node_modules/preact-cli",
-    "build:prod": "preact build --no-prerender --template template.html --esm --preload && yarn run copyAssets",
+    "build:prod": "preact build --no-prerender --template template.html && yarn run copyAssets",
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "dev": "preact watch",
     "test": "yarn build:prod && yarn test:mocha",

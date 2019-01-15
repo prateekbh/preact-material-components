@@ -55,6 +55,7 @@ esm
 /preact-material-components-v*.*.*.tgz
 #temporary heck
 !/docs/node_modules/preact-cli/package.json
+docs/build
 
 # lerna
 *.lerna_backup
