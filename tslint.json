@@ -36,7 +36,8 @@
     "jsx-curly-spacing": false,
     "no-misused-new": false,
     "prettier": true,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "ordered-imports": false
   },
   "rulesDirectory": ["tslint-plugin-prettier"]
 }
