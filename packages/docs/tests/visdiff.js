@@ -1,10 +1,10 @@
-const foxr = require('foxr').default;
+const puppeteer = require('puppeteer');
 const {join} = require('path');
 const mkdirp = require('mkdirp');
 const {takeAndCompareScreenshot} = require('./src/screenshot');
 const {testDir, port} = require('./src/constants');
 const {constants} = require('os');
-const {getServer, getFirefox} = require('./src/helpers');
+const {getServer} = require('./src/helpers');
 const chalk = require('chalk');
 
 describe('Testing the documentation site', function() {
@@ -17,14 +17,12 @@ describe('Testing the documentation site', function() {
     this.timeout(30 * 1000);
 
     const serverProm = getServer(port);
-    const firefoxProm = getFirefox(port);
 
     // And its wide screen/small screen subdirectories.
     mkdirp.sync(join(testDir, 'wide/component'));
     mkdirp.sync(join(testDir, 'narrow/component'));
 
-    firefox = await firefoxProm;
-    browser = await foxr.connect();
+    browser = await puppeteer.launch();
     page = await browser.newPage();
     server = await serverProm;
   });
