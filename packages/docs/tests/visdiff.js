@@ -26,8 +26,10 @@ describe('Testing the documentation site', function() {
 
     try {
       await commandExists('firefox');
+      console.log(chalk.cyan("  [info] Using firefox"));
       browser = await puppeteerFF.launch();
     } catch (e) {
+      console.log(chalk.cyan("  [info] Using chrome"));
       browser = await puppeteer.launch();
     }
     page = await browser.newPage();
