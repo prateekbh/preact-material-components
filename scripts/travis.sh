@@ -22,6 +22,6 @@ then
     set -ev
     yarn build
     cd packages/docs
-    yarn test
+    yarn test:travis
     set +ev
 fi
