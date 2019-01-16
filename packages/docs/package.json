@@ -17,13 +17,13 @@
     "email": "prateek89born@gmail.com"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "start": "if-env NODE_ENV=production && yarn run -s serve || yarn run -s dev",
     "build": "preact build --no-prerender",
-    "build:prod": "preact build --no-prerender --template template.html && npm run copyAssets",
+    "build:prod": "preact build --no-prerender --template template.html && yarn run copyAssets",
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "npm run build:prod && mocha ./tests/visdiff.js --timeout 15000",
+    "test": "yarn run build:prod && mocha ./tests/visdiff.js --timeout 15000",
     "test:travis": "node ./scripts/test-travis.js"
   },
   "license": "MIT",
