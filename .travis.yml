@@ -10,6 +10,9 @@ matrix:
     - name: "Docs"
       env: TEST=docs
 
+# needed for chrome
+sudo: true
+
 os: linux
 dist: trusty
 
@@ -38,6 +41,7 @@ branches:
 
 addons:
   firefox: "latest"
+  chrome: "stable"
 
 notifications:
   webhooks:

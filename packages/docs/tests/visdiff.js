@@ -24,14 +24,16 @@ describe('Testing the documentation site', function() {
     mkdirp.sync(join(testDir, 'wide/component'));
     mkdirp.sync(join(testDir, 'narrow/component'));
 
-    try {
+    // TODO: Try again after some work in puppeteer firefox has been done
+    /*try {
       await commandExists('firefox');
       console.log(chalk.cyan("  [info] Using firefox"));
       browser = await puppeteerFF.launch();
     } catch (e) {
       console.log(chalk.cyan("  [info] Using chrome"));
       browser = await puppeteer.launch();
-    }
+    }*/
+    browser = await puppeteer.launch();
     page = await browser.newPage();
     server = await serverProm;
   });
@@ -57,11 +59,6 @@ describe('Testing the documentation site', function() {
     }
 
     await Promise.all(promises);
-
-    if (firefox) {
-      console.info(chalk.cyan('  [info] Stopping firefox...'));
-      firefox.kill(constants.signals.SIGINT);
-    }
 
     console.info(chalk.cyan('  [info] Stopped everything'));
   });
