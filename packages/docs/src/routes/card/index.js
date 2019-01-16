@@ -2,7 +2,10 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Card, CardActions, CardMedia, CardActionButton} from '@preact-material-components/card';
+import {Card} from '@preact-material-components/card';
+import {CardActions} from '@preact-material-components/card/lib/actions';
+import {CardMedia} from '@preact-material-components/card/lib/media';
+import {CardActionButton} from '@preact-material-components/card/lib/action';
 
 import '@preact-material-components/card/sass';
 
