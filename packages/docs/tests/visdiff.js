@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const puppeteerFF = require('puppeteer-firefox');
+const commandExists = require('command-exists');
 const {join} = require('path');
 const mkdirp = require('mkdirp');
 const {takeAndCompareScreenshot} = require('./src/screenshot');
@@ -10,7 +12,7 @@ const chalk = require('chalk');
 describe('Testing the documentation site', function() {
   this.timeout(15 * 1000);
 
-  let server, browser, firefox, page;
+  let server, browser, page;
 
   before(async function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
@@ -22,7 +24,12 @@ describe('Testing the documentation site', function() {
     mkdirp.sync(join(testDir, 'wide/component'));
     mkdirp.sync(join(testDir, 'narrow/component'));
 
-    browser = await puppeteer.launch();
+    try {
+      await commandExists('firefox');
+      browser = await puppeteerFF.launch();
+    } catch (e) {
+      browser = await puppeteer.launch();
+    }
     page = await browser.newPage();
     server = await serverProm;
   });
