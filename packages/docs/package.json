@@ -18,8 +18,8 @@
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn run -s serve || yarn run -s dev",
-    "build": "preact build --no-prerender",
-    "build:prod": "preact build --no-prerender --template template.html && yarn run copyAssets",
+    "build": "preact build",
+    "build:prod": "preact build --template template.html && yarn run copyAssets",
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
