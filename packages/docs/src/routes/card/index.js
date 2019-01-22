@@ -5,7 +5,7 @@ import {h, Component} from 'preact';
 import {Card} from '@preact-material-components/card';
 import {CardActions} from '@preact-material-components/card/lib/actions';
 import {CardMedia} from '@preact-material-components/card/lib/media';
-import {CardActionButton} from '@preact-material-components/card/lib/actions';
+import {CardActionsButton} from '@preact-material-components/card/lib/actions/button';
 
 import '@preact-material-components/card/sass';
 
@@ -43,7 +43,7 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'CardActionButton',
+        component: 'CardActionsButton',
         props: []
       },
       {
@@ -94,7 +94,7 @@ export default class CardPage extends Component {
           </div>
           <CardMedia className="card-media" />
           <CardActions>
-            <CardActionButton>OK</CardActionButton>
+            <CardActionsButton>OK</CardActionsButton>
           </CardActions>
         </Card>
 
@@ -108,7 +108,7 @@ export default class CardPage extends Component {
           </div>
           <CardMedia className="card-media" />
           <CardActions full-bleed>
-            <CardActionButton>Full-bleed button</CardActionButton>
+            <CardActionsButton>Full-bleed button</CardActionsButton>
           </CardActions>
         </Card>
       </div>
