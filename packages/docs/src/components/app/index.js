@@ -7,6 +7,9 @@ import {FormField} from '@preact-material-components/form-field';
 import {LayoutGrid} from '@preact-material-components/layout-grid';
 import {Switch} from '@preact-material-components/switch';
 import {TopAppBar} from '@preact-material-components/top-app-bar';
+import {TopAppBarIcon} from '@preact-material-components/top-app-bar/lib/icon';
+import {TopAppBarRow} from '@preact-material-components/top-app-bar/lib/row';
+import {TopAppBarSection} from '@preact-material-components/top-app-bar/lib/section';
 
 import '@preact-material-components/form-field/sass';
 import '@preact-material-components/layout-grid/sass';
@@ -238,20 +241,20 @@ export default class Home extends Component {
           onSelect={this.handleRoute_}
         />
         <TopAppBar className="mdc-theme--dark">
-          <TopAppBar.Row>
-            <TopAppBar.Section align-start={true}>
-              <TopAppBar.Icon
-                menu={true}
+          <TopAppBarRow>
+            <TopAppBarSection align-start={true}>
+              <TopAppBarIcon
+                menu
                 href="#"
                 onClick={e => {
                   e.preventDefault();
                   this.menu.open();
                 }}>
                 menu
-              </TopAppBar.Icon>
+              </TopAppBarIcon>
               <TopAppBar.Title>{this.state.toolbarTitle}</TopAppBar.Title>
-            </TopAppBar.Section>
-            <TopAppBar.Section align-end={true}>
+            </TopAppBarSection>
+            <TopAppBarSection align-end={true}>
               <FormField className="field-darkmode">
                 Dark Mode
                 <Switch
@@ -259,8 +262,8 @@ export default class Home extends Component {
                   onChange={this.toggleDarkMode}
                 />
               </FormField>
-            </TopAppBar.Section>
-          </TopAppBar.Row>
+            </TopAppBarSection>
+          </TopAppBarRow>
         </TopAppBar>
         <div className={this.state.toolbarTitle ? 'hero collapsed' : 'hero'}>
           <svg

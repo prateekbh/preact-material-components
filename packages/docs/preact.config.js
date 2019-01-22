@@ -16,6 +16,11 @@ export default function(config, env, helpers) {
     .map(dir => resolve('..', dir.name, 'node_modules'))
     .filter(full => existsSync(full));
 
+  includeDirs.forEach(dir => {
+    includeDirs.push(dir.replace('node_modules', 'sass'));
+  });
+  console.log(includeDirs);
+
   for (const {loader} of helpers.getLoadersByName(config, 'proxy-loader')) {
     if (loader.options && loader.options.options && loader.options.loader) {
       if (loader.options.loader === 'sass-loader') {

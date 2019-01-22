@@ -4,6 +4,9 @@ import {route} from 'preact-router';
 
 // Material Components
 import {Drawer} from '@preact-material-components/drawer';
+import {DrawerHeader} from '@preact-material-components/drawer/lib/header';
+import {DrawerContent} from '@preact-material-components/drawer/lib/content';
+import {DrawerItem} from '@preact-material-components/drawer/lib/item';
 import {List} from '@preact-material-components/list';
 import {Typography} from '@preact-material-components/typography';
 
@@ -69,7 +72,7 @@ export default class Menu extends Component {
   render({items}) {
     return (
       <Drawer modal ref={drawer => (this.drawer = drawer)}>
-        <Drawer.DrawerHeader>
+        <DrawerHeader>
           <div>
             <Typography headline5>Components</Typography>
           </div>
@@ -77,18 +80,18 @@ export default class Menu extends Component {
             @ (v
             {json['version']})
           </Typography>
-        </Drawer.DrawerHeader>
-        <Drawer.DrawerContent>
+        </DrawerHeader>
+        <DrawerContent>
           {items.map(({icon, link, text}, index) => (
-            <Drawer.DrawerItem
+            <DrawerItem
               selected={index === 0}
               href={link}
               onClick={this._onClick}>
               <List.ItemGraphic>{icon || 'code'}</List.ItemGraphic>
               {text}
-            </Drawer.DrawerItem>
+            </DrawerItem>
           ))}
-        </Drawer.DrawerContent>
+        </DrawerContent>
       </Drawer>
     );
   }
