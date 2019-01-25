@@ -42,5 +42,7 @@
   "peerDependencies": {
     "preact": "^8.3.1"
   },
-  "sideEffects": false
+  "sideEffects": [
+    "*.scss"
+  ]
 }
