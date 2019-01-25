@@ -23,7 +23,7 @@ describe('Testing the documentation site', function() {
       });
       await cb(page);
       await page.close();
-    }
+    };
   }
 
   before(async function() {
