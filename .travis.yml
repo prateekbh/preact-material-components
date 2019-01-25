@@ -40,7 +40,7 @@ branches:
     - gh-pages
 
 addons:
-  firefox: "latest"
+  #firefox: "latest"
   chrome: "stable"
 
 notifications:
