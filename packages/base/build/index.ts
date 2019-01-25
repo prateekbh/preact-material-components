@@ -1,8 +1,24 @@
-import {existsSync} from 'fs';
+import {statSync} from 'fs';
 import {basename, dirname, join, resolve} from 'path';
 
+function isFile(file: string) {
+  try {
+    return statSync(file).isFile();
+  } catch (e) {
+    return false;
+  }
+}
+
+function isDir(file: string) {
+  try {
+    return statSync(file).isDirectory();
+  } catch (e) {
+    return false;
+  }
+}
+
 function simpleResolveSass(path: string) {
-  if (existsSync(path)) {
+  if (isFile(path)) {
     return path;
   }
 
@@ -16,7 +32,7 @@ function simpleResolveSass(path: string) {
     for (const subPath of subPaths) {
       for (const extension of extensions) {
         const file = join(d, `${prefix}${f}${subPath}${extension}`);
-        if (existsSync(file)) {
+        if (isFile(file)) {
           return file;
         }
       }
@@ -37,7 +53,7 @@ function findInModules(modsPath: string, url: string) {
   }
 
   const modPath = resolve(modsPath, module);
-  if (!existsSync(modPath)) {
+  if (!isDir(modPath)) {
     return;
   }
 
@@ -45,6 +61,13 @@ function findInModules(modsPath: string, url: string) {
   const simpleRes = simpleResolveSass(simplePath);
   if (simpleRes) {
     return simpleRes;
+  }
+
+  if (module === url) {
+    const packageJson = require(join(modPath, 'package.json'));
+    if (packageJson.sass) {
+      return simpleResolveSass(join(modPath, packageJson.sass));
+    }
   }
 }
 
@@ -56,7 +79,7 @@ function nodeResolveSass(url: string, prev: string) {
       .map(() => '..')
       .join('/');
     const searchPath = resolve(prevDir, pars, 'node_modules');
-    if (existsSync(searchPath)) {
+    if (isDir(searchPath)) {
       const result = findInModules(searchPath, url);
       if (result) {
         if (typeof result === 'string') {
