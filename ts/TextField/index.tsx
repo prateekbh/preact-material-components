@@ -111,6 +111,7 @@ export class TextFieldInput extends MaterialComponent<
   public componentWillReceiveProps(nextProps: ITextFieldInputProps) {
     super.componentWillReceiveProps(nextProps);
     if (
+      this.MDComponent &&
       nextProps.value &&
       this.props.value !== nextProps.value &&
       this.MDComponent.value !== nextProps.value
