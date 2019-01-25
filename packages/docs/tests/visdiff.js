@@ -73,6 +73,7 @@ describe('Testing the documentation site', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
     this.timeout(6 * 1000);
     this.slow(4 * 1000);
+    this.limit(8);
 
     it(
       'Home desktop page should match against the screenshot in the golden directory',
@@ -265,6 +266,7 @@ describe('Testing the documentation site', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
     this.timeout(3 * 1000);
     this.slow(2 * 1000);
+    this.limit(8);
 
     it(
       'Home mobile page should match against the screenshot in the golden directory',
