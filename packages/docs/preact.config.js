@@ -16,4 +16,10 @@ export default function(config, env, helpers) {
       }
     }
   }
+  for (const {loader} of helpers.getLoadersByName(config, 'sass-loader')) {
+    if (!loader.options) {
+      loader.options = {};
+    }
+    loader.options.importer = sassResolver;
+  }
 }
