@@ -69,11 +69,12 @@ describe('Testing the documentation site', function() {
     console.info(chalk.cyan('  [info] Stopped everything'));
   });
 
-  parallel('For a desktop screen', async function() {
+  parallel.limit(8);
+
+  parallel('For a desktop screen', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
     this.timeout(6 * 1000);
     this.slow(4 * 1000);
-    this.limit(8);
 
     it(
       'Home desktop page should match against the screenshot in the golden directory',
@@ -262,11 +263,10 @@ describe('Testing the documentation site', function() {
     );
   });
 
-  parallel('For a mobile screen', async function() {
+  parallel('For a mobile screen', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
     this.timeout(3 * 1000);
     this.slow(2 * 1000);
-    this.limit(8);
 
     it(
       'Home mobile page should match against the screenshot in the golden directory',
