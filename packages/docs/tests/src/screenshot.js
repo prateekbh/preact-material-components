@@ -18,7 +18,10 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   // Let the animations happen
   await new Promise(resolve1 => setTimeout(resolve1, 500));
   //const body = await page.$('.content');
-  await page.screenshot({path: join(testDir, `${fileName}.png`)});
+  await page.screenshot({
+    path: join(testDir, `${fileName}.png`),
+    fullPage: true
+  });
   // Test to see if it's right.
   return compareScreenshots(fileName);
 }
