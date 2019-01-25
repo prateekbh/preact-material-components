@@ -194,3 +194,4 @@ yarn.lock
 
 # build output
 /packages/*/lib
+/packages/base/build/*.js

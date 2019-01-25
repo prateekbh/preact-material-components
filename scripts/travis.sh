@@ -5,6 +5,7 @@ if [[ "${1}" == "build" ]]
 then
     set -ev
     yarn build
+    yarn test:packages
     set +ev
 fi
 
