@@ -7,12 +7,12 @@ import {Drawer} from '@preact-material-components/drawer';
 import {DrawerHeader} from '@preact-material-components/drawer/lib/header';
 import {DrawerContent} from '@preact-material-components/drawer/lib/content';
 import {DrawerItem} from '@preact-material-components/drawer/lib/item';
-import {List} from '@preact-material-components/list';
+import {ListItemGraphic} from '@preact-material-components/list/lib/item/graphic';
 import {Typography} from '@preact-material-components/typography';
 
-import '@preact-material-components/drawer/sass';
-import '@preact-material-components/list/sass';
 import '@preact-material-components/typography/sass';
+import '@preact-material-components/list/sass';
+import '@preact-material-components/drawer/sass';
 
 import json from '../../../package.json';
 
@@ -82,12 +82,16 @@ export default class Menu extends Component {
           </Typography>
         </DrawerHeader>
         <DrawerContent>
-          {items.map(({icon, link, text}, index) => (
+          {items.map(({icon, link, text}) => (
             <DrawerItem
-              selected={index === 0}
+              selected={
+                typeof window !== 'undefined'
+                  ? link === window.location.pathname
+                  : false
+              }
               href={link}
               onClick={this._onClick}>
-              <List.ItemGraphic>{icon || 'code'}</List.ItemGraphic>
+              <ListItemGraphic>{icon || 'code'}</ListItemGraphic>
               {text}
             </DrawerItem>
           ))}

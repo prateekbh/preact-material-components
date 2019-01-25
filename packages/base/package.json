@@ -26,7 +26,7 @@
     "url": "git+https://github.com/prateekbh/preact-material-components.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "tsc -p build/tsconfig.json"
   },
   "bugs": {
     "url": "https://github.com/prateekbh/preact-material-components/issues"
@@ -40,5 +40,7 @@
   "peerDependencies": {
     "preact": "^8.3.1"
   },
-  "sideEffects": false
+  "sideEffects": [
+    "*.scss"
+  ]
 }
