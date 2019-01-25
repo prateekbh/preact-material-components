@@ -24,7 +24,7 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "test": "yarn run build:prod && yarn run test:mocha",
-    "test:mocha": "mocha ./tests/visdiff.js --timeout 15000",
+    "test:mocha": "mocha ./tests/visdiff.js --exit --timeout 15000",
     "test:travis": "yarn run build:prod && node ./scripts/test-travis.js"
   },
   "license": "MIT",
@@ -92,5 +92,7 @@
     "shelljs": "^0.8.1",
     "webpack": "^3.8.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mocha.parallel": "^0.15.6"
+  }
 }
