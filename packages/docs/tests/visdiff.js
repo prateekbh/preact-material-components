@@ -8,6 +8,7 @@ const {takeAndCompareScreenshot} = require('./src/screenshot');
 const {testDir, port} = require('./src/constants');
 const {getServer} = require('./src/helpers');
 const chalk = require('chalk');
+const {cpus} = require('os');
 
 describe('Testing the documentation site', function() {
   this.timeout(15 * 1000);
@@ -69,9 +70,9 @@ describe('Testing the documentation site', function() {
     console.info(chalk.cyan('  [info] Stopped everything'));
   });
 
-  //parallel.limit(8);
+  parallel.limit(cpus());
 
-  describe('For a desktop screen', function() {
+  parallel('For a desktop screen', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
     this.timeout(6 * 1000);
     this.slow(4 * 1000);
@@ -263,10 +264,10 @@ describe('Testing the documentation site', function() {
     );
   });
 
-  describe('For a mobile screen', function() {
+  parallel('For a mobile screen', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
     this.timeout(6 * 1000);
-    // this.slow(2 * 1000);
+    this.slow(4 * 1000);
 
     it(
       'Home mobile page should match against the screenshot in the golden directory',
