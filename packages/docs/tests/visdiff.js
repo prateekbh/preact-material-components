@@ -70,7 +70,7 @@ describe('Testing the documentation site', function() {
     console.info(chalk.cyan('  [info] Stopped everything'));
   });
 
-  parallel.limit(cpus());
+  parallel.limit(cpus().length);
 
   parallel('For a desktop screen', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
