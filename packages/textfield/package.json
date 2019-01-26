@@ -1,0 +1,46 @@
+{
+  "name": "@preact-material-components/textfield",
+  "version": "2.0.1-alpha.0",
+  "description": "Implementation of a material test-field",
+  "keywords": [
+    "preact-material",
+    "preact",
+    "material",
+    "textfield"
+  ],
+  "author": {
+    "name": "Prateek Bhatnagar",
+    "email": "prateek89born@gmail.com"
+  },
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/textfield#readme",
+  "license": "MIT",
+  "sass": "sass",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/preact-material-components.git"
+  },
+  "scripts": {},
+  "bugs": {
+    "url": "https://github.com/prateekbh/preact-material-components/issues"
+  },
+  "dependencies": {
+    "@material/textfield": "^0.39.3",
+    "@preact-material-components/base": "^2.0.1-alpha.0",
+    "@preact-material-components/icon": "^2.0.1-alpha.0",
+    "bind-decorator": "^1.0.11"
+  },
+  "peerDependencies": {
+    "preact": "^8.3.1"
+  },
+  "sideEffects": [
+    "*.scss"
+  ]
+}

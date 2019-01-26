@@ -1,0 +1,24 @@
+import {h, Component} from 'preact';
+import IconToggle from 'preact-material-components/IconToggle';
+import 'preact-material-components/IconToggle/style.css';
+
+export default class IconTogglePage extends Component {
+  render(){
+    const toggleOnIcon = {
+      content: "favorite",
+      label: "Remove From Favorites"
+    };
+    const toggleOffIcon = {
+      content: "favorite_border",
+      label: "Add to Favorites"
+    };
+    return (
+      <div>
+        <IconButton>
+          <IconButton.Icon on>favorite</IconButton.Icon>
+          <IconButton.Icon>favorite_border</IconButton.Icon>
+        </IconButton>
+      </div>
+    );
+  }
+}

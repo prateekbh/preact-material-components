@@ -41,27 +41,21 @@ jspm_packages
 **/dist/*
 
 # CSS, so far this repo is just bridge to material components. Hence Css is not required in git repo
-*.css
-*.scss
-!docs/**/*.scss
-
-# Ignores all index.js files for all components since they are auto-generated.
-**/index.js
-!/index.js
-
-# Ignore generated test screenshots
-/docs/tests/generated
+/*.css
+/*.scss
+*/*.css
+*/*.scss
 
 .DS_Store
 .idea/
-yarn.lock
+package-lock.json
 
 # Exclude build artifacts
 esm
-*/*.js
-*/*.js.map
-*/*.d.ts
-!/docs/prettier.config.js
-tests/bin/
-tests/golden/dom/
 /preact-material-components-v*.*.*.tgz
+#temporary heck
+!/docs/node_modules/preact-cli/package.json
+docs/build
+
+# lerna
+*.lerna_backup

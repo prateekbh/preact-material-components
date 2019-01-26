@@ -187,8 +187,11 @@ esm
 */*.d.ts
 !/docs/prettier.config.js
 
-package-lock.json
 yarn.lock
 
 # Wrong formatted
 .babelrc
+
+# build output
+/packages/*/lib
+/packages/base/build/*.js

@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "references": [
+    {
+      "path": "../base"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../icon"
+    }
+  ],
+  "include": ["./src/**/*"]
+}

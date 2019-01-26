@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "jsx": "react",
+    "jsxFactory": "h",
+    "allowJs": false,
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "declaration": true,
+    "esModuleInterop": false,
+    "experimentalDecorators": true,
+    "strict": true,
+    "composite": true,
+    "baseUrl": "./packages",
+    "paths": {
+      "@preact-material-components/*": ["./*/src"],
+      "@preact-material-components/base/lib/*": ["./base/src/*"],
+      "@preact-material-components/list/lib/*": ["./list/src/*"]
+    }
+  },
+  "exclude": ["ts/**/*"]
+}

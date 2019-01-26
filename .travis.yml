@@ -1,23 +1,28 @@
 language: node_js
 node_js:
-  - "8"
+  - "10"
+matrix:
+  include:
+    - name: "Build"
+      env: TEST=build
+    - name: "Lint"
+      env: TEST=lint
+    - name: "Docs"
+      env: TEST=docs
 
-env:
-  - TEST_DIR=
-  - TEST_DIR=docs
+# needed for chrome
+sudo: true
 
-os: osx
+os: linux
+dist: trusty
 
 # Skip npm install because our script takes care of that
-install: true
-script: ./scripts/travis.sh $TEST_DIR
+install: yarn install --frozen-lockfile --non-interactive --emoji
+script: ./scripts/travis.sh $TEST
 
-cache:
-  directories:
-    - node_modules
-    - docs/node_modules
+cache: "yarn"
 
-before_deploy: cd $TRAVIS_BUILD_DIR/docs && npm run build:prod
+before_deploy: cd $TRAVIS_BUILD_DIR/docs && yarn build:prod
 
 deploy:
   provider: surge
@@ -26,20 +31,19 @@ deploy:
   skip_cleanup: true
   on:
     branch: release
-    condition: $(./scripts/has-changes.sh docs) = "yes" && $TEST_DIR = "docs"
-    node: "8"
+    condition: $TEST = "docs"
 
 # blocklist
 branches:
   except:
     - gh-pages
 
-sudo: required
 addons:
-  chrome: stable
+  #firefox: "latest"
+  chrome: "stable"
 
 notifications:
   webhooks:
     urls:
-      - https://artipost.io/travis/hook
+      - "https://artipost.io/travis/hook"
     on_start: always
