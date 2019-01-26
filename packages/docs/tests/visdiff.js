@@ -265,8 +265,8 @@ describe('Testing the documentation site', function() {
 
   describe('For a mobile screen', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
-    this.timeout(3 * 1000);
-    this.slow(2 * 1000);
+    this.timeout(6 * 1000);
+    // this.slow(2 * 1000);
 
     it(
       'Home mobile page should match against the screenshot in the golden directory',
