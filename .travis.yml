@@ -11,25 +11,29 @@ dist: trusty
 # Skip npm install because our script takes care of that
 install: yarn install --frozen-lockfile --non-interactive --emoji
 
+stages:
+  - prepare
+  - test
+  - deploy
+
 jobs:
   include:
-    - script: ./scripts/travis.sh lint
+    - stage: test
+      script: ./scripts/travis.sh lint
     - script: ./scripts/travis.sh build
     - script: ./scripts/travis.sh docs
+    - stage: deploy
+      script: skip
+      if: branch = release
+      deploy:
+        provider: surge
+        project: ./docs/build
+        domain: material.preactjs.com
+        skip_cleanup: true
 
 cache: "yarn"
 
 before_deploy: cd $TRAVIS_BUILD_DIR/docs && yarn build:prod
-
-deploy:
-  provider: surge
-  project: ./docs/build
-  domain: material.preactjs.com
-  skip_cleanup: true
-  on:
-    branch: release
-    condition: $TEST = "docs"
-    node: "8"
 
 # blocklist
 branches:
