@@ -69,9 +69,9 @@ describe('Testing the documentation site', function() {
     console.info(chalk.cyan('  [info] Stopped everything'));
   });
 
-  parallel.limit(8);
+  //parallel.limit(8);
 
-  parallel('For a desktop screen', function() {
+  describe('For a desktop screen', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
     this.timeout(6 * 1000);
     this.slow(4 * 1000);
@@ -263,7 +263,7 @@ describe('Testing the documentation site', function() {
     );
   });
 
-  parallel('For a mobile screen', function() {
+  describe('For a mobile screen', function() {
     // noinspection JSPotentiallyInvalidUsageOfThis
     this.timeout(3 * 1000);
     this.slow(2 * 1000);
