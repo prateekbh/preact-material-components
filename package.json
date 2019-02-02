@@ -5,8 +5,9 @@
   "module": "index.js",
   "main": "index.js",
   "scripts": {
-    "build": "yarn run buildPackages && ts-node scripts/compile.ts",
-    "buildPackages": "lerna run build --ignore '*/docs'",
+    "build": "yarn run build:packages && yarn run build:compile",
+    "build:compile": "ts-node scripts/compile.ts",
+    "build:packages": "lerna run build --ignore '*/docs'",
     "watch": "ts-node scripts/compile.ts --watch",
     "lint": "yarn run tslint && yarn run prettier",
     "tslint": "tslint -p tsconfig.base.json",
@@ -43,6 +44,7 @@
     "@types/shelljs": "^0.8.0",
     "clean-webpack-plugin": "^0.1.17",
     "cp": "^0.2.0",
+    "dependency-graph": "^0.8.0",
     "eslint": "^5.0.0",
     "eslint-config-prettier": "^3.0.0",
     "eslint-plugin-prettier": "^3.0.0",
@@ -59,5 +61,8 @@
     "tslint-plugin-prettier": "^2.0.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.1.3"
+  },
+  "dependencies": {
+    "tsickle": "^0.34.2"
   }
 }
