@@ -1,6 +1,7 @@
 // Dependencies
 import {h, Component} from 'preact';
 import {route} from 'preact-router';
+import {bind} from 'bind-decorator';
 
 // Material Components
 import {Drawer} from '@preact-material-components/drawer';
@@ -61,10 +62,12 @@ export default class Menu extends Component {
     this._handleLinkClick(e);
   }
 
+  @bind
   close() {
     this.drawer.MDComponent.open = false;
   }
 
+  @bind
   open() {
     this.drawer.MDComponent.open = true;
   }

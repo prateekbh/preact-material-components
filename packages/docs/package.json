@@ -94,5 +94,7 @@
     "shelljs": "^0.8.1",
     "webpack": "^3.8.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bind-decorator": "^1.0.11"
+  }
 }

@@ -107,7 +107,11 @@ export abstract class MaterialComponent<
   public componentWillUpdate(nextProps: MaterialComponentProps<PropType>) {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {
+        console.log(
+          `Maybe notifying: ${prop} = ${this.props[prop]} > ${nextProps[prop]}`
+        );
         if (this.props[prop] !== nextProps[prop]) {
+          console.log(`Notifying: ${prop} = ${nextProps[prop]}`);
           this.MDComponent[prop] = nextProps[prop];
         }
       }

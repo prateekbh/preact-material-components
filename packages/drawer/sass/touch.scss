@@ -1,0 +1,8 @@
+.pmc-drawer {
+    -webkit-tap-highlight-color: rgba(0,0,0,0.01);
+    user-select: none;
+    -webkit-user-drag: none;
+    & > :global(.mdc-temporary-drawer__drawer) {
+        will-change: transform;
+    }
+}

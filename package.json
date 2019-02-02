@@ -18,7 +18,8 @@
     "test": "yarn run build && yarn run test:only",
     "test:only": "yarn run test:packages && yarn run lint",
     "test:packages": "lerna run test --ignore '*/docs'",
-    "prepare": "lerna bootstrap"
+    "prepare": "lerna bootstrap",
+    "start:docs": "yarn --cwd packages/docs start"
   },
   "repository": {
     "type": "git",

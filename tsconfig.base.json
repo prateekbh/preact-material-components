@@ -20,7 +20,8 @@
       "@preact-material-components/*": ["./*/src"],
       "@preact-material-components/base/lib/*": ["./base/src/*"],
       "@preact-material-components/list/lib/*": ["./list/src/*"]
-    }
+    },
+    "types": []
   },
   "exclude": ["ts/**/*"]
 }
