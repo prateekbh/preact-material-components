@@ -10,6 +10,7 @@ import {
   CompilerOptions
 } from 'typescript';
 import {DepGraph} from 'dependency-graph';
+import * as ProgressBar from 'progress';
 
 function getCfgSource(path) {
   return readJsonConfigFile(join(path, 'tsconfig.json'), p =>
@@ -22,28 +23,22 @@ const pkgDir = resolve(join(__dirname, '..', 'packages'));
 
 const packages = ls(pkgDir);
 
-const tsPackages = packages.filter(path => {
-  const tsconfigPath = join(pkgDir, path, 'tsconfig.json');
+console.info('Collecting packages...');
+const tsPackages = packages.filter(dir => {
+  const tsconfigPath = join(pkgDir, dir, 'tsconfig.json');
   return existsSync(tsconfigPath);
 });
 
-const tsRel: string[] = [];
-const tsProjects: string[] = [];
-tsPackages.forEach(path => {
-  const basePath = resolve(join(pkgDir, path));
-  tsProjects.push(basePath);
-  tsRel.push(relative(rootDir, basePath));
-});
+function project2path(proj) {
+  return resolve(join(pkgDir, proj));
+}
 
-if (process.argv.indexOf('--watch') !== -1) {
+if (process.argv.includes('--watch')) {
+  console.info('Entering watch mode....');
   const args = ['--watch', '-b'];
 
-  console.log(
-    `$ ${['tsc']
-      .concat(args)
-      .concat(tsRel)
-      .join(' ')}`
-  );
+  const tsProjects: string[] = [];
+  tsPackages.forEach(proj => tsProjects.push(project2path(proj)));
 
   npx({
     cmdOpts: args.concat(tsProjects),
@@ -54,9 +49,12 @@ if (process.argv.indexOf('--watch') !== -1) {
   const options: Partial<TsickleHost> = {
     googmodule: false
   };
-  const graph = new DepGraph<() => void>();
+  const graph = new DepGraph<{name: string; build: () => void}>();
 
-  tsProjects.map(path => {
+  console.info('Preparing compilation...');
+  tsPackages.forEach(proj => {
+    const path = project2path(proj);
+
     const opts = {
       cfg: getCfgSource(path)
     };
@@ -66,11 +64,15 @@ if (process.argv.indexOf('--watch') !== -1) {
       rootNames: [path]
     });
 
-    graph.addNode(path, () => {
-      emitWithTsickle(program, options as TsickleHost, compilerHost, opts);
+    graph.addNode(path, {
+      build: () => {
+        emitWithTsickle(program, options as TsickleHost, compilerHost, opts);
+      },
+      name: proj
     });
   });
-  tsProjects.map(path => {
+  tsPackages.forEach(proj => {
+    const path = project2path(proj);
     const cfg = getCfgSource(path);
 
     const jsonCfg: CompilerOptions & {
@@ -87,9 +89,19 @@ if (process.argv.indexOf('--watch') !== -1) {
   });
 
   const order = graph.overallOrder();
+  const bar = new ProgressBar('Compiling [:bar] :current/:total :percent', {
+    complete: '=',
+    incomplete: ' ',
+    total: order.length
+  });
+
+  bar.render(0);
   for (const pkg of order) {
-    const buildFn = graph.getNodeData(pkg);
-    console.log(`Building: ${pkg}`);
-    buildFn();
+    const {build, name} = graph.getNodeData(pkg);
+    bar.interrupt(`Compiling: ${name}`);
+    build();
+    bar.tick(1);
+    graph.setNodeData(pkg, undefined);
   }
+  bar.terminate();
 }
