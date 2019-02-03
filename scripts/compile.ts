@@ -1,6 +1,6 @@
 import {existsSync, readFileSync} from 'fs';
 import * as npx from 'libnpx';
-import {join, relative, resolve} from 'path';
+import {join, resolve} from 'path';
 import {ls} from 'shelljs';
 import {emitWithTsickle, TsickleHost} from 'tsickle';
 import {
@@ -18,7 +18,6 @@ function getCfgSource(path) {
   );
 }
 
-const rootDir = resolve(join(__dirname, '..'));
 const pkgDir = resolve(join(__dirname, '..', 'packages'));
 
 const packages = ls(pkgDir);
@@ -92,15 +91,24 @@ if (process.argv.includes('--watch')) {
   const bar = new ProgressBar('Compiling [:bar] :current/:total :percent', {
     complete: '=',
     incomplete: ' ',
-    total: order.length
+    total: order.length,
+    width: 20
   });
+
+  const tty = process.stdout.isTTY;
 
   bar.render(0);
   for (const pkg of order) {
     const {build, name} = graph.getNodeData(pkg);
-    bar.interrupt(`Compiling: ${name}`);
+    if (tty) {
+      bar.interrupt(`Compiling: ${name}`);
+    } else {
+      console.info(`Compiling: ${name}`);
+    }
     build();
-    bar.tick(1);
+    if (tty) {
+      bar.tick(1);
+    }
     graph.setNodeData(pkg, undefined);
   }
   bar.terminate();
