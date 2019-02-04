@@ -67,6 +67,7 @@
     }
   },
   "lint-staged": {
-    "*.tx": ["yarn run tslint --fix", "yarn run prettier", "git add"]
+    "*.ts": ["yarn run tslint --fix", "yarn run prettier", "git add"],
+    "*.tsx": ["yarn run tslint --fix", "yarn run prettier", "git add"]
   }
 }
