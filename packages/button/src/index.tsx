@@ -38,7 +38,7 @@ export class Button<
 
     return (
       <ButtonElement ref={this.setControlRef} {...props} className={className}>
-        {props.icon&& <ButtonIcon>{props.icon}</ButtonIcon>}
+        {props.icon && <ButtonIcon>{props.icon}</ButtonIcon>}
         <span class="mdc-button__label">{this.props.children}</span>
       </ButtonElement>
     );
