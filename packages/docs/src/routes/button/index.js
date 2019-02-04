@@ -29,6 +29,10 @@ export default class ButtonPage extends Component {
             description: 'Adds riple effect to the button.'
           },
           {
+            name: 'icon',
+            description: 'Adds icon to the button.'
+          },
+          {
             name: 'dense',
             description: 'Adds dense padding to the button.'
           },
@@ -58,10 +62,6 @@ export default class ButtonPage extends Component {
           }
         ]
       },
-      {
-        component: 'ButtonIcon',
-        props: [],
-      }
     ];
   }
   render() {
@@ -182,13 +182,12 @@ export default class ButtonPage extends Component {
         </div>
 
         <div>
-          <Button raised >
-            <ButtonIcon>favorite</ButtonIcon>
+          <Button raised icon='favorite'>
             Button with icon{' '}
           </Button>
           <CodeBlock>
             <code class="lang-html">
-              {`<Button raised><ButtonIcon>favorite</ButtonIcon>Button with icon{" "}</Button>`}
+              {`<Button raised dense icon='favorite'>Button with icon{" "}</Button>`}
             </code>
           </CodeBlock>
         </div>

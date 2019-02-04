@@ -1,6 +1,6 @@
 import {generateThemeClass} from '@preact-material-components/base';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
-
+import {ButtonIcon} from './icon';
 import {h} from 'preact';
 
 export interface IButtonProps {
@@ -38,10 +38,9 @@ export class Button<
 
     return (
       <ButtonElement ref={this.setControlRef} {...props} className={className}>
-        {this.props.children}
+        {props.icon&&<ButtonIcon>{props.icon}</ButtonIcon>}
+        <span class="mdc-button__label">{this.props.children}</span>
       </ButtonElement>
     );
   }
 }
-
-export * from './icon';
