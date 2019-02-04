@@ -61,7 +61,7 @@ export default class ButtonPage extends Component {
             description: 'Adds secondary color to button.'
           }
         ]
-      },
+      }
     ];
   }
   render() {
@@ -182,7 +182,7 @@ export default class ButtonPage extends Component {
         </div>
 
         <div>
-          <Button raised icon='favorite'>
+          <Button raised icon="favorite">
             Button with icon{' '}
           </Button>
           <CodeBlock>
