@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Button} from '@preact-material-components/button';
+import {Button, ButtonIcon} from '@preact-material-components/button';
 
 import '@preact-material-components/button/sass';
 
@@ -57,6 +57,10 @@ export default class ButtonPage extends Component {
             description: 'Adds secondary color to button.'
           }
         ]
+      },
+      {
+        component: 'ButtonIcon',
+        props: [],
       }
     ];
   }
@@ -173,6 +177,18 @@ export default class ButtonPage extends Component {
           <CodeBlock>
             <code class="lang-html">
               {`<Button raised dense>Dense Raised button{" "}</Button>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Button raised >
+            <ButtonIcon>favorite</ButtonIcon>
+            Button with icon{' '}
+          </Button>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Button raised><ButtonIcon>favorite</ButtonIcon>Button with icon{" "}</Button>`}
             </code>
           </CodeBlock>
         </div>
