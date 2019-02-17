@@ -108,8 +108,14 @@ export class TextFieldInput extends MaterialComponent<
     );
   }
 
-  public componentWillUpdate(nextProps: ITextFieldInputProps) {
-    if (nextProps.value && this.props.value !== nextProps.value) {
+  public componentWillReceiveProps(nextProps: ITextFieldInputProps) {
+    super.componentWillReceiveProps(nextProps);
+    if (
+      this.MDComponent &&
+      nextProps.value &&
+      this.props.value !== nextProps.value &&
+      this.MDComponent.value !== nextProps.value
+    ) {
       this.MDComponent.value = nextProps.value;
     }
   }

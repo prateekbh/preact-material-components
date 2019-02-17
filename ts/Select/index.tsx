@@ -30,7 +30,9 @@ export interface ISelectProps {
   selectedIndex?: number;
   controlProps?: {[prop: string]: string};
 
-  onChange?: (e: Event & {selectedIndex: number}) => void;
+  onChange?: (
+    e: Event & {target: EventTarget & {selectedIndex: number}}
+  ) => void;
 }
 
 export interface ISelectState {}

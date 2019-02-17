@@ -39,7 +39,8 @@ export class TabBarScroller extends MaterialComponent<
     }
   }
 
-  public componentWillUpdate(nextProps) {
+  public componentWillReceiveProps(nextProps: ITabBarScrollerProps) {
+    super.componentWillReceiveProps(nextProps);
     if (this.MDComponent) {
       setActiveTabIndex(this.props, nextProps, this.MDComponent.tabBar);
     }
