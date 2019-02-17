@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Button} from '@preact-material-components/button';
+import {Button, ButtonIcon} from '@preact-material-components/button';
 
 import '@preact-material-components/button/sass';
 
@@ -27,6 +27,10 @@ export default class ButtonPage extends Component {
           {
             name: 'ripple',
             description: 'Adds riple effect to the button.'
+          },
+          {
+            name: 'icon',
+            description: 'Adds icon to the button.'
           },
           {
             name: 'dense',
@@ -173,6 +177,17 @@ export default class ButtonPage extends Component {
           <CodeBlock>
             <code class="lang-html">
               {`<Button raised dense>Dense Raised button{" "}</Button>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Button raised icon="favorite">
+            Button with icon{' '}
+          </Button>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Button raised dense icon='favorite'>Button with icon{" "}</Button>`}
             </code>
           </CodeBlock>
         </div>
