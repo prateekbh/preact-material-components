@@ -47,10 +47,10 @@ export default class SelectPage extends Component {
               'Helpful text to display when no selection has been made. ("selectedIndex" must be -1 for the hintText to show)'
           },
           {
-            name: 'onChange',
-            value: 'function',
+            name: 'controlProps',
+            value: '{[prop: string]: string}',
             description:
-              'Function that returns an event with an updated "selectedIndex" property anytime the selection changes.'
+              'Props to be assigned to the <input /> element'
           }
         ]
       },
@@ -73,6 +73,12 @@ export default class SelectPage extends Component {
       {
         name: 'onChange',
         description: 'Fired when the selection changes on Select box'
+      },
+      {
+        name: 'onChange',
+        value: 'function',
+        description:
+          'Function that returns an event with an updated "selectedIndex" property anytime the selection changes.'
       }
     ];
   }
