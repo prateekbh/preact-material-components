@@ -46,12 +46,6 @@ export default class SelectPage extends Component {
             description:
               'Helpful text to display when no selection has been made. ("selectedIndex" must be -1 for the hintText to show)'
           },
-          {
-            name: 'onChange',
-            value: 'function',
-            description:
-              'Function that returns an event with an updated "selectedIndex" property anytime the selection changes.'
-          }
         ]
       },
       {
@@ -73,6 +67,12 @@ export default class SelectPage extends Component {
       {
         name: 'onChange',
         description: 'Fired when the selection changes on Select box'
+      },
+      {
+        name: 'onChange',
+        value: 'function',
+        description:
+          'Function that returns an event with an updated "selectedIndex" property anytime the selection changes.'
       }
     ];
   }
@@ -120,7 +120,7 @@ export default class SelectPage extends Component {
         </Select>
 
         <div className="mdc-typography--title">Outlined option </div>
-        <Select hintText="Select" outlined>
+        <Select hintText="Select" outlined name="sel-box">
           <Select.Item>Option 1</Select.Item>
           <Select.Item disabled>Option 2</Select.Item>
           <Select.Item selected>Option 3</Select.Item>
