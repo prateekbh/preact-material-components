@@ -46,12 +46,6 @@ export default class SelectPage extends Component {
             description:
               'Helpful text to display when no selection has been made. ("selectedIndex" must be -1 for the hintText to show)'
           },
-          {
-            name: 'controlProps',
-            value: '{[prop: string]: string}',
-            description:
-              'Props to be assigned to the <input /> element'
-          }
         ]
       },
       {
@@ -126,7 +120,7 @@ export default class SelectPage extends Component {
         </Select>
 
         <div className="mdc-typography--title">Outlined option </div>
-        <Select hintText="Select" outlined>
+        <Select hintText="Select" outlined name="sel-box">
           <Select.Item>Option 1</Select.Item>
           <Select.Item disabled>Option 2</Select.Item>
           <Select.Item selected>Option 3</Select.Item>
