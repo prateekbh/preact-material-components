@@ -99,7 +99,7 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   }
 
   protected materialDom(allprops) {
-    const {outlined, name:n, ...props} = allprops;
+    const {outlined, name: n, ...props} = allprops;
     // noinspection RequiredAttributes
     return (
       <div ref={this.setControlRef} {...props}>
