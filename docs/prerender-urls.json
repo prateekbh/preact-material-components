@@ -52,6 +52,10 @@
     "url": "/component/icon-button"
   },
   {
+    "title": "ImageList",
+    "url": "/component/image-list"
+  },
+  {
     "title": "LayoutGrid",
     "url": "/component/layout-grid"
   },

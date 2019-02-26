@@ -28,6 +28,7 @@ export interface ISelectProps {
   outlined?: boolean;
   hintText?: string;
   selectedIndex?: number;
+  name?: string;
 
   onChange?: (
     e: Event & {target: EventTarget & {selectedIndex: number}}
@@ -98,11 +99,11 @@ export class Select extends MaterialComponent<ISelectProps, ISelectState> {
   }
 
   protected materialDom(allprops) {
-    const {outlined, ...props} = allprops;
+    const {outlined, name: n, ...props} = allprops;
     // noinspection RequiredAttributes
     return (
       <div ref={this.setControlRef} {...props}>
-        <select class="mdc-select__native-control">
+        <select class="mdc-select__native-control" name={n}>
           {props.hintText && <option value="" disabled selected />}
           {props.children}
         </select>
