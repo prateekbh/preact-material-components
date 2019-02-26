@@ -132,10 +132,10 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
 
   protected materialDom(props) {
     return (
-      <aside role={'alertdialog'} ref={this.setControlRef} {...props}>
+      <dialog role={'alertdialog'} ref={this.setControlRef} {...props}>
         <div className="mdc-dialog__surface">{props.children}</div>
         <div className="mdc-dialog__backdrop" />
-      </aside>
+      </dialog>
     );
   }
 }
