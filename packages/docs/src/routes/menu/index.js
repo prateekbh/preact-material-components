@@ -3,9 +3,11 @@ import {h, Component} from 'preact';
 
 // Material Components
 import {Menu} from '@preact-material-components/menu';
+import {MenuItem} from '@preact-material-components/menu/lib/item';
 import {Button} from '@preact-material-components/button';
 
 import '@preact-material-components/menu/sass';
+import '@preact-material-components/list/sass';
 import '@preact-material-components/button/sass';
 
 // Components
@@ -72,9 +74,9 @@ export default class MenuPage extends Component {
             ref={menu => {
               this.menu = menu;
             }}>
-            <Menu.Item>Hello1</Menu.Item>
-            <Menu.Item>Hello2</Menu.Item>
-            <Menu.Item>Hello3</Menu.Item>
+            <MenuItem>Hello1</MenuItem>
+            <MenuItem>Hello2</MenuItem>
+            <MenuItem>Hello3</MenuItem>
           </Menu>
         </Menu.Anchor>
 

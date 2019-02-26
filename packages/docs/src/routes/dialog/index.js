@@ -3,6 +3,10 @@ import {h, Component} from 'preact';
 
 // Material Components
 import {Dialog} from '@preact-material-components/dialog';
+import {DialogHeader} from '@preact-material-components/dialog/lib/header';
+import {DialogBody} from '@preact-material-components/dialog/lib/body';
+import {DialogFooter} from '@preact-material-components/dialog/lib/footer';
+import {DialogFooterButton} from '@preact-material-components/dialog/lib/footer/button';
 import {Button} from '@preact-material-components/button';
 import {List} from '@preact-material-components/list';
 
@@ -33,11 +37,11 @@ export default class DialogPage extends Component {
         props: []
       },
       {
-        component: 'Dialog.Header',
+        component: 'DialogHeader',
         props: []
       },
       {
-        component: 'Dialog.Body',
+        component: 'DialogBody',
         props: [
           {
             name: 'scrollable',
@@ -50,7 +54,7 @@ export default class DialogPage extends Component {
         props: []
       },
       {
-        component: 'Dialog.FooterButton',
+        component: 'DialogFooterButton',
         props: [
           {
             name: 'accept',
@@ -125,22 +129,22 @@ export default class DialogPage extends Component {
           ref={normalDlg => {
             this.normalDlg = normalDlg;
           }}>
-          <Dialog.Header>Use Google's location service?</Dialog.Header>
-          <Dialog.Body>
+          <DialogHeader>Use Google's location service?</DialogHeader>
+          <DialogBody>
             Let Google help apps determine location. This means sending
             anonymous location data to Google, even when no apps are running.
-          </Dialog.Body>
-          <Dialog.Footer>
-            <Dialog.FooterButton cancel={true}>Decline</Dialog.FooterButton>
-            <Dialog.FooterButton accept={true}>Accept</Dialog.FooterButton>
-          </Dialog.Footer>
+          </DialogBody>
+          <DialogFooter>
+            <DialogFooterButton cancel={true}>Decline</DialogFooterButton>
+            <DialogFooterButton accept={true}>Accept</DialogFooterButton>
+          </DialogFooter>
         </Dialog>
         <Dialog
           ref={scrollingDlg => {
             this.scrollingDlg = scrollingDlg;
           }}>
-          <Dialog.Header>Scroll for me ;)</Dialog.Header>
-          <Dialog.Body scrollable={true}>
+          <DialogHeader>Scroll for me ;)</DialogHeader>
+          <DialogBody scrollable={true}>
             <List>
               <List.Item>Item 1</List.Item>
               <List.Item>Item 2</List.Item>
@@ -148,11 +152,11 @@ export default class DialogPage extends Component {
               <List.Item>Item 4</List.Item>
               <List.Item>Item 5</List.Item>
             </List>
-          </Dialog.Body>
-          <Dialog.Footer>
-            <Dialog.FooterButton cancel={true}>Decline</Dialog.FooterButton>
-            <Dialog.FooterButton accept={true}>Accept</Dialog.FooterButton>
-          </Dialog.Footer>
+          </DialogBody>
+          <DialogFooter>
+            <DialogFooterButton cancel={true}>Decline</DialogFooterButton>
+            <DialogFooterButton accept={true}>Accept</DialogFooterButton>
+          </DialogFooter>
         </Dialog>
       </div>
     );
