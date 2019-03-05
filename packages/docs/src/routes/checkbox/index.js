@@ -52,9 +52,9 @@ export default class CheckboxPage extends Component {
       }
     ];
   }
-  reflectValue = e => {
+  reflectValue = (e, mdevt) => {
     this.setState({
-      cboxvalue: e.checked
+      cboxvalue: mdevt.checked
     });
   };
   render() {
