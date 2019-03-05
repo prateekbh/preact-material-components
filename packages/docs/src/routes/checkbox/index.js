@@ -42,6 +42,11 @@ export default class CheckboxPage extends Component {
           {
             name: 'indeterminate',
             description: 'This makes the checkbox indeterminate'
+          },
+          {
+            name: 'onChange',
+            description:
+              'Event listener for when the value of checkbox change. `function(event, {checked, indeterminate, MDComponent}) =>  void`'
           }
         ]
       }

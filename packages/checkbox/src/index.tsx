@@ -7,9 +7,9 @@ export interface ICheckboxProps {
   indeterminate?: boolean;
   disabled?: boolean;
   onChange?: (
+    event: Event,
     argument: {
       checked: boolean;
-      event: Event;
       indeterminate: boolean;
       MDComponent: Checkbox;
     }
@@ -39,6 +39,9 @@ export class Checkbox extends MaterialComponent<
 
   public componentWillUnmount() {
     super.componentWillUnmount();
+    if (this.control) {
+      this.control.removeEventListener('change', this.onChange);
+    }
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }
@@ -49,10 +52,9 @@ export class Checkbox extends MaterialComponent<
     const {MDComponent} = this;
     const {checked, indeterminate} = MDComponent;
     if (this.props.onChange) {
-      this.props.onChange({
+      this.props.onChange(event, {
         MDComponent,
         checked,
-        event,
         indeterminate
       });
     }
