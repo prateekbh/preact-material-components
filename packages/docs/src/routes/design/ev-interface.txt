@@ -1,0 +1,7 @@
+interface IEventHandler {
+    component: MaterialComponent;
+}
+
+interface IProps {
+    onSomeEvent: (event: Event, additional: IEventHandler) => void;
+}

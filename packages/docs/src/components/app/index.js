@@ -5,11 +5,14 @@ import Router from 'preact-router';
 // Material Components
 import {FormField} from '@preact-material-components/form-field';
 import {LayoutGrid} from '@preact-material-components/layout-grid';
+import {LayoutGridCell} from '@preact-material-components/layout-grid/lib/cell';
+import {LayoutGridInner} from '@preact-material-components/layout-grid/lib/inner';
 import {Switch} from '@preact-material-components/switch';
 import {TopAppBar} from '@preact-material-components/top-app-bar';
 import {TopAppBarIcon} from '@preact-material-components/top-app-bar/lib/icon';
 import {TopAppBarRow} from '@preact-material-components/top-app-bar/lib/row';
 import {TopAppBarSection} from '@preact-material-components/top-app-bar/lib/section';
+import {TopAppBarTitle} from '@preact-material-components/top-app-bar/lib/title';
 
 import '@preact-material-components/form-field/sass';
 import '@preact-material-components/layout-grid/sass';
@@ -20,6 +23,7 @@ import '@preact-material-components/top-app-bar/sass';
 import ButtonPage from '../../routes/button';
 import CardPage from '../../routes/card';
 import ChipsPage from '../../routes/chips';
+import DesignPage from '../../routes/design';
 import CheckboxPage from '../../routes/checkbox';
 import DialogPage from '../../routes/dialog';
 import DrawerPage from '../../routes/drawer';
@@ -57,6 +61,12 @@ const menuItems = [
     icon: 'home',
     link: '/',
     component: HomePage
+  },
+  {
+    text: 'Design',
+    icon: 'brush',
+    link: '/component/design/',
+    component: DesignPage
   },
   {
     text: 'Button',
@@ -252,7 +262,7 @@ export default class Home extends Component {
                 }}>
                 menu
               </TopAppBarIcon>
-              <TopAppBar.Title>{this.state.toolbarTitle}</TopAppBar.Title>
+              <TopAppBarTitle>{this.state.toolbarTitle}</TopAppBarTitle>
             </TopAppBarSection>
             <TopAppBarSection align-end={true}>
               <FormField className="field-darkmode">
@@ -363,15 +373,15 @@ export default class Home extends Component {
           </div>
         </div>
         <LayoutGrid className="content">
-          <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="12">
+          <LayoutGridInner>
+            <LayoutGridCell cols="12">
               <Router>
                 {menuItems.map(({component: Element, link}) => (
                   <Element path={link} />
                 ))}
               </Router>
-            </LayoutGrid.Cell>
-          </LayoutGrid.Inner>
+            </LayoutGridCell>
+          </LayoutGridInner>
         </LayoutGrid>
       </div>
     );
