@@ -65,7 +65,7 @@ const menuItems = [
   {
     text: 'Design',
     icon: 'brush',
-    link: '/component/design/',
+    link: '/design/',
     component: DesignPage
   },
   {
