@@ -24,7 +24,7 @@
     "dev": "preact watch --template template.html",
     "test": "yarn run build:prod && yarn run test:mocha",
     "cypress:run": "cypress run",
-    "test:travis": "server-test start http-get://localhost:8080/ cypress:run"
+    "test:travis": "node ./test-runner.js"
   },
   "private": true,
   "license": "MIT",
