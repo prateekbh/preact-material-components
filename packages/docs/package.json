@@ -23,8 +23,9 @@
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
     "dev": "preact watch --template template.html",
     "test": "yarn run build:prod && yarn run test:mocha",
-    "cypress:run": "cypress run",
-    "test:travis": "node ./test-runner.js"
+    "test": "cypress run",
+    "test-runner": "node ./test-runner.js",
+    "test:travis": "server-test start http-get://localhost:8080/ test-runner"
   },
   "private": true,
   "license": "MIT",
