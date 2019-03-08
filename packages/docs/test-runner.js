@@ -36,7 +36,7 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
     const {code} = shelljs.exec(
       `cypress run --spec cypress/integration/{${[
         ...packagesChanged.values()
-      ].join(',')}}-spec.test.js`
+      ].join(',')},}-spec.test.js`
     );
     console.log(code);
     process.exit(code);
