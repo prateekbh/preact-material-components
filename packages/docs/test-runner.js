@@ -20,25 +20,25 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
   );
   // remove docs from this set as it is does not have a test for itself.
   packagesChanged.delete('docs');
-  console.log(`Detected changes in packages: ${[...packagesChanged.values()].join(', ')}`)
+  console.log(
+    `Detected changes in packages: ${[...packagesChanged.values()].join(', ')}`
+  );
   if (packagesChanged.size === 0) {
-    console.log('No changes in packages found, not running visual regression testing.');
+    console.log(
+      'No changes in packages found, not running visual regression testing.'
+    );
     process.exit(0);
-  } 
-   else if (packagesChanged.has('base')) {
+  } else if (packagesChanged.has('base')) {
     // if base has changed it might impact every component
     // so run all of them.
-    const {code} = shelljs.exec('cypress run --record false');
-    console.log(code);
+    const {code} = shelljs.exec('cypress run');
     process.exit(code);
   } else {
-
     // run the tests for the packages which changed
-    const specs = [...packagesChanged.values()].map(pkg=>`cypress/integration/visual-test/${pkg}-test.spec.js`);
-    console.log({specs})
-    const {code} = shelljs.exec(
-      `cypress run --record false --spec ${specs.join(',')}`);
-    console.log(code);
+    const specs = [...packagesChanged.values()].map(
+      pkg => `cypress/integration/visual-test/${pkg}-test.spec.js`
+    );
+    const {code} = shelljs.exec(`cypress run --spec ${specs.join(',')}`);
     process.exit(code);
   }
 }
