@@ -34,8 +34,10 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
   } else {
 
     // run the tests for the packages which changed
+    const specs = [...packagesChanged.values()].map(pkg=>`cypress/integration/visual-test/${pkg}-test.spec.js`);
+    console.log({specs})
     const {code} = shelljs.exec(
-      `cypress run --spec cypress/integration/visual-test/{button,card}-test.*.js`);
+      `cypress run --spec ${specs.join(',')}`;
     console.log(code);
     process.exit(code);
   }
