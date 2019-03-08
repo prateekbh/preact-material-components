@@ -13,16 +13,29 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
     process.exit(-1);
   }
   const files = stdout.split('\n');
-  const packagesChanged = new Set(files
-    .filter(file => file.match(packageRegexp))
-    .map(pckg => pckg.match(packageRegexp)[1]));
-  if (packagesChanged.has("base")) {
-    shelljs.exec('cypress run');
-
+  const packagesChanged = new Set(
+    files
+      .filter(file => file.match(packageRegexp))
+      .map(pckg => pckg.match(packageRegexp)[1])
+  );
+  // remove docs from this set as it is does not have a test for itself.
+  packagesChanged.delete('docs');
+  if (packagesChanged.has('base')) {
+    // if base has changed it might impact every component
+    // so run all of them.
+    const {code} = shelljs.exec('cypress run');
+    console.log(code);
+    process.exit(code);
   } else {
-    shelljs.exec('cypress run --spec cypress/integration/');
+    // run the tests for the packages which changed
+    const {code} = shelljs.exec(
+      `cypress run --spec cypress/integration/{${[
+        ...packagesChanged.values()
+      ].join(',')}}-spec.test.js`
+    );
+    console.log(code);
+    process.exit(code);
   }
-
 }
 
-process.exit(1);
+process.exit(0);
