@@ -1,6 +1,5 @@
 const shelljs = require('shelljs');
-console.log(shelljs.env);
-console.log('=================');
+
 if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
   const packageRegexp = /packages\/([a-z]*)\/.*/;
   console.log(
@@ -17,7 +16,13 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
   const packagesChanged = new Set(files
     .filter(file => file.match(packageRegexp))
     .map(pckg => pckg.match(packageRegexp)[1]));
-  console.log({packagesChanged});
+  if (packagesChanged.has("base")) {
+    shelljs.exec('cypress run');
+
+  } else {
+    shelljs.exec('cypress run --spec cypress/integration/');
+  }
+
 }
 
 process.exit(1);
