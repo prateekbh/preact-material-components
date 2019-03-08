@@ -20,7 +20,12 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
   );
   // remove docs from this set as it is does not have a test for itself.
   packagesChanged.delete('docs');
-  if (packagesChanged.has('base')) {
+  console.log(`Detected changes in packages: ${packagesChanged.values().join(', ')}`)
+  if (packagesChanges.size === 0) {
+    console.log('No changes in packages found, not running visual regression testing.');
+    process.exit(0);
+  } 
+   else if (packagesChanged.has('base')) {
     // if base has changed it might impact every component
     // so run all of them.
     const {code} = shelljs.exec('cypress run');
