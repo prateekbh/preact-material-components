@@ -28,7 +28,7 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
    else if (packagesChanged.has('base')) {
     // if base has changed it might impact every component
     // so run all of them.
-    const {code} = shelljs.exec('cypress run');
+    const {code} = shelljs.exec('cypress run --record false');
     console.log(code);
     process.exit(code);
   } else {
@@ -37,7 +37,7 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
     const specs = [...packagesChanged.values()].map(pkg=>`cypress/integration/visual-test/${pkg}-test.spec.js`);
     console.log({specs})
     const {code} = shelljs.exec(
-      `cypress run --spec ${specs.join(',')}`);
+      `cypress run --record false --spec ${specs.join(',')}`);
     console.log(code);
     process.exit(code);
   }
