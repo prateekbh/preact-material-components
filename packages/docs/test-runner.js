@@ -32,7 +32,7 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
     console.log(code);
     process.exit(code);
   } else {
-    cinsole.log(shelljs.pwd())
+    console.log(shelljs.pwd())
     // run the tests for the packages which changed
     const {code} = shelljs.exec(
       `cypress run --spec cypress/integration/visual-test/{${[
