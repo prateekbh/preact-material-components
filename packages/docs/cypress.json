@@ -1,4 +1,4 @@
 {
   "chromeWebSecurity": false,
-  "eyesTimeout": 180000
+  "video": false
 }
