@@ -14,9 +14,9 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
     process.exit(-1);
   }
   const files = stdout.split('\n');
-  const packagesChanged = files
+  const packagesChanged = new Set(files
     .filter(file => file.match(packageRegexp))
-    .map(pckg => pckg.match(packageRegexp)[1]);
+    .map(pckg => pckg.match(packageRegexp)[1]));
   console.log({packagesChanged});
 }
 
