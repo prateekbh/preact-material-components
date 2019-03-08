@@ -4,6 +4,7 @@ console.log('=================');
 const head = shelljs.env['FETCH_HEAD'] || '2.0';
 const commitRange = `${head}..${shelljs.env['TRAVIS_BRANCH']}`;
 const packageRegexp = /packages\/([a-z]*)\/.*/;
+console.log(`cmd: git --no-pager diff --name-only ${commitRange}`);
 const list = shelljs.exec(`git --no-pager diff --name-only ${commitRange}`);
 const packagesChanged = list
   .filter(file => file.match(packageRegexp))
