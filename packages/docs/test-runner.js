@@ -3,10 +3,7 @@ console.log(shelljs.env);
 console.log('=================');
 const head = shelljs.env['FETCH_HEAD'] || '2.0';
 const commitRange = `${head}..${shelljs.env['TRAVIS_BRANCH']}`;
-if (shelljs.env['TRAVIS_PULL_REQUEST'] === 'false') {
-  // run all tests
-  shelljs.exec('cypress run');
-} else {
+if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
   const packageRegexp = /packages\/([a-z]*)\/.*/;
   console.log(`cmd: git --no-pager diff --name-only ${commitRange}`);
   const list = shelljs.exec(`git --no-pager diff --name-only ${commitRange}`);
