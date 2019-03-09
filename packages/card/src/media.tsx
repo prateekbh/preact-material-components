@@ -1,40 +1,37 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
-export interface ICardMediaProps extends JSX.HTMLAttributes {
+export interface IMediaProps extends JSX.HTMLAttributes {
   square?: boolean;
   sixteenByNine?: boolean;
 }
 
-export interface ICardMediaState {}
+export interface IMediaState {}
 
-export class CardMedia extends MaterialComponent<
-  ICardMediaProps,
-  ICardMediaState
-> {
+export class Media extends MaterialComponent<IMediaProps, IMediaState> {
   protected componentName = 'card__media';
-  protected mdcProps = ['square', '16-9'];
+  protected mdcProps = ['square'];
 
   protected materialDom(props) {
     if (props.sixteenByNine) {
       props.className = 'mdc-card__media--16-9';
     }
-    return <div {...props}>{this.props.children}</div>;
+    return <div {...props}>{props.children}</div>;
   }
 }
 
-export interface ICardMediaContentProps {}
+export interface IMediaContentProps {}
 
-export interface ICardMediaContentState {}
+export interface IMediaContentState {}
 
-export class CardMediaContent extends MaterialComponent<
-  ICardMediaContentProps,
-  ICardMediaContentState
+export class MediaContent extends MaterialComponent<
+  IMediaContentProps,
+  IMediaContentState
 > {
   protected componentName = 'card__media-content';
   protected mdcProps = [];
 
   protected materialDom(props) {
-    return <div {...props}>{this.props.children}</div>;
+    return <div {...props}>{props.children}</div>;
   }
 }
