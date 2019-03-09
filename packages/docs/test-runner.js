@@ -1,7 +1,7 @@
 const shelljs = require('shelljs');
 
 if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
-  const packageRegexp = /packages\/([a-z]*)\/.*/;
+  const packageRegexp = /packages\/([a-z]*)\/.*\.((jsx?|tsx?|s?css|json))$/;
   console.log(
     `cmd: git --no-pager diff --name-only ${shelljs.env['TRAVIS_COMMIT_RANGE']}`
   );
