@@ -5,11 +5,11 @@ import {
 } from '@preact-material-components/button';
 import {h} from 'preact';
 
-export interface ICardActionsButtonProps extends IButtonProps {}
+export interface IActionButtonProps extends IButtonProps {}
 
-export interface ICardActionsButtonState extends IButtonState {}
+export interface IActionButtonState extends IButtonState {}
 
-export class CardActionsButton extends Button {
+export class ActionButton extends Button {
   protected componentName = 'card__action';
   protected mdcProps = [];
 

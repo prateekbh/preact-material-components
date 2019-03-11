@@ -59,3 +59,7 @@ docs/build
 
 # lerna
 *.lerna_backup
+
+#cypress
+packages/docs/cypress/videos
+packages/docs/cypress/screenshots
