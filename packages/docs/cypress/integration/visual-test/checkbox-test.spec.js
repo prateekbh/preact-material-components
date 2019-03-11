@@ -7,5 +7,5 @@ describe('Visual  Regression Tests', () => {
   afterEach(() => {
     cy.eyesClose();
   });
-  testScreenshot('cardpage');
+  testScreenshot('checkboxpage');
 });
