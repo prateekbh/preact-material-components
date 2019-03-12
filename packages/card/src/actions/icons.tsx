@@ -2,13 +2,13 @@ import {MaterialComponent} from '@preact-material-components/base/lib/MaterialCo
 import {Icon, IIconProps, IIconState} from '@preact-material-components/icon';
 import {h} from 'preact';
 
-export interface IActionIconsProps {}
+export interface ICardActionIconsProps {}
 
-export interface IActionIconsState {}
+export interface ICardActionIconsState {}
 
-export class ActionIcons extends MaterialComponent<
-  IActionIconsProps,
-  IActionIconsState
+export class CardActionIcons extends MaterialComponent<
+  ICardActionIconsProps,
+  ICardActionIconsState
 > {
   protected componentName = 'card__action-icons';
   protected mdcProps = [];
@@ -18,11 +18,11 @@ export class ActionIcons extends MaterialComponent<
   }
 }
 
-export interface IActionIconProps extends IIconProps {}
+export interface ICardActionIconProps extends IIconProps {}
 
-export interface IActionIconState extends IIconState {}
+export interface ICardActionIconState extends IIconState {}
 
-export class ActionIcon extends Icon {
+export class CardActionIcon extends Icon {
   protected componentName = 'card__action';
   protected mdcProps = [];
 

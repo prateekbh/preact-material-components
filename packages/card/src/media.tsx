@@ -1,14 +1,17 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
-export interface IMediaProps extends JSX.HTMLAttributes {
+export interface ICardMediaProps extends JSX.HTMLAttributes {
   square?: boolean;
   sixteenByNine?: boolean;
 }
 
-export interface IMediaState {}
+export interface ICardMediaState {}
 
-export class Media extends MaterialComponent<IMediaProps, IMediaState> {
+export class CardMedia extends MaterialComponent<
+  ICardMediaProps,
+  ICardMediaState
+> {
   protected componentName = 'card__media';
   protected mdcProps = ['square'];
 
@@ -20,13 +23,13 @@ export class Media extends MaterialComponent<IMediaProps, IMediaState> {
   }
 }
 
-export interface IMediaContentProps {}
+export interface ICardMediaContentProps {}
 
-export interface IMediaContentState {}
+export interface ICardMediaContentState {}
 
-export class MediaContent extends MaterialComponent<
-  IMediaContentProps,
-  IMediaContentState
+export class CardMediaContent extends MaterialComponent<
+  ICardMediaContentProps,
+  ICardMediaContentState
 > {
   protected componentName = 'card__media-content';
   protected mdcProps = [];

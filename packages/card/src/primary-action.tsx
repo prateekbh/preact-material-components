@@ -1,13 +1,13 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
-export interface IPrimaryActionProps extends JSX.HTMLAttributes {}
+export interface ICardPrimaryActionProps extends JSX.HTMLAttributes {}
 
-export interface IPrimaryActionState {}
+export interface ICardPrimaryActionState {}
 
-export class PrimaryAction extends MaterialComponent<
-  IPrimaryActionProps,
-  IPrimaryActionState
+export class CardPrimaryAction extends MaterialComponent<
+  ICardPrimaryActionProps,
+  ICardPrimaryActionState
 > {
   protected componentName = 'card__primary-action';
   protected mdcProps = [];
