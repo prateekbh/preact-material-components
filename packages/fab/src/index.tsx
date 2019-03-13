@@ -18,8 +18,8 @@ export interface IFabState {}
 
 export class Fab extends MaterialComponent<IFabProps, IFabState> {
   protected componentName = 'fab';
-  protected mdcProps = ['mini', 'exited'];
-  protected themeProps = ['primary', 'extended', 'secondary'];
+  protected mdcProps = ['mini', 'exited', 'extended'];
+  protected themeProps = ['primary', 'secondary'];
 
   protected materialDom(props) {
     const classNames: string[] = [];

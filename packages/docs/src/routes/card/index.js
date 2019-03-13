@@ -112,8 +112,8 @@ export default class CardPage extends Component {
           <CardActions>
             <CardActionButton>OK</CardActionButton>
             <CardActionIcons>
-              <ActionIcon>favorite</ActionIcon>
-              <ActionIcon>share</ActionIcon>
+              <CardActionIcon>favorite</CardActionIcon>
+              <CardActionIcon>share</CardActionIcon>
             </CardActionIcons>
           </CardActions>
         </Card>
@@ -126,7 +126,7 @@ export default class CardPage extends Component {
             <h2 class=" mdc-typography--title">Title</h2>
             <div class=" mdc-typography--caption">Caption</div>
           </div>
-          <Media className="card-media" />
+          <CardMedia className="card-media" />
           <CardActions full-bleed>
             <CardActionButton>Full-bleed button</CardActionButton>
           </CardActions>
