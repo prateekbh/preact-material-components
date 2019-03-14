@@ -36,8 +36,8 @@ export default class FabPage extends Component {
             description: 'Adds exited animated effect to fab.'
           },
           {
-            name: 'entended',
-            description: 'Adds entended space for label.'
+            name: 'extended',
+            description: 'Adds extended space for label.'
           },
           {
             name: 'mini',
