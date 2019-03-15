@@ -14,7 +14,7 @@ export function openEyes(testName) {
     testName: testName,
     showLogs: true,
     browser: [
-      {width: 1024, height: 768, name: 'chrome'},
+      {width: 1920, height: 1080, name: 'chrome'},
       {deviceName: 'iPhone X'}
     ]
   });

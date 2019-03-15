@@ -4,11 +4,11 @@ import {h, Component} from 'preact';
 // Material Components
 import {
   Card,
-  Actions,
-  ActionButton,
-  ActionIcons,
-  ActionIcon,
-  Media
+  CardActions,
+  CardActionButton,
+  CardActionIcons,
+  CardActionIcon,
+  CardMedia
 } from '@preact-material-components/card';
 
 import '@preact-material-components/card/sass';
@@ -38,11 +38,11 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'PrimaryAction',
+        component: 'CardPrimaryAction',
         props: []
       },
       {
-        component: 'Actions',
+        component: 'CardActions',
         props: [
           {
             name: 'full-bleed',
@@ -51,19 +51,19 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'ActionIcons',
+        component: 'CardActionIcons',
         props: []
       },
       {
-        component: 'ActionButton',
+        component: 'CardActionButton',
         props: []
       },
       {
-        component: 'ActionIcon',
+        component: 'CardActionIcon',
         props: []
       },
       {
-        component: 'Media',
+        component: 'CardMedia',
         props: [
           {
             name: 'square',
@@ -76,7 +76,7 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'MediaContent',
+        component: 'CardMediaContent',
         props: []
       }
     ];
@@ -108,14 +108,14 @@ export default class CardPage extends Component {
             <h2 class=" mdc-typography--title">Title</h2>
             <div class=" mdc-typography--caption">Caption</div>
           </div>
-          <Media className="card-media" />
-          <Actions>
-            <ActionButton>OK</ActionButton>
-            <ActionIcons>
-              <ActionIcon>favorite</ActionIcon>
-              <ActionIcon>share</ActionIcon>
-            </ActionIcons>
-          </Actions>
+          <CardMedia className="card-media" />
+          <CardActions>
+            <CardActionButton>OK</CardActionButton>
+            <CardActionIcons>
+              <CardActionIcon>favorite</CardActionIcon>
+              <CardActionIcon>share</CardActionIcon>
+            </CardActionIcons>
+          </CardActions>
         </Card>
 
         <div className="mdc-typography--display1">
@@ -126,10 +126,10 @@ export default class CardPage extends Component {
             <h2 class=" mdc-typography--title">Title</h2>
             <div class=" mdc-typography--caption">Caption</div>
           </div>
-          <Media className="card-media" />
-          <Actions full-bleed>
-            <ActionButton>Full-bleed button</ActionButton>
-          </Actions>
+          <CardMedia className="card-media" />
+          <CardActions full-bleed>
+            <CardActionButton>Full-bleed button</CardActionButton>
+          </CardActions>
         </Card>
       </div>
     );

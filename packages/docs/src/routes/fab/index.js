@@ -2,7 +2,7 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Fab} from '@preact-material-components/fab';
+import {Fab, FabIcon, FabLabel} from '@preact-material-components/fab';
 
 import '@preact-material-components/fab/sass';
 
@@ -34,6 +34,10 @@ export default class FabPage extends Component {
           {
             name: 'exited',
             description: 'Adds exited animated effect to fab.'
+          },
+          {
+            name: 'extended',
+            description: 'Adds extended space for label.'
           },
           {
             name: 'mini',
@@ -74,36 +78,36 @@ export default class FabPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <Fab>
-          <Fab.Icon>favorite_border</Fab.Icon>
+          <FabIcon>favorite_border</FabIcon>
         </Fab>
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Fab><Fab.Icon>favorite_border</Fab.Icon></Fab>`}
+              {`<Fab><FabIcon>favorite_border</FabIcon></Fab>`}
             </code>
           </CodeBlock>
         </div>
 
         <Fab ripple={true}>
-          <Fab.Icon>favorite_border</Fab.Icon>
+          <FabIcon>favorite_border</FabIcon>
         </Fab>
 
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Fab ripple={true}><Fab.Icon>favorite_border</Fab.Icon></Fab>`}
+              {`<Fab ripple={true}><FabIcon>favorite_border</FabIcon></Fab>`}
             </code>
           </CodeBlock>
         </div>
 
         <Fab mini={true}>
-          <Fab.Icon>favorite_border</Fab.Icon>
+          <FabIcon>favorite_border</FabIcon>
         </Fab>
 
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Fab mini={true}><Fab.Icon>favorite_border</Fab.Icon></Fab>`}
+              {`<Fab mini={true}><FabIcon>favorite_border</FabIcon></Fab>`}
             </code>
           </CodeBlock>
         </div>
@@ -115,13 +119,26 @@ export default class FabPage extends Component {
               fabShowing: false
             });
           }}>
-          <Fab.Icon>directions_run</Fab.Icon>
+          <FabIcon>directions_run</FabIcon>
         </Fab>
 
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Fab exited><Fab.Icon>directions_run</Fab.Icon></Fab>`}
+              {`<Fab exited><FabIcon>directions_run</FabIcon></Fab>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <Fab extended>
+          <FabLabel>Run</FabLabel>
+          <FabIcon>directions_run</FabIcon>
+        </Fab>
+
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Fab extended><FabIcon>directions_run</FabIcon></Fab>`}
             </code>
           </CodeBlock>
         </div>

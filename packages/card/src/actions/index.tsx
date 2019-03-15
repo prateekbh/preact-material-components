@@ -4,13 +4,16 @@ import {h} from 'preact';
 export * from './button';
 export * from './icons';
 
-export interface IActionsProps {
+export interface ICardActionsProps {
   'full-bleed'?: boolean;
 }
 
-export interface IActionsState {}
+export interface ICardActionsState {}
 
-export class Actions extends MaterialComponent<IActionsProps, IActionsState> {
+export class CardActions extends MaterialComponent<
+  ICardActionsProps,
+  ICardActionsState
+> {
   protected componentName = 'card__actions';
   protected mdcProps = ['full-bleed'];
 
