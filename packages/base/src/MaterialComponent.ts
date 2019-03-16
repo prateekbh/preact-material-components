@@ -126,6 +126,24 @@ export abstract class MaterialComponent<
     }
   }
 
+  protected proxyEventHandler(eventName: string, e: Event, options: any) {
+    if (
+      eventName in this.props &&
+      typeof this.props[eventName] === 'function'
+    ) {
+      this.props[eventName].call(
+        e,
+        Object.assign(
+          {},
+          {
+            MDComponent: this.MDComponent
+          },
+          options
+        )
+      );
+    }
+  }
+
   protected afterComponentDidMount() {
     if (this.MDComponent && this.mdcNotifyProps) {
       for (const prop of this.mdcNotifyProps) {

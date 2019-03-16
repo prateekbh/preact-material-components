@@ -5,6 +5,10 @@ import {ChipCheckmark} from './checkmark';
 import {ChipIcon} from './icon';
 import {ChipText} from './text';
 
+export * from './icon';
+export * from './text';
+export * from './checkmark';
+
 export interface IChipProps {
   children?: Array<ChipText | ChipIcon | ChipCheckmark>;
   selected?: boolean; // TODO: Add to docs / remove from here
@@ -18,8 +22,11 @@ export class Chip extends MaterialComponent<IChipProps, IChipState> {
 
   protected materialDom(allprops) {
     const {children, ...props} = allprops;
-
-    return <div {...props}>{children}</div>;
+    return (
+      <div {...props} ref={this.setControlRef}>
+        {children}
+      </div>
+    );
   }
 }
 
@@ -41,6 +48,13 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
+      this.MDComponent = new MDCChipSet(this.control);
+    }
+  }
+
+  public componentDidUpdate(prevProps) {
+    if (prevProps.children !== this.props.children) {
+      this.MDComponent.destroy();
       this.MDComponent = new MDCChipSet(this.control);
     }
   }
