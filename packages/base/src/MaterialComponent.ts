@@ -126,12 +126,12 @@ export abstract class MaterialComponent<
     }
   }
 
-  protected proxyEventHandler(eventName: string, e: Event, options: any) {
+  protected proxyEventHandler(eventName: string, e: Event, options?: any) {
     if (
       eventName in this.props &&
       typeof this.props[eventName] === 'function'
     ) {
-      this.props[eventName].call(
+      this.props[eventName](
         e,
         Object.assign(
           {},

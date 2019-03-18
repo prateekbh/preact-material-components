@@ -49,6 +49,7 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCChipSet(this.control);
+      this.MDComponent.listen('MDCChip:interaction', this.handleInteraction);
     }
   }
 
@@ -65,6 +66,13 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
       this.MDComponent.destroy();
     }
   }
+
+  public handleInteraction = (e: Event) => {
+    const {selectedChipIds} = this.MDComponent;
+    this.proxyEventHandler('handleSelect', e, {
+      selectedChipIds
+    });
+  };
 
   protected materialDom(allprops) {
     const {children, ...props} = allprops;

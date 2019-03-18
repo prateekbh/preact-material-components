@@ -28,6 +28,9 @@ import entrySample from './entry-chips.txt';
 // Class
 export default class ButtonPage extends Component {
   state = {
+    filterChips: [1, 2, 3, 4],
+    selectedFilterChips: [],
+    selectedChoiceChips: [],
     chips: [1, 2, 3, 4]
   };
 
@@ -37,6 +40,10 @@ export default class ButtonPage extends Component {
       {
         component: 'Chips',
         props: [
+          {
+            name: 'id',
+            description: 'Prop to recognize the chip.'
+          },
           {
             name: 'choice',
             description: 'Makes chips selectable'
@@ -79,6 +86,21 @@ export default class ButtonPage extends Component {
       return state.chips.push(state.chips.length + 1);
     });
   };
+
+  setSelectedFilterChips = (e, opts) => {
+    this.setSelectedChips('selectedFilterChips', opts.selectedChipIds);
+  };
+
+  setSelectedChoiceChips = (e, opts) => {
+    this.setSelectedChips('selectedChoiceChips', opts.selectedChipIds);
+  };
+
+  setSelectedChips(chipCategory, selectedChips) {
+    const state = {};
+    state[chipCategory] = selectedChips;
+    this.setState(state);
+  }
+
   render() {
     return (
       <div className="page-chips">
@@ -102,16 +124,14 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Demo</div>
         <div>
-          <ChipSet>
+          <ChipSet handleSelect={this.setNormalChoiceChips}>
             {this.state.chips.map(chip => (
               <Chip>
                 <ChipText>Chip {chip}</ChipText>
               </Chip>
             ))}
           </ChipSet>
-          <Button raised onClick={this.addChip}>
-            Add a chip
-          </Button>
+          <Button onClick={this.addChip}>Add a chip</Button>
           <CodeBlock>
             <code class="lang-html">{sample}</code>
           </CodeBlock>
@@ -149,23 +169,25 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Choice Chips</div>
         <section>
-          <ChipSet choice>
-            <Chip>
+          <ChipSet choice handleSelect={this.setSelectedChoiceChips}>
+            <Chip id="xsmall">
               <ChipText>Extra Small</ChipText>
             </Chip>
-            <Chip>
+            <Chip id="small">
               <ChipText>Small</ChipText>
             </Chip>
-            <Chip>
+            <Chip id="medium">
               <ChipText>Medium</ChipText>
             </Chip>
-            <Chip>
+            <Chip id="large">
               <ChipText>Large</ChipText>
             </Chip>
-            <Chip>
+            <Chip id="xlarge">
               <ChipText>Extra Large</ChipText>
             </Chip>
           </ChipSet>
+          <Button onClick={this.addChip}>Add a chip</Button>
+          <div>Selected chip: {this.state.selectedChoiceChips.join(',')}</div>
           <CodeBlock>
             <code class="lang-html">{choiceSample}</code>
           </CodeBlock>
@@ -173,9 +195,9 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Filter Chips</div>
         <section>
-          <ChipSet filter ref={ref => (this.filterchip = ref)}>
-            {this.state.chips.map(chip => (
-              <Chip id={`chip${chip}`}>
+          <ChipSet filter handleSelect={this.setSelectedFilterChips}>
+            {this.state.filterChips.map((chip, index) => (
+              <Chip id={`chip${chip}`} selected={index === 1}>
                 <ChipCheckmark />
                 <ChipText>Chip {chip}</ChipText>
                 <ChipIcon className="material-icons" trailing title="close">
@@ -184,50 +206,12 @@ export default class ButtonPage extends Component {
               </Chip>
             ))}
           </ChipSet>
-          <Button
-            raised
-            onClick={() => {
-              console.log(this.filterchip);
-            }}>
-            Add a chip
-          </Button>
+          <Button onClick={this.addChip}>Add a chip</Button>
+          <div>Selected chips: {this.state.selectedFilterChips.join(',')}</div>
           <CodeBlock>
             <code class="lang-html">{filterSample}</code>
           </CodeBlock>
         </section>
-
-        <div className="mdc-typography--display1">Action Chips</div>
-        <div>
-          <ChipSet>
-            <Chip>
-              <ChipIcon className="material-icons" leading>
-                wb_sunny
-              </ChipIcon>
-              <ChipText>Turn on lights</ChipText>
-            </Chip>
-            <Chip>
-              <ChipIcon className="material-icons" leading>
-                bookmark
-              </ChipIcon>
-              <ChipText>Bookmark</ChipText>
-            </Chip>
-            <Chip>
-              <ChipIcon className="material-icons" leading>
-                alarm
-              </ChipIcon>
-              <ChipText>Set alarm</ChipText>
-            </Chip>
-            <Chip>
-              <ChipIcon className="material-icons" leading>
-                directions
-              </ChipIcon>
-              <ChipText>Get directions</ChipText>
-            </Chip>
-          </ChipSet>
-          <CodeBlock>
-            <code class="lang-html">{actionSample}</code>
-          </CodeBlock>
-        </div>
       </div>
     );
   }
