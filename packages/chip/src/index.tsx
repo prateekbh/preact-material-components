@@ -35,6 +35,13 @@ export interface IChipSetProps {
   choice?: boolean;
   filter?: boolean;
   input?: boolean;
+  onSelectionChange?: (
+    e: Event,
+    obj: {
+      MDComponent: MDCChipSet;
+      selectedChipIds: string[];
+    }
+  ) => void;
 }
 
 export interface IChipSetState {}
