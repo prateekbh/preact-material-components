@@ -55,8 +55,10 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
 
   public componentDidUpdate(prevProps) {
     if (prevProps.children !== this.props.children) {
-      this.MDComponent.destroy();
-      this.MDComponent = new MDCChipSet(this.control);
+      if (this.MDComponent) {
+        this.MDComponent.destroy();
+        this.MDComponent = new MDCChipSet(this.control);
+      }
     }
   }
 

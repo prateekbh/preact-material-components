@@ -22,18 +22,10 @@ import CodeBlock from '../../components/code-block';
 import sample from './sample.txt';
 import filterSample from './filter-chips.txt';
 import choiceSample from './choice-chips.txt';
-import actionSample from './action-chips.txt';
 import entrySample from './entry-chips.txt';
 
 // Class
 export default class ButtonPage extends Component {
-  state = {
-    filterChips: [1, 2, 3, 4],
-    selectedFilterChips: [],
-    selectedChoiceChips: [],
-    chips: [1, 2, 3, 4]
-  };
-
   constructor() {
     super();
     this.propsTable = [
