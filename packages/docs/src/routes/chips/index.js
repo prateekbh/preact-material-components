@@ -81,25 +81,6 @@ export default class ButtonPage extends Component {
       }
     ];
   }
-  addChip = () => {
-    this.setState(state => {
-      return state.chips.push(state.chips.length + 1);
-    });
-  };
-
-  setSelectedFilterChips = (e, opts) => {
-    this.setSelectedChips('selectedFilterChips', opts.selectedChipIds);
-  };
-
-  setSelectedChoiceChips = (e, opts) => {
-    this.setSelectedChips('selectedChoiceChips', opts.selectedChipIds);
-  };
-
-  setSelectedChips(chipCategory, selectedChips) {
-    const state = {};
-    state[chipCategory] = selectedChips;
-    this.setState(state);
-  }
 
   render() {
     return (
@@ -124,21 +105,27 @@ export default class ButtonPage extends Component {
 
         <div className="mdc-typography--display1">Demo</div>
         <div>
-          <ChipSet handleSelect={this.setNormalChoiceChips}>
-            {this.state.chips.map(chip => (
-              <Chip>
-                <ChipText>Chip {chip}</ChipText>
-              </Chip>
-            ))}
+          <ChipSet>
+            <Chip>
+              <ChipText>Chip One</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Two</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Three</ChipText>
+            </Chip>
+            <Chip>
+              <ChipText>Chip Four</ChipText>
+            </Chip>
           </ChipSet>
-          <Button onClick={this.addChip}>Add a chip</Button>
           <CodeBlock>
             <code class="lang-html">{sample}</code>
           </CodeBlock>
         </div>
 
         <div className="mdc-typography--display1">Input Chips</div>
-        <div>
+        <section>
           <ChipSet input>
             <Chip>
               <ChipIcon className="material-icons" leading>
@@ -165,54 +152,53 @@ export default class ButtonPage extends Component {
           <CodeBlock>
             <code class="lang-html">{entrySample}</code>
           </CodeBlock>
-        </div>
+        </section>
 
         <div className="mdc-typography--display1">Choice Chips</div>
-        <section>
-          <ChipSet choice handleSelect={this.setSelectedChoiceChips}>
-            <Chip id="xsmall">
-              <ChipText>Extra Small</ChipText>
-            </Chip>
-            <Chip id="small">
-              <ChipText>Small</ChipText>
-            </Chip>
-            <Chip id="medium">
-              <ChipText>Medium</ChipText>
-            </Chip>
-            <Chip id="large">
-              <ChipText>Large</ChipText>
-            </Chip>
-            <Chip id="xlarge">
-              <ChipText>Extra Large</ChipText>
-            </Chip>
-          </ChipSet>
-          <Button onClick={this.addChip}>Add a chip</Button>
-          <div>Selected chip: {this.state.selectedChoiceChips.join(',')}</div>
-          <CodeBlock>
-            <code class="lang-html">{choiceSample}</code>
-          </CodeBlock>
-        </section>
+        <ChipSetDemo code={choiceSample} choice />
 
         <div className="mdc-typography--display1">Filter Chips</div>
-        <section>
-          <ChipSet filter handleSelect={this.setSelectedFilterChips}>
-            {this.state.filterChips.map((chip, index) => (
-              <Chip id={`chip${chip}`} selected={index === 1}>
-                <ChipCheckmark />
-                <ChipText>Chip {chip}</ChipText>
-                <ChipIcon className="material-icons" trailing title="close">
-                  close
-                </ChipIcon>
-              </Chip>
-            ))}
-          </ChipSet>
-          <Button onClick={this.addChip}>Add a chip</Button>
-          <div>Selected chips: {this.state.selectedFilterChips.join(',')}</div>
-          <CodeBlock>
-            <code class="lang-html">{filterSample}</code>
-          </CodeBlock>
-        </section>
+        <ChipSetDemo code={filterSample} filter />
       </div>
+    );
+  }
+}
+
+class ChipSetDemo extends Component {
+  state = {
+    chips: [1, 2, 3, 4],
+    selectedChipIds: []
+  };
+  setSelectedChips = (e, {selectedChipIds}) => {
+    this.setState({
+      selectedChipIds
+    });
+  };
+  addChip = () => {
+    this.setState(state => {
+      return state.chips.push(state.chips.length + 1);
+    });
+  };
+  render({code, ...props}, state) {
+    return (
+      <section>
+        <ChipSet {...props} onSelectionChange={this.setSelectedChips}>
+          {state.chips.map((chip, index) => (
+            <Chip id={`chip${chip}`}>
+              <ChipCheckmark />
+              <ChipText>Chip {chip}</ChipText>
+              <ChipIcon className="material-icons" trailing title="close">
+                close
+              </ChipIcon>
+            </Chip>
+          ))}
+        </ChipSet>
+        <Button onClick={this.addChip}>Add a chip</Button>
+        <div>Selected chips: {state.selectedChipIds.join(',')}</div>
+        <CodeBlock>
+          <code class="lang-html">{code}</code>
+        </CodeBlock>
+      </section>
     );
   }
 }

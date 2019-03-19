@@ -69,7 +69,8 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
 
   public handleInteraction = (e: Event) => {
     const {selectedChipIds} = this.MDComponent;
-    this.proxyEventHandler('handleSelect', e, {
+    // This event name clearly communicates that anything already selected will not be conveyed upfront.
+    this.proxyEventHandler('onSelectionChange', e, {
       selectedChipIds
     });
   };
