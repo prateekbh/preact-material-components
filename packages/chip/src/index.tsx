@@ -55,7 +55,7 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
 
   public componentDidUpdate(prevProps) {
     if (prevProps.children !== this.props.children) {
-      if (this.MDComponent) {
+      if (this.MDComponent && this.control) {
         this.MDComponent.destroy();
         this.MDComponent = new MDCChipSet(this.control);
       }
@@ -70,6 +70,7 @@ export class ChipSet extends MaterialComponent<IChipSetProps, IChipSetState> {
   }
 
   public handleInteraction = (e: Event) => {
+    // @ts-ignore
     const {selectedChipIds} = this.MDComponent;
     // This event name clearly communicates that anything already selected will not be conveyed upfront.
     this.proxyEventHandler('onSelectionChange', e, {
