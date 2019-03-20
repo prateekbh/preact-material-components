@@ -1,11 +1,19 @@
 import {MDCCheckbox} from '@material/checkbox';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
+import {bind} from 'bind-decorator';
 
 export interface ICheckboxProps {
   indeterminate?: boolean;
   disabled?: boolean;
-  onChange?: JSX.GenericEventHandler;
+  onChange?: (
+    event: Event,
+    argument: {
+      checked: boolean;
+      indeterminate: boolean;
+      MDComponent: Checkbox;
+    }
+  ) => void;
   checked?: boolean;
 }
 
@@ -24,18 +32,37 @@ export class Checkbox extends MaterialComponent<
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCCheckbox(this.control);
+      this.control.addEventListener('change', this.onChange);
     }
     this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
+    if (this.control) {
+      this.control.removeEventListener('change', this.onChange);
+    }
     if (this.MDComponent) {
       this.MDComponent.destroy();
     }
   }
 
-  protected materialDom(allprops) {
+  @bind
+  public onChange(event: Event) {
+    const {MDComponent} = this;
+    const {checked, indeterminate} = MDComponent;
+    if (this.props.onChange) {
+      this.props.onChange(event, {
+        MDComponent,
+        checked,
+        indeterminate
+      });
+    }
+  }
+
+  protected materialDom(props) {
+    const {onChange, ...allprops} = props;
+
     return (
       <div ref={this.setControlRef}>
         <input
