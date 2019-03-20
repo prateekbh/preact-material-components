@@ -2,11 +2,16 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Chip, ChipSet} from '@preact-material-components/chip';
-import {ChipText} from '@preact-material-components/chip/lib/text';
-import {ChipIcon} from '@preact-material-components/chip/lib/icon';
-import {ChipCheckmark} from '@preact-material-components/chip/lib/checkmark';
+import {
+  Chip,
+  ChipSet,
+  ChipIcon,
+  ChipText,
+  ChipCheckmark
+} from '@preact-material-components/chip';
 
+import {Button} from '@preact-material-components/button';
+import '@preact-material-components/button/sass';
 import '@preact-material-components/chip/sass';
 
 // Components
@@ -17,7 +22,6 @@ import CodeBlock from '../../components/code-block';
 import sample from './sample.txt';
 import filterSample from './filter-chips.txt';
 import choiceSample from './choice-chips.txt';
-import actionSample from './action-chips.txt';
 import entrySample from './entry-chips.txt';
 
 // Class
@@ -28,6 +32,10 @@ export default class ButtonPage extends Component {
       {
         component: 'Chips',
         props: [
+          {
+            name: 'id',
+            description: 'Prop to recognize the chip.'
+          },
           {
             name: 'choice',
             description: 'Makes chips selectable'
@@ -65,6 +73,7 @@ export default class ButtonPage extends Component {
       }
     ];
   }
+
   render() {
     return (
       <div className="page-chips">
@@ -108,20 +117,15 @@ export default class ButtonPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Input Chips</div>
-        <div>
+        <section>
           <ChipSet input>
             <Chip>
               <ChipIcon className="material-icons" leading>
                 face
               </ChipIcon>
               <ChipText>Jane Smith</ChipText>
-              <ChipIcon
-                className="material-icons"
-                trailing
-                tabindex="0"
-                role="button"
-                title="More options">
-                more_vert
+              <ChipIcon className="material-icons" trailing title="close">
+                close
               </ChipIcon>
             </Chip>
             <Chip>
@@ -132,105 +136,61 @@ export default class ButtonPage extends Component {
               <ChipIcon
                 className="material-icons"
                 trailing
-                tabindex="0"
-                role="button"
                 title="More options">
-                more_vert
+                close
               </ChipIcon>
             </Chip>
           </ChipSet>
           <CodeBlock>
             <code class="lang-html">{entrySample}</code>
           </CodeBlock>
-        </div>
+        </section>
 
         <div className="mdc-typography--display1">Choice Chips</div>
-        <section>
-          <ChipSet choice>
-            <Chip>
-              <ChipText>Extra Small</ChipText>
-            </Chip>
-            <Chip>
-              <ChipText>Small</ChipText>
-            </Chip>
-            <Chip>
-              <ChipText>Medium</ChipText>
-            </Chip>
-            <Chip>
-              <ChipText>Large</ChipText>
-            </Chip>
-            <Chip>
-              <ChipText>Extra Large</ChipText>
-            </Chip>
-          </ChipSet>
-          <CodeBlock>
-            <code class="lang-html">{choiceSample}</code>
-          </CodeBlock>
-        </section>
+        <ChipSetDemo code={choiceSample} choice />
 
         <div className="mdc-typography--display1">Filter Chips</div>
-        <section>
-          <ChipSet filter>
-            <Chip>
-              <ChipCheckmark />
-              <ChipText>Tops</ChipText>
-            </Chip>
-            <Chip>
-              <ChipCheckmark />
-              <ChipText>Bottoms</ChipText>
-            </Chip>
-            <Chip>
-              <ChipCheckmark />
-              <ChipText>Shoes</ChipText>
-            </Chip>
-            <Chip>
-              <ChipCheckmark />
-              <ChipIcon leading>favorite</ChipIcon>
-              <ChipText>Home</ChipText>
-            </Chip>
-            <Chip>
-              <ChipCheckmark />
-              <ChipText>Accessories</ChipText>
-            </Chip>
-          </ChipSet>
-          <CodeBlock>
-            <code class="lang-html">{filterSample}</code>
-          </CodeBlock>
-        </section>
-
-        <div className="mdc-typography--display1">Action Chips</div>
-        <div>
-          <ChipSet>
-            <Chip>
-              <ChipIcon className="material-icons" leading>
-                wb_sunny
-              </ChipIcon>
-              <ChipText>Turn on lights</ChipText>
-            </Chip>
-            <Chip>
-              <ChipIcon className="material-icons" leading>
-                bookmark
-              </ChipIcon>
-              <ChipText>Bookmark</ChipText>
-            </Chip>
-            <Chip>
-              <ChipIcon className="material-icons" leading>
-                alarm
-              </ChipIcon>
-              <ChipText>Set alarm</ChipText>
-            </Chip>
-            <Chip>
-              <ChipIcon className="material-icons" leading>
-                directions
-              </ChipIcon>
-              <ChipText>Get directions</ChipText>
-            </Chip>
-          </ChipSet>
-          <CodeBlock>
-            <code class="lang-html">{actionSample}</code>
-          </CodeBlock>
-        </div>
+        <ChipSetDemo code={filterSample} filter />
       </div>
+    );
+  }
+}
+
+class ChipSetDemo extends Component {
+  state = {
+    chips: [1, 2, 3, 4],
+    selectedChipIds: []
+  };
+  setSelectedChips = (e, {selectedChipIds}) => {
+    this.setState({
+      selectedChipIds
+    });
+  };
+  addChip = () => {
+    this.setState(state => {
+      return state.chips.push(state.chips.length + 1);
+    });
+  };
+  render({code, ...props}, state) {
+    return (
+      <section>
+        <ChipSet {...props} onSelectionChange={this.setSelectedChips}>
+          {state.chips.map((chip, index) => (
+            <Chip id={`chip${chip}`}>
+              <ChipCheckmark />
+              <ChipText>Chip {chip}</ChipText>
+              <ChipIcon className="material-icons" trailing title="close">
+                close
+              </ChipIcon>
+            </Chip>
+          ))}
+        </ChipSet>
+        <Button onClick={this.addChip}>Add a chip</Button>
+        <div>Selected chips: {state.selectedChipIds.join(',')}</div>
+        <CodeBlock>
+          <code class="lang-html">{code}</code>
+        </CodeBlock>
+      </section>
     );
   }
 }
