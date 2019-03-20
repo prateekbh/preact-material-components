@@ -147,10 +147,10 @@ export default class ButtonPage extends Component {
         </section>
 
         <div className="mdc-typography--display1">Choice Chips</div>
-        <ChipSetDemo code={choiceSample} choice />
+        <ChipSetDemo section="choice" code={choiceSample} choice />
 
         <div className="mdc-typography--display1">Filter Chips</div>
-        <ChipSetDemo code={filterSample} filter />
+        <ChipSetDemo section="filter" code={filterSample} filter />
       </div>
     );
   }
@@ -173,7 +173,7 @@ class ChipSetDemo extends Component {
   };
   render({code, ...props}, state) {
     return (
-      <section>
+      <section class={props.section}>
         <ChipSet {...props} onSelectionChange={this.setSelectedChips}>
           {state.chips.map((chip, index) => (
             <Chip id={`chip${chip}`}>
