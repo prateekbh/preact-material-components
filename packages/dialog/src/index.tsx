@@ -3,6 +3,11 @@ import {MaterialComponent} from '@preact-material-components/base/lib/MaterialCo
 import {h} from 'preact';
 
 export * from './title';
+export * from './actions';
+export * from './action';
+export * from './footer';
+export * from './content';
+
 export interface IDialogProps extends JSX.HTMLAttributes {
   onAccept?: JSX.GenericEventHandler;
   onCancel?: JSX.GenericEventHandler;
