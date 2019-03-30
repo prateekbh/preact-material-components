@@ -49,7 +49,7 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
 
   protected materialDom(props) {
     return (
-      <div
+      <section
         role="alertdialog"
         aria-modal="true"
         ref={this.setControlRef}
@@ -58,7 +58,7 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
           <div className="mdc-dialog__surface">{props.children}</div>
         </div>
         <div class="mdc-dialog__scrim" />
-      </div>
+      </section>
     );
   }
 }
