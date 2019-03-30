@@ -43,14 +43,6 @@ export default class DialogPage extends Component {
     this.propsTable = [
       {
         component: 'Dialog',
-        props: []
-      },
-      {
-        component: 'DialogHeader',
-        props: []
-      },
-      {
-        component: 'DialogBody',
         props: [
           {
             name: 'scrollable',
@@ -59,11 +51,19 @@ export default class DialogPage extends Component {
         ]
       },
       {
-        component: 'Dialog.Footer',
+        component: 'DialogTitle',
         props: []
       },
       {
-        component: 'DialogFooterButton',
+        component: 'DialogContent',
+        props: []
+      },
+      {
+        component: 'DialogActions',
+        props: []
+      },
+      {
+        component: 'DialogAction',
         props: [
           {
             name: 'accept',
@@ -72,18 +72,22 @@ export default class DialogPage extends Component {
           {
             name: 'cancel',
             description: 'Makes the button, cancel button.'
+          },
+          {
+            name: 'action',
+            description: 'A custom action for the button.'
           }
         ]
       }
     ];
     this.eventsTable = [
       {
-        name: 'onAccept',
-        description: "Fired when the dialog's accept button is clicked."
+        name: 'onOpen',
+        description: 'Fired when the dialogis opened.'
       },
       {
-        name: 'onCancel',
-        description: "Fired when the dialog's cancel button is clicked."
+        name: 'onClose',
+        description: 'Fired when the dialog is closed.'
       }
     ];
   }

@@ -15,18 +15,15 @@ export class DialogButton extends MaterialComponent<
   protected mdcProps = [];
 
   protected materialDom(allProps) {
-    const {accept, cancel, children, props} = allProps;
-    let actionString = 'false';
+    let {accept, cancel, action, children, props} = allProps;
+    action = action || false;
     if (accept) {
-      actionString = 'accept';
+      action = 'accept';
     } else if (cancel) {
-      actionString = 'close';
+      action = 'close';
     }
     return (
-      <button
-        class="mdc-button"
-        data-mdc-dialog-action={actionString}
-        {...props}>
+      <button class="mdc-button" data-mdc-dialog-action={action} {...props}>
         {children}
       </button>
     );
