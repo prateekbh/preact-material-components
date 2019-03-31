@@ -2,13 +2,17 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Dialog} from '@preact-material-components/dialog';
-import {DialogHeader} from '@preact-material-components/dialog/lib/header';
-import {DialogBody} from '@preact-material-components/dialog/lib/body';
-import {DialogFooter} from '@preact-material-components/dialog/lib/footer';
-import {DialogFooterButton} from '@preact-material-components/dialog/lib/footer/button';
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  DialogButton
+} from '@preact-material-components/dialog';
 import {Button} from '@preact-material-components/button';
+import {Typography} from '@preact-material-components/typography';
 import {List} from '@preact-material-components/list';
+import {ListItem} from '@preact-material-components/list/lib/item';
 
 import '@preact-material-components/dialog/sass';
 import '@preact-material-components/button/sass';
@@ -29,19 +33,16 @@ import scrollableSample from './scrollable-sample.txt';
 
 // Class
 export default class DialogPage extends Component {
+  state = {
+    normalDlgAction: 'N/A',
+    scrollingDlgAction: 'N/A'
+  };
+
   constructor() {
     super();
     this.propsTable = [
       {
         component: 'Dialog',
-        props: []
-      },
-      {
-        component: 'DialogHeader',
-        props: []
-      },
-      {
-        component: 'DialogBody',
         props: [
           {
             name: 'scrollable',
@@ -50,11 +51,19 @@ export default class DialogPage extends Component {
         ]
       },
       {
-        component: 'Dialog.Footer',
+        component: 'DialogTitle',
         props: []
       },
       {
-        component: 'DialogFooterButton',
+        component: 'DialogContent',
+        props: []
+      },
+      {
+        component: 'DialogActions',
+        props: []
+      },
+      {
+        component: 'DialogAction',
         props: [
           {
             name: 'accept',
@@ -63,21 +72,30 @@ export default class DialogPage extends Component {
           {
             name: 'cancel',
             description: 'Makes the button, cancel button.'
+          },
+          {
+            name: 'action',
+            description: 'A custom action for the button.'
           }
         ]
       }
     ];
     this.eventsTable = [
       {
-        name: 'onAccept',
-        description: "Fired when the dialog's accept button is clicked."
+        name: 'onOpen',
+        description: 'Fired when the dialogis opened.'
       },
       {
-        name: 'onCancel',
-        description: "Fired when the dialog's cancel button is clicked."
+        name: 'onClose',
+        description: 'Fired when the dialog is closed.'
       }
     ];
   }
+  onNormalDialogClose = (e, {action}) => {
+    this.setState({
+      normalDlgAction: action
+    });
+  };
   render() {
     return (
       <div className="page-dialog">
@@ -102,13 +120,16 @@ export default class DialogPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default Dialog</div>
+        <Typography tag="div" subtitle1>
+          Dialog close action: {this.state.normalDlgAction}
+        </Typography>
         <Button
           primary={true}
           raised={true}
           onClick={() => {
-            this.normalDlg.MDComponent.show();
+            this.normalDlg.MDComponent.open();
           }}>
-          Show Dialog
+          Open Dialog
         </Button>
         <CodeBlock>
           <code class="lang-html">{defaultSample}</code>
@@ -118,9 +139,9 @@ export default class DialogPage extends Component {
           primary={true}
           raised={true}
           onClick={() => {
-            this.scrollingDlg.MDComponent.show();
+            this.scrollingDlg.MDComponent.open();
           }}>
-          Show Scrollable Dialog
+          Open Scrollable Dialog
         </Button>
         <CodeBlock>
           <code class="lang-html">{scrollableSample}</code>
@@ -128,35 +149,39 @@ export default class DialogPage extends Component {
         <Dialog
           ref={normalDlg => {
             this.normalDlg = normalDlg;
-          }}>
-          <DialogHeader>Use Google's location service?</DialogHeader>
-          <DialogBody>
+          }}
+          onClose={this.onNormalDialogClose}>
+          <DialogTitle>Use Google's location service?</DialogTitle>
+          <DialogContent>
             Let Google help apps determine location. This means sending
             anonymous location data to Google, even when no apps are running.
-          </DialogBody>
-          <DialogFooter>
-            <DialogFooterButton cancel={true}>Decline</DialogFooterButton>
-            <DialogFooterButton accept={true}>Accept</DialogFooterButton>
-          </DialogFooter>
+          </DialogContent>
+          <DialogActions>
+            <DialogButton cancel>Decline</DialogButton>
+            <DialogButton accept>Accept</DialogButton>
+          </DialogActions>
         </Dialog>
         <Dialog
           ref={scrollingDlg => {
             this.scrollingDlg = scrollingDlg;
           }}>
-          <DialogHeader>Scroll for me ;)</DialogHeader>
-          <DialogBody scrollable={true}>
+          <DialogTitle>Use Google's location service?</DialogTitle>
+          <DialogContent>
             <List>
-              <List.Item>Item 1</List.Item>
-              <List.Item>Item 2</List.Item>
-              <List.Item>Item 3</List.Item>
-              <List.Item>Item 4</List.Item>
-              <List.Item>Item 5</List.Item>
+              <ListItem>Item 2</ListItem>
+              <ListItem>Item 3</ListItem>
+              <ListItem>Item 4</ListItem>
+              <ListItem>Item 5</ListItem>
+              <ListItem>Item 6</ListItem>
+              <ListItem>Item 7</ListItem>
+              <ListItem>Item 8</ListItem>
+              <ListItem>Item 9</ListItem>
             </List>
-          </DialogBody>
-          <DialogFooter>
-            <DialogFooterButton cancel={true}>Decline</DialogFooterButton>
-            <DialogFooterButton accept={true}>Accept</DialogFooterButton>
-          </DialogFooter>
+          </DialogContent>
+          <DialogActions>
+            <DialogButton cancel>Decline</DialogButton>
+            <DialogButton accept>Accept</DialogButton>
+          </DialogActions>
         </Dialog>
       </div>
     );

@@ -1,11 +1,15 @@
 import {MDCDialog} from '@material/dialog';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
 
+export * from './title';
+export * from './actions';
+export * from './action';
+export * from './content';
+
 export interface IDialogProps extends JSX.HTMLAttributes {
-  onAccept?: JSX.GenericEventHandler;
-  onCancel?: JSX.GenericEventHandler;
+  onOpen?: JSX.GenericEventHandler;
+  onClose?: JSX.GenericEventHandler;
 }
 
 export interface IDialogState {}
@@ -14,45 +18,46 @@ export class Dialog extends MaterialComponent<IDialogProps, IDialogState> {
   public MDComponent?: MDCDialog;
 
   protected componentName = 'dialog';
-  protected mdcProps = [];
+  protected mdcProps = ['scrollable'];
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCDialog(this.control);
-      this.MDComponent.listen('MDCDialog:accept', this.onAccept);
-      this.MDComponent.listen('MDCDialog:cancel', this.onCancel);
+      this.MDComponent.listen('MDCDialog:opened', this.onOpened);
+      this.MDComponent.listen('MDCDialog:closed', this.onClosed);
     }
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
-      this.MDComponent.unlisten('MDCDialog:accept', this.onAccept);
-      this.MDComponent.unlisten('MDCDialog:cancel', this.onCancel);
+      this.MDComponent.unlisten('MDCDialog:opened', this.onOpened);
+      this.MDComponent.unlisten('MDCDialog:closed', this.onClosed);
       this.MDComponent.destroy();
     }
   }
 
-  @bind
-  protected onAccept(e) {
-    if (this.props.onAccept) {
-      this.props.onAccept(e);
-    }
-  }
+  protected onOpened = e => {
+    this.proxyEventHandler('onOpen', e);
+  };
 
-  @bind
-  protected onCancel(e) {
-    if (this.props.onCancel) {
-      this.props.onCancel(e);
-    }
-  }
+  protected onClosed = e => {
+    const {action} = e.detail;
+    this.proxyEventHandler('onClose', e, {action});
+  };
 
   protected materialDom(props) {
     return (
-      <section role={'alertdialog'} ref={this.setControlRef} {...props}>
-        <div className="mdc-dialog__surface">{props.children}</div>
-        <div className="mdc-dialog__backdrop" />
+      <section
+        role="alertdialog"
+        aria-modal="true"
+        ref={this.setControlRef}
+        {...props}>
+        <div class="mdc-dialog__container">
+          <div className="mdc-dialog__surface">{props.children}</div>
+        </div>
+        <div class="mdc-dialog__scrim" />
       </section>
     );
   }
