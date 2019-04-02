@@ -22,7 +22,17 @@ export default class FormFieldPage extends Component {
     this.propsTable = [
       {
         component: 'FormField',
-        props: []
+        props: [
+          {
+            name: 'align-end',
+            description: 'Aligns the controls to the end.'
+          },
+          {
+            name: 'input',
+            description:
+              'Assigns to which component is this form field attached to.'
+          }
+        ]
       }
     ];
   }
@@ -51,7 +61,7 @@ export default class FormFieldPage extends Component {
 
         <div className="mdc-typography--display1">Demo</div>
         <FormField>
-          <Radio id="r1" name="opts" />
+          <Radio ref={ip => (this.ip = ip)} id="r1" name="opts" />
           <label for="r1">Radio 1</label>
         </FormField>
       </div>
