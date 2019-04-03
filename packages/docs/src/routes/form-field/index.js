@@ -22,7 +22,17 @@ export default class FormFieldPage extends Component {
     this.propsTable = [
       {
         component: 'FormField',
-        props: []
+        props: [
+          {
+            name: 'align-end',
+            description: 'Aligns the controls to the end.'
+          },
+          {
+            name: 'input',
+            description:
+              'Assigns to which component is this form field attached to.'
+          }
+        ]
       }
     ];
   }
