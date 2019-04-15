@@ -9,4 +9,12 @@ describe('Visual  Regression Tests', () => {
     cy.eyesClose();
   });
   testScreenshot('iconPage');
+  it('should update on click', () => {
+    openEyes('icon-button-clicked');
+    cy.get('.mdc-icon-button').click();
+    cy.eyesCheckWindow({
+      sizeMode: 'selector', //mode
+      selector: '.content.mdc-layout-grid'
+    });
+  });
 });
