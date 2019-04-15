@@ -2,7 +2,10 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {IconButton} from '@preact-material-components/icon-button';
+import {
+  IconButton,
+  IconButtonIcon
+} from '@preact-material-components/icon-button';
 
 import '@preact-material-components/icon-button/sass';
 
@@ -15,6 +18,10 @@ import sample from './sample.txt';
 
 // Class
 export default class IconButtonPage extends Component {
+  state = {
+    isOn: false
+  };
+
   constructor() {
     super();
     this.propsTable = [
@@ -34,6 +41,9 @@ export default class IconButtonPage extends Component {
       }
     ];
   }
+  handleChange = (e, {isOn}) => {
+    this.setState({isOn});
+  };
   render() {
     return (
       <div>
@@ -57,10 +67,11 @@ export default class IconButtonPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
-        <IconButton>
-          <IconButton.Icon on>favorite</IconButton.Icon>
-          <IconButton.Icon>favorite_border</IconButton.Icon>
+        <IconButton onChange={this.handleChange}>
+          <IconButtonIcon on>favorite</IconButtonIcon>
+          <IconButtonIcon>favorite_border</IconButtonIcon>
         </IconButton>
+        <div>Is On: {this.state.isOn ? 'Yes' : 'No'}</div>
       </div>
     );
   }
