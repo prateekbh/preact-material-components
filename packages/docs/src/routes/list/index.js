@@ -2,7 +2,19 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {List} from '@preact-material-components/list';
+import {
+  List,
+  ListItem,
+  ListDivider,
+  ListItemGraphic,
+  ListGroupHeader,
+  ListItemLink,
+  ListGroup,
+  ListItemMeta,
+  ListTextSecondary,
+  ListTextPrimary,
+  ListText
+} from '@preact-material-components/list';
 
 import '@preact-material-components/list/sass';
 
@@ -18,6 +30,9 @@ import sample from './sample.txt';
 
 // Class
 export default class ListPage extends Component {
+  state = {
+    currrentIndex: null
+  };
   constructor() {
     super();
     this.propsTable = [
@@ -39,31 +54,31 @@ export default class ListPage extends Component {
         ]
       },
       {
-        component: 'List.Item',
+        component: 'ListItem',
         props: []
       },
       {
-        component: 'List.LinkItem',
+        component: 'ListLinkItem',
         props: []
       },
       {
-        component: 'List.ItemGraphic',
+        component: 'ListItemGraphic',
         props: []
       },
       {
-        component: 'List.ItemMeta',
+        component: 'ListItemMeta',
         props: []
       },
       {
-        component: 'List.TextContainer',
+        component: 'ListTextContainer',
         props: []
       },
       {
-        component: 'List.PrimaryText',
+        component: 'ListPrimaryText',
         props: []
       },
       {
-        component: 'List.SecondaryText',
+        component: 'ListSecondaryText',
         props: []
       }
     ];
@@ -92,99 +107,100 @@ export default class ListPage extends Component {
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Normal </div>
         <List>
-          <List.Item>Item1</List.Item>
-          <List.Item>Item2</List.Item>
-          <List.Divider />
-          <List.Item>Item3</List.Item>
-          <List.Item>Item4</List.Item>
-          <List.Item>Item5</List.Item>
+          <ListItem>Item1</ListItem>
+          <ListItem>Item2</ListItem>
+          <ListDivider />
+          <ListItem>Item3</ListItem>
+          <ListItem>Item4</ListItem>
+          <ListItem>Item5</ListItem>
         </List>
         <div className="mdc-typography--title">Action items </div>
         <List>
-          <List.LinkItem ripple={true} href="#/component/list">
+          <ListItemLink ripple={true} href="#/component/list">
             Item1
-          </List.LinkItem>
-          <List.LinkItem ripple={true} href="#/component/list">
+          </ListItemLink>
+          <ListItemLink ripple={true} href="#/component/list">
             Item2
-          </List.LinkItem>
-          <List.LinkItem ripple={true} href="#/component/list">
+          </ListItemLink>
+          <ListItemLink ripple={true} href="#/component/list">
             Item3
-          </List.LinkItem>
-          <List.LinkItem ripple={true} href="#/component/list">
+          </ListItemLink>
+          <ListItemLink ripple={true} href="#/component/list">
             Item4
-          </List.LinkItem>
-          <List.LinkItem ripple={true} href="#/component/list">
+          </ListItemLink>
+          <ListItemLink ripple={true} href="#/component/list">
             Item5
-          </List.LinkItem>
+          </ListItemLink>
         </List>
         <div className="mdc-typography--title">Two line </div>
-        <List two-line={true}>
-          <List.Item>
-            <List.TextContainer>
-              <List.PrimaryText>Heading 1</List.PrimaryText>
-              <List.SecondaryText>
-                Lorem ipsum dolor sit amet.
-              </List.SecondaryText>
-            </List.TextContainer>
-          </List.Item>
-          <List.Item>
-            <List.TextContainer>
-              <List.PrimaryText>Heading 2</List.PrimaryText>
-              <List.SecondaryText>
-                Lorem ipsum dolor sit amet.
-              </List.SecondaryText>
-            </List.TextContainer>
-          </List.Item>
-          <List.Item>
-            <List.TextContainer>
-              <List.PrimaryText>Heading 3</List.PrimaryText>
-              <List.SecondaryText>
-                Lorem ipsum dolor sit amet.
-              </List.SecondaryText>
-            </List.TextContainer>
-          </List.Item>
+        <List
+          two-line={true}
+          onAction={(e, {index}) => {
+            this.setState({
+              currrentIndex: index
+            });
+          }}>
+          <ListItem>
+            <ListText>
+              <ListTextPrimary>Heading 1</ListTextPrimary>
+              <ListTextSecondary>Lorem ipsum dolor sit amet.</ListTextSecondary>
+            </ListText>
+          </ListItem>
+          <ListItem>
+            <ListText>
+              <ListTextPrimary>Heading 2</ListTextPrimary>
+              <ListTextSecondary>Lorem ipsum dolor sit amet.</ListTextSecondary>
+            </ListText>
+          </ListItem>
+          <ListItem>
+            <ListText>
+              <ListTextPrimary>Heading 3</ListTextPrimary>
+              <ListTextSecondary>Lorem ipsum dolor sit amet.</ListTextSecondary>
+            </ListText>
+          </ListItem>
         </List>
+        <div>Selected index: {this.state.currrentIndex}</div>
         <div className="mdc-typography--title">Avatar </div>
         <List two-line={true}>
-          <List.Group>
-            <List.GroupHeader>Work</List.GroupHeader>
-            <List.Item>
-              <List.ItemGraphic>folder</List.ItemGraphic>
-              <List.TextContainer>
-                <List.PrimaryText>Photos</List.PrimaryText>
-                <List.SecondaryText>Jan 9, 2014</List.SecondaryText>
-              </List.TextContainer>
-              <List.ItemMeta>info</List.ItemMeta>
-            </List.Item>
-            <List.Item>
-              <List.ItemGraphic>folder</List.ItemGraphic>
-              <List.TextContainer>
-                <List.PrimaryText>Work</List.PrimaryText>
-                <List.SecondaryText>Jan 28, 2014</List.SecondaryText>
-              </List.TextContainer>
-              <List.ItemMeta>info</List.ItemMeta>
-            </List.Item>
-          </List.Group>
-          <List.Divider />
-          <List.Group>
-            <List.GroupHeader>Vacation</List.GroupHeader>
-            <List.Item>
-              <List.ItemGraphic>folder</List.ItemGraphic>
-              <List.TextContainer>
-                <List.PrimaryText>Hawai</List.PrimaryText>
-                <List.SecondaryText>Feb 9, 2014</List.SecondaryText>
-              </List.TextContainer>
-              <List.ItemMeta>info</List.ItemMeta>
-            </List.Item>
-            <List.Item>
-              <List.ItemGraphic>folder</List.ItemGraphic>
-              <List.TextContainer>
-                <List.PrimaryText>India</List.PrimaryText>
-                <List.SecondaryText>Mar 28, 2014</List.SecondaryText>
-              </List.TextContainer>
-              <List.ItemMeta>info</List.ItemMeta>
-            </List.Item>
-          </List.Group>
+          <ListGroup>
+            <ListGroupHeader>Work</ListGroupHeader>
+            <ListItem>
+              <ListItemGraphic>folder</ListItemGraphic>
+              <ListText>
+                <ListTextPrimary>Photos</ListTextPrimary>
+                <ListTextSecondary>Jan 9, 2014</ListTextSecondary>
+              </ListText>
+              <ListItemMeta>info</ListItemMeta>
+            </ListItem>
+            <ListItem>
+              <ListItemGraphic>folder</ListItemGraphic>
+              <ListText>
+                <ListTextPrimary>Work</ListTextPrimary>
+                <ListTextSecondary>Jan 28, 2014</ListTextSecondary>
+              </ListText>
+              <ListItemMeta>info</ListItemMeta>
+            </ListItem>
+          </ListGroup>
+          <ListDivider />
+          <ListGroup>
+            <ListGroupHeader>Vacation</ListGroupHeader>
+            <ListItem>
+              <ListItemGraphic>folder</ListItemGraphic>
+              <ListText>
+                <ListTextPrimary>Hawai</ListTextPrimary>
+                <ListTextSecondary>Feb 9, 2014</ListTextSecondary>
+              </ListText>
+              <ListItemMeta>info</ListItemMeta>
+            </ListItem>
+            <ListItem>
+              <ListItemGraphic>folder</ListItemGraphic>
+              <ListText>
+                <ListTextPrimary>India</ListTextPrimary>
+                <ListTextSecondary>Mar 28, 2014</ListTextSecondary>
+              </ListText>
+              <ListItemMeta>info</ListItemMeta>
+            </ListItem>
+          </ListGroup>
         </List>
       </div>
     );
