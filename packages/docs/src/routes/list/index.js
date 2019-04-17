@@ -30,6 +30,9 @@ import sample from './sample.txt';
 
 // Class
 export default class ListPage extends Component {
+  state = {
+    currrentIndex: null
+  };
   constructor() {
     super();
     this.propsTable = [
@@ -130,7 +133,13 @@ export default class ListPage extends Component {
           </ListItemLink>
         </List>
         <div className="mdc-typography--title">Two line </div>
-        <List two-line={true}>
+        <List
+          two-line={true}
+          onAction={(e, {index}) => {
+            this.setState({
+              currrentIndex: index
+            });
+          }}>
           <ListItem>
             <ListText>
               <ListTextPrimary>Heading 1</ListTextPrimary>
@@ -150,6 +159,7 @@ export default class ListPage extends Component {
             </ListText>
           </ListItem>
         </List>
+        <div>Selected index: {this.state.currrentIndex}</div>
         <div className="mdc-typography--title">Avatar </div>
         <List two-line={true}>
           <ListGroup>
