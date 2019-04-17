@@ -1,8 +1,13 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
-export interface IListItemProps {}
+export * from './graphic';
+export * from './link';
+export * from './meta';
 
+export interface IListItemProps {
+  selected?: boolean;
+}
 export interface IListItemState {}
 
 export class ListItem<
@@ -13,7 +18,7 @@ export class ListItem<
   IListItemState & StateTypes
 > {
   protected componentName = 'list-item';
-  protected mdcProps: string[] = [];
+  protected mdcProps: string[] = ['selected'];
 
   protected materialDom(props) {
     return (

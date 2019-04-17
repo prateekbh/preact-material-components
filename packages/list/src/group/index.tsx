@@ -1,8 +1,9 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
-export interface IListGroupProps {}
+export * from './header';
 
+export interface IListGroupProps {}
 export interface IListGroupState {}
 
 export class ListGroup extends MaterialComponent<

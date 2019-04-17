@@ -1,12 +1,18 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
+export * from './divider';
+export * from './group';
+export * from './item';
+export * from './text';
+export * from './text/primary';
+export * from './text/secondary';
+
 export interface IListProps {
   dense?: boolean;
   'two-line'?: boolean;
   'avatar-list'?: boolean; // TODO: Add to docs / remove from here
 }
-
 export interface IListState {}
 
 export class List extends MaterialComponent<IListProps, IListState> {

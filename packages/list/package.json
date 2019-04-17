@@ -31,13 +31,13 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/list": "0.39.3",
+    "@material/list": "1.1.1",
     "@preact-material-components/base": "^2.0.1-alpha.0",
     "@preact-material-components/icon": "^2.0.1-alpha.0",
     "bind-decorator": "^1.0.11"
   },
   "peerDependencies": {
-    "preact": "^8.3.1"
+    "preact": "^8.4.2"
   },
   "sideEffects": [
     "*.scss"
