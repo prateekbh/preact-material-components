@@ -17,5 +17,10 @@ describe('Visual  Regression Tests', () => {
       sizeMode: 'selector', //mode
       selector: '.mdc-menu'
     });
+    cy.get('.mdc-menu-surface .mdc-list-item:nth-child(2)').click();
+    cy.eyesCheckWindow({
+      sizeMode: 'selector', //mode
+      selector: '.mdc-menu'
+    });
   });
 });
