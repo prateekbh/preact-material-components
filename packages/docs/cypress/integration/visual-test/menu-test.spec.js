@@ -10,9 +10,18 @@ describe('Visual  Regression Tests', () => {
   testScreenshot('menu');
 
   // Menu is completely broken in 2.0
-  it.skip('check menu-click', () => {
+  it.skip('check menu-open', () => {
     cy.get('.mdc-button').click();
-    openEyes('menu-click');
+    openEyes('menu-open');
+    cy.eyesCheckWindow({
+      sizeMode: 'selector', //mode
+      selector: '.mdc-menu'
+    });
+  });
+
+  it.skip('check menu-item-clicked', () => {
+    cy.get('.mdc-button').click();
+    openEyes('menu-item-clicked');
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.mdc-menu'
