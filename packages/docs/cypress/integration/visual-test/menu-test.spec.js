@@ -21,12 +21,8 @@ describe('Visual  Regression Tests', () => {
 
   it.skip('check menu-item-clicked', () => {
     cy.get('.mdc-button').click();
-    openEyes('menu-item-clicked');
-    cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
-      selector: '.mdc-menu'
-    });
     cy.get('.mdc-menu-surface .mdc-list-item:nth-child(2)').click();
+    openEyes('menu-item-clicked');
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.mdc-menu'
