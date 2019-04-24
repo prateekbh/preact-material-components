@@ -15,7 +15,7 @@ describe('Visual  Regression Tests', () => {
     openEyes('menu-open');
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
-      selector: '.mdc-menu'
+      selector: '.content.mdc-layout-grid' //CSS Selector
     });
   });
 
@@ -25,7 +25,7 @@ describe('Visual  Regression Tests', () => {
     openEyes('menu-item-clicked');
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
-      selector: '.mdc-menu'
+      selector: '.content.mdc-layout-grid' //CSS Selector
     });
   });
 });
