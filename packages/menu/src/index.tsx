@@ -1,16 +1,13 @@
 import {MDCMenu} from '@material/menu';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
-import {List} from '@preact-material-components/list';
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
+
+export * from './anchor';
+export * from './divider';
+export * from './item';
 
 export interface IMenuProps {
   open?: boolean;
-  'open-from-top-left'?: boolean; // TODO: Add to docs / remove from here
-  'open-from-top-right'?: boolean; // TODO: Add to docs / remove from here
-  'open-from-bottom-left'?: boolean; // TODO: Add to docs / remove from here
-  'open-from-bottom-right'?: boolean; // TODO: Add to docs / remove from here
-
   onSelect?: (e: Event) => void;
   onCancel?: (e: Event) => void;
   onMenuClosed?: (e: Event) => void;
@@ -22,13 +19,7 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
   public MDComponent?: MDCMenu;
 
   protected componentName = 'menu';
-  protected mdcProps = [
-    'open',
-    'open-from-top-left',
-    'open-from-top-right',
-    'open-from-bottom-left',
-    'open-from-bottom-right'
-  ];
+  protected mdcProps = ['open'];
   protected mdcNotifyProps = ['open'];
 
   public componentDidMount() {
@@ -36,42 +27,21 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
     if (this.control) {
       this.MDComponent = new MDCMenu(this.control);
       this.MDComponent.listen('MDCMenu:selected', this.onSelect);
-      this.MDComponent.listen('MDCMenu:cancel', this.onCancel);
     }
-    this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
       this.MDComponent.unlisten('MDCMenu:selected', this.onSelect);
-      this.MDComponent.unlisten('MDCMenu:cancel', this.onCancel);
       this.MDComponent.destroy();
     }
   }
 
-  @bind
-  protected onSelect(e) {
-    if (this.props.onSelect) {
-      this.props.onSelect(e);
-    }
-    this.onMenuClosed(e);
-  }
-
-  @bind
-  protected onCancel(e) {
-    if (this.props.onCancel) {
-      this.props.onCancel(e);
-    }
-    this.onMenuClosed(e);
-  }
-
-  @bind
-  protected onMenuClosed(e) {
-    if (this.props.onMenuClosed) {
-      this.props.onMenuClosed(e);
-    }
-  }
+  protected onSelect = e => {
+    const {item, index} = e.detail;
+    this.proxyEventHandler('onSelect', e, {item, index});
+  };
 
   protected materialDom(props) {
     return (
@@ -80,9 +50,9 @@ export class Menu extends MaterialComponent<IMenuProps, IMenuState> {
         tabIndex="-1"
         {...props}
         ref={this.setControlRef}>
-        <List className="mdc-menu__items" role="menu" aria-hidden="true">
+        <ul className="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
           {props.children}
-        </List>
+        </ul>
       </div>
     );
   }

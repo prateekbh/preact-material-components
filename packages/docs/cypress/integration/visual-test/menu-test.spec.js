@@ -9,13 +9,31 @@ describe('Visual  Regression Tests', () => {
   });
   testScreenshot('menu');
 
-  // Menu is completely broken in 2.0
-  it.skip('check menu-click', () => {
+  it('check menu-open', async () => {
     cy.get('.mdc-button').click();
-    openEyes('menu-click');
+    await sleep(1000);
+    openEyes('menu-open');
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
-      selector: '.mdc-menu'
+      selector: '.content.mdc-layout-grid' //CSS Selector
+    });
+  });
+
+  it('check menu-item-clicked', async () => {
+    cy.get('.mdc-button').click();
+    await sleep(200);
+    cy.get('.mdc-menu-surface .mdc-list-item:eq(2)').click();
+    openEyes('menu-item-clicked');
+    cy.eyesCheckWindow({
+      sizeMode: 'selector', //mode
+      selector: '.content.mdc-layout-grid' //CSS Selector
     });
   });
 });
+
+const sleep = duration =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, duration);
+  });

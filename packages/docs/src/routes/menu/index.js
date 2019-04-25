@@ -2,12 +2,16 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Menu} from '@preact-material-components/menu';
-import {MenuItem} from '@preact-material-components/menu/lib/item';
+import {
+  Menu,
+  MenuAnchor,
+  MenuItem,
+  MenuItemDivider
+} from '@preact-material-components/menu';
 import {Button} from '@preact-material-components/button';
+import {Typography} from '@preact-material-components/typography';
 
 import '@preact-material-components/menu/sass';
-import '@preact-material-components/list/sass';
 import '@preact-material-components/button/sass';
 
 // Components
@@ -63,7 +67,7 @@ export default class MenuPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo </div>
-        <Menu.Anchor>
+        <MenuAnchor>
           <Button
             onClick={e => {
               this.menu.MDComponent.open = !this.menu.MDComponent.open;
@@ -73,12 +77,19 @@ export default class MenuPage extends Component {
           <Menu
             ref={menu => {
               this.menu = menu;
+            }}
+            onSelect={(e, {index}) => {
+              this.setState({selIndex: index});
             }}>
             <MenuItem>Hello1</MenuItem>
+            <MenuItemDivider />
             <MenuItem>Hello2</MenuItem>
             <MenuItem>Hello3</MenuItem>
           </Menu>
-        </Menu.Anchor>
+        </MenuAnchor>
+        <Typography body2>
+          Selected index: {'selIndex' in this.state ? this.state.selIndex : -1}
+        </Typography>
 
         <div className="mdc-typography--display1">Note </div>
         <div className="mdc-typography--body">
