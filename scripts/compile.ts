@@ -6,30 +6,51 @@ import {ls} from 'shelljs';
 const rootDir = resolve(join(__dirname, '..'));
 const pkgDir = join(rootDir, 'packages');
 
-function project2path(proj) {
-  return resolve(join(pkgDir, proj));
+function project2path(proj: string, tsconfigName: string) {
+  if (tsconfigName === 'tsconfig.json') {
+    return resolve(join(pkgDir, proj));
+  } else {
+    return resolve(join(pkgDir, proj, tsconfigName));
+  }
+}
+
+async function main() {
+  const packages = ls(pkgDir);
+
+  async function compile(tsconfigName: string) {
+    console.log(`Building with ${tsconfigName}`);
+
+    const tsPackages = packages.filter(dir => {
+      const tsconfigPath = join(pkgDir, dir, tsconfigName);
+      return existsSync(tsconfigPath);
+    });
+
+    const args = ['--build', '--listEmittedFiles'];
+    if (process.argv.includes('--watch')) {
+      args.push('--watch');
+    }
+
+    const tsProjects: string[] = tsPackages.map(proj =>
+      project2path(proj, tsconfigName)
+    );
+
+    const res = await npx({
+      cmdOpts: args.concat(tsProjects),
+      command: 'tsc',
+      npxPkg: join(__dirname, '..', 'package.json'),
+      package: ['typescript']
+    });
+    const exit = res ? res.code : process.exitCode || 1;
+    if (exit) {
+      console.error('npx failed');
+      process.exit(1);
+    }
+  }
+
+  await compile('tsconfig.json');
+  await compile('tsconfig.next.json');
 }
 
 if (require.main === module) {
-  const packages = ls(pkgDir);
-
-  console.info('Collecting packages...');
-  const tsPackages = packages.filter(dir => {
-    const tsconfigPath = join(pkgDir, dir, 'tsconfig.json');
-    return existsSync(tsconfigPath);
-  });
-
-  const args = ['--build'];
-  if (process.argv.includes('--watch')) {
-    args.push('--watch');
-  }
-
-  const tsProjects: string[] = [];
-  tsPackages.forEach(proj => tsProjects.push(project2path(proj)));
-
-  npx({
-    cmdOpts: args.concat(tsProjects),
-    command: 'tsc',
-    package: ['typescript']
-  });
+  main().catch(err => console.error(err));
 }
