@@ -152,6 +152,7 @@ export default class SelectPage extends Component {
           Box option: {this.state.selectedEnhancedValue}
         </div>
         <EnhancedSelect
+          className="enhanced-select"
           label="Select"
           onSelect={(e, {value}) => {
             this.setState({
