@@ -1,4 +1,4 @@
-import {testScreenshot, baseURL} from '../../utils/utils';
+import {testScreenshot, baseURL, openEyes} from '../../utils/utils';
 import {idText} from 'typescript';
 
 describe('Visual  Regression Tests', () => {
