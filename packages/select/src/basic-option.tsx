@@ -1,16 +1,16 @@
 import {MaterialComponent} from '../../base/lib/MaterialComponent';
 import {h} from 'preact';
 
-export interface ISelectOptionProps {
+export interface IBasicOptionProps {
   disabled?: boolean;
   selected?: boolean;
 }
 
-export interface ISelectOptionState {}
+export interface IBasicOptionState {}
 
-export class SelectOption extends MaterialComponent<
-  ISelectOptionProps,
-  ISelectOptionState
+export class BasicOption extends MaterialComponent<
+  IBasicOptionProps,
+  IBasicOptionState
 > {
   protected componentName = 'select-item';
   protected mdcProps = [];
