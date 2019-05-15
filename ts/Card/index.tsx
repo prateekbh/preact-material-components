@@ -126,6 +126,7 @@ export class Card extends MaterialComponent<ICardProps, ICardState> {
 
 export default class extends Card {
   public static readonly Actions = CardActions;
+  public static readonly ActionButtons = CardActionButtons;
   public static readonly ActionButton = CardActionButton;
   public static readonly ActionIcons = CardActionIcons;
   public static readonly ActionIcon = CardActionIcon;
