@@ -1,5 +1,4 @@
-import {testScreenshot, baseURL, openEyes} from '../../utils/utils';
-import {idText} from 'typescript';
+import {testScreenshot, baseURL} from '../../utils/utils';
 
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/switch`;
