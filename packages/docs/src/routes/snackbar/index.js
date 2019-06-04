@@ -68,7 +68,8 @@ export default class SnackbarPage extends Component {
           primary={true}
           onClick={() => {
             this.bar.MDComponent.open();
-          }}>
+          }}
+          className={'show-snack'}>
           Show snack
         </Button>
         <Snackbar
