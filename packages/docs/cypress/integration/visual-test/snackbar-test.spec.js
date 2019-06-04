@@ -11,6 +11,7 @@ describe('Visual  Regression Tests', () => {
   it('check snackbar-click', () => {
     openEyes('snackbar-clicked');
     cy.get('.mdc-button').click();
+    cy.wait(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.content.mdc-layout-grid'
