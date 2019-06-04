@@ -12,9 +12,6 @@ describe('Visual  Regression Tests', () => {
     openEyes('snackbar-clicked');
     cy.get('.mdc-button.show-snack').click();
     cy.wait(500);
-    cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
-      selector: '.content.mdc-layout-grid'
-    });
+    cy.eyesCheckWindow('snackbar-clicked');
   });
 });
