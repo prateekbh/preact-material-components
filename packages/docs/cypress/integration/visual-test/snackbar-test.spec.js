@@ -10,10 +10,8 @@ describe('Visual  Regression Tests', () => {
   testScreenshot('snackbar', url);
   it('check snackbar-click', () => {
     openEyes('snackbar-clicked');
-    cy.get('.mdc-button').click();
-    cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
-      selector: '.content.mdc-layout-grid'
-    });
+    cy.get('.mdc-button.show-snack').click();
+    cy.wait(500);
+    cy.eyesCheckWindow('snackbar-clicked');
   });
 });
