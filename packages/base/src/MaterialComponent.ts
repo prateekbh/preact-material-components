@@ -164,14 +164,14 @@ export abstract class MaterialComponent<
   /** Build the className based on component names and mdc props */
   protected buildClassName(props: MaterialComponentProps<PropType>) {
     // Class name based on component name
-    let classText = 'mdc-' + this.componentName;
+    let classText = `mdc-${this.componentName}`;
 
     // Loop over mdcProps to turn them into classNames
     for (const propKey in props) {
       if (props.hasOwnProperty(propKey)) {
-        const prop = props[propKey];
+        const prop: any = props[propKey];
         if (typeof prop === 'boolean' && prop) {
-          if (this.mdcProps.indexOf(propKey) !== -1) {
+          if (this.mdcProps.includes(propKey)) {
             classText += ` mdc-${this.componentName}--${propKey}`;
           }
         }
@@ -189,10 +189,10 @@ export abstract class MaterialComponent<
     const attrs = (element.attributes = element.attributes || {});
     let classText = this.classText;
     if (attrs.class) {
-      classText += ' ' + attrs.class;
+      classText += ` ${attrs.class}`;
     }
     if (attrs.className && attrs.className !== attrs.class) {
-      classText += ' ' + attrs.className;
+      classText += ` ${attrs.className}`;
     }
     return classText;
   }

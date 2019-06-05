@@ -1,25 +1,18 @@
-import {Component, h, VNode} from 'preact';
-import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
+import {AnyComponent, h} from 'preact';
+import {
+  MaterialComponent,
+  MaterialComponentProps
+} from '@preact-material-components/base/lib/MaterialComponent';
 
 export interface ITypographyProps {
-  body1?: boolean;
-  body2?: boolean;
+  body?: 1 | 2 | '1' | '2';
   button?: boolean;
   caption?: boolean;
-  headline1?: boolean;
-  headline2?: boolean;
-  headline3?: boolean;
-  headline4?: boolean;
-  headline5?: boolean;
-  headline6?: boolean;
+  headline?: 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6';
   overline?: boolean;
-  subtitle1?: boolean;
-  subtitle2?: boolean;
+  subtitle?: 1 | 2 | '1' | '2';
   title?: boolean; // TODO: Add to docs / remove from here
-  tag?:
-    | Component<{}, {}>
-    | ((props: {}) => VNode)
-    | keyof JSX.IntrinsicElements;
+  tag?: AnyComponent | string;
 }
 
 export interface ITypographyState {}
@@ -46,9 +39,20 @@ export class Typography extends MaterialComponent<
     'title'
   ];
 
-  protected materialDom(allprops) {
-    const {tag, ...props} = allprops;
+  protected materialDom(allprops: MaterialComponentProps<ITypographyProps>) {
+    const {tag, body, headline, subtitle, ...props} = allprops;
     const Tag = tag ? tag : 'span';
+
+    const numberedAttrs = {body, headline, subtitle};
+    for (const attr in numberedAttrs) {
+      if (numberedAttrs.hasOwnProperty(attr) && numberedAttrs[attr]) {
+        props.class = `mdc-${this.componentName}--${attr}${
+          numberedAttrs[attr]
+        }`;
+        break;
+      }
+    }
+
     return (
       <Tag {...props} ref={this.setControlRef}>
         {props.children}

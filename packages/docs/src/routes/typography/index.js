@@ -28,44 +28,48 @@ export default class TypographyPage extends Component {
         component: 'Typography',
         props: [
           {
-            name: 'headline6',
-            description: 'Adds `headline6` typography style.'
-          },
-          {
-            name: 'headline5',
-            description: 'Adds `headline5` typography style.'
-          },
-          {
-            name: 'headline4',
-            description: 'Adds `headline4` typography style.'
-          },
-          {
-            name: 'headline3',
-            description: 'Adds `headline3` typography style.'
+            name: 'headline1',
+            description: 'Adds `headline1` typography style.'
           },
           {
             name: 'headline2',
             description: 'Adds `headline2` typography style.'
           },
           {
-            name: 'headline1',
-            description: 'Adds `headline1` typography style.'
+            name: 'headline3',
+            description: 'Adds `headline3` typography style.'
           },
           {
-            name: 'subtitle2',
-            description: 'Adds `subtitle2` typography style.'
+            name: 'headline4',
+            description: 'Adds `headline4` typography style.'
+          },
+          {
+            name: 'headline5',
+            description: 'Adds `headline5` typography style.'
+          },
+          {
+            name: 'headline6',
+            description: 'Adds `headline6` typography style.'
           },
           {
             name: 'subtitle1',
             description: 'Adds `subtitle1` typography style.'
           },
           {
-            name: 'body2',
-            description: 'Adds `body2` typography style.'
+            name: 'subtitle2',
+            description: 'Adds `subtitle2` typography style.'
+          },
+          {
+            name: 'title',
+            description: 'Adds `title` typography style.'
           },
           {
             name: 'body1',
             description: 'Adds `body1` typography style.'
+          },
+          {
+            name: 'body2',
+            description: 'Adds `body2` typography style.'
           },
           {
             name: 'button',
@@ -83,6 +87,7 @@ export default class TypographyPage extends Component {
       }
     ];
   }
+
   render() {
     return (
       <div className="page-fab">
@@ -107,67 +112,155 @@ export default class TypographyPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <div>
-          <Typography headline1>Headline 1</Typography>
+          <Typography headline="1">Headline 1</Typography>
         </div>
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Typography headline1>Headline 1</Typography>`}
+              {`<Typography headline="1">Headline 1</Typography>`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          <Typography headline2>Headline 2</Typography>
+          <Typography headline="2">Headline 2</Typography>
         </div>
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Typography headline2>Headline 2</Typography>`}
+              {`<Typography headline="2">Headline 2</Typography>`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          <Typography headline3>Headline 3</Typography>
+          <Typography headline="3">Headline 3</Typography>
         </div>
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Typography headline3>Headline 3</Typography>`}
+              {`<Typography headline="3">Headline 3</Typography>`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          <Typography headline4>Headline 4</Typography>
+          <Typography headline="4">Headline 4</Typography>
         </div>
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Typography headline4>Headline 4</Typography>`}
+              {`<Typography headline="4">Headline 4</Typography>`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          <Typography headline5>Headline 5</Typography>
+          <Typography headline="5">Headline 5</Typography>
         </div>
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Typography headline5>Headline 5</Typography>`}
+              {`<Typography headline="5">Headline 5</Typography>`}
             </code>
           </CodeBlock>
         </div>
 
         <div>
-          <Typography headline6>Headline 6</Typography>
+          <Typography headline="6">Headline 6</Typography>
         </div>
         <div>
           <CodeBlock>
             <code class="lang-html">
-              {`<Typography headline6>Headline 6</Typography>`}
+              {`<Typography headline="6">Headline 6</Typography>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Typography subtitle="1">Subtitle 1</Typography>
+        </div>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Typography subtitle="1">Subtitle 1</Typography>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Typography subtitle="2">Subtitle 2</Typography>
+        </div>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Typography subtitle="2">Subtitle 2</Typography>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Typography title>Title</Typography>
+        </div>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Typography title>Title</Typography>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Typography body="1">Body 1</Typography>
+        </div>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Typography body="1">Body 1</Typography>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Typography body="2">Body 2</Typography>
+        </div>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Typography body="2">Body 2</Typography>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Typography button>Button</Typography>
+        </div>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Typography button>Button</Typography>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Typography caption>Caption</Typography>
+        </div>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Typography caption>Caption</Typography>`}
+            </code>
+          </CodeBlock>
+        </div>
+
+        <div>
+          <Typography overline>Overline</Typography>
+        </div>
+        <div>
+          <CodeBlock>
+            <code class="lang-html">
+              {`<Typography overline>Overline</Typography>`}
             </code>
           </CodeBlock>
         </div>
