@@ -5,6 +5,8 @@ import Router from 'preact-router';
 // Material Components
 import {FormField} from '@preact-material-components/form-field';
 import {LayoutGrid} from '@preact-material-components/layout-grid';
+import {LayoutGridInner} from '@preact-material-components/layout-grid/lib/inner';
+import {LayoutGridCell} from '@preact-material-components/layout-grid/lib/cell';
 import {Switch} from '@preact-material-components/switch';
 import {TopAppBar} from '@preact-material-components/top-app-bar';
 import {TopAppBarIcon} from '@preact-material-components/top-app-bar/lib/icon';
@@ -363,15 +365,15 @@ export default class Home extends Component {
           </div>
         </div>
         <LayoutGrid className="content">
-          <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="12">
+          <LayoutGridInner>
+            <LayoutGridCell cols="12">
               <Router>
                 {menuItems.map(({component: Element, link}) => (
                   <Element path={link} />
                 ))}
               </Router>
-            </LayoutGrid.Cell>
-          </LayoutGrid.Inner>
+            </LayoutGridCell>
+          </LayoutGridInner>
         </LayoutGrid>
       </div>
     );
