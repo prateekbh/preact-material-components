@@ -74,7 +74,11 @@ export class TextFieldInput extends MaterialComponent<
   }
 
   public componentWillUpdate(nextProps: ITextFieldInputProps) {
-    if (nextProps.value && this.props.value !== nextProps.value) {
+    if (
+      nextProps.value &&
+      this.props.value !== nextProps.value &&
+      this.MDComponent
+    ) {
       this.MDComponent.value = nextProps.value;
     }
   }
@@ -131,7 +135,7 @@ export class TextFieldInput extends MaterialComponent<
             {...props}
           />
         )}
-        {props.label && this.state.jsComponentAttached && (
+        {props.label && this.state.jsComponentAttached && !outlined && (
           <Label for={props.id}>{props.label}</Label>
         )}
         {props.trailingIcon ? (
@@ -140,9 +144,11 @@ export class TextFieldInput extends MaterialComponent<
         {props.textarea || outlined ? null : <div class="mdc-line-ripple" />}
         {outlined ? (
           <div class="mdc-notched-outline">
-            <svg>
-              <path className="mdc-notched-outline__path" />
-            </svg>
+            <div class="mdc-notched-outline__leading" />
+            <div class="mdc-notched-outline__notch">
+              {props.label && <Label for={props.id}>{props.label}</Label>}
+            </div>
+            <div class="mdc-notched-outline__trailing" />
           </div>
         ) : null}
         {outlined ? <div className="mdc-notched-outline__idle" /> : null}
