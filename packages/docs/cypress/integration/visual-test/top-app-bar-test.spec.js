@@ -1,4 +1,4 @@
-import {testScreenshot, baseURL} from '../../utils/utils';
+import {testScreenshot, baseURL, openEyes} from '../../utils/utils';
 
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/top-app-bar`;
