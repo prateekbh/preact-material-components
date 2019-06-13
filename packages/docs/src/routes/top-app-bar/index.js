@@ -2,7 +2,13 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {TopAppBar} from '@preact-material-components/top-app-bar';
+import {
+  TopAppBar,
+  TopAppBarRow,
+  TopAppBarSection,
+  TopAppBarIcon,
+  TopAppBarTitle
+} from '@preact-material-components/top-app-bar';
 
 import '@preact-material-components/top-app-bar/sass';
 
@@ -19,6 +25,9 @@ import './style.scss';
 
 // Class
 export default class TopAppBarPage extends Component {
+  state = {
+    onNavReceived: false
+  };
   constructor() {
     super();
     this.propsTable = [
@@ -84,17 +93,23 @@ export default class TopAppBarPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default </div>
-        <TopAppBar>
-          <TopAppBar.Row>
-            <TopAppBar.Section align-start>
-              <TopAppBar.Icon navigation>menu</TopAppBar.Icon>
-              <TopAppBar.Title>My App</TopAppBar.Title>
-            </TopAppBar.Section>
-            <TopAppBar.Section align-end>
-              <TopAppBar.Icon>more_vert</TopAppBar.Icon>
-            </TopAppBar.Section>
-          </TopAppBar.Row>
+        <TopAppBar
+          onNav={e => {
+            this.setState({
+              onNavReceived: true
+            });
+          }}>
+          <TopAppBarRow>
+            <TopAppBarSection align-start>
+              <TopAppBarIcon navigation>menu</TopAppBarIcon>
+              <TopAppBarTitle>My App</TopAppBarTitle>
+            </TopAppBarSection>
+            <TopAppBarSection align-end>
+              <TopAppBarIcon>more_vert</TopAppBarIcon>
+            </TopAppBarSection>
+          </TopAppBarRow>
         </TopAppBar>
+        <div>onNav received: {this.state.onNavReceived.toString()}</div>
       </div>
     );
   }
