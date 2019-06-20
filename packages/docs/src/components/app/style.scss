@@ -102,6 +102,16 @@
     padding: 0.2rem;
     margin: 0.1rem;
     border-radius: 0.3rem;
+
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+    * {
+      transition: color 0.5s ease-in-out;
+    }
+  }
+
+  body {
+    transition: background-color 0.5s ease-in-out;
   }
 }
 
@@ -113,6 +123,16 @@
   .code-snippet {
     background-color: #696969;
   }
+
+  code {
+    background-color: #323232;
+  }
+
+  @import './hljs-darcula';
+}
+
+:global:not(.mdc-theme--dark) {
+  @import './hljs-github';
 }
 
 :global .mdc-typography--body {

@@ -6,32 +6,37 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import htmlbars from 'highlight.js/lib/languages/htmlbars';
 import json from 'highlight.js/lib/languages/json';
 import xml from 'highlight.js/lib/languages/xml';
-import 'highlight.js/styles/github.css';
+import scss from 'highlight.js/lib/languages/scss';
 
-const LANGUAGES = {javascript, json, xml, htmlbars};
+const LANGUAGES = {javascript, json, xml, htmlbars, scss};
 Object.keys(LANGUAGES).forEach(key =>
   hljs.registerLanguage(key, LANGUAGES[key])
 );
 
 // Class
 export default ({children, ...props}) => {
-  let child = children && children[0],
-    isHighlight = child && child.nodeName === 'code';
-  if (isHighlight) {
-    let text = child.children[0].replace(/(^\s+|\s+$)/g, ''),
-      lang = (child.attributes.class && child.attributes.class).match(
-        /lang-([a-z]+)/
-      )[1],
-      highlighted = hljs.highlightAuto(text, lang ? [lang] : null),
-      hLang = highlighted.language;
-    return (
-      <pre class={cx('highlight', `highlight-${hLang}`, props.class)}>
+  const segments = [];
+  for (const child of children) {
+    if (child.nodeName === 'code') {
+      const text = child.children.join('\n');
+      const klasses = child.attributes.class || '';
+      const langs = klasses
+        .split(' ')
+        .filter(klass => klass.match(/^lang-[a-z]+$/))
+        .map(klass => klass.slice(5));
+
+      const highlighted = hljs.highlightAuto(text, langs.length ? langs : null);
+      const hLang = highlighted.language;
+
+      segments.push(
         <code
-          class={`hljs lang-${hLang}`}
+          className={`hljs lang-${hLang}`}
           dangerouslySetInnerHTML={{__html: highlighted.value}}
         />
-      </pre>
-    );
+      );
+    } else {
+      segments.push(child);
+    }
   }
-  return <pre {...props}>{children}</pre>;
+  return <pre class={cx('highlight', props.class)}>{segments}</pre>;
 };
