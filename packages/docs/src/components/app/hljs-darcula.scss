@@ -31,8 +31,7 @@ Copied from hljs
   color: #6896ba;
 }
 
-.hljs-code,
-.hljs-selector-class {
+.hljs-code {
   color: #a6e22e;
 }
 
@@ -49,7 +48,8 @@ Copied from hljs
   color: #cb7832;
 }
 
-.hljs-params {
+.hljs-params,
+.hljs-tag {
   color: #b9b9b9;
 }
 
@@ -67,7 +67,8 @@ Copied from hljs
 .hljs-selector-pseudo,
 .hljs-template-tag,
 .hljs-template-variable,
-.hljs-addition {
+.hljs-addition,
+.hljs-selector-class {
   color: #e0c46c;
 }
 

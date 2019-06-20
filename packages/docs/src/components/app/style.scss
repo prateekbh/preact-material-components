@@ -131,7 +131,7 @@
   @import './hljs-darcula';
 }
 
-:global:not(.mdc-theme--dark) {
+body:not(.mdc-theme--dark) {
   @import './hljs-github';
 }
 
