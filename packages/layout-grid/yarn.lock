@@ -2,12 +2,7 @@
 # yarn lockfile v1
 
 
-"@material/layout-grid@0.39.0":
-  version "0.39.0"
-  resolved "https://registry.yarnpkg.com/@material/layout-grid/-/layout-grid-0.39.0.tgz#8e96645404cfee2655999bc591264c434897af3d"
-  integrity sha512-F2V7cf7pJtlDyHKJJ1u7Xn6JWfiY7bFbg33QnhRXYTAhDF5aEcFPeSh9CK8ZZZ4Bom9gzfms2VXWXClbfQgE2Q==
-
-bind-decorator@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/bind-decorator/-/bind-decorator-1.0.11.tgz#e41bc06a1f65dd9cec476c91c5daf3978488252f"
-  integrity sha1-5BvAah9l3ZzsR2yRxdrzl4SIJS8=
+"@material/layout-grid@0.41.0":
+  version "0.41.0"
+  resolved "https://registry.yarnpkg.com/@material/layout-grid/-/layout-grid-0.41.0.tgz#2e7d3be76313e0684d573b10c2c6a88b3230d251"
+  integrity sha512-Sa5RNoTGgfIojqJ9E94p7/k11V6q/tGk7HwKi4AQNAPjxield0zcl3G/SbsSb8YSHoK+D+7OXDN+n11x6EqF7g==
