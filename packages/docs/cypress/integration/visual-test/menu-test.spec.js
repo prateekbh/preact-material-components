@@ -1,4 +1,4 @@
-import {testScreenshot, openEyes, baseURL} from '../../utils/utils';
+import {testScreenshot, openEyes, baseURL, sleep} from '../../utils/utils';
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/menu`;
   beforeEach(() => {
@@ -9,9 +9,9 @@ describe('Visual  Regression Tests', () => {
   });
   testScreenshot('menu');
 
-  it('check menu-open', () => {
+  it('check menu-open', async () => {
     cy.get('.mdc-button').click();
-    cy.wait(1000);
+    await sleep(1000);
     openEyes('menu-open');
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
@@ -19,9 +19,9 @@ describe('Visual  Regression Tests', () => {
     });
   });
 
-  it('check menu-item-clicked', () => {
+  it('check menu-item-clicked', async () => {
     cy.get('.mdc-button').click();
-    cy.wait(200);
+    await sleep(200);
     cy.get('.mdc-menu-surface .mdc-list-item:eq(2)').click();
     openEyes('menu-item-clicked');
     cy.eyesCheckWindow({

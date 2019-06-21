@@ -148,26 +148,27 @@ export default class SelectPage extends Component {
           <BasicOption>Option 4</BasicOption>
         </Select>
 
-        <div className="mdc-typography--title">
-          Box option: {this.state.selectedEnhancedValue}
+        <div className="enhanced-select">
+          <div className="mdc-typography--title">
+            Box option: {this.state.selectedEnhancedValue}
+          </div>
+          <EnhancedSelect
+            label="Select"
+            onSelect={(e, {value}) => {
+              this.setState({
+                selectedEnhancedValue: value
+              });
+            }}>
+            <EnhancedOption value="item1">Option 1</EnhancedOption>
+            <EnhancedOption value="item2" disabled>
+              Option 2
+            </EnhancedOption>
+            <EnhancedOption value="item3" selected>
+              Option 3
+            </EnhancedOption>
+            <EnhancedOption value="item4">Option 4</EnhancedOption>
+          </EnhancedSelect>
         </div>
-        <EnhancedSelect
-          className="enhanced-select"
-          label="Select"
-          onSelect={(e, {value}) => {
-            this.setState({
-              selectedEnhancedValue: value
-            });
-          }}>
-          <EnhancedOption value="item1">Option 1</EnhancedOption>
-          <EnhancedOption value="item2" disabled>
-            Option 2
-          </EnhancedOption>
-          <EnhancedOption value="item3" selected>
-            Option 3
-          </EnhancedOption>
-          <EnhancedOption value="item4">Option 4</EnhancedOption>
-        </EnhancedSelect>
       </div>
     );
   }
