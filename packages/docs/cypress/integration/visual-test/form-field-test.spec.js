@@ -1,4 +1,4 @@
-import {openEyes, testScreenshot, baseURL, sleep} from '../../utils/utils';
+import {openEyes, testScreenshot, baseURL} from '../../utils/utils';
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/form-field`;
   beforeEach(() => {
@@ -13,7 +13,7 @@ describe('Visual  Regression Tests', () => {
 
     cy.get('.radio-example label').click();
     // Things like animations
-    await sleep(500);
+    cy.wait(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.radio-example'

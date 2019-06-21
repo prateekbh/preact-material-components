@@ -9,9 +9,9 @@ describe('Visual  Regression Tests', () => {
   });
   testScreenshot('menu');
 
-  it('check menu-open', async () => {
+  it('check menu-open', () => {
     cy.get('.mdc-button').click();
-    await sleep(1000);
+    cy.wait(1000);
     openEyes('menu-open');
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
@@ -19,9 +19,9 @@ describe('Visual  Regression Tests', () => {
     });
   });
 
-  it('check menu-item-clicked', async () => {
+  it('check menu-item-clicked', () => {
     cy.get('.mdc-button').click();
-    await sleep(200);
+    cy.wait(200);
     cy.get('.mdc-menu-surface .mdc-list-item:eq(2)').click();
     openEyes('menu-item-clicked');
     cy.eyesCheckWindow({
@@ -30,10 +30,3 @@ describe('Visual  Regression Tests', () => {
     });
   });
 });
-
-const sleep = duration =>
-  new Promise(resolve => {
-    setTimeout(() => {
-      resolve();
-    }, duration);
-  });

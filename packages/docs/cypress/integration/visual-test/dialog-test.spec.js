@@ -1,4 +1,4 @@
-import {testScreenshot, openEyes, baseURL, sleep} from '../../utils/utils';
+import {testScreenshot, openEyes, baseURL} from '../../utils/utils';
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/dialog`;
 
@@ -14,7 +14,7 @@ describe('Visual  Regression Tests', () => {
     openEyes('dialog-normal');
     cy.get('.normal_trigger').click();
     // Things like animations
-    await sleep(500);
+    cy.wait(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.mdc-dialog.mdc-dialog--open'
@@ -25,7 +25,7 @@ describe('Visual  Regression Tests', () => {
     openEyes('dialog-scrollable');
     cy.get('.scrollable_trigger').click();
     // Things like animations
-    await sleep(500);
+    cy.wait(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.mdc-dialog.mdc-dialog--open'
