@@ -17,6 +17,8 @@
   "license": "MIT",
   "sass": "sass",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -32,9 +34,8 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/layout-grid": "0.39.0",
-    "@preact-material-components/base": "^2.0.1-alpha.0",
-    "bind-decorator": "^1.0.11"
+    "@material/layout-grid": "0.41.0",
+    "@preact-material-components/base": "^2.0.1-alpha.0"
   },
   "peerDependencies": {
     "preact": "^8.3.1"
