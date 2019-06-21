@@ -8,10 +8,10 @@ describe('Visual  Regression Tests', () => {
     cy.eyesClose();
   });
   testScreenshot('snackbar', url);
-  it('check snackbar-click', async () => {
+  it('check snackbar-click', () => {
     openEyes('snackbar-clicked');
     cy.get('.mdc-button.show-snack').click();
-    await sleep(500);
+    sleep(500);
     cy.eyesCheckWindow('snackbar-clicked');
   });
 });

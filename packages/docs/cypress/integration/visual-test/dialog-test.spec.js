@@ -10,22 +10,22 @@ describe('Visual  Regression Tests', () => {
   });
   testScreenshot('dialogpage', url);
 
-  it('check normal dialog', async () => {
+  it('check normal dialog', () => {
     openEyes('dialog-normal');
     cy.get('.normal_trigger').click();
     // Things like animations
-    await sleep(500);
+    sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.mdc-dialog.mdc-dialog--open'
     });
   });
 
-  it('check scrollable dialogs', async () => {
+  it('check scrollable dialogs', () => {
     openEyes('dialog-scrollable');
     cy.get('.scrollable_trigger').click();
     // Things like animations
-    await sleep(500);
+    sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.mdc-dialog.mdc-dialog--open'

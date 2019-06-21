@@ -10,11 +10,11 @@ describe('Visual  Regression Tests', () => {
   });
   testScreenshot('iconbuttonPage');
 
-  it('check icon buttons', async () => {
+  it('check icon buttons', () => {
     openEyes('iconbuttons-clicked');
     cy.get('.mdc-icon-button').click();
     // Things like animations
-    await sleep(500);
+    sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.content.mdc-layout-grid'
