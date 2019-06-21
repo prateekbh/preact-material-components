@@ -20,7 +20,7 @@ export default class DesignPage extends Component {
         </Typography>
         The directory layout of the individual packages is as follows:
         <CodeBlock>
-          <code class="lang-python">{tree}</code>
+          <code class="lang-hash">{tree}</code>
         </CodeBlock>
         <Typography headline5 tag="div">
           Event handlers

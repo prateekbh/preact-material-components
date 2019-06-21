@@ -1,7 +1,13 @@
-interface IEventHandler {
-    component: MaterialComponent;
+interface IEventInfo {
+    component: MaterialComponent;  // The instance of the component that emits the event
 }
 
 interface IProps {
-    onSomeEvent: (event: Event, additional: IEventHandler) => void;
+    /**
+     * A event handler
+     * @param event: The event emitted by the browser/material
+     * @param additional: Additional information for the handler
+     * @returns: Nothing
+     */
+    onSomeEvent: (event: Event, additional: IEventInfo) => void;
 }
