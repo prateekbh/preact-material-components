@@ -10,7 +10,7 @@ describe('Visual  Regression Tests', () => {
   });
   testScreenshot('dialogpage', url);
 
-  it('check normal dialog', async () => {
+  it('check normal dialog', () => {
     openEyes('dialog-normal');
     cy.get('.normal_trigger').click();
     // Things like animations
@@ -21,7 +21,7 @@ describe('Visual  Regression Tests', () => {
     });
   });
 
-  it('check scrollable dialogs', async () => {
+  it('check scrollable dialogs', () => {
     openEyes('dialog-scrollable');
     cy.get('.scrollable_trigger').click();
     // Things like animations

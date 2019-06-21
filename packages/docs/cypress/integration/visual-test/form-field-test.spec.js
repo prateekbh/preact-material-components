@@ -8,7 +8,7 @@ describe('Visual  Regression Tests', () => {
     cy.eyesClose();
   });
   testScreenshot('form-fieldpage');
-  it('should select control from label', async () => {
+  it('should select control from label', () => {
     openEyes('form-fieldpage-control-selection');
 
     cy.get('.radio-example label').click();
