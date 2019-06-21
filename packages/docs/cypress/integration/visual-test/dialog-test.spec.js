@@ -1,4 +1,4 @@
-import {testScreenshot, openEyes, baseURL} from '../../utils/utils';
+import {testScreenshot, openEyes, baseURL, sleep} from '../../utils/utils';
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/dialog`;
 
@@ -10,21 +10,25 @@ describe('Visual  Regression Tests', () => {
   });
   testScreenshot('dialogpage', url);
 
-  it('check normal dialog', () => {
+  it('check normal dialog', async () => {
     openEyes('dialog-normal');
-    cy.get('.mdc-button:eq(0)').click();
+    cy.get('.normal_trigger').click();
+    // Things like animations
+    await sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
-      selector: '.content.mdc-layout-grid'
+      selector: '.mdc-dialog.mdc-dialog--open'
     });
   });
 
-  it('check scrollable dialogs', () => {
+  it('check scrollable dialogs', async () => {
     openEyes('dialog-scrollable');
-    cy.get('.mdc-button:eq(1)').click();
+    cy.get('.scrollable_trigger').click();
+    // Things like animations
+    await sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
-      selector: '.content.mdc-layout-grid'
+      selector: '.mdc-dialog.mdc-dialog--open'
     });
   });
 });

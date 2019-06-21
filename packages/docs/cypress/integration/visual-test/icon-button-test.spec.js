@@ -1,4 +1,4 @@
-import {testScreenshot, openEyes, baseURL} from '../../utils/utils';
+import {testScreenshot, openEyes, baseURL, sleep} from '../../utils/utils';
 
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/icon-button`;
@@ -10,9 +10,11 @@ describe('Visual  Regression Tests', () => {
   });
   testScreenshot('iconbuttonPage');
 
-  it('check icon buttons', () => {
+  it('check icon buttons', async () => {
     openEyes('iconbuttons-clicked');
     cy.get('.mdc-icon-button').click();
+    // Things like animations
+    await sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
       selector: '.content.mdc-layout-grid'

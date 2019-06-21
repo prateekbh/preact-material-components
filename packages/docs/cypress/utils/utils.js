@@ -21,3 +21,11 @@ export function openEyes(testName) {
 }
 
 export const baseURL = 'http://localhost:8080';
+
+/**
+ * @param time {number}: Time to sleep in ms
+ * @returns {Promise<void>}
+ */
+export function sleep(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
