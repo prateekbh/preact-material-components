@@ -27,11 +27,6 @@ export default class CodeBlock extends Component {
           .filter(klass => klass.match(/^lang-[a-z]+$/))
           .map(klass => klass.slice(5));
 
-        if (langs.length === 0) {
-          segments.push(child);
-          continue;
-        }
-
         const highlighted = hljs.highlightAuto(
           text,
           langs.length ? langs : null

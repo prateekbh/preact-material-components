@@ -1,5 +1,4 @@
-import {testScreenshot, baseURL, openEyes} from '../../utils/utils';
-import {idText} from 'typescript';
+import {testScreenshot, baseURL, openEyes, sleep} from '../../utils/utils';
 
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/select`;
@@ -10,13 +9,15 @@ describe('Visual  Regression Tests', () => {
     cy.eyesClose();
   });
   testScreenshot('selectPage');
-  it('should give selected value in the onSelect event handler', () => {
+  it('should give selected value in the onSelect event handler', async () => {
     openEyes('enhanced select option selected');
     cy.get('.enhanced-select .mdc-select__selected-text').click();
     cy.get('.mdc-select__menu.mdc-menu:visible [data-value=item2]').click();
+    // Things like animations
+    await sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
-      selector: '.content.mdc-layout-grid'
+      selector: '.enhanced-select'
     });
   });
 });
