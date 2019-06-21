@@ -1,5 +1,14 @@
-import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
+import {
+  MaterialComponent,
+  MaterialComponentProps
+} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
+
+export * from './aspect-container';
+export * from './image';
+export * from './item';
+export * from './label';
+export * from './supporting';
 
 export interface IImageListProps {
   masonry?: boolean;
@@ -15,7 +24,7 @@ export class ImageList extends MaterialComponent<
   protected componentName = 'image-list';
   protected mdcProps = ['masonry', 'with-text-protection'];
 
-  protected materialDom(props) {
+  protected materialDom(props: MaterialComponentProps<IImageListProps>) {
     return (
       <ul {...props} ref={this.setControlRef}>
         {props.children}

@@ -4,36 +4,49 @@ import cx from 'classnames';
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
-import htmlbars from 'highlight.js/lib/languages/htmlbars';
 import json from 'highlight.js/lib/languages/json';
 import xml from 'highlight.js/lib/languages/xml';
-import python from 'highlight.js/lib/languages/python';
-import 'highlight.js/styles/github.css';
+import scss from 'highlight.js/lib/languages/scss';
 
-const LANGUAGES = {javascript, typescript, json, xml, htmlbars, python};
+import {Component} from 'preact';
+
+const LANGUAGES = {javascript, typescript, json, xml, scss};
 Object.keys(LANGUAGES).forEach(key =>
   hljs.registerLanguage(key, LANGUAGES[key])
 );
 
-// Class
-export default ({children, ...props}) => {
-  let child = children && children[0],
-    isHighlight = child && child.nodeName === 'code';
-  if (isHighlight) {
-    let text = child.children[0].replace(/(^\s+|\s+$)/g, ''),
-      lang = (child.attributes.class && child.attributes.class).match(
-        /lang-([a-z]+)/
-      )[1],
-      highlighted = hljs.highlightAuto(text, lang ? [lang] : null),
-      hLang = highlighted.language;
-    return (
-      <pre class={cx('highlight', `highlight-${hLang}`, props.class)}>
-        <code
-          class={`hljs lang-${hLang}`}
-          dangerouslySetInnerHTML={{__html: highlighted.value}}
-        />
-      </pre>
-    );
+export default class CodeBlock extends Component {
+  render({children, ...props}) {
+    const segments = [];
+    for (const child of children) {
+      if (child.nodeName === 'code') {
+        const text = child.children.join('\n');
+        const klasses = child.attributes ? child.attributes.class || '' : '';
+        const langs = klasses
+          .split(' ')
+          .filter(klass => klass.match(/^lang-[a-z]+$/))
+          .map(klass => klass.slice(5));
+
+        const highlighted = hljs.highlightAuto(
+          text,
+          langs.length ? langs : null
+        );
+        const hLang = highlighted.language;
+
+        segments.push(
+          <code
+            className={`hljs lang-${hLang}`}
+            dangerouslySetInnerHTML={{__html: highlighted.value}}
+          />
+        );
+      } else {
+        segments.push(child);
+      }
+    }
+    return <pre class={cx('highlight', props.class)}>{segments}</pre>;
   }
-  return <pre {...props}>{children}</pre>;
-};
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return this.props.children !== nextProps.children;
+  }
+}

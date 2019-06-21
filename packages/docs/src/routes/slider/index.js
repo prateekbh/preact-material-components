@@ -16,6 +16,9 @@ import sample from './sample.txt';
 
 // Class
 export default class SliderPage extends Component {
+  state = {
+    currentValue: 8
+  };
   constructor() {
     super();
     this.propsTable = [
@@ -104,6 +107,24 @@ export default class SliderPage extends Component {
         <div className="mdc-typography--title">Discrete </div>
         <div className="slider-container">
           <Slider step={2} value={10} max={20} discrete />
+        </div>
+        <div className="mdc-typography--title">
+          Discrete with markers: {this.state.currentValue}
+        </div>
+        <div className="slider-container">
+          <Slider
+            step={2}
+            value={this.state.currentValue}
+            max={20}
+            discrete
+            display-markers
+            onChange={(e, {value}) => {
+              console.log({value});
+              this.setState({
+                currentValue: value
+              });
+            }}
+          />
         </div>
       </div>
     );

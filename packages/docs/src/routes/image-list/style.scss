@@ -1,10 +1,23 @@
-:global .page-image-list {
-  .mdc-image-list {
-    width: 50%;
-    margin: 0;
+@import '~@preact-material-components/image-list';
+
+:global {
+  .std-img-list {
+    @include mdc-image-list-standard-columns(3);
+
+    .mdc-image-list__image-aspect-container {
+      padding-bottom: 66.66667%;
+    }
+
+    .mdc-image-list__image {
+      border-radius: 1rem;
+    }
+
+    .mdc-image-list__supporting {
+      border-radius: 0 0 1rem 1rem;
+    }
   }
-  .mdc-image-list__item {
-    width: calc(100% / 3 - 4px);
-    margin: 2px;
+
+  .masonry-img-list {
+    @include mdc-image-list-masonry-columns(4);
   }
 }

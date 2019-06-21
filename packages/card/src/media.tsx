@@ -13,13 +13,13 @@ export class CardMedia extends MaterialComponent<
   ICardMediaState
 > {
   protected componentName = 'card__media';
-  protected mdcProps = ['square', '16-9'];
+  protected mdcProps = ['square'];
 
   protected materialDom(props) {
     if (props.sixteenByNine) {
       props.className = 'mdc-card__media--16-9';
     }
-    return <div {...props}>{this.props.children}</div>;
+    return <div {...props}>{props.children}</div>;
   }
 }
 
@@ -35,6 +35,6 @@ export class CardMediaContent extends MaterialComponent<
   protected mdcProps = [];
 
   protected materialDom(props) {
-    return <div {...props}>{this.props.children}</div>;
+    return <div {...props}>{props.children}</div>;
   }
 }

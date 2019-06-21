@@ -2,7 +2,11 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {LayoutGrid} from '@preact-material-components/layout-grid';
+import {
+  LayoutGrid,
+  LayoutGridCell,
+  LayoutGridInner
+} from '@preact-material-components/layout-grid';
 
 import '@preact-material-components/layout-grid/sass';
 
@@ -66,7 +70,9 @@ export default class LayoutGridPage extends Component {
       }
     ];
   }
+
   render() {
+    // noinspection HtmlDeprecatedAttribute
     return (
       <div className="page-layout-grid">
         <ComponentTable data={this.propsTable} />
@@ -93,107 +99,107 @@ export default class LayoutGridPage extends Component {
           Grid of 12, 1 column wide items
         </div>
         <LayoutGrid>
-          <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-          </LayoutGrid.Inner>
+          <LayoutGridInner>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+          </LayoutGridInner>
         </LayoutGrid>
 
         <div className="mdc-typography--body">
           Grid of 3, 4 column wide items
         </div>
         <LayoutGrid>
-          <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="4">4</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="4">4</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="4">4</LayoutGrid.Cell>
-          </LayoutGrid.Inner>
+          <LayoutGridInner>
+            <LayoutGridCell cols="4">4</LayoutGridCell>
+            <LayoutGridCell cols="4">4</LayoutGridCell>
+            <LayoutGridCell cols="4">4</LayoutGridCell>
+          </LayoutGridInner>
         </LayoutGrid>
 
         <div className="mdc-typography--body">
           Grid of differently sized items
         </div>
         <LayoutGrid>
-          <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="4">4</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3">3</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="1">1</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="2">2</LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="2">2</LayoutGrid.Cell>
-          </LayoutGrid.Inner>
+          <LayoutGridInner>
+            <LayoutGridCell cols="4">4</LayoutGridCell>
+            <LayoutGridCell cols="3">3</LayoutGridCell>
+            <LayoutGridCell cols="1">1</LayoutGridCell>
+            <LayoutGridCell cols="2">2</LayoutGridCell>
+            <LayoutGridCell cols="2">2</LayoutGridCell>
+          </LayoutGridInner>
         </LayoutGrid>
 
         <div className="mdc-typography--body">
           Grid of items with tweaks at different screen sizes
         </div>
         <LayoutGrid>
-          <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="6" tabletCols="8">
+          <LayoutGridInner>
+            <LayoutGridCell cols="6" tabletCols="8">
               6 (8 tablet)
-            </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="4" tabletCols="6">
+            </LayoutGridCell>
+            <LayoutGridCell cols="4" tabletCols="6">
               4 (6 tablet)
-            </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="2" phoneCols="4">
+            </LayoutGridCell>
+            <LayoutGridCell cols="2" phoneCols="4">
               2 (4 phone)
-            </LayoutGrid.Cell>
-          </LayoutGrid.Inner>
+            </LayoutGridCell>
+          </LayoutGridInner>
         </LayoutGrid>
 
         <div className="mdc-typography--body">
           Grid with different alignments
         </div>
         <LayoutGrid>
-          <LayoutGrid.Inner>
-            <LayoutGrid.Cell phoneCols="1" tabletCols="2" cols="3">
+          <LayoutGridInner>
+            <LayoutGridCell phoneCols="1" tabletCols="2" cols="3">
               default
-            </LayoutGrid.Cell>
-            <LayoutGrid.Cell
+            </LayoutGridCell>
+            <LayoutGridCell
               phoneCols="1"
               tabletCols="2"
               cols="3"
               align="bottom">
               bottom
-            </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" align="top">
+            </LayoutGridCell>
+            <LayoutGridCell cols="3" tabletCols="2" phoneCols="1" align="top">
               top
-            </LayoutGrid.Cell>
-            <LayoutGrid.Cell
+            </LayoutGridCell>
+            <LayoutGridCell
               cols="3"
               tabletCols="2"
               phoneCols="1"
               align="middle">
               middle
-            </LayoutGrid.Cell>
-          </LayoutGrid.Inner>
+            </LayoutGridCell>
+          </LayoutGridInner>
         </LayoutGrid>
 
         <div className="mdc-typography--body">Grid with reordered items</div>
         <LayoutGrid>
-          <LayoutGrid.Inner>
-            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" order="3">
+          <LayoutGridInner>
+            <LayoutGridCell cols="3" tabletCols="2" phoneCols="1" order="3">
               First cell
-            </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" order="1">
+            </LayoutGridCell>
+            <LayoutGridCell cols="3" tabletCols="2" phoneCols="1" order="1">
               Second cell
-            </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" order="4">
+            </LayoutGridCell>
+            <LayoutGridCell cols="3" tabletCols="2" phoneCols="1" order="4">
               Third cell
-            </LayoutGrid.Cell>
-            <LayoutGrid.Cell cols="3" tabletCols="2" phoneCols="1" order="2">
+            </LayoutGridCell>
+            <LayoutGridCell cols="3" tabletCols="2" phoneCols="1" order="2">
               Fourth cell
-            </LayoutGrid.Cell>
-          </LayoutGrid.Inner>
+            </LayoutGridCell>
+          </LayoutGridInner>
         </LayoutGrid>
       </div>
     );

@@ -16,6 +16,8 @@
   "license": "MIT",
   "sass": "sass",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -32,7 +34,7 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/button": "0.43.0",
+    "@material/button": "0.44.1",
     "@preact-material-components/base": "^2.0.1-alpha.0",
     "@preact-material-components/icon": "^2.0.1-alpha.0",
     "bind-decorator": "^1.0.11"

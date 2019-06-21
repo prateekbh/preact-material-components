@@ -1,14 +1,15 @@
 language: node_js
 node_js:
-  - "10"
+  - '10'
 matrix:
   include:
-    - name: "Build"
-      env: TEST=build
-    - name: "Lint"
-      env: TEST=lint
-    - name: "Docs"
+    # Run it first, because it takes the longest time
+    - name: 'Docs'
       env: TEST=docs
+    - name: 'Build'
+      env: TEST=build
+    - name: 'Lint'
+      env: TEST=lint
 
 # needed for chrome
 sudo: true
@@ -16,11 +17,10 @@ sudo: true
 os: linux
 dist: trusty
 
-# Skip npm install because our script takes care of that
 install: yarn install --frozen-lockfile --non-interactive --emoji
 script: ./scripts/travis.sh $TEST
 
-cache: "yarn"
+cache: 'yarn'
 
 before_deploy: cd $TRAVIS_BUILD_DIR/docs && yarn build:prod
 
@@ -37,13 +37,3 @@ deploy:
 branches:
   except:
     - gh-pages
-
-addons:
-  #firefox: "latest"
-  chrome: "stable"
-
-notifications:
-  webhooks:
-    urls:
-      - "https://artipost.io/travis/hook"
-    on_start: always
