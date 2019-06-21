@@ -11,12 +11,12 @@ describe('Visual  Regression Tests', () => {
   it('should select control from label', async () => {
     openEyes('form-fieldpage-control-selection');
 
-    cy.get('.mdc-form-field label').click();
+    cy.get('.radio-example label').click();
     // Things like animations
     await sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
-      selector: '.mdc-form-field'
+      selector: '.radio-example'
     });
   });
 });
