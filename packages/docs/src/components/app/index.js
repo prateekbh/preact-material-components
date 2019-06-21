@@ -8,7 +8,10 @@ import {LayoutGrid} from '@preact-material-components/layout-grid';
 import {LayoutGridInner} from '@preact-material-components/layout-grid/lib/inner';
 import {LayoutGridCell} from '@preact-material-components/layout-grid/lib/cell';
 import {Switch} from '@preact-material-components/switch';
-import {TopAppBar} from '@preact-material-components/top-app-bar';
+import {
+  TopAppBar,
+  TopAppBarTitle
+} from '@preact-material-components/top-app-bar';
 import {TopAppBarIcon} from '@preact-material-components/top-app-bar/lib/icon';
 import {TopAppBarRow} from '@preact-material-components/top-app-bar/lib/row';
 import {TopAppBarSection} from '@preact-material-components/top-app-bar/lib/section';
@@ -196,9 +199,19 @@ const menuItems = [
 export default class Home extends Component {
   constructor() {
     super();
+
+    // Dark mode
+    const darkMode =
+      typeof localStorage !== 'undefined'
+        ? localStorage.getItem('dark-mode') === 'dark'
+        : false;
+    if (darkMode) {
+      document.body.classList.add('mdc-theme--dark');
+    }
     this.state = {
-      darkMode: false
+      darkMode
     };
+
     if (typeof window !== 'undefined') {
       this.state.toolbarTitle =
         window.location.pathname === '/'
@@ -215,14 +228,20 @@ export default class Home extends Component {
   }
 
   toggleDarkMode = () => {
-    this.setState({
-      darkMode: !this.state.darkMode
-    });
-    if (this.state.darkMode) {
-      document.body.classList.add('mdc-theme--dark');
-    } else {
-      document.body.classList.remove('mdc-theme--dark');
+    const {darkMode} = this.state;
+
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('dark-mode', darkMode ? 'light' : 'dark');
     }
+    if (darkMode) {
+      document.body.classList.remove('mdc-theme--dark');
+    } else {
+      document.body.classList.add('mdc-theme--dark');
+    }
+
+    this.setState({
+      darkMode: !darkMode
+    });
   };
 
   handleRoute_ = url => {
@@ -254,7 +273,7 @@ export default class Home extends Component {
                 }}>
                 menu
               </TopAppBarIcon>
-              <TopAppBar.Title>{this.state.toolbarTitle}</TopAppBar.Title>
+              <TopAppBarTitle>{this.state.toolbarTitle}</TopAppBarTitle>
             </TopAppBarSection>
             <TopAppBarSection align-end={true}>
               <FormField className="field-darkmode">
@@ -262,6 +281,7 @@ export default class Home extends Component {
                 <Switch
                   className="switch-darkmode"
                   onChange={this.toggleDarkMode}
+                  checked={this.state.darkMode}
                 />
               </FormField>
             </TopAppBarSection>

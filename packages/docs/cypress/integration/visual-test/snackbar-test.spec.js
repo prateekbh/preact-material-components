@@ -1,4 +1,4 @@
-import {testScreenshot, openEyes, baseURL} from '../../utils/utils';
+import {testScreenshot, openEyes, baseURL, sleep} from '../../utils/utils';
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/snackbar`;
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe('Visual  Regression Tests', () => {
   it('check snackbar-click', () => {
     openEyes('snackbar-clicked');
     cy.get('.mdc-button.show-snack').click();
-    cy.wait(500);
+    sleep(500);
     cy.eyesCheckWindow('snackbar-clicked');
   });
 });

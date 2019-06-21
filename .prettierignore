@@ -181,16 +181,7 @@ typings/
 .next
 
 # Exclude build artifacts
-esm
-*/*.js
-*/*.js.map
-*/*.d.ts
-!/docs/prettier.config.js
-
 yarn.lock
-
-# Wrong formatted
-.babelrc
 
 # build output
 /packages/*/lib

@@ -4,6 +4,7 @@ import {h} from 'preact';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {
   disabled?: boolean;
+  checked?: boolean;
 }
 
 export interface ISwitchState {}

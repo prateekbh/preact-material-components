@@ -22,7 +22,7 @@ export default class HomePage extends Component {
         <div className="mdc-typography--body">
           <div>
             <a href="https://github.com/prateekbh/preact-material-components">
-              <span className="grey">preact-material-components</span>
+              preact-material-components
             </a>{' '}
             is a thin opinionless wrapper around{' '}
             <a href="https://github.com/material-components/material-components-web">
@@ -37,10 +37,12 @@ export default class HomePage extends Component {
           <br />
           <br />
           <Typography headline5>There are three distributions:</Typography>
+          <br />
+          <Typography subtitle="1">⚠ Out dated ⚠</Typography>
           <ul>
             <li>
               <Typography headline6>Default Build</Typography>
-              <div>Location:</div> Package Root /{' '}
+              <div>Location:</div> Package Root/
               <span className="code-snippet">
                 {'preact-material-components/<Component>'}
               </span>
@@ -63,7 +65,7 @@ export default class HomePage extends Component {
               <Typography headline6>ES Module Build</Typography>
               <div>
                 Location:
-              </div> <span className="code-snippet">esm</span> directory /{' '}
+              </div> <span className="code-snippet">esm</span> directory/
               <span className="code-snippet">
                 {'preact-material-components/esm/<Component>'}
               </span>
@@ -81,7 +83,7 @@ export default class HomePage extends Component {
             <li>
               <Typography headline6>TypeScript Source</Typography>
               <div>Location:</div> <span className="code-snippet">ts</span>{' '}
-              directory /{' '}
+              directory/
               <span className="code-snippet">
                 {'preact-material-components/ts/<Component>'}
               </span>
@@ -103,13 +105,14 @@ export default class HomePage extends Component {
           <br />
           <Typography headline5>Installation and Usage:</Typography>
           <div>
-            All the components of{' '}
-            <span className="grey">preact-material-components</span> are built
-            to work independently. So there are couple of ways to use them.
+            All the components of preact-material-components are built to work
+            independently. So there are couple of ways to use them.
           </div>
           <div>
             <CodeBlock>
-              <code class="lang-js">npm i -D preact-material-components</code>
+              <code class="lang-shell">
+                npm i -D preact-material-components
+              </code>
             </CodeBlock>
           </div>
           <div>

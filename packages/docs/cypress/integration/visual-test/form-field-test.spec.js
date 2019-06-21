@@ -1,4 +1,4 @@
-import {openEyes, testScreenshot, baseURL} from '../../utils/utils';
+import {openEyes, testScreenshot, baseURL, sleep} from '../../utils/utils';
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/form-field`;
   beforeEach(() => {
@@ -11,11 +11,12 @@ describe('Visual  Regression Tests', () => {
   it('should select control from label', () => {
     openEyes('form-fieldpage-control-selection');
 
-    cy.get('.mdc-form-field label').click();
-
+    cy.get('.radio-example label').click();
+    // Things like animations
+    sleep(500);
     cy.eyesCheckWindow({
       sizeMode: 'selector', //mode
-      selector: '.content.mdc-layout-grid'
+      selector: '.radio-example'
     });
   });
 });

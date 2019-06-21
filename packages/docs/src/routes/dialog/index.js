@@ -128,7 +128,8 @@ export default class DialogPage extends Component {
           raised={true}
           onClick={() => {
             this.normalDlg.MDComponent.open();
-          }}>
+          }}
+          class="normal_trigger">
           Open Dialog
         </Button>
         <CodeBlock>
@@ -140,7 +141,8 @@ export default class DialogPage extends Component {
           raised={true}
           onClick={() => {
             this.scrollingDlg.MDComponent.open();
-          }}>
+          }}
+          class="scrollable_trigger">
           Open Scrollable Dialog
         </Button>
         <CodeBlock>

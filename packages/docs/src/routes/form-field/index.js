@@ -60,7 +60,7 @@ export default class FormFieldPage extends Component {
         </div>
 
         <div className="mdc-typography--display1">Demo</div>
-        <FormField>
+        <FormField class="radio-example">
           <Radio id="r1" name="opts" />
           <label for="r1">Radio 1</label>
         </FormField>

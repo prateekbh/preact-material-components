@@ -91,10 +91,6 @@
   .code-snippet {
     font-variant: common-ligatures;
     font-family: 'Fira Code', monospace;
-    background-color: #eee;
-    padding: 0.2rem;
-    margin: 0.1rem;
-    border-radius: 0.3rem;
   }
 
   code {
@@ -102,21 +98,39 @@
     padding: 0.2rem;
     margin: 0.1rem;
     border-radius: 0.3rem;
+
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+    * {
+      transition: color 0.5s ease-in-out, font-weight 0.5s ease-in-out;
+    }
   }
 }
 
-:global .mdc-theme--dark {
-  .mdc-temporary-drawer li.mdc-list-item {
-    color: #666;
+:global {
+  .mdc-theme--dark {
+    .mdc-temporary-drawer li.mdc-list-item {
+      color: #666;
+    }
+
+    code {
+      background-color: #323232;
+    }
+
+    @import './hljs-darcula';
   }
 
-  .code-snippet {
-    background-color: #696969;
+  body:not(.mdc-theme--dark) {
+    @import './hljs-github';
   }
-}
 
-:global .mdc-typography--body {
-  line-height: 28px;
+  .mdc-typography--body {
+    line-height: 28px;
+  }
+
+  body {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
 }
 
 @font-face {

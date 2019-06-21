@@ -94,6 +94,7 @@ export default class TopAppBarPage extends Component {
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Default </div>
         <TopAppBar
+          class="top-app-bar-demo"
           onNav={e => {
             this.setState({
               onNavReceived: true
