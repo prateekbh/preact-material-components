@@ -8,7 +8,10 @@ import {LayoutGrid} from '@preact-material-components/layout-grid';
 import {LayoutGridInner} from '@preact-material-components/layout-grid/lib/inner';
 import {LayoutGridCell} from '@preact-material-components/layout-grid/lib/cell';
 import {Switch} from '@preact-material-components/switch';
-import {TopAppBar} from '@preact-material-components/top-app-bar';
+import {
+  TopAppBar,
+  TopAppBarTitle
+} from '@preact-material-components/top-app-bar';
 import {TopAppBarIcon} from '@preact-material-components/top-app-bar/lib/icon';
 import {TopAppBarRow} from '@preact-material-components/top-app-bar/lib/row';
 import {TopAppBarSection} from '@preact-material-components/top-app-bar/lib/section';
@@ -270,7 +273,7 @@ export default class Home extends Component {
                 }}>
                 menu
               </TopAppBarIcon>
-              <TopAppBar.Title>{this.state.toolbarTitle}</TopAppBar.Title>
+              <TopAppBarTitle>{this.state.toolbarTitle}</TopAppBarTitle>
             </TopAppBarSection>
             <TopAppBarSection align-end={true}>
               <FormField className="field-darkmode">

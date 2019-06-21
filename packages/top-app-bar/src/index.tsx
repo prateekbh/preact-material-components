@@ -12,7 +12,8 @@ export interface ITopAppBarProps {
   'short-collapsed'?: boolean; // TODO: Add to docs / remove from here
   fixed?: boolean; // TODO: Add to docs / remove from here
   prominent?: boolean; // TODO: Add to docs / remove from here
-  onNav: JSX.GenericEventHandler; // TODO: Add to docs / remove from here
+
+  onNav?: JSX.GenericEventHandler; // TODO: Add to docs / remove from here
 }
 
 export interface ITopAppBarState {}
