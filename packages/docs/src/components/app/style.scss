@@ -91,10 +91,6 @@
   .code-snippet {
     font-variant: common-ligatures;
     font-family: 'Fira Code', monospace;
-    background-color: #eee;
-    padding: 0.2rem;
-    margin: 0.1rem;
-    border-radius: 0.3rem;
   }
 
   code {
@@ -106,37 +102,35 @@
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 
     * {
-      transition: color 0.5s ease-in-out;
+      transition: color 0.5s ease-in-out, font-weight 0.5s ease-in-out;
     }
+  }
+}
+
+:global {
+  .mdc-theme--dark {
+    .mdc-temporary-drawer li.mdc-list-item {
+      color: #666;
+    }
+
+    code {
+      background-color: #323232;
+    }
+
+    @import './hljs-darcula';
+  }
+
+  body:not(.mdc-theme--dark) {
+    @import './hljs-github';
+  }
+
+  .mdc-typography--body {
+    line-height: 28px;
   }
 
   body {
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
   }
-}
-
-:global .mdc-theme--dark {
-  .mdc-temporary-drawer li.mdc-list-item {
-    color: #666;
-  }
-
-  .code-snippet {
-    background-color: #696969;
-  }
-
-  code {
-    background-color: #323232;
-  }
-
-  @import './hljs-darcula';
-}
-
-:global body:not(.mdc-theme--dark) {
-  @import './hljs-github';
-}
-
-:global .mdc-typography--body {
-  line-height: 28px;
 }
 
 @font-face {
