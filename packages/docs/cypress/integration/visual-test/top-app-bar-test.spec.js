@@ -1,4 +1,4 @@
-import {testScreenshot, baseURL, openEyes} from '../../utils/utils';
+import {testScreenshot, baseURL, openEyes, sleep} from '../../utils/utils';
 
 describe('Visual  Regression Tests', () => {
   const url = `${baseURL}/component/top-app-bar`;
@@ -11,7 +11,11 @@ describe('Visual  Regression Tests', () => {
   testScreenshot('topAppBarPage');
   it('should respond to onNav event', () => {
     openEyes('top-app-bar-clicked');
-    cy.get('.mdc-top-app-bar__navigation-icon').click();
-    cy.eyesCheckWindow('top-app-bar-clicked');
+    cy.get('.top-app-bar-demo .mdc-top-app-bar__navigation-icon').click();
+    sleep(500);
+    cy.eyesCheckWindow({
+      sizeMode: 'selector', //mode
+      selector: '.top-app-bar-demo'
+    });
   });
 });
