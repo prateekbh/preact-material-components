@@ -24,7 +24,7 @@ export default class HomePage extends Component {
             <a href="https://github.com/prateekbh/preact-material-components">
               preact-material-components
             </a>{' '}
-            is a thin opinionless wrapper around{' '}
+            is a thin slightly opinionated wrapper around{' '}
             <a href="https://github.com/material-components/material-components-web">
               material-components-web
             </a>

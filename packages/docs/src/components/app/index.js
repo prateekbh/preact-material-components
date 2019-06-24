@@ -4,17 +4,19 @@ import Router from 'preact-router';
 
 // Material Components
 import {FormField} from '@preact-material-components/form-field';
-import {LayoutGrid} from '@preact-material-components/layout-grid';
-import {LayoutGridInner} from '@preact-material-components/layout-grid/lib/inner';
-import {LayoutGridCell} from '@preact-material-components/layout-grid/lib/cell';
+import {
+  LayoutGrid,
+  LayoutGridCell,
+  LayoutGridInner
+} from '@preact-material-components/layout-grid';
 import {Switch} from '@preact-material-components/switch';
 import {
   TopAppBar,
-  TopAppBarTitle
+  TopAppBarTitle,
+  TopAppBarIcon,
+  TopAppBarRow,
+  TopAppBarSection
 } from '@preact-material-components/top-app-bar';
-import {TopAppBarIcon} from '@preact-material-components/top-app-bar/lib/icon';
-import {TopAppBarRow} from '@preact-material-components/top-app-bar/lib/row';
-import {TopAppBarSection} from '@preact-material-components/top-app-bar/lib/section';
 
 import '@preact-material-components/form-field/sass';
 import '@preact-material-components/layout-grid/sass';
@@ -25,6 +27,7 @@ import '@preact-material-components/top-app-bar/sass';
 import ButtonPage from '../../routes/button';
 import CardPage from '../../routes/card';
 import ChipsPage from '../../routes/chips';
+import DesignPage from '../../routes/design';
 import CheckboxPage from '../../routes/checkbox';
 import DialogPage from '../../routes/dialog';
 import DrawerPage from '../../routes/drawer';
@@ -62,6 +65,12 @@ const menuItems = [
     icon: 'home',
     link: '/',
     component: HomePage
+  },
+  {
+    text: 'Design',
+    icon: 'brush',
+    link: '/design/',
+    component: DesignPage
   },
   {
     text: 'Button',
