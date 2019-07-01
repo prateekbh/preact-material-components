@@ -59,11 +59,18 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   }
 
   protected onOpen = e => {
-    this.setState({...CLOSED_STATE});
+    this.setState({
+      ...CLOSED_STATE,
+      swipeDistance: 0
+    });
+
     this.proxyEventHandler('onOpen', e);
   };
 
   protected onClose = e => {
+    this.setState({
+      ...CLOSED_STATE
+    });
     this.proxyEventHandler('onClose', e);
   };
 
@@ -103,8 +110,14 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   private handleTouchStart_ = e => {
     const {touches, target} = e;
     const {clientX, clientY} = touches[0];
-    console.log(e.target);
-    if (clientX > (this.props.swipeAcceptWidth || 40)) {
+    if (!this.MDComponent) {
+      return;
+    }
+
+    if (
+      clientX > (this.props.swipeAcceptWidth || 40) &&
+      this.MDComponent.open === false
+    ) {
       return;
     }
 
@@ -116,14 +129,20 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   };
 
   private handleTouchEnd_ = e => {
+    if (!this.MDComponent) {
+      return;
+    }
+
     if (this.state.sliderState === SLIDER_STATES.SWIPING) {
       this.setState(
         {
           sliderState: SLIDER_STATES.SWIPE_TO_BE_COMPLETED,
-          swipeDistance: 0
+          swipeDistance: this.MDComponent.open ? -256 : 0
         },
         () => {
-          if (this.MDComponent) {
+          if (this.MDComponent && this.MDComponent.open) {
+            this.MDComponent.open = false;
+          } else if (this.MDComponent && !this.MDComponent.open) {
             this.MDComponent.open = true;
           }
         }
@@ -135,16 +154,20 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
 
   private handleTouchMove_ = e => {
     const {touches} = e;
-    if (touches.length === 0 || this.state.sliderState === SLIDER_STATES.REST) {
+    if (
+      touches.length === 0 ||
+      this.state.sliderState === SLIDER_STATES.REST ||
+      !this.MDComponent
+    ) {
       return;
     }
-
+    const startPosition = this.MDComponent.open ? 0 : -256;
     const {clientX, clientY} = touches[0];
     const deltaX = clientX - this.state.touchPositionX;
     console.log({deltaX});
     this.setState({
       sliderState: SLIDER_STATES.SWIPING,
-      swipeDistance: -256 + deltaX
+      swipeDistance: startPosition + deltaX
     });
   };
 
