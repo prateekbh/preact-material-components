@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import {MaterialComponent} from '@preact-material-components/base';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 
 export interface IDrawerSubTitleProps {
   activated?: boolean;

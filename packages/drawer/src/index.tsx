@@ -1,5 +1,5 @@
 import {MDCDrawer} from '@material/drawer';
-import {MaterialComponent} from '@preact-material-components/base';
+import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
 export interface IDrawerProps {
@@ -164,7 +164,6 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     const startPosition = this.MDComponent.open ? 0 : -256;
     const {clientX, clientY} = touches[0];
     const deltaX = clientX - this.state.touchPositionX;
-    console.log({deltaX});
     this.setState({
       sliderState: SLIDER_STATES.SWIPING,
       swipeDistance: startPosition + deltaX
