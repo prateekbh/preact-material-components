@@ -14,9 +14,9 @@ export class DrawerHeader extends MaterialComponent<
 
   protected materialDom(props) {
     return (
-      <header ref={this.setControlRef} {...props}>
-        <div className="mdc-drawer__header-content">{props.children}</div>
-      </header>
+      <div ref={this.setControlRef} {...props}>
+        {props.children}
+      </div>
     );
   }
 }

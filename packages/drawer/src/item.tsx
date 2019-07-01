@@ -1,8 +1,8 @@
-import {ListItemLink} from '@preact-material-components/list/lib/item/link';
+import {ListItemLink} from '@preact-material-components/list';
 import {h} from 'preact';
 
 export interface IDrawerItemProps {
-  selected?: boolean;
+  activated?: boolean;
 }
 
 export interface IDrawerItemState {}
@@ -13,8 +13,8 @@ export class DrawerItem extends ListItemLink<
 > {
   protected materialDom(props) {
     const returnedNode = super.materialDom(props);
-    /* Logic to add selected class */
-    if (props.selected) {
+    /* Logic to add activated class */
+    if (props.activated) {
       returnedNode.attributes.className = 'mdc-list-item--activated';
     }
     return returnedNode;
