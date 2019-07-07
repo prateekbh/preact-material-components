@@ -8,10 +8,6 @@
     "url": "/design"
   },
   {
-    "title": "Theming",
-    "url": "/theming"
-  },
-  {
     "title": "Button",
     "url": "/component/button"
   },
@@ -106,6 +102,10 @@
   {
     "title": "Textfield",
     "url": "/component/textfield"
+  },
+  {
+    "title": "Theme",
+    "url": "/component/theme"
   },
   {
     "title": "Toolbar",

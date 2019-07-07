@@ -9,5 +9,5 @@ describe('Visual  Regression Tests', () => {
   afterEach(() => {
     cy.eyesClose();
   });
-  testScreenshot('designpage', url);
+  testScreenshot('dialogpage', url);
 });
