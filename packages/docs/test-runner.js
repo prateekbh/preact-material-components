@@ -18,8 +18,6 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
       .filter(file => file.match(packageRegexp))
       .map(pckg => pckg.match(packageRegexp)[1])
   );
-  // remove docs from this set as it is does not have a test for itself.
-  packagesChanged.delete('docs');
   console.log(
     `Detected changes in packages: ${[...packagesChanged.values()].join(', ')}`
   );
@@ -28,7 +26,7 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
       'No changes in packages found, not running visual regression testing.'
     );
     process.exit(0);
-  } else if (packagesChanged.has('base')) {
+  } else if (packagesChanged.has('base') || packagesChanged.has('base')) {
     // if base has changed it might impact every component
     // so run all of them.
     const {code} = shelljs.exec('cypress run');
