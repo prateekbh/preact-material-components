@@ -1,6 +1,5 @@
 import MDCComponent from '@material/base/component';
 import {MDCRipple} from '@material/ripple';
-import {bind} from 'bind-decorator';
 import {Component, VNode} from 'preact';
 import {SoftMerge} from './types';
 
@@ -156,10 +155,7 @@ export abstract class MaterialComponent<
   }
 
   // Shared setter for the root element ref
-  @bind
-  protected setControlRef(control?: Element) {
-    this.control = control;
-  }
+  protected setControlRef = (control?: Element) => (this.control = control);
 
   /** Build the className based on component names and mdc props */
   protected buildClassName(props: MaterialComponentProps<PropType>) {
