@@ -26,7 +26,7 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
       'No changes in packages found, not running visual regression testing.'
     );
     process.exit(0);
-  } else if (packagesChanged.has('base') || packagesChanged.has('base')) {
+  } else if (packagesChanged.has('base') || packagesChanged.has('docs')) {
     // if base has changed it might impact every component
     // so run all of them.
     const {code} = shelljs.exec('cypress run');
