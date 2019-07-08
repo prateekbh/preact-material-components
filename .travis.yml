@@ -1,6 +1,11 @@
 language: node_js
 node_js:
   - '10'
+addons:
+  apt:
+    packages:
+      # Needed for cypress
+      - libgconf-2-4
 matrix:
   include:
     # Run it first, because it takes the longest time
@@ -20,7 +25,11 @@ dist: xenial
 install: yarn install --frozen-lockfile --non-interactive --emoji
 script: ./scripts/travis.sh $TEST
 
-cache: 'yarn'
+cache:
+  yarn: true
+  directories:
+    # cache Cypress binary
+    - ~/.cache
 
 before_deploy: cd $TRAVIS_BUILD_DIR/docs && yarn build:prod
 
