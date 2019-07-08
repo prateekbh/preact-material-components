@@ -1,5 +1,5 @@
 import {statSync} from 'fs';
-import {basename, dirname, join, resolve} from 'path';
+import {basename, dirname, join, resolve, sep} from 'path';
 
 function isFile(file: string) {
   try {
@@ -72,12 +72,12 @@ function findInModules(modsPath: string, url: string) {
 }
 
 function nodeResolveSass(url: string, prev: string) {
-  const prevDir = dirname(prev);
-  const count = prevDir.split('/').length;
+  const prevDir = dirname(resolve(prev));
+  const count = prevDir.split(sep).length;
   for (let i = 0; i < count; i++) {
     const pars = Array.from(Array(i).keys())
       .map(() => '..')
-      .join('/');
+      .join(sep);
     const searchPath = resolve(prevDir, pars, 'node_modules');
     if (isDir(searchPath)) {
       const result = findInModules(searchPath, url);

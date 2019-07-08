@@ -4,8 +4,8 @@ import {SoftMerge} from '@preact-material-components/base/lib/types';
 
 export interface IListItemLinkProps {
   activated?: boolean;
+  selected?: boolean;
 }
-
 export interface IListItemLinkState {}
 
 export class ListItemLink<

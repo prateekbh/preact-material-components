@@ -16,6 +16,8 @@
   "license": "MIT",
   "sass": "sass",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -32,14 +34,13 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/slider": "^0.39.1",
-    "@material/typography": "^0.39",
+    "@material/slider": "^1.1.0",
+    "@material/typography": "^1.0",
     "@preact-material-components/base": "^2.0.1-alpha.0",
-    "bind-decorator": "^1.0.11",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {
-    "preact": "^8.3.1"
+    "preact": "^8.4.2"
   },
   "sideEffects": [
     "*.scss"

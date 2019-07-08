@@ -2,7 +2,12 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Snackbar} from '@preact-material-components/snackbar';
+import {
+  Snackbar,
+  SnackbarLabel,
+  SnackbarActions,
+  SnackbarAction
+} from '@preact-material-components/snackbar';
 import {Button} from '@preact-material-components/button';
 
 import '@preact-material-components/snackbar/sass';
@@ -27,7 +32,7 @@ export default class SnackbarPage extends Component {
         component: 'Snackbar',
         props: [
           {
-            name: 'dismissesOnAction',
+            name: 'stacked',
             description:
               'tells whether or not snackbar auto dismisses upon clicking the action button'
           }
@@ -62,17 +67,23 @@ export default class SnackbarPage extends Component {
           raised={true}
           primary={true}
           onClick={() => {
-            this.bar.MDComponent.show({
-              message: 'Hello Snack!'
-            });
-          }}>
+            this.bar.MDComponent.open();
+          }}
+          className={'show-snack'}>
           Show snack
         </Button>
         <Snackbar
           ref={bar => {
             this.bar = bar;
           }}
-        />
+          onOpened={(e, detail) => {
+            console.log(e, detail);
+          }}>
+          <SnackbarLabel>This is a pmc snackbar!</SnackbarLabel>
+          <SnackbarActions>
+            <SnackbarAction>Close</SnackbarAction>
+          </SnackbarActions>
+        </Snackbar>
       </div>
     );
   }

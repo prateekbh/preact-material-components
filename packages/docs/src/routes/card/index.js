@@ -2,10 +2,14 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Card} from '@preact-material-components/card';
-import {CardActions} from '@preact-material-components/card/lib/actions';
-import {CardMedia} from '@preact-material-components/card/lib/media';
-import {CardActionsButton} from '@preact-material-components/card/lib/actions/button';
+import {
+  Card,
+  CardActions,
+  CardActionButton,
+  CardActionIcons,
+  CardActionIcon,
+  CardMedia
+} from '@preact-material-components/card';
 
 import '@preact-material-components/card/sass';
 
@@ -34,6 +38,10 @@ export default class CardPage extends Component {
         ]
       },
       {
+        component: 'CardPrimaryAction',
+        props: []
+      },
+      {
         component: 'CardActions',
         props: [
           {
@@ -43,7 +51,15 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'CardActionsButton',
+        component: 'CardActionIcons',
+        props: []
+      },
+      {
+        component: 'CardActionButton',
+        props: []
+      },
+      {
+        component: 'CardActionIcon',
         props: []
       },
       {
@@ -60,7 +76,7 @@ export default class CardPage extends Component {
         ]
       },
       {
-        component: 'CardCardMediaContent',
+        component: 'CardMediaContent',
         props: []
       }
     ];
@@ -94,7 +110,11 @@ export default class CardPage extends Component {
           </div>
           <CardMedia className="card-media" />
           <CardActions>
-            <CardActionsButton>OK</CardActionsButton>
+            <CardActionButton>OK</CardActionButton>
+            <CardActionIcons>
+              <CardActionIcon>favorite</CardActionIcon>
+              <CardActionIcon>share</CardActionIcon>
+            </CardActionIcons>
           </CardActions>
         </Card>
 
@@ -108,7 +128,7 @@ export default class CardPage extends Component {
           </div>
           <CardMedia className="card-media" />
           <CardActions full-bleed>
-            <CardActionsButton>Full-bleed button</CardActionsButton>
+            <CardActionButton>Full-bleed button</CardActionButton>
           </CardActions>
         </Card>
       </div>

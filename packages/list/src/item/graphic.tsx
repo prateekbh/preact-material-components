@@ -2,8 +2,9 @@ import {MaterialComponent} from '@preact-material-components/base/lib/MaterialCo
 import {Icon} from '@preact-material-components/icon';
 import {h} from 'preact';
 
-export interface IListItemGraphicProps {}
-
+export interface IListItemGraphicProps {
+  selected?: boolean;
+}
 export interface IListItemGraphicState {}
 
 export class ListItemGraphic extends MaterialComponent<
@@ -11,7 +12,7 @@ export class ListItemGraphic extends MaterialComponent<
   IListItemGraphicState
 > {
   protected componentName = 'list-item__graphic';
-  protected mdcProps = [];
+  protected mdcProps = ['selected'];
 
   protected materialDom(props) {
     return (

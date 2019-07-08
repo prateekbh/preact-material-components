@@ -1,11 +1,14 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
-interface ICardActionsProps {
+export * from './button';
+export * from './icons';
+
+export interface ICardActionsProps {
   'full-bleed'?: boolean;
 }
 
-interface ICardActionsState {}
+export interface ICardActionsState {}
 
 export class CardActions extends MaterialComponent<
   ICardActionsProps,

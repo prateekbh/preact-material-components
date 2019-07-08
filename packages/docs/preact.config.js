@@ -1,4 +1,4 @@
-import {sassResolver} from '@preact-material-components/base/build';
+const {sassResolver} = require('@preact-material-components/base/build');
 
 /**
  * Function that mutates original webpack config.
@@ -8,7 +8,7 @@ import {sassResolver} from '@preact-material-components/base/build';
  * @param {object} env - options passed to CLI.
  * @param {WebpackConfigHelpers} helpers - object with useful helpers when working with config.
  **/
-export default function(config, env, helpers) {
+module.exports = function(config, env, helpers) {
   for (const {loader} of helpers.getLoadersByName(config, 'proxy-loader')) {
     if (loader.options && loader.options.options && loader.options.loader) {
       if (loader.options.loader === 'sass-loader') {
@@ -22,4 +22,4 @@ export default function(config, env, helpers) {
     }
     loader.options.importer = sassResolver;
   }
-}
+};

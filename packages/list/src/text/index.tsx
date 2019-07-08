@@ -2,7 +2,6 @@ import {MaterialComponent} from '@preact-material-components/base/lib/MaterialCo
 import {h} from 'preact';
 
 export interface IListTextProps {}
-
 export interface IListTextState {}
 
 export class ListText extends MaterialComponent<

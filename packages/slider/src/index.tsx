@@ -1,6 +1,5 @@
 import {MDCSlider} from '@material/slider';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
 
 export interface ISliderProps {
@@ -20,7 +19,7 @@ export interface ISliderState {}
 export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
   public MDComponent?: MDCSlider;
   protected componentName = 'slider';
-  protected mdcProps = ['discrete'];
+  protected mdcProps = ['discrete', 'display-markers'];
 
   public componentDidMount() {
     super.componentDidMount();
@@ -68,19 +67,19 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
     }
   }
 
-  @bind
-  protected onChange(e) {
-    if (this.props.onChange) {
-      this.props.onChange(e);
+  protected onChange = e => {
+    const {value} = e.detail;
+    if (!isNaN(value)) {
+      this.proxyEventHandler('onChange', e, {value});
     }
-  }
+  };
 
-  @bind
-  protected onInput(e) {
-    if (this.props.onInput) {
-      this.props.onInput(e);
+  protected onInput = e => {
+    const {value} = e.detail;
+    if (!isNaN(value)) {
+      this.proxyEventHandler('onInput', e, {value});
     }
-  }
+  };
 
   protected materialDom(allprops) {
     const {tabindex: tabIndex = 0, ...props} = allprops;
@@ -95,6 +94,7 @@ export class Slider extends MaterialComponent<ISliderProps, ISliderState> {
         {...props}>
         <div class="mdc-slider__track-container">
           <div class="mdc-slider__track" />
+          {props.discrete && <div class="mdc-slider__track-marker-container" />}
         </div>
         <div class="mdc-slider__thumb-container">
           {props.discrete && (

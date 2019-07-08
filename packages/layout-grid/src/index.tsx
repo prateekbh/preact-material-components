@@ -1,6 +1,9 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
+export * from './cell';
+export * from './inner';
+
 export interface ILayoutGridProps {}
 
 export interface ILayoutGridState {}

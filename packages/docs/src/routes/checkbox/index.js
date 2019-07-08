@@ -4,7 +4,9 @@ import {h, Component} from 'preact';
 // Material Components
 import {Checkbox} from '@preact-material-components/checkbox';
 import {FormField} from '@preact-material-components/form-field';
+import {Typography} from '@preact-material-components/typography';
 
+import '@preact-material-components/typography/sass';
 import '@preact-material-components/checkbox/sass';
 import '@preact-material-components/form-field/sass';
 
@@ -40,11 +42,21 @@ export default class CheckboxPage extends Component {
           {
             name: 'indeterminate',
             description: 'This makes the checkbox indeterminate'
+          },
+          {
+            name: 'onChange',
+            description:
+              'Event listener for when the value of checkbox change. `function(event, {checked, indeterminate, MDComponent}) =>  void`'
           }
         ]
       }
     ];
   }
+  reflectValue = (e, mdevt) => {
+    this.setState({
+      cboxvalue: mdevt.checked
+    });
+  };
   render() {
     return (
       <div className="page-checkbox">
@@ -80,9 +92,18 @@ export default class CheckboxPage extends Component {
 
         <div className="mdc-typography--title">Indeterminate Checkbox </div>
         <FormField>
-          <Checkbox id="inderminate-checkbox" indeterminate={true} />
+          <Checkbox
+            id="inderminate-checkbox"
+            indeterminate={true}
+            onChange={this.reflectValue}
+          />
           <label for="inderminate-checkbox">Indeterminate checkbox</label>
         </FormField>
+        <div>
+          <Typography body>
+            Value: {this.state.cboxvalue ? 'checked' : 'unchecked'}
+          </Typography>
+        </div>
         <CodeBlock>
           <code class="lang-html">{indeterminateExample}</code>
         </CodeBlock>

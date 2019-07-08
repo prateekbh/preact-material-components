@@ -4,13 +4,14 @@ import {h} from 'preact';
 export interface IChipIconProps {
   leading?: boolean;
   trailing?: boolean;
+  'leading-hidden'?: boolean;
 }
 
 export interface IChipIconState {}
 
 export class ChipIcon extends Icon<IChipIconProps, IChipIconState> {
   protected componentName = 'chip__icon';
-  protected mdcProps = ['leading', 'trailing'];
+  protected mdcProps = ['leading', 'trailing', 'leading-hidden'];
 
   protected materialDom(allprops) {
     const {children, ...props} = allprops;

@@ -1,0 +1,15 @@
+.
+├── lib           # The compiled JavaScript files
+│   └── [...]
+├── node_modules
+│   └── [...]
+├── package.json  # Package config
+├── README.md     # Some packages docs
+├── sass          # The sass files for the packages
+│   └── [...]
+├── src           # The source files
+│   └── [...]
+├── __tests__     # Tests
+│   └── [...]
+├── tsconfig.json # TypeScript configuration
+└── yarn.lock     # Yarn lockfile

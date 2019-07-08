@@ -4,6 +4,10 @@
     "url": "/"
   },
   {
+    "title": "Design",
+    "url": "/design"
+  },
+  {
     "title": "Button",
     "url": "/component/button"
   },

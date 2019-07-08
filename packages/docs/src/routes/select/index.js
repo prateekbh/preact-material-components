@@ -2,7 +2,12 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {Select} from '@preact-material-components/select';
+import {
+  BasicSelect as Select,
+  BasicOption,
+  EnhancedSelect,
+  EnhancedOption
+} from '@preact-material-components/select';
 
 import '@preact-material-components/select/sass';
 
@@ -16,6 +21,10 @@ import sample from './sample.txt';
 
 // Class
 export default class SelectPage extends Component {
+  state = {
+    selectedEnhancedValue: null,
+    selectedBasicValue: null
+  };
   constructor() {
     super();
     this.propsTable = [
@@ -40,7 +49,7 @@ export default class SelectPage extends Component {
             description: 'The option to be set as selected.'
           },
           {
-            name: 'hintText',
+            name: 'label',
             value: 'string',
             description:
               'Helpful text to display when no selection has been made. ("selectedIndex" must be -1 for the hintText to show)'
@@ -54,7 +63,7 @@ export default class SelectPage extends Component {
         ]
       },
       {
-        component: 'Select.Item',
+        component: 'BasicOption',
         props: [
           {
             name: 'disabled',
@@ -99,53 +108,66 @@ export default class SelectPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <div className="mdc-typography--title">Normal </div>
-        <Select hintText="Select">
-          <Select.Item>Option 1</Select.Item>
-          <Select.Item>Option 2</Select.Item>
-          <Select.Item>Option 3</Select.Item>
-          <Select.Item>Option 4</Select.Item>
+        <Select label="Select">
+          <BasicOption>Option 1</BasicOption>
+          <BasicOption>Option 2</BasicOption>
+          <BasicOption>Option 3</BasicOption>
+          <BasicOption>Option 4</BasicOption>
         </Select>
 
         <div className="mdc-typography--title">Preselected </div>
-        <Select hintText="Select" selectedIndex={2}>
-          <Select.Item>Option 1</Select.Item>
-          <Select.Item>Option 2</Select.Item>
-          <Select.Item>Option 3</Select.Item>
-          <Select.Item>Option 4</Select.Item>
+        <Select label="Select" selectedIndex={2}>
+          <BasicOption>Option 1</BasicOption>
+          <BasicOption>Option 2</BasicOption>
+          <BasicOption>Option 3</BasicOption>
+          <BasicOption>Option 4</BasicOption>
         </Select>
 
         <div className="mdc-typography--title">Disabled </div>
-        <Select hintText="Select" disabled={true}>
-          <Select.Item>Option 1</Select.Item>
-          <Select.Item>Option 2</Select.Item>
-          <Select.Item>Option 3</Select.Item>
-          <Select.Item>Option 4</Select.Item>
+        <Select label="Select" disabled={true}>
+          <BasicOption>Option 1</BasicOption>
+          <BasicOption>Option 2</BasicOption>
+          <BasicOption>Option 3</BasicOption>
+          <BasicOption>Option 4</BasicOption>
         </Select>
 
-        <div className="mdc-typography--title">Box option </div>
-        <Select hintText="Select" box>
-          <Select.Item>Option 1</Select.Item>
-          <Select.Item disabled>Option 2</Select.Item>
-          <Select.Item selected>Option 3</Select.Item>
-          <Select.Item>Option 4</Select.Item>
+        <div className="mdc-typography--title">
+          Outlined option: {this.state.selectedBasicValue}
+        </div>
+        <Select
+          label="Select"
+          outlined
+          onSelect={(e, {value}) => {
+            this.setState({
+              selectedBasicValue: value
+            });
+          }}>
+          <BasicOption>Option 1</BasicOption>
+          <BasicOption disabled>Option 2</BasicOption>
+          <BasicOption selected>Option 3</BasicOption>
+          <BasicOption>Option 4</BasicOption>
         </Select>
 
-        <div className="mdc-typography--title">Outlined option </div>
-        <Select hintText="Select" outlined>
-          <Select.Item>Option 1</Select.Item>
-          <Select.Item disabled>Option 2</Select.Item>
-          <Select.Item selected>Option 3</Select.Item>
-          <Select.Item>Option 4</Select.Item>
-        </Select>
-
-        <div className="mdc-typography--display1">Note </div>
-        <div className="mdc-typography--body">
-          <div>
-            If you are using this component individually, DO NOT FORGET to
-            import
-            <i> 'preact-material-components/Menu/style.css'</i> and
-            <i> 'preact-material-components/List/style.css'</i>
+        <div className="enhanced-select">
+          <div className="mdc-typography--title">
+            Box option: {this.state.selectedEnhancedValue}
           </div>
+          <EnhancedSelect
+            label="Select"
+            onSelect={(e, {value}) => {
+              this.setState({
+                selectedEnhancedValue: value
+              });
+            }}>
+            <EnhancedOption value="item1">Option 1</EnhancedOption>
+            <EnhancedOption value="item2" disabled>
+              Option 2
+            </EnhancedOption>
+            <EnhancedOption value="item3" selected>
+              Option 3
+            </EnhancedOption>
+            <EnhancedOption value="item4">Option 4</EnhancedOption>
+          </EnhancedSelect>
         </div>
       </div>
     );

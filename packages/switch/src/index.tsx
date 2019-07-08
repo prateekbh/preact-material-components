@@ -4,6 +4,7 @@ import {h} from 'preact';
 
 export interface ISwitchProps extends JSX.HTMLAttributes {
   disabled?: boolean;
+  checked?: boolean;
 }
 
 export interface ISwitchState {}
@@ -17,15 +18,6 @@ export class Switch extends MaterialComponent<ISwitchProps, ISwitchState> {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCSwitch(this.control);
-      if (this.props.value) {
-        this.MDComponent.value = this.props.value;
-      }
-    }
-  }
-
-  public componentWillUpdate(nextProps: ISwitchProps) {
-    if (nextProps.value && this.props.value !== nextProps.value) {
-      this.MDComponent.value = nextProps.value;
     }
   }
 

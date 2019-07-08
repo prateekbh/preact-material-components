@@ -1,6 +1,11 @@
-import {MDCSnackbar} from '@material/snackbar/';
+import {MDCSnackbar} from '@material/snackbar';
 import {h} from 'preact';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
+
+export * from './label';
+export * from './actions';
+export * from './action';
+export * from './dismiss';
 
 // TODO: Is that needed?
 function shallowDiffers(a, b) {
@@ -18,8 +23,20 @@ function shallowDiffers(a, b) {
   return false;
 }
 
+export interface ISnackbarOpenedEventDetail {
+  MDComponent: MDCSnackbar;
+}
+
+export interface ISnackbarClosedEventDetail {
+  MDComponent: MDCSnackbar;
+  reason: string;
+}
+
 export interface ISnackbarProps {
-  dismissesOnAction?: boolean;
+  leading?: boolean;
+  stacked?: boolean;
+  onOpened?: (e: Event, detail: ISnackbarOpenedEventDetail) => void;
+  onClosed?: (e: Event, detail: ISnackbarClosedEventDetail) => void;
 }
 
 export interface ISnackbarState {}
@@ -31,26 +48,22 @@ export class Snackbar extends MaterialComponent<
   public MDComponent?: MDCSnackbar;
 
   protected componentName = 'snackbar';
-  protected mdcProps = [];
+  protected mdcProps = ['leading', 'stacked'];
 
   public componentDidMount() {
     super.componentDidMount();
     if (this.control) {
       this.MDComponent = new MDCSnackbar(this.control);
-      if (
-        this.props.dismissesOnAction === undefined ||
-        this.props.dismissesOnAction === null
-      ) {
-        this.MDComponent.dismissesOnAction = true;
-      } else {
-        this.MDComponent.dismissesOnAction = this.props.dismissesOnAction;
-      }
+      this.MDComponent.listen('MDCSnackbar:opened', this.onOpened);
+      this.MDComponent.listen('MDCSnackbar:opened', this.onClosed);
     }
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
     if (this.MDComponent) {
+      this.MDComponent.unlisten('MDCSnackbar:opened', this.onOpened);
+      this.MDComponent.unlisten('MDCSnackbar:opened', this.onClosed);
       this.MDComponent.destroy();
     }
   }
@@ -61,18 +74,22 @@ export class Snackbar extends MaterialComponent<
     );
   }
 
+  protected onOpened = e => {
+    if (this.MDComponent) {
+      this.proxyEventHandler('onOpened', e, {});
+    }
+  };
+  protected onClosed = e => {
+    const {reason} = e.detail;
+    if (this.MDComponent) {
+      this.proxyEventHandler('onClosed', e, {reason});
+    }
+  };
+
   protected materialDom(props) {
     return (
-      <div
-        aria-live="assertive"
-        aria-atomic="true"
-        aria-hidden="true"
-        ref={this.setControlRef}
-        {...props}>
-        <div className="mdc-snackbar__text" />
-        <div className="mdc-snackbar__action-wrapper">
-          <button type="button" className="mdc-snackbar__action-button" />
-        </div>
+      <div aria-live="polite" ref={this.setControlRef} {...props}>
+        <div class="mdc-snackbar__surface">{props.children}</div>
       </div>
     );
   }

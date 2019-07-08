@@ -1,0 +1,15 @@
+interface IEventInfo {
+    component: MaterialComponent;  // The instance of the component that emits the event
+}
+
+// Sample props of a component
+interface IProps {
+    /**
+     * A sample event handler for some-event
+     *
+     * @param event: The event emitted by the browser/material
+     * @param additional: Additional information for the handler
+     * @returns: Nothing
+     */
+    onSomeEvent: (event: Event, additional: IEventInfo) => void;
+}
