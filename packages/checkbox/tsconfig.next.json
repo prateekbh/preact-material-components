@@ -4,5 +4,10 @@
     "rootDir": "src",
     "outDir": "esnext"
   },
+  "references": [
+    {
+      "path": "../base"
+    }
+  ],
   "include": ["./src/**/*"]
 }

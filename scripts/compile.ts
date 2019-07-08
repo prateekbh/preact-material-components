@@ -14,43 +14,43 @@ function project2path(proj: string, tsconfigName: string) {
   }
 }
 
-async function main() {
+async function compile(tsconfigName: string) {
   const packages = ls(pkgDir);
 
-  async function compile(tsconfigName: string) {
-    console.log(`Building with ${tsconfigName}`);
+  console.log(`Building with ${tsconfigName}`);
 
-    const tsPackages = packages.filter(dir => {
-      const tsconfigPath = join(pkgDir, dir, tsconfigName);
-      return existsSync(tsconfigPath);
-    });
+  const tsPackages = packages.filter(dir => {
+    const tsconfigPath = join(pkgDir, dir, tsconfigName);
+    return existsSync(tsconfigPath);
+  });
 
-    const args = ['--build', '--listEmittedFiles'];
-    if (process.argv.includes('--watch')) {
-      args.push('--watch');
-    }
-
-    const tsProjects: string[] = tsPackages.map(proj =>
-      project2path(proj, tsconfigName)
-    );
-
-    const res = await npx({
-      cmdOpts: args.concat(tsProjects),
-      command: 'tsc',
-      npxPkg: join(__dirname, '..', 'package.json'),
-      package: ['typescript']
-    });
-    const exit = res ? res.code : process.exitCode || 1;
-    if (exit) {
-      console.error('npx failed');
-      process.exit(1);
-    }
+  const args = ['--build'];
+  if (process.argv.includes('--watch')) {
+    args.push('--watch');
   }
 
-  await compile('tsconfig.json');
-  await compile('tsconfig.next.json');
+  const tsProjects: string[] = tsPackages.map(proj =>
+    project2path(proj, tsconfigName)
+  );
+
+  const res = await npx({
+    cmdOpts: args.concat(tsProjects),
+    command: 'tsc',
+    npxPkg: join(__dirname, '..', 'package.json'),
+    package: ['typescript']
+  });
+  const exit = res ? res.code : process.exitCode || 1;
+  if (exit) {
+    console.error('npx failed');
+    process.exit(1);
+  }
 }
 
 if (require.main === module) {
-  main().catch(err => console.error(err));
+  // noinspection JSIgnoredPromiseFromCall
+  compile(
+    process.argv.length > 2
+      ? `tsconfig.${process.argv[2]}.json`
+      : 'tsconfig.json'
+  );
 }
