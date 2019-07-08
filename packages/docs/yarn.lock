@@ -5913,11 +5913,6 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-marked@^0.3.6:
-  version "0.3.19"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
-  integrity sha512-ea2eGWOqNxPcXv8dyERdSr/6FmzvWwzjMxpfGB/sbMccXoct+xY+YukPD+QTUZwyvK7BZwcr4m21WBOW41pAkg==
-
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
@@ -7532,21 +7527,6 @@ preact-compat@^3.14.3:
     prop-types "^15.6.2"
     standalone-react-addons-pure-render-mixin "^0.1.1"
 
-preact-markdown@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/preact-markdown/-/preact-markdown-0.4.1.tgz#98f7b0abbe63103a771bb6fb3078c195e3599e85"
-  integrity sha512-Y5FzFN7SFh4Hfs2c2k2jMtz+xVD4+LOkADqKR0IP7os32Pi3arSjMVX05/TFPtcrkjMixXSyGOWHpMpxuhHYGg==
-  dependencies:
-    marked "^0.3.6"
-    preact-markup "^1.6.0"
-
-preact-markup@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/preact-markup/-/preact-markup-1.6.0.tgz#9f4d285761531dd75af3e1d2cd121505b09986bc"
-  integrity sha1-n00oV2FTHdda8+HSzRIVBbCZhrw=
-  optionalDependencies:
-    preact "^5.6.0"
-
 preact-render-to-string@^3.6.0, preact-render-to-string@^3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-3.8.2.tgz#bd72964d705a57da3a9e72098acaa073dd3ceff9"
@@ -7563,11 +7543,6 @@ preact-transition-group@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/preact-transition-group/-/preact-transition-group-1.1.1.tgz#f0a49327ea515ece34ea2be864c4a7d29e5d6e10"
   integrity sha1-8KSTJ+pRXs406ivoZMSn0p5dbhA=
-
-preact@^5.6.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-5.7.0.tgz#2f2a1fff07b11cf25fc54887789d1af137722b5a"
-  integrity sha1-Lyof/wexHPJfxUiHeJ0a8TdyK1o=
 
 preact@^8.1.0, preact@^8.2.9:
   version "8.4.2"

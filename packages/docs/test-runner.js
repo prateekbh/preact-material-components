@@ -27,6 +27,7 @@ if (shelljs.env['TRAVIS_PULL_REQUEST'] !== 'false') {
     );
     process.exit(0);
   } else if (packagesChanged.has('base') || packagesChanged.has('docs')) {
+    // TODO: Be smarter about what changed in docs
     // if base has changed it might impact every component
     // so run all of them.
     const {code} = shelljs.exec('cypress run');
