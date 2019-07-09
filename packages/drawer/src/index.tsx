@@ -108,8 +108,8 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   }
 
   private handleTouchStart_ = e => {
-    const {touches, target} = e;
-    const {clientX, clientY} = touches[0];
+    const {touches} = e;
+    const {clientX, clientY} = touches ? touches[0] : e;
     if (!this.MDComponent) {
       return;
     }
@@ -153,16 +153,12 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   };
 
   private handleTouchMove_ = e => {
-    const {touches} = e;
-    if (
-      touches.length === 0 ||
-      this.state.sliderState === SLIDER_STATES.REST ||
-      !this.MDComponent
-    ) {
+    if (this.state.sliderState === SLIDER_STATES.REST || !this.MDComponent) {
       return;
     }
+    const {touches} = e;
     const startPosition = this.MDComponent.open ? 0 : -256;
-    const {clientX, clientY} = touches[0];
+    const {clientX} = touches ? touches[0] : e;
     const deltaX = clientX - this.state.touchPositionX;
     this.setState({
       sliderState: SLIDER_STATES.SWIPING,
@@ -180,6 +176,18 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     });
 
     window.addEventListener('touchmove', this.handleTouchMove_, {
+      passive: false
+    });
+
+    window.addEventListener('mousedown', this.handleTouchStart_, {
+      passive: false
+    });
+
+    window.addEventListener('mouseup', this.handleTouchEnd_, {
+      passive: false
+    });
+
+    window.addEventListener('mousemove', this.handleTouchMove_, {
       passive: false
     });
   };
