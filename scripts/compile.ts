@@ -1,40 +1,56 @@
 import {existsSync} from 'fs';
 import * as npx from 'libnpx';
-import {join, relative} from 'path';
+import {join, resolve} from 'path';
 import {ls} from 'shelljs';
 
-const rootDir = join(__dirname, '..');
-const pkgDir = join(__dirname, '..', 'packages');
+const rootDir = resolve(join(__dirname, '..'));
+const pkgDir = join(rootDir, 'packages');
 
-const packages = ls(pkgDir);
-
-const tsPackages = packages.filter(path => {
-  const tsconfigPath = join(pkgDir, path, 'tsconfig.json');
-  return existsSync(tsconfigPath);
-});
-
-const tsRel: string[] = [];
-const tsProjects: string[] = [];
-tsPackages.forEach(path => {
-  const basePath = join(pkgDir, path);
-  tsProjects.push(basePath);
-  tsRel.push(relative(rootDir, basePath));
-});
-
-const args = ['-b'];
-if (process.argv.indexOf('--watch') !== -1) {
-  args.push('--watch');
+function project2path(proj: string, tsconfigName: string) {
+  if (tsconfigName === 'tsconfig.json') {
+    return resolve(join(pkgDir, proj));
+  } else {
+    return resolve(join(pkgDir, proj, tsconfigName));
+  }
 }
 
-console.log(
-  `$ ${['tsc']
-    .concat(args)
-    .concat(tsRel)
-    .join(' ')}`
-);
+async function compile(tsconfigName: string) {
+  const packages = ls(pkgDir);
 
-npx({
-  cmdOpts: args.concat(tsProjects),
-  command: 'tsc',
-  package: ['typescript']
-});
+  console.log(`Building with ${tsconfigName}`);
+
+  const tsPackages = packages.filter(dir => {
+    const tsconfigPath = join(pkgDir, dir, tsconfigName);
+    return existsSync(tsconfigPath);
+  });
+
+  const args = ['--build'];
+  if (process.argv.includes('--watch')) {
+    args.push('--watch');
+  }
+
+  const tsProjects: string[] = tsPackages.map(proj =>
+    project2path(proj, tsconfigName)
+  );
+
+  const res = await npx({
+    cmdOpts: args.concat(tsProjects),
+    command: 'tsc',
+    npxPkg: join(__dirname, '..', 'package.json'),
+    package: ['typescript']
+  });
+  const exit = res ? res.code : process.exitCode || 1;
+  if (exit) {
+    console.error('npx failed');
+    process.exit(1);
+  }
+}
+
+if (require.main === module) {
+  // noinspection JSIgnoredPromiseFromCall
+  compile(
+    process.argv.length > 2
+      ? `tsconfig.${process.argv[2]}.json`
+      : 'tsconfig.json'
+  );
+}

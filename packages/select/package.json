@@ -36,7 +36,8 @@
   "dependencies": {
     "@material/select": "^2.0.0",
     "@preact-material-components/base": "^2.0.1-alpha.0",
-    "@preact-material-components/menu": "^2.0.1-alpha.0"
+    "@preact-material-components/menu": "^2.0.1-alpha.0",
+    "tslib": "^1.9.3"
   },
   "peerDependencies": {
     "preact": "^8.4.2"
