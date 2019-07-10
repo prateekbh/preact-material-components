@@ -1,7 +1,7 @@
 import {testScreenshot, baseURL} from '../../utils/utils';
 
 describe('Visual  Regression Tests', () => {
-  const url = `${baseURL}/design`;
+  const url = `${baseURL}/theming`;
 
   beforeEach(() => {
     cy.visit(url);
@@ -9,5 +9,5 @@ describe('Visual  Regression Tests', () => {
   afterEach(() => {
     cy.eyesClose();
   });
-  testScreenshot('designpage', url);
+  testScreenshot('themingpage', url);
 });

@@ -49,7 +49,7 @@ import SnackbarPage from '../../routes/snackbar';
 import SwitchPage from '../../routes/switch';
 import TabBarPage from '../../routes/tabbar';
 import TextfieldPage from '../../routes/textfield';
-import ThemePage from '../../routes/theme';
+import ThemingPage from '../../routes/theming';
 import TopAppBarPage from '../../routes/top-app-bar';
 import Typography from '../../routes/typography';
 
@@ -71,6 +71,12 @@ const menuItems = [
     icon: 'brush',
     link: '/design/',
     component: DesignPage
+  },
+  {
+    text: 'Theming',
+    icon: 'color_lens',
+    link: '/theming/',
+    component: ThemingPage
   },
   {
     text: 'Button',
@@ -186,11 +192,6 @@ const menuItems = [
     text: 'TextField',
     link: '/component/textfield/',
     component: TextfieldPage
-  },
-  {
-    text: 'Theme',
-    link: '/component/theme/',
-    component: ThemePage
   },
   {
     text: 'TopAppBar',
