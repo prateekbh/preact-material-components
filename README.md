@@ -8,7 +8,7 @@ preact components for [material-components-web](https://material.io/develop/web)
 
 ---
 
-These components bring material components in an a-la-carté fashion.
+These components bring material components in an a-la-carte fashion.
 You can use `n` number of components without taking the weight of any extra code of the components you do not use.
 
 `preact-material-components` is a thin opinion-less wrapper over [material-components-web](https://github.com/material-components/material-components-web/tree/master/packages). Use these for painless integration of these components into your project, without taking the bloat.
