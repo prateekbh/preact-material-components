@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "@material/typography": "2.3.0",
-    "@preact-material-components/base": "^2.0.1-alpha.0"
+    "@preact-material-components/base": "^2.0.1-alpha.0",
+    "tslib": "^1.9.3"
   },
   "peerDependencies": {
     "preact": "^8.3.1"

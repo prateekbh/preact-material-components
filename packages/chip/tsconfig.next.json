@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.next.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "esnext"
+  },
+  "references": [
+    {
+      "path": "../base"
+    },
+    {
+      "path": "../icon"
+    }
+  ],
+  "include": ["./src/**/*"]
+}

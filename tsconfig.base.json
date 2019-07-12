@@ -8,7 +8,7 @@
     "jsx": "react",
     "jsxFactory": "h",
     "allowJs": false,
-    "lib": ["es2017", "dom"],
+    "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "declaration": true,
     "esModuleInterop": false,
@@ -16,6 +16,7 @@
     "strict": true,
     "composite": true,
     "baseUrl": "./packages",
+    "importHelpers": true,
     "paths": {
       "@preact-material-components/*": ["./*/src"],
       "@preact-material-components/base/lib/*": ["./base/src/*"],

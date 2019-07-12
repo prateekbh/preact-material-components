@@ -37,7 +37,7 @@
     "@material/base": "0.41.0",
     "@material/ripple": "^0.43.0",
     "@material/theme": "0.43.0",
-    "bind-decorator": "^1.0.11"
+    "tslib": "^1.9.3"
   },
   "peerDependencies": {
     "preact": "^8.3.1"
