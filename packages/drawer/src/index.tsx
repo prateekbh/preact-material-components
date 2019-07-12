@@ -1,14 +1,12 @@
 import {MDCDrawer} from '@material/drawer';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
-
 export interface IDrawerProps {
   onOpen?: (e: Event) => void;
   onClose?: (e: Event) => void;
   enableGestureSupport: boolean;
   swipeAcceptWidth: number;
 }
-
 export interface IDrawerProps extends JSX.HTMLAttributes {
   onAccept?: JSX.GenericEventHandler;
   onCancel?: JSX.GenericEventHandler;
@@ -30,9 +28,11 @@ export interface IDrawerState {
   swipeDistance: number;
 }
 
+const DRAWER_WIDTH = 255;
+
 const CLOSED_STATE = {
   sliderState: SLIDER_STATES.REST,
-  swipeDistance: -256,
+  swipeDistance: -1 * DRAWER_WIDTH,
   touchPositionX: 0,
   touchPositionY: 0
 };
@@ -49,12 +49,19 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   public componentDidMount() {
     super.componentDidMount();
     if (this.control && (this.props.modal || this.props.dismissible)) {
+      console.log(this.control);
       this.MDComponent = new MDCDrawer(this.control);
       this.MDComponent.listen('MDCDrawer:opened', this.onOpen);
       this.MDComponent.listen('MDCDrawer:closed', this.onClose);
       if (this.props.enableGestureSupport) {
         this.attachGlobalListeners_();
       }
+    }
+  }
+
+  public componentWillUnmount() {
+    if (this.control && this.MDComponent) {
+      this.detachGlobalListeners_();
     }
   }
 
@@ -190,5 +197,14 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     window.addEventListener('mousemove', this.handleTouchMove_, {
       passive: false
     });
+  };
+
+  private detachGlobalListeners_ = () => {
+    window.removeEventListener('touchstart', this.handleTouchStart_);
+    window.removeEventListener('touchend', this.handleTouchEnd_);
+    window.removeEventListener('touchmove', this.handleTouchMove_);
+    window.removeEventListener('mousedown', this.handleTouchStart_);
+    window.removeEventListener('mouseup', this.handleTouchEnd_);
+    window.removeEventListener('mousemove', this.handleTouchMove_);
   };
 }
