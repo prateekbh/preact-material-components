@@ -37,6 +37,11 @@ const CLOSED_STATE = {
   touchPositionY: 0
 };
 
+const OPENED_STATE = {
+  ...CLOSED_STATE,
+  swipeDistance: 0
+};
+
 export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   public MDComponent?: MDCDrawer;
 
@@ -49,7 +54,6 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   public componentDidMount() {
     super.componentDidMount();
     if (this.control && (this.props.modal || this.props.dismissible)) {
-      console.log(this.control);
       this.MDComponent = new MDCDrawer(this.control);
       this.MDComponent.listen('MDCDrawer:opened', this.onOpen);
       this.MDComponent.listen('MDCDrawer:closed', this.onClose);
@@ -66,10 +70,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   }
 
   protected onOpen = e => {
-    this.setState({
-      ...CLOSED_STATE,
-      swipeDistance: 0
-    });
+    this.setState(OPENED_STATE);
 
     this.proxyEventHandler('onOpen', e);
   };
@@ -94,6 +95,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     if (this.state.sliderState !== SLIDER_STATES.REST) {
       styleObject.display = 'flex';
       styleObject.transform = `translateX(${this.state.swipeDistance}px)`;
+      console.log({tfm: `translateX(${this.state.swipeDistance}px)`});
     }
 
     if (this.state.sliderState === SLIDER_STATES.SWIPE_TO_BE_COMPLETED) {
@@ -144,7 +146,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
       this.setState(
         {
           sliderState: SLIDER_STATES.SWIPE_TO_BE_COMPLETED,
-          swipeDistance: this.MDComponent.open ? -256 : 0
+          swipeDistance: this.MDComponent.open ? -1 * DRAWER_WIDTH : 0
         },
         () => {
           if (this.MDComponent && this.MDComponent.open) {
@@ -155,7 +157,11 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
         }
       );
     } else if (this.state.sliderState === SLIDER_STATES.SWIPE_START) {
-      this.setState({...CLOSED_STATE});
+      if (this.MDComponent && this.MDComponent.open) {
+        this.setState(OPENED_STATE);
+      } else {
+        this.setState(CLOSED_STATE);
+      }
     }
   };
 
