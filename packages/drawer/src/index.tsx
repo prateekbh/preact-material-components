@@ -114,7 +114,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     );
   }
 
-  private handleTouchStart_ = e => {
+  private handleTouchStart = e => {
     const {touches} = e;
     const {clientX, clientY} = touches ? touches[0] : e;
     if (!this.MDComponent) {
@@ -135,7 +135,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     });
   };
 
-  private handleTouchEnd_ = e => {
+  private handleTouchEnd = e => {
     if (!this.MDComponent) {
       return;
     }
@@ -176,11 +176,11 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   };
 
   private attachGlobalListeners = () => {
-    window.addEventListener('touchstart', this.handleTouchStart_, {
+    window.addEventListener('touchstart', this.handleTouchStart, {
       passive: false
     });
 
-    window.addEventListener('touchend', this.handleTouchEnd_, {
+    window.addEventListener('touchend', this.handleTouchEnd, {
       passive: false
     });
 
@@ -188,11 +188,11 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
       passive: false
     });
 
-    window.addEventListener('mousedown', this.handleTouchStart_, {
+    window.addEventListener('mousedown', this.handleTouchStart, {
       passive: false
     });
 
-    window.addEventListener('mouseup', this.handleTouchEnd_, {
+    window.addEventListener('mouseup', this.handleTouchEnd, {
       passive: false
     });
 
@@ -202,11 +202,11 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   };
 
   private detachGlobalListeners = () => {
-    window.removeEventListener('touchstart', this.handleTouchStart_);
-    window.removeEventListener('touchend', this.handleTouchEnd_);
+    window.removeEventListener('touchstart', this.handleTouchStart);
+    window.removeEventListener('touchend', this.handleTouchEnd);
     window.removeEventListener('touchmove', this.handleTouchMove);
-    window.removeEventListener('mousedown', this.handleTouchStart_);
-    window.removeEventListener('mouseup', this.handleTouchEnd_);
+    window.removeEventListener('mousedown', this.handleTouchStart);
+    window.removeEventListener('mouseup', this.handleTouchEnd);
     window.removeEventListener('mousemove', this.handleTouchMove);
   };
 }
