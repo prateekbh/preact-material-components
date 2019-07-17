@@ -167,10 +167,12 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     const startPosition = this.MDComponent.open ? 0 : -256;
     const {clientX} = touches ? touches[0] : e;
     const deltaX = clientX - this.state.touchPositionX;
-    this.setState({
-      sliderState: SLIDER_STATES.SWIPING,
-      swipeDistance: startPosition + deltaX
-    });
+    if (Math.abs(deltaX) < DRAWER_WIDTH) {
+      this.setState({
+        sliderState: SLIDER_STATES.SWIPING,
+        swipeDistance: startPosition + deltaX
+      });
+    }
   };
 
   private attachGlobalListeners_ = () => {
