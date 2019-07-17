@@ -54,14 +54,14 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
       this.MDComponent.listen('MDCDrawer:opened', this.onOpen);
       this.MDComponent.listen('MDCDrawer:closed', this.onClose);
       if (this.props.enableGestureSupport) {
-        this.attachGlobalListeners_();
+        this.attachGlobalListeners();
       }
     }
   }
 
   public componentWillUnmount() {
     if (this.control && this.MDComponent) {
-      this.detachGlobalListeners_();
+      this.detachGlobalListeners();
     }
   }
 
@@ -159,7 +159,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     }
   };
 
-  private handleTouchMove_ = e => {
+  private handleTouchMove = e => {
     if (this.state.sliderState === SLIDER_STATES.REST || !this.MDComponent) {
       return;
     }
@@ -175,7 +175,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     }
   };
 
-  private attachGlobalListeners_ = () => {
+  private attachGlobalListeners = () => {
     window.addEventListener('touchstart', this.handleTouchStart_, {
       passive: false
     });
@@ -184,7 +184,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
       passive: false
     });
 
-    window.addEventListener('touchmove', this.handleTouchMove_, {
+    window.addEventListener('touchmove', this.handleTouchMove, {
       passive: false
     });
 
@@ -196,17 +196,17 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
       passive: false
     });
 
-    window.addEventListener('mousemove', this.handleTouchMove_, {
+    window.addEventListener('mousemove', this.handleTouchMove, {
       passive: false
     });
   };
 
-  private detachGlobalListeners_ = () => {
+  private detachGlobalListeners = () => {
     window.removeEventListener('touchstart', this.handleTouchStart_);
     window.removeEventListener('touchend', this.handleTouchEnd_);
-    window.removeEventListener('touchmove', this.handleTouchMove_);
+    window.removeEventListener('touchmove', this.handleTouchMove);
     window.removeEventListener('mousedown', this.handleTouchStart_);
     window.removeEventListener('mouseup', this.handleTouchEnd_);
-    window.removeEventListener('mousemove', this.handleTouchMove_);
+    window.removeEventListener('mousemove', this.handleTouchMove);
   };
 }
