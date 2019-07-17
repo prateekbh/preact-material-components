@@ -95,7 +95,6 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     if (this.state.sliderState !== SLIDER_STATES.REST) {
       styleObject.display = 'flex';
       styleObject.transform = `translateX(${this.state.swipeDistance}px)`;
-      console.log({tfm: `translateX(${this.state.swipeDistance}px)`});
     }
 
     if (this.state.sliderState === SLIDER_STATES.SWIPE_TO_BE_COMPLETED) {
@@ -174,6 +173,9 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     const {clientX} = touches ? touches[0] : e;
     const deltaX = clientX - this.state.touchPositionX;
     if (Math.abs(deltaX) < DRAWER_WIDTH) {
+      if (this.MDComponent && this.MDComponent.open && deltaX > 1) {
+        return;
+      }
       this.setState({
         sliderState: SLIDER_STATES.SWIPING,
         swipeDistance: startPosition + deltaX
