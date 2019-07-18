@@ -1,13 +1,14 @@
 import {MDCDrawer} from '@material/drawer';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
-import {bind} from 'bind-decorator';
 import {h} from 'preact';
-
 export interface IDrawerProps {
   onOpen?: (e: Event) => void;
   onClose?: (e: Event) => void;
+  onSwipeStart?: (e: Event) => void;
+  onSwipeEnd?: (e: Event) => void;
+  enableGestureSupport: boolean;
+  swipeAcceptWidth: number;
 }
-
 export interface IDrawerProps extends JSX.HTMLAttributes {
   onAccept?: JSX.GenericEventHandler;
   onCancel?: JSX.GenericEventHandler;
@@ -15,10 +16,38 @@ export interface IDrawerProps extends JSX.HTMLAttributes {
   modal?: boolean;
 }
 
-export interface IDrawerState {}
+enum SLIDER_STATES {
+  REST,
+  SWIPE_START,
+  SWIPING,
+  SWIPE_TO_BE_COMPLETED
+}
+
+export interface IDrawerState {
+  sliderState: SLIDER_STATES;
+  touchPositionX: number;
+  touchPositionY: number;
+  swipeDistance: number;
+}
+
+const DRAWER_WIDTH = 255;
+
+const CLOSED_STATE = {
+  sliderState: SLIDER_STATES.REST,
+  swipeDistance: -1 * DRAWER_WIDTH,
+  touchPositionX: 0,
+  touchPositionY: 0
+};
+
+const OPENED_STATE = {
+  ...CLOSED_STATE,
+  swipeDistance: 0
+};
 
 export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
   public MDComponent?: MDCDrawer;
+
+  public state = {...CLOSED_STATE};
 
   protected componentName = 'drawer-container';
   protected mdcProps = [];
@@ -30,22 +59,38 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
       this.MDComponent = new MDCDrawer(this.control);
       this.MDComponent.listen('MDCDrawer:opened', this.onOpen);
       this.MDComponent.listen('MDCDrawer:closed', this.onClose);
+      if (this.props.enableGestureSupport) {
+        this.attachGlobalListeners();
+      }
     }
   }
 
-  @bind
-  protected onOpen(e) {
-    if (this.props.onOpen) {
-      this.props.onOpen(e);
+  public componentWillUnmount() {
+    if (this.control && this.MDComponent) {
+      this.detachGlobalListeners();
     }
   }
 
-  @bind
-  protected onClose(e) {
-    if (this.props.onClose) {
-      this.props.onClose(e);
-    }
-  }
+  protected onOpen = e => {
+    this.setState(OPENED_STATE);
+
+    this.proxyEventHandler('onOpen', e);
+  };
+
+  protected onClose = e => {
+    this.setState({
+      ...CLOSED_STATE
+    });
+    this.proxyEventHandler('onClose', e);
+  };
+
+  protected onSwipeStart = e => {
+    this.proxyEventHandler('onSwipeStart', e);
+  };
+
+  protected onSwipeEnd = e => {
+    this.proxyEventHandler('onSwipeEnd', e);
+  };
 
   protected materialDom(props) {
     const classes = ['mdc-drawer'];
@@ -55,13 +100,133 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     } else if (props.dismissible) {
       classes.push('mdc-drawer--dismissible');
     }
+    // I dont know what will be the type of this.
+    const styleObject: any = {};
+    if (this.state.sliderState !== SLIDER_STATES.REST) {
+      styleObject.display = 'flex';
+      styleObject.transform = `translateX(${this.state.swipeDistance}px)`;
+    }
+
+    if (this.state.sliderState === SLIDER_STATES.SWIPE_TO_BE_COMPLETED) {
+      styleObject['transition-duration'] = '300ms';
+    }
+
     return (
       <div>
-        <aside class={classes.join(' ')} ref={this.setControlRef} {...props}>
+        <aside
+          class={classes.join(' ')}
+          ref={this.setControlRef}
+          {...props}
+          style={styleObject}>
           {props.children}
         </aside>
         {props.modal && <div class="mdc-drawer-scrim" />}
       </div>
     );
   }
+
+  private handleTouchStart = e => {
+    const {touches} = e;
+    const {clientX, clientY} = touches ? touches[0] : e;
+    if (!this.MDComponent) {
+      return;
+    }
+
+    if (
+      clientX > (this.props.swipeAcceptWidth || 40) &&
+      this.MDComponent.open === false
+    ) {
+      return;
+    }
+
+    this.setState({
+      sliderState: SLIDER_STATES.SWIPE_START,
+      touchPositionX: clientX,
+      touchPositionY: clientY
+    });
+    this.onSwipeStart(e);
+  };
+
+  private handleTouchEnd = e => {
+    if (!this.MDComponent) {
+      return;
+    }
+
+    if (this.state.sliderState === SLIDER_STATES.SWIPING) {
+      this.setState(
+        {
+          sliderState: SLIDER_STATES.SWIPE_TO_BE_COMPLETED,
+          swipeDistance: this.MDComponent.open ? -1 * DRAWER_WIDTH : 0
+        },
+        () => {
+          if (this.MDComponent && this.MDComponent.open) {
+            this.MDComponent.open = false;
+          } else if (this.MDComponent && !this.MDComponent.open) {
+            this.MDComponent.open = true;
+          }
+        }
+      );
+    } else if (this.state.sliderState === SLIDER_STATES.SWIPE_START) {
+      if (this.MDComponent && this.MDComponent.open) {
+        this.setState(OPENED_STATE);
+      } else {
+        this.setState(CLOSED_STATE);
+      }
+    }
+    this.onSwipeEnd(e);
+  };
+
+  private handleTouchMove = e => {
+    if (this.state.sliderState === SLIDER_STATES.REST || !this.MDComponent) {
+      return;
+    }
+    const {touches} = e;
+    const startPosition = this.MDComponent.open ? 0 : -256;
+    const {clientX} = touches ? touches[0] : e;
+    const deltaX = clientX - this.state.touchPositionX;
+    if (Math.abs(deltaX) < DRAWER_WIDTH) {
+      if (this.MDComponent && this.MDComponent.open && deltaX > 1) {
+        return;
+      }
+      this.setState({
+        sliderState: SLIDER_STATES.SWIPING,
+        swipeDistance: startPosition + deltaX
+      });
+    }
+  };
+
+  private attachGlobalListeners = () => {
+    window.addEventListener('touchstart', this.handleTouchStart, {
+      passive: false
+    });
+
+    window.addEventListener('touchend', this.handleTouchEnd, {
+      passive: false
+    });
+
+    window.addEventListener('touchmove', this.handleTouchMove, {
+      passive: false
+    });
+
+    window.addEventListener('mousedown', this.handleTouchStart, {
+      passive: false
+    });
+
+    window.addEventListener('mouseup', this.handleTouchEnd, {
+      passive: false
+    });
+
+    window.addEventListener('mousemove', this.handleTouchMove, {
+      passive: false
+    });
+  };
+
+  private detachGlobalListeners = () => {
+    window.removeEventListener('touchstart', this.handleTouchStart);
+    window.removeEventListener('touchend', this.handleTouchEnd);
+    window.removeEventListener('touchmove', this.handleTouchMove);
+    window.removeEventListener('mousedown', this.handleTouchStart);
+    window.removeEventListener('mouseup', this.handleTouchEnd);
+    window.removeEventListener('mousemove', this.handleTouchMove);
+  };
 }
