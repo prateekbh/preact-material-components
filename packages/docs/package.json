@@ -54,6 +54,7 @@
     "@preact-material-components/menu": "^2.0.1-alpha.0",
     "@preact-material-components/menu-surface": "^2.0.1-alpha.0",
     "@preact-material-components/radio": "^2.0.1-alpha.0",
+    "@preact-material-components/ripple": "^2.0.1-alpha.0",
     "@preact-material-components/select": "^2.0.1-alpha.0",
     "@preact-material-components/slider": "^2.0.1-alpha.0",
     "@preact-material-components/snackbar": "^2.0.1-alpha.0",
