@@ -1,4 +1,4 @@
-# `typography`
+# `ripple`
 
 > TODO: description
 
