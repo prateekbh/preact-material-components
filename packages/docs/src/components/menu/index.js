@@ -71,7 +71,16 @@ export default class Menu extends Component {
 
   render({items}) {
     return (
-      <Drawer modal ref={drawer => (this.drawer = drawer)} enableGestureSupport>
+      <Drawer
+        modal
+        ref={drawer => (this.drawer = drawer)}
+        enableGestureSupport
+        onSwipeStart={() => {
+          document.body.style.overflow = 'hidden';
+        }}
+        onSwipeEnd={() => {
+          document.body.style.overflow = 'auto';
+        }}>
         <DrawerHeader>
           <div>
             <Typography headline5>Components</Typography>

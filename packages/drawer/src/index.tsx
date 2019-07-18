@@ -4,6 +4,8 @@ import {h} from 'preact';
 export interface IDrawerProps {
   onOpen?: (e: Event) => void;
   onClose?: (e: Event) => void;
+  onSwipeStart?: (e: Event) => void;
+  onSwipeEnd?: (e: Event) => void;
   enableGestureSupport: boolean;
   swipeAcceptWidth: number;
 }
@@ -82,6 +84,14 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
     this.proxyEventHandler('onClose', e);
   };
 
+  protected onSwipeStart = e => {
+    this.proxyEventHandler('onSwipeStart', e);
+  };
+
+  protected onSwipeEnd = e => {
+    this.proxyEventHandler('onSwipeEnd', e);
+  };
+
   protected materialDom(props) {
     const classes = ['mdc-drawer'];
     // cant use mdcProps cuz classes need to be on the inner child and not on root level
@@ -134,6 +144,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
       touchPositionX: clientX,
       touchPositionY: clientY
     });
+    this.onSwipeStart(e);
   };
 
   private handleTouchEnd = e => {
@@ -162,6 +173,7 @@ export class Drawer extends MaterialComponent<IDrawerProps, IDrawerState> {
         this.setState(CLOSED_STATE);
       }
     }
+    this.onSwipeEnd(e);
   };
 
   private handleTouchMove = e => {
