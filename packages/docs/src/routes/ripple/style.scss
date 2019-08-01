@@ -1,0 +1,12 @@
+:global {
+  @import '~@preact-material-components/ripple/sass';
+
+  .page-ripple .demo-ripple {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #1f242f;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+}

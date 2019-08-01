@@ -1,0 +1,13 @@
+import {h, Component} from 'preact';
+import {Ripple} from '@preact-material-components/ripple';
+import '@preact-material-components/ripple/sass/index.scss';
+
+export default class RipplePage extends Component {
+  render() {
+    return (
+      <Ripple>
+        This ripples
+      </Ripple>
+    );
+  }
+}

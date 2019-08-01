@@ -76,6 +76,10 @@
     "url": "/component/radio"
   },
   {
+    "title": "Ripple",
+    "url": "/component/ripple"
+  },
+  {
     "title": "Select",
     "url": "/component/select"
   },

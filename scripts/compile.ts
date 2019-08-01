@@ -47,10 +47,7 @@ async function compile(tsconfigName: string) {
 }
 
 if (require.main === module) {
+  const posArgv = process.argv.filter(v => !v.startsWith('--')).slice(2);
   // noinspection JSIgnoredPromiseFromCall
-  compile(
-    process.argv.length > 2
-      ? `tsconfig.${process.argv[2]}.json`
-      : 'tsconfig.json'
-  );
+  compile(posArgv.length ? `tsconfig.${posArgv[0]}.json` : 'tsconfig.json');
 }

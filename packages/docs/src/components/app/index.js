@@ -43,6 +43,7 @@ import LinearProgressPage from '../../routes/linear-progress';
 import ListPage from '../../routes/list';
 import MenuPage from '../../routes/menu';
 import RadioPage from '../../routes/radio';
+import RipplePage from '../../routes/ripple';
 import SelectPage from '../../routes/select';
 import SliderPage from '../../routes/slider';
 import SnackbarPage from '../../routes/snackbar';
@@ -156,6 +157,11 @@ const menuItems = [
     text: 'Radio',
     link: '/component/radio/',
     component: RadioPage
+  },
+  {
+    text: 'Ripple',
+    link: '/component/ripple/',
+    component: RipplePage
   },
   {
     text: 'Select',

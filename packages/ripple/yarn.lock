@@ -23,49 +23,20 @@
   dependencies:
     tslib "^1.9.3"
 
-"@material/elevation@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@material/elevation/-/elevation-1.1.0.tgz#def23c360ae067b43c1632a331b9883b9f679cc5"
-  integrity sha512-m4eATJvDhWK1BT+yA1iHz5mhAk8cV9olC4mjVzm4PTAqhDH2yya4WzjN1HPVHE/a65ObyZ7V4qopxu9MRocm3A==
-  dependencies:
-    "@material/animation" "^1.0.0"
-    "@material/feature-targeting" "^0.44.1"
-    "@material/theme" "^1.1.0"
-
 "@material/feature-targeting@^0.44.1":
   version "0.44.1"
   resolved "https://registry.yarnpkg.com/@material/feature-targeting/-/feature-targeting-0.44.1.tgz#afafc80294e5efab94bee31a187273d43d34979a"
   integrity sha512-90cc7njn4aHbH9UxY8qgZth1W5JgOgcEdWdubH1t7sFkwqFxS5g3zgxSBt46TygFBVIXNZNq35Xmg80wgqO7Pg==
 
-"@material/ripple@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-2.1.1.tgz#850e44bafe9db962f400c7e067eb28c1cb11010b"
-  integrity sha512-/WIOBen3OLasJrr2ZXo9wpVJo6Z+1qFxnOvC61iXWqnDctq1fgTAQQbiMaRtsbfU68jDfhgLFJlwjgzvqAvFWQ==
+"@material/ripple@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-2.3.0.tgz#4701b2cfecddc4c83ae62c777ae2bf9607988705"
+  integrity sha512-ejXR0nstERofFhssRyFlwOLgebwm2uGbarHtWZ2/+7QY2Th/Z1wOqNb2h/WRoShsJXK11RUsochb6BJrg30u7w==
   dependencies:
     "@material/animation" "^1.0.0"
     "@material/base" "^1.0.0"
     "@material/dom" "^1.1.0"
     "@material/feature-targeting" "^0.44.1"
-    "@material/theme" "^1.1.0"
-    tslib "^1.9.3"
-
-"@material/rtl@^0.42.0":
-  version "0.42.0"
-  resolved "https://registry.yarnpkg.com/@material/rtl/-/rtl-0.42.0.tgz#1836e78186c2d8b996f6fbf97adab203535335bc"
-  integrity sha512-VrnrKJzhmspsN8WXHuxxBZ69yM5IwhCUqWr1t1eNfw3ZEvEj7i1g3P31HGowKThIN1dc1Wh4LE14rCISWCtv5w==
-
-"@material/switch@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@material/switch/-/switch-2.1.1.tgz#3b8d0d866414021c75b0e33760a14fe194a23cdf"
-  integrity sha512-9Y08W7ygx+zy9+/hUZR5ZBdaxOEpF3D8v+wJK+EfEGhAPpYj6e2aTz83kMLGpKzvdY500QGVjvh++gbi5XQv+Q==
-  dependencies:
-    "@material/animation" "^1.0.0"
-    "@material/base" "^1.0.0"
-    "@material/dom" "^1.1.0"
-    "@material/elevation" "^1.1.0"
-    "@material/feature-targeting" "^0.44.1"
-    "@material/ripple" "^2.1.1"
-    "@material/rtl" "^0.42.0"
     "@material/theme" "^1.1.0"
     tslib "^1.9.3"
 
