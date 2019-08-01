@@ -31,6 +31,9 @@ export class Ripple extends MaterialComponent<IRippleProps, IRippleState> {
     const {tag, enabled, ...props} = allprops;
     const Tag = tag ? tag : 'div';
 
+    const surfaceClass = 'mdc-ripple-surface';
+    props.class = props.class ? `${props.class} ${surfaceClass}` : surfaceClass;
+
     return (
       <Tag {...props} ref={this.setControlRef}>
         {props.children}
