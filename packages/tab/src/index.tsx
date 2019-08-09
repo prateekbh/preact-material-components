@@ -2,6 +2,10 @@ import {MDCTabBar} from '@material/tab-bar';
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
 
+export * from './tab/icon';
+export * from './tab/index';
+export * from './tab/label';
+
 export interface ITabBarProps {
   activeTabIndex?: number; // TODO: Fix type in docs
 }
