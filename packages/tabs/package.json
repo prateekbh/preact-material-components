@@ -1,18 +1,18 @@
 {
-  "name": "@preact-material-components/tab",
+  "name": "@preact-material-components/tabs",
   "version": "2.0.1-alpha.0",
-  "description": "Implementation of a material tab",
+  "description": "Implementation of material tabs",
   "keywords": [
     "preact-material",
     "preact",
     "material",
-    "tab"
+    "tabs"
   ],
   "author": {
     "name": "Prateek Bhatnagar",
     "email": "prateek89born@gmail.com"
   },
-  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/tab#readme",
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/tabs#readme",
   "license": "MIT",
   "sass": "sass",
   "main": "lib/index.js",

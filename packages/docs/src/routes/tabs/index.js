@@ -2,9 +2,9 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {TabBar, Tab, TabIcon, TabLabel} from '@preact-material-components/tab';
+import {TabBar, Tab, TabIcon, TabLabel} from '@preact-material-components/tabs';
 
-import '@preact-material-components/tab/sass';
+import '@preact-material-components/tabs/sass';
 
 import style from './style.scss';
 
@@ -17,7 +17,7 @@ import sample from './sample.txt';
 import iconsSample from './sample.txt';
 
 // Class
-export default class TabPage extends Component {
+export default class TabsPage extends Component {
   constructor() {
     super();
     this.propsTable = [

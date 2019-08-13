@@ -48,7 +48,7 @@ import SelectPage from '../../routes/select';
 import SliderPage from '../../routes/slider';
 import SnackbarPage from '../../routes/snackbar';
 import SwitchPage from '../../routes/switch';
-import TabPage from '../../routes/tab';
+import TabsPage from '../../routes/tabs';
 import TextfieldPage from '../../routes/textfield';
 import ThemePage from '../../routes/theme';
 import TopAppBarPage from '../../routes/top-app-bar';
@@ -184,9 +184,9 @@ const menuItems = [
     component: SwitchPage
   },
   {
-    text: 'Tab',
-    link: '/component/tab/',
-    component: TabPage
+    text: 'Tabs',
+    link: '/component/tabs/',
+    component: TabsPage
   },
   {
     text: 'TextField',
