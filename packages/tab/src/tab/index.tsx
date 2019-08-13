@@ -27,3 +27,6 @@ export class Tab extends MaterialComponent<ITabProps, ITabState> {
     );
   }
 }
+
+export * from './icon';
+export * from './label';

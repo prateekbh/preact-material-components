@@ -27,13 +27,13 @@
     }
 
     &.collapsed {
-      max-height: 0px;
+      max-height: 0;
       width: 100%;
       @media (max-width: 959px) and (orientation: landscape) {
-        max-height: 0px;
+        max-height: 0;
       }
       @media (max-width: 599px) {
-        max-height: 0px;
+        max-height: 0;
       }
     }
   }
@@ -115,6 +115,17 @@
 
     code {
       background-color: #323232;
+    }
+
+    .mdc-tab {
+      .mdc-tab__text-label {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .mdc-tab__icon {
+        color: rgba(255, 255, 255, 0.54);
+        fill: currentColor;
+      }
     }
 
     @import './hljs-darcula';

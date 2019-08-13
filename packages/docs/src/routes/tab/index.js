@@ -2,11 +2,11 @@
 import {h, Component} from 'preact';
 
 // Material Components
-import {TabBar} from '@preact-material-components/tab';
+import {TabBar, Tab, TabIcon, TabLabel} from '@preact-material-components/tab';
 
 import '@preact-material-components/tab/sass';
 
-import style from './style';
+import style from './style.scss';
 
 // Components
 import ComponentTable from '../../components/component-table';
@@ -17,7 +17,7 @@ import sample from './sample.txt';
 import iconsSample from './sample.txt';
 
 // Class
-export default class TabsPage extends Component {
+export default class TabPage extends Component {
   constructor() {
     super();
     this.propsTable = [
@@ -69,31 +69,31 @@ export default class TabsPage extends Component {
         <div className="mdc-typography--display1">Demo </div>
         <div className={`mdc-typography--title ${style.section}`}>Default.</div>
         <TabBar>
-          <TabBar.Tab active>
-            <TabBar.TabLabel>Tab1</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab2</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab3</TabBar.TabLabel>
-          </TabBar.Tab>
+          <Tab active>
+            <TabLabel>Tab1</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab2</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab3</TabLabel>
+          </Tab>
         </TabBar>
 
         <div className={`mdc-typography--title ${style.section}`}>Icons.</div>
         <TabBar>
-          <TabBar.Tab active>
-            <TabBar.TabIcon>access_time</TabBar.TabIcon>
-            <TabBar.TabLabel>Time</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabIcon>near_me</TabBar.TabIcon>
-            <TabBar.TabLabel>Nearby</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabIcon>favorite</TabBar.TabIcon>
-            <TabBar.TabLabel>Favorites</TabBar.TabLabel>
-          </TabBar.Tab>
+          <Tab active>
+            <TabIcon>access_time</TabIcon>
+            <TabLabel>Time</TabLabel>
+          </Tab>
+          <Tab>
+            <TabIcon>near_me</TabIcon>
+            <TabLabel>Nearby</TabLabel>
+          </Tab>
+          <Tab>
+            <TabIcon>favorite</TabIcon>
+            <TabLabel>Favorites</TabLabel>
+          </Tab>
         </TabBar>
         <CodeBlock>
           <code class="lang-js">{iconsSample}</code>
@@ -103,33 +103,33 @@ export default class TabsPage extends Component {
           Scroller.
         </div>
         <TabBar>
-          <TabBar.Tab active>
-            <TabBar.TabLabel>Tab One</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab Two</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab Three</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab Four</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab Five</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab Six</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab Seven</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab Eight</TabBar.TabLabel>
-          </TabBar.Tab>
-          <TabBar.Tab>
-            <TabBar.TabLabel>Tab Nine</TabBar.TabLabel>
-          </TabBar.Tab>
+          <Tab active>
+            <TabLabel>Tab One</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab Two</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab Three</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab Four</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab Five</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab Six</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab Seven</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab Eight</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab Nine</TabLabel>
+          </Tab>
         </TabBar>
       </div>
     );

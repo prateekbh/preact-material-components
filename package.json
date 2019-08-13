@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "run-s build:packages build:compile",
-    "build:compile": "run-p build:compile:es2015 build:compile:next",
+    "build:compile": "run-p --aggregate-output build:compile:es2015 build:compile:next",
     "build:compile:es2015": "ts-node -P scripts/tsconfig.json scripts/compile.ts",
     "build:compile:next": "ts-node -P scripts/tsconfig.json scripts/compile.ts next",
     "build:packages": "lerna run build --ignore '*/docs'",
@@ -14,13 +14,13 @@
     "watch:es2015": "ts-node -P scripts/tsconfig.json scripts/compile.ts --watch",
     "watch:next": "ts-node -P scripts/tsconfig.json scripts/compile.ts next --watch",
     "lint": "tslint -p tsconfig.base.json",
-    "prettier": "prettier -l {,packages/**/*.{json,js}}",
-    "lint:fix": "yarn run tslint:fix && yarn run prettier:fix",
+    "prettier": "prettier -l {,packages/**/*.{json,js,scss}}",
+    "lint:fix": "run-p --aggregate-output tslint:fix prettier:fix",
     "tslint:fix": "tslint -p tsconfig.base.json --fix",
-    "prettier:fix": "prettier -l {,packages/**/*.{json,js}} --write",
-    "prepublishOnly": "yarn run build && yarn run test",
-    "test": "yarn run build && yarn run test:only",
-    "test:only": "yarn run test:packages && yarn run lint",
+    "prettier:fix": "prettier -l {,packages/**/*.{json,js,scss}} --write",
+    "prepublishOnly": "run-s build test",
+    "test": "run-s build test:only",
+    "test:only": "run-p --aggregate-output test:packages lint",
     "test:packages": "lerna run test --ignore '*/docs'",
     "prepare": "lerna bootstrap"
   },
@@ -71,13 +71,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn run lint:fix"
     }
-  },
-  "lint-staged": {
-    "*": [
-      "yarn run lint:fix",
-      "git add"
-    ]
   }
 }

@@ -42,3 +42,5 @@ export class TabBar extends MaterialComponent<ITabBarProps, ITabBarState> {
     );
   }
 }
+
+export * from './tab';
