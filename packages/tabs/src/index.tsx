@@ -17,25 +17,25 @@ export class TabBar extends MaterialComponent<ITabBarProps, ITabBarState> {
 
   public componentDidMount() {
     super.componentDidMount();
-    if (this.control) {
-      this.MDComponent = new MDCTabBar(this.control);
-    }
+
+    this.MDComponent = new MDCTabBar(this.control!!);
+
     this.afterComponentDidMount();
   }
 
   public componentWillUnmount() {
     super.componentWillUnmount();
-    if (this.MDComponent) {
-      this.MDComponent.destroy();
-    }
+
+    this.MDComponent!!.destroy();
   }
 
-  protected materialDom(props) {
+  protected materialDom() {
+    const {children, ...props} = this.props;
     return (
-      <div class="mdc-tab-bar" role="tablist" ref={this.setControlRef}>
+      <div role="tablist" ref={this.setControlRef} {...props}>
         <div class="mdc-tab-scroller">
           <div class="mdc-tab-scroller__scroll-area">
-            <div class="mdc-tab-scroller__scroll-content">{props.children}</div>
+            <div class="mdc-tab-scroller__scroll-content">{children}</div>
           </div>
         </div>
       </div>

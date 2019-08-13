@@ -81,7 +81,7 @@ export default class TabsPage extends Component {
         </TabBar>
 
         <div className={`mdc-typography--title ${style.section}`}>Icons.</div>
-        <TabBar>
+        <TabBar id="icontabs">
           <Tab active>
             <TabIcon>access_time</TabIcon>
             <TabLabel>Time</TabLabel>
