@@ -12,7 +12,7 @@ describe('Visual  Regression Tests', () => {
   testScreenshot('tabspage', url);
 
   it('check tab scrolling', () => {
-    openEyes('dialog-normal');
+    openEyes('tabs-scroll');
     cy.get('#icontabs .mdc-tab:nth-child(2)').click();
     // Things like animations
     sleep(500);
