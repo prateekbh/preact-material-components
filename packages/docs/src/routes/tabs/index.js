@@ -23,7 +23,33 @@ export default class TabsPage extends Component {
     this.propsTable = [
       {
         component: 'Tab Bar',
-        props: []
+        props: [
+          {
+            name: 'focusOnActivate',
+            description:
+              'Sets whether tabs focus themselves when activated. Defaults to true.'
+          },
+          {
+            name: 'useAutomaticActivation',
+            description:
+              'Sets how tabs activate in response to keyboard interaction. Automatic (true) activates as soon as a tab is focused with arrow keys; manual (false) activates only when the user presses space/enter. The default is automatic (true).'
+          },
+          {
+            name: 'activateTab',
+            description: 'Activates the tab at the given index.',
+            value: 'number'
+          },
+          {
+            name: 'scrollIntoView',
+            description: 'Scrolls the tab at the given index into view.',
+            value: 'number'
+          },
+          {
+            name: 'onActivated(e)',
+            description: 'Event handler for the activated event',
+            value: 'event handler'
+          }
+        ]
       },
       {
         component: 'Tab',
@@ -44,6 +70,7 @@ export default class TabsPage extends Component {
       }
     ];
   }
+
   render() {
     return (
       <div>

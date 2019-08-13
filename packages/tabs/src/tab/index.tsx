@@ -1,25 +1,25 @@
 import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
 import {h} from 'preact';
+import {MDCTab} from '@material/tab/component';
 
-export interface ITabProps {
-  active?: boolean;
-}
+export interface ITabProps {}
 
 export interface ITabState {}
 
 export class Tab extends MaterialComponent<ITabProps, ITabState> {
-  protected componentName = 'tab';
-  protected mdcProps = ['active'];
-  protected mdcNotifyProps = ['active'];
+  public MDComponent?: MDCTab;
 
-  protected materialDom(props) {
+  protected componentName = 'tab';
+  protected mdcProps = [];
+  protected mdcNotifyProps = [];
+
+  protected materialDom() {
+    const {children, ...props} = this.props;
+
     return (
-      <button class="mdc-tab" role="tab" aria-selected="true" {...props}>
-        <span class="mdc-tab__content">{props.children}</span>
-        <span
-          class={`mdc-tab-indicator ${
-            props.active ? 'mdc-tab-indicator--active' : ''
-          }`}>
+      <button class="mdc-tab" role="tab" {...props}>
+        <span class="mdc-tab__content">{children}</span>
+        <span class="mdc-tab-indicator">
           <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" />
         </span>
         <span class="mdc-tab__ripple" />

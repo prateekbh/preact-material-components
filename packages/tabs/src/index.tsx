@@ -1,9 +1,14 @@
 import {MDCTabBar} from '@material/tab-bar';
-import {MaterialComponent} from '@preact-material-components/base/lib/MaterialComponent';
+import {MaterialComponent} from '@preact-material-components/base';
 import {h} from 'preact';
 
 export interface ITabBarProps {
-  activeTabIndex?: number; // TODO: Fix type in docs
+  focusOnActivate?: boolean;
+  useAutomaticActivation?: boolean;
+  activateTab?: number;
+  scrollIntoView?: number;
+
+  onActivated?(e: {detail: {index: number}}): void;
 }
 
 export interface ITabBarState {}
@@ -13,12 +18,14 @@ export class TabBar extends MaterialComponent<ITabBarProps, ITabBarState> {
 
   protected componentName = 'tab-bar';
   protected mdcProps = [];
-  protected mdcNotifyProps = ['activeTabIndex'];
+  protected mdcNotifyProps = ['focusOnActivate', 'useAutomaticActivation'];
+  protected mdcCallProps = ['activateTab', 'scrollIntoView'];
 
   public componentDidMount() {
     super.componentDidMount();
 
     this.MDComponent = new MDCTabBar(this.control!!);
+    this.MDComponent.listen('onActivated', this.onActivated);
 
     this.afterComponentDidMount();
   }
@@ -28,6 +35,10 @@ export class TabBar extends MaterialComponent<ITabBarProps, ITabBarState> {
 
     this.MDComponent!!.destroy();
   }
+
+  protected onActivated = e => {
+    this.proxyEventHandler('onActivated', e);
+  };
 
   protected materialDom() {
     const {children, ...props} = this.props;
