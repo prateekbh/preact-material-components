@@ -76,11 +76,18 @@ export abstract class MaterialComponent<
     }
 
     const element = this.materialDom(componentProps);
-    // @ts-ignore
-    element.props = element.props || {};
+    let propName = 'attributes';
+
+    if ('attributes' in element) {
+      element.attributes = element.attributes || {};
+    } else {
+      propName = 'props';
+      // @ts-ignore
+      element.props = element.props || {};
+    }
 
     // @ts-ignore
-    element.props.className = `${userDefinedClasses} ${this.getClassName(
+    element[propName].className = `${userDefinedClasses} ${this.getClassName(
       element
     )}`
       .split(' ')
@@ -95,7 +102,7 @@ export abstract class MaterialComponent<
         return;
       }
       // @ts-ignore
-      delete element.props[prop];
+      delete element[propName][prop];
     });
     return element;
   }
@@ -170,8 +177,18 @@ export abstract class MaterialComponent<
     if (!element) {
       return '';
     }
+    let propName = 'attributes';
+
+    if ('attributes' in element) {
+      element.attributes = element.attributes || {};
+    } else {
+      propName = 'props';
+      // @ts-ignore
+      element.props = element.props || {};
+    }
+
     // @ts-ignore
-    const attrs = (element.props = element.props || {});
+    const attrs = (element[propName] = element[propName] || {});
     let classText = this.classText;
     if (attrs.class) {
       classText += ' ' + attrs.class;
