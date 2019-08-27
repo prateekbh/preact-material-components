@@ -97,7 +97,8 @@ export class LayoutGridCell extends MaterialComponent<
     const element = super.render(props);
     // remove the extra attributes used for customising this element - keep the DOM clean
     Object.keys(LayoutGridCell.propsDict).forEach(
-      key => delete element.attributes[LayoutGridCell.propsDict[key]]
+      // @ts-ignore
+      key => delete element.props[LayoutGridCell.propsDict[key]]
     );
     return element;
   }

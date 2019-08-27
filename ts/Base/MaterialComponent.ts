@@ -76,9 +76,11 @@ export abstract class MaterialComponent<
     }
 
     const element = this.materialDom(componentProps);
-    element.attributes = element.attributes || {};
+    // @ts-ignore
+    element.props = element.props || {};
 
-    element.attributes.className = `${userDefinedClasses} ${this.getClassName(
+    // @ts-ignore
+    element.props.className = `${userDefinedClasses} ${this.getClassName(
       element
     )}`
       .split(' ')
@@ -92,7 +94,8 @@ export abstract class MaterialComponent<
       if (prop in doNotRemoveProps) {
         return;
       }
-      delete element.attributes[prop];
+      // @ts-ignore
+      delete element.props[prop];
     });
     return element;
   }
@@ -167,7 +170,8 @@ export abstract class MaterialComponent<
     if (!element) {
       return '';
     }
-    const attrs = (element.attributes = element.attributes || {});
+    // @ts-ignore
+    const attrs = (element.props = element.props || {});
     let classText = this.classText;
     if (attrs.class) {
       classText += ' ' + attrs.class;

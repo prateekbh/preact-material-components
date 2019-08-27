@@ -46,7 +46,9 @@
     "mocha": "^5.0.1",
     "node-sass": "^4.9.3",
     "node-static": "^0.7.11",
+    "preact": "^10.0.0-rc.1",
     "preact-cli": "^3.0.0-next.14",
+    "preact-router": "^3.0.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "shelljs": "^0.8.1"
