@@ -15,11 +15,10 @@ Object.keys(LANGUAGES).forEach(key =>
 
 // Class
 export default ({children, ...props}) => {
-  let child = children && children[0],
-    isHighlight = child && child.nodeName === 'code';
+  let isHighlight = children && children.type === 'code';
   if (isHighlight) {
-    let text = child.children[0].replace(/(^\s+|\s+$)/g, ''),
-      lang = (child.attributes.class && child.attributes.class).match(
+    let text = children.props.children.replace(/(^\s+|\s+$)/g, ''),
+      lang = children.props.class.match(
         /lang-([a-z]+)/
       )[1],
       highlighted = hljs.highlightAuto(text, lang ? [lang] : null),
