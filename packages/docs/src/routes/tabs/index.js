@@ -18,6 +18,10 @@ import iconsSample from './sample.txt';
 
 // Class
 export default class TabsPage extends Component {
+  state = {
+    activateTab: 0
+  };
+
   constructor() {
     super();
     this.propsTable = [
@@ -95,8 +99,8 @@ export default class TabsPage extends Component {
 
         <div className="mdc-typography--display1">Demo </div>
         <div className={`mdc-typography--title ${style.section}`}>Default.</div>
-        <TabBar>
-          <Tab active>
+        <TabBar activateTab={this.state.activateTab}>
+          <Tab>
             <TabLabel>Tab1</TabLabel>
           </Tab>
           <Tab>
@@ -106,7 +110,14 @@ export default class TabsPage extends Component {
             <TabLabel>Tab3</TabLabel>
           </Tab>
         </TabBar>
-
+        <button
+          onClick={() => {
+            this.setState({
+              activateTab: this.state.activateTab + 1
+            });
+          }}>
+          Next Tab
+        </button>
         <div className={`mdc-typography--title ${style.section}`}>Icons.</div>
         <TabBar id="icontabs">
           <Tab active>
