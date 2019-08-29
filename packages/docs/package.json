@@ -18,10 +18,10 @@
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn run -s serve || yarn run -s dev",
-    "build": "preact build --template template.html",
-    "build:prod": "preact build --template template.html && yarn run copyAssets",
+    "build": "preact build",
+    "build:prod": "preact build && yarn run copyAssets",
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
-    "dev": "preact watch --template template.html",
+    "dev": "preact watch",
     "test": "cypress run --parallel",
     "test-runner": "node ./test-runner.js",
     "test:travis": "server-test start http-get://localhost:8080/ test-runner"
