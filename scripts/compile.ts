@@ -1,7 +1,6 @@
 import {existsSync} from 'fs';
-import * as npx from 'libnpx';
 import {join, resolve} from 'path';
-import {ls} from 'shelljs';
+import {ls, exec} from 'shelljs';
 
 const rootDir = resolve(join(__dirname, '..'));
 const pkgDir = join(rootDir, 'packages');
@@ -33,15 +32,14 @@ async function compile(tsconfigName: string) {
     project2path(proj, tsconfigName)
   );
 
-  const res = await npx({
-    cmdOpts: args.concat(tsProjects),
-    command: 'tsc',
-    npxPkg: join(__dirname, '..', 'package.json'),
-    package: ['typescript']
-  });
-  const exit = res ? res.code : process.exitCode || 1;
-  if (exit) {
-    console.error('npx failed');
+  const res = exec(
+    ['tsc']
+      .concat(args)
+      .concat(tsProjects)
+      .join(' ')
+  );
+  if (res.code) {
+    console.error('tsc failed');
     process.exit(1);
   }
 }

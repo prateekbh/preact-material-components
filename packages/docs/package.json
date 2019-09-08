@@ -18,10 +18,10 @@
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn run -s serve || yarn run -s dev",
-    "build": "preact build --template template.html",
-    "build:prod": "preact build --template template.html && yarn run copyAssets",
+    "build": "preact build",
+    "build:prod": "preact build && yarn run copyAssets",
     "copyAssets": "cpx -v '{*.png,manifest.json,prerender-urls.json}' build && cpx -v 'images/**' build/images/",
-    "dev": "preact watch --template template.html",
+    "dev": "preact watch",
     "test": "cypress run --parallel",
     "test-runner": "node ./test-runner.js",
     "test:travis": "server-test start http-get://localhost:8080/ test-runner"
@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
-  "homepage": "https://github.com/prateekbh/preact-material#readme",
+  "homepage": "https://preact.material.com",
   "devDependencies": {
     "@applitools/eyes-cypress": "^3.4.12",
     "@preact-material-components/base": "^2.0.1-alpha.0",
@@ -59,7 +59,7 @@
     "@preact-material-components/slider": "^2.0.1-alpha.0",
     "@preact-material-components/snackbar": "^2.0.1-alpha.0",
     "@preact-material-components/switch": "^2.0.1-alpha.0",
-    "@preact-material-components/tab": "^2.0.1-alpha.0",
+    "@preact-material-components/tabs": "^2.0.1-alpha.0",
     "@preact-material-components/textfield": "^2.0.1-alpha.0",
     "@preact-material-components/top-app-bar": "^2.0.1-alpha.0",
     "@preact-material-components/typography": "^2.0.1-alpha.0",
@@ -73,7 +73,8 @@
     "if-env": "^1.0.0",
     "node-sass": "^4.12.0",
     "preact": "^8.2.9",
-    "preact-cli": "3.0.0-next.14",
+    "preact-cli": "^3.0.0-rc.5",
+    "preact-render-to-string": "^4.1.0",
     "preact-router": "^2.6.1",
     "sass-loader": "^7.0.1",
     "serve": "^6.5.1",

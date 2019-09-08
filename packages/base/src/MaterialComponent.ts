@@ -50,6 +50,7 @@ export abstract class MaterialComponent<
    * Requires this.MDComponent to be defined.
    */
   protected mdcNotifyProps?: string[];
+  protected mdcCallProps?: string[];
 
   /** The final class name given to the dom */
   protected classText?: string | null;
@@ -104,10 +105,25 @@ export abstract class MaterialComponent<
   }
 
   public componentWillUpdate(nextProps: MaterialComponentProps<PropType>) {
-    if (this.MDComponent && this.mdcNotifyProps) {
-      for (const prop of this.mdcNotifyProps) {
-        if (this.props[prop] !== nextProps[prop]) {
-          this.MDComponent[prop] = nextProps[prop];
+    if (this.MDComponent) {
+      if (this.mdcNotifyProps) {
+        for (const prop of this.mdcNotifyProps) {
+          if (
+            typeof nextProps[prop] !== 'undefined' &&
+            this.props[prop] !== nextProps[prop]
+          ) {
+            this.MDComponent[prop] = nextProps[prop];
+          }
+        }
+      }
+      if (this.mdcCallProps) {
+        for (const prop of this.mdcCallProps) {
+          if (
+            typeof nextProps[prop] !== 'undefined' &&
+            this.props[prop] !== nextProps[prop]
+          ) {
+            this.MDComponent[prop](nextProps[prop]);
+          }
         }
       }
     }
@@ -147,9 +163,20 @@ export abstract class MaterialComponent<
   }
 
   protected afterComponentDidMount() {
-    if (this.MDComponent && this.mdcNotifyProps) {
-      for (const prop of this.mdcNotifyProps) {
-        this.MDComponent[prop] = this.props[prop];
+    if (this.MDComponent) {
+      if (this.mdcNotifyProps) {
+        for (const prop of this.mdcNotifyProps) {
+          if (typeof this.props[prop] !== 'undefined') {
+            this.MDComponent[prop] = this.props[prop];
+          }
+        }
+      }
+      if (this.mdcCallProps) {
+        for (const prop of this.mdcCallProps) {
+          if (typeof this.props[prop] !== 'undefined') {
+            this.MDComponent[prop](this.props[prop]);
+          }
+        }
       }
     }
   }

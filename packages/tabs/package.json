@@ -1,18 +1,18 @@
 {
-  "name": "@preact-material-components/tab",
+  "name": "@preact-material-components/tabs",
   "version": "2.0.1-alpha.0",
-  "description": "Implementation of a material tab",
+  "description": "Implementation of material tabs",
   "keywords": [
     "preact-material",
     "preact",
     "material",
-    "tab"
+    "tabs"
   ],
   "author": {
     "name": "Prateek Bhatnagar",
     "email": "prateek89born@gmail.com"
   },
-  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/tab#readme",
+  "homepage": "https://github.com/prateekbh/preact-material-components/tree/master/packages/tabs#readme",
   "license": "MIT",
   "sass": "sass",
   "main": "lib/index.js",
@@ -34,13 +34,12 @@
     "url": "https://github.com/prateekbh/preact-material-components/issues"
   },
   "dependencies": {
-    "@material/tab": "^0.39.3",
-    "@material/tab-bar": "^0.39.3",
-    "@material/tab-indicator": "^0.39.3",
-    "@material/tab-scroller": "^0.39.3",
+    "@material/tab": "^3.1.0",
+    "@material/tab-bar": "^3.1.0",
+    "@material/tab-indicator": "^3.1.0",
+    "@material/tab-scroller": "^3.1.0",
     "@preact-material-components/base": "^2.0.1-alpha.0",
-    "bind-decorator": "^1.0.11",
-    "tslib": "^1.9.3"
+    "tslib": "^1.10.0"
   },
   "peerDependencies": {
     "preact": "^8.3.1"

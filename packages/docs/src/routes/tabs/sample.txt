@@ -1,0 +1,23 @@
+import {h, Component} from 'preact';
+import {TabBar, Tab, TabLabel} from 'preact-material-components/TabBar';
+import 'preact-material-components/TabBar/style.css';
+
+export default class TabBarPage extends Component {
+  render() {
+    return (
+      <div>
+        <TabBar>
+          <Tab active>
+            <TabLabel>Tab1</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab2</TabLabel>
+          </Tab>
+          <Tab>
+            <TabLabel>Tab3</TabLabel>
+          </Tab>
+        </TabBar>
+      </div>
+    );
+  }
+}
