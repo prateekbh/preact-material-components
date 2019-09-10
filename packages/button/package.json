@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/button",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "Implemetation of the material button",
   "keywords": [
     "preact-material",
@@ -35,8 +35,8 @@
   },
   "dependencies": {
     "@material/button": "0.44.1",
-    "@preact-material-components/base": "^2.0.0-alpha.1",
-    "@preact-material-components/icon": "^2.0.0-alpha.1",
+    "@preact-material-components/base": "^2.0.0-alpha.2",
+    "@preact-material-components/icon": "^2.0.0-alpha.2",
     "bind-decorator": "^1.0.11",
     "tslib": "^1.9.3"
   },

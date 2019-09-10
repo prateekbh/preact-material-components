@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/line-ripple",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "Implementation of a material line ripple",
   "keywords": [
     "preact-material-components",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@material/line-ripple": "1.1.0",
-    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "@preact-material-components/base": "^2.0.0-alpha.2",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {
