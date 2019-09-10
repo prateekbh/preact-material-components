@@ -18,7 +18,7 @@
     "lint:fix": "run-p --aggregate-output tslint:fix prettier:fix",
     "tslint:fix": "tslint -p tsconfig.base.json --fix",
     "prettier:fix": "prettier -l {,packages/**/*.{json,js,scss}} --write",
-    "prepublishOnly": "run-s build test",
+    "prepublishOnly": "run-s build",
     "test": "run-s build test:only",
     "test:only": "run-p --aggregate-output test:packages lint",
     "test:packages": "lerna run test --ignore '*/docs'",
