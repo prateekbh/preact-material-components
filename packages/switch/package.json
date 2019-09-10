@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/switch",
-  "version": "2.0.1-alpha.0",
+  "version": "2.0.0-alpha1",
   "description": "Implementation of a material switch",
   "keywords": [
     "preact-material",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@material/switch": "^2.1.1",
-    "@preact-material-components/base": "^2.0.1-alpha.0",
+    "@preact-material-components/base": "^2.0.0-alpha1",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {

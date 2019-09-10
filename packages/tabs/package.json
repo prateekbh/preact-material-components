@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/tabs",
-  "version": "2.0.1-alpha.0",
+  "version": "2.0.0-alpha1",
   "description": "Implementation of material tabs",
   "keywords": [
     "preact-material",
@@ -38,7 +38,7 @@
     "@material/tab-bar": "^3.1.0",
     "@material/tab-indicator": "^3.1.0",
     "@material/tab-scroller": "^3.1.0",
-    "@preact-material-components/base": "^2.0.1-alpha.0",
+    "@preact-material-components/base": "^2.0.0-alpha1",
     "tslib": "^1.10.0"
   },
   "peerDependencies": {

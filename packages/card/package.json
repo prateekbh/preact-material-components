@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/card",
-  "version": "2.0.1-alpha.0",
+  "version": "2.0.0-alpha1",
   "description": "Implemetation of the material card",
   "keywords": [
     "preact-material",
@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@material/card": "0.44.1",
-    "@preact-material-components/base": "^2.0.1-alpha.0",
-    "@preact-material-components/button": "^2.0.1-alpha.0",
-    "@preact-material-components/icon": "^2.0.1-alpha.0",
+    "@preact-material-components/base": "^2.0.0-alpha1",
+    "@preact-material-components/button": "^2.0.0-alpha1",
+    "@preact-material-components/icon": "^2.0.0-alpha1",
     "bind-decorator": "^1.0.11",
     "tslib": "^1.9.3"
   },
