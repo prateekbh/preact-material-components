@@ -1,12 +1,10 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "command": {
     "publish": {
-      "allowBranch": "modularize"
+      "allowBranch": "2.0"
     }
   },
   "npmClient": "yarn",
-  "version": "2.0.1-alpha.0"
+  "version": "2.0.0"
 }
