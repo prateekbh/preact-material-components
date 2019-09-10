@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/select",
-  "version": "2.0.0-alpha1",
+  "version": "2.0.0-alpha.0",
   "description": "Implementation of a material select",
   "keywords": [
     "preact-material",
@@ -35,8 +35,8 @@
   },
   "dependencies": {
     "@material/select": "^2.0.0",
-    "@preact-material-components/base": "^2.0.0-alpha1",
-    "@preact-material-components/menu": "^2.0.0-alpha1",
+    "@preact-material-components/base": "^2.0.0-alpha.0",
+    "@preact-material-components/menu": "^2.0.0-alpha.0",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {

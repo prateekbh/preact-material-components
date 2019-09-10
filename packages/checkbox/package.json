@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/checkbox",
-  "version": "2.0.0-alpha1",
+  "version": "2.0.0-alpha.0",
   "description": "Implemetation of the material checkbox",
   "keywords": [
     "preact-material",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@material/checkbox": "0.44.1",
-    "@preact-material-components/base": "^2.0.0-alpha1",
+    "@preact-material-components/base": "^2.0.0-alpha.0",
     "bind-decorator": "^1.0.11",
     "tslib": "^1.9.3"
   },

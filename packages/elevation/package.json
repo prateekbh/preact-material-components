@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/elevation",
-  "version": "2.0.0-alpha1",
+  "version": "2.0.0-alpha.0",
   "description": "Implementation of a material elevation",
   "keywords": [
     "preact-material-components",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@material/elevation": "1.1.0",
-    "@preact-material-components/base": "^2.0.0-alpha1",
+    "@preact-material-components/base": "^2.0.0-alpha.0",
     "bind-decorator": "^1.0.11",
     "tslib": "^1.9.3"
   },
