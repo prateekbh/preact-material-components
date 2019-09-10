@@ -1,6 +1,5 @@
 {
   "name": "@preact-material-components/docs",
-  "version": "2.0.0-alpha.1",
   "description": "preact material component's site",
   "repository": {
     "type": "git",
