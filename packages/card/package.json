@@ -44,5 +44,11 @@
   "peerDependencies": {
     "preact": "^8.3.1"
   },
-  "side-effects": false
+  "sideEffects": [
+    "*.scss"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "2f34ef4c6a1365fce6927031d0631c8b5f7e7c31"
 }
