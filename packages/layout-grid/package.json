@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/layout-grid",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "description": "Implementation of a material layout grid",
   "keywords": [
     "preact-material-components",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@material/layout-grid": "0.41.0",
-    "@preact-material-components/base": "^2.0.0-alpha.0",
+    "@preact-material-components/base": "^2.0.0-alpha.1",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {
