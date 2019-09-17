@@ -76,9 +76,18 @@ export abstract class MaterialComponent<
     }
 
     const element = this.materialDom(componentProps);
-    element.attributes = element.attributes || {};
+    let propName = 'attributes';
 
-    element.attributes.className = `${userDefinedClasses} ${this.getClassName(
+    if ('props' in element) {
+      propName = 'props';
+      // @ts-ignore
+      element.props = element.props || {};
+    } else {
+      element.attributes = element.attributes || {};
+    }
+
+    // @ts-ignore
+    element[propName].className = `${userDefinedClasses} ${this.getClassName(
       element
     )}`
       .split(' ')
@@ -86,13 +95,15 @@ export abstract class MaterialComponent<
         (value, index, self) => self.indexOf(value) === index && value !== ''
       ) // Unique + exclude empty class names
       .join(' ');
+
     // Clean this shit of proxy attributes
     this.mdcProps.forEach(prop => {
       // TODO: Fix this better
       if (prop in doNotRemoveProps) {
         return;
       }
-      delete element.attributes[prop];
+      // @ts-ignore
+      delete element[propName][prop];
     });
     return element;
   }
@@ -209,7 +220,18 @@ export abstract class MaterialComponent<
     if (!element) {
       return '';
     }
-    const attrs = (element.attributes = element.attributes || {});
+    let propName = 'attributes';
+
+    if ('props' in element) {
+      propName = 'props';
+      // @ts-ignore
+      element.props = element.props || {};
+    } else {
+      element.attributes = element.attributes || {};
+    }
+
+    // @ts-ignore
+    const attrs = (element[propName] = element[propName] || {});
     let classText = this.classText;
     if (attrs.class) {
       classText += ` ${attrs.class}`;
