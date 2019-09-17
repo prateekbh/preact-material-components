@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/dialog",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.3",
   "description": "Implementation of a material dialog",
   "keywords": [
     "preact-material-components",
@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@material/dialog": "1.1.0",
-    "@preact-material-components/base": "^2.0.0-alpha.2",
-    "@preact-material-components/button": "^2.0.0-alpha.2",
-    "@preact-material-components/icon": "^2.0.0-alpha.2",
+    "@preact-material-components/base": "^2.0.0-alpha.3",
+    "@preact-material-components/button": "^2.0.0-alpha.3",
+    "@preact-material-components/icon": "^2.0.0-alpha.3",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {
