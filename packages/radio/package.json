@@ -1,6 +1,6 @@
 {
   "name": "@preact-material-components/radio",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "Implementation of a material radio select",
   "keywords": [
     "preact-material",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@material/radio": "^1.1.0",
-    "@preact-material-components/base": "^2.0.0-alpha.1",
+    "@preact-material-components/base": "^2.0.0-alpha.2",
     "bind-decorator": "^1.0.11",
     "tslib": "^1.9.3"
   },
