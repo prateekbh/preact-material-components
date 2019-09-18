@@ -20,31 +20,28 @@ Object.keys(LANGUAGES).forEach(key =>
 export default class CodeBlock extends Component {
   render({children, ...props}) {
     const segments = [];
-    for (const child of children) {
-      if (child.nodeName === 'code') {
-        const text = child.children.join('\n');
-        const klasses = child.attributes ? child.attributes.class || '' : '';
-        const langs = klasses
-          .split(' ')
-          .filter(klass => klass.match(/^lang-[a-z]+$/))
-          .map(klass => klass.slice(5));
 
-        const highlighted = hljs.highlightAuto(
-          text,
-          langs.length ? langs : null
-        );
-        const hLang = highlighted.language;
+    if (children.type === 'code') {
+      const text = children.props.children; //.join('\n');
+      const klasses = children.props ? children.props.class || '' : '';
+      const langs = klasses
+        .split(' ')
+        .filter(klass => klass.match(/^lang-[a-z]+$/))
+        .map(klass => klass.slice(5));
 
-        segments.push(
-          <code
-            className={`hljs lang-${hLang}`}
-            dangerouslySetInnerHTML={{__html: highlighted.value}}
-          />
-        );
-      } else {
-        segments.push(child);
-      }
+      const highlighted = hljs.highlightAuto(text, langs.length ? langs : null);
+      const hLang = highlighted.language;
+      console.log({hLang});
+      segments.push(
+        <code
+          className={`hljs lang-${hLang}`}
+          dangerouslySetInnerHTML={{__html: highlighted.value}}
+        />
+      );
+    } else {
+      segments.push(child);
     }
+
     return <pre class={cx('highlight', props.class)}>{segments}</pre>;
   }
 
