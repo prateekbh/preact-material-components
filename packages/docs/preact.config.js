@@ -1,4 +1,4 @@
-const {sassResolver} = require('@preact-material-components/base');
+const {sassResolver} = require('@preact-material-components/base/build');
 
 /**
  * Function that mutates original webpack config.
