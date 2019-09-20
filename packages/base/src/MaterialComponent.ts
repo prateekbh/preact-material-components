@@ -85,7 +85,6 @@ export abstract class MaterialComponent<
     } else {
       element.attributes = element.attributes || {};
     }
-
     // @ts-ignore
     element[propName].className = `${userDefinedClasses} ${this.getClassName(
       element
