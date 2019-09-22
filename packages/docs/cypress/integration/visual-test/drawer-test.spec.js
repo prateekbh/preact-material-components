@@ -23,7 +23,7 @@ describe('Visual  Regression Tests', () => {
     });
   });
 
-  it('should close with swipe to left', () => {
+  it.skip('should close with swipe to left', () => {
     cy.on('uncaught:exception', (err, runnable) => {
       // drawer is currently broken in branch 2.0 as it has a focus trap.
       // remove this line after fixing it.
@@ -46,7 +46,7 @@ describe('Visual  Regression Tests', () => {
     });
   });
 
-  it('should open with swipe to right', () => {
+  it.skip('should open with swipe to right', () => {
     cy.on('uncaught:exception', (err, runnable) => {
       // drawer is currently broken in branch 2.0 as it has a focus trap.
       // remove this line after fixing it.
