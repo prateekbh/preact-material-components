@@ -65,6 +65,25 @@ export class ListItemMeta extends ListItemGraphic {
   protected componentName = 'list-item__meta';
 }
 
+export interface IListItemMetaTextProps {}
+export interface IListItemMetaTextState {}
+
+export class ListItemMetaText extends MaterialComponent<
+  IListItemMetaTextProps,
+  IListItemMetaTextState
+> {
+  protected componentName = 'list-item__meta';
+  protected mdcProps = [];
+
+  protected materialDom(props) {
+    return (
+      <span {...props} ref={this.setControlRef} role="presentation">
+        {props.children}
+      </span>
+    );
+  }
+}
+
 export interface IListDividerProps {
   inset?: boolean;
 }
@@ -181,6 +200,7 @@ export default class extends List {
   public static readonly LinkItem = ListLinkItem;
   public static readonly ItemGraphic = ListItemGraphic;
   public static readonly ItemMeta = ListItemMeta;
+  public static readonly ItemMetaText = ListItemMetaText;
   public static readonly Divider = ListDivider;
   public static readonly TextContainer = ListTextContainer;
   public static readonly PrimaryText = ListPrimaryText;
