@@ -56,6 +56,10 @@ export default class ListPage extends Component {
         props: []
       },
       {
+        component: 'List.ItemMetaText',
+        props: []
+      },
+      {
         component: 'List.TextContainer',
         props: []
       },
