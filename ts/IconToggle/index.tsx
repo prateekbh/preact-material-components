@@ -3,15 +3,15 @@ import {bind} from 'bind-decorator';
 import {h} from 'preact';
 import MaterialComponent from '../Base/MaterialComponent';
 
-interface IconToggleData {
+interface IIconToggleData {
   label?: string;
   content?: string;
   cssClass?: string;
 }
 
 export interface IIconToggleProps {
-  'data-toggle-on'?: IconToggleData; // TODO: wrong docs?
-  'data-toggle-off'?: IconToggleData; // TODO: wrong docs?
+  'data-toggle-on'?: IIconToggleData; // TODO: wrong docs?
+  'data-toggle-off'?: IIconToggleData; // TODO: wrong docs?
   disabled?: boolean;
 }
 
