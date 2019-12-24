@@ -16,7 +16,7 @@ export class DrawerItem extends ListItemLink<
     /* Logic to add activated class */
     if (props.activated) {
       // @ts-ignore
-      (returnedNode.attributes || returnedNode.props).className =
+      (returnedNode.props || returnedNode.attributes).className =
         'mdc-list-item--activated';
     }
     return returnedNode;

@@ -79,7 +79,7 @@ export class LayoutGridCell extends MaterialComponent<
     Object.keys(LayoutGridCell.propsDict).forEach(
       key =>
         // @ts-ignore
-        delete (element.attributes || element.props)[
+        delete (element.props || element.attributes)[
           LayoutGridCell.propsDict[key]
         ]
     );
