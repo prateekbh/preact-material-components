@@ -94,7 +94,6 @@ export abstract class MaterialComponent<
         (value, index, self) => self.indexOf(value) === index && value !== ''
       ) // Unique + exclude empty class names
       .join(' ');
-
     // Clean this shit of proxy attributes
     this.mdcProps.forEach(prop => {
       // TODO: Fix this better
