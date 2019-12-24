@@ -2,7 +2,7 @@ export function testScreenshot(pageName) {
   it(`check ${pageName}`, () => {
     openEyes(pageName);
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.content.mdc-layout-grid' //CSS Selector
     });
   });

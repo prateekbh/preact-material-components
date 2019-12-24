@@ -16,7 +16,7 @@ describe('Visual  Regression Tests', () => {
     // Things like animations
     sleep(500);
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.mdc-dialog.mdc-dialog--open'
     });
   });
@@ -27,7 +27,7 @@ describe('Visual  Regression Tests', () => {
     // Things like animations
     sleep(500);
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.mdc-dialog.mdc-dialog--open'
     });
   });

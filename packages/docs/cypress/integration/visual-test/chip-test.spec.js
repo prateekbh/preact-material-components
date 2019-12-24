@@ -19,7 +19,7 @@ describe('Visual  Regression Tests', () => {
       cy.wrap(chip).click();
     });
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.choice'
     });
   });
@@ -34,7 +34,7 @@ describe('Visual  Regression Tests', () => {
       cy.wrap(chip).click();
     });
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.filter'
     });
   });
