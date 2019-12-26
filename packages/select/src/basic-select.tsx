@@ -88,7 +88,11 @@ export class BasicSelect extends MaterialComponent<
         <div class="mdc-notched-outline">
           <div class="mdc-notched-outline__leading" />
           <div class="mdc-notched-outline__notch">
-            {label && <label class="mdc-floating-label">{label}</label>}
+            {label && (
+              <label class="mdc-floating-label" ref={this.setLabelRef}>
+                {label}
+              </label>
+            )}
           </div>
           <div class="mdc-notched-outline__trailing" />
         </div>
@@ -110,9 +114,13 @@ export class BasicSelect extends MaterialComponent<
         </select>
         {this.getDecorator({outlined, label})}
         {!outlined && label && (
-          <label class="mdc-floating-label">{label}</label>
+          <label class="mdc-floating-label" ref={this.setLabelRef}>
+            {label}
+          </label>
         )}
       </div>
     );
   }
+
+  private setLabelRef = el => (this.labelRef = el);
 }
