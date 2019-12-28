@@ -12,7 +12,7 @@ describe('Visual  Regression Tests', () => {
     openEyes('homepage-dark');
     cy.get('.switch-darkmode.mdc-switch').click();
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.content.mdc-layout-grid'
     });
   });
