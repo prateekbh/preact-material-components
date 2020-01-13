@@ -150,10 +150,10 @@ export default class ImageListPage extends Component {
         <Typography tag="h5" headline="5">
           Code
         </Typography>
+        <Typography tag="h6" headline="6">
+          JS
+        </Typography>
         <CodeBlock>
-          <Typography tag="h6" headline="6">
-            JS
-          </Typography>
           <code className="lang-html">
             {'<ImageList with-text-protection class="std-img-list">\n' +
               '  {stdImages.map(image => (\n' +
@@ -170,9 +170,11 @@ export default class ImageListPage extends Component {
               '  ))}\n' +
               '</ImageList>'}
           </code>
-          <Typography tag="h6" headline="6">
-            SCSS
-          </Typography>
+        </CodeBlock>
+        <Typography tag="h6" headline="6">
+          SCSS
+        </Typography>
+        <CodeBlock>
           <code className="lang-scss">
             {'.std-img-list {\n' +
               '  @include mdc-image-list-standard-columns(3);\n' +
@@ -209,10 +211,10 @@ export default class ImageListPage extends Component {
         <Typography tag="h5" headline="5">
           Code
         </Typography>
+        <Typography tag="h6" headline="6">
+          JS
+        </Typography>
         <CodeBlock>
-          <Typography tag="h6" headline="6">
-            JS
-          </Typography>
           <code className="lang-html">
             {'<ImageList masonry class="masonry-img-list">\n' +
               '  {masonryImages.map(image => (\n' +
@@ -227,9 +229,11 @@ export default class ImageListPage extends Component {
               '  ))}\n' +
               '</ImageList>'}
           </code>
-          <Typography tag="h6" headline="6">
-            SCSS
-          </Typography>
+        </CodeBlock>
+        <Typography tag="h6" headline="6">
+          SCSS
+        </Typography>
+        <CodeBlock>
           <code className="lang-scss">
             {'.masonry-img-list {\n' +
               '  @include mdc-image-list-masonry-columns(4);\n' +
