@@ -18,7 +18,7 @@ describe('Visual  Regression Tests', () => {
       cy.wrap(button).click();
     });
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.content.mdc-layout-grid'
     });
   });
