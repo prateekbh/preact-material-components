@@ -18,7 +18,7 @@ describe('Visual  Regression Tests', () => {
     cy.get('.mdc-top-app-bar__icon').click();
     sleep(500);
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.home.mdc-typography'
     });
   });
@@ -33,14 +33,14 @@ describe('Visual  Regression Tests', () => {
     cy.get('.mdc-top-app-bar__icon').click();
     sleep(500);
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.home.mdc-typography',
       tag: 'opened'
     });
     doSwipe(5);
     sleep(500);
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.home.mdc-typography',
       tag: 'closed'
     });
@@ -55,14 +55,14 @@ describe('Visual  Regression Tests', () => {
     openEyes('drawer-closed-swipe');
     sleep(500);
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.home.mdc-typography',
       tag: 'closed'
     });
     doSwipe(85);
     sleep(500);
     cy.eyesCheckWindow({
-      sizeMode: 'selector', //mode
+      target: 'region', //mode
       selector: '.home.mdc-typography',
       tag: 'opened'
     });
