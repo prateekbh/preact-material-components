@@ -78,9 +78,9 @@ export class DialogFooterButton extends Button<
   @bind
   protected materialDom(props) {
     return (
-      <button {...props} className="mdc-button" ref={this.setControlRef}>
+      <Button {...props} ref={this.setControlRef}>
         {props.children}
-      </button>
+      </Button>
     );
   }
 }
