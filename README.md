@@ -1,5 +1,9 @@
 # preact-material-components
 
+## Deprecation Notice
+This repo only works with Preact 8 or lower. The work for preact X+ compatibility was unfortunately suspended due to the given lack of maintainers and their time.
+
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/prateekbh/preact-material-components.svg)](https://greenkeeper.io/)
 [![Dependencies badge](https://david-dm.org/prateekbh/preact-material-components.svg)](https://david-dm.org/)
 [![build](https://api.travis-ci.org/prateekbh/preact-material-components.svg?branch=master)](https://api.travis-ci.org/prateekbh/preact-material-components.svg?branch=master)
